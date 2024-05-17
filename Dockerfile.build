@@ -1,0 +1,48 @@
+FROM maven:3.6.3-jdk-8
+
+# Prevent initramfs updates from trying to run grub and lilo.
+ENV INITRD no
+ENV DEBIAN_FRONTEND noninteractive
+
+# make java available globally
+RUN ln -s /usr/local/openjdk-8/bin/java /usr/local/bin/java
+
+# Android environment variables. If you need to upgrade the used SDK version, change it here.
+ENV ANDROID_HOME "/opt/android-sdk"
+ENV ANDROID_MIN_SDK_VERSION 16
+ENV ANDROID_SDK_VERSION 29
+ENV ANDROID_BUILD_TOOLS_VERSION 29.0.3
+ENV PATH $PATH:${ANDROID_HOME}/tools/bin
+
+# install android tools
+RUN cd /root \
+    # get android command line tools
+    && curl -o commandlinetools.zip https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip \
+    && unzip commandlinetools.zip -d ${ANDROID_HOME} \
+    && rm commandlinetools.zip \
+    # update sdk
+    && sdkmanager --include_obsolete --update --sdk_root=${ANDROID_HOME} \
+    # Accept licenses
+    && yes | sdkmanager --licenses --sdk_root=${ANDROID_HOME} \
+    # download android build tools
+    && sdkmanager "platforms;android-${ANDROID_SDK_VERSION}" "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" --sdk_root=${ANDROID_HOME}
+
+# install make
+# Install bazel
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential ca-certificates apt-transport-https curl gnupg git software-properties-common && \
+    curl -s https://bazel.build/bazel-release.pub.gpg | apt-key add - && \
+    echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | tee /etc/apt/sources.list.d/bazel.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends bazel-3.2.0 && \
+    mv /usr/bin/bazel-3.2.0 /usr/bin/bazel
+
+# Define default command.
+CMD ["bash"]
+
+# Default HOME
+ENV HOME /root
+
+# copy current workspace
+COPY . /workspace
+WORKDIR /workspace

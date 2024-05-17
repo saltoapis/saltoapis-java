@@ -1,0 +1,40 @@
+name: "SALTO APIs build"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v2
+      - name: init
+        run: |
+          docker build -f Dockerfile.build -t saltoapis-java .
+          docker run --env GITHUB_TOKEN=$GITHUB_TOKEN --env GITHUB_ACTOR=$GITHUB_ACTOR --rm -i -d --name saltoapis-java saltoapis-java
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: prepare
+        run: docker exec -i saltoapis-java make prepare
+      - name: sanity-check
+        run: docker exec -i saltoapis-java make sanity-check
+      - name: build
+        run: docker exec -i saltoapis-java make build
+      - name: test
+        run: docker exec -i saltoapis-java make test
+      - name: release
+        if: github.ref == 'refs/heads/main'
+        run: docker exec -i saltoapis-java make release
+      - name: clean
+        run: |
+          docker exec -i saltoapis-java make clean
+          docker stop saltoapis-java
