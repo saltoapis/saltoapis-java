@@ -20,7 +20,7 @@ http_archive(
 
 
 # define versions for grpc dependencies
-load("//:java_grpc_metadata.bzl", "GRPC_JAVA_VERSION", "PROTOBUF_VERSION")
+load("//:java_metadata.bzl", "GRPC_JAVA_VERSION", "PROTOBUF_VERSION")
 load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
