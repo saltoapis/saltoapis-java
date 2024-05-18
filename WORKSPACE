@@ -28,7 +28,7 @@ maven_install(
         "io.grpc:grpc-okhttp:%s" % GRPC_JAVA_VERSION,
         "io.grpc:grpc-protobuf:%s" % GRPC_JAVA_VERSION,
         "io.grpc:grpc-stub:%s" % GRPC_JAVA_VERSION,
-        "com.google.protobuf:protobuf-java:3.%s" % PROTOBUF_VERSION,
+        "com.google.protobuf:protobuf-java:4.%s" % PROTOBUF_VERSION,
         "javax.annotation:javax.annotation-api:1.3.2",
     ],
     repositories = [
