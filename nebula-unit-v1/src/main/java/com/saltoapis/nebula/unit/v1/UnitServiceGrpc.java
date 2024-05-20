@@ -204,6 +204,68 @@ public final class UnitServiceGrpc {
     return getCleanOutUnitMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.unit.v1.MoveInUnitRequest,
+      com.saltoapis.nebula.unit.v1.MoveInUnitResponse> getMoveInUnitMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MoveInUnit",
+      requestType = com.saltoapis.nebula.unit.v1.MoveInUnitRequest.class,
+      responseType = com.saltoapis.nebula.unit.v1.MoveInUnitResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.unit.v1.MoveInUnitRequest,
+      com.saltoapis.nebula.unit.v1.MoveInUnitResponse> getMoveInUnitMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.unit.v1.MoveInUnitRequest, com.saltoapis.nebula.unit.v1.MoveInUnitResponse> getMoveInUnitMethod;
+    if ((getMoveInUnitMethod = UnitServiceGrpc.getMoveInUnitMethod) == null) {
+      synchronized (UnitServiceGrpc.class) {
+        if ((getMoveInUnitMethod = UnitServiceGrpc.getMoveInUnitMethod) == null) {
+          UnitServiceGrpc.getMoveInUnitMethod = getMoveInUnitMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.unit.v1.MoveInUnitRequest, com.saltoapis.nebula.unit.v1.MoveInUnitResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MoveInUnit"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.unit.v1.MoveInUnitRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.unit.v1.MoveInUnitResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UnitServiceMethodDescriptorSupplier("MoveInUnit"))
+              .build();
+        }
+      }
+    }
+    return getMoveInUnitMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.unit.v1.MoveOutUnitRequest,
+      com.saltoapis.nebula.unit.v1.MoveOutUnitResponse> getMoveOutUnitMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MoveOutUnit",
+      requestType = com.saltoapis.nebula.unit.v1.MoveOutUnitRequest.class,
+      responseType = com.saltoapis.nebula.unit.v1.MoveOutUnitResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.unit.v1.MoveOutUnitRequest,
+      com.saltoapis.nebula.unit.v1.MoveOutUnitResponse> getMoveOutUnitMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.unit.v1.MoveOutUnitRequest, com.saltoapis.nebula.unit.v1.MoveOutUnitResponse> getMoveOutUnitMethod;
+    if ((getMoveOutUnitMethod = UnitServiceGrpc.getMoveOutUnitMethod) == null) {
+      synchronized (UnitServiceGrpc.class) {
+        if ((getMoveOutUnitMethod = UnitServiceGrpc.getMoveOutUnitMethod) == null) {
+          UnitServiceGrpc.getMoveOutUnitMethod = getMoveOutUnitMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.unit.v1.MoveOutUnitRequest, com.saltoapis.nebula.unit.v1.MoveOutUnitResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "MoveOutUnit"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.unit.v1.MoveOutUnitRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.unit.v1.MoveOutUnitResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UnitServiceMethodDescriptorSupplier("MoveOutUnit"))
+              .build();
+        }
+      }
+    }
+    return getMoveOutUnitMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.unit.v1.CreatePolicyRequest,
       com.saltoapis.nebula.unit.v1.Policy> getCreatePolicyMethod;
 
@@ -515,6 +577,37 @@ public final class UnitServiceGrpc {
 
     /**
      * <pre>
+     * Move in a unit
+     * Moves in a unit by creating new occupants and associating them with the unit.
+     * (-- api-linter: core::0136::http-uri-suffix=disabled
+     *     aip.dev/not-precedent: We need to do this because "move in" is a phrasal
+     *     verb and the api-linter doesn't support using them. --)
+     * </pre>
+     */
+    default void moveInUnit(com.saltoapis.nebula.unit.v1.MoveInUnitRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.unit.v1.MoveInUnitResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMoveInUnitMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Move out a unit
+     * Moves out a unit by deleting all the occupants belonging to it. This process
+     * implicitly entails the blocking of the keys that were active within the
+     * unit. Moving out a unit will not delete the access rights and the
+     * associated access points that belong to the unit.
+     * (-- api-linter: core::0136::http-uri-suffix=disabled
+     *     aip.dev/not-precedent: We need to do this because "move out" is a phrasal
+     *     verb and the api-linter doesn't support using them. --)
+     * </pre>
+     */
+    default void moveOutUnit(com.saltoapis.nebula.unit.v1.MoveOutUnitRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.unit.v1.MoveOutUnitResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getMoveOutUnitMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Create a policy
      * Creates a new policy.
      * </pre>
@@ -695,6 +788,39 @@ public final class UnitServiceGrpc {
 
     /**
      * <pre>
+     * Move in a unit
+     * Moves in a unit by creating new occupants and associating them with the unit.
+     * (-- api-linter: core::0136::http-uri-suffix=disabled
+     *     aip.dev/not-precedent: We need to do this because "move in" is a phrasal
+     *     verb and the api-linter doesn't support using them. --)
+     * </pre>
+     */
+    public void moveInUnit(com.saltoapis.nebula.unit.v1.MoveInUnitRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.unit.v1.MoveInUnitResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMoveInUnitMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Move out a unit
+     * Moves out a unit by deleting all the occupants belonging to it. This process
+     * implicitly entails the blocking of the keys that were active within the
+     * unit. Moving out a unit will not delete the access rights and the
+     * associated access points that belong to the unit.
+     * (-- api-linter: core::0136::http-uri-suffix=disabled
+     *     aip.dev/not-precedent: We need to do this because "move out" is a phrasal
+     *     verb and the api-linter doesn't support using them. --)
+     * </pre>
+     */
+    public void moveOutUnit(com.saltoapis.nebula.unit.v1.MoveOutUnitRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.unit.v1.MoveOutUnitResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMoveOutUnitMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Create a policy
      * Creates a new policy.
      * </pre>
@@ -857,6 +983,37 @@ public final class UnitServiceGrpc {
     public com.saltoapis.nebula.unit.v1.CleanOutUnitResponse cleanOutUnit(com.saltoapis.nebula.unit.v1.CleanOutUnitRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCleanOutUnitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Move in a unit
+     * Moves in a unit by creating new occupants and associating them with the unit.
+     * (-- api-linter: core::0136::http-uri-suffix=disabled
+     *     aip.dev/not-precedent: We need to do this because "move in" is a phrasal
+     *     verb and the api-linter doesn't support using them. --)
+     * </pre>
+     */
+    public com.saltoapis.nebula.unit.v1.MoveInUnitResponse moveInUnit(com.saltoapis.nebula.unit.v1.MoveInUnitRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveInUnitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Move out a unit
+     * Moves out a unit by deleting all the occupants belonging to it. This process
+     * implicitly entails the blocking of the keys that were active within the
+     * unit. Moving out a unit will not delete the access rights and the
+     * associated access points that belong to the unit.
+     * (-- api-linter: core::0136::http-uri-suffix=disabled
+     *     aip.dev/not-precedent: We need to do this because "move out" is a phrasal
+     *     verb and the api-linter doesn't support using them. --)
+     * </pre>
+     */
+    public com.saltoapis.nebula.unit.v1.MoveOutUnitResponse moveOutUnit(com.saltoapis.nebula.unit.v1.MoveOutUnitRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMoveOutUnitMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1027,6 +1184,39 @@ public final class UnitServiceGrpc {
 
     /**
      * <pre>
+     * Move in a unit
+     * Moves in a unit by creating new occupants and associating them with the unit.
+     * (-- api-linter: core::0136::http-uri-suffix=disabled
+     *     aip.dev/not-precedent: We need to do this because "move in" is a phrasal
+     *     verb and the api-linter doesn't support using them. --)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.unit.v1.MoveInUnitResponse> moveInUnit(
+        com.saltoapis.nebula.unit.v1.MoveInUnitRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMoveInUnitMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Move out a unit
+     * Moves out a unit by deleting all the occupants belonging to it. This process
+     * implicitly entails the blocking of the keys that were active within the
+     * unit. Moving out a unit will not delete the access rights and the
+     * associated access points that belong to the unit.
+     * (-- api-linter: core::0136::http-uri-suffix=disabled
+     *     aip.dev/not-precedent: We need to do this because "move out" is a phrasal
+     *     verb and the api-linter doesn't support using them. --)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.unit.v1.MoveOutUnitResponse> moveOutUnit(
+        com.saltoapis.nebula.unit.v1.MoveOutUnitRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMoveOutUnitMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Create a policy
      * Creates a new policy.
      * </pre>
@@ -1106,12 +1296,14 @@ public final class UnitServiceGrpc {
   private static final int METHODID_UPDATE_UNIT = 3;
   private static final int METHODID_DELETE_UNIT = 4;
   private static final int METHODID_CLEAN_OUT_UNIT = 5;
-  private static final int METHODID_CREATE_POLICY = 6;
-  private static final int METHODID_GET_POLICY = 7;
-  private static final int METHODID_LIST_POLICIES = 8;
-  private static final int METHODID_UPDATE_POLICY = 9;
-  private static final int METHODID_DELETE_POLICY = 10;
-  private static final int METHODID_TEST_PERMISSIONS = 11;
+  private static final int METHODID_MOVE_IN_UNIT = 6;
+  private static final int METHODID_MOVE_OUT_UNIT = 7;
+  private static final int METHODID_CREATE_POLICY = 8;
+  private static final int METHODID_GET_POLICY = 9;
+  private static final int METHODID_LIST_POLICIES = 10;
+  private static final int METHODID_UPDATE_POLICY = 11;
+  private static final int METHODID_DELETE_POLICY = 12;
+  private static final int METHODID_TEST_PERMISSIONS = 13;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1153,6 +1345,14 @@ public final class UnitServiceGrpc {
         case METHODID_CLEAN_OUT_UNIT:
           serviceImpl.cleanOutUnit((com.saltoapis.nebula.unit.v1.CleanOutUnitRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.unit.v1.CleanOutUnitResponse>) responseObserver);
+          break;
+        case METHODID_MOVE_IN_UNIT:
+          serviceImpl.moveInUnit((com.saltoapis.nebula.unit.v1.MoveInUnitRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.unit.v1.MoveInUnitResponse>) responseObserver);
+          break;
+        case METHODID_MOVE_OUT_UNIT:
+          serviceImpl.moveOutUnit((com.saltoapis.nebula.unit.v1.MoveOutUnitRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.unit.v1.MoveOutUnitResponse>) responseObserver);
           break;
         case METHODID_CREATE_POLICY:
           serviceImpl.createPolicy((com.saltoapis.nebula.unit.v1.CreatePolicyRequest) request,
@@ -1238,6 +1438,20 @@ public final class UnitServiceGrpc {
               com.saltoapis.nebula.unit.v1.CleanOutUnitRequest,
               com.saltoapis.nebula.unit.v1.CleanOutUnitResponse>(
                 service, METHODID_CLEAN_OUT_UNIT)))
+        .addMethod(
+          getMoveInUnitMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.unit.v1.MoveInUnitRequest,
+              com.saltoapis.nebula.unit.v1.MoveInUnitResponse>(
+                service, METHODID_MOVE_IN_UNIT)))
+        .addMethod(
+          getMoveOutUnitMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.unit.v1.MoveOutUnitRequest,
+              com.saltoapis.nebula.unit.v1.MoveOutUnitResponse>(
+                service, METHODID_MOVE_OUT_UNIT)))
         .addMethod(
           getCreatePolicyMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1334,6 +1548,8 @@ public final class UnitServiceGrpc {
               .addMethod(getUpdateUnitMethod())
               .addMethod(getDeleteUnitMethod())
               .addMethod(getCleanOutUnitMethod())
+              .addMethod(getMoveInUnitMethod())
+              .addMethod(getMoveOutUnitMethod())
               .addMethod(getCreatePolicyMethod())
               .addMethod(getGetPolicyMethod())
               .addMethod(getListPoliciesMethod())
