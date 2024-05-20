@@ -25,7 +25,6 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
-        "io.grpc:grpc-okhttp:%s" % GRPC_JAVA_VERSION,
         "io.grpc:grpc-protobuf:%s" % GRPC_JAVA_VERSION,
         "io.grpc:grpc-stub:%s" % GRPC_JAVA_VERSION,
         "com.google.protobuf:protobuf-java:4.%s" % PROTOBUF_VERSION,
@@ -49,29 +48,10 @@ http_archive(
 
 load("@rules_build_secrets//lib:secrets.bzl", "environment_secrets")
 
-# define our environment vars
-environment_secrets(
-    name="env_build", 
-    entries = {
-        "ANDROID_MIN_SDK_VERSION": "<REQUIRED>",
-        "ANDROID_SDK_VERSION": "<REQUIRED>",
-        "ANDROID_BUILD_TOOLS_VERSION": "<REQUIRED>",
-    },
-)
-
 environment_secrets(
     name="env_publish", 
     entries = {
         "GITHUB_ACTOR": "",
         "GITHUB_TOKEN": "",
     },
-)
-
-load("@env_build//:secrets.bzl","ANDROID_SDK_VERSION", "ANDROID_BUILD_TOOLS_VERSION")
-
-# locate android sdk
-android_sdk_repository(
-    name = "androidsdk",
-    api_level = int(ANDROID_SDK_VERSION),
-    build_tools_version = ANDROID_BUILD_TOOLS_VERSION,
 )
