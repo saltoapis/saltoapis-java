@@ -54,7 +54,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_ = "";
   /**
    * <pre>
-   * The parent resource name. For example, `installations/surelock-homes-hq`.
+   * The parent resource name. For example: `installations/surelock-homes-hq`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -75,7 +75,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The parent resource name. For example, `installations/surelock-homes-hq`.
+   * The parent resource name. For example: `installations/surelock-homes-hq`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -650,7 +650,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * The parent resource name. For example, `installations/surelock-homes-hq`.
+     * The parent resource name. For example: `installations/surelock-homes-hq`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -670,7 +670,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent resource name. For example, `installations/surelock-homes-hq`.
+     * The parent resource name. For example: `installations/surelock-homes-hq`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent resource name. For example, `installations/surelock-homes-hq`.
+     * The parent resource name. For example: `installations/surelock-homes-hq`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent resource name. For example, `installations/surelock-homes-hq`.
+     * The parent resource name. For example: `installations/surelock-homes-hq`.
      * </pre>
      *
      * <code>string parent = 1;</code>
@@ -722,7 +722,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent resource name. For example, `installations/surelock-homes-hq`.
+     * The parent resource name. For example: `installations/surelock-homes-hq`.
      * </pre>
      *
      * <code>string parent = 1;</code>

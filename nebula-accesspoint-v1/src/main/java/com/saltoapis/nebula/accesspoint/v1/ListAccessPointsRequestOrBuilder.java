@@ -10,7 +10,7 @@ public interface ListAccessPointsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The parent resource name. For example, `installations/surelock-homes-hq`.
+   * The parent resource name. For example: `installations/surelock-homes-hq`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -19,7 +19,7 @@ public interface ListAccessPointsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * The parent resource name. For example, `installations/surelock-homes-hq`.
+   * The parent resource name. For example: `installations/surelock-homes-hq`.
    * </pre>
    *
    * <code>string parent = 1;</code>
