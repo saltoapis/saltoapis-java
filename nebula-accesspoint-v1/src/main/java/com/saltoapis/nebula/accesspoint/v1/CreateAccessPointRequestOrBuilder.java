@@ -11,7 +11,7 @@ public interface CreateAccessPointRequestOrBuilder extends
   /**
    * <pre>
    * Resource name of the parent resource under which the access point is created.
-   * For example, `installations/surelock-homes-hq`.
+   * For example: `installations/surelock-homes-hq`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -21,7 +21,7 @@ public interface CreateAccessPointRequestOrBuilder extends
   /**
    * <pre>
    * Resource name of the parent resource under which the access point is created.
-   * For example, `installations/surelock-homes-hq`.
+   * For example: `installations/surelock-homes-hq`.
    * </pre>
    *
    * <code>string parent = 1;</code>
