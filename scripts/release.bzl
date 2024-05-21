@@ -169,6 +169,9 @@ generate_pom = rule(
 ############################
 
 def _create_settings_xml(ctx):
+    username = ctx.var.get('GITHUB_ACTOR', '') 
+    password = ctx.var.get('GITHUB_TOKEN', '')
+    
     settings_content = """<?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -182,8 +185,8 @@ def _create_settings_xml(ctx):
     </servers>
 </settings>""".format(
         id = ctx.label.name,
-        username = ctx.attr.user,
-        password = ctx.attr.password,
+        username = username,
+        password = password,
     )
 
     settings_file = ctx.actions.declare_file('settings.xml')
@@ -253,8 +256,6 @@ publish_to_artifactory = rule(
             mandatory = True,
         ),
         'requires_auth': attr.bool(),
-        'user': attr.string(),
-        'password': attr.string(),
     },
     executable = True,
     implementation = _publish_to_artifactory,

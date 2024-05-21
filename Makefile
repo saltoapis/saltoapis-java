@@ -26,7 +26,7 @@ test:
 
 .PHONY: release
 release:
-	bazel run :publish_all --define version=$(VERSION_NOPREFIX)
+	bazel run :publish_all --define version=$(VERSION_NOPREFIX) --define GITHUB_ACTOR=$(GITHUB_ACTOR) --define GITHUB_TOKEN=$(GITHUB_TOKEN)
 
 .PHONY: clean
 clean:

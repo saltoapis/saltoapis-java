@@ -1,7 +1,6 @@
 load("@rules_jvm_external//:defs.bzl", "artifact")
 load("//scripts:release.bzl", "generate_pom", "publish_to_artifactory")
 load("@rules_java//java:defs.bzl", "java_library")
-load("@env_publish//:secrets.bzl","GITHUB_ACTOR", "GITHUB_TOKEN")
 
 def load_rules(lib_name, internal_dependencies, extra_info):
     """A macro that loads common rules for all the packages
@@ -47,6 +46,4 @@ def load_rules(lib_name, internal_dependencies, extra_info):
         sources = ':libbuild-src.jar',
         url = 'https://maven.pkg.github.com/saltoapis/saltoapis-java',
         requires_auth = True,
-        user = GITHUB_ACTOR,
-        password = GITHUB_TOKEN,
     )
