@@ -24,8 +24,9 @@ def load_rules(lib_name, internal_dependencies, extra_info):
 
             artifact("io.grpc:grpc-api"),
             artifact("com.google.guava:guava"),
-
-        ] + ["{}:build".format(dep) for dep in internal_dependencies],
+        ] 
+            + ["{}:build".format(dep) for dep in internal_dependencies]
+            + extra_info.get('additional_deps', []),
         tags = ['maven_coordinates=%s:%s:{pom_version}' % (group_name, lib_name) ],
     )
     

@@ -31,6 +31,7 @@ maven_install(
         "io.grpc:grpc-stub:%s" % GRPC_JAVA_VERSION,
         "com.google.protobuf:protobuf-java:4.%s" % PROTOBUF_VERSION,
         "javax.annotation:javax.annotation-api:1.3.2",
+        "com.fasterxml.jackson.jr:jackson-jr-objects:2.17.1",
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
