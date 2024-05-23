@@ -37,14 +37,6 @@ public enum OpeningMode
    * <code>TOGGLE = 2;</code>
    */
   TOGGLE(2),
-  /**
-   * <pre>
-   * Automatic opening for ICAD.
-   * </pre>
-   *
-   * <code>RING_AND_OPEN = 13;</code>
-   */
-  RING_AND_OPEN(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -81,14 +73,6 @@ public enum OpeningMode
    * <code>TOGGLE = 2;</code>
    */
   public static final int TOGGLE_VALUE = 2;
-  /**
-   * <pre>
-   * Automatic opening for ICAD.
-   * </pre>
-   *
-   * <code>RING_AND_OPEN = 13;</code>
-   */
-  public static final int RING_AND_OPEN_VALUE = 13;
 
 
   public final int getNumber() {
@@ -118,7 +102,6 @@ public enum OpeningMode
       case 0: return OPENING_MODE_UNSPECIFIED;
       case 1: return OFFICE;
       case 2: return TOGGLE;
-      case 13: return RING_AND_OPEN;
       default: return null;
     }
   }
