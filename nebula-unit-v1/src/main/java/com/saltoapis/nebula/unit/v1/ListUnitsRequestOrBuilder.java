@@ -10,7 +10,7 @@ public interface ListUnitsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The parent resource name, for example, `installations/surelock-homes-hq`.
+   * The parent resource name, for example: `installations/surelock-homes-hq`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -19,7 +19,7 @@ public interface ListUnitsRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * The parent resource name, for example, `installations/surelock-homes-hq`.
+   * The parent resource name, for example: `installations/surelock-homes-hq`.
    * </pre>
    *
    * <code>string parent = 1;</code>
