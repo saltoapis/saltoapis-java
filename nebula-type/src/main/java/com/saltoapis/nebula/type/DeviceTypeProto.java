@@ -34,16 +34,16 @@ public final class DeviceTypeProto {
   static {
     java.lang.String[] descriptorData = {
       "\n#salto/nebula/type/device_type.proto\022\021s" +
-      "alto.nebula.type*\214\001\n\nDeviceType\022\033\n\027DEVIC" +
+      "alto.nebula.type*\233\001\n\nDeviceType\022\033\n\027DEVIC" +
       "E_TYPE_UNSPECIFIED\020\000\022\023\n\017ELECTRONIC_LOCK\020" +
       "\001\022\013\n\007GATEWAY\020\002\022\014\n\010EXTENDER\020\003\022\013\n\007ENCODER\020" +
-      "\004\022\016\n\nCONTROLLER\020\005\022\024\n\020INTERCOM_ADAPTOR\020\006B" +
-      "\320\001\n\031com.saltoapis.nebula.typeB\017DeviceTyp" +
-      "eProtoP\001ZLgithub.com/saltoapis-internal/" +
-      "saltoapis-go/nebula/type/devicetype;devi" +
-      "cetype\252\002\025Saltoapis.Nebula.Type\312\002\025Saltoap" +
-      "is\\Nebula\\Type\342\002!GPBMetadata\\Saltoapis\\N" +
-      "ebula\\Typeb\006proto3"
+      "\004\022\016\n\nCONTROLLER\020\005\022\024\n\020INTERCOM_ADAPTOR\020\006\022" +
+      "\r\n\tUNNAMED_1\020\007B\320\001\n\031com.saltoapis.nebula." +
+      "typeB\017DeviceTypeProtoP\001ZLgithub.com/salt" +
+      "oapis-internal/saltoapis-go/nebula/type/" +
+      "devicetype;devicetype\252\002\025Saltoapis.Nebula" +
+      ".Type\312\002\025Saltoapis\\Nebula\\Type\342\002!GPBMetad" +
+      "ata\\Saltoapis\\Nebula\\Typeb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
