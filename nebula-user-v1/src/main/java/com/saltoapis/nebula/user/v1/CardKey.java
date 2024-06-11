@@ -31,7 +31,6 @@ private static final long serialVersionUID = 0L;
   }
   private CardKey() {
     name_ = "";
-    uid_ = "";
     state_ = 0;
   }
 
@@ -221,6 +220,46 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:salto.nebula.user.v1.CardKey.State)
   }
 
+  private int cardIdCase_ = 0;
+  @SuppressWarnings("serial")
+  private java.lang.Object cardId_;
+  public enum CardIdCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    UID(2),
+    CARDID_NOT_SET(0);
+    private final int value;
+    private CardIdCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CardIdCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CardIdCase forNumber(int value) {
+      switch (value) {
+        case 2: return UID;
+        case 0: return CARDID_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public CardIdCase
+  getCardIdCase() {
+    return CardIdCase.forNumber(
+        cardIdCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -273,28 +312,41 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int UID_FIELD_NUMBER = 2;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object uid_ = "";
   /**
    * <pre>
    * Unique identifier of the physical card. Length dependent of technology.
    * Max length for ISO14443-3 is 10 bytes.
-   * (-- api-linter: salto::9001::internal-annotation=disabled --)
+   * </pre>
+   *
+   * <code>string uid = 2;</code>
+   * @return Whether the uid field is set.
+   */
+  public boolean hasUid() {
+    return cardIdCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Unique identifier of the physical card. Length dependent of technology.
+   * Max length for ISO14443-3 is 10 bytes.
    * </pre>
    *
    * <code>string uid = 2;</code>
    * @return The uid.
    */
-  @java.lang.Override
   public java.lang.String getUid() {
-    java.lang.Object ref = uid_;
+    java.lang.Object ref = "";
+    if (cardIdCase_ == 2) {
+      ref = cardId_;
+    }
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      uid_ = s;
+      if (cardIdCase_ == 2) {
+        cardId_ = s;
+      }
       return s;
     }
   }
@@ -302,21 +354,24 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Unique identifier of the physical card. Length dependent of technology.
    * Max length for ISO14443-3 is 10 bytes.
-   * (-- api-linter: salto::9001::internal-annotation=disabled --)
    * </pre>
    *
    * <code>string uid = 2;</code>
    * @return The bytes for uid.
    */
-  @java.lang.Override
   public com.google.protobuf.ByteString
       getUidBytes() {
-    java.lang.Object ref = uid_;
+    java.lang.Object ref = "";
+    if (cardIdCase_ == 2) {
+      ref = cardId_;
+    }
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      uid_ = b;
+      if (cardIdCase_ == 2) {
+        cardId_ = b;
+      }
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -399,8 +454,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 2, uid_);
+    if (cardIdCase_ == 2) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, cardId_);
     }
     if (state_ != com.saltoapis.nebula.user.v1.CardKey.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(3, state_);
@@ -420,8 +475,8 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessage.isStringEmpty(uid_)) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, uid_);
+    if (cardIdCase_ == 2) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, cardId_);
     }
     if (state_ != com.saltoapis.nebula.user.v1.CardKey.State.STATE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
@@ -448,11 +503,18 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (!getUid()
-        .equals(other.getUid())) return false;
     if (state_ != other.state_) return false;
     if (getOutdated()
         != other.getOutdated()) return false;
+    if (!getCardIdCase().equals(other.getCardIdCase())) return false;
+    switch (cardIdCase_) {
+      case 2:
+        if (!getUid()
+            .equals(other.getUid())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -466,13 +528,19 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + UID_FIELD_NUMBER;
-    hash = (53 * hash) + getUid().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     hash = (37 * hash) + OUTDATED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getOutdated());
+    switch (cardIdCase_) {
+      case 2:
+        hash = (37 * hash) + UID_FIELD_NUMBER;
+        hash = (53 * hash) + getUid().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -609,9 +677,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      uid_ = "";
       state_ = 0;
       outdated_ = false;
+      cardIdCase_ = 0;
+      cardId_ = null;
       return this;
     }
 
@@ -639,6 +708,7 @@ private static final long serialVersionUID = 0L;
     public com.saltoapis.nebula.user.v1.CardKey buildPartial() {
       com.saltoapis.nebula.user.v1.CardKey result = new com.saltoapis.nebula.user.v1.CardKey(this);
       if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -648,15 +718,17 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.uid_ = uid_;
-      }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.state_ = state_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.outdated_ = outdated_;
       }
+    }
+
+    private void buildPartialOneofs(com.saltoapis.nebula.user.v1.CardKey result) {
+      result.cardIdCase_ = cardIdCase_;
+      result.cardId_ = this.cardId_;
     }
 
     @java.lang.Override
@@ -676,16 +748,22 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (!other.getUid().isEmpty()) {
-        uid_ = other.uid_;
-        bitField0_ |= 0x00000002;
-        onChanged();
-      }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
       if (other.getOutdated() != false) {
         setOutdated(other.getOutdated());
+      }
+      switch (other.getCardIdCase()) {
+        case UID: {
+          cardIdCase_ = 2;
+          cardId_ = other.cardId_;
+          onChanged();
+          break;
+        }
+        case CARDID_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -719,8 +797,9 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 10
             case 18: {
-              uid_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000002;
+              java.lang.String s = input.readStringRequireUtf8();
+              cardIdCase_ = 2;
+              cardId_ = s;
               break;
             } // case 18
             case 24: {
@@ -748,6 +827,21 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int cardIdCase_ = 0;
+    private java.lang.Object cardId_;
+    public CardIdCase
+        getCardIdCase() {
+      return CardIdCase.forNumber(
+          cardIdCase_);
+    }
+
+    public Builder clearCardId() {
+      cardIdCase_ = 0;
+      cardId_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
@@ -852,24 +946,41 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object uid_ = "";
     /**
      * <pre>
      * Unique identifier of the physical card. Length dependent of technology.
      * Max length for ISO14443-3 is 10 bytes.
-     * (-- api-linter: salto::9001::internal-annotation=disabled --)
+     * </pre>
+     *
+     * <code>string uid = 2;</code>
+     * @return Whether the uid field is set.
+     */
+    @java.lang.Override
+    public boolean hasUid() {
+      return cardIdCase_ == 2;
+    }
+    /**
+     * <pre>
+     * Unique identifier of the physical card. Length dependent of technology.
+     * Max length for ISO14443-3 is 10 bytes.
      * </pre>
      *
      * <code>string uid = 2;</code>
      * @return The uid.
      */
+    @java.lang.Override
     public java.lang.String getUid() {
-      java.lang.Object ref = uid_;
+      java.lang.Object ref = "";
+      if (cardIdCase_ == 2) {
+        ref = cardId_;
+      }
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        uid_ = s;
+        if (cardIdCase_ == 2) {
+          cardId_ = s;
+        }
         return s;
       } else {
         return (java.lang.String) ref;
@@ -879,20 +990,25 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Unique identifier of the physical card. Length dependent of technology.
      * Max length for ISO14443-3 is 10 bytes.
-     * (-- api-linter: salto::9001::internal-annotation=disabled --)
      * </pre>
      *
      * <code>string uid = 2;</code>
      * @return The bytes for uid.
      */
+    @java.lang.Override
     public com.google.protobuf.ByteString
         getUidBytes() {
-      java.lang.Object ref = uid_;
+      java.lang.Object ref = "";
+      if (cardIdCase_ == 2) {
+        ref = cardId_;
+      }
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        uid_ = b;
+        if (cardIdCase_ == 2) {
+          cardId_ = b;
+        }
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -902,7 +1018,6 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Unique identifier of the physical card. Length dependent of technology.
      * Max length for ISO14443-3 is 10 bytes.
-     * (-- api-linter: salto::9001::internal-annotation=disabled --)
      * </pre>
      *
      * <code>string uid = 2;</code>
@@ -912,8 +1027,8 @@ private static final long serialVersionUID = 0L;
     public Builder setUid(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
-      uid_ = value;
-      bitField0_ |= 0x00000002;
+      cardIdCase_ = 2;
+      cardId_ = value;
       onChanged();
       return this;
     }
@@ -921,23 +1036,23 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Unique identifier of the physical card. Length dependent of technology.
      * Max length for ISO14443-3 is 10 bytes.
-     * (-- api-linter: salto::9001::internal-annotation=disabled --)
      * </pre>
      *
      * <code>string uid = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearUid() {
-      uid_ = getDefaultInstance().getUid();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
+      if (cardIdCase_ == 2) {
+        cardIdCase_ = 0;
+        cardId_ = null;
+        onChanged();
+      }
       return this;
     }
     /**
      * <pre>
      * Unique identifier of the physical card. Length dependent of technology.
      * Max length for ISO14443-3 is 10 bytes.
-     * (-- api-linter: salto::9001::internal-annotation=disabled --)
      * </pre>
      *
      * <code>string uid = 2;</code>
@@ -948,8 +1063,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
-      uid_ = value;
-      bitField0_ |= 0x00000002;
+      cardIdCase_ = 2;
+      cardId_ = value;
       onChanged();
       return this;
     }

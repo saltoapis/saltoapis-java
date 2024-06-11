@@ -34,7 +34,16 @@ public interface AssignCardKeyRequestOrBuilder extends
    * <pre>
    * Unique identifier of the physical card. Length dependent of technology.
    * Max length for ISO14443-3 is 10 bytes.
-   * (-- api-linter: salto::9001::internal-annotation=disabled --)
+   * </pre>
+   *
+   * <code>string uid = 2;</code>
+   * @return Whether the uid field is set.
+   */
+  boolean hasUid();
+  /**
+   * <pre>
+   * Unique identifier of the physical card. Length dependent of technology.
+   * Max length for ISO14443-3 is 10 bytes.
    * </pre>
    *
    * <code>string uid = 2;</code>
@@ -45,7 +54,6 @@ public interface AssignCardKeyRequestOrBuilder extends
    * <pre>
    * Unique identifier of the physical card. Length dependent of technology.
    * Max length for ISO14443-3 is 10 bytes.
-   * (-- api-linter: salto::9001::internal-annotation=disabled --)
    * </pre>
    *
    * <code>string uid = 2;</code>
@@ -53,4 +61,6 @@ public interface AssignCardKeyRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUidBytes();
+
+  com.saltoapis.nebula.user.v1.AssignCardKeyRequest.CardIdCase getCardIdCase();
 }
