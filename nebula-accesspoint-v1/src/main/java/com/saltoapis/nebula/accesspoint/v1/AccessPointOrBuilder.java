@@ -147,5 +147,32 @@ public interface AccessPointOrBuilder extends
   com.google.protobuf.ByteString
       getCalendarBytes();
 
+  /**
+   * <pre>
+   * Enables or disables card key updates. This parameter doesn't have any
+   * effect on access points where its associated device is offline.
+   * This field is optional to maintain backward compatibility. The server
+   * checks for its presence to determine if clients are not updated and
+   * assigns a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional bool card_key_updater = 6;</code>
+   * @return Whether the cardKeyUpdater field is set.
+   */
+  boolean hasCardKeyUpdater();
+  /**
+   * <pre>
+   * Enables or disables card key updates. This parameter doesn't have any
+   * effect on access points where its associated device is offline.
+   * This field is optional to maintain backward compatibility. The server
+   * checks for its presence to determine if clients are not updated and
+   * assigns a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional bool card_key_updater = 6;</code>
+   * @return The cardKeyUpdater.
+   */
+  boolean getCardKeyUpdater();
+
   com.saltoapis.nebula.accesspoint.v1.AccessPoint.OpeningModeCase getOpeningModeCase();
 }
