@@ -364,6 +364,41 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int CARD_KEY_UPDATER_FIELD_NUMBER = 6;
+  private boolean cardKeyUpdater_ = false;
+  /**
+   * <pre>
+   * Enables or disables card key updates. This parameter doesn't have any
+   * effect on access points where its associated device is offline.
+   * This field is optional to maintain backward compatibility. The server
+   * checks for its presence to determine if clients are not updated and
+   * assigns a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional bool card_key_updater = 6;</code>
+   * @return Whether the cardKeyUpdater field is set.
+   */
+  @java.lang.Override
+  public boolean hasCardKeyUpdater() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * Enables or disables card key updates. This parameter doesn't have any
+   * effect on access points where its associated device is offline.
+   * This field is optional to maintain backward compatibility. The server
+   * checks for its presence to determine if clients are not updated and
+   * assigns a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional bool card_key_updater = 6;</code>
+   * @return The cardKeyUpdater.
+   */
+  @java.lang.Override
+  public boolean getCardKeyUpdater() {
+    return cardKeyUpdater_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -393,6 +428,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 5, calendar_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeBool(6, cardKeyUpdater_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -418,6 +456,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(5, calendar_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(6, cardKeyUpdater_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -441,6 +483,11 @@ private static final long serialVersionUID = 0L;
     if (hasCalendar()) {
       if (!getCalendar()
           .equals(other.getCalendar())) return false;
+    }
+    if (hasCardKeyUpdater() != other.hasCardKeyUpdater()) return false;
+    if (hasCardKeyUpdater()) {
+      if (getCardKeyUpdater()
+          != other.getCardKeyUpdater()) return false;
     }
     if (!getOpeningModeCase().equals(other.getOpeningModeCase())) return false;
     switch (openingModeCase_) {
@@ -473,6 +520,11 @@ private static final long serialVersionUID = 0L;
     if (hasCalendar()) {
       hash = (37 * hash) + CALENDAR_FIELD_NUMBER;
       hash = (53 * hash) + getCalendar().hashCode();
+    }
+    if (hasCardKeyUpdater()) {
+      hash = (37 * hash) + CARD_KEY_UPDATER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCardKeyUpdater());
     }
     switch (openingModeCase_) {
       case 3:
@@ -624,6 +676,7 @@ private static final long serialVersionUID = 0L;
       name_ = "";
       displayName_ = "";
       calendar_ = "";
+      cardKeyUpdater_ = false;
       openingModeCase_ = 0;
       openingMode_ = null;
       return this;
@@ -671,6 +724,10 @@ private static final long serialVersionUID = 0L;
         result.calendar_ = calendar_;
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.cardKeyUpdater_ = cardKeyUpdater_;
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -705,6 +762,9 @@ private static final long serialVersionUID = 0L;
         calendar_ = other.calendar_;
         bitField0_ |= 0x00000010;
         onChanged();
+      }
+      if (other.hasCardKeyUpdater()) {
+        setCardKeyUpdater(other.getCardKeyUpdater());
       }
       switch (other.getOpeningModeCase()) {
         case FIXED: {
@@ -774,6 +834,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
+            case 48: {
+              cardKeyUpdater_ = input.readBool();
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 48
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1328,6 +1393,78 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       calendar_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean cardKeyUpdater_ ;
+    /**
+     * <pre>
+     * Enables or disables card key updates. This parameter doesn't have any
+     * effect on access points where its associated device is offline.
+     * This field is optional to maintain backward compatibility. The server
+     * checks for its presence to determine if clients are not updated and
+     * assigns a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional bool card_key_updater = 6;</code>
+     * @return Whether the cardKeyUpdater field is set.
+     */
+    @java.lang.Override
+    public boolean hasCardKeyUpdater() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * Enables or disables card key updates. This parameter doesn't have any
+     * effect on access points where its associated device is offline.
+     * This field is optional to maintain backward compatibility. The server
+     * checks for its presence to determine if clients are not updated and
+     * assigns a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional bool card_key_updater = 6;</code>
+     * @return The cardKeyUpdater.
+     */
+    @java.lang.Override
+    public boolean getCardKeyUpdater() {
+      return cardKeyUpdater_;
+    }
+    /**
+     * <pre>
+     * Enables or disables card key updates. This parameter doesn't have any
+     * effect on access points where its associated device is offline.
+     * This field is optional to maintain backward compatibility. The server
+     * checks for its presence to determine if clients are not updated and
+     * assigns a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional bool card_key_updater = 6;</code>
+     * @param value The cardKeyUpdater to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCardKeyUpdater(boolean value) {
+
+      cardKeyUpdater_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Enables or disables card key updates. This parameter doesn't have any
+     * effect on access points where its associated device is offline.
+     * This field is optional to maintain backward compatibility. The server
+     * checks for its presence to determine if clients are not updated and
+     * assigns a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional bool card_key_updater = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCardKeyUpdater() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      cardKeyUpdater_ = false;
       onChanged();
       return this;
     }
