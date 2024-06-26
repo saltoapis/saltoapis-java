@@ -159,6 +159,21 @@ public final class TypesProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_event_v1_UnitMovedOut_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_event_v1_UnitCreated_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_event_v1_UnitCreated_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_event_v1_UnitUpdated_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_event_v1_UnitUpdated_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_event_v1_UnitDeleted_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_event_v1_UnitDeleted_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -240,13 +255,17 @@ public final class TypesProto {
       "salto.nebula.user.v1.WalletKey\"7\n\013UnitMo" +
       "vedIn\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit." +
       "v1.Unit\"8\n\014UnitMovedOut\022(\n\004unit\030\001 \001(\0132\032." +
-      "salto.nebula.unit.v1.UnitB\317\001\n\035com.saltoa" +
-      "pis.nebula.event.v1B\nTypesProtoP\001Z@githu" +
-      "b.com/saltoapis-internal/saltoapis-go/ne" +
-      "bula/event/v1;event\252\002\031Saltoapis.Nebula.E" +
-      "vent.V1\312\002\031Saltoapis\\Nebula\\Event\\V1\342\002%GP" +
-      "BMetadata\\Saltoapis\\Nebula\\Event\\V1b\006pro" +
-      "to3"
+      "salto.nebula.unit.v1.Unit\"7\n\013UnitCreated" +
+      "\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v1.Un" +
+      "it\"7\n\013UnitUpdated\022(\n\004unit\030\001 \001(\0132\032.salto." +
+      "nebula.unit.v1.Unit\"7\n\013UnitDeleted\022(\n\004un" +
+      "it\030\001 \001(\0132\032.salto.nebula.unit.v1.UnitB\317\001\n" +
+      "\035com.saltoapis.nebula.event.v1B\nTypesPro" +
+      "toP\001Z@github.com/saltoapis-internal/salt" +
+      "oapis-go/nebula/event/v1;event\252\002\031Saltoap" +
+      "is.Nebula.Event.V1\312\002\031Saltoapis\\Nebula\\Ev" +
+      "ent\\V1\342\002%GPBMetadata\\Saltoapis\\Nebula\\Ev" +
+      "ent\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -417,6 +436,24 @@ public final class TypesProto {
     internal_static_salto_nebula_event_v1_UnitMovedOut_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitMovedOut_descriptor,
+        new java.lang.String[] { "Unit", });
+    internal_static_salto_nebula_event_v1_UnitCreated_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_salto_nebula_event_v1_UnitCreated_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_event_v1_UnitCreated_descriptor,
+        new java.lang.String[] { "Unit", });
+    internal_static_salto_nebula_event_v1_UnitUpdated_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_salto_nebula_event_v1_UnitUpdated_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_event_v1_UnitUpdated_descriptor,
+        new java.lang.String[] { "Unit", });
+    internal_static_salto_nebula_event_v1_UnitDeleted_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_salto_nebula_event_v1_UnitDeleted_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_event_v1_UnitDeleted_descriptor,
         new java.lang.String[] { "Unit", });
     descriptor.resolveAllFeaturesImmutable();
     com.saltoapis.nebula.accesspoint.v1.AccessPointProto.getDescriptor();
