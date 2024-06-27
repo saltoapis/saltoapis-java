@@ -174,5 +174,35 @@ public interface AccessPointOrBuilder extends
    */
   boolean getCardKeyUpdater();
 
+  /**
+   * <pre>
+   * The duration the access point remains unlocked. This field is optional
+   * for the server to check for its presence and assign a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+   * @return Whether the unlockDuration field is set.
+   */
+  boolean hasUnlockDuration();
+  /**
+   * <pre>
+   * The duration the access point remains unlocked. This field is optional
+   * for the server to check for its presence and assign a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+   * @return The unlockDuration.
+   */
+  com.google.protobuf.Duration getUnlockDuration();
+  /**
+   * <pre>
+   * The duration the access point remains unlocked. This field is optional
+   * for the server to check for its presence and assign a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getUnlockDurationOrBuilder();
+
   com.saltoapis.nebula.accesspoint.v1.AccessPoint.OpeningModeCase getOpeningModeCase();
 }

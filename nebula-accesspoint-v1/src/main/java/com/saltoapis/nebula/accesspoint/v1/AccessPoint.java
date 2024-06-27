@@ -399,6 +399,47 @@ private static final long serialVersionUID = 0L;
     return cardKeyUpdater_;
   }
 
+  public static final int UNLOCK_DURATION_FIELD_NUMBER = 7;
+  private com.google.protobuf.Duration unlockDuration_;
+  /**
+   * <pre>
+   * The duration the access point remains unlocked. This field is optional
+   * for the server to check for its presence and assign a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+   * @return Whether the unlockDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnlockDuration() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * The duration the access point remains unlocked. This field is optional
+   * for the server to check for its presence and assign a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+   * @return The unlockDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getUnlockDuration() {
+    return unlockDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : unlockDuration_;
+  }
+  /**
+   * <pre>
+   * The duration the access point remains unlocked. This field is optional
+   * for the server to check for its presence and assign a default value if it's missing.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getUnlockDurationOrBuilder() {
+    return unlockDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : unlockDuration_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -431,6 +472,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(6, cardKeyUpdater_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(7, getUnlockDuration());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -460,6 +504,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, cardKeyUpdater_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getUnlockDuration());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -488,6 +536,11 @@ private static final long serialVersionUID = 0L;
     if (hasCardKeyUpdater()) {
       if (getCardKeyUpdater()
           != other.getCardKeyUpdater()) return false;
+    }
+    if (hasUnlockDuration() != other.hasUnlockDuration()) return false;
+    if (hasUnlockDuration()) {
+      if (!getUnlockDuration()
+          .equals(other.getUnlockDuration())) return false;
     }
     if (!getOpeningModeCase().equals(other.getOpeningModeCase())) return false;
     switch (openingModeCase_) {
@@ -525,6 +578,10 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CARD_KEY_UPDATER_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getCardKeyUpdater());
+    }
+    if (hasUnlockDuration()) {
+      hash = (37 * hash) + UNLOCK_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getUnlockDuration().hashCode();
     }
     switch (openingModeCase_) {
       case 3:
@@ -661,13 +718,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.saltoapis.nebula.accesspoint.v1.AccessPoint.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage
+              .alwaysUseFieldBuilders) {
+        getUnlockDurationFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -677,6 +740,11 @@ private static final long serialVersionUID = 0L;
       displayName_ = "";
       calendar_ = "";
       cardKeyUpdater_ = false;
+      unlockDuration_ = null;
+      if (unlockDurationBuilder_ != null) {
+        unlockDurationBuilder_.dispose();
+        unlockDurationBuilder_ = null;
+      }
       openingModeCase_ = 0;
       openingMode_ = null;
       return this;
@@ -728,6 +796,12 @@ private static final long serialVersionUID = 0L;
         result.cardKeyUpdater_ = cardKeyUpdater_;
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.unlockDuration_ = unlockDurationBuilder_ == null
+            ? unlockDuration_
+            : unlockDurationBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -765,6 +839,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCardKeyUpdater()) {
         setCardKeyUpdater(other.getCardKeyUpdater());
+      }
+      if (other.hasUnlockDuration()) {
+        mergeUnlockDuration(other.getUnlockDuration());
       }
       switch (other.getOpeningModeCase()) {
         case FIXED: {
@@ -839,6 +916,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 48
+            case 58: {
+              input.readMessage(
+                  getUnlockDurationFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1467,6 +1551,172 @@ private static final long serialVersionUID = 0L;
       cardKeyUpdater_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration unlockDuration_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> unlockDurationBuilder_;
+    /**
+     * <pre>
+     * The duration the access point remains unlocked. This field is optional
+     * for the server to check for its presence and assign a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+     * @return Whether the unlockDuration field is set.
+     */
+    public boolean hasUnlockDuration() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     * The duration the access point remains unlocked. This field is optional
+     * for the server to check for its presence and assign a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+     * @return The unlockDuration.
+     */
+    public com.google.protobuf.Duration getUnlockDuration() {
+      if (unlockDurationBuilder_ == null) {
+        return unlockDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : unlockDuration_;
+      } else {
+        return unlockDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The duration the access point remains unlocked. This field is optional
+     * for the server to check for its presence and assign a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+     */
+    public Builder setUnlockDuration(com.google.protobuf.Duration value) {
+      if (unlockDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        unlockDuration_ = value;
+      } else {
+        unlockDurationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The duration the access point remains unlocked. This field is optional
+     * for the server to check for its presence and assign a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+     */
+    public Builder setUnlockDuration(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (unlockDurationBuilder_ == null) {
+        unlockDuration_ = builderForValue.build();
+      } else {
+        unlockDurationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The duration the access point remains unlocked. This field is optional
+     * for the server to check for its presence and assign a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+     */
+    public Builder mergeUnlockDuration(com.google.protobuf.Duration value) {
+      if (unlockDurationBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0) &&
+          unlockDuration_ != null &&
+          unlockDuration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getUnlockDurationBuilder().mergeFrom(value);
+        } else {
+          unlockDuration_ = value;
+        }
+      } else {
+        unlockDurationBuilder_.mergeFrom(value);
+      }
+      if (unlockDuration_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The duration the access point remains unlocked. This field is optional
+     * for the server to check for its presence and assign a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+     */
+    public Builder clearUnlockDuration() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      unlockDuration_ = null;
+      if (unlockDurationBuilder_ != null) {
+        unlockDurationBuilder_.dispose();
+        unlockDurationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The duration the access point remains unlocked. This field is optional
+     * for the server to check for its presence and assign a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+     */
+    public com.google.protobuf.Duration.Builder getUnlockDurationBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getUnlockDurationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The duration the access point remains unlocked. This field is optional
+     * for the server to check for its presence and assign a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getUnlockDurationOrBuilder() {
+      if (unlockDurationBuilder_ != null) {
+        return unlockDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return unlockDuration_ == null ?
+            com.google.protobuf.Duration.getDefaultInstance() : unlockDuration_;
+      }
+    }
+    /**
+     * <pre>
+     * The duration the access point remains unlocked. This field is optional
+     * for the server to check for its presence and assign a default value if it's missing.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Duration unlock_duration = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+        getUnlockDurationFieldBuilder() {
+      if (unlockDurationBuilder_ == null) {
+        unlockDurationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                getUnlockDuration(),
+                getParentForChildren(),
+                isClean());
+        unlockDuration_ = null;
+      }
+      return unlockDurationBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.accesspoint.v1.AccessPoint)

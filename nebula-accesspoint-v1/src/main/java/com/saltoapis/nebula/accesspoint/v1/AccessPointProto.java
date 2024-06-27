@@ -84,63 +84,67 @@ public final class AccessPointProto {
   static {
     java.lang.String[] descriptorData = {
       "\n.salto/nebula/accesspoint/v1/access_poi" +
-      "nt.proto\022\033salto.nebula.accesspoint.v1\032\033g" +
-      "oogle/protobuf/empty.proto\032 google/proto" +
-      "buf/field_mask.proto\032$salto/longrunning/" +
-      "v1/operation.proto\032$salto/nebula/type/op" +
-      "ening_mode.proto\"\336\001\n\013AccessPoint\022\014\n\004name" +
-      "\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022/\n\005fixed\030\003 " +
-      "\001(\0162\036.salto.nebula.type.OpeningModeH\000\022\022\n" +
-      "\010schedule\030\004 \001(\tH\000\022\025\n\010calendar\030\005 \001(\tH\001\210\001\001" +
-      "\022\035\n\020card_key_updater\030\006 \001(\010H\002\210\001\001B\016\n\014openi" +
-      "ng_modeB\013\n\t_calendarB\023\n\021_card_key_update" +
-      "r\"\234\001\n\030CreateAccessPointRequest\022\016\n\006parent" +
-      "\030\001 \001(\t\022\034\n\017access_point_id\030\002 \001(\tH\000\210\001\001\022>\n\014" +
-      "access_point\030\003 \001(\0132(.salto.nebula.access" +
-      "point.v1.AccessPointB\022\n\020_access_point_id" +
-      "\"%\n\025GetAccessPointRequest\022\014\n\004name\030\001 \001(\t\"" +
-      "r\n\027ListAccessPointsRequest\022\016\n\006parent\030\001 \001" +
-      "(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(" +
-      "\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\210\001\n\030" +
-      "ListAccessPointsResponse\022?\n\raccess_point" +
-      "s\030\001 \003(\0132(.salto.nebula.accesspoint.v1.Ac" +
-      "cessPoint\022\027\n\017next_page_token\030\002 \001(\t\022\022\n\nto" +
-      "tal_size\030\003 \001(\005\"\213\001\n\030UpdateAccessPointRequ" +
-      "est\022>\n\014access_point\030\001 \001(\0132(.salto.nebula" +
-      ".accesspoint.v1.AccessPoint\022/\n\013update_ma" +
-      "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\"(\n\030" +
-      "DeleteAccessPointRequest\022\014\n\004name\030\001 \001(\t\"(" +
-      "\n\030UnlockAccessPointRequest\022\014\n\004name\030\001 \001(\t" +
-      "\"\033\n\031UnlockAccessPointResponse\"\033\n\031UnlockA" +
-      "ccessPointMetadata2\302\005\n\022AccessPointServic" +
-      "e\022t\n\021CreateAccessPoint\0225.salto.nebula.ac" +
-      "cesspoint.v1.CreateAccessPointRequest\032(." +
-      "salto.nebula.accesspoint.v1.AccessPoint\022" +
-      "n\n\016GetAccessPoint\0222.salto.nebula.accessp" +
-      "oint.v1.GetAccessPointRequest\032(.salto.ne" +
-      "bula.accesspoint.v1.AccessPoint\022\177\n\020ListA" +
-      "ccessPoints\0224.salto.nebula.accesspoint.v" +
-      "1.ListAccessPointsRequest\0325.salto.nebula" +
-      ".accesspoint.v1.ListAccessPointsResponse" +
-      "\022t\n\021UpdateAccessPoint\0225.salto.nebula.acc" +
-      "esspoint.v1.UpdateAccessPointRequest\032(.s" +
-      "alto.nebula.accesspoint.v1.AccessPoint\022b" +
-      "\n\021DeleteAccessPoint\0225.salto.nebula.acces" +
-      "spoint.v1.DeleteAccessPointRequest\032\026.goo" +
-      "gle.protobuf.Empty\022k\n\021UnlockAccessPoint\022" +
-      "5.salto.nebula.accesspoint.v1.UnlockAcce" +
-      "ssPointRequest\032\037.salto.longrunning.v1.Op" +
-      "erationB\371\001\n#com.saltoapis.nebula.accessp" +
-      "oint.v1B\020AccessPointProtoP\001ZLgithub.com/" +
-      "saltoapis-internal/saltoapis-go/nebula/a" +
-      "ccesspoint/v1;accesspoint\252\002\037Saltoapis.Ne" +
-      "bula.AccessPoint.V1\312\002\037Saltoapis\\Nebula\\A" +
-      "ccessPoint\\V1\342\002+GPBMetadata\\Saltoapis\\Ne" +
-      "bula\\AccessPoint\\V1b\006proto3"
+      "nt.proto\022\033salto.nebula.accesspoint.v1\032\036g" +
+      "oogle/protobuf/duration.proto\032\033google/pr" +
+      "otobuf/empty.proto\032 google/protobuf/fiel" +
+      "d_mask.proto\032$salto/longrunning/v1/opera" +
+      "tion.proto\032$salto/nebula/type/opening_mo" +
+      "de.proto\"\253\002\n\013AccessPoint\022\014\n\004name\030\001 \001(\t\022\024" +
+      "\n\014display_name\030\002 \001(\t\022/\n\005fixed\030\003 \001(\0162\036.sa" +
+      "lto.nebula.type.OpeningModeH\000\022\022\n\010schedul" +
+      "e\030\004 \001(\tH\000\022\025\n\010calendar\030\005 \001(\tH\001\210\001\001\022\035\n\020card" +
+      "_key_updater\030\006 \001(\010H\002\210\001\001\0227\n\017unlock_durati" +
+      "on\030\007 \001(\0132\031.google.protobuf.DurationH\003\210\001\001" +
+      "B\016\n\014opening_modeB\013\n\t_calendarB\023\n\021_card_k" +
+      "ey_updaterB\022\n\020_unlock_duration\"\234\001\n\030Creat" +
+      "eAccessPointRequest\022\016\n\006parent\030\001 \001(\t\022\034\n\017a" +
+      "ccess_point_id\030\002 \001(\tH\000\210\001\001\022>\n\014access_poin" +
+      "t\030\003 \001(\0132(.salto.nebula.accesspoint.v1.Ac" +
+      "cessPointB\022\n\020_access_point_id\"%\n\025GetAcce" +
+      "ssPointRequest\022\014\n\004name\030\001 \001(\t\"r\n\027ListAcce" +
+      "ssPointsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_" +
+      "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter" +
+      "\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\210\001\n\030ListAccessP" +
+      "ointsResponse\022?\n\raccess_points\030\001 \003(\0132(.s" +
+      "alto.nebula.accesspoint.v1.AccessPoint\022\027" +
+      "\n\017next_page_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 " +
+      "\001(\005\"\213\001\n\030UpdateAccessPointRequest\022>\n\014acce" +
+      "ss_point\030\001 \001(\0132(.salto.nebula.accesspoin" +
+      "t.v1.AccessPoint\022/\n\013update_mask\030\002 \001(\0132\032." +
+      "google.protobuf.FieldMask\"(\n\030DeleteAcces" +
+      "sPointRequest\022\014\n\004name\030\001 \001(\t\"(\n\030UnlockAcc" +
+      "essPointRequest\022\014\n\004name\030\001 \001(\t\"\033\n\031UnlockA" +
+      "ccessPointResponse\"\033\n\031UnlockAccessPointM" +
+      "etadata2\302\005\n\022AccessPointService\022t\n\021Create" +
+      "AccessPoint\0225.salto.nebula.accesspoint.v" +
+      "1.CreateAccessPointRequest\032(.salto.nebul" +
+      "a.accesspoint.v1.AccessPoint\022n\n\016GetAcces" +
+      "sPoint\0222.salto.nebula.accesspoint.v1.Get" +
+      "AccessPointRequest\032(.salto.nebula.access" +
+      "point.v1.AccessPoint\022\177\n\020ListAccessPoints" +
+      "\0224.salto.nebula.accesspoint.v1.ListAcces" +
+      "sPointsRequest\0325.salto.nebula.accesspoin" +
+      "t.v1.ListAccessPointsResponse\022t\n\021UpdateA" +
+      "ccessPoint\0225.salto.nebula.accesspoint.v1" +
+      ".UpdateAccessPointRequest\032(.salto.nebula" +
+      ".accesspoint.v1.AccessPoint\022b\n\021DeleteAcc" +
+      "essPoint\0225.salto.nebula.accesspoint.v1.D" +
+      "eleteAccessPointRequest\032\026.google.protobu" +
+      "f.Empty\022k\n\021UnlockAccessPoint\0225.salto.neb" +
+      "ula.accesspoint.v1.UnlockAccessPointRequ" +
+      "est\032\037.salto.longrunning.v1.OperationB\371\001\n" +
+      "#com.saltoapis.nebula.accesspoint.v1B\020Ac" +
+      "cessPointProtoP\001ZLgithub.com/saltoapis-i" +
+      "nternal/saltoapis-go/nebula/accesspoint/" +
+      "v1;accesspoint\252\002\037Saltoapis.Nebula.Access" +
+      "Point.V1\312\002\037Saltoapis\\Nebula\\AccessPoint\\" +
+      "V1\342\002+GPBMetadata\\Saltoapis\\Nebula\\Access" +
+      "Point\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.saltoapis.longrunning.v1.OperationProto.getDescriptor(),
@@ -151,7 +155,7 @@ public final class AccessPointProto {
     internal_static_salto_nebula_accesspoint_v1_AccessPoint_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accesspoint_v1_AccessPoint_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "Fixed", "Schedule", "Calendar", "CardKeyUpdater", "OpeningMode", });
+        new java.lang.String[] { "Name", "DisplayName", "Fixed", "Schedule", "Calendar", "CardKeyUpdater", "UnlockDuration", "OpeningMode", });
     internal_static_salto_nebula_accesspoint_v1_CreateAccessPointRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_salto_nebula_accesspoint_v1_CreateAccessPointRequest_fieldAccessorTable = new
@@ -207,6 +211,7 @@ public final class AccessPointProto {
         internal_static_salto_nebula_accesspoint_v1_UnlockAccessPointMetadata_descriptor,
         new java.lang.String[] { });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.saltoapis.longrunning.v1.OperationProto.getDescriptor();
