@@ -440,6 +440,21 @@ private static final long serialVersionUID = 0L;
     return unlockDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : unlockDuration_;
   }
 
+  public static final int LEFT_OPEN_FIELD_NUMBER = 8;
+  private boolean leftOpen_ = false;
+  /**
+   * <pre>
+   * Indicates whether the access point was left open.
+   * </pre>
+   *
+   * <code>bool left_open = 8;</code>
+   * @return The leftOpen.
+   */
+  @java.lang.Override
+  public boolean getLeftOpen() {
+    return leftOpen_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -475,6 +490,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(7, getUnlockDuration());
     }
+    if (leftOpen_ != false) {
+      output.writeBool(8, leftOpen_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -507,6 +525,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getUnlockDuration());
+    }
+    if (leftOpen_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(8, leftOpen_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -542,6 +564,8 @@ private static final long serialVersionUID = 0L;
       if (!getUnlockDuration()
           .equals(other.getUnlockDuration())) return false;
     }
+    if (getLeftOpen()
+        != other.getLeftOpen()) return false;
     if (!getOpeningModeCase().equals(other.getOpeningModeCase())) return false;
     switch (openingModeCase_) {
       case 3:
@@ -583,6 +607,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + UNLOCK_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getUnlockDuration().hashCode();
     }
+    hash = (37 * hash) + LEFT_OPEN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getLeftOpen());
     switch (openingModeCase_) {
       case 3:
         hash = (37 * hash) + FIXED_FIELD_NUMBER;
@@ -745,6 +772,7 @@ private static final long serialVersionUID = 0L;
         unlockDurationBuilder_.dispose();
         unlockDurationBuilder_ = null;
       }
+      leftOpen_ = false;
       openingModeCase_ = 0;
       openingMode_ = null;
       return this;
@@ -802,6 +830,9 @@ private static final long serialVersionUID = 0L;
             : unlockDurationBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.leftOpen_ = leftOpen_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -842,6 +873,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUnlockDuration()) {
         mergeUnlockDuration(other.getUnlockDuration());
+      }
+      if (other.getLeftOpen() != false) {
+        setLeftOpen(other.getLeftOpen());
       }
       switch (other.getOpeningModeCase()) {
         case FIXED: {
@@ -923,6 +957,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 64: {
+              leftOpen_ = input.readBool();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 64
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1717,6 +1756,50 @@ private static final long serialVersionUID = 0L;
         unlockDuration_ = null;
       }
       return unlockDurationBuilder_;
+    }
+
+    private boolean leftOpen_ ;
+    /**
+     * <pre>
+     * Indicates whether the access point was left open.
+     * </pre>
+     *
+     * <code>bool left_open = 8;</code>
+     * @return The leftOpen.
+     */
+    @java.lang.Override
+    public boolean getLeftOpen() {
+      return leftOpen_;
+    }
+    /**
+     * <pre>
+     * Indicates whether the access point was left open.
+     * </pre>
+     *
+     * <code>bool left_open = 8;</code>
+     * @param value The leftOpen to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLeftOpen(boolean value) {
+
+      leftOpen_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether the access point was left open.
+     * </pre>
+     *
+     * <code>bool left_open = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLeftOpen() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      leftOpen_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.accesspoint.v1.AccessPoint)
