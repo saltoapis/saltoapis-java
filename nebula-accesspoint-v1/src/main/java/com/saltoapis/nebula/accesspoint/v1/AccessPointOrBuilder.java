@@ -204,5 +204,15 @@ public interface AccessPointOrBuilder extends
    */
   com.google.protobuf.DurationOrBuilder getUnlockDurationOrBuilder();
 
+  /**
+   * <pre>
+   * Indicates whether the access point was left open.
+   * </pre>
+   *
+   * <code>bool left_open = 8;</code>
+   * @return The leftOpen.
+   */
+  boolean getLeftOpen();
+
   com.saltoapis.nebula.accesspoint.v1.AccessPoint.OpeningModeCase getOpeningModeCase();
 }
