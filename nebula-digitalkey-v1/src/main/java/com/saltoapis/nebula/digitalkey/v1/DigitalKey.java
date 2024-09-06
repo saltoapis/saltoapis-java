@@ -1610,6 +1610,42 @@ private static final long serialVersionUID = 0L;
      */
     com.google.protobuf.ByteString
         getUnitIdBytes();
+
+    /**
+     * <pre>
+     * Access points change time.
+     *
+     * This data is populated with the user access points sync time.
+     * Indicates the last time the digital key's access points changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+     * @return Whether the accessPointsChangeTime field is set.
+     */
+    boolean hasAccessPointsChangeTime();
+    /**
+     * <pre>
+     * Access points change time.
+     *
+     * This data is populated with the user access points sync time.
+     * Indicates the last time the digital key's access points changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+     * @return The accessPointsChangeTime.
+     */
+    com.google.protobuf.Timestamp getAccessPointsChangeTime();
+    /**
+     * <pre>
+     * Access points change time.
+     *
+     * This data is populated with the user access points sync time.
+     * Indicates the last time the digital key's access points changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getAccessPointsChangeTimeOrBuilder();
   }
   /**
    * <pre>
@@ -1948,6 +1984,53 @@ private static final long serialVersionUID = 0L;
       }
     }
 
+    public static final int ACCESS_POINTS_CHANGE_TIME_FIELD_NUMBER = 7;
+    private com.google.protobuf.Timestamp accessPointsChangeTime_;
+    /**
+     * <pre>
+     * Access points change time.
+     *
+     * This data is populated with the user access points sync time.
+     * Indicates the last time the digital key's access points changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+     * @return Whether the accessPointsChangeTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccessPointsChangeTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * Access points change time.
+     *
+     * This data is populated with the user access points sync time.
+     * Indicates the last time the digital key's access points changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+     * @return The accessPointsChangeTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getAccessPointsChangeTime() {
+      return accessPointsChangeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsChangeTime_;
+    }
+    /**
+     * <pre>
+     * Access points change time.
+     *
+     * This data is populated with the user access points sync time.
+     * Indicates the last time the digital key's access points changed.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getAccessPointsChangeTimeOrBuilder() {
+      return accessPointsChangeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsChangeTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1980,6 +2063,9 @@ private static final long serialVersionUID = 0L;
       if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 6, unit_);
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(7, getAccessPointsChangeTime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2008,6 +2094,10 @@ private static final long serialVersionUID = 0L;
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(6, unit_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getAccessPointsChangeTime());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2045,6 +2135,11 @@ private static final long serialVersionUID = 0L;
         if (!getUnitId()
             .equals(other.getUnitId())) return false;
       }
+      if (hasAccessPointsChangeTime() != other.hasAccessPointsChangeTime()) return false;
+      if (hasAccessPointsChangeTime()) {
+        if (!getAccessPointsChangeTime()
+            .equals(other.getAccessPointsChangeTime())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2073,6 +2168,10 @@ private static final long serialVersionUID = 0L;
       if (hasUnitId()) {
         hash = (37 * hash) + UNIT_ID_FIELD_NUMBER;
         hash = (53 * hash) + getUnitId().hashCode();
+      }
+      if (hasAccessPointsChangeTime()) {
+        hash = (37 * hash) + ACCESS_POINTS_CHANGE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getAccessPointsChangeTime().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2209,6 +2308,7 @@ private static final long serialVersionUID = 0L;
         if (com.google.protobuf.GeneratedMessage
                 .alwaysUseFieldBuilders) {
           getMetadataFieldBuilder();
+          getAccessPointsChangeTimeFieldBuilder();
         }
       }
       @java.lang.Override
@@ -2225,6 +2325,11 @@ private static final long serialVersionUID = 0L;
         unit_ = "";
         installationId_ = "";
         unitId_ = "";
+        accessPointsChangeTime_ = null;
+        if (accessPointsChangeTimeBuilder_ != null) {
+          accessPointsChangeTimeBuilder_.dispose();
+          accessPointsChangeTimeBuilder_ = null;
+        }
         return this;
       }
 
@@ -2282,6 +2387,12 @@ private static final long serialVersionUID = 0L;
           result.unitId_ = unitId_;
           to_bitField0_ |= 0x00000004;
         }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.accessPointsChangeTime_ = accessPointsChangeTimeBuilder_ == null
+              ? accessPointsChangeTime_
+              : accessPointsChangeTimeBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -2322,6 +2433,9 @@ private static final long serialVersionUID = 0L;
           unitId_ = other.unitId_;
           bitField0_ |= 0x00000020;
           onChanged();
+        }
+        if (other.hasAccessPointsChangeTime()) {
+          mergeAccessPointsChangeTime(other.getAccessPointsChangeTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2381,6 +2495,13 @@ private static final long serialVersionUID = 0L;
                 bitField0_ |= 0x00000008;
                 break;
               } // case 50
+              case 58: {
+                input.readMessage(
+                    getAccessPointsChangeTimeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3042,6 +3163,190 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
+      }
+
+      private com.google.protobuf.Timestamp accessPointsChangeTime_;
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> accessPointsChangeTimeBuilder_;
+      /**
+       * <pre>
+       * Access points change time.
+       *
+       * This data is populated with the user access points sync time.
+       * Indicates the last time the digital key's access points changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       * @return Whether the accessPointsChangeTime field is set.
+       */
+      public boolean hasAccessPointsChangeTime() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <pre>
+       * Access points change time.
+       *
+       * This data is populated with the user access points sync time.
+       * Indicates the last time the digital key's access points changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       * @return The accessPointsChangeTime.
+       */
+      public com.google.protobuf.Timestamp getAccessPointsChangeTime() {
+        if (accessPointsChangeTimeBuilder_ == null) {
+          return accessPointsChangeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsChangeTime_;
+        } else {
+          return accessPointsChangeTimeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Access points change time.
+       *
+       * This data is populated with the user access points sync time.
+       * Indicates the last time the digital key's access points changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       */
+      public Builder setAccessPointsChangeTime(com.google.protobuf.Timestamp value) {
+        if (accessPointsChangeTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          accessPointsChangeTime_ = value;
+        } else {
+          accessPointsChangeTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Access points change time.
+       *
+       * This data is populated with the user access points sync time.
+       * Indicates the last time the digital key's access points changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       */
+      public Builder setAccessPointsChangeTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (accessPointsChangeTimeBuilder_ == null) {
+          accessPointsChangeTime_ = builderForValue.build();
+        } else {
+          accessPointsChangeTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Access points change time.
+       *
+       * This data is populated with the user access points sync time.
+       * Indicates the last time the digital key's access points changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       */
+      public Builder mergeAccessPointsChangeTime(com.google.protobuf.Timestamp value) {
+        if (accessPointsChangeTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0) &&
+            accessPointsChangeTime_ != null &&
+            accessPointsChangeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getAccessPointsChangeTimeBuilder().mergeFrom(value);
+          } else {
+            accessPointsChangeTime_ = value;
+          }
+        } else {
+          accessPointsChangeTimeBuilder_.mergeFrom(value);
+        }
+        if (accessPointsChangeTime_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Access points change time.
+       *
+       * This data is populated with the user access points sync time.
+       * Indicates the last time the digital key's access points changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       */
+      public Builder clearAccessPointsChangeTime() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        accessPointsChangeTime_ = null;
+        if (accessPointsChangeTimeBuilder_ != null) {
+          accessPointsChangeTimeBuilder_.dispose();
+          accessPointsChangeTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Access points change time.
+       *
+       * This data is populated with the user access points sync time.
+       * Indicates the last time the digital key's access points changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getAccessPointsChangeTimeBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return getAccessPointsChangeTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Access points change time.
+       *
+       * This data is populated with the user access points sync time.
+       * Indicates the last time the digital key's access points changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getAccessPointsChangeTimeOrBuilder() {
+        if (accessPointsChangeTimeBuilder_ != null) {
+          return accessPointsChangeTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return accessPointsChangeTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsChangeTime_;
+        }
+      }
+      /**
+       * <pre>
+       * Access points change time.
+       *
+       * This data is populated with the user access points sync time.
+       * Indicates the last time the digital key's access points changed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getAccessPointsChangeTimeFieldBuilder() {
+        if (accessPointsChangeTimeBuilder_ == null) {
+          accessPointsChangeTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getAccessPointsChangeTime(),
+                  getParentForChildren(),
+                  isClean());
+          accessPointsChangeTime_ = null;
+        }
+        return accessPointsChangeTimeBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:salto.nebula.digitalkey.v1.DigitalKey.AppKey)
