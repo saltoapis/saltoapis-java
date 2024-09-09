@@ -125,6 +125,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results in the list.
+   * Note: this field is not being used in the current implementation. It always returns an empty string.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -147,6 +148,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no more
    * results in the list.
+   * Note: this field is not being used in the current implementation. It always returns an empty string.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -890,6 +892,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
+     * Note: this field is not being used in the current implementation. It always returns an empty string.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -911,6 +914,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
+     * Note: this field is not being used in the current implementation. It always returns an empty string.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -933,6 +937,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
+     * Note: this field is not being used in the current implementation. It always returns an empty string.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -951,6 +956,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
+     * Note: this field is not being used in the current implementation. It always returns an empty string.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -966,6 +972,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Token to retrieve the next page of results, or empty if there are no more
      * results in the list.
+     * Note: this field is not being used in the current implementation. It always returns an empty string.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
