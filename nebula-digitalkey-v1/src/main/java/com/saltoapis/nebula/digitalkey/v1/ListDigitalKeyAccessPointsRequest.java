@@ -164,6 +164,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The `next_page_token` value returned from a previous `List` request, if
    * any.
+   * Note: this field is not being used in the current implementation. It is being ignored.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -186,6 +187,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The `next_page_token` value returned from a previous `List` request, if
    * any.
+   * Note: this field is not being used in the current implementation. It is being ignored.
    * </pre>
    *
    * <code>string page_token = 4;</code>
@@ -808,6 +810,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The `next_page_token` value returned from a previous `List` request, if
      * any.
+     * Note: this field is not being used in the current implementation. It is being ignored.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -829,6 +832,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The `next_page_token` value returned from a previous `List` request, if
      * any.
+     * Note: this field is not being used in the current implementation. It is being ignored.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -851,6 +855,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The `next_page_token` value returned from a previous `List` request, if
      * any.
+     * Note: this field is not being used in the current implementation. It is being ignored.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -869,6 +874,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The `next_page_token` value returned from a previous `List` request, if
      * any.
+     * Note: this field is not being used in the current implementation. It is being ignored.
      * </pre>
      *
      * <code>string page_token = 4;</code>
@@ -884,6 +890,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The `next_page_token` value returned from a previous `List` request, if
      * any.
+     * Note: this field is not being used in the current implementation. It is being ignored.
      * </pre>
      *
      * <code>string page_token = 4;</code>
