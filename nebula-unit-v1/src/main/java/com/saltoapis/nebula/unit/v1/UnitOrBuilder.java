@@ -105,4 +105,37 @@ public interface UnitOrBuilder extends
    * <code>.google.protobuf.Timestamp move_out_time = 4;</code>
    */
   com.google.protobuf.TimestampOrBuilder getMoveOutTimeOrBuilder();
+
+  /**
+   * <pre>
+   * The privacy settings of the unit. Can either be enabled or disabled.
+   * If enabled, owners and installation managers can see neither events
+   * nor users that belong to the unit.
+   * </pre>
+   *
+   * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+   * @return Whether the privacySettings field is set.
+   */
+  boolean hasPrivacySettings();
+  /**
+   * <pre>
+   * The privacy settings of the unit. Can either be enabled or disabled.
+   * If enabled, owners and installation managers can see neither events
+   * nor users that belong to the unit.
+   * </pre>
+   *
+   * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+   * @return The privacySettings.
+   */
+  com.saltoapis.nebula.unit.v1.Unit.PrivacySettings getPrivacySettings();
+  /**
+   * <pre>
+   * The privacy settings of the unit. Can either be enabled or disabled.
+   * If enabled, owners and installation managers can see neither events
+   * nor users that belong to the unit.
+   * </pre>
+   *
+   * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+   */
+  com.saltoapis.nebula.unit.v1.Unit.PrivacySettingsOrBuilder getPrivacySettingsOrBuilder();
 }
