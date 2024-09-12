@@ -46,6 +46,7 @@ private static final long serialVersionUID = 0L;
             com.saltoapis.nebula.installation.v1.AcceptInstallationOwnershipRequest.class, com.saltoapis.nebula.installation.v1.AcceptInstallationOwnershipRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int INSTALLATION_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object installation_ = "";
@@ -95,6 +96,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int BILLING_INFO_FIELD_NUMBER = 2;
+  private com.saltoapis.nebula.installation.v1.BillingInfo billingInfo_;
+  /**
+   * <pre>
+   * The billing info resource for the subscription billing.
+   * </pre>
+   *
+   * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+   * @return Whether the billingInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasBillingInfo() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * The billing info resource for the subscription billing.
+   * </pre>
+   *
+   * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+   * @return The billingInfo.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.installation.v1.BillingInfo getBillingInfo() {
+    return billingInfo_ == null ? com.saltoapis.nebula.installation.v1.BillingInfo.getDefaultInstance() : billingInfo_;
+  }
+  /**
+   * <pre>
+   * The billing info resource for the subscription billing.
+   * </pre>
+   *
+   * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.installation.v1.BillingInfoOrBuilder getBillingInfoOrBuilder() {
+    return billingInfo_ == null ? com.saltoapis.nebula.installation.v1.BillingInfo.getDefaultInstance() : billingInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -112,6 +151,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(installation_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, installation_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getBillingInfo());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -123,6 +165,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(installation_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, installation_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getBillingInfo());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -141,6 +187,11 @@ private static final long serialVersionUID = 0L;
 
     if (!getInstallation()
         .equals(other.getInstallation())) return false;
+    if (hasBillingInfo() != other.hasBillingInfo()) return false;
+    if (hasBillingInfo()) {
+      if (!getBillingInfo()
+          .equals(other.getBillingInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -154,6 +205,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + INSTALLATION_FIELD_NUMBER;
     hash = (53 * hash) + getInstallation().hashCode();
+    if (hasBillingInfo()) {
+      hash = (37 * hash) + BILLING_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getBillingInfo().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -277,19 +332,30 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.saltoapis.nebula.installation.v1.AcceptInstallationOwnershipRequest.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage
+              .alwaysUseFieldBuilders) {
+        getBillingInfoFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
       installation_ = "";
+      billingInfo_ = null;
+      if (billingInfoBuilder_ != null) {
+        billingInfoBuilder_.dispose();
+        billingInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -326,6 +392,14 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.installation_ = installation_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.billingInfo_ = billingInfoBuilder_ == null
+            ? billingInfo_
+            : billingInfoBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -344,6 +418,9 @@ private static final long serialVersionUID = 0L;
         installation_ = other.installation_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      if (other.hasBillingInfo()) {
+        mergeBillingInfo(other.getBillingInfo());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -376,6 +453,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 18: {
+              input.readMessage(
+                  getBillingInfoFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -488,6 +572,163 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.saltoapis.nebula.installation.v1.BillingInfo billingInfo_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.installation.v1.BillingInfo, com.saltoapis.nebula.installation.v1.BillingInfo.Builder, com.saltoapis.nebula.installation.v1.BillingInfoOrBuilder> billingInfoBuilder_;
+    /**
+     * <pre>
+     * The billing info resource for the subscription billing.
+     * </pre>
+     *
+     * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+     * @return Whether the billingInfo field is set.
+     */
+    public boolean hasBillingInfo() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * The billing info resource for the subscription billing.
+     * </pre>
+     *
+     * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+     * @return The billingInfo.
+     */
+    public com.saltoapis.nebula.installation.v1.BillingInfo getBillingInfo() {
+      if (billingInfoBuilder_ == null) {
+        return billingInfo_ == null ? com.saltoapis.nebula.installation.v1.BillingInfo.getDefaultInstance() : billingInfo_;
+      } else {
+        return billingInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The billing info resource for the subscription billing.
+     * </pre>
+     *
+     * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+     */
+    public Builder setBillingInfo(com.saltoapis.nebula.installation.v1.BillingInfo value) {
+      if (billingInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        billingInfo_ = value;
+      } else {
+        billingInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The billing info resource for the subscription billing.
+     * </pre>
+     *
+     * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+     */
+    public Builder setBillingInfo(
+        com.saltoapis.nebula.installation.v1.BillingInfo.Builder builderForValue) {
+      if (billingInfoBuilder_ == null) {
+        billingInfo_ = builderForValue.build();
+      } else {
+        billingInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The billing info resource for the subscription billing.
+     * </pre>
+     *
+     * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+     */
+    public Builder mergeBillingInfo(com.saltoapis.nebula.installation.v1.BillingInfo value) {
+      if (billingInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          billingInfo_ != null &&
+          billingInfo_ != com.saltoapis.nebula.installation.v1.BillingInfo.getDefaultInstance()) {
+          getBillingInfoBuilder().mergeFrom(value);
+        } else {
+          billingInfo_ = value;
+        }
+      } else {
+        billingInfoBuilder_.mergeFrom(value);
+      }
+      if (billingInfo_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The billing info resource for the subscription billing.
+     * </pre>
+     *
+     * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+     */
+    public Builder clearBillingInfo() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      billingInfo_ = null;
+      if (billingInfoBuilder_ != null) {
+        billingInfoBuilder_.dispose();
+        billingInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The billing info resource for the subscription billing.
+     * </pre>
+     *
+     * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+     */
+    public com.saltoapis.nebula.installation.v1.BillingInfo.Builder getBillingInfoBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getBillingInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The billing info resource for the subscription billing.
+     * </pre>
+     *
+     * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+     */
+    public com.saltoapis.nebula.installation.v1.BillingInfoOrBuilder getBillingInfoOrBuilder() {
+      if (billingInfoBuilder_ != null) {
+        return billingInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return billingInfo_ == null ?
+            com.saltoapis.nebula.installation.v1.BillingInfo.getDefaultInstance() : billingInfo_;
+      }
+    }
+    /**
+     * <pre>
+     * The billing info resource for the subscription billing.
+     * </pre>
+     *
+     * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.installation.v1.BillingInfo, com.saltoapis.nebula.installation.v1.BillingInfo.Builder, com.saltoapis.nebula.installation.v1.BillingInfoOrBuilder> 
+        getBillingInfoFieldBuilder() {
+      if (billingInfoBuilder_ == null) {
+        billingInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.installation.v1.BillingInfo, com.saltoapis.nebula.installation.v1.BillingInfo.Builder, com.saltoapis.nebula.installation.v1.BillingInfoOrBuilder>(
+                getBillingInfo(),
+                getParentForChildren(),
+                isClean());
+        billingInfo_ = null;
+      }
+      return billingInfoBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.installation.v1.AcceptInstallationOwnershipRequest)

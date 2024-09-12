@@ -29,4 +29,31 @@ public interface AcceptInstallationOwnershipRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getInstallationBytes();
+
+  /**
+   * <pre>
+   * The billing info resource for the subscription billing.
+   * </pre>
+   *
+   * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+   * @return Whether the billingInfo field is set.
+   */
+  boolean hasBillingInfo();
+  /**
+   * <pre>
+   * The billing info resource for the subscription billing.
+   * </pre>
+   *
+   * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+   * @return The billingInfo.
+   */
+  com.saltoapis.nebula.installation.v1.BillingInfo getBillingInfo();
+  /**
+   * <pre>
+   * The billing info resource for the subscription billing.
+   * </pre>
+   *
+   * <code>optional .salto.nebula.installation.v1.BillingInfo billing_info = 2;</code>
+   */
+  com.saltoapis.nebula.installation.v1.BillingInfoOrBuilder getBillingInfoOrBuilder();
 }
