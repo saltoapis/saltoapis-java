@@ -47,6 +47,469 @@ private static final long serialVersionUID = 0L;
             com.saltoapis.nebula.unit.v1.Unit.class, com.saltoapis.nebula.unit.v1.Unit.Builder.class);
   }
 
+  public interface PrivacySettingsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:salto.nebula.unit.v1.Unit.PrivacySettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The privacy status of the unit.
+     * </pre>
+     *
+     * <code>bool enabled = 1;</code>
+     * @return The enabled.
+     */
+    boolean getEnabled();
+  }
+  /**
+   * <pre>
+   * The privacy settings object.
+   * </pre>
+   *
+   * Protobuf type {@code salto.nebula.unit.v1.Unit.PrivacySettings}
+   */
+  public static final class PrivacySettings extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:salto.nebula.unit.v1.Unit.PrivacySettings)
+      PrivacySettingsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        PrivacySettings.class.getName());
+    }
+    // Use PrivacySettings.newBuilder() to construct.
+    private PrivacySettings(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private PrivacySettings() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.saltoapis.nebula.unit.v1.UnitProto.internal_static_salto_nebula_unit_v1_Unit_PrivacySettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.saltoapis.nebula.unit.v1.UnitProto.internal_static_salto_nebula_unit_v1_Unit_PrivacySettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.class, com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+    /**
+     * <pre>
+     * The privacy status of the unit.
+     * </pre>
+     *
+     * <code>bool enabled = 1;</code>
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, enabled_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.saltoapis.nebula.unit.v1.Unit.PrivacySettings)) {
+        return super.equals(obj);
+      }
+      com.saltoapis.nebula.unit.v1.Unit.PrivacySettings other = (com.saltoapis.nebula.unit.v1.Unit.PrivacySettings) obj;
+
+      if (getEnabled()
+          != other.getEnabled()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnabled());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.saltoapis.nebula.unit.v1.Unit.PrivacySettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The privacy settings object.
+     * </pre>
+     *
+     * Protobuf type {@code salto.nebula.unit.v1.Unit.PrivacySettings}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:salto.nebula.unit.v1.Unit.PrivacySettings)
+        com.saltoapis.nebula.unit.v1.Unit.PrivacySettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.saltoapis.nebula.unit.v1.UnitProto.internal_static_salto_nebula_unit_v1_Unit_PrivacySettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.saltoapis.nebula.unit.v1.UnitProto.internal_static_salto_nebula_unit_v1_Unit_PrivacySettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.class, com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.Builder.class);
+      }
+
+      // Construct using com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.saltoapis.nebula.unit.v1.UnitProto.internal_static_salto_nebula_unit_v1_Unit_PrivacySettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.unit.v1.Unit.PrivacySettings getDefaultInstanceForType() {
+        return com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.unit.v1.Unit.PrivacySettings build() {
+        com.saltoapis.nebula.unit.v1.Unit.PrivacySettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.unit.v1.Unit.PrivacySettings buildPartial() {
+        com.saltoapis.nebula.unit.v1.Unit.PrivacySettings result = new com.saltoapis.nebula.unit.v1.Unit.PrivacySettings(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.saltoapis.nebula.unit.v1.Unit.PrivacySettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.saltoapis.nebula.unit.v1.Unit.PrivacySettings) {
+          return mergeFrom((com.saltoapis.nebula.unit.v1.Unit.PrivacySettings)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.saltoapis.nebula.unit.v1.Unit.PrivacySettings other) {
+        if (other == com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.getDefaultInstance()) return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                enabled_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private boolean enabled_ ;
+      /**
+       * <pre>
+       * The privacy status of the unit.
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+      /**
+       * <pre>
+       * The privacy status of the unit.
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The privacy status of the unit.
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:salto.nebula.unit.v1.Unit.PrivacySettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:salto.nebula.unit.v1.Unit.PrivacySettings)
+    private static final com.saltoapis.nebula.unit.v1.Unit.PrivacySettings DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.saltoapis.nebula.unit.v1.Unit.PrivacySettings();
+    }
+
+    public static com.saltoapis.nebula.unit.v1.Unit.PrivacySettings getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PrivacySettings>
+        PARSER = new com.google.protobuf.AbstractParser<PrivacySettings>() {
+      @java.lang.Override
+      public PrivacySettings parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<PrivacySettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PrivacySettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.saltoapis.nebula.unit.v1.Unit.PrivacySettings getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
@@ -222,6 +685,50 @@ private static final long serialVersionUID = 0L;
     return moveOutTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : moveOutTime_;
   }
 
+  public static final int PRIVACY_SETTINGS_FIELD_NUMBER = 5;
+  private com.saltoapis.nebula.unit.v1.Unit.PrivacySettings privacySettings_;
+  /**
+   * <pre>
+   * The privacy settings of the unit. Can either be enabled or disabled.
+   * If enabled, owners and installation managers can see neither events
+   * nor users that belong to the unit.
+   * </pre>
+   *
+   * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+   * @return Whether the privacySettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrivacySettings() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * The privacy settings of the unit. Can either be enabled or disabled.
+   * If enabled, owners and installation managers can see neither events
+   * nor users that belong to the unit.
+   * </pre>
+   *
+   * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+   * @return The privacySettings.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.unit.v1.Unit.PrivacySettings getPrivacySettings() {
+    return privacySettings_ == null ? com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.getDefaultInstance() : privacySettings_;
+  }
+  /**
+   * <pre>
+   * The privacy settings of the unit. Can either be enabled or disabled.
+   * If enabled, owners and installation managers can see neither events
+   * nor users that belong to the unit.
+   * </pre>
+   *
+   * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.unit.v1.Unit.PrivacySettingsOrBuilder getPrivacySettingsOrBuilder() {
+    return privacySettings_ == null ? com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.getDefaultInstance() : privacySettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -248,6 +755,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getMoveOutTime());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(5, getPrivacySettings());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -270,6 +780,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getMoveOutTime());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getPrivacySettings());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -300,6 +814,11 @@ private static final long serialVersionUID = 0L;
       if (!getMoveOutTime()
           .equals(other.getMoveOutTime())) return false;
     }
+    if (hasPrivacySettings() != other.hasPrivacySettings()) return false;
+    if (hasPrivacySettings()) {
+      if (!getPrivacySettings()
+          .equals(other.getPrivacySettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -322,6 +841,10 @@ private static final long serialVersionUID = 0L;
     if (hasMoveOutTime()) {
       hash = (37 * hash) + MOVE_OUT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMoveOutTime().hashCode();
+    }
+    if (hasPrivacySettings()) {
+      hash = (37 * hash) + PRIVACY_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getPrivacySettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -459,6 +982,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getMoveInTimeFieldBuilder();
         getMoveOutTimeFieldBuilder();
+        getPrivacySettingsFieldBuilder();
       }
     }
     @java.lang.Override
@@ -476,6 +1000,11 @@ private static final long serialVersionUID = 0L;
       if (moveOutTimeBuilder_ != null) {
         moveOutTimeBuilder_.dispose();
         moveOutTimeBuilder_ = null;
+      }
+      privacySettings_ = null;
+      if (privacySettingsBuilder_ != null) {
+        privacySettingsBuilder_.dispose();
+        privacySettingsBuilder_ = null;
       }
       return this;
     }
@@ -529,6 +1058,12 @@ private static final long serialVersionUID = 0L;
             : moveOutTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.privacySettings_ = privacySettingsBuilder_ == null
+            ? privacySettings_
+            : privacySettingsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -559,6 +1094,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasMoveOutTime()) {
         mergeMoveOutTime(other.getMoveOutTime());
+      }
+      if (other.hasPrivacySettings()) {
+        mergePrivacySettings(other.getPrivacySettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -610,6 +1148,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
+            case 42: {
+              input.readMessage(
+                  getPrivacySettingsFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1133,6 +1678,181 @@ private static final long serialVersionUID = 0L;
         moveOutTime_ = null;
       }
       return moveOutTimeBuilder_;
+    }
+
+    private com.saltoapis.nebula.unit.v1.Unit.PrivacySettings privacySettings_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.unit.v1.Unit.PrivacySettings, com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.Builder, com.saltoapis.nebula.unit.v1.Unit.PrivacySettingsOrBuilder> privacySettingsBuilder_;
+    /**
+     * <pre>
+     * The privacy settings of the unit. Can either be enabled or disabled.
+     * If enabled, owners and installation managers can see neither events
+     * nor users that belong to the unit.
+     * </pre>
+     *
+     * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+     * @return Whether the privacySettings field is set.
+     */
+    public boolean hasPrivacySettings() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     * The privacy settings of the unit. Can either be enabled or disabled.
+     * If enabled, owners and installation managers can see neither events
+     * nor users that belong to the unit.
+     * </pre>
+     *
+     * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+     * @return The privacySettings.
+     */
+    public com.saltoapis.nebula.unit.v1.Unit.PrivacySettings getPrivacySettings() {
+      if (privacySettingsBuilder_ == null) {
+        return privacySettings_ == null ? com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.getDefaultInstance() : privacySettings_;
+      } else {
+        return privacySettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The privacy settings of the unit. Can either be enabled or disabled.
+     * If enabled, owners and installation managers can see neither events
+     * nor users that belong to the unit.
+     * </pre>
+     *
+     * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+     */
+    public Builder setPrivacySettings(com.saltoapis.nebula.unit.v1.Unit.PrivacySettings value) {
+      if (privacySettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        privacySettings_ = value;
+      } else {
+        privacySettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The privacy settings of the unit. Can either be enabled or disabled.
+     * If enabled, owners and installation managers can see neither events
+     * nor users that belong to the unit.
+     * </pre>
+     *
+     * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+     */
+    public Builder setPrivacySettings(
+        com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.Builder builderForValue) {
+      if (privacySettingsBuilder_ == null) {
+        privacySettings_ = builderForValue.build();
+      } else {
+        privacySettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The privacy settings of the unit. Can either be enabled or disabled.
+     * If enabled, owners and installation managers can see neither events
+     * nor users that belong to the unit.
+     * </pre>
+     *
+     * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+     */
+    public Builder mergePrivacySettings(com.saltoapis.nebula.unit.v1.Unit.PrivacySettings value) {
+      if (privacySettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0) &&
+          privacySettings_ != null &&
+          privacySettings_ != com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.getDefaultInstance()) {
+          getPrivacySettingsBuilder().mergeFrom(value);
+        } else {
+          privacySettings_ = value;
+        }
+      } else {
+        privacySettingsBuilder_.mergeFrom(value);
+      }
+      if (privacySettings_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The privacy settings of the unit. Can either be enabled or disabled.
+     * If enabled, owners and installation managers can see neither events
+     * nor users that belong to the unit.
+     * </pre>
+     *
+     * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+     */
+    public Builder clearPrivacySettings() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      privacySettings_ = null;
+      if (privacySettingsBuilder_ != null) {
+        privacySettingsBuilder_.dispose();
+        privacySettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The privacy settings of the unit. Can either be enabled or disabled.
+     * If enabled, owners and installation managers can see neither events
+     * nor users that belong to the unit.
+     * </pre>
+     *
+     * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+     */
+    public com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.Builder getPrivacySettingsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getPrivacySettingsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The privacy settings of the unit. Can either be enabled or disabled.
+     * If enabled, owners and installation managers can see neither events
+     * nor users that belong to the unit.
+     * </pre>
+     *
+     * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+     */
+    public com.saltoapis.nebula.unit.v1.Unit.PrivacySettingsOrBuilder getPrivacySettingsOrBuilder() {
+      if (privacySettingsBuilder_ != null) {
+        return privacySettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return privacySettings_ == null ?
+            com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.getDefaultInstance() : privacySettings_;
+      }
+    }
+    /**
+     * <pre>
+     * The privacy settings of the unit. Can either be enabled or disabled.
+     * If enabled, owners and installation managers can see neither events
+     * nor users that belong to the unit.
+     * </pre>
+     *
+     * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.unit.v1.Unit.PrivacySettings, com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.Builder, com.saltoapis.nebula.unit.v1.Unit.PrivacySettingsOrBuilder> 
+        getPrivacySettingsFieldBuilder() {
+      if (privacySettingsBuilder_ == null) {
+        privacySettingsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.unit.v1.Unit.PrivacySettings, com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.Builder, com.saltoapis.nebula.unit.v1.Unit.PrivacySettingsOrBuilder>(
+                getPrivacySettings(),
+                getParentForChildren(),
+                isClean());
+        privacySettings_ = null;
+      }
+      return privacySettingsBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.unit.v1.Unit)
