@@ -154,6 +154,21 @@ public final class IntercomAdaptorProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_intercomadaptor_v1_GenerateAuthorizationTokenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -221,56 +236,64 @@ public final class IntercomAdaptorProto {
       "\030\001 \001(\005\"=\n!GenerateAuthorizationTokenRequ" +
       "est\022\030\n\020intercom_adaptor\030\001 \001(\t\"A\n\"Generat" +
       "eAuthorizationTokenResponse\022\033\n\023authoriza" +
-      "tion_token\030\001 \001(\0142\216\r\n\026IntercomAdaptorServ" +
-      "ice\022\210\001\n\025CreateIntercomAdaptor\022=.salto.ne" +
-      "bula.intercomadaptor.v1.CreateIntercomAd" +
-      "aptorRequest\0320.salto.nebula.intercomadap" +
-      "tor.v1.IntercomAdaptor\022\202\001\n\022GetIntercomAd" +
-      "aptor\022:.salto.nebula.intercomadaptor.v1." +
-      "GetIntercomAdaptorRequest\0320.salto.nebula" +
-      ".intercomadaptor.v1.IntercomAdaptor\022\223\001\n\024" +
-      "ListIntercomAdaptors\022<.salto.nebula.inte" +
-      "rcomadaptor.v1.ListIntercomAdaptorsReque" +
-      "st\032=.salto.nebula.intercomadaptor.v1.Lis" +
-      "tIntercomAdaptorsResponse\022\210\001\n\025UpdateInte" +
-      "rcomAdaptor\022=.salto.nebula.intercomadapt" +
-      "or.v1.UpdateIntercomAdaptorRequest\0320.sal" +
-      "to.nebula.intercomadaptor.v1.IntercomAda" +
-      "ptor\022n\n\025DeleteIntercomAdaptor\022=.salto.ne" +
-      "bula.intercomadaptor.v1.DeleteIntercomAd" +
-      "aptorRequest\032\026.google.protobuf.Empty\022\220\001\n" +
-      "\023BindIntercomAdaptor\022;.salto.nebula.inte" +
-      "rcomadaptor.v1.BindIntercomAdaptorReques" +
-      "t\032<.salto.nebula.intercomadaptor.v1.Bind" +
-      "IntercomAdaptorResponse\022\226\001\n\025UnbindInterc" +
+      "tion_token\030\001 \001(\014\">\n\"GenerateFirmwareDown" +
+      "loadUriRequest\022\030\n\020intercom_adaptor\030\001 \001(\t" +
+      "\"K\n#GenerateFirmwareDownloadUriResponse\022" +
+      "\024\n\014download_uri\030\001 \001(\t\022\016\n\006digest\030\002 \001(\t\"%\n" +
+      "#GenerateFirmwareDownloadUriMetadata2\224\016\n" +
+      "\026IntercomAdaptorService\022\210\001\n\025CreateInterc" +
       "omAdaptor\022=.salto.nebula.intercomadaptor" +
-      ".v1.UnbindIntercomAdaptorRequest\032>.salto" +
-      ".nebula.intercomadaptor.v1.UnbindInterco" +
-      "mAdaptorResponse\022\177\n\031InitializeIntercomAd" +
-      "aptor\022A.salto.nebula.intercomadaptor.v1." +
-      "InitializeIntercomAdaptorRequest\032\037.salto" +
-      ".longrunning.v1.Operation\022}\n\030ConfigureIn" +
-      "tercomAdaptor\022@.salto.nebula.intercomada" +
-      "ptor.v1.ConfigureIntercomAdaptorRequest\032" +
-      "\037.salto.longrunning.v1.Operation\022u\n\024Rese" +
-      "tIntercomAdaptor\022<.salto.nebula.intercom" +
-      "adaptor.v1.ResetIntercomAdaptorRequest\032\037" +
-      ".salto.longrunning.v1.Operation\022\207\001\n\035Upda" +
-      "teIntercomAdaptorFirmware\022E.salto.nebula" +
-      ".intercomadaptor.v1.UpdateIntercomAdapto" +
-      "rFirmwareRequest\032\037.salto.longrunning.v1." +
-      "Operation\022\245\001\n\032GenerateAuthorizationToken" +
-      "\022B.salto.nebula.intercomadaptor.v1.Gener" +
-      "ateAuthorizationTokenRequest\032C.salto.neb" +
-      "ula.intercomadaptor.v1.GenerateAuthoriza" +
-      "tionTokenResponseB\225\002\n\'com.saltoapis.nebu" +
-      "la.intercomadaptor.v1B\024IntercomAdaptorPr" +
-      "otoP\001ZTgithub.com/saltoapis-internal/sal" +
-      "toapis-go/nebula/intercomadaptor/v1;inte" +
-      "rcomadaptor\252\002#Saltoapis.Nebula.IntercomA" +
-      "daptor.V1\312\002#Saltoapis\\Nebula\\IntercomAda" +
-      "ptor\\V1\342\002/GPBMetadata\\Saltoapis\\Nebula\\I" +
-      "ntercomAdaptor\\V1b\006proto3"
+      ".v1.CreateIntercomAdaptorRequest\0320.salto" +
+      ".nebula.intercomadaptor.v1.IntercomAdapt" +
+      "or\022\202\001\n\022GetIntercomAdaptor\022:.salto.nebula" +
+      ".intercomadaptor.v1.GetIntercomAdaptorRe" +
+      "quest\0320.salto.nebula.intercomadaptor.v1." +
+      "IntercomAdaptor\022\223\001\n\024ListIntercomAdaptors" +
+      "\022<.salto.nebula.intercomadaptor.v1.ListI" +
+      "ntercomAdaptorsRequest\032=.salto.nebula.in" +
+      "tercomadaptor.v1.ListIntercomAdaptorsRes" +
+      "ponse\022\210\001\n\025UpdateIntercomAdaptor\022=.salto." +
+      "nebula.intercomadaptor.v1.UpdateIntercom" +
+      "AdaptorRequest\0320.salto.nebula.intercomad" +
+      "aptor.v1.IntercomAdaptor\022n\n\025DeleteInterc" +
+      "omAdaptor\022=.salto.nebula.intercomadaptor" +
+      ".v1.DeleteIntercomAdaptorRequest\032\026.googl" +
+      "e.protobuf.Empty\022\220\001\n\023BindIntercomAdaptor" +
+      "\022;.salto.nebula.intercomadaptor.v1.BindI" +
+      "ntercomAdaptorRequest\032<.salto.nebula.int" +
+      "ercomadaptor.v1.BindIntercomAdaptorRespo" +
+      "nse\022\226\001\n\025UnbindIntercomAdaptor\022=.salto.ne" +
+      "bula.intercomadaptor.v1.UnbindIntercomAd" +
+      "aptorRequest\032>.salto.nebula.intercomadap" +
+      "tor.v1.UnbindIntercomAdaptorResponse\022\177\n\031" +
+      "InitializeIntercomAdaptor\022A.salto.nebula" +
+      ".intercomadaptor.v1.InitializeIntercomAd" +
+      "aptorRequest\032\037.salto.longrunning.v1.Oper" +
+      "ation\022}\n\030ConfigureIntercomAdaptor\022@.salt" +
+      "o.nebula.intercomadaptor.v1.ConfigureInt" +
+      "ercomAdaptorRequest\032\037.salto.longrunning." +
+      "v1.Operation\022u\n\024ResetIntercomAdaptor\022<.s" +
+      "alto.nebula.intercomadaptor.v1.ResetInte" +
+      "rcomAdaptorRequest\032\037.salto.longrunning.v" +
+      "1.Operation\022\207\001\n\035UpdateIntercomAdaptorFir" +
+      "mware\022E.salto.nebula.intercomadaptor.v1." +
+      "UpdateIntercomAdaptorFirmwareRequest\032\037.s" +
+      "alto.longrunning.v1.Operation\022\245\001\n\032Genera" +
+      "teAuthorizationToken\022B.salto.nebula.inte" +
+      "rcomadaptor.v1.GenerateAuthorizationToke" +
+      "nRequest\032C.salto.nebula.intercomadaptor." +
+      "v1.GenerateAuthorizationTokenResponse\022\203\001" +
+      "\n\033GenerateFirmwareDownloadUri\022C.salto.ne" +
+      "bula.intercomadaptor.v1.GenerateFirmware" +
+      "DownloadUriRequest\032\037.salto.longrunning.v" +
+      "1.OperationB\225\002\n\'com.saltoapis.nebula.int" +
+      "ercomadaptor.v1B\024IntercomAdaptorProtoP\001Z" +
+      "Tgithub.com/saltoapis-internal/saltoapis" +
+      "-go/nebula/intercomadaptor/v1;intercomad" +
+      "aptor\252\002#Saltoapis.Nebula.IntercomAdaptor" +
+      ".V1\312\002#Saltoapis\\Nebula\\IntercomAdaptor\\V" +
+      "1\342\002/GPBMetadata\\Saltoapis\\Nebula\\Interco" +
+      "mAdaptor\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -436,6 +459,24 @@ public final class IntercomAdaptorProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_intercomadaptor_v1_GenerateAuthorizationTokenResponse_descriptor,
         new java.lang.String[] { "AuthorizationToken", });
+    internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriRequest_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriRequest_descriptor,
+        new java.lang.String[] { "IntercomAdaptor", });
+    internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriResponse_descriptor,
+        new java.lang.String[] { "DownloadUri", "Digest", });
+    internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_intercomadaptor_v1_GenerateFirmwareDownloadUriMetadata_descriptor,
+        new java.lang.String[] { });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

@@ -299,6 +299,37 @@ public final class ExtenderServiceGrpc {
     return getResetExtenderMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest,
+      com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateFirmwareDownloadUri",
+      requestType = com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest.class,
+      responseType = com.saltoapis.longrunning.v1.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest,
+      com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest, com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod;
+    if ((getGenerateFirmwareDownloadUriMethod = ExtenderServiceGrpc.getGenerateFirmwareDownloadUriMethod) == null) {
+      synchronized (ExtenderServiceGrpc.class) {
+        if ((getGenerateFirmwareDownloadUriMethod = ExtenderServiceGrpc.getGenerateFirmwareDownloadUriMethod) == null) {
+          ExtenderServiceGrpc.getGenerateFirmwareDownloadUriMethod = getGenerateFirmwareDownloadUriMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest, com.saltoapis.longrunning.v1.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GenerateFirmwareDownloadUri"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.longrunning.v1.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new ExtenderServiceMethodDescriptorSupplier("GenerateFirmwareDownloadUri"))
+              .build();
+        }
+      }
+    }
+    return getGenerateFirmwareDownloadUriMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -455,6 +486,19 @@ public final class ExtenderServiceGrpc {
         io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getResetExtenderMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Generate extender firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * extender. The returned URI can be used to bring the extender firmwares up
+     * to latest.
+     * </pre>
+     */
+    default void generateFirmwareDownloadUri(com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateFirmwareDownloadUriMethod(), responseObserver);
+    }
   }
 
   /**
@@ -606,6 +650,20 @@ public final class ExtenderServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResetExtenderMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Generate extender firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * extender. The returned URI can be used to bring the extender firmwares up
+     * to latest.
+     * </pre>
+     */
+    public void generateFirmwareDownloadUri(com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateFirmwareDownloadUriMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -731,6 +789,19 @@ public final class ExtenderServiceGrpc {
     public com.saltoapis.longrunning.v1.Operation resetExtender(com.saltoapis.nebula.extender.v1.ResetExtenderRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResetExtenderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Generate extender firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * extender. The returned URI can be used to bring the extender firmwares up
+     * to latest.
+     * </pre>
+     */
+    public com.saltoapis.longrunning.v1.Operation generateFirmwareDownloadUri(com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateFirmwareDownloadUriMethod(), getCallOptions(), request);
     }
   }
 
@@ -867,6 +938,20 @@ public final class ExtenderServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResetExtenderMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Generate extender firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * extender. The returned URI can be used to bring the extender firmwares up
+     * to latest.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.longrunning.v1.Operation> generateFirmwareDownloadUri(
+        com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateFirmwareDownloadUriMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_EXTENDER = 0;
@@ -878,6 +963,7 @@ public final class ExtenderServiceGrpc {
   private static final int METHODID_UNBIND_EXTENDER = 6;
   private static final int METHODID_UPDATE_EXTENDER_FIRMWARE = 7;
   private static final int METHODID_RESET_EXTENDER = 8;
+  private static final int METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -930,6 +1016,10 @@ public final class ExtenderServiceGrpc {
           break;
         case METHODID_RESET_EXTENDER:
           serviceImpl.resetExtender((com.saltoapis.nebula.extender.v1.ResetExtenderRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
+          break;
+        case METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI:
+          serviceImpl.generateFirmwareDownloadUri((com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
           break;
         default:
@@ -1013,6 +1103,13 @@ public final class ExtenderServiceGrpc {
               com.saltoapis.nebula.extender.v1.ResetExtenderRequest,
               com.saltoapis.longrunning.v1.Operation>(
                 service, METHODID_RESET_EXTENDER)))
+        .addMethod(
+          getGenerateFirmwareDownloadUriMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.extender.v1.GenerateFirmwareDownloadUriRequest,
+              com.saltoapis.longrunning.v1.Operation>(
+                service, METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI)))
         .build();
   }
 
@@ -1070,6 +1167,7 @@ public final class ExtenderServiceGrpc {
               .addMethod(getUnbindExtenderMethod())
               .addMethod(getUpdateExtenderFirmwareMethod())
               .addMethod(getResetExtenderMethod())
+              .addMethod(getGenerateFirmwareDownloadUriMethod())
               .build();
         }
       }

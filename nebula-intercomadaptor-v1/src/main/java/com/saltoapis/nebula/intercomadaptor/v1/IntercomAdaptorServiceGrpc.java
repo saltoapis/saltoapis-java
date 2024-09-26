@@ -393,6 +393,37 @@ public final class IntercomAdaptorServiceGrpc {
     return getGenerateAuthorizationTokenMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest,
+      com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateFirmwareDownloadUri",
+      requestType = com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest.class,
+      responseType = com.saltoapis.longrunning.v1.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest,
+      com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest, com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod;
+    if ((getGenerateFirmwareDownloadUriMethod = IntercomAdaptorServiceGrpc.getGenerateFirmwareDownloadUriMethod) == null) {
+      synchronized (IntercomAdaptorServiceGrpc.class) {
+        if ((getGenerateFirmwareDownloadUriMethod = IntercomAdaptorServiceGrpc.getGenerateFirmwareDownloadUriMethod) == null) {
+          IntercomAdaptorServiceGrpc.getGenerateFirmwareDownloadUriMethod = getGenerateFirmwareDownloadUriMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest, com.saltoapis.longrunning.v1.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GenerateFirmwareDownloadUri"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.longrunning.v1.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new IntercomAdaptorServiceMethodDescriptorSupplier("GenerateFirmwareDownloadUri"))
+              .build();
+        }
+      }
+    }
+    return getGenerateFirmwareDownloadUriMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -594,6 +625,19 @@ public final class IntercomAdaptorServiceGrpc {
         io.grpc.stub.StreamObserver<com.saltoapis.nebula.intercomadaptor.v1.GenerateAuthorizationTokenResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateAuthorizationTokenMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Generate intercom adaptor firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * intercom adaptor. The returned URI can be used to bring the intercom
+     * adaptor firmwares up to latest.
+     * </pre>
+     */
+    default void generateFirmwareDownloadUri(com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateFirmwareDownloadUriMethod(), responseObserver);
+    }
   }
 
   /**
@@ -794,6 +838,20 @@ public final class IntercomAdaptorServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGenerateAuthorizationTokenMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Generate intercom adaptor firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * intercom adaptor. The returned URI can be used to bring the intercom
+     * adaptor firmwares up to latest.
+     * </pre>
+     */
+    public void generateFirmwareDownloadUri(com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateFirmwareDownloadUriMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -964,6 +1022,19 @@ public final class IntercomAdaptorServiceGrpc {
     public com.saltoapis.nebula.intercomadaptor.v1.GenerateAuthorizationTokenResponse generateAuthorizationToken(com.saltoapis.nebula.intercomadaptor.v1.GenerateAuthorizationTokenRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateAuthorizationTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Generate intercom adaptor firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * intercom adaptor. The returned URI can be used to bring the intercom
+     * adaptor firmwares up to latest.
+     * </pre>
+     */
+    public com.saltoapis.longrunning.v1.Operation generateFirmwareDownloadUri(com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateFirmwareDownloadUriMethod(), getCallOptions(), request);
     }
   }
 
@@ -1148,6 +1219,20 @@ public final class IntercomAdaptorServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateAuthorizationTokenMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Generate intercom adaptor firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * intercom adaptor. The returned URI can be used to bring the intercom
+     * adaptor firmwares up to latest.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.longrunning.v1.Operation> generateFirmwareDownloadUri(
+        com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateFirmwareDownloadUriMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INTERCOM_ADAPTOR = 0;
@@ -1162,6 +1247,7 @@ public final class IntercomAdaptorServiceGrpc {
   private static final int METHODID_RESET_INTERCOM_ADAPTOR = 9;
   private static final int METHODID_UPDATE_INTERCOM_ADAPTOR_FIRMWARE = 10;
   private static final int METHODID_GENERATE_AUTHORIZATION_TOKEN = 11;
+  private static final int METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1227,6 +1313,10 @@ public final class IntercomAdaptorServiceGrpc {
         case METHODID_GENERATE_AUTHORIZATION_TOKEN:
           serviceImpl.generateAuthorizationToken((com.saltoapis.nebula.intercomadaptor.v1.GenerateAuthorizationTokenRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.intercomadaptor.v1.GenerateAuthorizationTokenResponse>) responseObserver);
+          break;
+        case METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI:
+          serviceImpl.generateFirmwareDownloadUri((com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1330,6 +1420,13 @@ public final class IntercomAdaptorServiceGrpc {
               com.saltoapis.nebula.intercomadaptor.v1.GenerateAuthorizationTokenRequest,
               com.saltoapis.nebula.intercomadaptor.v1.GenerateAuthorizationTokenResponse>(
                 service, METHODID_GENERATE_AUTHORIZATION_TOKEN)))
+        .addMethod(
+          getGenerateFirmwareDownloadUriMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.intercomadaptor.v1.GenerateFirmwareDownloadUriRequest,
+              com.saltoapis.longrunning.v1.Operation>(
+                service, METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI)))
         .build();
   }
 
@@ -1390,6 +1487,7 @@ public final class IntercomAdaptorServiceGrpc {
               .addMethod(getResetIntercomAdaptorMethod())
               .addMethod(getUpdateIntercomAdaptorFirmwareMethod())
               .addMethod(getGenerateAuthorizationTokenMethod())
+              .addMethod(getGenerateFirmwareDownloadUriMethod())
               .build();
         }
       }
