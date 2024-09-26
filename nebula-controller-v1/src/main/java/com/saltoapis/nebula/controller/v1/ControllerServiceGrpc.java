@@ -364,6 +364,37 @@ public final class ControllerServiceGrpc {
     return getUpdateControllerFirmwareMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest,
+      com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateFirmwareDownloadUri",
+      requestType = com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest.class,
+      responseType = com.saltoapis.longrunning.v1.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest,
+      com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest, com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod;
+    if ((getGenerateFirmwareDownloadUriMethod = ControllerServiceGrpc.getGenerateFirmwareDownloadUriMethod) == null) {
+      synchronized (ControllerServiceGrpc.class) {
+        if ((getGenerateFirmwareDownloadUriMethod = ControllerServiceGrpc.getGenerateFirmwareDownloadUriMethod) == null) {
+          ControllerServiceGrpc.getGenerateFirmwareDownloadUriMethod = getGenerateFirmwareDownloadUriMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest, com.saltoapis.longrunning.v1.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GenerateFirmwareDownloadUri"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.longrunning.v1.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new ControllerServiceMethodDescriptorSupplier("GenerateFirmwareDownloadUri"))
+              .build();
+        }
+      }
+    }
+    return getGenerateFirmwareDownloadUriMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -554,6 +585,19 @@ public final class ControllerServiceGrpc {
     default void updateControllerFirmware(com.saltoapis.nebula.controller.v1.UpdateControllerFirmwareRequest request,
         io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateControllerFirmwareMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Generate controller firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * controller. The returned URI can be used to bring the controller
+     * firmwares up to latest.
+     * </pre>
+     */
+    default void generateFirmwareDownloadUri(com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateFirmwareDownloadUriMethod(), responseObserver);
     }
   }
 
@@ -746,6 +790,20 @@ public final class ControllerServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateControllerFirmwareMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Generate controller firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * controller. The returned URI can be used to bring the controller
+     * firmwares up to latest.
+     * </pre>
+     */
+    public void generateFirmwareDownloadUri(com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateFirmwareDownloadUriMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -906,6 +964,19 @@ public final class ControllerServiceGrpc {
     public com.saltoapis.longrunning.v1.Operation updateControllerFirmware(com.saltoapis.nebula.controller.v1.UpdateControllerFirmwareRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateControllerFirmwareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Generate controller firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * controller. The returned URI can be used to bring the controller
+     * firmwares up to latest.
+     * </pre>
+     */
+    public com.saltoapis.longrunning.v1.Operation generateFirmwareDownloadUri(com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateFirmwareDownloadUriMethod(), getCallOptions(), request);
     }
   }
 
@@ -1079,6 +1150,20 @@ public final class ControllerServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateControllerFirmwareMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Generate controller firmware download URI
+     * Provides the download URI for the latest firmware bundle for the
+     * controller. The returned URI can be used to bring the controller
+     * firmwares up to latest.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.longrunning.v1.Operation> generateFirmwareDownloadUri(
+        com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateFirmwareDownloadUriMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CONTROLLER = 0;
@@ -1092,6 +1177,7 @@ public final class ControllerServiceGrpc {
   private static final int METHODID_CONFIGURE_CONTROLLER = 8;
   private static final int METHODID_RESET_CONTROLLER = 9;
   private static final int METHODID_UPDATE_CONTROLLER_FIRMWARE = 10;
+  private static final int METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1152,6 +1238,10 @@ public final class ControllerServiceGrpc {
           break;
         case METHODID_UPDATE_CONTROLLER_FIRMWARE:
           serviceImpl.updateControllerFirmware((com.saltoapis.nebula.controller.v1.UpdateControllerFirmwareRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
+          break;
+        case METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI:
+          serviceImpl.generateFirmwareDownloadUri((com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
           break;
         default:
@@ -1249,6 +1339,13 @@ public final class ControllerServiceGrpc {
               com.saltoapis.nebula.controller.v1.UpdateControllerFirmwareRequest,
               com.saltoapis.longrunning.v1.Operation>(
                 service, METHODID_UPDATE_CONTROLLER_FIRMWARE)))
+        .addMethod(
+          getGenerateFirmwareDownloadUriMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest,
+              com.saltoapis.longrunning.v1.Operation>(
+                service, METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI)))
         .build();
   }
 
@@ -1308,6 +1405,7 @@ public final class ControllerServiceGrpc {
               .addMethod(getConfigureControllerMethod())
               .addMethod(getResetControllerMethod())
               .addMethod(getUpdateControllerFirmwareMethod())
+              .addMethod(getGenerateFirmwareDownloadUriMethod())
               .build();
         }
       }

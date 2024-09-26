@@ -109,6 +109,21 @@ public final class ExtenderProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_extender_v1_ResetExtenderMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -149,37 +164,44 @@ public final class ExtenderProto {
       "rmwareMetadata\022\030\n\020progress_percent\030\001 \001(\005" +
       "\"$\n\024ResetExtenderRequest\022\014\n\004name\030\001 \001(\t\"\027" +
       "\n\025ResetExtenderResponse\"\027\n\025ResetExtender" +
-      "Metadata2\307\007\n\017ExtenderService\022e\n\016CreateEx" +
-      "tender\022/.salto.nebula.extender.v1.Create" +
-      "ExtenderRequest\032\".salto.nebula.extender." +
-      "v1.Extender\022_\n\013GetExtender\022,.salto.nebul" +
-      "a.extender.v1.GetExtenderRequest\032\".salto" +
-      ".nebula.extender.v1.Extender\022p\n\rListExte" +
-      "nders\022..salto.nebula.extender.v1.ListExt" +
-      "endersRequest\032/.salto.nebula.extender.v1" +
-      ".ListExtendersResponse\022e\n\016UpdateExtender" +
-      "\022/.salto.nebula.extender.v1.UpdateExtend" +
-      "erRequest\032\".salto.nebula.extender.v1.Ext" +
-      "ender\022Y\n\016DeleteExtender\022/.salto.nebula.e" +
-      "xtender.v1.DeleteExtenderRequest\032\026.googl" +
-      "e.protobuf.Empty\022m\n\014BindExtender\022-.salto" +
-      ".nebula.extender.v1.BindExtenderRequest\032" +
-      "..salto.nebula.extender.v1.BindExtenderR" +
-      "esponse\022s\n\016UnbindExtender\022/.salto.nebula" +
-      ".extender.v1.UnbindExtenderRequest\0320.sal" +
-      "to.nebula.extender.v1.UnbindExtenderResp" +
-      "onse\022r\n\026UpdateExtenderFirmware\0227.salto.n" +
-      "ebula.extender.v1.UpdateExtenderFirmware" +
-      "Request\032\037.salto.longrunning.v1.Operation" +
-      "\022`\n\rResetExtender\022..salto.nebula.extende" +
-      "r.v1.ResetExtenderRequest\032\037.salto.longru" +
-      "nning.v1.OperationB\344\001\n com.saltoapis.neb" +
-      "ula.extender.v1B\rExtenderProtoP\001ZFgithub" +
-      ".com/saltoapis-internal/saltoapis-go/neb" +
-      "ula/extender/v1;extender\252\002\034Saltoapis.Neb" +
-      "ula.Extender.V1\312\002\034Saltoapis\\Nebula\\Exten" +
-      "der\\V1\342\002(GPBMetadata\\Saltoapis\\Nebula\\Ex" +
-      "tender\\V1b\006proto3"
+      "Metadata\"6\n\"GenerateFirmwareDownloadUriR" +
+      "equest\022\020\n\010extender\030\001 \001(\t\"K\n#GenerateFirm" +
+      "wareDownloadUriResponse\022\024\n\014download_uri\030" +
+      "\001 \001(\t\022\016\n\006digest\030\002 \001(\t\"%\n#GenerateFirmwar" +
+      "eDownloadUriMetadata2\305\010\n\017ExtenderService" +
+      "\022e\n\016CreateExtender\022/.salto.nebula.extend" +
+      "er.v1.CreateExtenderRequest\032\".salto.nebu" +
+      "la.extender.v1.Extender\022_\n\013GetExtender\022," +
+      ".salto.nebula.extender.v1.GetExtenderReq" +
+      "uest\032\".salto.nebula.extender.v1.Extender" +
+      "\022p\n\rListExtenders\022..salto.nebula.extende" +
+      "r.v1.ListExtendersRequest\032/.salto.nebula" +
+      ".extender.v1.ListExtendersResponse\022e\n\016Up" +
+      "dateExtender\022/.salto.nebula.extender.v1." +
+      "UpdateExtenderRequest\032\".salto.nebula.ext" +
+      "ender.v1.Extender\022Y\n\016DeleteExtender\022/.sa" +
+      "lto.nebula.extender.v1.DeleteExtenderReq" +
+      "uest\032\026.google.protobuf.Empty\022m\n\014BindExte" +
+      "nder\022-.salto.nebula.extender.v1.BindExte" +
+      "nderRequest\032..salto.nebula.extender.v1.B" +
+      "indExtenderResponse\022s\n\016UnbindExtender\022/." +
+      "salto.nebula.extender.v1.UnbindExtenderR" +
+      "equest\0320.salto.nebula.extender.v1.Unbind" +
+      "ExtenderResponse\022r\n\026UpdateExtenderFirmwa" +
+      "re\0227.salto.nebula.extender.v1.UpdateExte" +
+      "nderFirmwareRequest\032\037.salto.longrunning." +
+      "v1.Operation\022`\n\rResetExtender\022..salto.ne" +
+      "bula.extender.v1.ResetExtenderRequest\032\037." +
+      "salto.longrunning.v1.Operation\022|\n\033Genera" +
+      "teFirmwareDownloadUri\022<.salto.nebula.ext" +
+      "ender.v1.GenerateFirmwareDownloadUriRequ" +
+      "est\032\037.salto.longrunning.v1.OperationB\344\001\n" +
+      " com.saltoapis.nebula.extender.v1B\rExten" +
+      "derProtoP\001ZFgithub.com/saltoapis-interna" +
+      "l/saltoapis-go/nebula/extender/v1;extend" +
+      "er\252\002\034Saltoapis.Nebula.Extender.V1\312\002\034Salt" +
+      "oapis\\Nebula\\Extender\\V1\342\002(GPBMetadata\\S" +
+      "altoapis\\Nebula\\Extender\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -289,6 +311,24 @@ public final class ExtenderProto {
     internal_static_salto_nebula_extender_v1_ResetExtenderMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_extender_v1_ResetExtenderMetadata_descriptor,
+        new java.lang.String[] { });
+    internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriRequest_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriRequest_descriptor,
+        new java.lang.String[] { "Extender", });
+    internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriResponse_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriResponse_descriptor,
+        new java.lang.String[] { "DownloadUri", "Digest", });
+    internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_extender_v1_GenerateFirmwareDownloadUriMetadata_descriptor,
         new java.lang.String[] { });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
