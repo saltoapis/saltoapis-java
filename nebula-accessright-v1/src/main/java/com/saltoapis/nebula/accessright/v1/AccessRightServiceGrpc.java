@@ -208,6 +208,37 @@ public final class AccessRightServiceGrpc {
     return getCreateAccessRightAccessPointMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest,
+      com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse> getBatchCreateAccessRightAccessPointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateAccessRightAccessPoints",
+      requestType = com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest.class,
+      responseType = com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest,
+      com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse> getBatchCreateAccessRightAccessPointsMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest, com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse> getBatchCreateAccessRightAccessPointsMethod;
+    if ((getBatchCreateAccessRightAccessPointsMethod = AccessRightServiceGrpc.getBatchCreateAccessRightAccessPointsMethod) == null) {
+      synchronized (AccessRightServiceGrpc.class) {
+        if ((getBatchCreateAccessRightAccessPointsMethod = AccessRightServiceGrpc.getBatchCreateAccessRightAccessPointsMethod) == null) {
+          AccessRightServiceGrpc.getBatchCreateAccessRightAccessPointsMethod = getBatchCreateAccessRightAccessPointsMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest, com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchCreateAccessRightAccessPoints"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessRightServiceMethodDescriptorSupplier("BatchCreateAccessRightAccessPoints"))
+              .build();
+        }
+      }
+    }
+    return getBatchCreateAccessRightAccessPointsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.GetAccessRightAccessPointRequest,
       com.saltoapis.nebula.accessright.v1.AccessRightAccessPoint> getGetAccessRightAccessPointMethod;
 
@@ -330,6 +361,37 @@ public final class AccessRightServiceGrpc {
       }
     }
     return getDeleteAccessRightAccessPointMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest,
+      com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse> getBatchDeleteAccessRightAccessPointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteAccessRightAccessPoints",
+      requestType = com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest.class,
+      responseType = com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest,
+      com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse> getBatchDeleteAccessRightAccessPointsMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest, com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse> getBatchDeleteAccessRightAccessPointsMethod;
+    if ((getBatchDeleteAccessRightAccessPointsMethod = AccessRightServiceGrpc.getBatchDeleteAccessRightAccessPointsMethod) == null) {
+      synchronized (AccessRightServiceGrpc.class) {
+        if ((getBatchDeleteAccessRightAccessPointsMethod = AccessRightServiceGrpc.getBatchDeleteAccessRightAccessPointsMethod) == null) {
+          AccessRightServiceGrpc.getBatchDeleteAccessRightAccessPointsMethod = getBatchDeleteAccessRightAccessPointsMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest, com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchDeleteAccessRightAccessPoints"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessRightServiceMethodDescriptorSupplier("BatchDeleteAccessRightAccessPoints"))
+              .build();
+        }
+      }
+    }
+    return getBatchDeleteAccessRightAccessPointsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.CreateAccessRightAccessPointGroupRequest,
@@ -610,6 +672,19 @@ public final class AccessRightServiceGrpc {
 
     /**
      * <pre>
+     * Create a batch of access rights access points
+     * Creates a batch of access rights access points associations.
+     * This method allows the creation of multiple access rights access points in a single operation.
+     * Experimental feature. DO NOT USE
+     * </pre>
+     */
+    default void batchCreateAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchCreateAccessRightAccessPointsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get an access point
      * Retrieves an existing access right's access point association.
      * </pre>
@@ -650,6 +725,19 @@ public final class AccessRightServiceGrpc {
     default void deleteAccessRightAccessPoint(com.saltoapis.nebula.accessright.v1.DeleteAccessRightAccessPointRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAccessRightAccessPointMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of access points
+     * Permanently deletes a batch of access right's access point associations.
+     * This cannot be undone.
+     * Experimental feature. DO NOT USE
+     * </pre>
+     */
+    default void batchDeleteAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchDeleteAccessRightAccessPointsMethod(), responseObserver);
     }
 
     /**
@@ -823,6 +911,20 @@ public final class AccessRightServiceGrpc {
 
     /**
      * <pre>
+     * Create a batch of access rights access points
+     * Creates a batch of access rights access points associations.
+     * This method allows the creation of multiple access rights access points in a single operation.
+     * Experimental feature. DO NOT USE
+     * </pre>
+     */
+    public void batchCreateAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateAccessRightAccessPointsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get an access point
      * Retrieves an existing access right's access point association.
      * </pre>
@@ -867,6 +969,20 @@ public final class AccessRightServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAccessRightAccessPointMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of access points
+     * Permanently deletes a batch of access right's access point associations.
+     * This cannot be undone.
+     * Experimental feature. DO NOT USE
+     * </pre>
+     */
+    public void batchDeleteAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteAccessRightAccessPointsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1021,6 +1137,19 @@ public final class AccessRightServiceGrpc {
 
     /**
      * <pre>
+     * Create a batch of access rights access points
+     * Creates a batch of access rights access points associations.
+     * This method allows the creation of multiple access rights access points in a single operation.
+     * Experimental feature. DO NOT USE
+     * </pre>
+     */
+    public com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse batchCreateAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateAccessRightAccessPointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Get an access point
      * Retrieves an existing access right's access point association.
      * </pre>
@@ -1061,6 +1190,19 @@ public final class AccessRightServiceGrpc {
     public com.google.protobuf.Empty deleteAccessRightAccessPoint(com.saltoapis.nebula.accessright.v1.DeleteAccessRightAccessPointRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAccessRightAccessPointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of access points
+     * Permanently deletes a batch of access right's access point associations.
+     * This cannot be undone.
+     * Experimental feature. DO NOT USE
+     * </pre>
+     */
+    public com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse batchDeleteAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteAccessRightAccessPointsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1216,6 +1358,20 @@ public final class AccessRightServiceGrpc {
 
     /**
      * <pre>
+     * Create a batch of access rights access points
+     * Creates a batch of access rights access points associations.
+     * This method allows the creation of multiple access rights access points in a single operation.
+     * Experimental feature. DO NOT USE
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse> batchCreateAccessRightAccessPoints(
+        com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateAccessRightAccessPointsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get an access point
      * Retrieves an existing access right's access point association.
      * </pre>
@@ -1260,6 +1416,20 @@ public final class AccessRightServiceGrpc {
         com.saltoapis.nebula.accessright.v1.DeleteAccessRightAccessPointRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAccessRightAccessPointMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of access points
+     * Permanently deletes a batch of access right's access point associations.
+     * This cannot be undone.
+     * Experimental feature. DO NOT USE
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse> batchDeleteAccessRightAccessPoints(
+        com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteAccessRightAccessPointsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1329,15 +1499,17 @@ public final class AccessRightServiceGrpc {
   private static final int METHODID_UPDATE_ACCESS_RIGHT = 3;
   private static final int METHODID_DELETE_ACCESS_RIGHT = 4;
   private static final int METHODID_CREATE_ACCESS_RIGHT_ACCESS_POINT = 5;
-  private static final int METHODID_GET_ACCESS_RIGHT_ACCESS_POINT = 6;
-  private static final int METHODID_LIST_ACCESS_RIGHT_ACCESS_POINTS = 7;
-  private static final int METHODID_UPDATE_ACCESS_RIGHT_ACCESS_POINT = 8;
-  private static final int METHODID_DELETE_ACCESS_RIGHT_ACCESS_POINT = 9;
-  private static final int METHODID_CREATE_ACCESS_RIGHT_ACCESS_POINT_GROUP = 10;
-  private static final int METHODID_GET_ACCESS_RIGHT_ACCESS_POINT_GROUP = 11;
-  private static final int METHODID_LIST_ACCESS_RIGHT_ACCESS_POINT_GROUPS = 12;
-  private static final int METHODID_UPDATE_ACCESS_RIGHT_ACCESS_POINT_GROUP = 13;
-  private static final int METHODID_DELETE_ACCESS_RIGHT_ACCESS_POINT_GROUP = 14;
+  private static final int METHODID_BATCH_CREATE_ACCESS_RIGHT_ACCESS_POINTS = 6;
+  private static final int METHODID_GET_ACCESS_RIGHT_ACCESS_POINT = 7;
+  private static final int METHODID_LIST_ACCESS_RIGHT_ACCESS_POINTS = 8;
+  private static final int METHODID_UPDATE_ACCESS_RIGHT_ACCESS_POINT = 9;
+  private static final int METHODID_DELETE_ACCESS_RIGHT_ACCESS_POINT = 10;
+  private static final int METHODID_BATCH_DELETE_ACCESS_RIGHT_ACCESS_POINTS = 11;
+  private static final int METHODID_CREATE_ACCESS_RIGHT_ACCESS_POINT_GROUP = 12;
+  private static final int METHODID_GET_ACCESS_RIGHT_ACCESS_POINT_GROUP = 13;
+  private static final int METHODID_LIST_ACCESS_RIGHT_ACCESS_POINT_GROUPS = 14;
+  private static final int METHODID_UPDATE_ACCESS_RIGHT_ACCESS_POINT_GROUP = 15;
+  private static final int METHODID_DELETE_ACCESS_RIGHT_ACCESS_POINT_GROUP = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1380,6 +1552,10 @@ public final class AccessRightServiceGrpc {
           serviceImpl.createAccessRightAccessPoint((com.saltoapis.nebula.accessright.v1.CreateAccessRightAccessPointRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightAccessPoint>) responseObserver);
           break;
+        case METHODID_BATCH_CREATE_ACCESS_RIGHT_ACCESS_POINTS:
+          serviceImpl.batchCreateAccessRightAccessPoints((com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse>) responseObserver);
+          break;
         case METHODID_GET_ACCESS_RIGHT_ACCESS_POINT:
           serviceImpl.getAccessRightAccessPoint((com.saltoapis.nebula.accessright.v1.GetAccessRightAccessPointRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightAccessPoint>) responseObserver);
@@ -1395,6 +1571,10 @@ public final class AccessRightServiceGrpc {
         case METHODID_DELETE_ACCESS_RIGHT_ACCESS_POINT:
           serviceImpl.deleteAccessRightAccessPoint((com.saltoapis.nebula.accessright.v1.DeleteAccessRightAccessPointRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_ACCESS_RIGHT_ACCESS_POINTS:
+          serviceImpl.batchDeleteAccessRightAccessPoints((com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse>) responseObserver);
           break;
         case METHODID_CREATE_ACCESS_RIGHT_ACCESS_POINT_GROUP:
           serviceImpl.createAccessRightAccessPointGroup((com.saltoapis.nebula.accessright.v1.CreateAccessRightAccessPointGroupRequest) request,
@@ -1477,6 +1657,13 @@ public final class AccessRightServiceGrpc {
               com.saltoapis.nebula.accessright.v1.AccessRightAccessPoint>(
                 service, METHODID_CREATE_ACCESS_RIGHT_ACCESS_POINT)))
         .addMethod(
+          getBatchCreateAccessRightAccessPointsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest,
+              com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse>(
+                service, METHODID_BATCH_CREATE_ACCESS_RIGHT_ACCESS_POINTS)))
+        .addMethod(
           getGetAccessRightAccessPointMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1504,6 +1691,13 @@ public final class AccessRightServiceGrpc {
               com.saltoapis.nebula.accessright.v1.DeleteAccessRightAccessPointRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_DELETE_ACCESS_RIGHT_ACCESS_POINT)))
+        .addMethod(
+          getBatchDeleteAccessRightAccessPointsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest,
+              com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse>(
+                service, METHODID_BATCH_DELETE_ACCESS_RIGHT_ACCESS_POINTS)))
         .addMethod(
           getCreateAccessRightAccessPointGroupMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1593,10 +1787,12 @@ public final class AccessRightServiceGrpc {
               .addMethod(getUpdateAccessRightMethod())
               .addMethod(getDeleteAccessRightMethod())
               .addMethod(getCreateAccessRightAccessPointMethod())
+              .addMethod(getBatchCreateAccessRightAccessPointsMethod())
               .addMethod(getGetAccessRightAccessPointMethod())
               .addMethod(getListAccessRightAccessPointsMethod())
               .addMethod(getUpdateAccessRightAccessPointMethod())
               .addMethod(getDeleteAccessRightAccessPointMethod())
+              .addMethod(getBatchDeleteAccessRightAccessPointsMethod())
               .addMethod(getCreateAccessRightAccessPointGroupMethod())
               .addMethod(getGetAccessRightAccessPointGroupMethod())
               .addMethod(getListAccessRightAccessPointGroupsMethod())

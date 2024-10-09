@@ -75,6 +75,16 @@ public final class AccessRightProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_accessright_v1_CreateAccessRightAccessPointRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_salto_nebula_accessright_v1_GetAccessRightAccessPointRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -129,6 +139,16 @@ public final class AccessRightProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_accessright_v1_DeleteAccessRightAccessPointGroupRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -171,100 +191,121 @@ public final class AccessRightProto {
       "(\t\"\215\001\n#CreateAccessRightAccessPointReque" +
       "st\022\016\n\006parent\030\001 \001(\t\022V\n\031access_right_acces" +
       "s_point\030\002 \001(\01323.salto.nebula.accessright" +
-      ".v1.AccessRightAccessPoint\"0\n GetAccessR" +
-      "ightAccessPointRequest\022\014\n\004name\030\001 \001(\t\"}\n\"" +
-      "ListAccessRightAccessPointsRequest\022\016\n\006pa" +
-      "rent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to" +
-      "ken\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 " +
-      "\001(\t\"\227\001\n#ListAccessRightAccessPointsRespo" +
-      "nse\022W\n\032access_right_access_points\030\001 \003(\0132" +
-      "3.salto.nebula.accessright.v1.AccessRigh" +
-      "tAccessPoint\022\027\n\017next_page_token\030\002 \001(\t\"\256\001" +
-      "\n#UpdateAccessRightAccessPointRequest\022V\n" +
-      "\031access_right_access_point\030\001 \001(\01323.salto" +
-      ".nebula.accessright.v1.AccessRightAccess" +
-      "Point\022/\n\013update_mask\030\002 \001(\0132\032.google.prot" +
-      "obuf.FieldMask\"3\n#DeleteAccessRightAcces" +
-      "sPointRequest\022\014\n\004name\030\001 \001(\t\"\235\001\n(CreateAc" +
-      "cessRightAccessPointGroupRequest\022\016\n\006pare" +
-      "nt\030\001 \001(\t\022a\n\037access_right_access_point_gr" +
-      "oup\030\002 \001(\01328.salto.nebula.accessright.v1." +
-      "AccessRightAccessPointGroup\"5\n%GetAccess" +
-      "RightAccessPointGroupRequest\022\014\n\004name\030\001 \001" +
-      "(\t\"\202\001\n\'ListAccessRightAccessPointGroupsR" +
-      "equest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(" +
-      "\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n" +
-      "\010order_by\030\005 \001(\t\"\247\001\n(ListAccessRightAcces" +
-      "sPointGroupsResponse\022b\n access_right_acc" +
-      "ess_point_groups\030\001 \003(\01328.salto.nebula.ac" +
-      "cessright.v1.AccessRightAccessPointGroup" +
-      "\022\027\n\017next_page_token\030\002 \001(\t\"\276\001\n(UpdateAcce" +
-      "ssRightAccessPointGroupRequest\022a\n\037access" +
-      "_right_access_point_group\030\001 \001(\01328.salto." +
-      "nebula.accessright.v1.AccessRightAccessP" +
-      "ointGroup\022/\n\013update_mask\030\002 \001(\0132\032.google." +
-      "protobuf.FieldMask\"8\n(DeleteAccessRightA" +
-      "ccessPointGroupRequest\022\014\n\004name\030\001 \001(\t2\332\020\n" +
-      "\022AccessRightService\022t\n\021CreateAccessRight" +
-      "\0225.salto.nebula.accessright.v1.CreateAcc" +
-      "essRightRequest\032(.salto.nebula.accessrig" +
-      "ht.v1.AccessRight\022n\n\016GetAccessRight\0222.sa" +
-      "lto.nebula.accessright.v1.GetAccessRight" +
-      "Request\032(.salto.nebula.accessright.v1.Ac" +
-      "cessRight\022\177\n\020ListAccessRights\0224.salto.ne" +
-      "bula.accessright.v1.ListAccessRightsRequ" +
-      "est\0325.salto.nebula.accessright.v1.ListAc" +
-      "cessRightsResponse\022t\n\021UpdateAccessRight\022" +
-      "5.salto.nebula.accessright.v1.UpdateAcce" +
-      "ssRightRequest\032(.salto.nebula.accessrigh" +
-      "t.v1.AccessRight\022b\n\021DeleteAccessRight\0225." +
-      "salto.nebula.accessright.v1.DeleteAccess" +
-      "RightRequest\032\026.google.protobuf.Empty\022\225\001\n" +
-      "\034CreateAccessRightAccessPoint\022@.salto.ne" +
-      "bula.accessright.v1.CreateAccessRightAcc" +
-      "essPointRequest\0323.salto.nebula.accessrig" +
-      "ht.v1.AccessRightAccessPoint\022\217\001\n\031GetAcce" +
-      "ssRightAccessPoint\022=.salto.nebula.access" +
-      "right.v1.GetAccessRightAccessPointReques" +
-      "t\0323.salto.nebula.accessright.v1.AccessRi" +
-      "ghtAccessPoint\022\240\001\n\033ListAccessRightAccess" +
-      "Points\022?.salto.nebula.accessright.v1.Lis" +
-      "tAccessRightAccessPointsRequest\032@.salto." +
-      "nebula.accessright.v1.ListAccessRightAcc" +
-      "essPointsResponse\022\225\001\n\034UpdateAccessRightA" +
-      "ccessPoint\022@.salto.nebula.accessright.v1" +
-      ".UpdateAccessRightAccessPointRequest\0323.s" +
-      "alto.nebula.accessright.v1.AccessRightAc" +
-      "cessPoint\022x\n\034DeleteAccessRightAccessPoin" +
-      "t\022@.salto.nebula.accessright.v1.DeleteAc" +
-      "cessRightAccessPointRequest\032\026.google.pro" +
-      "tobuf.Empty\022\244\001\n!CreateAccessRightAccessP" +
-      "ointGroup\022E.salto.nebula.accessright.v1." +
-      "CreateAccessRightAccessPointGroupRequest" +
-      "\0328.salto.nebula.accessright.v1.AccessRig" +
-      "htAccessPointGroup\022\236\001\n\036GetAccessRightAcc" +
-      "essPointGroup\022B.salto.nebula.accessright" +
-      ".v1.GetAccessRightAccessPointGroupReques" +
-      "t\0328.salto.nebula.accessright.v1.AccessRi" +
-      "ghtAccessPointGroup\022\257\001\n ListAccessRightA" +
-      "ccessPointGroups\022D.salto.nebula.accessri" +
-      "ght.v1.ListAccessRightAccessPointGroupsR" +
-      "equest\032E.salto.nebula.accessright.v1.Lis" +
-      "tAccessRightAccessPointGroupsResponse\022\244\001" +
-      "\n!UpdateAccessRightAccessPointGroup\022E.sa" +
-      "lto.nebula.accessright.v1.UpdateAccessRi" +
-      "ghtAccessPointGroupRequest\0328.salto.nebul" +
-      "a.accessright.v1.AccessRightAccessPointG" +
-      "roup\022\202\001\n!DeleteAccessRightAccessPointGro" +
-      "up\022E.salto.nebula.accessright.v1.DeleteA" +
-      "ccessRightAccessPointGroupRequest\032\026.goog" +
-      "le.protobuf.EmptyB\371\001\n#com.saltoapis.nebu" +
-      "la.accessright.v1B\020AccessRightProtoP\001ZLg" +
-      "ithub.com/saltoapis-internal/saltoapis-g" +
-      "o/nebula/accessright/v1;accessright\252\002\037Sa" +
-      "ltoapis.Nebula.AccessRight.V1\312\002\037Saltoapi" +
-      "s\\Nebula\\AccessRight\\V1\342\002+GPBMetadata\\Sa" +
-      "ltoapis\\Nebula\\AccessRight\\V1b\006proto3"
+      ".v1.AccessRightAccessPoint\"\217\001\n)BatchCrea" +
+      "teAccessRightAccessPointsRequest\022\016\n\006pare" +
+      "nt\030\001 \001(\t\022R\n\010requests\030\002 \003(\0132@.salto.nebul" +
+      "a.accessright.v1.CreateAccessRightAccess" +
+      "PointRequest\"\205\001\n*BatchCreateAccessRightA" +
+      "ccessPointsResponse\022W\n\032access_right_acce" +
+      "ss_points\030\001 \003(\01323.salto.nebula.accessrig" +
+      "ht.v1.AccessRightAccessPoint\"0\n GetAcces" +
+      "sRightAccessPointRequest\022\014\n\004name\030\001 \001(\t\"}" +
+      "\n\"ListAccessRightAccessPointsRequest\022\016\n\006" +
+      "parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
+      "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030" +
+      "\005 \001(\t\"\227\001\n#ListAccessRightAccessPointsRes" +
+      "ponse\022W\n\032access_right_access_points\030\001 \003(" +
+      "\01323.salto.nebula.accessright.v1.AccessRi" +
+      "ghtAccessPoint\022\027\n\017next_page_token\030\002 \001(\t\"" +
+      "\256\001\n#UpdateAccessRightAccessPointRequest\022" +
+      "V\n\031access_right_access_point\030\001 \001(\01323.sal" +
+      "to.nebula.accessright.v1.AccessRightAcce" +
+      "ssPoint\022/\n\013update_mask\030\002 \001(\0132\032.google.pr" +
+      "otobuf.FieldMask\"3\n#DeleteAccessRightAcc" +
+      "essPointRequest\022\014\n\004name\030\001 \001(\t\"\235\001\n(Create" +
+      "AccessRightAccessPointGroupRequest\022\016\n\006pa" +
+      "rent\030\001 \001(\t\022a\n\037access_right_access_point_" +
+      "group\030\002 \001(\01328.salto.nebula.accessright.v" +
+      "1.AccessRightAccessPointGroup\"5\n%GetAcce" +
+      "ssRightAccessPointGroupRequest\022\014\n\004name\030\001" +
+      " \001(\t\"\202\001\n\'ListAccessRightAccessPointGroup" +
+      "sRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 " +
+      "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022" +
+      "\020\n\010order_by\030\005 \001(\t\"\247\001\n(ListAccessRightAcc" +
+      "essPointGroupsResponse\022b\n access_right_a" +
+      "ccess_point_groups\030\001 \003(\01328.salto.nebula." +
+      "accessright.v1.AccessRightAccessPointGro" +
+      "up\022\027\n\017next_page_token\030\002 \001(\t\"\276\001\n(UpdateAc" +
+      "cessRightAccessPointGroupRequest\022a\n\037acce" +
+      "ss_right_access_point_group\030\001 \001(\01328.salt" +
+      "o.nebula.accessright.v1.AccessRightAcces" +
+      "sPointGroup\022/\n\013update_mask\030\002 \001(\0132\032.googl" +
+      "e.protobuf.FieldMask\"8\n(DeleteAccessRigh" +
+      "tAccessPointGroupRequest\022\014\n\004name\030\001 \001(\t\"\217" +
+      "\001\n)BatchDeleteAccessRightAccessPointsReq" +
+      "uest\022\016\n\006parent\030\001 \001(\t\022R\n\010requests\030\002 \003(\0132@" +
+      ".salto.nebula.accessright.v1.DeleteAcces" +
+      "sRightAccessPointRequest\",\n*BatchDeleteA" +
+      "ccessRightAccessPointsResponse2\312\023\n\022Acces" +
+      "sRightService\022t\n\021CreateAccessRight\0225.sal" +
+      "to.nebula.accessright.v1.CreateAccessRig" +
+      "htRequest\032(.salto.nebula.accessright.v1." +
+      "AccessRight\022n\n\016GetAccessRight\0222.salto.ne" +
+      "bula.accessright.v1.GetAccessRightReques" +
+      "t\032(.salto.nebula.accessright.v1.AccessRi" +
+      "ght\022\177\n\020ListAccessRights\0224.salto.nebula.a" +
+      "ccessright.v1.ListAccessRightsRequest\0325." +
+      "salto.nebula.accessright.v1.ListAccessRi" +
+      "ghtsResponse\022t\n\021UpdateAccessRight\0225.salt" +
+      "o.nebula.accessright.v1.UpdateAccessRigh" +
+      "tRequest\032(.salto.nebula.accessright.v1.A" +
+      "ccessRight\022b\n\021DeleteAccessRight\0225.salto." +
+      "nebula.accessright.v1.DeleteAccessRightR" +
+      "equest\032\026.google.protobuf.Empty\022\225\001\n\034Creat" +
+      "eAccessRightAccessPoint\022@.salto.nebula.a" +
+      "ccessright.v1.CreateAccessRightAccessPoi" +
+      "ntRequest\0323.salto.nebula.accessright.v1." +
+      "AccessRightAccessPoint\022\265\001\n\"BatchCreateAc" +
+      "cessRightAccessPoints\022F.salto.nebula.acc" +
+      "essright.v1.BatchCreateAccessRightAccess" +
+      "PointsRequest\032G.salto.nebula.accessright" +
+      ".v1.BatchCreateAccessRightAccessPointsRe" +
+      "sponse\022\217\001\n\031GetAccessRightAccessPoint\022=.s" +
+      "alto.nebula.accessright.v1.GetAccessRigh" +
+      "tAccessPointRequest\0323.salto.nebula.acces" +
+      "sright.v1.AccessRightAccessPoint\022\240\001\n\033Lis" +
+      "tAccessRightAccessPoints\022?.salto.nebula." +
+      "accessright.v1.ListAccessRightAccessPoin" +
+      "tsRequest\032@.salto.nebula.accessright.v1." +
+      "ListAccessRightAccessPointsResponse\022\225\001\n\034" +
+      "UpdateAccessRightAccessPoint\022@.salto.neb" +
+      "ula.accessright.v1.UpdateAccessRightAcce" +
+      "ssPointRequest\0323.salto.nebula.accessrigh" +
+      "t.v1.AccessRightAccessPoint\022x\n\034DeleteAcc" +
+      "essRightAccessPoint\022@.salto.nebula.acces" +
+      "sright.v1.DeleteAccessRightAccessPointRe" +
+      "quest\032\026.google.protobuf.Empty\022\265\001\n\"BatchD" +
+      "eleteAccessRightAccessPoints\022F.salto.neb" +
+      "ula.accessright.v1.BatchDeleteAccessRigh" +
+      "tAccessPointsRequest\032G.salto.nebula.acce" +
+      "ssright.v1.BatchDeleteAccessRightAccessP" +
+      "ointsResponse\022\244\001\n!CreateAccessRightAcces" +
+      "sPointGroup\022E.salto.nebula.accessright.v" +
+      "1.CreateAccessRightAccessPointGroupReque" +
+      "st\0328.salto.nebula.accessright.v1.AccessR" +
+      "ightAccessPointGroup\022\236\001\n\036GetAccessRightA" +
+      "ccessPointGroup\022B.salto.nebula.accessrig" +
+      "ht.v1.GetAccessRightAccessPointGroupRequ" +
+      "est\0328.salto.nebula.accessright.v1.Access" +
+      "RightAccessPointGroup\022\257\001\n ListAccessRigh" +
+      "tAccessPointGroups\022D.salto.nebula.access" +
+      "right.v1.ListAccessRightAccessPointGroup" +
+      "sRequest\032E.salto.nebula.accessright.v1.L" +
+      "istAccessRightAccessPointGroupsResponse\022" +
+      "\244\001\n!UpdateAccessRightAccessPointGroup\022E." +
+      "salto.nebula.accessright.v1.UpdateAccess" +
+      "RightAccessPointGroupRequest\0328.salto.neb" +
+      "ula.accessright.v1.AccessRightAccessPoin" +
+      "tGroup\022\202\001\n!DeleteAccessRightAccessPointG" +
+      "roup\022E.salto.nebula.accessright.v1.Delet" +
+      "eAccessRightAccessPointGroupRequest\032\026.go" +
+      "ogle.protobuf.EmptyB\371\001\n#com.saltoapis.ne" +
+      "bula.accessright.v1B\020AccessRightProtoP\001Z" +
+      "Lgithub.com/saltoapis-internal/saltoapis" +
+      "-go/nebula/accessright/v1;accessright\252\002\037" +
+      "Saltoapis.Nebula.AccessRight.V1\312\002\037Saltoa" +
+      "pis\\Nebula\\AccessRight\\V1\342\002+GPBMetadata\\" +
+      "Saltoapis\\Nebula\\AccessRight\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -334,72 +375,96 @@ public final class AccessRightProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_CreateAccessRightAccessPointRequest_descriptor,
         new java.lang.String[] { "Parent", "AccessRightAccessPoint", });
-    internal_static_salto_nebula_accessright_v1_GetAccessRightAccessPointRequest_descriptor =
+    internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
+    internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsRequest_descriptor,
+        new java.lang.String[] { "Parent", "Requests", });
+    internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_accessright_v1_BatchCreateAccessRightAccessPointsResponse_descriptor,
+        new java.lang.String[] { "AccessRightAccessPoints", });
+    internal_static_salto_nebula_accessright_v1_GetAccessRightAccessPointRequest_descriptor =
+      getDescriptor().getMessageTypes().get(12);
     internal_static_salto_nebula_accessright_v1_GetAccessRightAccessPointRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_GetAccessRightAccessPointRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointsRequest_descriptor,
         new java.lang.String[] { "Parent", "PageSize", "PageToken", "Filter", "OrderBy", });
     internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointsResponse_descriptor,
         new java.lang.String[] { "AccessRightAccessPoints", "NextPageToken", });
     internal_static_salto_nebula_accessright_v1_UpdateAccessRightAccessPointRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_salto_nebula_accessright_v1_UpdateAccessRightAccessPointRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_UpdateAccessRightAccessPointRequest_descriptor,
         new java.lang.String[] { "AccessRightAccessPoint", "UpdateMask", });
     internal_static_salto_nebula_accessright_v1_DeleteAccessRightAccessPointRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_salto_nebula_accessright_v1_DeleteAccessRightAccessPointRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_DeleteAccessRightAccessPointRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_accessright_v1_CreateAccessRightAccessPointGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_salto_nebula_accessright_v1_CreateAccessRightAccessPointGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_CreateAccessRightAccessPointGroupRequest_descriptor,
         new java.lang.String[] { "Parent", "AccessRightAccessPointGroup", });
     internal_static_salto_nebula_accessright_v1_GetAccessRightAccessPointGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_salto_nebula_accessright_v1_GetAccessRightAccessPointGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_GetAccessRightAccessPointGroupRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointGroupsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointGroupsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointGroupsRequest_descriptor,
         new java.lang.String[] { "Parent", "PageSize", "PageToken", "Filter", "OrderBy", });
     internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointGroupsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointGroupsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_ListAccessRightAccessPointGroupsResponse_descriptor,
         new java.lang.String[] { "AccessRightAccessPointGroups", "NextPageToken", });
     internal_static_salto_nebula_accessright_v1_UpdateAccessRightAccessPointGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_salto_nebula_accessright_v1_UpdateAccessRightAccessPointGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_UpdateAccessRightAccessPointGroupRequest_descriptor,
         new java.lang.String[] { "AccessRightAccessPointGroup", "UpdateMask", });
     internal_static_salto_nebula_accessright_v1_DeleteAccessRightAccessPointGroupRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_salto_nebula_accessright_v1_DeleteAccessRightAccessPointGroupRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_DeleteAccessRightAccessPointGroupRequest_descriptor,
         new java.lang.String[] { "Name", });
+    internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsRequest_descriptor,
+        new java.lang.String[] { "Parent", "Requests", });
+    internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_accessright_v1_BatchDeleteAccessRightAccessPointsResponse_descriptor,
+        new java.lang.String[] { });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
