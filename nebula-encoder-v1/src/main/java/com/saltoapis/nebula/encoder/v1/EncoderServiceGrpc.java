@@ -392,6 +392,37 @@ public final class EncoderServiceGrpc {
     return getReadKeyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest,
+      com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse> getGenerateAuthorizationTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateAuthorizationToken",
+      requestType = com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest.class,
+      responseType = com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest,
+      com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse> getGenerateAuthorizationTokenMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest, com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse> getGenerateAuthorizationTokenMethod;
+    if ((getGenerateAuthorizationTokenMethod = EncoderServiceGrpc.getGenerateAuthorizationTokenMethod) == null) {
+      synchronized (EncoderServiceGrpc.class) {
+        if ((getGenerateAuthorizationTokenMethod = EncoderServiceGrpc.getGenerateAuthorizationTokenMethod) == null) {
+          EncoderServiceGrpc.getGenerateAuthorizationTokenMethod = getGenerateAuthorizationTokenMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest, com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GenerateAuthorizationToken"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new EncoderServiceMethodDescriptorSupplier("GenerateAuthorizationToken"))
+              .build();
+        }
+      }
+    }
+    return getGenerateAuthorizationTokenMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.encoder.v1.GenerateFirmwareDownloadUriRequest,
       com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod;
 
@@ -625,6 +656,18 @@ public final class EncoderServiceGrpc {
 
     /**
      * <pre>
+     * Generates an authorization token for an encoder
+     * Generates an authorization token that allows to connect, authenticate and
+     * authorize against an encoder.
+     * </pre>
+     */
+    default void generateAuthorizationToken(com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateAuthorizationTokenMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Generate encoder firmware download URI
      * Provides the download URI for the latest firmware bundle for the
      * encoder. The returned URI can be used to bring the encoder
@@ -835,6 +878,19 @@ public final class EncoderServiceGrpc {
 
     /**
      * <pre>
+     * Generates an authorization token for an encoder
+     * Generates an authorization token that allows to connect, authenticate and
+     * authorize against an encoder.
+     * </pre>
+     */
+    public void generateAuthorizationToken(com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateAuthorizationTokenMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Generate encoder firmware download URI
      * Provides the download URI for the latest firmware bundle for the
      * encoder. The returned URI can be used to bring the encoder
@@ -1014,6 +1070,18 @@ public final class EncoderServiceGrpc {
     public com.saltoapis.longrunning.v1.Operation readKey(com.saltoapis.nebula.encoder.v1.ReadKeyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getReadKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Generates an authorization token for an encoder
+     * Generates an authorization token that allows to connect, authenticate and
+     * authorize against an encoder.
+     * </pre>
+     */
+    public com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse generateAuthorizationToken(com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAuthorizationTokenMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1212,6 +1280,19 @@ public final class EncoderServiceGrpc {
 
     /**
      * <pre>
+     * Generates an authorization token for an encoder
+     * Generates an authorization token that allows to connect, authenticate and
+     * authorize against an encoder.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse> generateAuthorizationToken(
+        com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateAuthorizationTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Generate encoder firmware download URI
      * Provides the download URI for the latest firmware bundle for the
      * encoder. The returned URI can be used to bring the encoder
@@ -1237,7 +1318,8 @@ public final class EncoderServiceGrpc {
   private static final int METHODID_BIND_ENCODER = 9;
   private static final int METHODID_UNBIND_ENCODER = 10;
   private static final int METHODID_READ_KEY = 11;
-  private static final int METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI = 12;
+  private static final int METHODID_GENERATE_AUTHORIZATION_TOKEN = 12;
+  private static final int METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI = 13;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1303,6 +1385,10 @@ public final class EncoderServiceGrpc {
         case METHODID_READ_KEY:
           serviceImpl.readKey((com.saltoapis.nebula.encoder.v1.ReadKeyRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
+          break;
+        case METHODID_GENERATE_AUTHORIZATION_TOKEN:
+          serviceImpl.generateAuthorizationToken((com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse>) responseObserver);
           break;
         case METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI:
           serviceImpl.generateFirmwareDownloadUri((com.saltoapis.nebula.encoder.v1.GenerateFirmwareDownloadUriRequest) request,
@@ -1411,6 +1497,13 @@ public final class EncoderServiceGrpc {
               com.saltoapis.longrunning.v1.Operation>(
                 service, METHODID_READ_KEY)))
         .addMethod(
+          getGenerateAuthorizationTokenMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenRequest,
+              com.saltoapis.nebula.encoder.v1.GenerateAuthorizationTokenResponse>(
+                service, METHODID_GENERATE_AUTHORIZATION_TOKEN)))
+        .addMethod(
           getGenerateFirmwareDownloadUriMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1477,6 +1570,7 @@ public final class EncoderServiceGrpc {
               .addMethod(getBindEncoderMethod())
               .addMethod(getUnbindEncoderMethod())
               .addMethod(getReadKeyMethod())
+              .addMethod(getGenerateAuthorizationTokenMethod())
               .addMethod(getGenerateFirmwareDownloadUriMethod())
               .build();
         }

@@ -155,6 +155,16 @@ public final class EncoderProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_encoder_v1_ReadKeyMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -220,51 +230,57 @@ public final class EncoderProto {
       "eMetadata\022\030\n\020progress_percent\030\001 \001(\005\"!\n\016R" +
       "eadKeyRequest\022\017\n\007encoder\030\001 \001(\t\",\n\017ReadKe" +
       "yResponse\022\022\n\010card_key\030\001 \001(\tH\000B\005\n\003key\"\021\n\017" +
-      "ReadKeyMetadata\"5\n\"GenerateFirmwareDownl" +
-      "oadUriRequest\022\017\n\007encoder\030\001 \001(\t\"K\n#Genera" +
-      "teFirmwareDownloadUriResponse\022\024\n\014downloa" +
-      "d_uri\030\001 \001(\t\022\016\n\006digest\030\002 \001(\t\"%\n#GenerateF" +
-      "irmwareDownloadUriMetadata2\301\n\n\016EncoderSe" +
-      "rvice\022`\n\rCreateEncoder\022-.salto.nebula.en" +
-      "coder.v1.CreateEncoderRequest\032 .salto.ne" +
-      "bula.encoder.v1.Encoder\022Z\n\nGetEncoder\022*." +
-      "salto.nebula.encoder.v1.GetEncoderReques" +
-      "t\032 .salto.nebula.encoder.v1.Encoder\022k\n\014L" +
-      "istEncoders\022,.salto.nebula.encoder.v1.Li" +
-      "stEncodersRequest\032-.salto.nebula.encoder" +
-      ".v1.ListEncodersResponse\022`\n\rUpdateEncode" +
-      "r\022-.salto.nebula.encoder.v1.UpdateEncode" +
-      "rRequest\032 .salto.nebula.encoder.v1.Encod" +
-      "er\022V\n\rDeleteEncoder\022-.salto.nebula.encod" +
-      "er.v1.DeleteEncoderRequest\032\026.google.prot" +
-      "obuf.Empty\022g\n\021InitializeEncoder\0221.salto." +
-      "nebula.encoder.v1.InitializeEncoderReque" +
-      "st\032\037.salto.longrunning.v1.Operation\022e\n\020C" +
-      "onfigureEncoder\0220.salto.nebula.encoder.v" +
-      "1.ConfigureEncoderRequest\032\037.salto.longru" +
-      "nning.v1.Operation\022]\n\014ResetEncoder\022,.sal" +
-      "to.nebula.encoder.v1.ResetEncoderRequest" +
-      "\032\037.salto.longrunning.v1.Operation\022o\n\025Upd" +
-      "ateEncoderFirmware\0225.salto.nebula.encode" +
-      "r.v1.UpdateEncoderFirmwareRequest\032\037.salt" +
-      "o.longrunning.v1.Operation\022h\n\013BindEncode" +
-      "r\022+.salto.nebula.encoder.v1.BindEncoderR" +
-      "equest\032,.salto.nebula.encoder.v1.BindEnc" +
-      "oderResponse\022n\n\rUnbindEncoder\022-.salto.ne" +
-      "bula.encoder.v1.UnbindEncoderRequest\032..s" +
-      "alto.nebula.encoder.v1.UnbindEncoderResp" +
-      "onse\022S\n\007ReadKey\022\'.salto.nebula.encoder.v" +
-      "1.ReadKeyRequest\032\037.salto.longrunning.v1." +
-      "Operation\022{\n\033GenerateFirmwareDownloadUri" +
-      "\022;.salto.nebula.encoder.v1.GenerateFirmw" +
-      "areDownloadUriRequest\032\037.salto.longrunnin" +
-      "g.v1.OperationB\335\001\n\037com.saltoapis.nebula." +
-      "encoder.v1B\014EncoderProtoP\001ZDgithub.com/s" +
-      "altoapis-internal/saltoapis-go/nebula/en" +
-      "coder/v1;encoder\252\002\033Saltoapis.Nebula.Enco" +
-      "der.V1\312\002\033Saltoapis\\Nebula\\Encoder\\V1\342\002\'G" +
-      "PBMetadata\\Saltoapis\\Nebula\\Encoder\\V1b\006" +
-      "proto3"
+      "ReadKeyMetadata\"4\n!GenerateAuthorization" +
+      "TokenRequest\022\017\n\007encoder\030\001 \001(\t\"A\n\"Generat" +
+      "eAuthorizationTokenResponse\022\033\n\023authoriza" +
+      "tion_token\030\001 \001(\014\"5\n\"GenerateFirmwareDown" +
+      "loadUriRequest\022\017\n\007encoder\030\001 \001(\t\"K\n#Gener" +
+      "ateFirmwareDownloadUriResponse\022\024\n\014downlo" +
+      "ad_uri\030\001 \001(\t\022\016\n\006digest\030\002 \001(\t\"%\n#Generate" +
+      "FirmwareDownloadUriMetadata2\331\013\n\016EncoderS" +
+      "ervice\022`\n\rCreateEncoder\022-.salto.nebula.e" +
+      "ncoder.v1.CreateEncoderRequest\032 .salto.n" +
+      "ebula.encoder.v1.Encoder\022Z\n\nGetEncoder\022*" +
+      ".salto.nebula.encoder.v1.GetEncoderReque" +
+      "st\032 .salto.nebula.encoder.v1.Encoder\022k\n\014" +
+      "ListEncoders\022,.salto.nebula.encoder.v1.L" +
+      "istEncodersRequest\032-.salto.nebula.encode" +
+      "r.v1.ListEncodersResponse\022`\n\rUpdateEncod" +
+      "er\022-.salto.nebula.encoder.v1.UpdateEncod" +
+      "erRequest\032 .salto.nebula.encoder.v1.Enco" +
+      "der\022V\n\rDeleteEncoder\022-.salto.nebula.enco" +
+      "der.v1.DeleteEncoderRequest\032\026.google.pro" +
+      "tobuf.Empty\022g\n\021InitializeEncoder\0221.salto" +
+      ".nebula.encoder.v1.InitializeEncoderRequ" +
+      "est\032\037.salto.longrunning.v1.Operation\022e\n\020" +
+      "ConfigureEncoder\0220.salto.nebula.encoder." +
+      "v1.ConfigureEncoderRequest\032\037.salto.longr" +
+      "unning.v1.Operation\022]\n\014ResetEncoder\022,.sa" +
+      "lto.nebula.encoder.v1.ResetEncoderReques" +
+      "t\032\037.salto.longrunning.v1.Operation\022o\n\025Up" +
+      "dateEncoderFirmware\0225.salto.nebula.encod" +
+      "er.v1.UpdateEncoderFirmwareRequest\032\037.sal" +
+      "to.longrunning.v1.Operation\022h\n\013BindEncod" +
+      "er\022+.salto.nebula.encoder.v1.BindEncoder" +
+      "Request\032,.salto.nebula.encoder.v1.BindEn" +
+      "coderResponse\022n\n\rUnbindEncoder\022-.salto.n" +
+      "ebula.encoder.v1.UnbindEncoderRequest\032.." +
+      "salto.nebula.encoder.v1.UnbindEncoderRes" +
+      "ponse\022S\n\007ReadKey\022\'.salto.nebula.encoder." +
+      "v1.ReadKeyRequest\032\037.salto.longrunning.v1" +
+      ".Operation\022\225\001\n\032GenerateAuthorizationToke" +
+      "n\022:.salto.nebula.encoder.v1.GenerateAuth" +
+      "orizationTokenRequest\032;.salto.nebula.enc" +
+      "oder.v1.GenerateAuthorizationTokenRespon" +
+      "se\022{\n\033GenerateFirmwareDownloadUri\022;.salt" +
+      "o.nebula.encoder.v1.GenerateFirmwareDown" +
+      "loadUriRequest\032\037.salto.longrunning.v1.Op" +
+      "erationB\335\001\n\037com.saltoapis.nebula.encoder" +
+      ".v1B\014EncoderProtoP\001ZDgithub.com/saltoapi" +
+      "s-internal/saltoapis-go/nebula/encoder/v" +
+      "1;encoder\252\002\033Saltoapis.Nebula.Encoder.V1\312" +
+      "\002\033Saltoapis\\Nebula\\Encoder\\V1\342\002\'GPBMetad" +
+      "ata\\Saltoapis\\Nebula\\Encoder\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -430,20 +446,32 @@ public final class EncoderProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_encoder_v1_ReadKeyMetadata_descriptor,
         new java.lang.String[] { });
-    internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriRequest_descriptor =
+    internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenRequest_descriptor =
       getDescriptor().getMessageTypes().get(26);
+    internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenRequest_descriptor,
+        new java.lang.String[] { "Encoder", });
+    internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_encoder_v1_GenerateAuthorizationTokenResponse_descriptor,
+        new java.lang.String[] { "AuthorizationToken", });
+    internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriRequest_descriptor =
+      getDescriptor().getMessageTypes().get(28);
     internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriRequest_descriptor,
         new java.lang.String[] { "Encoder", });
     internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriResponse_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriResponse_descriptor,
         new java.lang.String[] { "DownloadUri", "Digest", });
     internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_encoder_v1_GenerateFirmwareDownloadUriMetadata_descriptor,
