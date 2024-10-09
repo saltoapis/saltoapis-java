@@ -364,6 +364,37 @@ public final class ControllerServiceGrpc {
     return getUpdateControllerFirmwareMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest,
+      com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse> getGenerateAuthorizationTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateAuthorizationToken",
+      requestType = com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest.class,
+      responseType = com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest,
+      com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse> getGenerateAuthorizationTokenMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest, com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse> getGenerateAuthorizationTokenMethod;
+    if ((getGenerateAuthorizationTokenMethod = ControllerServiceGrpc.getGenerateAuthorizationTokenMethod) == null) {
+      synchronized (ControllerServiceGrpc.class) {
+        if ((getGenerateAuthorizationTokenMethod = ControllerServiceGrpc.getGenerateAuthorizationTokenMethod) == null) {
+          ControllerServiceGrpc.getGenerateAuthorizationTokenMethod = getGenerateAuthorizationTokenMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest, com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GenerateAuthorizationToken"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ControllerServiceMethodDescriptorSupplier("GenerateAuthorizationToken"))
+              .build();
+        }
+      }
+    }
+    return getGenerateAuthorizationTokenMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest,
       com.saltoapis.longrunning.v1.Operation> getGenerateFirmwareDownloadUriMethod;
 
@@ -589,6 +620,18 @@ public final class ControllerServiceGrpc {
 
     /**
      * <pre>
+     * Generates an authorization token for a controller
+     * Generates an authorization token that allows to connect, authenticate and
+     * authorize against a controller.
+     * </pre>
+     */
+    default void generateAuthorizationToken(com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateAuthorizationTokenMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Generate controller firmware download URI
      * Provides the download URI for the latest firmware bundle for the
      * controller. The returned URI can be used to bring the controller
@@ -793,6 +836,19 @@ public final class ControllerServiceGrpc {
 
     /**
      * <pre>
+     * Generates an authorization token for a controller
+     * Generates an authorization token that allows to connect, authenticate and
+     * authorize against a controller.
+     * </pre>
+     */
+    public void generateAuthorizationToken(com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateAuthorizationTokenMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Generate controller firmware download URI
      * Provides the download URI for the latest firmware bundle for the
      * controller. The returned URI can be used to bring the controller
@@ -964,6 +1020,18 @@ public final class ControllerServiceGrpc {
     public com.saltoapis.longrunning.v1.Operation updateControllerFirmware(com.saltoapis.nebula.controller.v1.UpdateControllerFirmwareRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateControllerFirmwareMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Generates an authorization token for a controller
+     * Generates an authorization token that allows to connect, authenticate and
+     * authorize against a controller.
+     * </pre>
+     */
+    public com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse generateAuthorizationToken(com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAuthorizationTokenMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1153,6 +1221,19 @@ public final class ControllerServiceGrpc {
 
     /**
      * <pre>
+     * Generates an authorization token for a controller
+     * Generates an authorization token that allows to connect, authenticate and
+     * authorize against a controller.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse> generateAuthorizationToken(
+        com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateAuthorizationTokenMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Generate controller firmware download URI
      * Provides the download URI for the latest firmware bundle for the
      * controller. The returned URI can be used to bring the controller
@@ -1177,7 +1258,8 @@ public final class ControllerServiceGrpc {
   private static final int METHODID_CONFIGURE_CONTROLLER = 8;
   private static final int METHODID_RESET_CONTROLLER = 9;
   private static final int METHODID_UPDATE_CONTROLLER_FIRMWARE = 10;
-  private static final int METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI = 11;
+  private static final int METHODID_GENERATE_AUTHORIZATION_TOKEN = 11;
+  private static final int METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI = 12;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1239,6 +1321,10 @@ public final class ControllerServiceGrpc {
         case METHODID_UPDATE_CONTROLLER_FIRMWARE:
           serviceImpl.updateControllerFirmware((com.saltoapis.nebula.controller.v1.UpdateControllerFirmwareRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
+          break;
+        case METHODID_GENERATE_AUTHORIZATION_TOKEN:
+          serviceImpl.generateAuthorizationToken((com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse>) responseObserver);
           break;
         case METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI:
           serviceImpl.generateFirmwareDownloadUri((com.saltoapis.nebula.controller.v1.GenerateFirmwareDownloadUriRequest) request,
@@ -1340,6 +1426,13 @@ public final class ControllerServiceGrpc {
               com.saltoapis.longrunning.v1.Operation>(
                 service, METHODID_UPDATE_CONTROLLER_FIRMWARE)))
         .addMethod(
+          getGenerateAuthorizationTokenMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenRequest,
+              com.saltoapis.nebula.controller.v1.GenerateAuthorizationTokenResponse>(
+                service, METHODID_GENERATE_AUTHORIZATION_TOKEN)))
+        .addMethod(
           getGenerateFirmwareDownloadUriMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1405,6 +1498,7 @@ public final class ControllerServiceGrpc {
               .addMethod(getConfigureControllerMethod())
               .addMethod(getResetControllerMethod())
               .addMethod(getUpdateControllerFirmwareMethod())
+              .addMethod(getGenerateAuthorizationTokenMethod())
               .addMethod(getGenerateFirmwareDownloadUriMethod())
               .build();
         }
