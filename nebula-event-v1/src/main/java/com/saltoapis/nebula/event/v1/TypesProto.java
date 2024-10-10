@@ -90,10 +90,20 @@ public final class TypesProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_event_v1_AccessRightAccessPointCreated_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchCreated_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchCreated_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_salto_nebula_event_v1_AccessRightAccessPointDeleted_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_event_v1_AccessRightAccessPointDeleted_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_salto_nebula_event_v1_UserCreated_descriptor;
   static final 
@@ -236,57 +246,66 @@ public final class TypesProto {
       "ntCreated\022>\n\014access_right\030\001 \001(\0132(.salto." +
       "nebula.accessright.v1.AccessRight\022>\n\014acc" +
       "ess_point\030\002 \001(\0132(.salto.nebula.accesspoi" +
-      "nt.v1.AccessPoint\"\237\001\n\035AccessRightAccessP" +
-      "ointDeleted\022>\n\014access_right\030\001 \001(\0132(.salt" +
-      "o.nebula.accessright.v1.AccessRight\022>\n\014a" +
-      "ccess_point\030\002 \001(\0132(.salto.nebula.accessp" +
-      "oint.v1.AccessPoint\"7\n\013UserCreated\022(\n\004us" +
-      "er\030\001 \001(\0132\032.salto.nebula.user.v1.User\"7\n\013" +
-      "UserUpdated\022(\n\004user\030\001 \001(\0132\032.salto.nebula" +
-      ".user.v1.User\"7\n\013UserBlocked\022(\n\004user\030\001 \001" +
-      "(\0132\032.salto.nebula.user.v1.User\"9\n\rUserUn" +
-      "blocked\022(\n\004user\030\001 \001(\0132\032.salto.nebula.use" +
-      "r.v1.User\"7\n\013UserDeleted\022(\n\004user\030\001 \001(\0132\032" +
-      ".salto.nebula.user.v1.User\"\202\001\n\026UserAcces" +
-      "sRightCreated\022(\n\004user\030\001 \001(\0132\032.salto.nebu" +
-      "la.user.v1.User\022>\n\014access_right\030\002 \001(\0132(." +
-      "salto.nebula.accessright.v1.AccessRight\"" +
-      "\202\001\n\026UserAccessRightUpdated\022(\n\004user\030\001 \001(\013" +
-      "2\032.salto.nebula.user.v1.User\022>\n\014access_r" +
-      "ight\030\002 \001(\0132(.salto.nebula.accessright.v1" +
-      ".AccessRight\"\202\001\n\026UserAccessRightDeleted\022" +
-      "(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1.Use" +
-      "r\022>\n\014access_right\030\002 \001(\0132(.salto.nebula.a" +
-      "ccessright.v1.AccessRight\"l\n\017CardKeyAssi" +
-      "gned\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v" +
-      "1.User\022/\n\010card_key\030\002 \001(\0132\035.salto.nebula." +
-      "user.v1.CardKey\"l\n\017CardKeyCanceled\022(\n\004us" +
-      "er\030\001 \001(\0132\032.salto.nebula.user.v1.User\022/\n\010" +
-      "card_key\030\002 \001(\0132\035.salto.nebula.user.v1.Ca" +
-      "rdKey\"i\n\016AppKeyAssigned\022(\n\004user\030\001 \001(\0132\032." +
-      "salto.nebula.user.v1.User\022-\n\007app_key\030\002 \001" +
-      "(\0132\034.salto.nebula.user.v1.AppKey\"i\n\016AppK" +
-      "eyCanceled\022(\n\004user\030\001 \001(\0132\032.salto.nebula." +
-      "user.v1.User\022-\n\007app_key\030\002 \001(\0132\034.salto.ne" +
-      "bula.user.v1.AppKey\"r\n\021WalletKeyAssigned" +
+      "nt.v1.AccessPoint\"\246\001\n#AccessRightAccessP" +
+      "ointsBatchCreated\022>\n\014access_right\030\001 \001(\0132" +
+      "(.salto.nebula.accessright.v1.AccessRigh" +
+      "t\022?\n\raccess_points\030\002 \003(\0132(.salto.nebula." +
+      "accesspoint.v1.AccessPoint\"\237\001\n\035AccessRig" +
+      "htAccessPointDeleted\022>\n\014access_right\030\001 \001" +
+      "(\0132(.salto.nebula.accessright.v1.AccessR" +
+      "ight\022>\n\014access_point\030\002 \001(\0132(.salto.nebul" +
+      "a.accesspoint.v1.AccessPoint\"\245\001\n\"AccessR" +
+      "ightAccessPointBatchDeleted\022>\n\014access_ri" +
+      "ght\030\001 \001(\0132(.salto.nebula.accessright.v1." +
+      "AccessRight\022?\n\raccess_points\030\002 \003(\0132(.sal" +
+      "to.nebula.accesspoint.v1.AccessPoint\"7\n\013" +
+      "UserCreated\022(\n\004user\030\001 \001(\0132\032.salto.nebula" +
+      ".user.v1.User\"7\n\013UserUpdated\022(\n\004user\030\001 \001" +
+      "(\0132\032.salto.nebula.user.v1.User\"7\n\013UserBl" +
+      "ocked\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user." +
+      "v1.User\"9\n\rUserUnblocked\022(\n\004user\030\001 \001(\0132\032" +
+      ".salto.nebula.user.v1.User\"7\n\013UserDelete" +
+      "d\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1.U" +
+      "ser\"\202\001\n\026UserAccessRightCreated\022(\n\004user\030\001" +
+      " \001(\0132\032.salto.nebula.user.v1.User\022>\n\014acce" +
+      "ss_right\030\002 \001(\0132(.salto.nebula.accessrigh" +
+      "t.v1.AccessRight\"\202\001\n\026UserAccessRightUpda" +
+      "ted\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1" +
+      ".User\022>\n\014access_right\030\002 \001(\0132(.salto.nebu" +
+      "la.accessright.v1.AccessRight\"\202\001\n\026UserAc" +
+      "cessRightDeleted\022(\n\004user\030\001 \001(\0132\032.salto.n" +
+      "ebula.user.v1.User\022>\n\014access_right\030\002 \001(\013" +
+      "2(.salto.nebula.accessright.v1.AccessRig" +
+      "ht\"l\n\017CardKeyAssigned\022(\n\004user\030\001 \001(\0132\032.sa" +
+      "lto.nebula.user.v1.User\022/\n\010card_key\030\002 \001(" +
+      "\0132\035.salto.nebula.user.v1.CardKey\"l\n\017Card" +
+      "KeyCanceled\022(\n\004user\030\001 \001(\0132\032.salto.nebula" +
+      ".user.v1.User\022/\n\010card_key\030\002 \001(\0132\035.salto." +
+      "nebula.user.v1.CardKey\"i\n\016AppKeyAssigned" +
       "\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1.Us" +
-      "er\0223\n\nwallet_key\030\002 \001(\0132\037.salto.nebula.us" +
-      "er.v1.WalletKey\"r\n\021WalletKeyCanceled\022(\n\004" +
-      "user\030\001 \001(\0132\032.salto.nebula.user.v1.User\0223" +
-      "\n\nwallet_key\030\002 \001(\0132\037.salto.nebula.user.v" +
-      "1.WalletKey\"7\n\013UnitMovedIn\022(\n\004unit\030\001 \001(\013" +
-      "2\032.salto.nebula.unit.v1.Unit\"8\n\014UnitMove" +
-      "dOut\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v" +
-      "1.Unit\"7\n\013UnitCreated\022(\n\004unit\030\001 \001(\0132\032.sa" +
-      "lto.nebula.unit.v1.Unit\"7\n\013UnitUpdated\022(" +
+      "er\022-\n\007app_key\030\002 \001(\0132\034.salto.nebula.user." +
+      "v1.AppKey\"i\n\016AppKeyCanceled\022(\n\004user\030\001 \001(" +
+      "\0132\032.salto.nebula.user.v1.User\022-\n\007app_key" +
+      "\030\002 \001(\0132\034.salto.nebula.user.v1.AppKey\"r\n\021" +
+      "WalletKeyAssigned\022(\n\004user\030\001 \001(\0132\032.salto." +
+      "nebula.user.v1.User\0223\n\nwallet_key\030\002 \001(\0132" +
+      "\037.salto.nebula.user.v1.WalletKey\"r\n\021Wall" +
+      "etKeyCanceled\022(\n\004user\030\001 \001(\0132\032.salto.nebu" +
+      "la.user.v1.User\0223\n\nwallet_key\030\002 \001(\0132\037.sa" +
+      "lto.nebula.user.v1.WalletKey\"7\n\013UnitMove" +
+      "dIn\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v1" +
+      ".Unit\"8\n\014UnitMovedOut\022(\n\004unit\030\001 \001(\0132\032.sa" +
+      "lto.nebula.unit.v1.Unit\"7\n\013UnitCreated\022(" +
       "\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v1.Unit" +
-      "\"7\n\013UnitDeleted\022(\n\004unit\030\001 \001(\0132\032.salto.ne" +
-      "bula.unit.v1.UnitB\317\001\n\035com.saltoapis.nebu" +
-      "la.event.v1B\nTypesProtoP\001Z@github.com/sa" +
-      "ltoapis-internal/saltoapis-go/nebula/eve" +
-      "nt/v1;event\252\002\031Saltoapis.Nebula.Event.V1\312" +
-      "\002\031Saltoapis\\Nebula\\Event\\V1\342\002%GPBMetadat" +
-      "a\\Saltoapis\\Nebula\\Event\\V1b\006proto3"
+      "\"7\n\013UnitUpdated\022(\n\004unit\030\001 \001(\0132\032.salto.ne" +
+      "bula.unit.v1.Unit\"7\n\013UnitDeleted\022(\n\004unit" +
+      "\030\001 \001(\0132\032.salto.nebula.unit.v1.UnitB\317\001\n\035c" +
+      "om.saltoapis.nebula.event.v1B\nTypesProto" +
+      "P\001Z@github.com/saltoapis-internal/saltoa" +
+      "pis-go/nebula/event/v1;event\252\002\031Saltoapis" +
+      ".Nebula.Event.V1\312\002\031Saltoapis\\Nebula\\Even" +
+      "t\\V1\342\002%GPBMetadata\\Saltoapis\\Nebula\\Even" +
+      "t\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -374,122 +393,134 @@ public final class TypesProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_AccessRightAccessPointCreated_descriptor,
         new java.lang.String[] { "AccessRight", "AccessPoint", });
-    internal_static_salto_nebula_event_v1_AccessRightAccessPointDeleted_descriptor =
+    internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchCreated_descriptor =
       getDescriptor().getMessageTypes().get(13);
+    internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchCreated_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchCreated_descriptor,
+        new java.lang.String[] { "AccessRight", "AccessPoints", });
+    internal_static_salto_nebula_event_v1_AccessRightAccessPointDeleted_descriptor =
+      getDescriptor().getMessageTypes().get(14);
     internal_static_salto_nebula_event_v1_AccessRightAccessPointDeleted_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_AccessRightAccessPointDeleted_descriptor,
         new java.lang.String[] { "AccessRight", "AccessPoint", });
+    internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_descriptor,
+        new java.lang.String[] { "AccessRight", "AccessPoints", });
     internal_static_salto_nebula_event_v1_UserCreated_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_salto_nebula_event_v1_UserCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UserCreated_descriptor,
         new java.lang.String[] { "User", });
     internal_static_salto_nebula_event_v1_UserUpdated_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_salto_nebula_event_v1_UserUpdated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UserUpdated_descriptor,
         new java.lang.String[] { "User", });
     internal_static_salto_nebula_event_v1_UserBlocked_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_salto_nebula_event_v1_UserBlocked_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UserBlocked_descriptor,
         new java.lang.String[] { "User", });
     internal_static_salto_nebula_event_v1_UserUnblocked_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_salto_nebula_event_v1_UserUnblocked_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UserUnblocked_descriptor,
         new java.lang.String[] { "User", });
     internal_static_salto_nebula_event_v1_UserDeleted_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_salto_nebula_event_v1_UserDeleted_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UserDeleted_descriptor,
         new java.lang.String[] { "User", });
     internal_static_salto_nebula_event_v1_UserAccessRightCreated_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_salto_nebula_event_v1_UserAccessRightCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UserAccessRightCreated_descriptor,
         new java.lang.String[] { "User", "AccessRight", });
     internal_static_salto_nebula_event_v1_UserAccessRightUpdated_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_salto_nebula_event_v1_UserAccessRightUpdated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UserAccessRightUpdated_descriptor,
         new java.lang.String[] { "User", "AccessRight", });
     internal_static_salto_nebula_event_v1_UserAccessRightDeleted_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_salto_nebula_event_v1_UserAccessRightDeleted_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UserAccessRightDeleted_descriptor,
         new java.lang.String[] { "User", "AccessRight", });
     internal_static_salto_nebula_event_v1_CardKeyAssigned_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_salto_nebula_event_v1_CardKeyAssigned_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_CardKeyAssigned_descriptor,
         new java.lang.String[] { "User", "CardKey", });
     internal_static_salto_nebula_event_v1_CardKeyCanceled_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_salto_nebula_event_v1_CardKeyCanceled_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_CardKeyCanceled_descriptor,
         new java.lang.String[] { "User", "CardKey", });
     internal_static_salto_nebula_event_v1_AppKeyAssigned_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_salto_nebula_event_v1_AppKeyAssigned_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_AppKeyAssigned_descriptor,
         new java.lang.String[] { "User", "AppKey", });
     internal_static_salto_nebula_event_v1_AppKeyCanceled_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_salto_nebula_event_v1_AppKeyCanceled_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_AppKeyCanceled_descriptor,
         new java.lang.String[] { "User", "AppKey", });
     internal_static_salto_nebula_event_v1_WalletKeyAssigned_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_salto_nebula_event_v1_WalletKeyAssigned_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_WalletKeyAssigned_descriptor,
         new java.lang.String[] { "User", "WalletKey", });
     internal_static_salto_nebula_event_v1_WalletKeyCanceled_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_salto_nebula_event_v1_WalletKeyCanceled_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_WalletKeyCanceled_descriptor,
         new java.lang.String[] { "User", "WalletKey", });
     internal_static_salto_nebula_event_v1_UnitMovedIn_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_salto_nebula_event_v1_UnitMovedIn_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitMovedIn_descriptor,
         new java.lang.String[] { "Unit", });
     internal_static_salto_nebula_event_v1_UnitMovedOut_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_salto_nebula_event_v1_UnitMovedOut_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitMovedOut_descriptor,
         new java.lang.String[] { "Unit", });
     internal_static_salto_nebula_event_v1_UnitCreated_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_salto_nebula_event_v1_UnitCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitCreated_descriptor,
         new java.lang.String[] { "Unit", });
     internal_static_salto_nebula_event_v1_UnitUpdated_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_salto_nebula_event_v1_UnitUpdated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitUpdated_descriptor,
         new java.lang.String[] { "Unit", });
     internal_static_salto_nebula_event_v1_UnitDeleted_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_salto_nebula_event_v1_UnitDeleted_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitDeleted_descriptor,
