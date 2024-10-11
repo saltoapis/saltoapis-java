@@ -9,12 +9,12 @@ package com.saltoapis.nebula.event.v1;
  * Event representing the deletion of multiple access right's access point association.
  * </pre>
  *
- * Protobuf type {@code salto.nebula.event.v1.AccessRightAccessPointBatchDeleted}
+ * Protobuf type {@code salto.nebula.event.v1.AccessRightAccessPointsBatchDeleted}
  */
-public final class AccessRightAccessPointBatchDeleted extends
+public final class AccessRightAccessPointsBatchDeleted extends
     com.google.protobuf.GeneratedMessage implements
-    // @@protoc_insertion_point(message_implements:salto.nebula.event.v1.AccessRightAccessPointBatchDeleted)
-    AccessRightAccessPointBatchDeletedOrBuilder {
+    // @@protoc_insertion_point(message_implements:salto.nebula.event.v1.AccessRightAccessPointsBatchDeleted)
+    AccessRightAccessPointsBatchDeletedOrBuilder {
 private static final long serialVersionUID = 0L;
   static {
     com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -23,27 +23,27 @@ private static final long serialVersionUID = 0L;
       /* minor= */ 26,
       /* patch= */ 1,
       /* suffix= */ "",
-      AccessRightAccessPointBatchDeleted.class.getName());
+      AccessRightAccessPointsBatchDeleted.class.getName());
   }
-  // Use AccessRightAccessPointBatchDeleted.newBuilder() to construct.
-  private AccessRightAccessPointBatchDeleted(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+  // Use AccessRightAccessPointsBatchDeleted.newBuilder() to construct.
+  private AccessRightAccessPointsBatchDeleted(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
     super(builder);
   }
-  private AccessRightAccessPointBatchDeleted() {
+  private AccessRightAccessPointsBatchDeleted() {
     accessPoints_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_descriptor;
+    return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchDeleted_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_fieldAccessorTable
+    return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchDeleted_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted.class, com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted.Builder.class);
+            com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted.class, com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted.Builder.class);
   }
 
   private int bitField0_;
@@ -193,10 +193,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted)) {
+    if (!(obj instanceof com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted)) {
       return super.equals(obj);
     }
-    com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted other = (com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted) obj;
+    com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted other = (com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted) obj;
 
     if (hasAccessRight() != other.hasAccessRight()) return false;
     if (hasAccessRight()) {
@@ -229,44 +229,44 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(byte[] data)
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(java.io.InputStream input)
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -274,26 +274,26 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseDelimitedFrom(java.io.InputStream input)
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseDelimitedFrom(
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessage
         .parseWithIOException(PARSER, input);
   }
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted parseFrom(
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -306,7 +306,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted prototype) {
+  public static Builder newBuilder(com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -326,26 +326,26 @@ private static final long serialVersionUID = 0L;
    * Event representing the deletion of multiple access right's access point association.
    * </pre>
    *
-   * Protobuf type {@code salto.nebula.event.v1.AccessRightAccessPointBatchDeleted}
+   * Protobuf type {@code salto.nebula.event.v1.AccessRightAccessPointsBatchDeleted}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:salto.nebula.event.v1.AccessRightAccessPointBatchDeleted)
-      com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeletedOrBuilder {
+      // @@protoc_insertion_point(builder_implements:salto.nebula.event.v1.AccessRightAccessPointsBatchDeleted)
+      com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeletedOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_descriptor;
+      return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchDeleted_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_fieldAccessorTable
+      return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchDeleted_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted.class, com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted.Builder.class);
+              com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted.class, com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted.Builder.class);
     }
 
-    // Construct using com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted.newBuilder()
+    // Construct using com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -384,17 +384,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointBatchDeleted_descriptor;
+      return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessRightAccessPointsBatchDeleted_descriptor;
     }
 
     @java.lang.Override
-    public com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted getDefaultInstanceForType() {
-      return com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted.getDefaultInstance();
+    public com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted getDefaultInstanceForType() {
+      return com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted build() {
-      com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted result = buildPartial();
+    public com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted build() {
+      com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -402,15 +402,15 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted buildPartial() {
-      com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted result = new com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted(this);
+    public com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted buildPartial() {
+      com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted result = new com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted result) {
+    private void buildPartialRepeatedFields(com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted result) {
       if (accessPointsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           accessPoints_ = java.util.Collections.unmodifiableList(accessPoints_);
@@ -422,7 +422,7 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    private void buildPartial0(com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted result) {
+    private void buildPartial0(com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -436,16 +436,16 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted) {
-        return mergeFrom((com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted)other);
+      if (other instanceof com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted) {
+        return mergeFrom((com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted other) {
-      if (other == com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted other) {
+      if (other == com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted.getDefaultInstance()) return this;
       if (other.hasAccessRight()) {
         mergeAccessRight(other.getAccessRight());
       }
@@ -1007,23 +1007,23 @@ private static final long serialVersionUID = 0L;
       return accessPointsBuilder_;
     }
 
-    // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessRightAccessPointBatchDeleted)
+    // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessRightAccessPointsBatchDeleted)
   }
 
-  // @@protoc_insertion_point(class_scope:salto.nebula.event.v1.AccessRightAccessPointBatchDeleted)
-  private static final com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:salto.nebula.event.v1.AccessRightAccessPointsBatchDeleted)
+  private static final com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted();
+    DEFAULT_INSTANCE = new com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted();
   }
 
-  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted getDefaultInstance() {
+  public static com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AccessRightAccessPointBatchDeleted>
-      PARSER = new com.google.protobuf.AbstractParser<AccessRightAccessPointBatchDeleted>() {
+  private static final com.google.protobuf.Parser<AccessRightAccessPointsBatchDeleted>
+      PARSER = new com.google.protobuf.AbstractParser<AccessRightAccessPointsBatchDeleted>() {
     @java.lang.Override
-    public AccessRightAccessPointBatchDeleted parsePartialFrom(
+    public AccessRightAccessPointsBatchDeleted parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1042,17 +1042,17 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public static com.google.protobuf.Parser<AccessRightAccessPointBatchDeleted> parser() {
+  public static com.google.protobuf.Parser<AccessRightAccessPointsBatchDeleted> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AccessRightAccessPointBatchDeleted> getParserForType() {
+  public com.google.protobuf.Parser<AccessRightAccessPointsBatchDeleted> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.saltoapis.nebula.event.v1.AccessRightAccessPointBatchDeleted getDefaultInstanceForType() {
+  public com.saltoapis.nebula.event.v1.AccessRightAccessPointsBatchDeleted getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

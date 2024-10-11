@@ -4,8 +4,8 @@
 // Protobuf Java Version: 4.26.1
 package com.saltoapis.nebula.event.v1;
 
-public interface AccessRightAccessPointBatchDeletedOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:salto.nebula.event.v1.AccessRightAccessPointBatchDeleted)
+public interface AccessRightAccessPointsBatchDeletedOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:salto.nebula.event.v1.AccessRightAccessPointsBatchDeleted)
     com.google.protobuf.MessageOrBuilder {
 
   /**
