@@ -208,6 +208,37 @@ public final class AccessPointGroupServiceGrpc {
     return getCreateAccessPointGroupAccessPointMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest,
+      com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse> getBatchCreateAccessPointGroupAccessPointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateAccessPointGroupAccessPoints",
+      requestType = com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest.class,
+      responseType = com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest,
+      com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse> getBatchCreateAccessPointGroupAccessPointsMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest, com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse> getBatchCreateAccessPointGroupAccessPointsMethod;
+    if ((getBatchCreateAccessPointGroupAccessPointsMethod = AccessPointGroupServiceGrpc.getBatchCreateAccessPointGroupAccessPointsMethod) == null) {
+      synchronized (AccessPointGroupServiceGrpc.class) {
+        if ((getBatchCreateAccessPointGroupAccessPointsMethod = AccessPointGroupServiceGrpc.getBatchCreateAccessPointGroupAccessPointsMethod) == null) {
+          AccessPointGroupServiceGrpc.getBatchCreateAccessPointGroupAccessPointsMethod = getBatchCreateAccessPointGroupAccessPointsMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest, com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchCreateAccessPointGroupAccessPoints"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessPointGroupServiceMethodDescriptorSupplier("BatchCreateAccessPointGroupAccessPoints"))
+              .build();
+        }
+      }
+    }
+    return getBatchCreateAccessPointGroupAccessPointsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspointgroup.v1.GetAccessPointGroupAccessPointRequest,
       com.saltoapis.nebula.accesspointgroup.v1.AccessPointGroupAccessPoint> getGetAccessPointGroupAccessPointMethod;
 
@@ -330,6 +361,37 @@ public final class AccessPointGroupServiceGrpc {
       }
     }
     return getDeleteAccessPointGroupAccessPointMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest,
+      com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse> getBatchDeleteAccessPointGroupAccessPointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteAccessPointGroupAccessPoints",
+      requestType = com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest.class,
+      responseType = com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest,
+      com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse> getBatchDeleteAccessPointGroupAccessPointsMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest, com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse> getBatchDeleteAccessPointGroupAccessPointsMethod;
+    if ((getBatchDeleteAccessPointGroupAccessPointsMethod = AccessPointGroupServiceGrpc.getBatchDeleteAccessPointGroupAccessPointsMethod) == null) {
+      synchronized (AccessPointGroupServiceGrpc.class) {
+        if ((getBatchDeleteAccessPointGroupAccessPointsMethod = AccessPointGroupServiceGrpc.getBatchDeleteAccessPointGroupAccessPointsMethod) == null) {
+          AccessPointGroupServiceGrpc.getBatchDeleteAccessPointGroupAccessPointsMethod = getBatchDeleteAccessPointGroupAccessPointsMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest, com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchDeleteAccessPointGroupAccessPoints"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessPointGroupServiceMethodDescriptorSupplier("BatchDeleteAccessPointGroupAccessPoints"))
+              .build();
+        }
+      }
+    }
+    return getBatchDeleteAccessPointGroupAccessPointsMethod;
   }
 
   /**
@@ -456,6 +518,18 @@ public final class AccessPointGroupServiceGrpc {
 
     /**
      * <pre>
+     * Create an batch of access point group access points
+     * Creates a batch of access point group's access points association.
+     * This method allows the creation of multiple access point group's access points in a single operation.
+     * </pre>
+     */
+    default void batchCreateAccessPointGroupAccessPoints(com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchCreateAccessPointGroupAccessPointsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get an access point
      * Retrieves an existing access point group's access point association.
      * </pre>
@@ -496,6 +570,18 @@ public final class AccessPointGroupServiceGrpc {
     default void deleteAccessPointGroupAccessPoint(com.saltoapis.nebula.accesspointgroup.v1.DeleteAccessPointGroupAccessPointRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAccessPointGroupAccessPointMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of access point group access point associations
+     * Deletes a batch of access point group access point associations. This method allows the
+     * deletion of multiple access point group access points in a single operation. This cannot be undone.
+     * </pre>
+     */
+    default void batchDeleteAccessPointGroupAccessPoints(com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchDeleteAccessPointGroupAccessPointsMethod(), responseObserver);
     }
   }
 
@@ -615,6 +701,19 @@ public final class AccessPointGroupServiceGrpc {
 
     /**
      * <pre>
+     * Create an batch of access point group access points
+     * Creates a batch of access point group's access points association.
+     * This method allows the creation of multiple access point group's access points in a single operation.
+     * </pre>
+     */
+    public void batchCreateAccessPointGroupAccessPoints(com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateAccessPointGroupAccessPointsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get an access point
      * Retrieves an existing access point group's access point association.
      * </pre>
@@ -659,6 +758,19 @@ public final class AccessPointGroupServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteAccessPointGroupAccessPointMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of access point group access point associations
+     * Deletes a batch of access point group access point associations. This method allows the
+     * deletion of multiple access point group access points in a single operation. This cannot be undone.
+     * </pre>
+     */
+    public void batchDeleteAccessPointGroupAccessPoints(com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteAccessPointGroupAccessPointsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -754,6 +866,18 @@ public final class AccessPointGroupServiceGrpc {
 
     /**
      * <pre>
+     * Create an batch of access point group access points
+     * Creates a batch of access point group's access points association.
+     * This method allows the creation of multiple access point group's access points in a single operation.
+     * </pre>
+     */
+    public com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse batchCreateAccessPointGroupAccessPoints(com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateAccessPointGroupAccessPointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Get an access point
      * Retrieves an existing access point group's access point association.
      * </pre>
@@ -794,6 +918,18 @@ public final class AccessPointGroupServiceGrpc {
     public com.google.protobuf.Empty deleteAccessPointGroupAccessPoint(com.saltoapis.nebula.accesspointgroup.v1.DeleteAccessPointGroupAccessPointRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteAccessPointGroupAccessPointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of access point group access point associations
+     * Deletes a batch of access point group access point associations. This method allows the
+     * deletion of multiple access point group access points in a single operation. This cannot be undone.
+     * </pre>
+     */
+    public com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse batchDeleteAccessPointGroupAccessPoints(com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteAccessPointGroupAccessPointsMethod(), getCallOptions(), request);
     }
   }
 
@@ -895,6 +1031,19 @@ public final class AccessPointGroupServiceGrpc {
 
     /**
      * <pre>
+     * Create an batch of access point group access points
+     * Creates a batch of access point group's access points association.
+     * This method allows the creation of multiple access point group's access points in a single operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse> batchCreateAccessPointGroupAccessPoints(
+        com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateAccessPointGroupAccessPointsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get an access point
      * Retrieves an existing access point group's access point association.
      * </pre>
@@ -940,6 +1089,19 @@ public final class AccessPointGroupServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteAccessPointGroupAccessPointMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Delete a batch of access point group access point associations
+     * Deletes a batch of access point group access point associations. This method allows the
+     * deletion of multiple access point group access points in a single operation. This cannot be undone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse> batchDeleteAccessPointGroupAccessPoints(
+        com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteAccessPointGroupAccessPointsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ACCESS_POINT_GROUP = 0;
@@ -948,10 +1110,12 @@ public final class AccessPointGroupServiceGrpc {
   private static final int METHODID_UPDATE_ACCESS_POINT_GROUP = 3;
   private static final int METHODID_DELETE_ACCESS_POINT_GROUP = 4;
   private static final int METHODID_CREATE_ACCESS_POINT_GROUP_ACCESS_POINT = 5;
-  private static final int METHODID_GET_ACCESS_POINT_GROUP_ACCESS_POINT = 6;
-  private static final int METHODID_LIST_ACCESS_POINT_GROUP_ACCESS_POINTS = 7;
-  private static final int METHODID_UPDATE_ACCESS_POINT_GROUP_ACCESS_POINT = 8;
-  private static final int METHODID_DELETE_ACCESS_POINT_GROUP_ACCESS_POINT = 9;
+  private static final int METHODID_BATCH_CREATE_ACCESS_POINT_GROUP_ACCESS_POINTS = 6;
+  private static final int METHODID_GET_ACCESS_POINT_GROUP_ACCESS_POINT = 7;
+  private static final int METHODID_LIST_ACCESS_POINT_GROUP_ACCESS_POINTS = 8;
+  private static final int METHODID_UPDATE_ACCESS_POINT_GROUP_ACCESS_POINT = 9;
+  private static final int METHODID_DELETE_ACCESS_POINT_GROUP_ACCESS_POINT = 10;
+  private static final int METHODID_BATCH_DELETE_ACCESS_POINT_GROUP_ACCESS_POINTS = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -994,6 +1158,10 @@ public final class AccessPointGroupServiceGrpc {
           serviceImpl.createAccessPointGroupAccessPoint((com.saltoapis.nebula.accesspointgroup.v1.CreateAccessPointGroupAccessPointRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accesspointgroup.v1.AccessPointGroupAccessPoint>) responseObserver);
           break;
+        case METHODID_BATCH_CREATE_ACCESS_POINT_GROUP_ACCESS_POINTS:
+          serviceImpl.batchCreateAccessPointGroupAccessPoints((com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse>) responseObserver);
+          break;
         case METHODID_GET_ACCESS_POINT_GROUP_ACCESS_POINT:
           serviceImpl.getAccessPointGroupAccessPoint((com.saltoapis.nebula.accesspointgroup.v1.GetAccessPointGroupAccessPointRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accesspointgroup.v1.AccessPointGroupAccessPoint>) responseObserver);
@@ -1009,6 +1177,10 @@ public final class AccessPointGroupServiceGrpc {
         case METHODID_DELETE_ACCESS_POINT_GROUP_ACCESS_POINT:
           serviceImpl.deleteAccessPointGroupAccessPoint((com.saltoapis.nebula.accesspointgroup.v1.DeleteAccessPointGroupAccessPointRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_ACCESS_POINT_GROUP_ACCESS_POINTS:
+          serviceImpl.batchDeleteAccessPointGroupAccessPoints((com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1071,6 +1243,13 @@ public final class AccessPointGroupServiceGrpc {
               com.saltoapis.nebula.accesspointgroup.v1.AccessPointGroupAccessPoint>(
                 service, METHODID_CREATE_ACCESS_POINT_GROUP_ACCESS_POINT)))
         .addMethod(
+          getBatchCreateAccessPointGroupAccessPointsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsRequest,
+              com.saltoapis.nebula.accesspointgroup.v1.BatchCreateAccessPointGroupAccessPointsResponse>(
+                service, METHODID_BATCH_CREATE_ACCESS_POINT_GROUP_ACCESS_POINTS)))
+        .addMethod(
           getGetAccessPointGroupAccessPointMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1098,6 +1277,13 @@ public final class AccessPointGroupServiceGrpc {
               com.saltoapis.nebula.accesspointgroup.v1.DeleteAccessPointGroupAccessPointRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_DELETE_ACCESS_POINT_GROUP_ACCESS_POINT)))
+        .addMethod(
+          getBatchDeleteAccessPointGroupAccessPointsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsRequest,
+              com.saltoapis.nebula.accesspointgroup.v1.BatchDeleteAccessPointGroupAccessPointsResponse>(
+                service, METHODID_BATCH_DELETE_ACCESS_POINT_GROUP_ACCESS_POINTS)))
         .build();
   }
 
@@ -1152,10 +1338,12 @@ public final class AccessPointGroupServiceGrpc {
               .addMethod(getUpdateAccessPointGroupMethod())
               .addMethod(getDeleteAccessPointGroupMethod())
               .addMethod(getCreateAccessPointGroupAccessPointMethod())
+              .addMethod(getBatchCreateAccessPointGroupAccessPointsMethod())
               .addMethod(getGetAccessPointGroupAccessPointMethod())
               .addMethod(getListAccessPointGroupAccessPointsMethod())
               .addMethod(getUpdateAccessPointGroupAccessPointMethod())
               .addMethod(getDeleteAccessPointGroupAccessPointMethod())
+              .addMethod(getBatchDeleteAccessPointGroupAccessPointsMethod())
               .build();
         }
       }
