@@ -737,7 +737,6 @@ public final class AccessRightServiceGrpc {
      * Create a batch of access rights access points
      * Creates a batch of access rights access points associations.
      * This method allows the creation of multiple access rights access points in a single operation.
-     * Experimental feature. DO NOT USE
      * </pre>
      */
     default void batchCreateAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest request,
@@ -794,7 +793,6 @@ public final class AccessRightServiceGrpc {
      * Delete a batch of access points
      * Permanently deletes a batch of access right's access point associations.
      * This cannot be undone.
-     * Experimental feature. DO NOT USE
      * </pre>
      */
     default void batchDeleteAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest request,
@@ -999,7 +997,6 @@ public final class AccessRightServiceGrpc {
      * Create a batch of access rights access points
      * Creates a batch of access rights access points associations.
      * This method allows the creation of multiple access rights access points in a single operation.
-     * Experimental feature. DO NOT USE
      * </pre>
      */
     public void batchCreateAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest request,
@@ -1061,7 +1058,6 @@ public final class AccessRightServiceGrpc {
      * Delete a batch of access points
      * Permanently deletes a batch of access right's access point associations.
      * This cannot be undone.
-     * Experimental feature. DO NOT USE
      * </pre>
      */
     public void batchDeleteAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest request,
@@ -1250,7 +1246,6 @@ public final class AccessRightServiceGrpc {
      * Create a batch of access rights access points
      * Creates a batch of access rights access points associations.
      * This method allows the creation of multiple access rights access points in a single operation.
-     * Experimental feature. DO NOT USE
      * </pre>
      */
     public com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse batchCreateAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsRequest request) {
@@ -1307,7 +1302,6 @@ public final class AccessRightServiceGrpc {
      * Delete a batch of access points
      * Permanently deletes a batch of access right's access point associations.
      * This cannot be undone.
-     * Experimental feature. DO NOT USE
      * </pre>
      */
     public com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse batchDeleteAccessRightAccessPoints(com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsRequest request) {
@@ -1494,7 +1488,6 @@ public final class AccessRightServiceGrpc {
      * Create a batch of access rights access points
      * Creates a batch of access rights access points associations.
      * This method allows the creation of multiple access rights access points in a single operation.
-     * Experimental feature. DO NOT USE
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accessright.v1.BatchCreateAccessRightAccessPointsResponse> batchCreateAccessRightAccessPoints(
@@ -1556,7 +1549,6 @@ public final class AccessRightServiceGrpc {
      * Delete a batch of access points
      * Permanently deletes a batch of access right's access point associations.
      * This cannot be undone.
-     * Experimental feature. DO NOT USE
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointsResponse> batchDeleteAccessRightAccessPoints(
