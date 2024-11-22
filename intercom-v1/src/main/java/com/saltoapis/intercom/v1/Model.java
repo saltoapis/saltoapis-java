@@ -33,6 +33,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     displayName_ = "";
     dipswitchSettings_ = emptyBooleanList();
+    digitalSystemSettings_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -2584,6 +2585,35 @@ private static final long serialVersionUID = 0L;
   }
   private int dipswitchSettingsMemoizedSerializedSize = -1;
 
+  public static final int DIGITAL_SYSTEM_SETTINGS_FIELD_NUMBER = 11;
+  private com.google.protobuf.ByteString digitalSystemSettings_ = com.google.protobuf.ByteString.EMPTY;
+  /**
+   * <pre>
+   * If set, it defines the digital system this intercom uses for
+   * communications.
+   * </pre>
+   *
+   * <code>optional bytes digital_system_settings = 11;</code>
+   * @return Whether the digitalSystemSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasDigitalSystemSettings() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * If set, it defines the digital system this intercom uses for
+   * communications.
+   * </pre>
+   *
+   * <code>optional bytes digital_system_settings = 11;</code>
+   * @return The digitalSystemSettings.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDigitalSystemSettings() {
+    return digitalSystemSettings_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -2629,6 +2659,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < dipswitchSettings_.size(); i++) {
       output.writeBoolNoTag(dipswitchSettings_.getBoolean(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBytes(11, digitalSystemSettings_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2680,6 +2713,10 @@ private static final long serialVersionUID = 0L;
       }
       dipswitchSettingsMemoizedSerializedSize = dataSize;
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(11, digitalSystemSettings_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2719,6 +2756,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDipswitchSettingsList()
         .equals(other.getDipswitchSettingsList())) return false;
+    if (hasDigitalSystemSettings() != other.hasDigitalSystemSettings()) return false;
+    if (hasDigitalSystemSettings()) {
+      if (!getDigitalSystemSettings()
+          .equals(other.getDigitalSystemSettings())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2755,6 +2797,10 @@ private static final long serialVersionUID = 0L;
     if (getDipswitchSettingsCount() > 0) {
       hash = (37 * hash) + DIPSWITCH_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getDipswitchSettingsList().hashCode();
+    }
+    if (hasDigitalSystemSettings()) {
+      hash = (37 * hash) + DIGITAL_SYSTEM_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getDigitalSystemSettings().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2915,6 +2961,7 @@ private static final long serialVersionUID = 0L;
         jumperSettingsBuilder_ = null;
       }
       dipswitchSettings_ = emptyBooleanList();
+      digitalSystemSettings_ = com.google.protobuf.ByteString.EMPTY;
       return this;
     }
 
@@ -2983,6 +3030,10 @@ private static final long serialVersionUID = 0L;
         dipswitchSettings_.makeImmutable();
         result.dipswitchSettings_ = dipswitchSettings_;
       }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.digitalSystemSettings_ = digitalSystemSettings_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -3036,6 +3087,9 @@ private static final long serialVersionUID = 0L;
           dipswitchSettings_.addAll(other.dipswitchSettings_);
         }
         onChanged();
+      }
+      if (other.hasDigitalSystemSettings()) {
+        setDigitalSystemSettings(other.getDigitalSystemSettings());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3124,6 +3178,11 @@ private static final long serialVersionUID = 0L;
               input.popLimit(limit);
               break;
             } // case 82
+            case 90: {
+              digitalSystemSettings_ = input.readBytes();
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 90
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3934,6 +3993,66 @@ private static final long serialVersionUID = 0L;
     public Builder clearDipswitchSettings() {
       dipswitchSettings_ = emptyBooleanList();
       bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString digitalSystemSettings_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * If set, it defines the digital system this intercom uses for
+     * communications.
+     * </pre>
+     *
+     * <code>optional bytes digital_system_settings = 11;</code>
+     * @return Whether the digitalSystemSettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasDigitalSystemSettings() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <pre>
+     * If set, it defines the digital system this intercom uses for
+     * communications.
+     * </pre>
+     *
+     * <code>optional bytes digital_system_settings = 11;</code>
+     * @return The digitalSystemSettings.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDigitalSystemSettings() {
+      return digitalSystemSettings_;
+    }
+    /**
+     * <pre>
+     * If set, it defines the digital system this intercom uses for
+     * communications.
+     * </pre>
+     *
+     * <code>optional bytes digital_system_settings = 11;</code>
+     * @param value The digitalSystemSettings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDigitalSystemSettings(com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      digitalSystemSettings_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set, it defines the digital system this intercom uses for
+     * communications.
+     * </pre>
+     *
+     * <code>optional bytes digital_system_settings = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDigitalSystemSettings() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      digitalSystemSettings_ = getDefaultInstance().getDigitalSystemSettings();
       onChanged();
       return this;
     }

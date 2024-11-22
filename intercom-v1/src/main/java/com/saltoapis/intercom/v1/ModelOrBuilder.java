@@ -172,4 +172,25 @@ public interface ModelOrBuilder extends
    * @return The dipswitchSettings at the given index.
    */
   boolean getDipswitchSettings(int index);
+
+  /**
+   * <pre>
+   * If set, it defines the digital system this intercom uses for
+   * communications.
+   * </pre>
+   *
+   * <code>optional bytes digital_system_settings = 11;</code>
+   * @return Whether the digitalSystemSettings field is set.
+   */
+  boolean hasDigitalSystemSettings();
+  /**
+   * <pre>
+   * If set, it defines the digital system this intercom uses for
+   * communications.
+   * </pre>
+   *
+   * <code>optional bytes digital_system_settings = 11;</code>
+   * @return The digitalSystemSettings.
+   */
+  com.google.protobuf.ByteString getDigitalSystemSettings();
 }

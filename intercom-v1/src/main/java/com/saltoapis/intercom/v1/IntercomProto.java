@@ -85,7 +85,7 @@ public final class IntercomProto {
     java.lang.String[] descriptorData = {
       "\n salto/intercom/v1/intercom.proto\022\021salt" +
       "o.intercom.v1\"+\n\005Brand\022\014\n\004name\030\001 \001(\t\022\024\n\014" +
-      "display_name\030\002 \001(\t\"\235\004\n\005Model\022\014\n\004name\030\001 \001" +
+      "display_name\030\002 \001(\t\"\337\004\n\005Model\022\014\n\004name\030\001 \001" +
       "(\t\022\024\n\014display_name\030\002 \001(\t\022\024\n\014ring_to_open" +
       "\030\004 \001(\010\022\026\n\016do_not_disturb\030\005 \001(\010\022\035\n\025call_d" +
       "eadline_seconds\030\006 \001(\005\022\032\n\022open_delay_seco" +
@@ -93,38 +93,39 @@ public final class IntercomProto {
       ".intercom.v1.Model.WireSettings\022@\n\017jumpe" +
       "r_settings\030\t \001(\0132\'.salto.intercom.v1.Mod" +
       "el.JumperSettings\022\032\n\022dipswitch_settings\030" +
-      "\n \003(\010\032\302\001\n\014WireSettings\022\022\n\005black\030\001 \001(\tH\000\210" +
-      "\001\001\022\022\n\005brown\030\002 \001(\tH\001\210\001\001\022\020\n\003red\030\003 \001(\tH\002\210\001\001" +
-      "\022\023\n\006orange\030\004 \001(\tH\003\210\001\001\022\023\n\006yellow\030\005 \001(\tH\004\210" +
-      "\001\001\022\022\n\005green\030\006 \001(\tH\005\210\001\001B\010\n\006_blackB\010\n\006_bro" +
-      "wnB\006\n\004_redB\t\n\007_orangeB\t\n\007_yellowB\010\n\006_gre" +
-      "en\032&\n\016JumperSettings\022\t\n\001a\030\001 \001(\010\022\t\n\001b\030\002 \001" +
-      "(\010\"\037\n\017GetBrandRequest\022\014\n\004name\030\001 \001(\t\"\\\n\021L" +
-      "istBrandsRequest\022\021\n\tpage_size\030\001 \001(\005\022\022\n\np" +
-      "age_token\030\002 \001(\t\022\016\n\006filter\030\003 \001(\t\022\020\n\010order" +
-      "_by\030\004 \001(\t\"W\n\022ListBrandsResponse\022(\n\006brand" +
-      "s\030\001 \003(\0132\030.salto.intercom.v1.Brand\022\027\n\017nex" +
-      "t_page_token\030\002 \001(\t\"\037\n\017GetModelRequest\022\014\n" +
-      "\004name\030\001 \001(\t\"l\n\021ListModelsRequest\022\016\n\006pare" +
-      "nt\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke" +
-      "n\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(" +
-      "\t\"W\n\022ListModelsResponse\022(\n\006models\030\001 \003(\0132" +
-      "\030.salto.intercom.v1.Model\022\027\n\017next_page_t" +
-      "oken\030\002 \001(\t2\333\002\n\017IntercomService\022H\n\010GetBra" +
-      "nd\022\".salto.intercom.v1.GetBrandRequest\032\030" +
-      ".salto.intercom.v1.Brand\022Y\n\nListBrands\022$" +
-      ".salto.intercom.v1.ListBrandsRequest\032%.s" +
-      "alto.intercom.v1.ListBrandsResponse\022H\n\010G" +
-      "etModel\022\".salto.intercom.v1.GetModelRequ" +
-      "est\032\030.salto.intercom.v1.Model\022Y\n\nListMod" +
-      "els\022$.salto.intercom.v1.ListModelsReques" +
-      "t\032%.salto.intercom.v1.ListModelsResponse" +
-      "B\301\001\n\031com.saltoapis.intercom.v1B\rIntercom" +
-      "ProtoP\001Z?github.com/saltoapis-internal/s" +
-      "altoapis-go/intercom/v1;intercom\252\002\025Salto" +
-      "apis.Intercom.V1\312\002\025Saltoapis\\Intercom\\V1" +
-      "\342\002!GPBMetadata\\Saltoapis\\Intercom\\V1b\006pr" +
-      "oto3"
+      "\n \003(\010\022$\n\027digital_system_settings\030\013 \001(\014H\000" +
+      "\210\001\001\032\302\001\n\014WireSettings\022\022\n\005black\030\001 \001(\tH\000\210\001\001" +
+      "\022\022\n\005brown\030\002 \001(\tH\001\210\001\001\022\020\n\003red\030\003 \001(\tH\002\210\001\001\022\023" +
+      "\n\006orange\030\004 \001(\tH\003\210\001\001\022\023\n\006yellow\030\005 \001(\tH\004\210\001\001" +
+      "\022\022\n\005green\030\006 \001(\tH\005\210\001\001B\010\n\006_blackB\010\n\006_brown" +
+      "B\006\n\004_redB\t\n\007_orangeB\t\n\007_yellowB\010\n\006_green" +
+      "\032&\n\016JumperSettings\022\t\n\001a\030\001 \001(\010\022\t\n\001b\030\002 \001(\010" +
+      "B\032\n\030_digital_system_settings\"\037\n\017GetBrand" +
+      "Request\022\014\n\004name\030\001 \001(\t\"\\\n\021ListBrandsReque" +
+      "st\022\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(" +
+      "\t\022\016\n\006filter\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\"W\n\022L" +
+      "istBrandsResponse\022(\n\006brands\030\001 \003(\0132\030.salt" +
+      "o.intercom.v1.Brand\022\027\n\017next_page_token\030\002" +
+      " \001(\t\"\037\n\017GetModelRequest\022\014\n\004name\030\001 \001(\t\"l\n" +
+      "\021ListModelsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpa" +
+      "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006fil" +
+      "ter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"W\n\022ListModel" +
+      "sResponse\022(\n\006models\030\001 \003(\0132\030.salto.interc" +
+      "om.v1.Model\022\027\n\017next_page_token\030\002 \001(\t2\333\002\n" +
+      "\017IntercomService\022H\n\010GetBrand\022\".salto.int" +
+      "ercom.v1.GetBrandRequest\032\030.salto.interco" +
+      "m.v1.Brand\022Y\n\nListBrands\022$.salto.interco" +
+      "m.v1.ListBrandsRequest\032%.salto.intercom." +
+      "v1.ListBrandsResponse\022H\n\010GetModel\022\".salt" +
+      "o.intercom.v1.GetModelRequest\032\030.salto.in" +
+      "tercom.v1.Model\022Y\n\nListModels\022$.salto.in" +
+      "tercom.v1.ListModelsRequest\032%.salto.inte" +
+      "rcom.v1.ListModelsResponseB\301\001\n\031com.salto" +
+      "apis.intercom.v1B\rIntercomProtoP\001Z?githu" +
+      "b.com/saltoapis-internal/saltoapis-go/in" +
+      "tercom/v1;intercom\252\002\025Saltoapis.Intercom." +
+      "V1\312\002\025Saltoapis\\Intercom\\V1\342\002!GPBMetadata" +
+      "\\Saltoapis\\Intercom\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -141,7 +142,7 @@ public final class IntercomProto {
     internal_static_salto_intercom_v1_Model_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_intercom_v1_Model_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "RingToOpen", "DoNotDisturb", "CallDeadlineSeconds", "OpenDelaySeconds", "WireSettings", "JumperSettings", "DipswitchSettings", });
+        new java.lang.String[] { "Name", "DisplayName", "RingToOpen", "DoNotDisturb", "CallDeadlineSeconds", "OpenDelaySeconds", "WireSettings", "JumperSettings", "DipswitchSettings", "DigitalSystemSettings", });
     internal_static_salto_intercom_v1_Model_WireSettings_descriptor =
       internal_static_salto_intercom_v1_Model_descriptor.getNestedTypes().get(0);
     internal_static_salto_intercom_v1_Model_WireSettings_fieldAccessorTable = new
