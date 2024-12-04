@@ -50,6 +50,7 @@ private static final long serialVersionUID = 0L;
             com.saltoapis.nebula.user.v1.UserAccessRight.class, com.saltoapis.nebula.user.v1.UserAccessRight.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -333,6 +334,118 @@ private static final long serialVersionUID = 0L;
     return effectiveSchedules_.get(index);
   }
 
+  public static final int ACTIVATE_TIME_FIELD_NUMBER = 6;
+  private com.google.protobuf.Timestamp activateTime_;
+  /**
+   * <pre>
+   * Activation time independent of any time zone or calendar.
+   * User access right's association activation time rules:
+   * 1. Activation time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+   * For example, if the current time is 14:46, the system will use 14:40.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+   * @return Whether the activateTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasActivateTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * Activation time independent of any time zone or calendar.
+   * User access right's association activation time rules:
+   * 1. Activation time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+   * For example, if the current time is 14:46, the system will use 14:40.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+   * @return The activateTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getActivateTime() {
+    return activateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : activateTime_;
+  }
+  /**
+   * <pre>
+   * Activation time independent of any time zone or calendar.
+   * User access right's association activation time rules:
+   * 1. Activation time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+   * For example, if the current time is 14:46, the system will use 14:40.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getActivateTimeOrBuilder() {
+    return activateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : activateTime_;
+  }
+
+  public static final int EXPIRE_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp expireTime_;
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * User access right's association expiration time rules:
+   * 1. Expiration time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. When specifying expiration time, it must:
+   * - Be at least 10 minutes after activation time.
+   * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+   * For example, if you attempt to set 10:15, the system will reject it.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+   * @return Whether the expireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpireTime() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * User access right's association expiration time rules:
+   * 1. Expiration time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. When specifying expiration time, it must:
+   * - Be at least 10 minutes after activation time.
+   * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+   * For example, if you attempt to set 10:15, the system will reject it.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+   * @return The expireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpireTime() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * User access right's association expiration time rules:
+   * 1. Expiration time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. When specifying expiration time, it must:
+   * - Be at least 10 minutes after activation time.
+   * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+   * For example, if you attempt to set 10:15, the system will reject it.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -362,6 +475,12 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < effectiveSchedules_.size(); i++) {
       output.writeMessage(5, effectiveSchedules_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getActivateTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(7, getExpireTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -388,6 +507,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, effectiveSchedules_.get(i));
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getActivateTime());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getExpireTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -413,6 +540,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSchedulesList())) return false;
     if (!getEffectiveSchedulesList()
         .equals(other.getEffectiveSchedulesList())) return false;
+    if (hasActivateTime() != other.hasActivateTime()) return false;
+    if (hasActivateTime()) {
+      if (!getActivateTime()
+          .equals(other.getActivateTime())) return false;
+    }
+    if (hasExpireTime() != other.hasExpireTime()) return false;
+    if (hasExpireTime()) {
+      if (!getExpireTime()
+          .equals(other.getExpireTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -437,6 +574,14 @@ private static final long serialVersionUID = 0L;
     if (getEffectiveSchedulesCount() > 0) {
       hash = (37 * hash) + EFFECTIVE_SCHEDULES_FIELD_NUMBER;
       hash = (53 * hash) + getEffectiveSchedulesList().hashCode();
+    }
+    if (hasActivateTime()) {
+      hash = (37 * hash) + ACTIVATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getActivateTime().hashCode();
+    }
+    if (hasExpireTime()) {
+      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getExpireTime().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -561,13 +706,22 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.saltoapis.nebula.user.v1.UserAccessRight.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage
+              .alwaysUseFieldBuilders) {
+        getSchedulesFieldBuilder();
+        getEffectiveSchedulesFieldBuilder();
+        getActivateTimeFieldBuilder();
+        getExpireTimeFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -590,6 +744,16 @@ private static final long serialVersionUID = 0L;
         effectiveSchedulesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      activateTime_ = null;
+      if (activateTimeBuilder_ != null) {
+        activateTimeBuilder_.dispose();
+        activateTimeBuilder_ = null;
+      }
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -654,6 +818,20 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.displayName_ = displayName_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.activateTime_ = activateTimeBuilder_ == null
+            ? activateTime_
+            : activateTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null
+            ? expireTime_
+            : expireTimeBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -735,6 +913,12 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.hasActivateTime()) {
+        mergeActivateTime(other.getActivateTime());
+      }
+      if (other.hasExpireTime()) {
+        mergeExpireTime(other.getExpireTime());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -802,6 +986,20 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 42
+            case 50: {
+              input.readMessage(
+                  getActivateTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
+            case 58: {
+              input.readMessage(
+                  getExpireTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1778,6 +1976,428 @@ private static final long serialVersionUID = 0L;
         effectiveSchedules_ = null;
       }
       return effectiveSchedulesBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp activateTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> activateTimeBuilder_;
+    /**
+     * <pre>
+     * Activation time independent of any time zone or calendar.
+     * User access right's association activation time rules:
+     * 1. Activation time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+     * For example, if the current time is 14:46, the system will use 14:40.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+     * @return Whether the activateTime field is set.
+     */
+    public boolean hasActivateTime() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * Activation time independent of any time zone or calendar.
+     * User access right's association activation time rules:
+     * 1. Activation time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+     * For example, if the current time is 14:46, the system will use 14:40.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+     * @return The activateTime.
+     */
+    public com.google.protobuf.Timestamp getActivateTime() {
+      if (activateTimeBuilder_ == null) {
+        return activateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : activateTime_;
+      } else {
+        return activateTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Activation time independent of any time zone or calendar.
+     * User access right's association activation time rules:
+     * 1. Activation time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+     * For example, if the current time is 14:46, the system will use 14:40.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+     */
+    public Builder setActivateTime(com.google.protobuf.Timestamp value) {
+      if (activateTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        activateTime_ = value;
+      } else {
+        activateTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Activation time independent of any time zone or calendar.
+     * User access right's association activation time rules:
+     * 1. Activation time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+     * For example, if the current time is 14:46, the system will use 14:40.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+     */
+    public Builder setActivateTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (activateTimeBuilder_ == null) {
+        activateTime_ = builderForValue.build();
+      } else {
+        activateTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Activation time independent of any time zone or calendar.
+     * User access right's association activation time rules:
+     * 1. Activation time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+     * For example, if the current time is 14:46, the system will use 14:40.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+     */
+    public Builder mergeActivateTime(com.google.protobuf.Timestamp value) {
+      if (activateTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0) &&
+          activateTime_ != null &&
+          activateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getActivateTimeBuilder().mergeFrom(value);
+        } else {
+          activateTime_ = value;
+        }
+      } else {
+        activateTimeBuilder_.mergeFrom(value);
+      }
+      if (activateTime_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Activation time independent of any time zone or calendar.
+     * User access right's association activation time rules:
+     * 1. Activation time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+     * For example, if the current time is 14:46, the system will use 14:40.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+     */
+    public Builder clearActivateTime() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      activateTime_ = null;
+      if (activateTimeBuilder_ != null) {
+        activateTimeBuilder_.dispose();
+        activateTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Activation time independent of any time zone or calendar.
+     * User access right's association activation time rules:
+     * 1. Activation time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+     * For example, if the current time is 14:46, the system will use 14:40.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getActivateTimeBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getActivateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Activation time independent of any time zone or calendar.
+     * User access right's association activation time rules:
+     * 1. Activation time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+     * For example, if the current time is 14:46, the system will use 14:40.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getActivateTimeOrBuilder() {
+      if (activateTimeBuilder_ != null) {
+        return activateTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return activateTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : activateTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Activation time independent of any time zone or calendar.
+     * User access right's association activation time rules:
+     * 1. Activation time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+     * For example, if the current time is 14:46, the system will use 14:40.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getActivateTimeFieldBuilder() {
+      if (activateTimeBuilder_ == null) {
+        activateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getActivateTime(),
+                getParentForChildren(),
+                isClean());
+        activateTime_ = null;
+      }
+      return activateTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp expireTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expireTimeBuilder_;
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * User access right's association expiration time rules:
+     * 1. Expiration time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. When specifying expiration time, it must:
+     * - Be at least 10 minutes after activation time.
+     * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+     * For example, if you attempt to set 10:15, the system will reject it.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+     * @return Whether the expireTime field is set.
+     */
+    public boolean hasExpireTime() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * User access right's association expiration time rules:
+     * 1. Expiration time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. When specifying expiration time, it must:
+     * - Be at least 10 minutes after activation time.
+     * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+     * For example, if you attempt to set 10:15, the system will reject it.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+     * @return The expireTime.
+     */
+    public com.google.protobuf.Timestamp getExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+      } else {
+        return expireTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * User access right's association expiration time rules:
+     * 1. Expiration time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. When specifying expiration time, it must:
+     * - Be at least 10 minutes after activation time.
+     * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+     * For example, if you attempt to set 10:15, the system will reject it.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expireTime_ = value;
+      } else {
+        expireTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * User access right's association expiration time rules:
+     * 1. Expiration time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. When specifying expiration time, it must:
+     * - Be at least 10 minutes after activation time.
+     * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+     * For example, if you attempt to set 10:15, the system will reject it.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+     */
+    public Builder setExpireTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expireTimeBuilder_ == null) {
+        expireTime_ = builderForValue.build();
+      } else {
+        expireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * User access right's association expiration time rules:
+     * 1. Expiration time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. When specifying expiration time, it must:
+     * - Be at least 10 minutes after activation time.
+     * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+     * For example, if you attempt to set 10:15, the system will reject it.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+     */
+    public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0) &&
+          expireTime_ != null &&
+          expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
+        } else {
+          expireTime_ = value;
+        }
+      } else {
+        expireTimeBuilder_.mergeFrom(value);
+      }
+      if (expireTime_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * User access right's association expiration time rules:
+     * 1. Expiration time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. When specifying expiration time, it must:
+     * - Be at least 10 minutes after activation time.
+     * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+     * For example, if you attempt to set 10:15, the system will reject it.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+     */
+    public Builder clearExpireTime() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * User access right's association expiration time rules:
+     * 1. Expiration time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. When specifying expiration time, it must:
+     * - Be at least 10 minutes after activation time.
+     * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+     * For example, if you attempt to set 10:15, the system will reject it.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getExpireTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * User access right's association expiration time rules:
+     * 1. Expiration time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. When specifying expiration time, it must:
+     * - Be at least 10 minutes after activation time.
+     * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+     * For example, if you attempt to set 10:15, the system will reject it.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+      if (expireTimeBuilder_ != null) {
+        return expireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return expireTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * User access right's association expiration time rules:
+     * 1. Expiration time must be specified in multiples of 10 minutes.
+     * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+     * 2. When specifying expiration time, it must:
+     * - Be at least 10 minutes after activation time.
+     * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+     * For example, if you attempt to set 10:15, the system will reject it.
+     * </pre>
+     *
+     * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getExpireTimeFieldBuilder() {
+      if (expireTimeBuilder_ == null) {
+        expireTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getExpireTime(),
+                getParentForChildren(),
+                isClean());
+        expireTime_ = null;
+      }
+      return expireTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.user.v1.UserAccessRight)

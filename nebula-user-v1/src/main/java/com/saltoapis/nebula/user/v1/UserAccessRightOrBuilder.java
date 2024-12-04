@@ -175,4 +175,94 @@ public interface UserAccessRightOrBuilder extends
    */
   com.saltoapis.nebula.type.ScheduleOrBuilder getEffectiveSchedulesOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Activation time independent of any time zone or calendar.
+   * User access right's association activation time rules:
+   * 1. Activation time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+   * For example, if the current time is 14:46, the system will use 14:40.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+   * @return Whether the activateTime field is set.
+   */
+  boolean hasActivateTime();
+  /**
+   * <pre>
+   * Activation time independent of any time zone or calendar.
+   * User access right's association activation time rules:
+   * 1. Activation time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+   * For example, if the current time is 14:46, the system will use 14:40.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+   * @return The activateTime.
+   */
+  com.google.protobuf.Timestamp getActivateTime();
+  /**
+   * <pre>
+   * Activation time independent of any time zone or calendar.
+   * User access right's association activation time rules:
+   * 1. Activation time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. If no activation time is provided, the current time is used, truncated to the nearest earlier multiple of 10 minutes.
+   * For example, if the current time is 14:46, the system will use 14:40.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp activate_time = 6;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getActivateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * User access right's association expiration time rules:
+   * 1. Expiration time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. When specifying expiration time, it must:
+   * - Be at least 10 minutes after activation time.
+   * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+   * For example, if you attempt to set 10:15, the system will reject it.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+   * @return Whether the expireTime field is set.
+   */
+  boolean hasExpireTime();
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * User access right's association expiration time rules:
+   * 1. Expiration time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. When specifying expiration time, it must:
+   * - Be at least 10 minutes after activation time.
+   * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+   * For example, if you attempt to set 10:15, the system will reject it.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+   * @return The expireTime.
+   */
+  com.google.protobuf.Timestamp getExpireTime();
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * User access right's association expiration time rules:
+   * 1. Expiration time must be specified in multiples of 10 minutes.
+   * Valid examples: 07:40, 12:30, 18:10. Invalid examples: 12:32, 10:15.
+   * 2. When specifying expiration time, it must:
+   * - Be at least 10 minutes after activation time.
+   * - Always be a multiple of 10 minutes. The system does not round or adjust expiration time for you.
+   * For example, if you attempt to set 10:15, the system will reject it.
+   * </pre>
+   *
+   * <code>optional .google.protobuf.Timestamp expire_time = 7;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
 }
