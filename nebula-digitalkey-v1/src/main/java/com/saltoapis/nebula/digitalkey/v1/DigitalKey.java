@@ -1613,39 +1613,58 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Access points change time.
+     * Access points synchronization time.
      *
-     * This data is populated with the user access points sync time.
-     * Indicates the last time the digital key's access points changed.
+     * This data is populated with the user's access points sync time.
+     * Indicates the last time the digital key's access points were synced.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
-     * @return Whether the accessPointsChangeTime field is set.
+     * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
+     * @return Whether the accessPointsSyncTime field is set.
      */
-    boolean hasAccessPointsChangeTime();
+    boolean hasAccessPointsSyncTime();
     /**
      * <pre>
-     * Access points change time.
+     * Access points synchronization time.
      *
-     * This data is populated with the user access points sync time.
-     * Indicates the last time the digital key's access points changed.
+     * This data is populated with the user's access points sync time.
+     * Indicates the last time the digital key's access points were synced.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
-     * @return The accessPointsChangeTime.
+     * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
+     * @return The accessPointsSyncTime.
      */
-    com.google.protobuf.Timestamp getAccessPointsChangeTime();
+    com.google.protobuf.Timestamp getAccessPointsSyncTime();
     /**
      * <pre>
-     * Access points change time.
+     * Access points synchronization time.
      *
-     * This data is populated with the user access points sync time.
-     * Indicates the last time the digital key's access points changed.
+     * This data is populated with the user's access points sync time.
+     * Indicates the last time the digital key's access points were synced.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+     * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
      */
-    com.google.protobuf.TimestampOrBuilder getAccessPointsChangeTimeOrBuilder();
+    com.google.protobuf.TimestampOrBuilder getAccessPointsSyncTimeOrBuilder();
+
+    /**
+     * <pre>
+     * The sync state of the digital key's access points.
+     * </pre>
+     *
+     * <code>.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState access_points_sync_state = 8;</code>
+     * @return The enum numeric value on the wire for accessPointsSyncState.
+     */
+    int getAccessPointsSyncStateValue();
+    /**
+     * <pre>
+     * The sync state of the digital key's access points.
+     * </pre>
+     *
+     * <code>.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState access_points_sync_state = 8;</code>
+     * @return The accessPointsSyncState.
+     */
+    com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState getAccessPointsSyncState();
   }
   /**
    * <pre>
@@ -1678,6 +1697,7 @@ private static final long serialVersionUID = 0L;
       unit_ = "";
       installationId_ = "";
       unitId_ = "";
+      accessPointsSyncState_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -1691,6 +1711,196 @@ private static final long serialVersionUID = 0L;
       return com.saltoapis.nebula.digitalkey.v1.DigitalKeyProto.internal_static_salto_nebula_digitalkey_v1_DigitalKey_AppKey_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.class, com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.Builder.class);
+    }
+
+    /**
+     * <pre>
+     * Sync state of the digital key's access points.
+     * </pre>
+     *
+     * Protobuf enum {@code salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState}
+     */
+    public enum AccessPointsSyncState
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * Sentinel value used to indicate that the state is unknown, omitted,
+       * or is not applicable.
+       * </pre>
+       *
+       * <code>ACCESS_POINTS_SYNC_STATE_UNSPECIFIED = 0;</code>
+       */
+      ACCESS_POINTS_SYNC_STATE_UNSPECIFIED(0),
+      /**
+       * <pre>
+       * The digital key's access points are invalidated.
+       * </pre>
+       *
+       * <code>INVALIDATED = 3;</code>
+       */
+      INVALIDATED(3),
+      /**
+       * <pre>
+       * The digital key's access points are being synced.
+       * </pre>
+       *
+       * <code>SYNCING = 1;</code>
+       */
+      SYNCING(1),
+      /**
+       * <pre>
+       * The digital key's access points are synced.
+       * </pre>
+       *
+       * <code>SYNCED = 2;</code>
+       */
+      SYNCED(2),
+      /**
+       * <pre>
+       * The digital key's access points are not supported on the digital key's installation.
+       * </pre>
+       *
+       * <code>NOT_SUPPORTED = 4;</code>
+       */
+      NOT_SUPPORTED(4),
+      UNRECOGNIZED(-1),
+      ;
+
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 26,
+          /* patch= */ 1,
+          /* suffix= */ "",
+          AccessPointsSyncState.class.getName());
+      }
+      /**
+       * <pre>
+       * Sentinel value used to indicate that the state is unknown, omitted,
+       * or is not applicable.
+       * </pre>
+       *
+       * <code>ACCESS_POINTS_SYNC_STATE_UNSPECIFIED = 0;</code>
+       */
+      public static final int ACCESS_POINTS_SYNC_STATE_UNSPECIFIED_VALUE = 0;
+      /**
+       * <pre>
+       * The digital key's access points are invalidated.
+       * </pre>
+       *
+       * <code>INVALIDATED = 3;</code>
+       */
+      public static final int INVALIDATED_VALUE = 3;
+      /**
+       * <pre>
+       * The digital key's access points are being synced.
+       * </pre>
+       *
+       * <code>SYNCING = 1;</code>
+       */
+      public static final int SYNCING_VALUE = 1;
+      /**
+       * <pre>
+       * The digital key's access points are synced.
+       * </pre>
+       *
+       * <code>SYNCED = 2;</code>
+       */
+      public static final int SYNCED_VALUE = 2;
+      /**
+       * <pre>
+       * The digital key's access points are not supported on the digital key's installation.
+       * </pre>
+       *
+       * <code>NOT_SUPPORTED = 4;</code>
+       */
+      public static final int NOT_SUPPORTED_VALUE = 4;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static AccessPointsSyncState valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static AccessPointsSyncState forNumber(int value) {
+        switch (value) {
+          case 0: return ACCESS_POINTS_SYNC_STATE_UNSPECIFIED;
+          case 3: return INVALIDATED;
+          case 1: return SYNCING;
+          case 2: return SYNCED;
+          case 4: return NOT_SUPPORTED;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<AccessPointsSyncState>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          AccessPointsSyncState> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AccessPointsSyncState>() {
+              public AccessPointsSyncState findValueByNumber(int number) {
+                return AccessPointsSyncState.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final AccessPointsSyncState[] VALUES = values();
+
+      public static AccessPointsSyncState valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private AccessPointsSyncState(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState)
     }
 
     private int bitField0_;
@@ -1984,51 +2194,77 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    public static final int ACCESS_POINTS_CHANGE_TIME_FIELD_NUMBER = 7;
-    private com.google.protobuf.Timestamp accessPointsChangeTime_;
+    public static final int ACCESS_POINTS_SYNC_TIME_FIELD_NUMBER = 7;
+    private com.google.protobuf.Timestamp accessPointsSyncTime_;
     /**
      * <pre>
-     * Access points change time.
+     * Access points synchronization time.
      *
-     * This data is populated with the user access points sync time.
-     * Indicates the last time the digital key's access points changed.
+     * This data is populated with the user's access points sync time.
+     * Indicates the last time the digital key's access points were synced.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
-     * @return Whether the accessPointsChangeTime field is set.
+     * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
+     * @return Whether the accessPointsSyncTime field is set.
      */
     @java.lang.Override
-    public boolean hasAccessPointsChangeTime() {
+    public boolean hasAccessPointsSyncTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
-     * Access points change time.
+     * Access points synchronization time.
      *
-     * This data is populated with the user access points sync time.
-     * Indicates the last time the digital key's access points changed.
+     * This data is populated with the user's access points sync time.
+     * Indicates the last time the digital key's access points were synced.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
-     * @return The accessPointsChangeTime.
+     * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
+     * @return The accessPointsSyncTime.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getAccessPointsChangeTime() {
-      return accessPointsChangeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsChangeTime_;
+    public com.google.protobuf.Timestamp getAccessPointsSyncTime() {
+      return accessPointsSyncTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsSyncTime_;
     }
     /**
      * <pre>
-     * Access points change time.
+     * Access points synchronization time.
      *
-     * This data is populated with the user access points sync time.
-     * Indicates the last time the digital key's access points changed.
+     * This data is populated with the user's access points sync time.
+     * Indicates the last time the digital key's access points were synced.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+     * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getAccessPointsChangeTimeOrBuilder() {
-      return accessPointsChangeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsChangeTime_;
+    public com.google.protobuf.TimestampOrBuilder getAccessPointsSyncTimeOrBuilder() {
+      return accessPointsSyncTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsSyncTime_;
+    }
+
+    public static final int ACCESS_POINTS_SYNC_STATE_FIELD_NUMBER = 8;
+    private int accessPointsSyncState_ = 0;
+    /**
+     * <pre>
+     * The sync state of the digital key's access points.
+     * </pre>
+     *
+     * <code>.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState access_points_sync_state = 8;</code>
+     * @return The enum numeric value on the wire for accessPointsSyncState.
+     */
+    @java.lang.Override public int getAccessPointsSyncStateValue() {
+      return accessPointsSyncState_;
+    }
+    /**
+     * <pre>
+     * The sync state of the digital key's access points.
+     * </pre>
+     *
+     * <code>.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState access_points_sync_state = 8;</code>
+     * @return The accessPointsSyncState.
+     */
+    @java.lang.Override public com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState getAccessPointsSyncState() {
+      com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState result = com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState.forNumber(accessPointsSyncState_);
+      return result == null ? com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState.UNRECOGNIZED : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2064,7 +2300,10 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.GeneratedMessage.writeString(output, 6, unit_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeMessage(7, getAccessPointsChangeTime());
+        output.writeMessage(7, getAccessPointsSyncTime());
+      }
+      if (accessPointsSyncState_ != com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState.ACCESS_POINTS_SYNC_STATE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(8, accessPointsSyncState_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2097,7 +2336,11 @@ private static final long serialVersionUID = 0L;
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getAccessPointsChangeTime());
+          .computeMessageSize(7, getAccessPointsSyncTime());
+      }
+      if (accessPointsSyncState_ != com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState.ACCESS_POINTS_SYNC_STATE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(8, accessPointsSyncState_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2135,11 +2378,12 @@ private static final long serialVersionUID = 0L;
         if (!getUnitId()
             .equals(other.getUnitId())) return false;
       }
-      if (hasAccessPointsChangeTime() != other.hasAccessPointsChangeTime()) return false;
-      if (hasAccessPointsChangeTime()) {
-        if (!getAccessPointsChangeTime()
-            .equals(other.getAccessPointsChangeTime())) return false;
+      if (hasAccessPointsSyncTime() != other.hasAccessPointsSyncTime()) return false;
+      if (hasAccessPointsSyncTime()) {
+        if (!getAccessPointsSyncTime()
+            .equals(other.getAccessPointsSyncTime())) return false;
       }
+      if (accessPointsSyncState_ != other.accessPointsSyncState_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2169,10 +2413,12 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + UNIT_ID_FIELD_NUMBER;
         hash = (53 * hash) + getUnitId().hashCode();
       }
-      if (hasAccessPointsChangeTime()) {
-        hash = (37 * hash) + ACCESS_POINTS_CHANGE_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getAccessPointsChangeTime().hashCode();
+      if (hasAccessPointsSyncTime()) {
+        hash = (37 * hash) + ACCESS_POINTS_SYNC_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getAccessPointsSyncTime().hashCode();
       }
+      hash = (37 * hash) + ACCESS_POINTS_SYNC_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + accessPointsSyncState_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2308,7 +2554,7 @@ private static final long serialVersionUID = 0L;
         if (com.google.protobuf.GeneratedMessage
                 .alwaysUseFieldBuilders) {
           getMetadataFieldBuilder();
-          getAccessPointsChangeTimeFieldBuilder();
+          getAccessPointsSyncTimeFieldBuilder();
         }
       }
       @java.lang.Override
@@ -2325,11 +2571,12 @@ private static final long serialVersionUID = 0L;
         unit_ = "";
         installationId_ = "";
         unitId_ = "";
-        accessPointsChangeTime_ = null;
-        if (accessPointsChangeTimeBuilder_ != null) {
-          accessPointsChangeTimeBuilder_.dispose();
-          accessPointsChangeTimeBuilder_ = null;
+        accessPointsSyncTime_ = null;
+        if (accessPointsSyncTimeBuilder_ != null) {
+          accessPointsSyncTimeBuilder_.dispose();
+          accessPointsSyncTimeBuilder_ = null;
         }
+        accessPointsSyncState_ = 0;
         return this;
       }
 
@@ -2388,10 +2635,13 @@ private static final long serialVersionUID = 0L;
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.accessPointsChangeTime_ = accessPointsChangeTimeBuilder_ == null
-              ? accessPointsChangeTime_
-              : accessPointsChangeTimeBuilder_.build();
+          result.accessPointsSyncTime_ = accessPointsSyncTimeBuilder_ == null
+              ? accessPointsSyncTime_
+              : accessPointsSyncTimeBuilder_.build();
           to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.accessPointsSyncState_ = accessPointsSyncState_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2434,8 +2684,11 @@ private static final long serialVersionUID = 0L;
           bitField0_ |= 0x00000020;
           onChanged();
         }
-        if (other.hasAccessPointsChangeTime()) {
-          mergeAccessPointsChangeTime(other.getAccessPointsChangeTime());
+        if (other.hasAccessPointsSyncTime()) {
+          mergeAccessPointsSyncTime(other.getAccessPointsSyncTime());
+        }
+        if (other.accessPointsSyncState_ != 0) {
+          setAccessPointsSyncStateValue(other.getAccessPointsSyncStateValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2497,11 +2750,16 @@ private static final long serialVersionUID = 0L;
               } // case 50
               case 58: {
                 input.readMessage(
-                    getAccessPointsChangeTimeFieldBuilder().getBuilder(),
+                    getAccessPointsSyncTimeFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
+              case 64: {
+                accessPointsSyncState_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3165,59 +3423,59 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private com.google.protobuf.Timestamp accessPointsChangeTime_;
+      private com.google.protobuf.Timestamp accessPointsSyncTime_;
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> accessPointsChangeTimeBuilder_;
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> accessPointsSyncTimeBuilder_;
       /**
        * <pre>
-       * Access points change time.
+       * Access points synchronization time.
        *
-       * This data is populated with the user access points sync time.
-       * Indicates the last time the digital key's access points changed.
+       * This data is populated with the user's access points sync time.
+       * Indicates the last time the digital key's access points were synced.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
-       * @return Whether the accessPointsChangeTime field is set.
+       * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
+       * @return Whether the accessPointsSyncTime field is set.
        */
-      public boolean hasAccessPointsChangeTime() {
+      public boolean hasAccessPointsSyncTime() {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <pre>
-       * Access points change time.
+       * Access points synchronization time.
        *
-       * This data is populated with the user access points sync time.
-       * Indicates the last time the digital key's access points changed.
+       * This data is populated with the user's access points sync time.
+       * Indicates the last time the digital key's access points were synced.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
-       * @return The accessPointsChangeTime.
+       * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
+       * @return The accessPointsSyncTime.
        */
-      public com.google.protobuf.Timestamp getAccessPointsChangeTime() {
-        if (accessPointsChangeTimeBuilder_ == null) {
-          return accessPointsChangeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsChangeTime_;
+      public com.google.protobuf.Timestamp getAccessPointsSyncTime() {
+        if (accessPointsSyncTimeBuilder_ == null) {
+          return accessPointsSyncTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsSyncTime_;
         } else {
-          return accessPointsChangeTimeBuilder_.getMessage();
+          return accessPointsSyncTimeBuilder_.getMessage();
         }
       }
       /**
        * <pre>
-       * Access points change time.
+       * Access points synchronization time.
        *
-       * This data is populated with the user access points sync time.
-       * Indicates the last time the digital key's access points changed.
+       * This data is populated with the user's access points sync time.
+       * Indicates the last time the digital key's access points were synced.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
        */
-      public Builder setAccessPointsChangeTime(com.google.protobuf.Timestamp value) {
-        if (accessPointsChangeTimeBuilder_ == null) {
+      public Builder setAccessPointsSyncTime(com.google.protobuf.Timestamp value) {
+        if (accessPointsSyncTimeBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          accessPointsChangeTime_ = value;
+          accessPointsSyncTime_ = value;
         } else {
-          accessPointsChangeTimeBuilder_.setMessage(value);
+          accessPointsSyncTimeBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000040;
         onChanged();
@@ -3225,20 +3483,20 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Access points change time.
+       * Access points synchronization time.
        *
-       * This data is populated with the user access points sync time.
-       * Indicates the last time the digital key's access points changed.
+       * This data is populated with the user's access points sync time.
+       * Indicates the last time the digital key's access points were synced.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
        */
-      public Builder setAccessPointsChangeTime(
+      public Builder setAccessPointsSyncTime(
           com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (accessPointsChangeTimeBuilder_ == null) {
-          accessPointsChangeTime_ = builderForValue.build();
+        if (accessPointsSyncTimeBuilder_ == null) {
+          accessPointsSyncTime_ = builderForValue.build();
         } else {
-          accessPointsChangeTimeBuilder_.setMessage(builderForValue.build());
+          accessPointsSyncTimeBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000040;
         onChanged();
@@ -3246,27 +3504,27 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Access points change time.
+       * Access points synchronization time.
        *
-       * This data is populated with the user access points sync time.
-       * Indicates the last time the digital key's access points changed.
+       * This data is populated with the user's access points sync time.
+       * Indicates the last time the digital key's access points were synced.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
        */
-      public Builder mergeAccessPointsChangeTime(com.google.protobuf.Timestamp value) {
-        if (accessPointsChangeTimeBuilder_ == null) {
+      public Builder mergeAccessPointsSyncTime(com.google.protobuf.Timestamp value) {
+        if (accessPointsSyncTimeBuilder_ == null) {
           if (((bitField0_ & 0x00000040) != 0) &&
-            accessPointsChangeTime_ != null &&
-            accessPointsChangeTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getAccessPointsChangeTimeBuilder().mergeFrom(value);
+            accessPointsSyncTime_ != null &&
+            accessPointsSyncTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getAccessPointsSyncTimeBuilder().mergeFrom(value);
           } else {
-            accessPointsChangeTime_ = value;
+            accessPointsSyncTime_ = value;
           }
         } else {
-          accessPointsChangeTimeBuilder_.mergeFrom(value);
+          accessPointsSyncTimeBuilder_.mergeFrom(value);
         }
-        if (accessPointsChangeTime_ != null) {
+        if (accessPointsSyncTime_ != null) {
           bitField0_ |= 0x00000040;
           onChanged();
         }
@@ -3274,79 +3532,152 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Access points change time.
+       * Access points synchronization time.
        *
-       * This data is populated with the user access points sync time.
-       * Indicates the last time the digital key's access points changed.
+       * This data is populated with the user's access points sync time.
+       * Indicates the last time the digital key's access points were synced.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
        */
-      public Builder clearAccessPointsChangeTime() {
+      public Builder clearAccessPointsSyncTime() {
         bitField0_ = (bitField0_ & ~0x00000040);
-        accessPointsChangeTime_ = null;
-        if (accessPointsChangeTimeBuilder_ != null) {
-          accessPointsChangeTimeBuilder_.dispose();
-          accessPointsChangeTimeBuilder_ = null;
+        accessPointsSyncTime_ = null;
+        if (accessPointsSyncTimeBuilder_ != null) {
+          accessPointsSyncTimeBuilder_.dispose();
+          accessPointsSyncTimeBuilder_ = null;
         }
         onChanged();
         return this;
       }
       /**
        * <pre>
-       * Access points change time.
+       * Access points synchronization time.
        *
-       * This data is populated with the user access points sync time.
-       * Indicates the last time the digital key's access points changed.
+       * This data is populated with the user's access points sync time.
+       * Indicates the last time the digital key's access points were synced.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getAccessPointsChangeTimeBuilder() {
+      public com.google.protobuf.Timestamp.Builder getAccessPointsSyncTimeBuilder() {
         bitField0_ |= 0x00000040;
         onChanged();
-        return getAccessPointsChangeTimeFieldBuilder().getBuilder();
+        return getAccessPointsSyncTimeFieldBuilder().getBuilder();
       }
       /**
        * <pre>
-       * Access points change time.
+       * Access points synchronization time.
        *
-       * This data is populated with the user access points sync time.
-       * Indicates the last time the digital key's access points changed.
+       * This data is populated with the user's access points sync time.
+       * Indicates the last time the digital key's access points were synced.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getAccessPointsChangeTimeOrBuilder() {
-        if (accessPointsChangeTimeBuilder_ != null) {
-          return accessPointsChangeTimeBuilder_.getMessageOrBuilder();
+      public com.google.protobuf.TimestampOrBuilder getAccessPointsSyncTimeOrBuilder() {
+        if (accessPointsSyncTimeBuilder_ != null) {
+          return accessPointsSyncTimeBuilder_.getMessageOrBuilder();
         } else {
-          return accessPointsChangeTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsChangeTime_;
+          return accessPointsSyncTime_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : accessPointsSyncTime_;
         }
       }
       /**
        * <pre>
-       * Access points change time.
+       * Access points synchronization time.
        *
-       * This data is populated with the user access points sync time.
-       * Indicates the last time the digital key's access points changed.
+       * This data is populated with the user's access points sync time.
+       * Indicates the last time the digital key's access points were synced.
        * </pre>
        *
-       * <code>.google.protobuf.Timestamp access_points_change_time = 7;</code>
+       * <code>.google.protobuf.Timestamp access_points_sync_time = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getAccessPointsChangeTimeFieldBuilder() {
-        if (accessPointsChangeTimeBuilder_ == null) {
-          accessPointsChangeTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          getAccessPointsSyncTimeFieldBuilder() {
+        if (accessPointsSyncTimeBuilder_ == null) {
+          accessPointsSyncTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getAccessPointsChangeTime(),
+                  getAccessPointsSyncTime(),
                   getParentForChildren(),
                   isClean());
-          accessPointsChangeTime_ = null;
+          accessPointsSyncTime_ = null;
         }
-        return accessPointsChangeTimeBuilder_;
+        return accessPointsSyncTimeBuilder_;
+      }
+
+      private int accessPointsSyncState_ = 0;
+      /**
+       * <pre>
+       * The sync state of the digital key's access points.
+       * </pre>
+       *
+       * <code>.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState access_points_sync_state = 8;</code>
+       * @return The enum numeric value on the wire for accessPointsSyncState.
+       */
+      @java.lang.Override public int getAccessPointsSyncStateValue() {
+        return accessPointsSyncState_;
+      }
+      /**
+       * <pre>
+       * The sync state of the digital key's access points.
+       * </pre>
+       *
+       * <code>.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState access_points_sync_state = 8;</code>
+       * @param value The enum numeric value on the wire for accessPointsSyncState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccessPointsSyncStateValue(int value) {
+        accessPointsSyncState_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The sync state of the digital key's access points.
+       * </pre>
+       *
+       * <code>.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState access_points_sync_state = 8;</code>
+       * @return The accessPointsSyncState.
+       */
+      @java.lang.Override
+      public com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState getAccessPointsSyncState() {
+        com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState result = com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState.forNumber(accessPointsSyncState_);
+        return result == null ? com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState.UNRECOGNIZED : result;
+      }
+      /**
+       * <pre>
+       * The sync state of the digital key's access points.
+       * </pre>
+       *
+       * <code>.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState access_points_sync_state = 8;</code>
+       * @param value The accessPointsSyncState to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccessPointsSyncState(com.saltoapis.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000080;
+        accessPointsSyncState_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The sync state of the digital key's access points.
+       * </pre>
+       *
+       * <code>.salto.nebula.digitalkey.v1.DigitalKey.AppKey.AccessPointsSyncState access_points_sync_state = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccessPointsSyncState() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        accessPointsSyncState_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:salto.nebula.digitalkey.v1.DigitalKey.AppKey)
