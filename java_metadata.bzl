@@ -59,6 +59,7 @@ java_projects = [
     '//nebula-calendar-v1/src/main/java',
     '//nebula-controller-v1/src/main/java',
     '//nebula-device-v1/src/main/java',
+    '//nebula-electronickey-v1/src/main/java',
     '//nebula-electroniclock-v1/src/main/java',
     '//nebula-encoder-v1/src/main/java',
     '//nebula-extender-v1/src/main/java',
