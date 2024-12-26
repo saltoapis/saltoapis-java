@@ -70,9 +70,13 @@ public enum DeviceType
    */
   INTERCOM_ADAPTOR(6),
   /**
-   * <code>UNNAMED_1 = 7;</code>
+   * <pre>
+   * Electronic key
+   * </pre>
+   *
+   * <code>ELECTRONIC_KEY = 7;</code>
    */
-  UNNAMED_1(7),
+  ELECTRONIC_KEY(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -142,9 +146,13 @@ public enum DeviceType
    */
   public static final int INTERCOM_ADAPTOR_VALUE = 6;
   /**
-   * <code>UNNAMED_1 = 7;</code>
+   * <pre>
+   * Electronic key
+   * </pre>
+   *
+   * <code>ELECTRONIC_KEY = 7;</code>
    */
-  public static final int UNNAMED_1_VALUE = 7;
+  public static final int ELECTRONIC_KEY_VALUE = 7;
 
 
   public final int getNumber() {
@@ -178,7 +186,7 @@ public enum DeviceType
       case 4: return ENCODER;
       case 5: return CONTROLLER;
       case 6: return INTERCOM_ADAPTOR;
-      case 7: return UNNAMED_1;
+      case 7: return ELECTRONIC_KEY;
       default: return null;
     }
   }
