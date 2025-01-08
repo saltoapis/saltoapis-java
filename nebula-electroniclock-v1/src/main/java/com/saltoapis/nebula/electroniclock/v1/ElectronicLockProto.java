@@ -179,114 +179,117 @@ public final class ElectronicLockProto {
       "google/protobuf/empty.proto\032 google/prot" +
       "obuf/field_mask.proto\032\037google/protobuf/t" +
       "imestamp.proto\032$salto/longrunning/v1/ope" +
-      "ration.proto\"\240\004\n\016ElectronicLock\022\014\n\004name\030" +
-      "\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\026\n\tdevice_id" +
-      "\030\003 \001(\tH\001\210\001\001\022\021\n\007gateway\030\004 \001(\tH\000\022\022\n\010extend" +
-      "er\030\005 \001(\tH\000\022\024\n\014access_point\030\006 \001(\t\022\023\n\013init" +
-      "ialized\030\007 \001(\010\022\020\n\010outdated\030\010 \001(\010\022\026\n\tconne" +
-      "cted\030\t \001(\010H\002\210\001\001\022\023\n\013low_battery\030\n \001(\010\0223\n\017" +
-      "last_event_time\030\013 \001(\0132\032.google.protobuf." +
-      "Timestamp\022!\n\024calibration_settings\030\014 \001(\014H" +
-      "\003\210\001\001\022&\n\031force_rotate_carriage_end\030\r \001(\010H" +
-      "\004\210\001\001\022@\n\030hold_back_latch_duration\030\016 \001(\0132\031" +
-      ".google.protobuf.DurationH\005\210\001\001B\017\n\rparent" +
-      "_deviceB\014\n\n_device_idB\014\n\n_connectedB\027\n\025_" +
-      "calibration_settingsB\034\n\032_force_rotate_ca" +
-      "rriage_endB\033\n\031_hold_back_latch_duration\"" +
-      "\256\001\n\033CreateElectronicLockRequest\022\016\n\006paren" +
-      "t\030\001 \001(\t\022\037\n\022electronic_lock_id\030\002 \001(\tH\000\210\001\001" +
-      "\022G\n\017electronic_lock\030\003 \001(\0132..salto.nebula" +
-      ".electroniclock.v1.ElectronicLockB\025\n\023_el" +
-      "ectronic_lock_id\"(\n\030GetElectronicLockReq" +
-      "uest\022\014\n\004name\030\001 \001(\t\"u\n\032ListElectronicLock" +
-      "sRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 " +
-      "\001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022" +
-      "\020\n\010order_by\030\005 \001(\t\"\200\001\n\033ListElectronicLock" +
-      "sResponse\022H\n\020electronic_locks\030\001 \003(\0132..sa" +
-      "lto.nebula.electroniclock.v1.ElectronicL" +
-      "ock\022\027\n\017next_page_token\030\002 \001(\t\"\227\001\n\033UpdateE" +
-      "lectronicLockRequest\022G\n\017electronic_lock\030" +
-      "\001 \001(\0132..salto.nebula.electroniclock.v1.E" +
-      "lectronicLock\022/\n\013update_mask\030\002 \001(\0132\032.goo" +
-      "gle.protobuf.FieldMask\"+\n\033DeleteElectron" +
-      "icLockRequest\022\014\n\004name\030\001 \001(\t\"<\n\031BindElect" +
-      "ronicLockRequest\022\014\n\004name\030\001 \001(\t\022\021\n\tdevice" +
-      "_id\030\002 \001(\t\"\034\n\032BindElectronicLockResponse\"" +
-      ":\n\033UnbindElectronicLockRequest\022\014\n\004name\030\001" +
-      " \001(\t\022\r\n\005force\030\002 \001(\010\"\036\n\034UnbindElectronicL" +
-      "ockResponse\"/\n\037InitializeElectronicLockR" +
-      "equest\022\014\n\004name\030\001 \001(\t\"\"\n InitializeElectr" +
-      "onicLockResponse\"<\n InitializeElectronic" +
-      "LockMetadata\022\030\n\020progress_percent\030\001 \001(\005\"." +
-      "\n\036ConfigureElectronicLockRequest\022\014\n\004name" +
-      "\030\001 \001(\t\"!\n\037ConfigureElectronicLockRespons" +
-      "e\"!\n\037ConfigureElectronicLockMetadata\"*\n\032" +
-      "ResetElectronicLockRequest\022\014\n\004name\030\001 \001(\t" +
-      "\"\035\n\033ResetElectronicLockResponse\"\035\n\033Reset" +
-      "ElectronicLockMetadata\">\n#UpdateElectron" +
-      "icLockFirmwareRequest\022\027\n\017electronic_lock" +
-      "\030\001 \001(\t\"&\n$UpdateElectronicLockFirmwareRe" +
-      "sponse\"@\n$UpdateElectronicLockFirmwareMe" +
-      "tadata\022\030\n\020progress_percent\030\001 \001(\005\"<\n!Gene" +
-      "rateAuthorizationTokenRequest\022\027\n\017electro" +
-      "nic_lock\030\001 \001(\t\"A\n\"GenerateAuthorizationT" +
-      "okenResponse\022\033\n\023authorization_token\030\001 \001(" +
-      "\014\"=\n\"GenerateFirmwareDownloadUriRequest\022" +
-      "\027\n\017electronic_lock\030\001 \001(\t\"K\n#GenerateFirm" +
-      "wareDownloadUriResponse\022\024\n\014download_uri\030" +
-      "\001 \001(\t\022\016\n\006digest\030\002 \001(\t\"%\n#GenerateFirmwar" +
-      "eDownloadUriMetadata2\342\r\n\025ElectronicLockS" +
-      "ervice\022\203\001\n\024CreateElectronicLock\022;.salto." +
-      "nebula.electroniclock.v1.CreateElectroni" +
-      "cLockRequest\032..salto.nebula.electroniclo" +
-      "ck.v1.ElectronicLock\022}\n\021GetElectronicLoc" +
-      "k\0228.salto.nebula.electroniclock.v1.GetEl" +
-      "ectronicLockRequest\032..salto.nebula.elect" +
-      "roniclock.v1.ElectronicLock\022\216\001\n\023ListElec" +
-      "tronicLocks\022:.salto.nebula.electronicloc" +
-      "k.v1.ListElectronicLocksRequest\032;.salto." +
-      "nebula.electroniclock.v1.ListElectronicL" +
-      "ocksResponse\022\203\001\n\024UpdateElectronicLock\022;." +
-      "salto.nebula.electroniclock.v1.UpdateEle" +
-      "ctronicLockRequest\032..salto.nebula.electr" +
-      "oniclock.v1.ElectronicLock\022k\n\024DeleteElec" +
-      "tronicLock\022;.salto.nebula.electroniclock" +
-      ".v1.DeleteElectronicLockRequest\032\026.google" +
-      ".protobuf.Empty\022\213\001\n\022BindElectronicLock\0229" +
+      "ration.proto\032\'salto/nebula/type/device_m" +
+      "etadata.proto\"\334\004\n\016ElectronicLock\022\014\n\004name" +
+      "\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022\026\n\tdevice_i" +
+      "d\030\003 \001(\tH\001\210\001\001\022\021\n\007gateway\030\004 \001(\tH\000\022\022\n\010exten" +
+      "der\030\005 \001(\tH\000\022\024\n\014access_point\030\006 \001(\t\022\023\n\013ini" +
+      "tialized\030\007 \001(\010\022:\n\017device_metadata\030\017 \001(\0132" +
+      "!.salto.nebula.type.DeviceMetadata\022\020\n\010ou" +
+      "tdated\030\010 \001(\010\022\026\n\tconnected\030\t \001(\010H\002\210\001\001\022\023\n\013" +
+      "low_battery\030\n \001(\010\0223\n\017last_event_time\030\013 \001" +
+      "(\0132\032.google.protobuf.Timestamp\022!\n\024calibr" +
+      "ation_settings\030\014 \001(\014H\003\210\001\001\022&\n\031force_rotat" +
+      "e_carriage_end\030\r \001(\010H\004\210\001\001\022@\n\030hold_back_l" +
+      "atch_duration\030\016 \001(\0132\031.google.protobuf.Du" +
+      "rationH\005\210\001\001B\017\n\rparent_deviceB\014\n\n_device_" +
+      "idB\014\n\n_connectedB\027\n\025_calibration_setting" +
+      "sB\034\n\032_force_rotate_carriage_endB\033\n\031_hold" +
+      "_back_latch_duration\"\256\001\n\033CreateElectroni" +
+      "cLockRequest\022\016\n\006parent\030\001 \001(\t\022\037\n\022electron" +
+      "ic_lock_id\030\002 \001(\tH\000\210\001\001\022G\n\017electronic_lock" +
+      "\030\003 \001(\0132..salto.nebula.electroniclock.v1." +
+      "ElectronicLockB\025\n\023_electronic_lock_id\"(\n" +
+      "\030GetElectronicLockRequest\022\014\n\004name\030\001 \001(\t\"" +
+      "u\n\032ListElectronicLocksRequest\022\016\n\006parent\030" +
+      "\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003" +
+      " \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\200" +
+      "\001\n\033ListElectronicLocksResponse\022H\n\020electr" +
+      "onic_locks\030\001 \003(\0132..salto.nebula.electron" +
+      "iclock.v1.ElectronicLock\022\027\n\017next_page_to" +
+      "ken\030\002 \001(\t\"\227\001\n\033UpdateElectronicLockReques" +
+      "t\022G\n\017electronic_lock\030\001 \001(\0132..salto.nebul" +
+      "a.electroniclock.v1.ElectronicLock\022/\n\013up" +
+      "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM" +
+      "ask\"+\n\033DeleteElectronicLockRequest\022\014\n\004na" +
+      "me\030\001 \001(\t\"<\n\031BindElectronicLockRequest\022\014\n" +
+      "\004name\030\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\"\034\n\032BindEl" +
+      "ectronicLockResponse\":\n\033UnbindElectronic" +
+      "LockRequest\022\014\n\004name\030\001 \001(\t\022\r\n\005force\030\002 \001(\010" +
+      "\"\036\n\034UnbindElectronicLockResponse\"/\n\037Init" +
+      "ializeElectronicLockRequest\022\014\n\004name\030\001 \001(" +
+      "\t\"\"\n InitializeElectronicLockResponse\"<\n" +
+      " InitializeElectronicLockMetadata\022\030\n\020pro" +
+      "gress_percent\030\001 \001(\005\".\n\036ConfigureElectron" +
+      "icLockRequest\022\014\n\004name\030\001 \001(\t\"!\n\037Configure" +
+      "ElectronicLockResponse\"!\n\037ConfigureElect" +
+      "ronicLockMetadata\"*\n\032ResetElectronicLock" +
+      "Request\022\014\n\004name\030\001 \001(\t\"\035\n\033ResetElectronic" +
+      "LockResponse\"\035\n\033ResetElectronicLockMetad" +
+      "ata\">\n#UpdateElectronicLockFirmwareReque" +
+      "st\022\027\n\017electronic_lock\030\001 \001(\t\"&\n$UpdateEle" +
+      "ctronicLockFirmwareResponse\"@\n$UpdateEle" +
+      "ctronicLockFirmwareMetadata\022\030\n\020progress_" +
+      "percent\030\001 \001(\005\"<\n!GenerateAuthorizationTo" +
+      "kenRequest\022\027\n\017electronic_lock\030\001 \001(\t\"A\n\"G" +
+      "enerateAuthorizationTokenResponse\022\033\n\023aut" +
+      "horization_token\030\001 \001(\014\"=\n\"GenerateFirmwa" +
+      "reDownloadUriRequest\022\027\n\017electronic_lock\030" +
+      "\001 \001(\t\"K\n#GenerateFirmwareDownloadUriResp" +
+      "onse\022\024\n\014download_uri\030\001 \001(\t\022\016\n\006digest\030\002 \001" +
+      "(\t\"%\n#GenerateFirmwareDownloadUriMetadat" +
+      "a2\342\r\n\025ElectronicLockService\022\203\001\n\024CreateEl" +
+      "ectronicLock\022;.salto.nebula.electroniclo" +
+      "ck.v1.CreateElectronicLockRequest\032..salt" +
+      "o.nebula.electroniclock.v1.ElectronicLoc" +
+      "k\022}\n\021GetElectronicLock\0228.salto.nebula.el" +
+      "ectroniclock.v1.GetElectronicLockRequest" +
+      "\032..salto.nebula.electroniclock.v1.Electr" +
+      "onicLock\022\216\001\n\023ListElectronicLocks\022:.salto" +
+      ".nebula.electroniclock.v1.ListElectronic" +
+      "LocksRequest\032;.salto.nebula.electroniclo" +
+      "ck.v1.ListElectronicLocksResponse\022\203\001\n\024Up" +
+      "dateElectronicLock\022;.salto.nebula.electr" +
+      "oniclock.v1.UpdateElectronicLockRequest\032" +
+      "..salto.nebula.electroniclock.v1.Electro" +
+      "nicLock\022k\n\024DeleteElectronicLock\022;.salto." +
+      "nebula.electroniclock.v1.DeleteElectroni" +
+      "cLockRequest\032\026.google.protobuf.Empty\022\213\001\n" +
+      "\022BindElectronicLock\0229.salto.nebula.elect" +
+      "roniclock.v1.BindElectronicLockRequest\032:" +
       ".salto.nebula.electroniclock.v1.BindElec" +
-      "tronicLockRequest\032:.salto.nebula.electro" +
-      "niclock.v1.BindElectronicLockResponse\022\221\001" +
-      "\n\024UnbindElectronicLock\022;.salto.nebula.el" +
-      "ectroniclock.v1.UnbindElectronicLockRequ" +
-      "est\032<.salto.nebula.electroniclock.v1.Unb" +
-      "indElectronicLockResponse\022|\n\030InitializeE" +
-      "lectronicLock\022?.salto.nebula.electronicl" +
-      "ock.v1.InitializeElectronicLockRequest\032\037" +
-      ".salto.longrunning.v1.Operation\022z\n\027Confi" +
-      "gureElectronicLock\022>.salto.nebula.electr" +
-      "oniclock.v1.ConfigureElectronicLockReque" +
-      "st\032\037.salto.longrunning.v1.Operation\022r\n\023R" +
-      "esetElectronicLock\022:.salto.nebula.electr" +
-      "oniclock.v1.ResetElectronicLockRequest\032\037" +
-      ".salto.longrunning.v1.Operation\022\204\001\n\034Upda" +
-      "teElectronicLockFirmware\022C.salto.nebula." +
-      "electroniclock.v1.UpdateElectronicLockFi" +
-      "rmwareRequest\032\037.salto.longrunning.v1.Ope" +
-      "ration\022\243\001\n\032GenerateAuthorizationToken\022A." +
-      "salto.nebula.electroniclock.v1.GenerateA" +
-      "uthorizationTokenRequest\032B.salto.nebula." +
-      "electroniclock.v1.GenerateAuthorizationT" +
-      "okenResponse\022\202\001\n\033GenerateFirmwareDownloa" +
-      "dUri\022B.salto.nebula.electroniclock.v1.Ge" +
-      "nerateFirmwareDownloadUriRequest\032\037.salto" +
-      ".longrunning.v1.OperationB\216\002\n&com.saltoa" +
-      "pis.nebula.electroniclock.v1B\023Electronic" +
-      "LockProtoP\001ZRgithub.com/saltoapis-intern" +
-      "al/saltoapis-go/nebula/electroniclock/v1" +
-      ";electroniclock\252\002\"Saltoapis.Nebula.Elect" +
-      "ronicLock.V1\312\002\"Saltoapis\\Nebula\\Electron" +
-      "icLock\\V1\342\002.GPBMetadata\\Saltoapis\\Nebula" +
-      "\\ElectronicLock\\V1b\006proto3"
+      "tronicLockResponse\022\221\001\n\024UnbindElectronicL" +
+      "ock\022;.salto.nebula.electroniclock.v1.Unb" +
+      "indElectronicLockRequest\032<.salto.nebula." +
+      "electroniclock.v1.UnbindElectronicLockRe" +
+      "sponse\022|\n\030InitializeElectronicLock\022?.sal" +
+      "to.nebula.electroniclock.v1.InitializeEl" +
+      "ectronicLockRequest\032\037.salto.longrunning." +
+      "v1.Operation\022z\n\027ConfigureElectronicLock\022" +
+      ">.salto.nebula.electroniclock.v1.Configu" +
+      "reElectronicLockRequest\032\037.salto.longrunn" +
+      "ing.v1.Operation\022r\n\023ResetElectronicLock\022" +
+      ":.salto.nebula.electroniclock.v1.ResetEl" +
+      "ectronicLockRequest\032\037.salto.longrunning." +
+      "v1.Operation\022\204\001\n\034UpdateElectronicLockFir" +
+      "mware\022C.salto.nebula.electroniclock.v1.U" +
+      "pdateElectronicLockFirmwareRequest\032\037.sal" +
+      "to.longrunning.v1.Operation\022\243\001\n\032Generate" +
+      "AuthorizationToken\022A.salto.nebula.electr" +
+      "oniclock.v1.GenerateAuthorizationTokenRe" +
+      "quest\032B.salto.nebula.electroniclock.v1.G" +
+      "enerateAuthorizationTokenResponse\022\202\001\n\033Ge" +
+      "nerateFirmwareDownloadUri\022B.salto.nebula" +
+      ".electroniclock.v1.GenerateFirmwareDownl" +
+      "oadUriRequest\032\037.salto.longrunning.v1.Ope" +
+      "rationB\216\002\n&com.saltoapis.nebula.electron" +
+      "iclock.v1B\023ElectronicLockProtoP\001ZRgithub" +
+      ".com/saltoapis-internal/saltoapis-go/neb" +
+      "ula/electroniclock/v1;electroniclock\252\002\"S" +
+      "altoapis.Nebula.ElectronicLock.V1\312\002\"Salt" +
+      "oapis\\Nebula\\ElectronicLock\\V1\342\002.GPBMeta" +
+      "data\\Saltoapis\\Nebula\\ElectronicLock\\V1b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -296,13 +299,14 @@ public final class ElectronicLockProto {
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.saltoapis.longrunning.v1.OperationProto.getDescriptor(),
+          com.saltoapis.nebula.type.DeviceMetadataProto.getDescriptor(),
         });
     internal_static_salto_nebula_electroniclock_v1_ElectronicLock_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_salto_nebula_electroniclock_v1_ElectronicLock_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_electroniclock_v1_ElectronicLock_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "DeviceId", "Gateway", "Extender", "AccessPoint", "Initialized", "Outdated", "Connected", "LowBattery", "LastEventTime", "CalibrationSettings", "ForceRotateCarriageEnd", "HoldBackLatchDuration", "ParentDevice", });
+        new java.lang.String[] { "Name", "DisplayName", "DeviceId", "Gateway", "Extender", "AccessPoint", "Initialized", "DeviceMetadata", "Outdated", "Connected", "LowBattery", "LastEventTime", "CalibrationSettings", "ForceRotateCarriageEnd", "HoldBackLatchDuration", "ParentDevice", });
     internal_static_salto_nebula_electroniclock_v1_CreateElectronicLockRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_salto_nebula_electroniclock_v1_CreateElectronicLockRequest_fieldAccessorTable = new
@@ -471,6 +475,7 @@ public final class ElectronicLockProto {
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.saltoapis.longrunning.v1.OperationProto.getDescriptor();
+    com.saltoapis.nebula.type.DeviceMetadataProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
