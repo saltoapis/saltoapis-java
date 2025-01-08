@@ -144,6 +144,37 @@ public final class DigitalKeyServiceGrpc {
     return getListDigitalKeyAccessPointsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest,
+      com.saltoapis.longrunning.v1.Operation> getSyncDigitalKeyAccessPointsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SyncDigitalKeyAccessPoints",
+      requestType = com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest.class,
+      responseType = com.saltoapis.longrunning.v1.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest,
+      com.saltoapis.longrunning.v1.Operation> getSyncDigitalKeyAccessPointsMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest, com.saltoapis.longrunning.v1.Operation> getSyncDigitalKeyAccessPointsMethod;
+    if ((getSyncDigitalKeyAccessPointsMethod = DigitalKeyServiceGrpc.getSyncDigitalKeyAccessPointsMethod) == null) {
+      synchronized (DigitalKeyServiceGrpc.class) {
+        if ((getSyncDigitalKeyAccessPointsMethod = DigitalKeyServiceGrpc.getSyncDigitalKeyAccessPointsMethod) == null) {
+          DigitalKeyServiceGrpc.getSyncDigitalKeyAccessPointsMethod = getSyncDigitalKeyAccessPointsMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest, com.saltoapis.longrunning.v1.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SyncDigitalKeyAccessPoints"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.longrunning.v1.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new DigitalKeyServiceMethodDescriptorSupplier("SyncDigitalKeyAccessPoints"))
+              .build();
+        }
+      }
+    }
+    return getSyncDigitalKeyAccessPointsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -240,6 +271,20 @@ public final class DigitalKeyServiceGrpc {
         io.grpc.stub.StreamObserver<com.saltoapis.nebula.digitalkey.v1.ListDigitalKeyAccessPointsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDigitalKeyAccessPointsMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Synchronize access points
+     * Synchronize the digital key's access point associations.
+     * This methods asks the cloud to synchronize the access points for the given digital key.
+     * The cloud will trigger the synchronization of the digital key's access points if needed.
+     * (-- api-linter: core::0136::http-name-variable=disabled --)
+     * </pre>
+     */
+    default void syncDigitalKeyAccessPoints(com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSyncDigitalKeyAccessPointsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -326,6 +371,21 @@ public final class DigitalKeyServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListDigitalKeyAccessPointsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Synchronize access points
+     * Synchronize the digital key's access point associations.
+     * This methods asks the cloud to synchronize the access points for the given digital key.
+     * The cloud will trigger the synchronization of the digital key's access points if needed.
+     * (-- api-linter: core::0136::http-name-variable=disabled --)
+     * </pre>
+     */
+    public void syncDigitalKeyAccessPoints(com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSyncDigitalKeyAccessPointsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -391,6 +451,20 @@ public final class DigitalKeyServiceGrpc {
     public com.saltoapis.nebula.digitalkey.v1.ListDigitalKeyAccessPointsResponse listDigitalKeyAccessPoints(com.saltoapis.nebula.digitalkey.v1.ListDigitalKeyAccessPointsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDigitalKeyAccessPointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Synchronize access points
+     * Synchronize the digital key's access point associations.
+     * This methods asks the cloud to synchronize the access points for the given digital key.
+     * The cloud will trigger the synchronization of the digital key's access points if needed.
+     * (-- api-linter: core::0136::http-name-variable=disabled --)
+     * </pre>
+     */
+    public com.saltoapis.longrunning.v1.Operation syncDigitalKeyAccessPoints(com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSyncDigitalKeyAccessPointsMethod(), getCallOptions(), request);
     }
   }
 
@@ -462,12 +536,28 @@ public final class DigitalKeyServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDigitalKeyAccessPointsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Synchronize access points
+     * Synchronize the digital key's access point associations.
+     * This methods asks the cloud to synchronize the access points for the given digital key.
+     * The cloud will trigger the synchronization of the digital key's access points if needed.
+     * (-- api-linter: core::0136::http-name-variable=disabled --)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.longrunning.v1.Operation> syncDigitalKeyAccessPoints(
+        com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSyncDigitalKeyAccessPointsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_DIGITAL_KEY = 0;
   private static final int METHODID_LIST_DIGITAL_KEYS = 1;
   private static final int METHODID_GET_DIGITAL_KEY_ACCESS_POINT = 2;
   private static final int METHODID_LIST_DIGITAL_KEY_ACCESS_POINTS = 3;
+  private static final int METHODID_SYNC_DIGITAL_KEY_ACCESS_POINTS = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -501,6 +591,10 @@ public final class DigitalKeyServiceGrpc {
         case METHODID_LIST_DIGITAL_KEY_ACCESS_POINTS:
           serviceImpl.listDigitalKeyAccessPoints((com.saltoapis.nebula.digitalkey.v1.ListDigitalKeyAccessPointsRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.digitalkey.v1.ListDigitalKeyAccessPointsResponse>) responseObserver);
+          break;
+        case METHODID_SYNC_DIGITAL_KEY_ACCESS_POINTS:
+          serviceImpl.syncDigitalKeyAccessPoints((com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -548,6 +642,13 @@ public final class DigitalKeyServiceGrpc {
               com.saltoapis.nebula.digitalkey.v1.ListDigitalKeyAccessPointsRequest,
               com.saltoapis.nebula.digitalkey.v1.ListDigitalKeyAccessPointsResponse>(
                 service, METHODID_LIST_DIGITAL_KEY_ACCESS_POINTS)))
+        .addMethod(
+          getSyncDigitalKeyAccessPointsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.digitalkey.v1.SyncDigitalKeyAccessPointsRequest,
+              com.saltoapis.longrunning.v1.Operation>(
+                service, METHODID_SYNC_DIGITAL_KEY_ACCESS_POINTS)))
         .build();
   }
 
@@ -600,6 +701,7 @@ public final class DigitalKeyServiceGrpc {
               .addMethod(getListDigitalKeysMethod())
               .addMethod(getGetDigitalKeyAccessPointMethod())
               .addMethod(getListDigitalKeyAccessPointsMethod())
+              .addMethod(getSyncDigitalKeyAccessPointsMethod())
               .build();
         }
       }

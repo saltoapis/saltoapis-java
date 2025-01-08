@@ -84,6 +84,21 @@ public final class DigitalKeyProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_digitalkey_v1_ListDigitalKeyAccessPointsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -95,77 +110,85 @@ public final class DigitalKeyProto {
     java.lang.String[] descriptorData = {
       "\n,salto/nebula/digitalkey/v1/digital_key" +
       ".proto\022\032salto.nebula.digitalkey.v1\032\037goog" +
-      "le/protobuf/timestamp.proto\032\026salto/type/" +
-      "color.proto\"\341\010\n\nDigitalKey\022\014\n\004name\030\001 \001(\t" +
-      "\022@\n\007app_key\030\002 \001(\0132-.salto.nebula.digital" +
-      "key.v1.DigitalKey.AppKeyH\000\022F\n\nwallet_key" +
-      "\030\003 \001(\01320.salto.nebula.digitalkey.v1.Digi" +
-      "talKey.WalletKeyH\000\032v\n\010Metadata\022\r\n\005title\030" +
-      "\001 \001(\t\022\020\n\010subtitle\030\002 \001(\t\022\021\n\tphoto_uri\030\003 \001" +
-      "(\t\022\017\n\007address\030\004 \001(\t\022%\n\ntext_color\030\005 \001(\0132" +
-      "\021.salto.type.Color\032\352\003\n\006AppKey\022A\n\010metadat" +
-      "a\030\001 \001(\0132/.salto.nebula.digitalkey.v1.Dig" +
-      "italKey.Metadata\022\014\n\004data\030\002 \001(\014\022\024\n\014instal" +
-      "lation\030\005 \001(\t\022\021\n\004unit\030\006 \001(\tH\000\210\001\001\022\027\n\017insta" +
-      "llation_id\030\003 \001(\t\022\024\n\007unit_id\030\004 \001(\tH\001\210\001\001\022;" +
-      "\n\027access_points_sync_time\030\007 \001(\0132\032.google" +
-      ".protobuf.Timestamp\022e\n\030access_points_syn" +
-      "c_state\030\010 \001(\0162C.salto.nebula.digitalkey." +
-      "v1.DigitalKey.AppKey.AccessPointsSyncSta" +
-      "te\"~\n\025AccessPointsSyncState\022(\n$ACCESS_PO" +
-      "INTS_SYNC_STATE_UNSPECIFIED\020\000\022\017\n\013INVALID" +
-      "ATED\020\003\022\013\n\007SYNCING\020\001\022\n\n\006SYNCED\020\002\022\021\n\rNOT_S" +
-      "UPPORTED\020\004B\007\n\005_unitB\n\n\010_unit_id\032\315\002\n\tWall" +
-      "etKey\022A\n\010metadata\030\001 \001(\0132/.salto.nebula.d" +
-      "igitalkey.v1.DigitalKey.Metadata\022Z\n\020hydr" +
-      "a_credential\030\002 \001(\0132@.salto.nebula.digita" +
-      "lkey.v1.DigitalKey.WalletKey.HydraCreden" +
-      "tial\032\240\001\n\017HydraCredential\022\025\n\rcredential_i" +
-      "d\030\001 \001(\t\022\033\n\023sharing_instance_id\030\002 \001(\t\022\024\n\014" +
-      "account_hash\030\003 \001(\t\022\023\n\013template_id\030\004 \001(\t\022" +
-      "\030\n\020relying_party_id\030\005 \001(\t\022\024\n\014reference_i" +
-      "d\030\006 \001(\tB\006\n\004type\"$\n\024GetDigitalKeyRequest\022" +
-      "\014\n\004name\030\001 \001(\t\"a\n\026ListDigitalKeysRequest\022" +
-      "\021\n\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\022\016" +
-      "\n\006filter\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\"p\n\027List" +
-      "DigitalKeysResponse\022<\n\014digital_keys\030\001 \003(" +
-      "\0132&.salto.nebula.digitalkey.v1.DigitalKe" +
-      "y\022\027\n\017next_page_token\030\002 \001(\t\"N\n\025DigitalKey" +
-      "AccessPoint\022\014\n\004name\030\001 \001(\t\022\024\n\014display_nam" +
-      "e\030\002 \001(\t\022\021\n\tdevice_id\030\003 \001(\t\"/\n\037GetDigital" +
-      "KeyAccessPointRequest\022\014\n\004name\030\001 \001(\t\"j\n!L" +
-      "istDigitalKeyAccessPointsRequest\022\016\n\006pare" +
-      "nt\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 " +
-      "\001(\005\022\022\n\npage_token\030\004 \001(\t\"\223\001\n\"ListDigitalK" +
-      "eyAccessPointsResponse\022T\n\031digital_key_ac" +
-      "cess_points\030\001 \003(\01321.salto.nebula.digital" +
-      "key.v1.DigitalKeyAccessPoint\022\027\n\017next_pag" +
-      "e_token\030\002 \001(\t2\245\004\n\021DigitalKeyService\022i\n\rG" +
-      "etDigitalKey\0220.salto.nebula.digitalkey.v" +
-      "1.GetDigitalKeyRequest\032&.salto.nebula.di" +
-      "gitalkey.v1.DigitalKey\022z\n\017ListDigitalKey" +
-      "s\0222.salto.nebula.digitalkey.v1.ListDigit" +
-      "alKeysRequest\0323.salto.nebula.digitalkey." +
-      "v1.ListDigitalKeysResponse\022\212\001\n\030GetDigita" +
-      "lKeyAccessPoint\022;.salto.nebula.digitalke" +
-      "y.v1.GetDigitalKeyAccessPointRequest\0321.s" +
-      "alto.nebula.digitalkey.v1.DigitalKeyAcce" +
-      "ssPoint\022\233\001\n\032ListDigitalKeyAccessPoints\022=" +
-      ".salto.nebula.digitalkey.v1.ListDigitalK" +
-      "eyAccessPointsRequest\032>.salto.nebula.dig" +
-      "italkey.v1.ListDigitalKeyAccessPointsRes" +
-      "ponseB\362\001\n\"com.saltoapis.nebula.digitalke" +
-      "y.v1B\017DigitalKeyProtoP\001ZJgithub.com/salt" +
-      "oapis-internal/saltoapis-go/nebula/digit" +
-      "alkey/v1;digitalkey\252\002\036Saltoapis.Nebula.D" +
-      "igitalKey.V1\312\002\036Saltoapis\\Nebula\\DigitalK" +
-      "ey\\V1\342\002*GPBMetadata\\Saltoapis\\Nebula\\Dig" +
-      "italKey\\V1b\006proto3"
+      "le/protobuf/timestamp.proto\032$salto/longr" +
+      "unning/v1/operation.proto\032\026salto/type/co" +
+      "lor.proto\"\341\010\n\nDigitalKey\022\014\n\004name\030\001 \001(\t\022@" +
+      "\n\007app_key\030\002 \001(\0132-.salto.nebula.digitalke" +
+      "y.v1.DigitalKey.AppKeyH\000\022F\n\nwallet_key\030\003" +
+      " \001(\01320.salto.nebula.digitalkey.v1.Digita" +
+      "lKey.WalletKeyH\000\032v\n\010Metadata\022\r\n\005title\030\001 " +
+      "\001(\t\022\020\n\010subtitle\030\002 \001(\t\022\021\n\tphoto_uri\030\003 \001(\t" +
+      "\022\017\n\007address\030\004 \001(\t\022%\n\ntext_color\030\005 \001(\0132\021." +
+      "salto.type.Color\032\352\003\n\006AppKey\022A\n\010metadata\030" +
+      "\001 \001(\0132/.salto.nebula.digitalkey.v1.Digit" +
+      "alKey.Metadata\022\014\n\004data\030\002 \001(\014\022\024\n\014installa" +
+      "tion\030\005 \001(\t\022\021\n\004unit\030\006 \001(\tH\000\210\001\001\022\027\n\017install" +
+      "ation_id\030\003 \001(\t\022\024\n\007unit_id\030\004 \001(\tH\001\210\001\001\022;\n\027" +
+      "access_points_sync_time\030\007 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022e\n\030access_points_sync_" +
+      "state\030\010 \001(\0162C.salto.nebula.digitalkey.v1" +
+      ".DigitalKey.AppKey.AccessPointsSyncState" +
+      "\"~\n\025AccessPointsSyncState\022(\n$ACCESS_POIN" +
+      "TS_SYNC_STATE_UNSPECIFIED\020\000\022\017\n\013INVALIDAT" +
+      "ED\020\003\022\013\n\007SYNCING\020\001\022\n\n\006SYNCED\020\002\022\021\n\rNOT_SUP" +
+      "PORTED\020\004B\007\n\005_unitB\n\n\010_unit_id\032\315\002\n\tWallet" +
+      "Key\022A\n\010metadata\030\001 \001(\0132/.salto.nebula.dig" +
+      "italkey.v1.DigitalKey.Metadata\022Z\n\020hydra_" +
+      "credential\030\002 \001(\0132@.salto.nebula.digitalk" +
+      "ey.v1.DigitalKey.WalletKey.HydraCredenti" +
+      "al\032\240\001\n\017HydraCredential\022\025\n\rcredential_id\030" +
+      "\001 \001(\t\022\033\n\023sharing_instance_id\030\002 \001(\t\022\024\n\014ac" +
+      "count_hash\030\003 \001(\t\022\023\n\013template_id\030\004 \001(\t\022\030\n" +
+      "\020relying_party_id\030\005 \001(\t\022\024\n\014reference_id\030" +
+      "\006 \001(\tB\006\n\004type\"$\n\024GetDigitalKeyRequest\022\014\n" +
+      "\004name\030\001 \001(\t\"a\n\026ListDigitalKeysRequest\022\021\n" +
+      "\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\022\016\n\006" +
+      "filter\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\"p\n\027ListDi" +
+      "gitalKeysResponse\022<\n\014digital_keys\030\001 \003(\0132" +
+      "&.salto.nebula.digitalkey.v1.DigitalKey\022" +
+      "\027\n\017next_page_token\030\002 \001(\t\"N\n\025DigitalKeyAc" +
+      "cessPoint\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030" +
+      "\002 \001(\t\022\021\n\tdevice_id\030\003 \001(\t\"/\n\037GetDigitalKe" +
+      "yAccessPointRequest\022\014\n\004name\030\001 \001(\t\"j\n!Lis" +
+      "tDigitalKeyAccessPointsRequest\022\016\n\006parent" +
+      "\030\001 \001(\t\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(" +
+      "\005\022\022\n\npage_token\030\004 \001(\t\"\223\001\n\"ListDigitalKey" +
+      "AccessPointsResponse\022T\n\031digital_key_acce" +
+      "ss_points\030\001 \003(\01321.salto.nebula.digitalke" +
+      "y.v1.DigitalKeyAccessPoint\022\027\n\017next_page_" +
+      "token\030\002 \001(\t\"1\n!SyncDigitalKeyAccessPoint" +
+      "sRequest\022\014\n\004name\030\001 \001(\t\"$\n\"SyncDigitalKey" +
+      "AccessPointsResponse\"$\n\"SyncDigitalKeyAc" +
+      "cessPointsMetadata2\243\005\n\021DigitalKeyService" +
+      "\022i\n\rGetDigitalKey\0220.salto.nebula.digital" +
+      "key.v1.GetDigitalKeyRequest\032&.salto.nebu" +
+      "la.digitalkey.v1.DigitalKey\022z\n\017ListDigit" +
+      "alKeys\0222.salto.nebula.digitalkey.v1.List" +
+      "DigitalKeysRequest\0323.salto.nebula.digita" +
+      "lkey.v1.ListDigitalKeysResponse\022\212\001\n\030GetD" +
+      "igitalKeyAccessPoint\022;.salto.nebula.digi" +
+      "talkey.v1.GetDigitalKeyAccessPointReques" +
+      "t\0321.salto.nebula.digitalkey.v1.DigitalKe" +
+      "yAccessPoint\022\233\001\n\032ListDigitalKeyAccessPoi" +
+      "nts\022=.salto.nebula.digitalkey.v1.ListDig" +
+      "italKeyAccessPointsRequest\032>.salto.nebul" +
+      "a.digitalkey.v1.ListDigitalKeyAccessPoin" +
+      "tsResponse\022|\n\032SyncDigitalKeyAccessPoints" +
+      "\022=.salto.nebula.digitalkey.v1.SyncDigita" +
+      "lKeyAccessPointsRequest\032\037.salto.longrunn" +
+      "ing.v1.OperationB\362\001\n\"com.saltoapis.nebul" +
+      "a.digitalkey.v1B\017DigitalKeyProtoP\001ZJgith" +
+      "ub.com/saltoapis-internal/saltoapis-go/n" +
+      "ebula/digitalkey/v1;digitalkey\252\002\036Saltoap" +
+      "is.Nebula.DigitalKey.V1\312\002\036Saltoapis\\Nebu" +
+      "la\\DigitalKey\\V1\342\002*GPBMetadata\\Saltoapis" +
+      "\\Nebula\\DigitalKey\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.saltoapis.longrunning.v1.OperationProto.getDescriptor(),
           com.saltoapis.type.ColorProto.getDescriptor(),
         });
     internal_static_salto_nebula_digitalkey_v1_DigitalKey_descriptor =
@@ -240,8 +263,27 @@ public final class DigitalKeyProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_digitalkey_v1_ListDigitalKeyAccessPointsResponse_descriptor,
         new java.lang.String[] { "DigitalKeyAccessPoints", "NextPageToken", });
+    internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_digitalkey_v1_SyncDigitalKeyAccessPointsMetadata_descriptor,
+        new java.lang.String[] { });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.saltoapis.longrunning.v1.OperationProto.getDescriptor();
     com.saltoapis.type.ColorProto.getDescriptor();
   }
 
