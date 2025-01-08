@@ -6,6 +6,7 @@ package(default_visibility = ['//:__subpackages__'])
 load_rules(
     lib_name = 'nebula-digitalkey-v1',
     internal_dependencies = [
+        '//longrunning-v1/src/main/java',
         '//type/src/main/java',
     ],
     extra_info = {
