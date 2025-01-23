@@ -878,7 +878,8 @@ public final class InstallationServiceGrpc {
     /**
      * <pre>
      * Update subscription payment method's card
-     * Updates subscription payment method's card.
+     * Updates subscription payment method's card. If there is a payment method
+     * associated with the subscription, it will be deleted.
      * </pre>
      */
     default void updateCard(com.saltoapis.nebula.installation.v1.UpdateCardRequest request,
@@ -1158,7 +1159,8 @@ public final class InstallationServiceGrpc {
     /**
      * <pre>
      * Update subscription payment method's card
-     * Updates subscription payment method's card.
+     * Updates subscription payment method's card. If there is a payment method
+     * associated with the subscription, it will be deleted.
      * </pre>
      */
     public void updateCard(com.saltoapis.nebula.installation.v1.UpdateCardRequest request,
@@ -1410,7 +1412,8 @@ public final class InstallationServiceGrpc {
     /**
      * <pre>
      * Update subscription payment method's card
-     * Updates subscription payment method's card.
+     * Updates subscription payment method's card. If there is a payment method
+     * associated with the subscription, it will be deleted.
      * </pre>
      */
     public com.saltoapis.nebula.installation.v1.UpdateCardResponse updateCard(com.saltoapis.nebula.installation.v1.UpdateCardRequest request) {
@@ -1674,7 +1677,8 @@ public final class InstallationServiceGrpc {
     /**
      * <pre>
      * Update subscription payment method's card
-     * Updates subscription payment method's card.
+     * Updates subscription payment method's card. If there is a payment method
+     * associated with the subscription, it will be deleted.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.installation.v1.UpdateCardResponse> updateCard(
