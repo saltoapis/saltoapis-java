@@ -59,5 +59,32 @@ public interface PaymentMethodOrBuilder extends
    */
   com.saltoapis.nebula.installation.v1.PaymentMethod.CardOrBuilder getCardOrBuilder();
 
+  /**
+   * <pre>
+   * Direct debit details.
+   * </pre>
+   *
+   * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+   * @return Whether the directDebit field is set.
+   */
+  boolean hasDirectDebit();
+  /**
+   * <pre>
+   * Direct debit details.
+   * </pre>
+   *
+   * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+   * @return The directDebit.
+   */
+  com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit getDirectDebit();
+  /**
+   * <pre>
+   * Direct debit details.
+   * </pre>
+   *
+   * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+   */
+  com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebitOrBuilder getDirectDebitOrBuilder();
+
   com.saltoapis.nebula.installation.v1.PaymentMethod.MethodCase getMethodCase();
 }

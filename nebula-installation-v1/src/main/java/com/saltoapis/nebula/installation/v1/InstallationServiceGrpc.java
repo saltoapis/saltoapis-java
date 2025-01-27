@@ -516,6 +516,37 @@ public final class InstallationServiceGrpc {
     return getUpdateBillingInfoMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest,
+      com.saltoapis.nebula.installation.v1.PaymentMethod> getUpdatePaymentMethodMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdatePaymentMethod",
+      requestType = com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest.class,
+      responseType = com.saltoapis.nebula.installation.v1.PaymentMethod.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest,
+      com.saltoapis.nebula.installation.v1.PaymentMethod> getUpdatePaymentMethodMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest, com.saltoapis.nebula.installation.v1.PaymentMethod> getUpdatePaymentMethodMethod;
+    if ((getUpdatePaymentMethodMethod = InstallationServiceGrpc.getUpdatePaymentMethodMethod) == null) {
+      synchronized (InstallationServiceGrpc.class) {
+        if ((getUpdatePaymentMethodMethod = InstallationServiceGrpc.getUpdatePaymentMethodMethod) == null) {
+          InstallationServiceGrpc.getUpdatePaymentMethodMethod = getUpdatePaymentMethodMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest, com.saltoapis.nebula.installation.v1.PaymentMethod>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdatePaymentMethod"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.installation.v1.PaymentMethod.getDefaultInstance()))
+              .setSchemaDescriptor(new InstallationServiceMethodDescriptorSupplier("UpdatePaymentMethod"))
+              .build();
+        }
+      }
+    }
+    return getUpdatePaymentMethodMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.UpdateCardRequest,
       com.saltoapis.nebula.installation.v1.UpdateCardResponse> getUpdateCardMethod;
 
@@ -877,6 +908,20 @@ public final class InstallationServiceGrpc {
 
     /**
      * <pre>
+     * Update subscription payment method
+     * Updates an existing subscription payment method. If there is a payment
+     * method associated with the subscription, it will be deleted.
+     * (-- api-linter: core::0134::method-signature=disabled
+     *     aip.dev/not-precedent: We need to do this to simplify the update operation. --)
+     * </pre>
+     */
+    default void updatePaymentMethod(com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.PaymentMethod> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdatePaymentMethodMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Update subscription payment method's card
      * Updates subscription payment method's card. If there is a payment method
      * associated with the subscription, it will be deleted.
@@ -1158,6 +1203,21 @@ public final class InstallationServiceGrpc {
 
     /**
      * <pre>
+     * Update subscription payment method
+     * Updates an existing subscription payment method. If there is a payment
+     * method associated with the subscription, it will be deleted.
+     * (-- api-linter: core::0134::method-signature=disabled
+     *     aip.dev/not-precedent: We need to do this to simplify the update operation. --)
+     * </pre>
+     */
+    public void updatePaymentMethod(com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.PaymentMethod> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdatePaymentMethodMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Update subscription payment method's card
      * Updates subscription payment method's card. If there is a payment method
      * associated with the subscription, it will be deleted.
@@ -1407,6 +1467,20 @@ public final class InstallationServiceGrpc {
     public com.saltoapis.nebula.installation.v1.BillingInfo updateBillingInfo(com.saltoapis.nebula.installation.v1.UpdateBillingInfoRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateBillingInfoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update subscription payment method
+     * Updates an existing subscription payment method. If there is a payment
+     * method associated with the subscription, it will be deleted.
+     * (-- api-linter: core::0134::method-signature=disabled
+     *     aip.dev/not-precedent: We need to do this to simplify the update operation. --)
+     * </pre>
+     */
+    public com.saltoapis.nebula.installation.v1.PaymentMethod updatePaymentMethod(com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePaymentMethodMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1676,6 +1750,21 @@ public final class InstallationServiceGrpc {
 
     /**
      * <pre>
+     * Update subscription payment method
+     * Updates an existing subscription payment method. If there is a payment
+     * method associated with the subscription, it will be deleted.
+     * (-- api-linter: core::0134::method-signature=disabled
+     *     aip.dev/not-precedent: We need to do this to simplify the update operation. --)
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.installation.v1.PaymentMethod> updatePaymentMethod(
+        com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdatePaymentMethodMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Update subscription payment method's card
      * Updates subscription payment method's card. If there is a payment method
      * associated with the subscription, it will be deleted.
@@ -1740,10 +1829,11 @@ public final class InstallationServiceGrpc {
   private static final int METHODID_ACCEPT_INSTALLATION_OWNERSHIP = 13;
   private static final int METHODID_GET_SUBSCRIPTION = 14;
   private static final int METHODID_UPDATE_BILLING_INFO = 15;
-  private static final int METHODID_UPDATE_CARD = 16;
-  private static final int METHODID_LIST_INVOICES = 17;
-  private static final int METHODID_APPLY_COUPON = 18;
-  private static final int METHODID_UNAPPLY_COUPON = 19;
+  private static final int METHODID_UPDATE_PAYMENT_METHOD = 16;
+  private static final int METHODID_UPDATE_CARD = 17;
+  private static final int METHODID_LIST_INVOICES = 18;
+  private static final int METHODID_APPLY_COUPON = 19;
+  private static final int METHODID_UNAPPLY_COUPON = 20;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1825,6 +1915,10 @@ public final class InstallationServiceGrpc {
         case METHODID_UPDATE_BILLING_INFO:
           serviceImpl.updateBillingInfo((com.saltoapis.nebula.installation.v1.UpdateBillingInfoRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.BillingInfo>) responseObserver);
+          break;
+        case METHODID_UPDATE_PAYMENT_METHOD:
+          serviceImpl.updatePaymentMethod((com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.PaymentMethod>) responseObserver);
           break;
         case METHODID_UPDATE_CARD:
           serviceImpl.updateCard((com.saltoapis.nebula.installation.v1.UpdateCardRequest) request,
@@ -1973,6 +2067,13 @@ public final class InstallationServiceGrpc {
               com.saltoapis.nebula.installation.v1.BillingInfo>(
                 service, METHODID_UPDATE_BILLING_INFO)))
         .addMethod(
+          getUpdatePaymentMethodMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.installation.v1.UpdatePaymentMethodRequest,
+              com.saltoapis.nebula.installation.v1.PaymentMethod>(
+                service, METHODID_UPDATE_PAYMENT_METHOD)))
+        .addMethod(
           getUpdateCardMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -2064,6 +2165,7 @@ public final class InstallationServiceGrpc {
               .addMethod(getAcceptInstallationOwnershipMethod())
               .addMethod(getGetSubscriptionMethod())
               .addMethod(getUpdateBillingInfoMethod())
+              .addMethod(getUpdatePaymentMethodMethod())
               .addMethod(getUpdateCardMethod())
               .addMethod(getListInvoicesMethod())
               .addMethod(getApplyCouponMethod())
