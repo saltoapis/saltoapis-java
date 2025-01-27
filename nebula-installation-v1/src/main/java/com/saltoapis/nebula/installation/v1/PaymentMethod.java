@@ -1052,6 +1052,1667 @@ private static final long serialVersionUID = 0L;
 
   }
 
+  public interface DirectDebitOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:salto.nebula.installation.v1.PaymentMethod.DirectDebit)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * SEPA details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+     * @return Whether the sepa field is set.
+     */
+    boolean hasSepa();
+    /**
+     * <pre>
+     * SEPA details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+     * @return The sepa.
+     */
+    com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA getSepa();
+    /**
+     * <pre>
+     * SEPA details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+     */
+    com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPAOrBuilder getSepaOrBuilder();
+
+    com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SchemeCase getSchemeCase();
+  }
+  /**
+   * <pre>
+   * Direct debit object
+   * </pre>
+   *
+   * Protobuf type {@code salto.nebula.installation.v1.PaymentMethod.DirectDebit}
+   */
+  public static final class DirectDebit extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:salto.nebula.installation.v1.PaymentMethod.DirectDebit)
+      DirectDebitOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        DirectDebit.class.getName());
+    }
+    // Use DirectDebit.newBuilder() to construct.
+    private DirectDebit(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private DirectDebit() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.class, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.Builder.class);
+    }
+
+    public interface SEPAOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * The last four digits of the bank account number used for direct
+       * debit.
+       * </pre>
+       *
+       * <code>string last_four = 1;</code>
+       * @return The lastFour.
+       */
+      java.lang.String getLastFour();
+      /**
+       * <pre>
+       * The last four digits of the bank account number used for direct
+       * debit.
+       * </pre>
+       *
+       * <code>string last_four = 1;</code>
+       * @return The bytes for lastFour.
+       */
+      com.google.protobuf.ByteString
+          getLastFourBytes();
+
+      /**
+       * <pre>
+       * The name of the person or business that owns the bank account.
+       * </pre>
+       *
+       * <code>string account_holder = 2;</code>
+       * @return The accountHolder.
+       */
+      java.lang.String getAccountHolder();
+      /**
+       * <pre>
+       * The name of the person or business that owns the bank account.
+       * </pre>
+       *
+       * <code>string account_holder = 2;</code>
+       * @return The bytes for accountHolder.
+       */
+      com.google.protobuf.ByteString
+          getAccountHolderBytes();
+
+      /**
+       * <pre>
+       * The IBAN (International Bank Account Number) of the bank account.
+       * </pre>
+       *
+       * <code>string iban = 3;</code>
+       * @return The iban.
+       */
+      java.lang.String getIban();
+      /**
+       * <pre>
+       * The IBAN (International Bank Account Number) of the bank account.
+       * </pre>
+       *
+       * <code>string iban = 3;</code>
+       * @return The bytes for iban.
+       */
+      com.google.protobuf.ByteString
+          getIbanBytes();
+    }
+    /**
+     * <pre>
+     * The SEPA object
+     * </pre>
+     *
+     * Protobuf type {@code salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA}
+     */
+    public static final class SEPA extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA)
+        SEPAOrBuilder {
+    private static final long serialVersionUID = 0L;
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 26,
+          /* patch= */ 1,
+          /* suffix= */ "",
+          SEPA.class.getName());
+      }
+      // Use SEPA.newBuilder() to construct.
+      private SEPA(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+      private SEPA() {
+        lastFour_ = "";
+        accountHolder_ = "";
+        iban_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_SEPA_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_SEPA_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.class, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.Builder.class);
+      }
+
+      public static final int LAST_FOUR_FIELD_NUMBER = 1;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object lastFour_ = "";
+      /**
+       * <pre>
+       * The last four digits of the bank account number used for direct
+       * debit.
+       * </pre>
+       *
+       * <code>string last_four = 1;</code>
+       * @return The lastFour.
+       */
+      @java.lang.Override
+      public java.lang.String getLastFour() {
+        java.lang.Object ref = lastFour_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lastFour_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The last four digits of the bank account number used for direct
+       * debit.
+       * </pre>
+       *
+       * <code>string last_four = 1;</code>
+       * @return The bytes for lastFour.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getLastFourBytes() {
+        java.lang.Object ref = lastFour_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lastFour_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int ACCOUNT_HOLDER_FIELD_NUMBER = 2;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object accountHolder_ = "";
+      /**
+       * <pre>
+       * The name of the person or business that owns the bank account.
+       * </pre>
+       *
+       * <code>string account_holder = 2;</code>
+       * @return The accountHolder.
+       */
+      @java.lang.Override
+      public java.lang.String getAccountHolder() {
+        java.lang.Object ref = accountHolder_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accountHolder_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The name of the person or business that owns the bank account.
+       * </pre>
+       *
+       * <code>string account_holder = 2;</code>
+       * @return The bytes for accountHolder.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getAccountHolderBytes() {
+        java.lang.Object ref = accountHolder_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accountHolder_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int IBAN_FIELD_NUMBER = 3;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object iban_ = "";
+      /**
+       * <pre>
+       * The IBAN (International Bank Account Number) of the bank account.
+       * </pre>
+       *
+       * <code>string iban = 3;</code>
+       * @return The iban.
+       */
+      @java.lang.Override
+      public java.lang.String getIban() {
+        java.lang.Object ref = iban_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          iban_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The IBAN (International Bank Account Number) of the bank account.
+       * </pre>
+       *
+       * <code>string iban = 3;</code>
+       * @return The bytes for iban.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getIbanBytes() {
+        java.lang.Object ref = iban_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          iban_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastFour_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, lastFour_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountHolder_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 2, accountHolder_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(iban_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 3, iban_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastFour_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, lastFour_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accountHolder_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(2, accountHolder_);
+        }
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(iban_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(3, iban_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA)) {
+          return super.equals(obj);
+        }
+        com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA other = (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) obj;
+
+        if (!getLastFour()
+            .equals(other.getLastFour())) return false;
+        if (!getAccountHolder()
+            .equals(other.getAccountHolder())) return false;
+        if (!getIban()
+            .equals(other.getIban())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + LAST_FOUR_FIELD_NUMBER;
+        hash = (53 * hash) + getLastFour().hashCode();
+        hash = (37 * hash) + ACCOUNT_HOLDER_FIELD_NUMBER;
+        hash = (53 * hash) + getAccountHolder().hashCode();
+        hash = (37 * hash) + IBAN_FIELD_NUMBER;
+        hash = (53 * hash) + getIban().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * The SEPA object
+       * </pre>
+       *
+       * Protobuf type {@code salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA)
+          com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPAOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_SEPA_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_SEPA_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.class, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.Builder.class);
+        }
+
+        // Construct using com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          lastFour_ = "";
+          accountHolder_ = "";
+          iban_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_SEPA_descriptor;
+        }
+
+        @java.lang.Override
+        public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA getDefaultInstanceForType() {
+          return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA build() {
+          com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA buildPartial() {
+          com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA result = new com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.lastFour_ = lastFour_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.accountHolder_ = accountHolder_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.iban_ = iban_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) {
+            return mergeFrom((com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA other) {
+          if (other == com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.getDefaultInstance()) return this;
+          if (!other.getLastFour().isEmpty()) {
+            lastFour_ = other.lastFour_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.getAccountHolder().isEmpty()) {
+            accountHolder_ = other.accountHolder_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          if (!other.getIban().isEmpty()) {
+            iban_ = other.iban_;
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  lastFour_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+                case 18: {
+                  accountHolder_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+                case 26: {
+                  iban_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object lastFour_ = "";
+        /**
+         * <pre>
+         * The last four digits of the bank account number used for direct
+         * debit.
+         * </pre>
+         *
+         * <code>string last_four = 1;</code>
+         * @return The lastFour.
+         */
+        public java.lang.String getLastFour() {
+          java.lang.Object ref = lastFour_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            lastFour_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The last four digits of the bank account number used for direct
+         * debit.
+         * </pre>
+         *
+         * <code>string last_four = 1;</code>
+         * @return The bytes for lastFour.
+         */
+        public com.google.protobuf.ByteString
+            getLastFourBytes() {
+          java.lang.Object ref = lastFour_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            lastFour_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The last four digits of the bank account number used for direct
+         * debit.
+         * </pre>
+         *
+         * <code>string last_four = 1;</code>
+         * @param value The lastFour to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLastFour(
+            java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          lastFour_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The last four digits of the bank account number used for direct
+         * debit.
+         * </pre>
+         *
+         * <code>string last_four = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearLastFour() {
+          lastFour_ = getDefaultInstance().getLastFour();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The last four digits of the bank account number used for direct
+         * debit.
+         * </pre>
+         *
+         * <code>string last_four = 1;</code>
+         * @param value The bytes for lastFour to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLastFourBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) { throw new NullPointerException(); }
+          checkByteStringIsUtf8(value);
+          lastFour_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object accountHolder_ = "";
+        /**
+         * <pre>
+         * The name of the person or business that owns the bank account.
+         * </pre>
+         *
+         * <code>string account_holder = 2;</code>
+         * @return The accountHolder.
+         */
+        public java.lang.String getAccountHolder() {
+          java.lang.Object ref = accountHolder_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            accountHolder_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The name of the person or business that owns the bank account.
+         * </pre>
+         *
+         * <code>string account_holder = 2;</code>
+         * @return The bytes for accountHolder.
+         */
+        public com.google.protobuf.ByteString
+            getAccountHolderBytes() {
+          java.lang.Object ref = accountHolder_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            accountHolder_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The name of the person or business that owns the bank account.
+         * </pre>
+         *
+         * <code>string account_holder = 2;</code>
+         * @param value The accountHolder to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAccountHolder(
+            java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          accountHolder_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The name of the person or business that owns the bank account.
+         * </pre>
+         *
+         * <code>string account_holder = 2;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearAccountHolder() {
+          accountHolder_ = getDefaultInstance().getAccountHolder();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The name of the person or business that owns the bank account.
+         * </pre>
+         *
+         * <code>string account_holder = 2;</code>
+         * @param value The bytes for accountHolder to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAccountHolderBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) { throw new NullPointerException(); }
+          checkByteStringIsUtf8(value);
+          accountHolder_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object iban_ = "";
+        /**
+         * <pre>
+         * The IBAN (International Bank Account Number) of the bank account.
+         * </pre>
+         *
+         * <code>string iban = 3;</code>
+         * @return The iban.
+         */
+        public java.lang.String getIban() {
+          java.lang.Object ref = iban_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            iban_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The IBAN (International Bank Account Number) of the bank account.
+         * </pre>
+         *
+         * <code>string iban = 3;</code>
+         * @return The bytes for iban.
+         */
+        public com.google.protobuf.ByteString
+            getIbanBytes() {
+          java.lang.Object ref = iban_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            iban_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The IBAN (International Bank Account Number) of the bank account.
+         * </pre>
+         *
+         * <code>string iban = 3;</code>
+         * @param value The iban to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIban(
+            java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          iban_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The IBAN (International Bank Account Number) of the bank account.
+         * </pre>
+         *
+         * <code>string iban = 3;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearIban() {
+          iban_ = getDefaultInstance().getIban();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The IBAN (International Bank Account Number) of the bank account.
+         * </pre>
+         *
+         * <code>string iban = 3;</code>
+         * @param value The bytes for iban to set.
+         * @return This builder for chaining.
+         */
+        public Builder setIbanBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) { throw new NullPointerException(); }
+          checkByteStringIsUtf8(value);
+          iban_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA)
+      }
+
+      // @@protoc_insertion_point(class_scope:salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA)
+      private static final com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA();
+      }
+
+      public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SEPA>
+          PARSER = new com.google.protobuf.AbstractParser<SEPA>() {
+        @java.lang.Override
+        public SEPA parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<SEPA> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SEPA> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int schemeCase_ = 0;
+    @SuppressWarnings("serial")
+    private java.lang.Object scheme_;
+    public enum SchemeCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      SEPA(1),
+      SCHEME_NOT_SET(0);
+      private final int value;
+      private SchemeCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SchemeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static SchemeCase forNumber(int value) {
+        switch (value) {
+          case 1: return SEPA;
+          case 0: return SCHEME_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public SchemeCase
+    getSchemeCase() {
+      return SchemeCase.forNumber(
+          schemeCase_);
+    }
+
+    public static final int SEPA_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * SEPA details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+     * @return Whether the sepa field is set.
+     */
+    @java.lang.Override
+    public boolean hasSepa() {
+      return schemeCase_ == 1;
+    }
+    /**
+     * <pre>
+     * SEPA details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+     * @return The sepa.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA getSepa() {
+      if (schemeCase_ == 1) {
+         return (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) scheme_;
+      }
+      return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * SEPA details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPAOrBuilder getSepaOrBuilder() {
+      if (schemeCase_ == 1) {
+         return (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) scheme_;
+      }
+      return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (schemeCase_ == 1) {
+        output.writeMessage(1, (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) scheme_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (schemeCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) scheme_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit)) {
+        return super.equals(obj);
+      }
+      com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit other = (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) obj;
+
+      if (!getSchemeCase().equals(other.getSchemeCase())) return false;
+      switch (schemeCase_) {
+        case 1:
+          if (!getSepa()
+              .equals(other.getSepa())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (schemeCase_) {
+        case 1:
+          hash = (37 * hash) + SEPA_FIELD_NUMBER;
+          hash = (53 * hash) + getSepa().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Direct debit object
+     * </pre>
+     *
+     * Protobuf type {@code salto.nebula.installation.v1.PaymentMethod.DirectDebit}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:salto.nebula.installation.v1.PaymentMethod.DirectDebit)
+        com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebitOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.class, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.Builder.class);
+      }
+
+      // Construct using com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (sepaBuilder_ != null) {
+          sepaBuilder_.clear();
+        }
+        schemeCase_ = 0;
+        scheme_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.saltoapis.nebula.installation.v1.InstallationProto.internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_descriptor;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit getDefaultInstanceForType() {
+        return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit build() {
+        com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit buildPartial() {
+        com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit result = new com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit result) {
+        result.schemeCase_ = schemeCase_;
+        result.scheme_ = this.scheme_;
+        if (schemeCase_ == 1 &&
+            sepaBuilder_ != null) {
+          result.scheme_ = sepaBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) {
+          return mergeFrom((com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit other) {
+        if (other == com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.getDefaultInstance()) return this;
+        switch (other.getSchemeCase()) {
+          case SEPA: {
+            mergeSepa(other.getSepa());
+            break;
+          }
+          case SCHEME_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getSepaFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                schemeCase_ = 1;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int schemeCase_ = 0;
+      private java.lang.Object scheme_;
+      public SchemeCase
+          getSchemeCase() {
+        return SchemeCase.forNumber(
+            schemeCase_);
+      }
+
+      public Builder clearScheme() {
+        schemeCase_ = 0;
+        scheme_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+          com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.Builder, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPAOrBuilder> sepaBuilder_;
+      /**
+       * <pre>
+       * SEPA details.
+       * </pre>
+       *
+       * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+       * @return Whether the sepa field is set.
+       */
+      @java.lang.Override
+      public boolean hasSepa() {
+        return schemeCase_ == 1;
+      }
+      /**
+       * <pre>
+       * SEPA details.
+       * </pre>
+       *
+       * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+       * @return The sepa.
+       */
+      @java.lang.Override
+      public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA getSepa() {
+        if (sepaBuilder_ == null) {
+          if (schemeCase_ == 1) {
+            return (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) scheme_;
+          }
+          return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.getDefaultInstance();
+        } else {
+          if (schemeCase_ == 1) {
+            return sepaBuilder_.getMessage();
+          }
+          return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * SEPA details.
+       * </pre>
+       *
+       * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+       */
+      public Builder setSepa(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA value) {
+        if (sepaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          scheme_ = value;
+          onChanged();
+        } else {
+          sepaBuilder_.setMessage(value);
+        }
+        schemeCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * SEPA details.
+       * </pre>
+       *
+       * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+       */
+      public Builder setSepa(
+          com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.Builder builderForValue) {
+        if (sepaBuilder_ == null) {
+          scheme_ = builderForValue.build();
+          onChanged();
+        } else {
+          sepaBuilder_.setMessage(builderForValue.build());
+        }
+        schemeCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * SEPA details.
+       * </pre>
+       *
+       * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+       */
+      public Builder mergeSepa(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA value) {
+        if (sepaBuilder_ == null) {
+          if (schemeCase_ == 1 &&
+              scheme_ != com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.getDefaultInstance()) {
+            scheme_ = com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.newBuilder((com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) scheme_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            scheme_ = value;
+          }
+          onChanged();
+        } else {
+          if (schemeCase_ == 1) {
+            sepaBuilder_.mergeFrom(value);
+          } else {
+            sepaBuilder_.setMessage(value);
+          }
+        }
+        schemeCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * SEPA details.
+       * </pre>
+       *
+       * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+       */
+      public Builder clearSepa() {
+        if (sepaBuilder_ == null) {
+          if (schemeCase_ == 1) {
+            schemeCase_ = 0;
+            scheme_ = null;
+            onChanged();
+          }
+        } else {
+          if (schemeCase_ == 1) {
+            schemeCase_ = 0;
+            scheme_ = null;
+          }
+          sepaBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * SEPA details.
+       * </pre>
+       *
+       * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+       */
+      public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.Builder getSepaBuilder() {
+        return getSepaFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * SEPA details.
+       * </pre>
+       *
+       * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+       */
+      @java.lang.Override
+      public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPAOrBuilder getSepaOrBuilder() {
+        if ((schemeCase_ == 1) && (sepaBuilder_ != null)) {
+          return sepaBuilder_.getMessageOrBuilder();
+        } else {
+          if (schemeCase_ == 1) {
+            return (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) scheme_;
+          }
+          return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * SEPA details.
+       * </pre>
+       *
+       * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA sepa = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.Builder, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPAOrBuilder> 
+          getSepaFieldBuilder() {
+        if (sepaBuilder_ == null) {
+          if (!(schemeCase_ == 1)) {
+            scheme_ = com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.getDefaultInstance();
+          }
+          sepaBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA.Builder, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPAOrBuilder>(
+                  (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.SEPA) scheme_,
+                  getParentForChildren(),
+                  isClean());
+          scheme_ = null;
+        }
+        schemeCase_ = 1;
+        onChanged();
+        return sepaBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:salto.nebula.installation.v1.PaymentMethod.DirectDebit)
+    }
+
+    // @@protoc_insertion_point(class_scope:salto.nebula.installation.v1.PaymentMethod.DirectDebit)
+    private static final com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit();
+    }
+
+    public static com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DirectDebit>
+        PARSER = new com.google.protobuf.AbstractParser<DirectDebit>() {
+      @java.lang.Override
+      public DirectDebit parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<DirectDebit> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DirectDebit> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private int methodCase_ = 0;
   @SuppressWarnings("serial")
   private java.lang.Object method_;
@@ -1059,6 +2720,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CARD(2),
+    DIRECT_DEBIT(3),
     METHOD_NOT_SET(0);
     private final int value;
     private MethodCase(int value) {
@@ -1077,6 +2739,7 @@ private static final long serialVersionUID = 0L;
     public static MethodCase forNumber(int value) {
       switch (value) {
         case 2: return CARD;
+        case 3: return DIRECT_DEBIT;
         case 0: return METHOD_NOT_SET;
         default: return null;
       }
@@ -1186,6 +2849,49 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.installation.v1.PaymentMethod.Card.getDefaultInstance();
   }
 
+  public static final int DIRECT_DEBIT_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * Direct debit details.
+   * </pre>
+   *
+   * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+   * @return Whether the directDebit field is set.
+   */
+  @java.lang.Override
+  public boolean hasDirectDebit() {
+    return methodCase_ == 3;
+  }
+  /**
+   * <pre>
+   * Direct debit details.
+   * </pre>
+   *
+   * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+   * @return The directDebit.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit getDirectDebit() {
+    if (methodCase_ == 3) {
+       return (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) method_;
+    }
+    return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Direct debit details.
+   * </pre>
+   *
+   * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebitOrBuilder getDirectDebitOrBuilder() {
+    if (methodCase_ == 3) {
+       return (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) method_;
+    }
+    return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1206,6 +2912,9 @@ private static final long serialVersionUID = 0L;
     if (methodCase_ == 2) {
       output.writeMessage(2, (com.saltoapis.nebula.installation.v1.PaymentMethod.Card) method_);
     }
+    if (methodCase_ == 3) {
+      output.writeMessage(3, (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) method_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1221,6 +2930,10 @@ private static final long serialVersionUID = 0L;
     if (methodCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, (com.saltoapis.nebula.installation.v1.PaymentMethod.Card) method_);
+    }
+    if (methodCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) method_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1245,6 +2958,10 @@ private static final long serialVersionUID = 0L;
         if (!getCard()
             .equals(other.getCard())) return false;
         break;
+      case 3:
+        if (!getDirectDebit()
+            .equals(other.getDirectDebit())) return false;
+        break;
       case 0:
       default:
     }
@@ -1265,6 +2982,10 @@ private static final long serialVersionUID = 0L;
       case 2:
         hash = (37 * hash) + CARD_FIELD_NUMBER;
         hash = (53 * hash) + getCard().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + DIRECT_DEBIT_FIELD_NUMBER;
+        hash = (53 * hash) + getDirectDebit().hashCode();
         break;
       case 0:
       default:
@@ -1408,6 +3129,9 @@ private static final long serialVersionUID = 0L;
       if (cardBuilder_ != null) {
         cardBuilder_.clear();
       }
+      if (directDebitBuilder_ != null) {
+        directDebitBuilder_.clear();
+      }
       methodCase_ = 0;
       method_ = null;
       return this;
@@ -1456,6 +3180,10 @@ private static final long serialVersionUID = 0L;
           cardBuilder_ != null) {
         result.method_ = cardBuilder_.build();
       }
+      if (methodCase_ == 3 &&
+          directDebitBuilder_ != null) {
+        result.method_ = directDebitBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1478,6 +3206,10 @@ private static final long serialVersionUID = 0L;
       switch (other.getMethodCase()) {
         case CARD: {
           mergeCard(other.getCard());
+          break;
+        }
+        case DIRECT_DEBIT: {
+          mergeDirectDebit(other.getDirectDebit());
           break;
         }
         case METHOD_NOT_SET: {
@@ -1522,6 +3254,13 @@ private static final long serialVersionUID = 0L;
               methodCase_ = 2;
               break;
             } // case 18
+            case 26: {
+              input.readMessage(
+                  getDirectDebitFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              methodCase_ = 3;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1832,6 +3571,184 @@ private static final long serialVersionUID = 0L;
       methodCase_ = 2;
       onChanged();
       return cardBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.Builder, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebitOrBuilder> directDebitBuilder_;
+    /**
+     * <pre>
+     * Direct debit details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+     * @return Whether the directDebit field is set.
+     */
+    @java.lang.Override
+    public boolean hasDirectDebit() {
+      return methodCase_ == 3;
+    }
+    /**
+     * <pre>
+     * Direct debit details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+     * @return The directDebit.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit getDirectDebit() {
+      if (directDebitBuilder_ == null) {
+        if (methodCase_ == 3) {
+          return (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) method_;
+        }
+        return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.getDefaultInstance();
+      } else {
+        if (methodCase_ == 3) {
+          return directDebitBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Direct debit details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+     */
+    public Builder setDirectDebit(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit value) {
+      if (directDebitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        method_ = value;
+        onChanged();
+      } else {
+        directDebitBuilder_.setMessage(value);
+      }
+      methodCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Direct debit details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+     */
+    public Builder setDirectDebit(
+        com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.Builder builderForValue) {
+      if (directDebitBuilder_ == null) {
+        method_ = builderForValue.build();
+        onChanged();
+      } else {
+        directDebitBuilder_.setMessage(builderForValue.build());
+      }
+      methodCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Direct debit details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+     */
+    public Builder mergeDirectDebit(com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit value) {
+      if (directDebitBuilder_ == null) {
+        if (methodCase_ == 3 &&
+            method_ != com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.getDefaultInstance()) {
+          method_ = com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.newBuilder((com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) method_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          method_ = value;
+        }
+        onChanged();
+      } else {
+        if (methodCase_ == 3) {
+          directDebitBuilder_.mergeFrom(value);
+        } else {
+          directDebitBuilder_.setMessage(value);
+        }
+      }
+      methodCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * Direct debit details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+     */
+    public Builder clearDirectDebit() {
+      if (directDebitBuilder_ == null) {
+        if (methodCase_ == 3) {
+          methodCase_ = 0;
+          method_ = null;
+          onChanged();
+        }
+      } else {
+        if (methodCase_ == 3) {
+          methodCase_ = 0;
+          method_ = null;
+        }
+        directDebitBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Direct debit details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+     */
+    public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.Builder getDirectDebitBuilder() {
+      return getDirectDebitFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Direct debit details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebitOrBuilder getDirectDebitOrBuilder() {
+      if ((methodCase_ == 3) && (directDebitBuilder_ != null)) {
+        return directDebitBuilder_.getMessageOrBuilder();
+      } else {
+        if (methodCase_ == 3) {
+          return (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) method_;
+        }
+        return com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Direct debit details.
+     * </pre>
+     *
+     * <code>.salto.nebula.installation.v1.PaymentMethod.DirectDebit direct_debit = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.Builder, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebitOrBuilder> 
+        getDirectDebitFieldBuilder() {
+      if (directDebitBuilder_ == null) {
+        if (!(methodCase_ == 3)) {
+          method_ = com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.getDefaultInstance();
+        }
+        directDebitBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit.Builder, com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebitOrBuilder>(
+                (com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebit) method_,
+                getParentForChildren(),
+                isClean());
+        method_ = null;
+      }
+      methodCase_ = 3;
+      onChanged();
+      return directDebitBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.installation.v1.PaymentMethod)
