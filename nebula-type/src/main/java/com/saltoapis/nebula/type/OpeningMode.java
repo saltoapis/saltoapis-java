@@ -37,6 +37,14 @@ public enum OpeningMode
    * <code>TOGGLE = 2;</code>
    */
   TOGGLE(2),
+  /**
+   * <pre>
+   * Autolock.
+   * </pre>
+   *
+   * <code>AUTOLOCK = 3;</code>
+   */
+  AUTOLOCK(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -73,6 +81,14 @@ public enum OpeningMode
    * <code>TOGGLE = 2;</code>
    */
   public static final int TOGGLE_VALUE = 2;
+  /**
+   * <pre>
+   * Autolock.
+   * </pre>
+   *
+   * <code>AUTOLOCK = 3;</code>
+   */
+  public static final int AUTOLOCK_VALUE = 3;
 
 
   public final int getNumber() {
@@ -102,6 +118,7 @@ public enum OpeningMode
       case 0: return OPENING_MODE_UNSPECIFIED;
       case 1: return OFFICE;
       case 2: return TOGGLE;
+      case 3: return AUTOLOCK;
       default: return null;
     }
   }

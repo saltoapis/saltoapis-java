@@ -34,14 +34,15 @@ public final class OpeningModeProto {
   static {
     java.lang.String[] descriptorData = {
       "\n$salto/nebula/type/opening_mode.proto\022\021" +
-      "salto.nebula.type*C\n\013OpeningMode\022\034\n\030OPEN" +
+      "salto.nebula.type*Q\n\013OpeningMode\022\034\n\030OPEN" +
       "ING_MODE_UNSPECIFIED\020\000\022\n\n\006OFFICE\020\001\022\n\n\006TO" +
-      "GGLE\020\002B\323\001\n\031com.saltoapis.nebula.typeB\020Op" +
-      "eningModeProtoP\001ZNgithub.com/saltoapis-i" +
-      "nternal/saltoapis-go/nebula/type/opening" +
-      "mode;openingmode\252\002\025Saltoapis.Nebula.Type" +
-      "\312\002\025Saltoapis\\Nebula\\Type\342\002!GPBMetadata\\S" +
-      "altoapis\\Nebula\\Typeb\006proto3"
+      "GGLE\020\002\022\014\n\010AUTOLOCK\020\003B\323\001\n\031com.saltoapis.n" +
+      "ebula.typeB\020OpeningModeProtoP\001ZNgithub.c" +
+      "om/saltoapis-internal/saltoapis-go/nebul" +
+      "a/type/openingmode;openingmode\252\002\025Saltoap" +
+      "is.Nebula.Type\312\002\025Saltoapis\\Nebula\\Type\342\002" +
+      "!GPBMetadata\\Saltoapis\\Nebula\\Typeb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
