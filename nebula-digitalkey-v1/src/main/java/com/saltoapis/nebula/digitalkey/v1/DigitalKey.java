@@ -1763,6 +1763,16 @@ private static final long serialVersionUID = 0L;
        * <code>NOT_SUPPORTED = 4;</code>
        */
       NOT_SUPPORTED(4),
+      /**
+       * <pre>
+       * The digital key's access points synchronization is skipped because the
+       * number of access points associated with this digital key
+       * exceeds the system's maximum allowed limit.
+       * </pre>
+       *
+       * <code>LIMIT_EXCEEDED = 5;</code>
+       */
+      LIMIT_EXCEEDED(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -1816,6 +1826,16 @@ private static final long serialVersionUID = 0L;
        * <code>NOT_SUPPORTED = 4;</code>
        */
       public static final int NOT_SUPPORTED_VALUE = 4;
+      /**
+       * <pre>
+       * The digital key's access points synchronization is skipped because the
+       * number of access points associated with this digital key
+       * exceeds the system's maximum allowed limit.
+       * </pre>
+       *
+       * <code>LIMIT_EXCEEDED = 5;</code>
+       */
+      public static final int LIMIT_EXCEEDED_VALUE = 5;
 
 
       public final int getNumber() {
@@ -1847,6 +1867,7 @@ private static final long serialVersionUID = 0L;
           case 1: return SYNCING;
           case 2: return SYNCED;
           case 4: return NOT_SUPPORTED;
+          case 5: return LIMIT_EXCEEDED;
           default: return null;
         }
       }
