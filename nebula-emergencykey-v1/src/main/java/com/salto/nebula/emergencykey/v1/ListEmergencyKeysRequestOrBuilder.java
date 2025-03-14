@@ -78,4 +78,24 @@ public interface ListEmergencyKeysRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getFilterBytes();
+
+  /**
+   * <pre>
+   * How the results should be sorted.
+   * </pre>
+   *
+   * <code>string order_by = 5;</code>
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   * <pre>
+   * How the results should be sorted.
+   * </pre>
+   *
+   * <code>string order_by = 5;</code>
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString
+      getOrderByBytes();
 }
