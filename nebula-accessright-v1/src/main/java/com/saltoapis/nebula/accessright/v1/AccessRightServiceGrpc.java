@@ -12,7 +12,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  * </pre>
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.63.0)",
+    value = "by gRPC proto compiler (version 1.69.0)",
     comments = "Source: salto/nebula/accessright/v1/access_right.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AccessRightServiceGrpc {
