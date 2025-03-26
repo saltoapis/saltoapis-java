@@ -361,7 +361,9 @@ public final class AccessPointServiceGrpc {
      * <pre>
      * Lock an access point
      * Remotely locks an access point. This can be run against those access
-     * points where their associated devices are online and connected.
+     * points where their associated devices are online and connected. The lock
+     * device type can only be a motorized lock. Attempting to call this method
+     * on non-motorized locks will result in an INVALID_ARGUMENT error.
      * </pre>
      */
     default void lockAccessPoint(com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest request,
@@ -484,7 +486,9 @@ public final class AccessPointServiceGrpc {
      * <pre>
      * Lock an access point
      * Remotely locks an access point. This can be run against those access
-     * points where their associated devices are online and connected.
+     * points where their associated devices are online and connected. The lock
+     * device type can only be a motorized lock. Attempting to call this method
+     * on non-motorized locks will result in an INVALID_ARGUMENT error.
      * </pre>
      */
     public void lockAccessPoint(com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest request,
@@ -586,7 +590,9 @@ public final class AccessPointServiceGrpc {
      * <pre>
      * Lock an access point
      * Remotely locks an access point. This can be run against those access
-     * points where their associated devices are online and connected.
+     * points where their associated devices are online and connected. The lock
+     * device type can only be a motorized lock. Attempting to call this method
+     * on non-motorized locks will result in an INVALID_ARGUMENT error.
      * </pre>
      */
     public com.saltoapis.longrunning.v1.Operation lockAccessPoint(com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest request) {
@@ -693,7 +699,9 @@ public final class AccessPointServiceGrpc {
      * <pre>
      * Lock an access point
      * Remotely locks an access point. This can be run against those access
-     * points where their associated devices are online and connected.
+     * points where their associated devices are online and connected. The lock
+     * device type can only be a motorized lock. Attempting to call this method
+     * on non-motorized locks will result in an INVALID_ARGUMENT error.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.longrunning.v1.Operation> lockAccessPoint(
