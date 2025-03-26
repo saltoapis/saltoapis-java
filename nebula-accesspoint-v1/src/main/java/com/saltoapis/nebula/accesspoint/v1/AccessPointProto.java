@@ -75,6 +75,21 @@ public final class AccessPointProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_accesspoint_v1_UnlockAccessPointMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_accesspoint_v1_LockAccessPointRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_accesspoint_v1_LockAccessPointRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_accesspoint_v1_LockAccessPointResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_accesspoint_v1_LockAccessPointResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_accesspoint_v1_LockAccessPointMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_accesspoint_v1_LockAccessPointMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -116,31 +131,36 @@ public final class AccessPointProto {
       "Mask\"(\n\030DeleteAccessPointRequest\022\014\n\004name" +
       "\030\001 \001(\t\"(\n\030UnlockAccessPointRequest\022\014\n\004na" +
       "me\030\001 \001(\t\"\033\n\031UnlockAccessPointResponse\"\033\n" +
-      "\031UnlockAccessPointMetadata2\302\005\n\022AccessPoi" +
-      "ntService\022t\n\021CreateAccessPoint\0225.salto.n" +
-      "ebula.accesspoint.v1.CreateAccessPointRe" +
-      "quest\032(.salto.nebula.accesspoint.v1.Acce" +
-      "ssPoint\022n\n\016GetAccessPoint\0222.salto.nebula" +
-      ".accesspoint.v1.GetAccessPointRequest\032(." +
-      "salto.nebula.accesspoint.v1.AccessPoint\022" +
-      "\177\n\020ListAccessPoints\0224.salto.nebula.acces" +
-      "spoint.v1.ListAccessPointsRequest\0325.salt" +
+      "\031UnlockAccessPointMetadata\"&\n\026LockAccess" +
+      "PointRequest\022\014\n\004name\030\001 \001(\t\"\031\n\027LockAccess" +
+      "PointResponse\"\031\n\027LockAccessPointMetadata" +
+      "2\253\006\n\022AccessPointService\022t\n\021CreateAccessP" +
+      "oint\0225.salto.nebula.accesspoint.v1.Creat" +
+      "eAccessPointRequest\032(.salto.nebula.acces" +
+      "spoint.v1.AccessPoint\022n\n\016GetAccessPoint\022" +
+      "2.salto.nebula.accesspoint.v1.GetAccessP" +
+      "ointRequest\032(.salto.nebula.accesspoint.v" +
+      "1.AccessPoint\022\177\n\020ListAccessPoints\0224.salt" +
       "o.nebula.accesspoint.v1.ListAccessPoints" +
-      "Response\022t\n\021UpdateAccessPoint\0225.salto.ne" +
-      "bula.accesspoint.v1.UpdateAccessPointReq" +
-      "uest\032(.salto.nebula.accesspoint.v1.Acces" +
-      "sPoint\022b\n\021DeleteAccessPoint\0225.salto.nebu" +
-      "la.accesspoint.v1.DeleteAccessPointReque" +
-      "st\032\026.google.protobuf.Empty\022k\n\021UnlockAcce" +
-      "ssPoint\0225.salto.nebula.accesspoint.v1.Un" +
-      "lockAccessPointRequest\032\037.salto.longrunni" +
-      "ng.v1.OperationB\371\001\n#com.saltoapis.nebula" +
-      ".accesspoint.v1B\020AccessPointProtoP\001ZLgit" +
-      "hub.com/saltoapis-internal/saltoapis-go/" +
-      "nebula/accesspoint/v1;accesspoint\252\002\037Salt" +
-      "oapis.Nebula.AccessPoint.V1\312\002\037Saltoapis\\" +
-      "Nebula\\AccessPoint\\V1\342\002+GPBMetadata\\Salt" +
-      "oapis\\Nebula\\AccessPoint\\V1b\006proto3"
+      "Request\0325.salto.nebula.accesspoint.v1.Li" +
+      "stAccessPointsResponse\022t\n\021UpdateAccessPo" +
+      "int\0225.salto.nebula.accesspoint.v1.Update" +
+      "AccessPointRequest\032(.salto.nebula.access" +
+      "point.v1.AccessPoint\022b\n\021DeleteAccessPoin" +
+      "t\0225.salto.nebula.accesspoint.v1.DeleteAc" +
+      "cessPointRequest\032\026.google.protobuf.Empty" +
+      "\022k\n\021UnlockAccessPoint\0225.salto.nebula.acc" +
+      "esspoint.v1.UnlockAccessPointRequest\032\037.s" +
+      "alto.longrunning.v1.Operation\022g\n\017LockAcc" +
+      "essPoint\0223.salto.nebula.accesspoint.v1.L" +
+      "ockAccessPointRequest\032\037.salto.longrunnin" +
+      "g.v1.OperationB\371\001\n#com.saltoapis.nebula." +
+      "accesspoint.v1B\020AccessPointProtoP\001ZLgith" +
+      "ub.com/saltoapis-internal/saltoapis-go/n" +
+      "ebula/accesspoint/v1;accesspoint\252\002\037Salto" +
+      "apis.Nebula.AccessPoint.V1\312\002\037Saltoapis\\N" +
+      "ebula\\AccessPoint\\V1\342\002+GPBMetadata\\Salto" +
+      "apis\\Nebula\\AccessPoint\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -210,6 +230,24 @@ public final class AccessPointProto {
     internal_static_salto_nebula_accesspoint_v1_UnlockAccessPointMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accesspoint_v1_UnlockAccessPointMetadata_descriptor,
+        new java.lang.String[] { });
+    internal_static_salto_nebula_accesspoint_v1_LockAccessPointRequest_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_salto_nebula_accesspoint_v1_LockAccessPointRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_accesspoint_v1_LockAccessPointRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_salto_nebula_accesspoint_v1_LockAccessPointResponse_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_salto_nebula_accesspoint_v1_LockAccessPointResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_accesspoint_v1_LockAccessPointResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_salto_nebula_accesspoint_v1_LockAccessPointMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_salto_nebula_accesspoint_v1_LockAccessPointMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_accesspoint_v1_LockAccessPointMetadata_descriptor,
         new java.lang.String[] { });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.DurationProto.getDescriptor();
