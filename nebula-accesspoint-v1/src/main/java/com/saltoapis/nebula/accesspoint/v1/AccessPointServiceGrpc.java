@@ -206,6 +206,37 @@ public final class AccessPointServiceGrpc {
     return getUnlockAccessPointMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest,
+      com.saltoapis.longrunning.v1.Operation> getLockAccessPointMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LockAccessPoint",
+      requestType = com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest.class,
+      responseType = com.saltoapis.longrunning.v1.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest,
+      com.saltoapis.longrunning.v1.Operation> getLockAccessPointMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest, com.saltoapis.longrunning.v1.Operation> getLockAccessPointMethod;
+    if ((getLockAccessPointMethod = AccessPointServiceGrpc.getLockAccessPointMethod) == null) {
+      synchronized (AccessPointServiceGrpc.class) {
+        if ((getLockAccessPointMethod = AccessPointServiceGrpc.getLockAccessPointMethod) == null) {
+          AccessPointServiceGrpc.getLockAccessPointMethod = getLockAccessPointMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest, com.saltoapis.longrunning.v1.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LockAccessPoint"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.longrunning.v1.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessPointServiceMethodDescriptorSupplier("LockAccessPoint"))
+              .build();
+        }
+      }
+    }
+    return getLockAccessPointMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -325,6 +356,18 @@ public final class AccessPointServiceGrpc {
         io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUnlockAccessPointMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Lock an access point
+     * Remotely locks an access point. This can be run against those access
+     * points where their associated devices are online and connected.
+     * </pre>
+     */
+    default void lockAccessPoint(com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLockAccessPointMethod(), responseObserver);
+    }
   }
 
   /**
@@ -436,6 +479,19 @@ public final class AccessPointServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUnlockAccessPointMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Lock an access point
+     * Remotely locks an access point. This can be run against those access
+     * points where their associated devices are online and connected.
+     * </pre>
+     */
+    public void lockAccessPoint(com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLockAccessPointMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -524,6 +580,18 @@ public final class AccessPointServiceGrpc {
     public com.saltoapis.longrunning.v1.Operation unlockAccessPoint(com.saltoapis.nebula.accesspoint.v1.UnlockAccessPointRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUnlockAccessPointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lock an access point
+     * Remotely locks an access point. This can be run against those access
+     * points where their associated devices are online and connected.
+     * </pre>
+     */
+    public com.saltoapis.longrunning.v1.Operation lockAccessPoint(com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLockAccessPointMethod(), getCallOptions(), request);
     }
   }
 
@@ -620,6 +688,19 @@ public final class AccessPointServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUnlockAccessPointMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Lock an access point
+     * Remotely locks an access point. This can be run against those access
+     * points where their associated devices are online and connected.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.longrunning.v1.Operation> lockAccessPoint(
+        com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLockAccessPointMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ACCESS_POINT = 0;
@@ -628,6 +709,7 @@ public final class AccessPointServiceGrpc {
   private static final int METHODID_UPDATE_ACCESS_POINT = 3;
   private static final int METHODID_DELETE_ACCESS_POINT = 4;
   private static final int METHODID_UNLOCK_ACCESS_POINT = 5;
+  private static final int METHODID_LOCK_ACCESS_POINT = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -668,6 +750,10 @@ public final class AccessPointServiceGrpc {
           break;
         case METHODID_UNLOCK_ACCESS_POINT:
           serviceImpl.unlockAccessPoint((com.saltoapis.nebula.accesspoint.v1.UnlockAccessPointRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
+          break;
+        case METHODID_LOCK_ACCESS_POINT:
+          serviceImpl.lockAccessPoint((com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
           break;
         default:
@@ -730,6 +816,13 @@ public final class AccessPointServiceGrpc {
               com.saltoapis.nebula.accesspoint.v1.UnlockAccessPointRequest,
               com.saltoapis.longrunning.v1.Operation>(
                 service, METHODID_UNLOCK_ACCESS_POINT)))
+        .addMethod(
+          getLockAccessPointMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accesspoint.v1.LockAccessPointRequest,
+              com.saltoapis.longrunning.v1.Operation>(
+                service, METHODID_LOCK_ACCESS_POINT)))
         .build();
   }
 
@@ -784,6 +877,7 @@ public final class AccessPointServiceGrpc {
               .addMethod(getUpdateAccessPointMethod())
               .addMethod(getDeleteAccessPointMethod())
               .addMethod(getUnlockAccessPointMethod())
+              .addMethod(getLockAccessPointMethod())
               .build();
         }
       }
