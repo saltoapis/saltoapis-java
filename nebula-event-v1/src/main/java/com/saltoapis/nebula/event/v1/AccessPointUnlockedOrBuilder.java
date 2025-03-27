@@ -38,7 +38,7 @@ public interface AccessPointUnlockedOrBuilder extends
 
   /**
    * <pre>
-   * The user who unlocked the access point.
+   * The user who unlocked the access point, if any.
    * </pre>
    *
    * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -47,7 +47,7 @@ public interface AccessPointUnlockedOrBuilder extends
   boolean hasUser();
   /**
    * <pre>
-   * The user who unlocked the access point.
+   * The user who unlocked the access point, if any.
    * </pre>
    *
    * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -56,10 +56,39 @@ public interface AccessPointUnlockedOrBuilder extends
   com.saltoapis.nebula.user.v1.User getUser();
   /**
    * <pre>
-   * The user who unlocked the access point.
+   * The user who unlocked the access point, if any.
    * </pre>
    *
    * <code>.salto.nebula.user.v1.User user = 2;</code>
    */
   com.saltoapis.nebula.user.v1.UserOrBuilder getUserOrBuilder();
+
+  /**
+   * <pre>
+   * The emergency key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+   * @return Whether the emergencyKey field is set.
+   */
+  boolean hasEmergencyKey();
+  /**
+   * <pre>
+   * The emergency key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+   * @return The emergencyKey.
+   */
+  com.salto.nebula.emergencykey.v1.EmergencyKey getEmergencyKey();
+  /**
+   * <pre>
+   * The emergency key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+   */
+  com.salto.nebula.emergencykey.v1.EmergencyKeyOrBuilder getEmergencyKeyOrBuilder();
+
+  com.saltoapis.nebula.event.v1.AccessPointUnlocked.CredentialCase getCredentialCase();
 }
