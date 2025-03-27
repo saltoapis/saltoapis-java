@@ -47,6 +47,46 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
+  private int credentialCase_ = 0;
+  @SuppressWarnings("serial")
+  private java.lang.Object credential_;
+  public enum CredentialCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    EMERGENCY_KEY(3),
+    CREDENTIAL_NOT_SET(0);
+    private final int value;
+    private CredentialCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CredentialCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static CredentialCase forNumber(int value) {
+      switch (value) {
+        case 3: return EMERGENCY_KEY;
+        case 0: return CREDENTIAL_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public CredentialCase
+  getCredentialCase() {
+    return CredentialCase.forNumber(
+        credentialCase_);
+  }
+
   public static final int ACCESS_POINT_FIELD_NUMBER = 1;
   private com.saltoapis.nebula.accesspoint.v1.AccessPoint accessPoint_;
   /**
@@ -89,7 +129,7 @@ private static final long serialVersionUID = 0L;
   private com.saltoapis.nebula.user.v1.User user_;
   /**
    * <pre>
-   * The user who unlocked the access point.
+   * The user who unlocked the access point, if any.
    * </pre>
    *
    * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -101,7 +141,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The user who unlocked the access point.
+   * The user who unlocked the access point, if any.
    * </pre>
    *
    * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -113,7 +153,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The user who unlocked the access point.
+   * The user who unlocked the access point, if any.
    * </pre>
    *
    * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -121,6 +161,49 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.saltoapis.nebula.user.v1.UserOrBuilder getUserOrBuilder() {
     return user_ == null ? com.saltoapis.nebula.user.v1.User.getDefaultInstance() : user_;
+  }
+
+  public static final int EMERGENCY_KEY_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * The emergency key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+   * @return Whether the emergencyKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmergencyKey() {
+    return credentialCase_ == 3;
+  }
+  /**
+   * <pre>
+   * The emergency key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+   * @return The emergencyKey.
+   */
+  @java.lang.Override
+  public com.salto.nebula.emergencykey.v1.EmergencyKey getEmergencyKey() {
+    if (credentialCase_ == 3) {
+       return (com.salto.nebula.emergencykey.v1.EmergencyKey) credential_;
+    }
+    return com.salto.nebula.emergencykey.v1.EmergencyKey.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * The emergency key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+   */
+  @java.lang.Override
+  public com.salto.nebula.emergencykey.v1.EmergencyKeyOrBuilder getEmergencyKeyOrBuilder() {
+    if (credentialCase_ == 3) {
+       return (com.salto.nebula.emergencykey.v1.EmergencyKey) credential_;
+    }
+    return com.salto.nebula.emergencykey.v1.EmergencyKey.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -143,6 +226,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getUser());
     }
+    if (credentialCase_ == 3) {
+      output.writeMessage(3, (com.salto.nebula.emergencykey.v1.EmergencyKey) credential_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -159,6 +245,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getUser());
+    }
+    if (credentialCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (com.salto.nebula.emergencykey.v1.EmergencyKey) credential_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -185,6 +275,15 @@ private static final long serialVersionUID = 0L;
       if (!getUser()
           .equals(other.getUser())) return false;
     }
+    if (!getCredentialCase().equals(other.getCredentialCase())) return false;
+    switch (credentialCase_) {
+      case 3:
+        if (!getEmergencyKey()
+            .equals(other.getEmergencyKey())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -203,6 +302,14 @@ private static final long serialVersionUID = 0L;
     if (hasUser()) {
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
+    }
+    switch (credentialCase_) {
+      case 3:
+        hash = (37 * hash) + EMERGENCY_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getEmergencyKey().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -356,6 +463,11 @@ private static final long serialVersionUID = 0L;
         userBuilder_.dispose();
         userBuilder_ = null;
       }
+      if (emergencyKeyBuilder_ != null) {
+        emergencyKeyBuilder_.clear();
+      }
+      credentialCase_ = 0;
+      credential_ = null;
       return this;
     }
 
@@ -383,6 +495,7 @@ private static final long serialVersionUID = 0L;
     public com.saltoapis.nebula.event.v1.AccessPointUnlocked buildPartial() {
       com.saltoapis.nebula.event.v1.AccessPointUnlocked result = new com.saltoapis.nebula.event.v1.AccessPointUnlocked(this);
       if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -405,6 +518,15 @@ private static final long serialVersionUID = 0L;
       result.bitField0_ |= to_bitField0_;
     }
 
+    private void buildPartialOneofs(com.saltoapis.nebula.event.v1.AccessPointUnlocked result) {
+      result.credentialCase_ = credentialCase_;
+      result.credential_ = this.credential_;
+      if (credentialCase_ == 3 &&
+          emergencyKeyBuilder_ != null) {
+        result.credential_ = emergencyKeyBuilder_.build();
+      }
+    }
+
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.saltoapis.nebula.event.v1.AccessPointUnlocked) {
@@ -422,6 +544,15 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUser()) {
         mergeUser(other.getUser());
+      }
+      switch (other.getCredentialCase()) {
+        case EMERGENCY_KEY: {
+          mergeEmergencyKey(other.getEmergencyKey());
+          break;
+        }
+        case CREDENTIAL_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -463,6 +594,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 26: {
+              input.readMessage(
+                  getEmergencyKeyFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              credentialCase_ = 3;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -478,6 +616,21 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int credentialCase_ = 0;
+    private java.lang.Object credential_;
+    public CredentialCase
+        getCredentialCase() {
+      return CredentialCase.forNumber(
+          credentialCase_);
+    }
+
+    public Builder clearCredential() {
+      credentialCase_ = 0;
+      credential_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private com.saltoapis.nebula.accesspoint.v1.AccessPoint accessPoint_;
@@ -642,7 +795,7 @@ private static final long serialVersionUID = 0L;
         com.saltoapis.nebula.user.v1.User, com.saltoapis.nebula.user.v1.User.Builder, com.saltoapis.nebula.user.v1.UserOrBuilder> userBuilder_;
     /**
      * <pre>
-     * The user who unlocked the access point.
+     * The user who unlocked the access point, if any.
      * </pre>
      *
      * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -653,7 +806,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user who unlocked the access point.
+     * The user who unlocked the access point, if any.
      * </pre>
      *
      * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -668,7 +821,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user who unlocked the access point.
+     * The user who unlocked the access point, if any.
      * </pre>
      *
      * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -688,7 +841,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user who unlocked the access point.
+     * The user who unlocked the access point, if any.
      * </pre>
      *
      * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -706,7 +859,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user who unlocked the access point.
+     * The user who unlocked the access point, if any.
      * </pre>
      *
      * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -731,7 +884,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user who unlocked the access point.
+     * The user who unlocked the access point, if any.
      * </pre>
      *
      * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -748,7 +901,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user who unlocked the access point.
+     * The user who unlocked the access point, if any.
      * </pre>
      *
      * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -760,7 +913,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user who unlocked the access point.
+     * The user who unlocked the access point, if any.
      * </pre>
      *
      * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -775,7 +928,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The user who unlocked the access point.
+     * The user who unlocked the access point, if any.
      * </pre>
      *
      * <code>.salto.nebula.user.v1.User user = 2;</code>
@@ -792,6 +945,184 @@ private static final long serialVersionUID = 0L;
         user_ = null;
       }
       return userBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.salto.nebula.emergencykey.v1.EmergencyKey, com.salto.nebula.emergencykey.v1.EmergencyKey.Builder, com.salto.nebula.emergencykey.v1.EmergencyKeyOrBuilder> emergencyKeyBuilder_;
+    /**
+     * <pre>
+     * The emergency key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+     * @return Whether the emergencyKey field is set.
+     */
+    @java.lang.Override
+    public boolean hasEmergencyKey() {
+      return credentialCase_ == 3;
+    }
+    /**
+     * <pre>
+     * The emergency key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+     * @return The emergencyKey.
+     */
+    @java.lang.Override
+    public com.salto.nebula.emergencykey.v1.EmergencyKey getEmergencyKey() {
+      if (emergencyKeyBuilder_ == null) {
+        if (credentialCase_ == 3) {
+          return (com.salto.nebula.emergencykey.v1.EmergencyKey) credential_;
+        }
+        return com.salto.nebula.emergencykey.v1.EmergencyKey.getDefaultInstance();
+      } else {
+        if (credentialCase_ == 3) {
+          return emergencyKeyBuilder_.getMessage();
+        }
+        return com.salto.nebula.emergencykey.v1.EmergencyKey.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The emergency key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+     */
+    public Builder setEmergencyKey(com.salto.nebula.emergencykey.v1.EmergencyKey value) {
+      if (emergencyKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        credential_ = value;
+        onChanged();
+      } else {
+        emergencyKeyBuilder_.setMessage(value);
+      }
+      credentialCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * The emergency key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+     */
+    public Builder setEmergencyKey(
+        com.salto.nebula.emergencykey.v1.EmergencyKey.Builder builderForValue) {
+      if (emergencyKeyBuilder_ == null) {
+        credential_ = builderForValue.build();
+        onChanged();
+      } else {
+        emergencyKeyBuilder_.setMessage(builderForValue.build());
+      }
+      credentialCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * The emergency key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+     */
+    public Builder mergeEmergencyKey(com.salto.nebula.emergencykey.v1.EmergencyKey value) {
+      if (emergencyKeyBuilder_ == null) {
+        if (credentialCase_ == 3 &&
+            credential_ != com.salto.nebula.emergencykey.v1.EmergencyKey.getDefaultInstance()) {
+          credential_ = com.salto.nebula.emergencykey.v1.EmergencyKey.newBuilder((com.salto.nebula.emergencykey.v1.EmergencyKey) credential_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          credential_ = value;
+        }
+        onChanged();
+      } else {
+        if (credentialCase_ == 3) {
+          emergencyKeyBuilder_.mergeFrom(value);
+        } else {
+          emergencyKeyBuilder_.setMessage(value);
+        }
+      }
+      credentialCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * The emergency key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+     */
+    public Builder clearEmergencyKey() {
+      if (emergencyKeyBuilder_ == null) {
+        if (credentialCase_ == 3) {
+          credentialCase_ = 0;
+          credential_ = null;
+          onChanged();
+        }
+      } else {
+        if (credentialCase_ == 3) {
+          credentialCase_ = 0;
+          credential_ = null;
+        }
+        emergencyKeyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The emergency key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+     */
+    public com.salto.nebula.emergencykey.v1.EmergencyKey.Builder getEmergencyKeyBuilder() {
+      return getEmergencyKeyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The emergency key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+     */
+    @java.lang.Override
+    public com.salto.nebula.emergencykey.v1.EmergencyKeyOrBuilder getEmergencyKeyOrBuilder() {
+      if ((credentialCase_ == 3) && (emergencyKeyBuilder_ != null)) {
+        return emergencyKeyBuilder_.getMessageOrBuilder();
+      } else {
+        if (credentialCase_ == 3) {
+          return (com.salto.nebula.emergencykey.v1.EmergencyKey) credential_;
+        }
+        return com.salto.nebula.emergencykey.v1.EmergencyKey.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The emergency key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.salto.nebula.emergencykey.v1.EmergencyKey, com.salto.nebula.emergencykey.v1.EmergencyKey.Builder, com.salto.nebula.emergencykey.v1.EmergencyKeyOrBuilder> 
+        getEmergencyKeyFieldBuilder() {
+      if (emergencyKeyBuilder_ == null) {
+        if (!(credentialCase_ == 3)) {
+          credential_ = com.salto.nebula.emergencykey.v1.EmergencyKey.getDefaultInstance();
+        }
+        emergencyKeyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.salto.nebula.emergencykey.v1.EmergencyKey, com.salto.nebula.emergencykey.v1.EmergencyKey.Builder, com.salto.nebula.emergencykey.v1.EmergencyKeyOrBuilder>(
+                (com.salto.nebula.emergencykey.v1.EmergencyKey) credential_,
+                getParentForChildren(),
+                isClean());
+        credential_ = null;
+      }
+      credentialCase_ = 3;
+      onChanged();
+      return emergencyKeyBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessPointUnlocked)
