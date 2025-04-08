@@ -90,5 +90,32 @@ public interface AccessPointLockedOrBuilder extends
    */
   com.salto.nebula.emergencykey.v1.EmergencyKeyOrBuilder getEmergencyKeyOrBuilder();
 
+  /**
+   * <pre>
+   * The card key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.CardKey card_key = 4;</code>
+   * @return Whether the cardKey field is set.
+   */
+  boolean hasCardKey();
+  /**
+   * <pre>
+   * The card key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.CardKey card_key = 4;</code>
+   * @return The cardKey.
+   */
+  com.saltoapis.nebula.user.v1.CardKey getCardKey();
+  /**
+   * <pre>
+   * The card key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.CardKey card_key = 4;</code>
+   */
+  com.saltoapis.nebula.user.v1.CardKeyOrBuilder getCardKeyOrBuilder();
+
   com.saltoapis.nebula.event.v1.AccessPointLocked.CredentialCase getCredentialCase();
 }
