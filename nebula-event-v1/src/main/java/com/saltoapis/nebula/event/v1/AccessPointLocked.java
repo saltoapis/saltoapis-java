@@ -56,6 +56,7 @@ private static final long serialVersionUID = 0L;
     EMERGENCY_KEY(3),
     CARD_KEY(4),
     APP_KEY(5),
+    WALLET_KEY(6),
     CREDENTIAL_NOT_SET(0);
     private final int value;
     private CredentialCase(int value) {
@@ -76,6 +77,7 @@ private static final long serialVersionUID = 0L;
         case 3: return EMERGENCY_KEY;
         case 4: return CARD_KEY;
         case 5: return APP_KEY;
+        case 6: return WALLET_KEY;
         case 0: return CREDENTIAL_NOT_SET;
         default: return null;
       }
@@ -296,6 +298,49 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance();
   }
 
+  public static final int WALLET_KEY_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * The wallet key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+   * @return Whether the walletKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasWalletKey() {
+    return credentialCase_ == 6;
+  }
+  /**
+   * <pre>
+   * The wallet key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+   * @return The walletKey.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.WalletKey getWalletKey() {
+    if (credentialCase_ == 6) {
+       return (com.saltoapis.nebula.user.v1.WalletKey) credential_;
+    }
+    return com.saltoapis.nebula.user.v1.WalletKey.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * The wallet key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.WalletKeyOrBuilder getWalletKeyOrBuilder() {
+    if (credentialCase_ == 6) {
+       return (com.saltoapis.nebula.user.v1.WalletKey) credential_;
+    }
+    return com.saltoapis.nebula.user.v1.WalletKey.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -325,6 +370,9 @@ private static final long serialVersionUID = 0L;
     if (credentialCase_ == 5) {
       output.writeMessage(5, (com.saltoapis.nebula.user.v1.AppKey) credential_);
     }
+    if (credentialCase_ == 6) {
+      output.writeMessage(6, (com.saltoapis.nebula.user.v1.WalletKey) credential_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -353,6 +401,10 @@ private static final long serialVersionUID = 0L;
     if (credentialCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (com.saltoapis.nebula.user.v1.AppKey) credential_);
+    }
+    if (credentialCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, (com.saltoapis.nebula.user.v1.WalletKey) credential_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -393,6 +445,10 @@ private static final long serialVersionUID = 0L;
         if (!getAppKey()
             .equals(other.getAppKey())) return false;
         break;
+      case 6:
+        if (!getWalletKey()
+            .equals(other.getWalletKey())) return false;
+        break;
       case 0:
       default:
     }
@@ -427,6 +483,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         hash = (37 * hash) + APP_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getAppKey().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + WALLET_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getWalletKey().hashCode();
         break;
       case 0:
       default:
@@ -592,6 +652,9 @@ private static final long serialVersionUID = 0L;
       if (appKeyBuilder_ != null) {
         appKeyBuilder_.clear();
       }
+      if (walletKeyBuilder_ != null) {
+        walletKeyBuilder_.clear();
+      }
       credentialCase_ = 0;
       credential_ = null;
       return this;
@@ -659,6 +722,10 @@ private static final long serialVersionUID = 0L;
           appKeyBuilder_ != null) {
         result.credential_ = appKeyBuilder_.build();
       }
+      if (credentialCase_ == 6 &&
+          walletKeyBuilder_ != null) {
+        result.credential_ = walletKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -690,6 +757,10 @@ private static final long serialVersionUID = 0L;
         }
         case APP_KEY: {
           mergeAppKey(other.getAppKey());
+          break;
+        }
+        case WALLET_KEY: {
+          mergeWalletKey(other.getWalletKey());
           break;
         }
         case CREDENTIAL_NOT_SET: {
@@ -757,6 +828,13 @@ private static final long serialVersionUID = 0L;
               credentialCase_ = 5;
               break;
             } // case 42
+            case 50: {
+              input.readMessage(
+                  getWalletKeyFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              credentialCase_ = 6;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1635,6 +1713,184 @@ private static final long serialVersionUID = 0L;
       credentialCase_ = 5;
       onChanged();
       return appKeyBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.WalletKey, com.saltoapis.nebula.user.v1.WalletKey.Builder, com.saltoapis.nebula.user.v1.WalletKeyOrBuilder> walletKeyBuilder_;
+    /**
+     * <pre>
+     * The wallet key used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+     * @return Whether the walletKey field is set.
+     */
+    @java.lang.Override
+    public boolean hasWalletKey() {
+      return credentialCase_ == 6;
+    }
+    /**
+     * <pre>
+     * The wallet key used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+     * @return The walletKey.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.WalletKey getWalletKey() {
+      if (walletKeyBuilder_ == null) {
+        if (credentialCase_ == 6) {
+          return (com.saltoapis.nebula.user.v1.WalletKey) credential_;
+        }
+        return com.saltoapis.nebula.user.v1.WalletKey.getDefaultInstance();
+      } else {
+        if (credentialCase_ == 6) {
+          return walletKeyBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.user.v1.WalletKey.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The wallet key used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+     */
+    public Builder setWalletKey(com.saltoapis.nebula.user.v1.WalletKey value) {
+      if (walletKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        credential_ = value;
+        onChanged();
+      } else {
+        walletKeyBuilder_.setMessage(value);
+      }
+      credentialCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * The wallet key used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+     */
+    public Builder setWalletKey(
+        com.saltoapis.nebula.user.v1.WalletKey.Builder builderForValue) {
+      if (walletKeyBuilder_ == null) {
+        credential_ = builderForValue.build();
+        onChanged();
+      } else {
+        walletKeyBuilder_.setMessage(builderForValue.build());
+      }
+      credentialCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * The wallet key used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+     */
+    public Builder mergeWalletKey(com.saltoapis.nebula.user.v1.WalletKey value) {
+      if (walletKeyBuilder_ == null) {
+        if (credentialCase_ == 6 &&
+            credential_ != com.saltoapis.nebula.user.v1.WalletKey.getDefaultInstance()) {
+          credential_ = com.saltoapis.nebula.user.v1.WalletKey.newBuilder((com.saltoapis.nebula.user.v1.WalletKey) credential_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          credential_ = value;
+        }
+        onChanged();
+      } else {
+        if (credentialCase_ == 6) {
+          walletKeyBuilder_.mergeFrom(value);
+        } else {
+          walletKeyBuilder_.setMessage(value);
+        }
+      }
+      credentialCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * The wallet key used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+     */
+    public Builder clearWalletKey() {
+      if (walletKeyBuilder_ == null) {
+        if (credentialCase_ == 6) {
+          credentialCase_ = 0;
+          credential_ = null;
+          onChanged();
+        }
+      } else {
+        if (credentialCase_ == 6) {
+          credentialCase_ = 0;
+          credential_ = null;
+        }
+        walletKeyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The wallet key used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+     */
+    public com.saltoapis.nebula.user.v1.WalletKey.Builder getWalletKeyBuilder() {
+      return getWalletKeyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The wallet key used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.WalletKeyOrBuilder getWalletKeyOrBuilder() {
+      if ((credentialCase_ == 6) && (walletKeyBuilder_ != null)) {
+        return walletKeyBuilder_.getMessageOrBuilder();
+      } else {
+        if (credentialCase_ == 6) {
+          return (com.saltoapis.nebula.user.v1.WalletKey) credential_;
+        }
+        return com.saltoapis.nebula.user.v1.WalletKey.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The wallet key used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.WalletKey, com.saltoapis.nebula.user.v1.WalletKey.Builder, com.saltoapis.nebula.user.v1.WalletKeyOrBuilder> 
+        getWalletKeyFieldBuilder() {
+      if (walletKeyBuilder_ == null) {
+        if (!(credentialCase_ == 6)) {
+          credential_ = com.saltoapis.nebula.user.v1.WalletKey.getDefaultInstance();
+        }
+        walletKeyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.user.v1.WalletKey, com.saltoapis.nebula.user.v1.WalletKey.Builder, com.saltoapis.nebula.user.v1.WalletKeyOrBuilder>(
+                (com.saltoapis.nebula.user.v1.WalletKey) credential_,
+                getParentForChildren(),
+                isClean());
+        credential_ = null;
+      }
+      credentialCase_ = 6;
+      onChanged();
+      return walletKeyBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessPointLocked)

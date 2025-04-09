@@ -144,5 +144,32 @@ public interface AccessPointLockedOrBuilder extends
    */
   com.saltoapis.nebula.user.v1.AppKeyOrBuilder getAppKeyOrBuilder();
 
+  /**
+   * <pre>
+   * The wallet key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+   * @return Whether the walletKey field is set.
+   */
+  boolean hasWalletKey();
+  /**
+   * <pre>
+   * The wallet key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+   * @return The walletKey.
+   */
+  com.saltoapis.nebula.user.v1.WalletKey getWalletKey();
+  /**
+   * <pre>
+   * The wallet key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.WalletKey wallet_key = 6;</code>
+   */
+  com.saltoapis.nebula.user.v1.WalletKeyOrBuilder getWalletKeyOrBuilder();
+
   com.saltoapis.nebula.event.v1.AccessPointLocked.CredentialCase getCredentialCase();
 }
