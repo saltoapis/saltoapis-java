@@ -117,5 +117,32 @@ public interface AccessPointUnlockedOrBuilder extends
    */
   com.saltoapis.nebula.user.v1.CardKeyOrBuilder getCardKeyOrBuilder();
 
+  /**
+   * <pre>
+   * The app key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+   * @return Whether the appKey field is set.
+   */
+  boolean hasAppKey();
+  /**
+   * <pre>
+   * The app key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+   * @return The appKey.
+   */
+  com.saltoapis.nebula.user.v1.AppKey getAppKey();
+  /**
+   * <pre>
+   * The app key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+   */
+  com.saltoapis.nebula.user.v1.AppKeyOrBuilder getAppKeyOrBuilder();
+
   com.saltoapis.nebula.event.v1.AccessPointUnlocked.CredentialCase getCredentialCase();
 }

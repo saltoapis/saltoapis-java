@@ -55,6 +55,7 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     EMERGENCY_KEY(3),
     CARD_KEY(4),
+    APP_KEY(5),
     CREDENTIAL_NOT_SET(0);
     private final int value;
     private CredentialCase(int value) {
@@ -74,6 +75,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 3: return EMERGENCY_KEY;
         case 4: return CARD_KEY;
+        case 5: return APP_KEY;
         case 0: return CREDENTIAL_NOT_SET;
         default: return null;
       }
@@ -251,6 +253,49 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.user.v1.CardKey.getDefaultInstance();
   }
 
+  public static final int APP_KEY_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * The app key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+   * @return Whether the appKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppKey() {
+    return credentialCase_ == 5;
+  }
+  /**
+   * <pre>
+   * The app key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+   * @return The appKey.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.AppKey getAppKey() {
+    if (credentialCase_ == 5) {
+       return (com.saltoapis.nebula.user.v1.AppKey) credential_;
+    }
+    return com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * The app key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.AppKeyOrBuilder getAppKeyOrBuilder() {
+    if (credentialCase_ == 5) {
+       return (com.saltoapis.nebula.user.v1.AppKey) credential_;
+    }
+    return com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -277,6 +322,9 @@ private static final long serialVersionUID = 0L;
     if (credentialCase_ == 4) {
       output.writeMessage(4, (com.saltoapis.nebula.user.v1.CardKey) credential_);
     }
+    if (credentialCase_ == 5) {
+      output.writeMessage(5, (com.saltoapis.nebula.user.v1.AppKey) credential_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -301,6 +349,10 @@ private static final long serialVersionUID = 0L;
     if (credentialCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.saltoapis.nebula.user.v1.CardKey) credential_);
+    }
+    if (credentialCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, (com.saltoapis.nebula.user.v1.AppKey) credential_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -337,6 +389,10 @@ private static final long serialVersionUID = 0L;
         if (!getCardKey()
             .equals(other.getCardKey())) return false;
         break;
+      case 5:
+        if (!getAppKey()
+            .equals(other.getAppKey())) return false;
+        break;
       case 0:
       default:
     }
@@ -367,6 +423,10 @@ private static final long serialVersionUID = 0L;
       case 4:
         hash = (37 * hash) + CARD_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getCardKey().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + APP_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getAppKey().hashCode();
         break;
       case 0:
       default:
@@ -529,6 +589,9 @@ private static final long serialVersionUID = 0L;
       if (cardKeyBuilder_ != null) {
         cardKeyBuilder_.clear();
       }
+      if (appKeyBuilder_ != null) {
+        appKeyBuilder_.clear();
+      }
       credentialCase_ = 0;
       credential_ = null;
       return this;
@@ -592,6 +655,10 @@ private static final long serialVersionUID = 0L;
           cardKeyBuilder_ != null) {
         result.credential_ = cardKeyBuilder_.build();
       }
+      if (credentialCase_ == 5 &&
+          appKeyBuilder_ != null) {
+        result.credential_ = appKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -619,6 +686,10 @@ private static final long serialVersionUID = 0L;
         }
         case CARD_KEY: {
           mergeCardKey(other.getCardKey());
+          break;
+        }
+        case APP_KEY: {
+          mergeAppKey(other.getAppKey());
           break;
         }
         case CREDENTIAL_NOT_SET: {
@@ -679,6 +750,13 @@ private static final long serialVersionUID = 0L;
               credentialCase_ = 4;
               break;
             } // case 34
+            case 42: {
+              input.readMessage(
+                  getAppKeyFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              credentialCase_ = 5;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1379,6 +1457,184 @@ private static final long serialVersionUID = 0L;
       credentialCase_ = 4;
       onChanged();
       return cardKeyBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.AppKey, com.saltoapis.nebula.user.v1.AppKey.Builder, com.saltoapis.nebula.user.v1.AppKeyOrBuilder> appKeyBuilder_;
+    /**
+     * <pre>
+     * The app key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+     * @return Whether the appKey field is set.
+     */
+    @java.lang.Override
+    public boolean hasAppKey() {
+      return credentialCase_ == 5;
+    }
+    /**
+     * <pre>
+     * The app key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+     * @return The appKey.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AppKey getAppKey() {
+      if (appKeyBuilder_ == null) {
+        if (credentialCase_ == 5) {
+          return (com.saltoapis.nebula.user.v1.AppKey) credential_;
+        }
+        return com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance();
+      } else {
+        if (credentialCase_ == 5) {
+          return appKeyBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The app key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+     */
+    public Builder setAppKey(com.saltoapis.nebula.user.v1.AppKey value) {
+      if (appKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        credential_ = value;
+        onChanged();
+      } else {
+        appKeyBuilder_.setMessage(value);
+      }
+      credentialCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * The app key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+     */
+    public Builder setAppKey(
+        com.saltoapis.nebula.user.v1.AppKey.Builder builderForValue) {
+      if (appKeyBuilder_ == null) {
+        credential_ = builderForValue.build();
+        onChanged();
+      } else {
+        appKeyBuilder_.setMessage(builderForValue.build());
+      }
+      credentialCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * The app key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+     */
+    public Builder mergeAppKey(com.saltoapis.nebula.user.v1.AppKey value) {
+      if (appKeyBuilder_ == null) {
+        if (credentialCase_ == 5 &&
+            credential_ != com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance()) {
+          credential_ = com.saltoapis.nebula.user.v1.AppKey.newBuilder((com.saltoapis.nebula.user.v1.AppKey) credential_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          credential_ = value;
+        }
+        onChanged();
+      } else {
+        if (credentialCase_ == 5) {
+          appKeyBuilder_.mergeFrom(value);
+        } else {
+          appKeyBuilder_.setMessage(value);
+        }
+      }
+      credentialCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * The app key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+     */
+    public Builder clearAppKey() {
+      if (appKeyBuilder_ == null) {
+        if (credentialCase_ == 5) {
+          credentialCase_ = 0;
+          credential_ = null;
+          onChanged();
+        }
+      } else {
+        if (credentialCase_ == 5) {
+          credentialCase_ = 0;
+          credential_ = null;
+        }
+        appKeyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The app key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+     */
+    public com.saltoapis.nebula.user.v1.AppKey.Builder getAppKeyBuilder() {
+      return getAppKeyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The app key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AppKeyOrBuilder getAppKeyOrBuilder() {
+      if ((credentialCase_ == 5) && (appKeyBuilder_ != null)) {
+        return appKeyBuilder_.getMessageOrBuilder();
+      } else {
+        if (credentialCase_ == 5) {
+          return (com.saltoapis.nebula.user.v1.AppKey) credential_;
+        }
+        return com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The app key used to unlock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AppKey app_key = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.AppKey, com.saltoapis.nebula.user.v1.AppKey.Builder, com.saltoapis.nebula.user.v1.AppKeyOrBuilder> 
+        getAppKeyFieldBuilder() {
+      if (appKeyBuilder_ == null) {
+        if (!(credentialCase_ == 5)) {
+          credential_ = com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance();
+        }
+        appKeyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.user.v1.AppKey, com.saltoapis.nebula.user.v1.AppKey.Builder, com.saltoapis.nebula.user.v1.AppKeyOrBuilder>(
+                (com.saltoapis.nebula.user.v1.AppKey) credential_,
+                getParentForChildren(),
+                isClean());
+        credential_ = null;
+      }
+      credentialCase_ = 5;
+      onChanged();
+      return appKeyBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessPointUnlocked)
