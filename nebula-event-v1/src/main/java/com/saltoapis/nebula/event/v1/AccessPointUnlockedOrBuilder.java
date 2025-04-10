@@ -171,5 +171,32 @@ public interface AccessPointUnlockedOrBuilder extends
    */
   com.saltoapis.nebula.user.v1.WalletKeyOrBuilder getWalletKeyOrBuilder();
 
+  /**
+   * <pre>
+   * The passcode used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+   * @return Whether the passcode field is set.
+   */
+  boolean hasPasscode();
+  /**
+   * <pre>
+   * The passcode used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+   * @return The passcode.
+   */
+  com.saltoapis.nebula.user.v1.Passcode getPasscode();
+  /**
+   * <pre>
+   * The passcode used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+   */
+  com.saltoapis.nebula.user.v1.PasscodeOrBuilder getPasscodeOrBuilder();
+
   com.saltoapis.nebula.event.v1.AccessPointUnlocked.CredentialCase getCredentialCase();
 }

@@ -57,6 +57,7 @@ private static final long serialVersionUID = 0L;
     CARD_KEY(4),
     APP_KEY(5),
     WALLET_KEY(6),
+    PASSCODE(7),
     CREDENTIAL_NOT_SET(0);
     private final int value;
     private CredentialCase(int value) {
@@ -78,6 +79,7 @@ private static final long serialVersionUID = 0L;
         case 4: return CARD_KEY;
         case 5: return APP_KEY;
         case 6: return WALLET_KEY;
+        case 7: return PASSCODE;
         case 0: return CREDENTIAL_NOT_SET;
         default: return null;
       }
@@ -341,6 +343,49 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.user.v1.WalletKey.getDefaultInstance();
   }
 
+  public static final int PASSCODE_FIELD_NUMBER = 7;
+  /**
+   * <pre>
+   * The passcode used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+   * @return Whether the passcode field is set.
+   */
+  @java.lang.Override
+  public boolean hasPasscode() {
+    return credentialCase_ == 7;
+  }
+  /**
+   * <pre>
+   * The passcode used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+   * @return The passcode.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.Passcode getPasscode() {
+    if (credentialCase_ == 7) {
+       return (com.saltoapis.nebula.user.v1.Passcode) credential_;
+    }
+    return com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * The passcode used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.PasscodeOrBuilder getPasscodeOrBuilder() {
+    if (credentialCase_ == 7) {
+       return (com.saltoapis.nebula.user.v1.Passcode) credential_;
+    }
+    return com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -372,6 +417,9 @@ private static final long serialVersionUID = 0L;
     }
     if (credentialCase_ == 6) {
       output.writeMessage(6, (com.saltoapis.nebula.user.v1.WalletKey) credential_);
+    }
+    if (credentialCase_ == 7) {
+      output.writeMessage(7, (com.saltoapis.nebula.user.v1.Passcode) credential_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -405,6 +453,10 @@ private static final long serialVersionUID = 0L;
     if (credentialCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.saltoapis.nebula.user.v1.WalletKey) credential_);
+    }
+    if (credentialCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.saltoapis.nebula.user.v1.Passcode) credential_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -449,6 +501,10 @@ private static final long serialVersionUID = 0L;
         if (!getWalletKey()
             .equals(other.getWalletKey())) return false;
         break;
+      case 7:
+        if (!getPasscode()
+            .equals(other.getPasscode())) return false;
+        break;
       case 0:
       default:
     }
@@ -487,6 +543,10 @@ private static final long serialVersionUID = 0L;
       case 6:
         hash = (37 * hash) + WALLET_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getWalletKey().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + PASSCODE_FIELD_NUMBER;
+        hash = (53 * hash) + getPasscode().hashCode();
         break;
       case 0:
       default:
@@ -655,6 +715,9 @@ private static final long serialVersionUID = 0L;
       if (walletKeyBuilder_ != null) {
         walletKeyBuilder_.clear();
       }
+      if (passcodeBuilder_ != null) {
+        passcodeBuilder_.clear();
+      }
       credentialCase_ = 0;
       credential_ = null;
       return this;
@@ -726,6 +789,10 @@ private static final long serialVersionUID = 0L;
           walletKeyBuilder_ != null) {
         result.credential_ = walletKeyBuilder_.build();
       }
+      if (credentialCase_ == 7 &&
+          passcodeBuilder_ != null) {
+        result.credential_ = passcodeBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -761,6 +828,10 @@ private static final long serialVersionUID = 0L;
         }
         case WALLET_KEY: {
           mergeWalletKey(other.getWalletKey());
+          break;
+        }
+        case PASSCODE: {
+          mergePasscode(other.getPasscode());
           break;
         }
         case CREDENTIAL_NOT_SET: {
@@ -835,6 +906,13 @@ private static final long serialVersionUID = 0L;
               credentialCase_ = 6;
               break;
             } // case 50
+            case 58: {
+              input.readMessage(
+                  getPasscodeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              credentialCase_ = 7;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1891,6 +1969,184 @@ private static final long serialVersionUID = 0L;
       credentialCase_ = 6;
       onChanged();
       return walletKeyBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.Passcode, com.saltoapis.nebula.user.v1.Passcode.Builder, com.saltoapis.nebula.user.v1.PasscodeOrBuilder> passcodeBuilder_;
+    /**
+     * <pre>
+     * The passcode used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+     * @return Whether the passcode field is set.
+     */
+    @java.lang.Override
+    public boolean hasPasscode() {
+      return credentialCase_ == 7;
+    }
+    /**
+     * <pre>
+     * The passcode used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+     * @return The passcode.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.Passcode getPasscode() {
+      if (passcodeBuilder_ == null) {
+        if (credentialCase_ == 7) {
+          return (com.saltoapis.nebula.user.v1.Passcode) credential_;
+        }
+        return com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance();
+      } else {
+        if (credentialCase_ == 7) {
+          return passcodeBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The passcode used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+     */
+    public Builder setPasscode(com.saltoapis.nebula.user.v1.Passcode value) {
+      if (passcodeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        credential_ = value;
+        onChanged();
+      } else {
+        passcodeBuilder_.setMessage(value);
+      }
+      credentialCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * The passcode used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+     */
+    public Builder setPasscode(
+        com.saltoapis.nebula.user.v1.Passcode.Builder builderForValue) {
+      if (passcodeBuilder_ == null) {
+        credential_ = builderForValue.build();
+        onChanged();
+      } else {
+        passcodeBuilder_.setMessage(builderForValue.build());
+      }
+      credentialCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * The passcode used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+     */
+    public Builder mergePasscode(com.saltoapis.nebula.user.v1.Passcode value) {
+      if (passcodeBuilder_ == null) {
+        if (credentialCase_ == 7 &&
+            credential_ != com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance()) {
+          credential_ = com.saltoapis.nebula.user.v1.Passcode.newBuilder((com.saltoapis.nebula.user.v1.Passcode) credential_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          credential_ = value;
+        }
+        onChanged();
+      } else {
+        if (credentialCase_ == 7) {
+          passcodeBuilder_.mergeFrom(value);
+        } else {
+          passcodeBuilder_.setMessage(value);
+        }
+      }
+      credentialCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * The passcode used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+     */
+    public Builder clearPasscode() {
+      if (passcodeBuilder_ == null) {
+        if (credentialCase_ == 7) {
+          credentialCase_ = 0;
+          credential_ = null;
+          onChanged();
+        }
+      } else {
+        if (credentialCase_ == 7) {
+          credentialCase_ = 0;
+          credential_ = null;
+        }
+        passcodeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The passcode used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+     */
+    public com.saltoapis.nebula.user.v1.Passcode.Builder getPasscodeBuilder() {
+      return getPasscodeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The passcode used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.PasscodeOrBuilder getPasscodeOrBuilder() {
+      if ((credentialCase_ == 7) && (passcodeBuilder_ != null)) {
+        return passcodeBuilder_.getMessageOrBuilder();
+      } else {
+        if (credentialCase_ == 7) {
+          return (com.saltoapis.nebula.user.v1.Passcode) credential_;
+        }
+        return com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The passcode used to lock the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.Passcode passcode = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.Passcode, com.saltoapis.nebula.user.v1.Passcode.Builder, com.saltoapis.nebula.user.v1.PasscodeOrBuilder> 
+        getPasscodeFieldBuilder() {
+      if (passcodeBuilder_ == null) {
+        if (!(credentialCase_ == 7)) {
+          credential_ = com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance();
+        }
+        passcodeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.user.v1.Passcode, com.saltoapis.nebula.user.v1.Passcode.Builder, com.saltoapis.nebula.user.v1.PasscodeOrBuilder>(
+                (com.saltoapis.nebula.user.v1.Passcode) credential_,
+                getParentForChildren(),
+                isClean());
+        credential_ = null;
+      }
+      credentialCase_ = 7;
+      onChanged();
+      return passcodeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessPointLocked)
