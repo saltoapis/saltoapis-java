@@ -182,181 +182,177 @@ public final class AccessRightProto {
       "\n.salto/nebula/accessright/v1/access_rig" +
       "ht.proto\022\033salto.nebula.accessright.v1\032\033g" +
       "oogle/protobuf/empty.proto\032 google/proto" +
-      "buf/field_mask.proto\032\037google/protobuf/ti" +
-      "mestamp.proto\032 salto/nebula/type/schedul" +
-      "e.proto\"\305\001\n\013AccessRight\022\014\n\004name\030\001 \001(\t\022\024\n" +
-      "\014display_name\030\002 \001(\t\0221\n\ractivate_time\030\003 \001" +
-      "(\0132\032.google.protobuf.Timestamp\022/\n\013expire" +
-      "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022" +
-      ".\n\tschedules\030\005 \003(\0132\033.salto.nebula.type.S" +
-      "chedule\"R\n\026AccessRightAccessPoint\022\014\n\004nam" +
-      "e\030\001 \001(\t\022\024\n\014access_point\030\002 \001(\t\022\024\n\014display" +
-      "_name\030\003 \001(\t\"]\n\033AccessRightAccessPointGro" +
-      "up\022\014\n\004name\030\001 \001(\t\022\032\n\022access_point_group\030\002" +
-      " \001(\t\022\024\n\014display_name\030\003 \001(\t\"\234\001\n\030CreateAcc" +
-      "essRightRequest\022\016\n\006parent\030\001 \001(\t\022\034\n\017acces" +
-      "s_right_id\030\002 \001(\tH\000\210\001\001\022>\n\014access_right\030\003 " +
-      "\001(\0132(.salto.nebula.accessright.v1.Access" +
-      "RightB\022\n\020_access_right_id\"%\n\025GetAccessRi" +
-      "ghtRequest\022\014\n\004name\030\001 \001(\t\"r\n\027ListAccessRi" +
-      "ghtsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size" +
-      "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001" +
-      "(\t\022\020\n\010order_by\030\005 \001(\t\"t\n\030ListAccessRights" +
-      "Response\022?\n\raccess_rights\030\001 \003(\0132(.salto." +
-      "nebula.accessright.v1.AccessRight\022\027\n\017nex" +
-      "t_page_token\030\002 \001(\t\"\213\001\n\030UpdateAccessRight" +
-      "Request\022>\n\014access_right\030\001 \001(\0132(.salto.ne" +
-      "bula.accessright.v1.AccessRight\022/\n\013updat" +
-      "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask" +
-      "\"(\n\030DeleteAccessRightRequest\022\014\n\004name\030\001 \001" +
-      "(\t\"\215\001\n#CreateAccessRightAccessPointReque" +
-      "st\022\016\n\006parent\030\001 \001(\t\022V\n\031access_right_acces" +
-      "s_point\030\002 \001(\01323.salto.nebula.accessright" +
-      ".v1.AccessRightAccessPoint\"\217\001\n)BatchCrea" +
-      "teAccessRightAccessPointsRequest\022\016\n\006pare" +
-      "nt\030\001 \001(\t\022R\n\010requests\030\002 \003(\0132@.salto.nebul" +
-      "a.accessright.v1.CreateAccessRightAccess" +
-      "PointRequest\"\205\001\n*BatchCreateAccessRightA" +
-      "ccessPointsResponse\022W\n\032access_right_acce" +
-      "ss_points\030\001 \003(\01323.salto.nebula.accessrig" +
-      "ht.v1.AccessRightAccessPoint\"0\n GetAcces" +
-      "sRightAccessPointRequest\022\014\n\004name\030\001 \001(\t\"}" +
-      "\n\"ListAccessRightAccessPointsRequest\022\016\n\006" +
-      "parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
-      "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030" +
-      "\005 \001(\t\"\227\001\n#ListAccessRightAccessPointsRes" +
+      "buf/field_mask.proto\032 salto/nebula/type/" +
+      "schedule.proto\"a\n\013AccessRight\022\014\n\004name\030\001 " +
+      "\001(\t\022\024\n\014display_name\030\002 \001(\t\022.\n\tschedules\030\005" +
+      " \003(\0132\033.salto.nebula.type.Schedule\"R\n\026Acc" +
+      "essRightAccessPoint\022\014\n\004name\030\001 \001(\t\022\024\n\014acc" +
+      "ess_point\030\002 \001(\t\022\024\n\014display_name\030\003 \001(\t\"]\n" +
+      "\033AccessRightAccessPointGroup\022\014\n\004name\030\001 \001" +
+      "(\t\022\032\n\022access_point_group\030\002 \001(\t\022\024\n\014displa" +
+      "y_name\030\003 \001(\t\"\234\001\n\030CreateAccessRightReques" +
+      "t\022\016\n\006parent\030\001 \001(\t\022\034\n\017access_right_id\030\002 \001" +
+      "(\tH\000\210\001\001\022>\n\014access_right\030\003 \001(\0132(.salto.ne" +
+      "bula.accessright.v1.AccessRightB\022\n\020_acce" +
+      "ss_right_id\"%\n\025GetAccessRightRequest\022\014\n\004" +
+      "name\030\001 \001(\t\"r\n\027ListAccessRightsRequest\022\016\n" +
+      "\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage" +
+      "_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by" +
+      "\030\005 \001(\t\"t\n\030ListAccessRightsResponse\022?\n\rac" +
+      "cess_rights\030\001 \003(\0132(.salto.nebula.accessr" +
+      "ight.v1.AccessRight\022\027\n\017next_page_token\030\002" +
+      " \001(\t\"\213\001\n\030UpdateAccessRightRequest\022>\n\014acc" +
+      "ess_right\030\001 \001(\0132(.salto.nebula.accessrig" +
+      "ht.v1.AccessRight\022/\n\013update_mask\030\002 \001(\0132\032" +
+      ".google.protobuf.FieldMask\"(\n\030DeleteAcce" +
+      "ssRightRequest\022\014\n\004name\030\001 \001(\t\"\215\001\n#CreateA" +
+      "ccessRightAccessPointRequest\022\016\n\006parent\030\001" +
+      " \001(\t\022V\n\031access_right_access_point\030\002 \001(\0132" +
+      "3.salto.nebula.accessright.v1.AccessRigh" +
+      "tAccessPoint\"\217\001\n)BatchCreateAccessRightA" +
+      "ccessPointsRequest\022\016\n\006parent\030\001 \001(\t\022R\n\010re" +
+      "quests\030\002 \003(\0132@.salto.nebula.accessright." +
+      "v1.CreateAccessRightAccessPointRequest\"\205" +
+      "\001\n*BatchCreateAccessRightAccessPointsRes" +
       "ponse\022W\n\032access_right_access_points\030\001 \003(" +
       "\01323.salto.nebula.accessright.v1.AccessRi" +
-      "ghtAccessPoint\022\027\n\017next_page_token\030\002 \001(\t\"" +
-      "\256\001\n#UpdateAccessRightAccessPointRequest\022" +
-      "V\n\031access_right_access_point\030\001 \001(\01323.sal" +
-      "to.nebula.accessright.v1.AccessRightAcce" +
-      "ssPoint\022/\n\013update_mask\030\002 \001(\0132\032.google.pr" +
-      "otobuf.FieldMask\"3\n#DeleteAccessRightAcc" +
-      "essPointRequest\022\014\n\004name\030\001 \001(\t\"\235\001\n(Create" +
-      "AccessRightAccessPointGroupRequest\022\016\n\006pa" +
-      "rent\030\001 \001(\t\022a\n\037access_right_access_point_" +
-      "group\030\002 \001(\01328.salto.nebula.accessright.v" +
-      "1.AccessRightAccessPointGroup\"\231\001\n.BatchC" +
-      "reateAccessRightAccessPointGroupsRequest" +
-      "\022\016\n\006parent\030\001 \001(\t\022W\n\010requests\030\002 \003(\0132E.sal" +
-      "to.nebula.accessright.v1.CreateAccessRig" +
-      "htAccessPointGroupRequest\"\225\001\n/BatchCreat" +
-      "eAccessRightAccessPointGroupsResponse\022b\n" +
-      " access_right_access_point_groups\030\001 \003(\0132" +
-      "8.salto.nebula.accessright.v1.AccessRigh" +
-      "tAccessPointGroup\"5\n%GetAccessRightAcces" +
-      "sPointGroupRequest\022\014\n\004name\030\001 \001(\t\"\202\001\n\'Lis" +
-      "tAccessRightAccessPointGroupsRequest\022\016\n\006" +
-      "parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
-      "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030" +
-      "\005 \001(\t\"\247\001\n(ListAccessRightAccessPointGrou" +
-      "psResponse\022b\n access_right_access_point_" +
-      "groups\030\001 \003(\01328.salto.nebula.accessright." +
-      "v1.AccessRightAccessPointGroup\022\027\n\017next_p" +
-      "age_token\030\002 \001(\t\"\276\001\n(UpdateAccessRightAcc" +
-      "essPointGroupRequest\022a\n\037access_right_acc" +
-      "ess_point_group\030\001 \001(\01328.salto.nebula.acc" +
-      "essright.v1.AccessRightAccessPointGroup\022" +
-      "/\n\013update_mask\030\002 \001(\0132\032.google.protobuf.F" +
-      "ieldMask\"8\n(DeleteAccessRightAccessPoint" +
-      "GroupRequest\022\014\n\004name\030\001 \001(\t\"\231\001\n.BatchDele" +
-      "teAccessRightAccessPointGroupsRequest\022\016\n" +
-      "\006parent\030\001 \001(\t\022W\n\010requests\030\002 \003(\0132E.salto." +
-      "nebula.accessright.v1.DeleteAccessRightA" +
-      "ccessPointGroupRequest\"1\n/BatchDeleteAcc" +
-      "essRightAccessPointGroupsResponse\"\217\001\n)Ba" +
-      "tchDeleteAccessRightAccessPointsRequest\022" +
-      "\016\n\006parent\030\001 \001(\t\022R\n\010requests\030\002 \003(\0132@.salt" +
-      "o.nebula.accessright.v1.DeleteAccessRigh" +
-      "tAccessPointRequest\",\n*BatchDeleteAccess" +
-      "RightAccessPointsResponse2\330\026\n\022AccessRigh" +
-      "tService\022t\n\021CreateAccessRight\0225.salto.ne" +
-      "bula.accessright.v1.CreateAccessRightReq" +
-      "uest\032(.salto.nebula.accessright.v1.Acces" +
-      "sRight\022n\n\016GetAccessRight\0222.salto.nebula." +
-      "accessright.v1.GetAccessRightRequest\032(.s" +
-      "alto.nebula.accessright.v1.AccessRight\022\177" +
-      "\n\020ListAccessRights\0224.salto.nebula.access" +
-      "right.v1.ListAccessRightsRequest\0325.salto" +
-      ".nebula.accessright.v1.ListAccessRightsR" +
-      "esponse\022t\n\021UpdateAccessRight\0225.salto.neb" +
-      "ula.accessright.v1.UpdateAccessRightRequ" +
-      "est\032(.salto.nebula.accessright.v1.Access" +
-      "Right\022b\n\021DeleteAccessRight\0225.salto.nebul" +
-      "a.accessright.v1.DeleteAccessRightReques" +
-      "t\032\026.google.protobuf.Empty\022\225\001\n\034CreateAcce" +
-      "ssRightAccessPoint\022@.salto.nebula.access" +
-      "right.v1.CreateAccessRightAccessPointReq" +
-      "uest\0323.salto.nebula.accessright.v1.Acces" +
-      "sRightAccessPoint\022\265\001\n\"BatchCreateAccessR" +
-      "ightAccessPoints\022F.salto.nebula.accessri" +
-      "ght.v1.BatchCreateAccessRightAccessPoint" +
-      "sRequest\032G.salto.nebula.accessright.v1.B" +
-      "atchCreateAccessRightAccessPointsRespons" +
-      "e\022\217\001\n\031GetAccessRightAccessPoint\022=.salto." +
-      "nebula.accessright.v1.GetAccessRightAcce" +
-      "ssPointRequest\0323.salto.nebula.accessrigh" +
-      "t.v1.AccessRightAccessPoint\022\240\001\n\033ListAcce" +
-      "ssRightAccessPoints\022?.salto.nebula.acces" +
-      "sright.v1.ListAccessRightAccessPointsReq" +
-      "uest\032@.salto.nebula.accessright.v1.ListA" +
-      "ccessRightAccessPointsResponse\022\225\001\n\034Updat" +
-      "eAccessRightAccessPoint\022@.salto.nebula.a" +
-      "ccessright.v1.UpdateAccessRightAccessPoi" +
-      "ntRequest\0323.salto.nebula.accessright.v1." +
-      "AccessRightAccessPoint\022x\n\034DeleteAccessRi" +
-      "ghtAccessPoint\022@.salto.nebula.accessrigh" +
-      "t.v1.DeleteAccessRightAccessPointRequest" +
-      "\032\026.google.protobuf.Empty\022\265\001\n\"BatchDelete" +
-      "AccessRightAccessPoints\022F.salto.nebula.a" +
-      "ccessright.v1.BatchDeleteAccessRightAcce" +
-      "ssPointsRequest\032G.salto.nebula.accessrig" +
-      "ht.v1.BatchDeleteAccessRightAccessPoints" +
-      "Response\022\244\001\n!CreateAccessRightAccessPoin" +
-      "tGroup\022E.salto.nebula.accessright.v1.Cre" +
-      "ateAccessRightAccessPointGroupRequest\0328." +
+      "ghtAccessPoint\"0\n GetAccessRightAccessPo" +
+      "intRequest\022\014\n\004name\030\001 \001(\t\"}\n\"ListAccessRi" +
+      "ghtAccessPointsRequest\022\016\n\006parent\030\001 \001(\t\022\021" +
+      "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n" +
+      "\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\227\001\n#List" +
+      "AccessRightAccessPointsResponse\022W\n\032acces" +
+      "s_right_access_points\030\001 \003(\01323.salto.nebu" +
+      "la.accessright.v1.AccessRightAccessPoint" +
+      "\022\027\n\017next_page_token\030\002 \001(\t\"\256\001\n#UpdateAcce" +
+      "ssRightAccessPointRequest\022V\n\031access_righ" +
+      "t_access_point\030\001 \001(\01323.salto.nebula.acce" +
+      "ssright.v1.AccessRightAccessPoint\022/\n\013upd" +
+      "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa" +
+      "sk\"3\n#DeleteAccessRightAccessPointReques" +
+      "t\022\014\n\004name\030\001 \001(\t\"\235\001\n(CreateAccessRightAcc" +
+      "essPointGroupRequest\022\016\n\006parent\030\001 \001(\t\022a\n\037" +
+      "access_right_access_point_group\030\002 \001(\01328." +
       "salto.nebula.accessright.v1.AccessRightA" +
-      "ccessPointGroup\022\304\001\n\'BatchCreateAccessRig" +
-      "htAccessPointGroups\022K.salto.nebula.acces" +
-      "sright.v1.BatchCreateAccessRightAccessPo" +
-      "intGroupsRequest\032L.salto.nebula.accessri" +
-      "ght.v1.BatchCreateAccessRightAccessPoint" +
-      "GroupsResponse\022\236\001\n\036GetAccessRightAccessP" +
-      "ointGroup\022B.salto.nebula.accessright.v1." +
-      "GetAccessRightAccessPointGroupRequest\0328." +
-      "salto.nebula.accessright.v1.AccessRightA" +
-      "ccessPointGroup\022\257\001\n ListAccessRightAcces" +
-      "sPointGroups\022D.salto.nebula.accessright." +
-      "v1.ListAccessRightAccessPointGroupsReque" +
-      "st\032E.salto.nebula.accessright.v1.ListAcc" +
-      "essRightAccessPointGroupsResponse\022\244\001\n!Up" +
-      "dateAccessRightAccessPointGroup\022E.salto." +
-      "nebula.accessright.v1.UpdateAccessRightA" +
-      "ccessPointGroupRequest\0328.salto.nebula.ac" +
-      "cessright.v1.AccessRightAccessPointGroup" +
-      "\022\202\001\n!DeleteAccessRightAccessPointGroup\022E" +
-      ".salto.nebula.accessright.v1.DeleteAcces" +
-      "sRightAccessPointGroupRequest\032\026.google.p" +
-      "rotobuf.Empty\022\304\001\n\'BatchDeleteAccessRight" +
-      "AccessPointGroups\022K.salto.nebula.accessr" +
-      "ight.v1.BatchDeleteAccessRightAccessPoin" +
-      "tGroupsRequest\032L.salto.nebula.accessrigh" +
-      "t.v1.BatchDeleteAccessRightAccessPointGr" +
-      "oupsResponseB\371\001\n#com.saltoapis.nebula.ac" +
-      "cessright.v1B\020AccessRightProtoP\001ZLgithub" +
-      ".com/saltoapis-internal/saltoapis-go/neb" +
-      "ula/accessright/v1;accessright\252\002\037Saltoap" +
-      "is.Nebula.AccessRight.V1\312\002\037Saltoapis\\Neb" +
-      "ula\\AccessRight\\V1\342\002+GPBMetadata\\Saltoap" +
-      "is\\Nebula\\AccessRight\\V1b\006proto3"
+      "ccessPointGroup\"\231\001\n.BatchCreateAccessRig" +
+      "htAccessPointGroupsRequest\022\016\n\006parent\030\001 \001" +
+      "(\t\022W\n\010requests\030\002 \003(\0132E.salto.nebula.acce" +
+      "ssright.v1.CreateAccessRightAccessPointG" +
+      "roupRequest\"\225\001\n/BatchCreateAccessRightAc" +
+      "cessPointGroupsResponse\022b\n access_right_" +
+      "access_point_groups\030\001 \003(\01328.salto.nebula" +
+      ".accessright.v1.AccessRightAccessPointGr" +
+      "oup\"5\n%GetAccessRightAccessPointGroupReq" +
+      "uest\022\014\n\004name\030\001 \001(\t\"\202\001\n\'ListAccessRightAc" +
+      "cessPointGroupsRequest\022\016\n\006parent\030\001 \001(\t\022\021" +
+      "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n" +
+      "\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\247\001\n(List" +
+      "AccessRightAccessPointGroupsResponse\022b\n " +
+      "access_right_access_point_groups\030\001 \003(\01328" +
+      ".salto.nebula.accessright.v1.AccessRight" +
+      "AccessPointGroup\022\027\n\017next_page_token\030\002 \001(" +
+      "\t\"\276\001\n(UpdateAccessRightAccessPointGroupR" +
+      "equest\022a\n\037access_right_access_point_grou" +
+      "p\030\001 \001(\01328.salto.nebula.accessright.v1.Ac" +
+      "cessRightAccessPointGroup\022/\n\013update_mask" +
+      "\030\002 \001(\0132\032.google.protobuf.FieldMask\"8\n(De" +
+      "leteAccessRightAccessPointGroupRequest\022\014" +
+      "\n\004name\030\001 \001(\t\"\231\001\n.BatchDeleteAccessRightA" +
+      "ccessPointGroupsRequest\022\016\n\006parent\030\001 \001(\t\022" +
+      "W\n\010requests\030\002 \003(\0132E.salto.nebula.accessr" +
+      "ight.v1.DeleteAccessRightAccessPointGrou" +
+      "pRequest\"1\n/BatchDeleteAccessRightAccess" +
+      "PointGroupsResponse\"\217\001\n)BatchDeleteAcces" +
+      "sRightAccessPointsRequest\022\016\n\006parent\030\001 \001(" +
+      "\t\022R\n\010requests\030\002 \003(\0132@.salto.nebula.acces" +
+      "sright.v1.DeleteAccessRightAccessPointRe" +
+      "quest\",\n*BatchDeleteAccessRightAccessPoi" +
+      "ntsResponse2\330\026\n\022AccessRightService\022t\n\021Cr" +
+      "eateAccessRight\0225.salto.nebula.accessrig" +
+      "ht.v1.CreateAccessRightRequest\032(.salto.n" +
+      "ebula.accessright.v1.AccessRight\022n\n\016GetA" +
+      "ccessRight\0222.salto.nebula.accessright.v1" +
+      ".GetAccessRightRequest\032(.salto.nebula.ac" +
+      "cessright.v1.AccessRight\022\177\n\020ListAccessRi" +
+      "ghts\0224.salto.nebula.accessright.v1.ListA" +
+      "ccessRightsRequest\0325.salto.nebula.access" +
+      "right.v1.ListAccessRightsResponse\022t\n\021Upd" +
+      "ateAccessRight\0225.salto.nebula.accessrigh" +
+      "t.v1.UpdateAccessRightRequest\032(.salto.ne" +
+      "bula.accessright.v1.AccessRight\022b\n\021Delet" +
+      "eAccessRight\0225.salto.nebula.accessright." +
+      "v1.DeleteAccessRightRequest\032\026.google.pro" +
+      "tobuf.Empty\022\225\001\n\034CreateAccessRightAccessP" +
+      "oint\022@.salto.nebula.accessright.v1.Creat" +
+      "eAccessRightAccessPointRequest\0323.salto.n" +
+      "ebula.accessright.v1.AccessRightAccessPo" +
+      "int\022\265\001\n\"BatchCreateAccessRightAccessPoin" +
+      "ts\022F.salto.nebula.accessright.v1.BatchCr" +
+      "eateAccessRightAccessPointsRequest\032G.sal" +
+      "to.nebula.accessright.v1.BatchCreateAcce" +
+      "ssRightAccessPointsResponse\022\217\001\n\031GetAcces" +
+      "sRightAccessPoint\022=.salto.nebula.accessr" +
+      "ight.v1.GetAccessRightAccessPointRequest" +
+      "\0323.salto.nebula.accessright.v1.AccessRig" +
+      "htAccessPoint\022\240\001\n\033ListAccessRightAccessP" +
+      "oints\022?.salto.nebula.accessright.v1.List" +
+      "AccessRightAccessPointsRequest\032@.salto.n" +
+      "ebula.accessright.v1.ListAccessRightAcce" +
+      "ssPointsResponse\022\225\001\n\034UpdateAccessRightAc" +
+      "cessPoint\022@.salto.nebula.accessright.v1." +
+      "UpdateAccessRightAccessPointRequest\0323.sa" +
+      "lto.nebula.accessright.v1.AccessRightAcc" +
+      "essPoint\022x\n\034DeleteAccessRightAccessPoint" +
+      "\022@.salto.nebula.accessright.v1.DeleteAcc" +
+      "essRightAccessPointRequest\032\026.google.prot" +
+      "obuf.Empty\022\265\001\n\"BatchDeleteAccessRightAcc" +
+      "essPoints\022F.salto.nebula.accessright.v1." +
+      "BatchDeleteAccessRightAccessPointsReques" +
+      "t\032G.salto.nebula.accessright.v1.BatchDel" +
+      "eteAccessRightAccessPointsResponse\022\244\001\n!C" +
+      "reateAccessRightAccessPointGroup\022E.salto" +
+      ".nebula.accessright.v1.CreateAccessRight" +
+      "AccessPointGroupRequest\0328.salto.nebula.a" +
+      "ccessright.v1.AccessRightAccessPointGrou" +
+      "p\022\304\001\n\'BatchCreateAccessRightAccessPointG" +
+      "roups\022K.salto.nebula.accessright.v1.Batc" +
+      "hCreateAccessRightAccessPointGroupsReque" +
+      "st\032L.salto.nebula.accessright.v1.BatchCr" +
+      "eateAccessRightAccessPointGroupsResponse" +
+      "\022\236\001\n\036GetAccessRightAccessPointGroup\022B.sa" +
+      "lto.nebula.accessright.v1.GetAccessRight" +
+      "AccessPointGroupRequest\0328.salto.nebula.a" +
+      "ccessright.v1.AccessRightAccessPointGrou" +
+      "p\022\257\001\n ListAccessRightAccessPointGroups\022D" +
+      ".salto.nebula.accessright.v1.ListAccessR" +
+      "ightAccessPointGroupsRequest\032E.salto.neb" +
+      "ula.accessright.v1.ListAccessRightAccess" +
+      "PointGroupsResponse\022\244\001\n!UpdateAccessRigh" +
+      "tAccessPointGroup\022E.salto.nebula.accessr" +
+      "ight.v1.UpdateAccessRightAccessPointGrou" +
+      "pRequest\0328.salto.nebula.accessright.v1.A" +
+      "ccessRightAccessPointGroup\022\202\001\n!DeleteAcc" +
+      "essRightAccessPointGroup\022E.salto.nebula." +
+      "accessright.v1.DeleteAccessRightAccessPo" +
+      "intGroupRequest\032\026.google.protobuf.Empty\022" +
+      "\304\001\n\'BatchDeleteAccessRightAccessPointGro" +
+      "ups\022K.salto.nebula.accessright.v1.BatchD" +
+      "eleteAccessRightAccessPointGroupsRequest" +
+      "\032L.salto.nebula.accessright.v1.BatchDele" +
+      "teAccessRightAccessPointGroupsResponseB\371" +
+      "\001\n#com.saltoapis.nebula.accessright.v1B\020" +
+      "AccessRightProtoP\001ZLgithub.com/saltoapis" +
+      "-internal/saltoapis-go/nebula/accessrigh" +
+      "t/v1;accessright\252\002\037Saltoapis.Nebula.Acce" +
+      "ssRight.V1\312\002\037Saltoapis\\Nebula\\AccessRigh" +
+      "t\\V1\342\002+GPBMetadata\\Saltoapis\\Nebula\\Acce" +
+      "ssRight\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
-          com.google.protobuf.TimestampProto.getDescriptor(),
           com.saltoapis.nebula.type.ScheduleProto.getDescriptor(),
         });
     internal_static_salto_nebula_accessright_v1_AccessRight_descriptor =
@@ -364,7 +360,7 @@ public final class AccessRightProto {
     internal_static_salto_nebula_accessright_v1_AccessRight_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_accessright_v1_AccessRight_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "ActivateTime", "ExpireTime", "Schedules", });
+        new java.lang.String[] { "Name", "DisplayName", "Schedules", });
     internal_static_salto_nebula_accessright_v1_AccessRightAccessPoint_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_salto_nebula_accessright_v1_AccessRightAccessPoint_fieldAccessorTable = new
@@ -536,7 +532,6 @@ public final class AccessRightProto {
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
-    com.google.protobuf.TimestampProto.getDescriptor();
     com.saltoapis.nebula.type.ScheduleProto.getDescriptor();
   }
 

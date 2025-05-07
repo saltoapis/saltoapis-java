@@ -49,7 +49,6 @@ private static final long serialVersionUID = 0L;
             com.saltoapis.nebula.accessright.v1.AccessRight.class, com.saltoapis.nebula.accessright.v1.AccessRight.Builder.class);
   }
 
-  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -148,82 +147,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ACTIVATE_TIME_FIELD_NUMBER = 3;
-  private com.google.protobuf.Timestamp activateTime_;
-  /**
-   * <pre>
-   * Activation time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-   * @return Whether the activateTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasActivateTime() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   * Activation time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-   * @return The activateTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getActivateTime() {
-    return activateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : activateTime_;
-  }
-  /**
-   * <pre>
-   * Activation time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getActivateTimeOrBuilder() {
-    return activateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : activateTime_;
-  }
-
-  public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
-  private com.google.protobuf.Timestamp expireTime_;
-  /**
-   * <pre>
-   * Expiration time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-   * @return Whether the expireTime field is set.
-   */
-  @java.lang.Override
-  public boolean hasExpireTime() {
-    return ((bitField0_ & 0x00000002) != 0);
-  }
-  /**
-   * <pre>
-   * Expiration time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-   * @return The expireTime.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getExpireTime() {
-    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
-  }
-  /**
-   * <pre>
-   * Expiration time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
-  }
-
   public static final int SCHEDULES_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private java.util.List<com.saltoapis.nebula.type.Schedule> schedules_;
@@ -305,12 +228,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, displayName_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(3, getActivateTime());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(4, getExpireTime());
-    }
     for (int i = 0; i < schedules_.size(); i++) {
       output.writeMessage(5, schedules_.get(i));
     }
@@ -328,14 +245,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, displayName_);
-    }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getActivateTime());
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getExpireTime());
     }
     for (int i = 0; i < schedules_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -360,16 +269,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getDisplayName()
         .equals(other.getDisplayName())) return false;
-    if (hasActivateTime() != other.hasActivateTime()) return false;
-    if (hasActivateTime()) {
-      if (!getActivateTime()
-          .equals(other.getActivateTime())) return false;
-    }
-    if (hasExpireTime() != other.hasExpireTime()) return false;
-    if (hasExpireTime()) {
-      if (!getExpireTime()
-          .equals(other.getExpireTime())) return false;
-    }
     if (!getSchedulesList()
         .equals(other.getSchedulesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -387,14 +286,6 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
-    if (hasActivateTime()) {
-      hash = (37 * hash) + ACTIVATE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getActivateTime().hashCode();
-    }
-    if (hasExpireTime()) {
-      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
-      hash = (53 * hash) + getExpireTime().hashCode();
-    }
     if (getSchedulesCount() > 0) {
       hash = (37 * hash) + SCHEDULES_FIELD_NUMBER;
       hash = (53 * hash) + getSchedulesList().hashCode();
@@ -522,21 +413,13 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.saltoapis.nebula.accessright.v1.AccessRight.newBuilder()
     private Builder() {
-      maybeForceBuilderInitialization();
+
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-      maybeForceBuilderInitialization();
-    }
-    private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessage
-              .alwaysUseFieldBuilders) {
-        getActivateTimeFieldBuilder();
-        getExpireTimeFieldBuilder();
-        getSchedulesFieldBuilder();
-      }
+
     }
     @java.lang.Override
     public Builder clear() {
@@ -544,23 +427,13 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       name_ = "";
       displayName_ = "";
-      activateTime_ = null;
-      if (activateTimeBuilder_ != null) {
-        activateTimeBuilder_.dispose();
-        activateTimeBuilder_ = null;
-      }
-      expireTime_ = null;
-      if (expireTimeBuilder_ != null) {
-        expireTimeBuilder_.dispose();
-        expireTimeBuilder_ = null;
-      }
       if (schedulesBuilder_ == null) {
         schedules_ = java.util.Collections.emptyList();
       } else {
         schedules_ = null;
         schedulesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -595,9 +468,9 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartialRepeatedFields(com.saltoapis.nebula.accessright.v1.AccessRight result) {
       if (schedulesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           schedules_ = java.util.Collections.unmodifiableList(schedules_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.schedules_ = schedules_;
       } else {
@@ -613,20 +486,6 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.displayName_ = displayName_;
       }
-      int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.activateTime_ = activateTimeBuilder_ == null
-            ? activateTime_
-            : activateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.expireTime_ = expireTimeBuilder_ == null
-            ? expireTime_
-            : expireTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -651,17 +510,11 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (other.hasActivateTime()) {
-        mergeActivateTime(other.getActivateTime());
-      }
-      if (other.hasExpireTime()) {
-        mergeExpireTime(other.getExpireTime());
-      }
       if (schedulesBuilder_ == null) {
         if (!other.schedules_.isEmpty()) {
           if (schedules_.isEmpty()) {
             schedules_ = other.schedules_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSchedulesIsMutable();
             schedules_.addAll(other.schedules_);
@@ -674,7 +527,7 @@ private static final long serialVersionUID = 0L;
             schedulesBuilder_.dispose();
             schedulesBuilder_ = null;
             schedules_ = other.schedules_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000004);
             schedulesBuilder_ = 
               com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                  getSchedulesFieldBuilder() : null;
@@ -719,20 +572,6 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
-            case 26: {
-              input.readMessage(
-                  getActivateTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 26
-            case 34: {
-              input.readMessage(
-                  getExpireTimeFieldBuilder().getBuilder(),
-                  extensionRegistry);
-              bitField0_ |= 0x00000008;
-              break;
-            } // case 34
             case 42: {
               com.saltoapis.nebula.type.Schedule m =
                   input.readMessage(
@@ -957,326 +796,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.Timestamp activateTime_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> activateTimeBuilder_;
-    /**
-     * <pre>
-     * Activation time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-     * @return Whether the activateTime field is set.
-     */
-    public boolean hasActivateTime() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <pre>
-     * Activation time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-     * @return The activateTime.
-     */
-    public com.google.protobuf.Timestamp getActivateTime() {
-      if (activateTimeBuilder_ == null) {
-        return activateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : activateTime_;
-      } else {
-        return activateTimeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Activation time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-     */
-    public Builder setActivateTime(com.google.protobuf.Timestamp value) {
-      if (activateTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        activateTime_ = value;
-      } else {
-        activateTimeBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Activation time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-     */
-    public Builder setActivateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (activateTimeBuilder_ == null) {
-        activateTime_ = builderForValue.build();
-      } else {
-        activateTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Activation time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-     */
-    public Builder mergeActivateTime(com.google.protobuf.Timestamp value) {
-      if (activateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0) &&
-          activateTime_ != null &&
-          activateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getActivateTimeBuilder().mergeFrom(value);
-        } else {
-          activateTime_ = value;
-        }
-      } else {
-        activateTimeBuilder_.mergeFrom(value);
-      }
-      if (activateTime_ != null) {
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Activation time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-     */
-    public Builder clearActivateTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      activateTime_ = null;
-      if (activateTimeBuilder_ != null) {
-        activateTimeBuilder_.dispose();
-        activateTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Activation time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getActivateTimeBuilder() {
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return getActivateTimeFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Activation time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getActivateTimeOrBuilder() {
-      if (activateTimeBuilder_ != null) {
-        return activateTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return activateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : activateTime_;
-      }
-    }
-    /**
-     * <pre>
-     * Activation time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        getActivateTimeFieldBuilder() {
-      if (activateTimeBuilder_ == null) {
-        activateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getActivateTime(),
-                getParentForChildren(),
-                isClean());
-        activateTime_ = null;
-      }
-      return activateTimeBuilder_;
-    }
-
-    private com.google.protobuf.Timestamp expireTime_;
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expireTimeBuilder_;
-    /**
-     * <pre>
-     * Expiration time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-     * @return Whether the expireTime field is set.
-     */
-    public boolean hasExpireTime() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <pre>
-     * Expiration time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-     * @return The expireTime.
-     */
-    public com.google.protobuf.Timestamp getExpireTime() {
-      if (expireTimeBuilder_ == null) {
-        return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
-      } else {
-        return expireTimeBuilder_.getMessage();
-      }
-    }
-    /**
-     * <pre>
-     * Expiration time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-     */
-    public Builder setExpireTime(com.google.protobuf.Timestamp value) {
-      if (expireTimeBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        expireTime_ = value;
-      } else {
-        expireTimeBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Expiration time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-     */
-    public Builder setExpireTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (expireTimeBuilder_ == null) {
-        expireTime_ = builderForValue.build();
-      } else {
-        expireTimeBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Expiration time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-     */
-    public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
-      if (expireTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0) &&
-          expireTime_ != null &&
-          expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getExpireTimeBuilder().mergeFrom(value);
-        } else {
-          expireTime_ = value;
-        }
-      } else {
-        expireTimeBuilder_.mergeFrom(value);
-      }
-      if (expireTime_ != null) {
-        bitField0_ |= 0x00000008;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Expiration time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-     */
-    public Builder clearExpireTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      expireTime_ = null;
-      if (expireTimeBuilder_ != null) {
-        expireTimeBuilder_.dispose();
-        expireTimeBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Expiration time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
-      bitField0_ |= 0x00000008;
-      onChanged();
-      return getExpireTimeFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Expiration time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
-      if (expireTimeBuilder_ != null) {
-        return expireTimeBuilder_.getMessageOrBuilder();
-      } else {
-        return expireTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
-      }
-    }
-    /**
-     * <pre>
-     * Expiration time independent of any time zone or calendar.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilder<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        getExpireTimeFieldBuilder() {
-      if (expireTimeBuilder_ == null) {
-        expireTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getExpireTime(),
-                getParentForChildren(),
-                isClean());
-        expireTime_ = null;
-      }
-      return expireTimeBuilder_;
-    }
-
     private java.util.List<com.saltoapis.nebula.type.Schedule> schedules_ =
       java.util.Collections.emptyList();
     private void ensureSchedulesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         schedules_ = new java.util.ArrayList<com.saltoapis.nebula.type.Schedule>(schedules_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -1470,7 +995,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearSchedules() {
       if (schedulesBuilder_ == null) {
         schedules_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         schedulesBuilder_.clear();
@@ -1575,7 +1100,7 @@ private static final long serialVersionUID = 0L;
         schedulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
             com.saltoapis.nebula.type.Schedule, com.saltoapis.nebula.type.Schedule.Builder, com.saltoapis.nebula.type.ScheduleOrBuilder>(
                 schedules_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         schedules_ = null;
