@@ -55,60 +55,6 @@ public interface AccessRightOrBuilder extends
 
   /**
    * <pre>
-   * Activation time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-   * @return Whether the activateTime field is set.
-   */
-  boolean hasActivateTime();
-  /**
-   * <pre>
-   * Activation time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-   * @return The activateTime.
-   */
-  com.google.protobuf.Timestamp getActivateTime();
-  /**
-   * <pre>
-   * Activation time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp activate_time = 3;</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getActivateTimeOrBuilder();
-
-  /**
-   * <pre>
-   * Expiration time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-   * @return Whether the expireTime field is set.
-   */
-  boolean hasExpireTime();
-  /**
-   * <pre>
-   * Expiration time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-   * @return The expireTime.
-   */
-  com.google.protobuf.Timestamp getExpireTime();
-  /**
-   * <pre>
-   * Expiration time independent of any time zone or calendar.
-   * </pre>
-   *
-   * <code>.google.protobuf.Timestamp expire_time = 4;</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
-
-  /**
-   * <pre>
    * Schedules in which this access right is applied.
    * </pre>
    *
