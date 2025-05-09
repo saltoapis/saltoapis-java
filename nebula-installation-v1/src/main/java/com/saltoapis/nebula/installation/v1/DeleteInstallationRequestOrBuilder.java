@@ -53,6 +53,7 @@ public interface DeleteInstallationRequestOrBuilder extends
   /**
    * <pre>
    * The number of hours to wait before permanently deleting the installation.
+   * If unset, the default is 720 (30 days).
    * </pre>
    *
    * <code>optional int32 delay_hours = 3;</code>
@@ -62,6 +63,7 @@ public interface DeleteInstallationRequestOrBuilder extends
   /**
    * <pre>
    * The number of hours to wait before permanently deleting the installation.
+   * If unset, the default is 720 (30 days).
    * </pre>
    *
    * <code>optional int32 delay_hours = 3;</code>
