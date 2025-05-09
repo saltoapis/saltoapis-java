@@ -129,6 +129,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The number of hours to wait before permanently deleting the installation.
+   * If unset, the default is 720 (30 days).
    * </pre>
    *
    * <code>optional int32 delay_hours = 3;</code>
@@ -141,6 +142,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The number of hours to wait before permanently deleting the installation.
+   * If unset, the default is 720 (30 days).
    * </pre>
    *
    * <code>optional int32 delay_hours = 3;</code>
@@ -667,6 +669,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The number of hours to wait before permanently deleting the installation.
+     * If unset, the default is 720 (30 days).
      * </pre>
      *
      * <code>optional int32 delay_hours = 3;</code>
@@ -679,6 +682,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The number of hours to wait before permanently deleting the installation.
+     * If unset, the default is 720 (30 days).
      * </pre>
      *
      * <code>optional int32 delay_hours = 3;</code>
@@ -691,6 +695,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The number of hours to wait before permanently deleting the installation.
+     * If unset, the default is 720 (30 days).
      * </pre>
      *
      * <code>optional int32 delay_hours = 3;</code>
@@ -707,6 +712,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The number of hours to wait before permanently deleting the installation.
+     * If unset, the default is 720 (30 days).
      * </pre>
      *
      * <code>optional int32 delay_hours = 3;</code>
