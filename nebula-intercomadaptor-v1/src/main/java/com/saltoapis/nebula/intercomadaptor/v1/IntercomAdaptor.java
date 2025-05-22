@@ -471,6 +471,44 @@ private static final long serialVersionUID = 0L;
     return initialized_;
   }
 
+  public static final int DEVICE_METADATA_FIELD_NUMBER = 16;
+  private com.saltoapis.nebula.type.DeviceMetadata deviceMetadata_;
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+   * @return Whether the deviceMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeviceMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+   * @return The deviceMetadata.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata() {
+    return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+  }
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder() {
+    return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+  }
+
   public static final int OUTDATED_FIELD_NUMBER = 8;
   private boolean outdated_ = false;
   /**
@@ -533,7 +571,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasLastEventTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <pre>
@@ -573,7 +611,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasIntercom() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
@@ -848,10 +886,10 @@ private static final long serialVersionUID = 0L;
     if (lowBattery_ != false) {
       output.writeBool(10, lowBattery_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(11, getLastEventTime());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 12, intercom_);
     }
     for (int i = 0; i < photos_.size(); i++) {
@@ -862,6 +900,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < readings_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 15, readings_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(16, getDeviceMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -907,11 +948,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(10, lowBattery_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getLastEventTime());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(12, intercom_);
     }
     {
@@ -937,6 +978,10 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getReadingsList().size();
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getDeviceMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -966,6 +1011,11 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAccessPointsList())) return false;
     if (getInitialized()
         != other.getInitialized()) return false;
+    if (hasDeviceMetadata() != other.hasDeviceMetadata()) return false;
+    if (hasDeviceMetadata()) {
+      if (!getDeviceMetadata()
+          .equals(other.getDeviceMetadata())) return false;
+    }
     if (getOutdated()
         != other.getOutdated()) return false;
     if (getConnected()
@@ -1027,6 +1077,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INITIALIZED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getInitialized());
+    if (hasDeviceMetadata()) {
+      hash = (37 * hash) + DEVICE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceMetadata().hashCode();
+    }
     hash = (37 * hash) + OUTDATED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getOutdated());
@@ -1203,6 +1257,7 @@ private static final long serialVersionUID = 0L;
       if (com.google.protobuf.GeneratedMessage
               .alwaysUseFieldBuilders) {
         getAccessPointsFieldBuilder();
+        getDeviceMetadataFieldBuilder();
         getLastEventTimeFieldBuilder();
       }
     }
@@ -1221,6 +1276,11 @@ private static final long serialVersionUID = 0L;
       }
       bitField0_ = (bitField0_ & ~0x00000020);
       initialized_ = false;
+      deviceMetadata_ = null;
+      if (deviceMetadataBuilder_ != null) {
+        deviceMetadataBuilder_.dispose();
+        deviceMetadataBuilder_ = null;
+      }
       outdated_ = false;
       connected_ = false;
       lowBattery_ = false;
@@ -1300,33 +1360,39 @@ private static final long serialVersionUID = 0L;
         result.initialized_ = initialized_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.outdated_ = outdated_;
+        result.deviceMetadata_ = deviceMetadataBuilder_ == null
+            ? deviceMetadata_
+            : deviceMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.connected_ = connected_;
+        result.outdated_ = outdated_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.lowBattery_ = lowBattery_;
+        result.connected_ = connected_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.lowBattery_ = lowBattery_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.lastEventTime_ = lastEventTimeBuilder_ == null
             ? lastEventTime_
             : lastEventTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.intercom_ = intercom_;
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.intercom_ = intercom_;
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         photos_.makeImmutable();
         result.photos_ = photos_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         photoUris_.makeImmutable();
         result.photoUris_ = photoUris_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         readings_.makeImmutable();
         result.readings_ = readings_;
       }
@@ -1394,6 +1460,9 @@ private static final long serialVersionUID = 0L;
       if (other.getInitialized() != false) {
         setInitialized(other.getInitialized());
       }
+      if (other.hasDeviceMetadata()) {
+        mergeDeviceMetadata(other.getDeviceMetadata());
+      }
       if (other.getOutdated() != false) {
         setOutdated(other.getOutdated());
       }
@@ -1408,13 +1477,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasIntercom()) {
         intercom_ = other.intercom_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (!other.photos_.isEmpty()) {
         if (photos_.isEmpty()) {
           photos_ = other.photos_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
         } else {
           ensurePhotosIsMutable();
           photos_.addAll(other.photos_);
@@ -1424,7 +1493,7 @@ private static final long serialVersionUID = 0L;
       if (!other.photoUris_.isEmpty()) {
         if (photoUris_.isEmpty()) {
           photoUris_ = other.photoUris_;
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00004000;
         } else {
           ensurePhotoUrisIsMutable();
           photoUris_.addAll(other.photoUris_);
@@ -1434,7 +1503,7 @@ private static final long serialVersionUID = 0L;
       if (!other.readings_.isEmpty()) {
         if (readings_.isEmpty()) {
           readings_ = other.readings_;
-          bitField0_ |= 0x00004000;
+          bitField0_ |= 0x00008000;
         } else {
           ensureReadingsIsMutable();
           readings_.addAll(other.readings_);
@@ -1531,29 +1600,29 @@ private static final long serialVersionUID = 0L;
             } // case 56
             case 64: {
               outdated_ = input.readBool();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               break;
             } // case 64
             case 72: {
               connected_ = input.readBool();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               break;
             } // case 72
             case 80: {
               lowBattery_ = input.readBool();
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000400;
               break;
             } // case 80
             case 90: {
               input.readMessage(
                   getLastEventTimeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000800;
               break;
             } // case 90
             case 98: {
               intercom_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               break;
             } // case 98
             case 106: {
@@ -1574,6 +1643,13 @@ private static final long serialVersionUID = 0L;
               readings_.add(s);
               break;
             } // case 122
+            case 130: {
+              input.readMessage(
+                  getDeviceMetadataFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 130
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2520,6 +2596,163 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.saltoapis.nebula.type.DeviceMetadata deviceMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder> deviceMetadataBuilder_;
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+     * @return Whether the deviceMetadata field is set.
+     */
+    public boolean hasDeviceMetadata() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+     * @return The deviceMetadata.
+     */
+    public com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata() {
+      if (deviceMetadataBuilder_ == null) {
+        return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+      } else {
+        return deviceMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+     */
+    public Builder setDeviceMetadata(com.saltoapis.nebula.type.DeviceMetadata value) {
+      if (deviceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deviceMetadata_ = value;
+      } else {
+        deviceMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+     */
+    public Builder setDeviceMetadata(
+        com.saltoapis.nebula.type.DeviceMetadata.Builder builderForValue) {
+      if (deviceMetadataBuilder_ == null) {
+        deviceMetadata_ = builderForValue.build();
+      } else {
+        deviceMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+     */
+    public Builder mergeDeviceMetadata(com.saltoapis.nebula.type.DeviceMetadata value) {
+      if (deviceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0) &&
+          deviceMetadata_ != null &&
+          deviceMetadata_ != com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance()) {
+          getDeviceMetadataBuilder().mergeFrom(value);
+        } else {
+          deviceMetadata_ = value;
+        }
+      } else {
+        deviceMetadataBuilder_.mergeFrom(value);
+      }
+      if (deviceMetadata_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+     */
+    public Builder clearDeviceMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      deviceMetadata_ = null;
+      if (deviceMetadataBuilder_ != null) {
+        deviceMetadataBuilder_.dispose();
+        deviceMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+     */
+    public com.saltoapis.nebula.type.DeviceMetadata.Builder getDeviceMetadataBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getDeviceMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+     */
+    public com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder() {
+      if (deviceMetadataBuilder_ != null) {
+        return deviceMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return deviceMetadata_ == null ?
+            com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+      }
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder> 
+        getDeviceMetadataFieldBuilder() {
+      if (deviceMetadataBuilder_ == null) {
+        deviceMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder>(
+                getDeviceMetadata(),
+                getParentForChildren(),
+                isClean());
+        deviceMetadata_ = null;
+      }
+      return deviceMetadataBuilder_;
+    }
+
     private boolean outdated_ ;
     /**
      * <pre>
@@ -2549,7 +2782,7 @@ private static final long serialVersionUID = 0L;
     public Builder setOutdated(boolean value) {
 
       outdated_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2564,7 +2797,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearOutdated() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       outdated_ = false;
       onChanged();
       return this;
@@ -2599,7 +2832,7 @@ private static final long serialVersionUID = 0L;
     public Builder setConnected(boolean value) {
 
       connected_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2614,7 +2847,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearConnected() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       connected_ = false;
       onChanged();
       return this;
@@ -2647,7 +2880,7 @@ private static final long serialVersionUID = 0L;
     public Builder setLowBattery(boolean value) {
 
       lowBattery_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -2661,7 +2894,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearLowBattery() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       lowBattery_ = false;
       onChanged();
       return this;
@@ -2679,7 +2912,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the lastEventTime field is set.
      */
     public boolean hasLastEventTime() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <pre>
@@ -2712,7 +2945,7 @@ private static final long serialVersionUID = 0L;
       } else {
         lastEventTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2730,7 +2963,7 @@ private static final long serialVersionUID = 0L;
       } else {
         lastEventTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -2743,7 +2976,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeLastEventTime(com.google.protobuf.Timestamp value) {
       if (lastEventTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0) &&
+        if (((bitField0_ & 0x00000800) != 0) &&
           lastEventTime_ != null &&
           lastEventTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getLastEventTimeBuilder().mergeFrom(value);
@@ -2754,7 +2987,7 @@ private static final long serialVersionUID = 0L;
         lastEventTimeBuilder_.mergeFrom(value);
       }
       if (lastEventTime_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -2767,7 +3000,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_event_time = 11;</code>
      */
     public Builder clearLastEventTime() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       lastEventTime_ = null;
       if (lastEventTimeBuilder_ != null) {
         lastEventTimeBuilder_.dispose();
@@ -2784,7 +3017,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_event_time = 11;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastEventTimeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getLastEventTimeFieldBuilder().getBuilder();
     }
@@ -2835,7 +3068,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the intercom field is set.
      */
     public boolean hasIntercom() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <pre>
@@ -2894,7 +3127,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       intercom_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2909,7 +3142,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearIntercom() {
       intercom_ = getDefaultInstance().getIntercom();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -2928,7 +3161,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       intercom_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2939,7 +3172,7 @@ private static final long serialVersionUID = 0L;
       if (!photos_.isModifiable()) {
         photos_ = new com.google.protobuf.LazyStringArrayList(photos_);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
     }
     /**
      * <pre>
@@ -3015,7 +3248,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensurePhotosIsMutable();
       photos_.set(index, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3035,7 +3268,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensurePhotosIsMutable();
       photos_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3055,7 +3288,7 @@ private static final long serialVersionUID = 0L;
       ensurePhotosIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, photos_);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3072,7 +3305,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPhotos() {
       photos_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00001000);;
+      bitField0_ = (bitField0_ & ~0x00002000);;
       onChanged();
       return this;
     }
@@ -3093,7 +3326,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensurePhotosIsMutable();
       photos_.add(value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3104,7 +3337,7 @@ private static final long serialVersionUID = 0L;
       if (!photoUris_.isModifiable()) {
         photoUris_ = new com.google.protobuf.LazyStringArrayList(photoUris_);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
     }
     /**
      * <pre>
@@ -3170,7 +3403,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensurePhotoUrisIsMutable();
       photoUris_.set(index, value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3188,7 +3421,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensurePhotoUrisIsMutable();
       photoUris_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3206,7 +3439,7 @@ private static final long serialVersionUID = 0L;
       ensurePhotoUrisIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, photoUris_);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3221,7 +3454,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearPhotoUris() {
       photoUris_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00002000);;
+      bitField0_ = (bitField0_ & ~0x00004000);;
       onChanged();
       return this;
     }
@@ -3240,7 +3473,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensurePhotoUrisIsMutable();
       photoUris_.add(value);
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3251,7 +3484,7 @@ private static final long serialVersionUID = 0L;
       if (!readings_.isModifiable()) {
         readings_ = new com.google.protobuf.LazyStringArrayList(readings_);
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
     }
     /**
      * <pre>
@@ -3337,7 +3570,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureReadingsIsMutable();
       readings_.set(index, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3359,7 +3592,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureReadingsIsMutable();
       readings_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3381,7 +3614,7 @@ private static final long serialVersionUID = 0L;
       ensureReadingsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, readings_);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3400,7 +3633,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearReadings() {
       readings_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00004000);;
+      bitField0_ = (bitField0_ & ~0x00008000);;
       onChanged();
       return this;
     }
@@ -3423,7 +3656,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureReadingsIsMutable();
       readings_.add(value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }

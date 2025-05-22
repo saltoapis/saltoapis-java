@@ -206,6 +206,33 @@ public interface IntercomAdaptorOrBuilder extends
 
   /**
    * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+   * @return Whether the deviceMetadata field is set.
+   */
+  boolean hasDeviceMetadata();
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+   * @return The deviceMetadata.
+   */
+  com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata();
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 16;</code>
+   */
+  com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder();
+
+  /**
+   * <pre>
    * Indicates whether this intercom adaptor has pending updates or not. This
    * could be because there was a pending configuration or a firmware update
    * and is conditionally set based on the current installation settings.

@@ -162,6 +162,33 @@ public interface EncoderOrBuilder extends
 
   /**
    * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 11;</code>
+   * @return Whether the deviceMetadata field is set.
+   */
+  boolean hasDeviceMetadata();
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 11;</code>
+   * @return The deviceMetadata.
+   */
+  com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata();
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 11;</code>
+   */
+  com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder();
+
+  /**
+   * <pre>
    * Indicates whether this encoder is connected or not. It's considered
    * connected if there has been at least one communication with it within the
    * last 10 minutes.

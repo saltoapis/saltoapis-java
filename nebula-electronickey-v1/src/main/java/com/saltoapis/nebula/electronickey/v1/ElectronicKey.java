@@ -249,6 +249,44 @@ private static final long serialVersionUID = 0L;
     return outdated_;
   }
 
+  public static final int DEVICE_METADATA_FIELD_NUMBER = 8;
+  private com.saltoapis.nebula.type.DeviceMetadata deviceMetadata_;
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * @return Whether the deviceMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeviceMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * @return The deviceMetadata.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata() {
+    return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+  }
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder() {
+    return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+  }
+
   public static final int LOW_BATTERY_FIELD_NUMBER = 7;
   private boolean lowBattery_ = false;
   /**
@@ -297,6 +335,9 @@ private static final long serialVersionUID = 0L;
     if (lowBattery_ != false) {
       output.writeBool(7, lowBattery_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getDeviceMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -327,6 +368,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, lowBattery_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getDeviceMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -355,6 +400,11 @@ private static final long serialVersionUID = 0L;
     }
     if (getOutdated()
         != other.getOutdated()) return false;
+    if (hasDeviceMetadata() != other.hasDeviceMetadata()) return false;
+    if (hasDeviceMetadata()) {
+      if (!getDeviceMetadata()
+          .equals(other.getDeviceMetadata())) return false;
+    }
     if (getLowBattery()
         != other.getLowBattery()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -382,6 +432,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + OUTDATED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getOutdated());
+    if (hasDeviceMetadata()) {
+      hash = (37 * hash) + DEVICE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceMetadata().hashCode();
+    }
     hash = (37 * hash) + LOW_BATTERY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getLowBattery());
@@ -508,13 +562,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.saltoapis.nebula.electronickey.v1.ElectronicKey.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage
+              .alwaysUseFieldBuilders) {
+        getDeviceMetadataFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -525,6 +585,11 @@ private static final long serialVersionUID = 0L;
       initialized_ = false;
       deviceId_ = "";
       outdated_ = false;
+      deviceMetadata_ = null;
+      if (deviceMetadataBuilder_ != null) {
+        deviceMetadataBuilder_.dispose();
+        deviceMetadataBuilder_ = null;
+      }
       lowBattery_ = false;
       return this;
     }
@@ -577,6 +642,12 @@ private static final long serialVersionUID = 0L;
         result.outdated_ = outdated_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.deviceMetadata_ = deviceMetadataBuilder_ == null
+            ? deviceMetadata_
+            : deviceMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.lowBattery_ = lowBattery_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -614,6 +685,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getOutdated() != false) {
         setOutdated(other.getOutdated());
+      }
+      if (other.hasDeviceMetadata()) {
+        mergeDeviceMetadata(other.getDeviceMetadata());
       }
       if (other.getLowBattery() != false) {
         setLowBattery(other.getLowBattery());
@@ -671,9 +745,16 @@ private static final long serialVersionUID = 0L;
             } // case 40
             case 56: {
               lowBattery_ = input.readBool();
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               break;
             } // case 56
+            case 66: {
+              input.readMessage(
+                  getDeviceMetadataFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1109,6 +1190,163 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.saltoapis.nebula.type.DeviceMetadata deviceMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder> deviceMetadataBuilder_;
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * @return Whether the deviceMetadata field is set.
+     */
+    public boolean hasDeviceMetadata() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * @return The deviceMetadata.
+     */
+    public com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata() {
+      if (deviceMetadataBuilder_ == null) {
+        return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+      } else {
+        return deviceMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public Builder setDeviceMetadata(com.saltoapis.nebula.type.DeviceMetadata value) {
+      if (deviceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deviceMetadata_ = value;
+      } else {
+        deviceMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public Builder setDeviceMetadata(
+        com.saltoapis.nebula.type.DeviceMetadata.Builder builderForValue) {
+      if (deviceMetadataBuilder_ == null) {
+        deviceMetadata_ = builderForValue.build();
+      } else {
+        deviceMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public Builder mergeDeviceMetadata(com.saltoapis.nebula.type.DeviceMetadata value) {
+      if (deviceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0) &&
+          deviceMetadata_ != null &&
+          deviceMetadata_ != com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance()) {
+          getDeviceMetadataBuilder().mergeFrom(value);
+        } else {
+          deviceMetadata_ = value;
+        }
+      } else {
+        deviceMetadataBuilder_.mergeFrom(value);
+      }
+      if (deviceMetadata_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public Builder clearDeviceMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      deviceMetadata_ = null;
+      if (deviceMetadataBuilder_ != null) {
+        deviceMetadataBuilder_.dispose();
+        deviceMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public com.saltoapis.nebula.type.DeviceMetadata.Builder getDeviceMetadataBuilder() {
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return getDeviceMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder() {
+      if (deviceMetadataBuilder_ != null) {
+        return deviceMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return deviceMetadata_ == null ?
+            com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+      }
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder> 
+        getDeviceMetadataFieldBuilder() {
+      if (deviceMetadataBuilder_ == null) {
+        deviceMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder>(
+                getDeviceMetadata(),
+                getParentForChildren(),
+                isClean());
+        deviceMetadata_ = null;
+      }
+      return deviceMetadataBuilder_;
+    }
+
     private boolean lowBattery_ ;
     /**
      * <pre>
@@ -1136,7 +1374,7 @@ private static final long serialVersionUID = 0L;
     public Builder setLowBattery(boolean value) {
 
       lowBattery_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1150,7 +1388,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearLowBattery() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       lowBattery_ = false;
       onChanged();
       return this;

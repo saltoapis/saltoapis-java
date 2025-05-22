@@ -232,6 +232,44 @@ private static final long serialVersionUID = 0L;
     return initialized_;
   }
 
+  public static final int DEVICE_METADATA_FIELD_NUMBER = 8;
+  private com.saltoapis.nebula.type.DeviceMetadata deviceMetadata_;
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * @return Whether the deviceMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasDeviceMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * @return The deviceMetadata.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata() {
+    return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+  }
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder() {
+    return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+  }
+
   public static final int CONNECTED_FIELD_NUMBER = 7;
   private boolean connected_ = false;
   /**
@@ -261,7 +299,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasEthernetSettings() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <pre>
@@ -299,7 +337,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasWifiSettings() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
@@ -351,14 +389,17 @@ private static final long serialVersionUID = 0L;
     if (initialized_ != false) {
       output.writeBool(4, initialized_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(5, getEthernetSettings());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(6, getWifiSettings());
     }
     if (connected_ != false) {
       output.writeBool(7, connected_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(8, getDeviceMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -382,17 +423,21 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, initialized_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getEthernetSettings());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getWifiSettings());
     }
     if (connected_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, connected_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getDeviceMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -420,6 +465,11 @@ private static final long serialVersionUID = 0L;
     }
     if (getInitialized()
         != other.getInitialized()) return false;
+    if (hasDeviceMetadata() != other.hasDeviceMetadata()) return false;
+    if (hasDeviceMetadata()) {
+      if (!getDeviceMetadata()
+          .equals(other.getDeviceMetadata())) return false;
+    }
     if (getConnected()
         != other.getConnected()) return false;
     if (hasEthernetSettings() != other.hasEthernetSettings()) return false;
@@ -454,6 +504,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + INITIALIZED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getInitialized());
+    if (hasDeviceMetadata()) {
+      hash = (37 * hash) + DEVICE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceMetadata().hashCode();
+    }
     hash = (37 * hash) + CONNECTED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getConnected());
@@ -599,6 +653,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage
               .alwaysUseFieldBuilders) {
+        getDeviceMetadataFieldBuilder();
         getEthernetSettingsFieldBuilder();
         getWifiSettingsFieldBuilder();
       }
@@ -611,6 +666,11 @@ private static final long serialVersionUID = 0L;
       displayName_ = "";
       deviceId_ = "";
       initialized_ = false;
+      deviceMetadata_ = null;
+      if (deviceMetadataBuilder_ != null) {
+        deviceMetadataBuilder_.dispose();
+        deviceMetadataBuilder_ = null;
+      }
       connected_ = false;
       ethernetSettings_ = null;
       if (ethernetSettingsBuilder_ != null) {
@@ -670,19 +730,25 @@ private static final long serialVersionUID = 0L;
         result.initialized_ = initialized_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.connected_ = connected_;
+        result.deviceMetadata_ = deviceMetadataBuilder_ == null
+            ? deviceMetadata_
+            : deviceMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.connected_ = connected_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.ethernetSettings_ = ethernetSettingsBuilder_ == null
             ? ethernetSettings_
             : ethernetSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.wifiSettings_ = wifiSettingsBuilder_ == null
             ? wifiSettings_
             : wifiSettingsBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -716,6 +782,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getInitialized() != false) {
         setInitialized(other.getInitialized());
+      }
+      if (other.hasDeviceMetadata()) {
+        mergeDeviceMetadata(other.getDeviceMetadata());
       }
       if (other.getConnected() != false) {
         setConnected(other.getConnected());
@@ -776,21 +845,28 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getEthernetSettingsFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               break;
             } // case 42
             case 50: {
               input.readMessage(
                   getWifiSettingsFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000040;
+              bitField0_ |= 0x00000080;
               break;
             } // case 50
             case 56: {
               connected_ = input.readBool();
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               break;
             } // case 56
+            case 66: {
+              input.readMessage(
+                  getDeviceMetadataFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1176,6 +1252,163 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.saltoapis.nebula.type.DeviceMetadata deviceMetadata_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder> deviceMetadataBuilder_;
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * @return Whether the deviceMetadata field is set.
+     */
+    public boolean hasDeviceMetadata() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * @return The deviceMetadata.
+     */
+    public com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata() {
+      if (deviceMetadataBuilder_ == null) {
+        return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+      } else {
+        return deviceMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public Builder setDeviceMetadata(com.saltoapis.nebula.type.DeviceMetadata value) {
+      if (deviceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        deviceMetadata_ = value;
+      } else {
+        deviceMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public Builder setDeviceMetadata(
+        com.saltoapis.nebula.type.DeviceMetadata.Builder builderForValue) {
+      if (deviceMetadataBuilder_ == null) {
+        deviceMetadata_ = builderForValue.build();
+      } else {
+        deviceMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public Builder mergeDeviceMetadata(com.saltoapis.nebula.type.DeviceMetadata value) {
+      if (deviceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0) &&
+          deviceMetadata_ != null &&
+          deviceMetadata_ != com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance()) {
+          getDeviceMetadataBuilder().mergeFrom(value);
+        } else {
+          deviceMetadata_ = value;
+        }
+      } else {
+        deviceMetadataBuilder_.mergeFrom(value);
+      }
+      if (deviceMetadata_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public Builder clearDeviceMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      deviceMetadata_ = null;
+      if (deviceMetadataBuilder_ != null) {
+        deviceMetadataBuilder_.dispose();
+        deviceMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public com.saltoapis.nebula.type.DeviceMetadata.Builder getDeviceMetadataBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getDeviceMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    public com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder() {
+      if (deviceMetadataBuilder_ != null) {
+        return deviceMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return deviceMetadata_ == null ?
+            com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
+      }
+    }
+    /**
+     * <pre>
+     * Device metadata contains information about a device hardware and firmware.
+     * </pre>
+     *
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder> 
+        getDeviceMetadataFieldBuilder() {
+      if (deviceMetadataBuilder_ == null) {
+        deviceMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder>(
+                getDeviceMetadata(),
+                getParentForChildren(),
+                isClean());
+        deviceMetadata_ = null;
+      }
+      return deviceMetadataBuilder_;
+    }
+
     private boolean connected_ ;
     /**
      * <pre>
@@ -1205,7 +1438,7 @@ private static final long serialVersionUID = 0L;
     public Builder setConnected(boolean value) {
 
       connected_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1220,7 +1453,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearConnected() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       connected_ = false;
       onChanged();
       return this;
@@ -1238,7 +1471,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the ethernetSettings field is set.
      */
     public boolean hasEthernetSettings() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <pre>
@@ -1271,7 +1504,7 @@ private static final long serialVersionUID = 0L;
       } else {
         ethernetSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1289,7 +1522,7 @@ private static final long serialVersionUID = 0L;
       } else {
         ethernetSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1302,7 +1535,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeEthernetSettings(com.saltoapis.nebula.gateway.v1.EthernetSettings value) {
       if (ethernetSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0) &&
+        if (((bitField0_ & 0x00000040) != 0) &&
           ethernetSettings_ != null &&
           ethernetSettings_ != com.saltoapis.nebula.gateway.v1.EthernetSettings.getDefaultInstance()) {
           getEthernetSettingsBuilder().mergeFrom(value);
@@ -1313,7 +1546,7 @@ private static final long serialVersionUID = 0L;
         ethernetSettingsBuilder_.mergeFrom(value);
       }
       if (ethernetSettings_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -1326,7 +1559,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.gateway.v1.EthernetSettings ethernet_settings = 5;</code>
      */
     public Builder clearEthernetSettings() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       ethernetSettings_ = null;
       if (ethernetSettingsBuilder_ != null) {
         ethernetSettingsBuilder_.dispose();
@@ -1343,7 +1576,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.gateway.v1.EthernetSettings ethernet_settings = 5;</code>
      */
     public com.saltoapis.nebula.gateway.v1.EthernetSettings.Builder getEthernetSettingsBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getEthernetSettingsFieldBuilder().getBuilder();
     }
@@ -1395,7 +1628,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the wifiSettings field is set.
      */
     public boolean hasWifiSettings() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <pre>
@@ -1428,7 +1661,7 @@ private static final long serialVersionUID = 0L;
       } else {
         wifiSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1446,7 +1679,7 @@ private static final long serialVersionUID = 0L;
       } else {
         wifiSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1459,7 +1692,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeWifiSettings(com.saltoapis.nebula.gateway.v1.WifiSettings value) {
       if (wifiSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0) &&
+        if (((bitField0_ & 0x00000080) != 0) &&
           wifiSettings_ != null &&
           wifiSettings_ != com.saltoapis.nebula.gateway.v1.WifiSettings.getDefaultInstance()) {
           getWifiSettingsBuilder().mergeFrom(value);
@@ -1470,7 +1703,7 @@ private static final long serialVersionUID = 0L;
         wifiSettingsBuilder_.mergeFrom(value);
       }
       if (wifiSettings_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -1483,7 +1716,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.gateway.v1.WifiSettings wifi_settings = 6;</code>
      */
     public Builder clearWifiSettings() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       wifiSettings_ = null;
       if (wifiSettingsBuilder_ != null) {
         wifiSettingsBuilder_.dispose();
@@ -1500,7 +1733,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.gateway.v1.WifiSettings wifi_settings = 6;</code>
      */
     public com.saltoapis.nebula.gateway.v1.WifiSettings.Builder getWifiSettingsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getWifiSettingsFieldBuilder().getBuilder();
     }
