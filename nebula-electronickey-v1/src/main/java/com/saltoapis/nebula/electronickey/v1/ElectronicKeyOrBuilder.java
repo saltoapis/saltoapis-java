@@ -116,6 +116,33 @@ public interface ElectronicKeyOrBuilder extends
 
   /**
    * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * @return Whether the deviceMetadata field is set.
+   */
+  boolean hasDeviceMetadata();
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * @return The deviceMetadata.
+   */
+  com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata();
+  /**
+   * <pre>
+   * Device metadata contains information about a device hardware and firmware.
+   * </pre>
+   *
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   */
+  com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder();
+
+  /**
+   * <pre>
    * Indicates whether the battery of this electronic key is low, and needs
    * replacing, or is normal and doesn't need replacing.
    * </pre>

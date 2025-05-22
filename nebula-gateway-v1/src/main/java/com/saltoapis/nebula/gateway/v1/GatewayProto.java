@@ -198,102 +198,105 @@ public final class GatewayProto {
       "\027salto.nebula.gateway.v1\032\033google/protobu" +
       "f/empty.proto\032 google/protobuf/field_mas" +
       "k.proto\032$salto/longrunning/v1/operation." +
-      "proto\"\377\001\n\007Gateway\022\014\n\004name\030\001 \001(\t\022\024\n\014displ" +
-      "ay_name\030\002 \001(\t\022\026\n\tdevice_id\030\003 \001(\tH\000\210\001\001\022\023\n" +
-      "\013initialized\030\004 \001(\010\022\021\n\tconnected\030\007 \001(\010\022D\n" +
-      "\021ethernet_settings\030\005 \001(\0132).salto.nebula." +
-      "gateway.v1.EthernetSettings\022<\n\rwifi_sett" +
-      "ings\030\006 \001(\0132%.salto.nebula.gateway.v1.Wif" +
-      "iSettingsB\014\n\n_device_id\"\214\001\n\020EthernetSett" +
+      "proto\032\'salto/nebula/type/device_metadata" +
+      ".proto\"\273\002\n\007Gateway\022\014\n\004name\030\001 \001(\t\022\024\n\014disp" +
+      "lay_name\030\002 \001(\t\022\026\n\tdevice_id\030\003 \001(\tH\000\210\001\001\022\023" +
+      "\n\013initialized\030\004 \001(\010\022:\n\017device_metadata\030\010" +
+      " \001(\0132!.salto.nebula.type.DeviceMetadata\022" +
+      "\021\n\tconnected\030\007 \001(\010\022D\n\021ethernet_settings\030" +
+      "\005 \001(\0132).salto.nebula.gateway.v1.Ethernet" +
+      "Settings\022<\n\rwifi_settings\030\006 \001(\0132%.salto." +
+      "nebula.gateway.v1.WifiSettingsB\014\n\n_devic" +
+      "e_id\"\214\001\n\020EthernetSettings\022<\n\ripv4_settin" +
+      "gs\030\001 \001(\0132%.salto.nebula.gateway.v1.IPv4S" +
+      "ettings\022:\n\014dns_settings\030\002 \001(\0132$.salto.ne" +
+      "bula.gateway.v1.DNSSettings\"\272\001\n\014WifiSett" +
       "ings\022<\n\ripv4_settings\030\001 \001(\0132%.salto.nebu" +
       "la.gateway.v1.IPv4Settings\022:\n\014dns_settin" +
       "gs\030\002 \001(\0132$.salto.nebula.gateway.v1.DNSSe" +
-      "ttings\"\272\001\n\014WifiSettings\022<\n\ripv4_settings" +
-      "\030\001 \001(\0132%.salto.nebula.gateway.v1.IPv4Set" +
-      "tings\022:\n\014dns_settings\030\002 \001(\0132$.salto.nebu" +
-      "la.gateway.v1.DNSSettings\022\014\n\004ssid\030\003 \001(\t\022" +
-      "\025\n\010password\030\004 \001(\tH\000\210\001\001B\013\n\t_password\"\202\001\n\014" +
-      "IPv4Settings\022\027\n\nip_address\030\001 \001(\tH\000\210\001\001\022\021\n" +
-      "\004mask\030\002 \001(\tH\001\210\001\001\022\033\n\016router_address\030\003 \001(\t" +
-      "H\002\210\001\001B\r\n\013_ip_addressB\007\n\005_maskB\021\n\017_router" +
-      "_address\"$\n\013DNSSettings\022\025\n\rdns_addresses" +
-      "\030\001 \003(\t\"\201\001\n\024CreateGatewayRequest\022\016\n\006paren" +
-      "t\030\001 \001(\t\022\027\n\ngateway_id\030\002 \001(\tH\000\210\001\001\0221\n\007gate" +
-      "way\030\003 \001(\0132 .salto.nebula.gateway.v1.Gate" +
-      "wayB\r\n\013_gateway_id\"!\n\021GetGatewayRequest\022" +
-      "\014\n\004name\030\001 \001(\t\"n\n\023ListGatewaysRequest\022\016\n\006" +
-      "parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
-      "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030" +
-      "\005 \001(\t\"c\n\024ListGatewaysResponse\0222\n\010gateway" +
-      "s\030\001 \003(\0132 .salto.nebula.gateway.v1.Gatewa" +
-      "y\022\027\n\017next_page_token\030\002 \001(\t\"z\n\024UpdateGate" +
-      "wayRequest\0221\n\007gateway\030\001 \001(\0132 .salto.nebu" +
-      "la.gateway.v1.Gateway\022/\n\013update_mask\030\002 \001" +
-      "(\0132\032.google.protobuf.FieldMask\"$\n\024Delete" +
-      "GatewayRequest\022\014\n\004name\030\001 \001(\t\"5\n\022BindGate" +
-      "wayRequest\022\014\n\004name\030\001 \001(\t\022\021\n\tdevice_id\030\002 " +
-      "\001(\t\"\025\n\023BindGatewayResponse\"3\n\024UnbindGate" +
-      "wayRequest\022\014\n\004name\030\001 \001(\t\022\r\n\005force\030\002 \001(\010\"" +
-      "\027\n\025UnbindGatewayResponse\"(\n\030InitializeGa" +
-      "tewayRequest\022\014\n\004name\030\001 \001(\t\"\033\n\031Initialize" +
-      "GatewayResponse\"\033\n\031InitializeGatewayMeta" +
-      "data\"\'\n\027ConfigureGatewayRequest\022\014\n\004name\030" +
-      "\001 \001(\t\"\032\n\030ConfigureGatewayResponse\"\032\n\030Con" +
-      "figureGatewayMetadata\"#\n\023ResetGatewayReq" +
-      "uest\022\014\n\004name\030\001 \001(\t\"\026\n\024ResetGatewayRespon" +
-      "se\"\026\n\024ResetGatewayMetadata\"/\n\034UpdateGate" +
-      "wayFirmwareRequest\022\017\n\007gateway\030\001 \001(\t\"\037\n\035U" +
-      "pdateGatewayFirmwareResponse\"9\n\035UpdateGa" +
-      "tewayFirmwareMetadata\022\030\n\020progress_percen" +
-      "t\030\001 \001(\005\"4\n!GenerateAuthorizationTokenReq" +
-      "uest\022\017\n\007gateway\030\001 \001(\t\"A\n\"GenerateAuthori" +
-      "zationTokenResponse\022\033\n\023authorization_tok" +
-      "en\030\001 \001(\014\"5\n\"GenerateFirmwareDownloadUriR" +
-      "equest\022\017\n\007gateway\030\001 \001(\t\"K\n#GenerateFirmw" +
-      "areDownloadUriResponse\022\024\n\014download_uri\030\001" +
-      " \001(\t\022\016\n\006digest\030\002 \001(\t\"%\n#GenerateFirmware" +
-      "DownloadUriMetadata2\204\013\n\016GatewayService\022`" +
-      "\n\rCreateGateway\022-.salto.nebula.gateway.v" +
-      "1.CreateGatewayRequest\032 .salto.nebula.ga" +
-      "teway.v1.Gateway\022Z\n\nGetGateway\022*.salto.n" +
-      "ebula.gateway.v1.GetGatewayRequest\032 .sal" +
-      "to.nebula.gateway.v1.Gateway\022k\n\014ListGate" +
-      "ways\022,.salto.nebula.gateway.v1.ListGatew" +
-      "aysRequest\032-.salto.nebula.gateway.v1.Lis" +
-      "tGatewaysResponse\022`\n\rUpdateGateway\022-.sal" +
-      "to.nebula.gateway.v1.UpdateGatewayReques" +
-      "t\032 .salto.nebula.gateway.v1.Gateway\022V\n\rD" +
-      "eleteGateway\022-.salto.nebula.gateway.v1.D" +
-      "eleteGatewayRequest\032\026.google.protobuf.Em" +
-      "pty\022h\n\013BindGateway\022+.salto.nebula.gatewa" +
-      "y.v1.BindGatewayRequest\032,.salto.nebula.g" +
-      "ateway.v1.BindGatewayResponse\022n\n\rUnbindG" +
-      "ateway\022-.salto.nebula.gateway.v1.UnbindG" +
-      "atewayRequest\032..salto.nebula.gateway.v1." +
-      "UnbindGatewayResponse\022g\n\021InitializeGatew" +
-      "ay\0221.salto.nebula.gateway.v1.InitializeG" +
-      "atewayRequest\032\037.salto.longrunning.v1.Ope" +
-      "ration\022e\n\020ConfigureGateway\0220.salto.nebul" +
-      "a.gateway.v1.ConfigureGatewayRequest\032\037.s" +
-      "alto.longrunning.v1.Operation\022]\n\014ResetGa" +
-      "teway\022,.salto.nebula.gateway.v1.ResetGat" +
-      "ewayRequest\032\037.salto.longrunning.v1.Opera" +
-      "tion\022o\n\025UpdateGatewayFirmware\0225.salto.ne" +
-      "bula.gateway.v1.UpdateGatewayFirmwareReq" +
-      "uest\032\037.salto.longrunning.v1.Operation\022\225\001" +
-      "\n\032GenerateAuthorizationToken\022:.salto.neb" +
-      "ula.gateway.v1.GenerateAuthorizationToke" +
-      "nRequest\032;.salto.nebula.gateway.v1.Gener" +
-      "ateAuthorizationTokenResponse\022{\n\033Generat" +
-      "eFirmwareDownloadUri\022;.salto.nebula.gate" +
-      "way.v1.GenerateFirmwareDownloadUriReques" +
-      "t\032\037.salto.longrunning.v1.OperationB\335\001\n\037c" +
-      "om.saltoapis.nebula.gateway.v1B\014GatewayP" +
-      "rotoP\001ZDgithub.com/saltoapis-internal/sa" +
-      "ltoapis-go/nebula/gateway/v1;gateway\252\002\033S" +
-      "altoapis.Nebula.Gateway.V1\312\002\033Saltoapis\\N" +
-      "ebula\\Gateway\\V1\342\002\'GPBMetadata\\Saltoapis" +
-      "\\Nebula\\Gateway\\V1b\006proto3"
+      "ttings\022\014\n\004ssid\030\003 \001(\t\022\025\n\010password\030\004 \001(\tH\000" +
+      "\210\001\001B\013\n\t_password\"\202\001\n\014IPv4Settings\022\027\n\nip_" +
+      "address\030\001 \001(\tH\000\210\001\001\022\021\n\004mask\030\002 \001(\tH\001\210\001\001\022\033\n" +
+      "\016router_address\030\003 \001(\tH\002\210\001\001B\r\n\013_ip_addres" +
+      "sB\007\n\005_maskB\021\n\017_router_address\"$\n\013DNSSett" +
+      "ings\022\025\n\rdns_addresses\030\001 \003(\t\"\201\001\n\024CreateGa" +
+      "tewayRequest\022\016\n\006parent\030\001 \001(\t\022\027\n\ngateway_" +
+      "id\030\002 \001(\tH\000\210\001\001\0221\n\007gateway\030\003 \001(\0132 .salto.n" +
+      "ebula.gateway.v1.GatewayB\r\n\013_gateway_id\"" +
+      "!\n\021GetGatewayRequest\022\014\n\004name\030\001 \001(\t\"n\n\023Li" +
+      "stGatewaysRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpag" +
+      "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filt" +
+      "er\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"c\n\024ListGatewa" +
+      "ysResponse\0222\n\010gateways\030\001 \003(\0132 .salto.neb" +
+      "ula.gateway.v1.Gateway\022\027\n\017next_page_toke" +
+      "n\030\002 \001(\t\"z\n\024UpdateGatewayRequest\0221\n\007gatew" +
+      "ay\030\001 \001(\0132 .salto.nebula.gateway.v1.Gatew" +
+      "ay\022/\n\013update_mask\030\002 \001(\0132\032.google.protobu" +
+      "f.FieldMask\"$\n\024DeleteGatewayRequest\022\014\n\004n" +
+      "ame\030\001 \001(\t\"5\n\022BindGatewayRequest\022\014\n\004name\030" +
+      "\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\"\025\n\023BindGatewayR" +
+      "esponse\"3\n\024UnbindGatewayRequest\022\014\n\004name\030" +
+      "\001 \001(\t\022\r\n\005force\030\002 \001(\010\"\027\n\025UnbindGatewayRes" +
+      "ponse\"(\n\030InitializeGatewayRequest\022\014\n\004nam" +
+      "e\030\001 \001(\t\"\033\n\031InitializeGatewayResponse\"\033\n\031" +
+      "InitializeGatewayMetadata\"\'\n\027ConfigureGa" +
+      "tewayRequest\022\014\n\004name\030\001 \001(\t\"\032\n\030ConfigureG" +
+      "atewayResponse\"\032\n\030ConfigureGatewayMetada" +
+      "ta\"#\n\023ResetGatewayRequest\022\014\n\004name\030\001 \001(\t\"" +
+      "\026\n\024ResetGatewayResponse\"\026\n\024ResetGatewayM" +
+      "etadata\"/\n\034UpdateGatewayFirmwareRequest\022" +
+      "\017\n\007gateway\030\001 \001(\t\"\037\n\035UpdateGatewayFirmwar" +
+      "eResponse\"9\n\035UpdateGatewayFirmwareMetada" +
+      "ta\022\030\n\020progress_percent\030\001 \001(\005\"4\n!Generate" +
+      "AuthorizationTokenRequest\022\017\n\007gateway\030\001 \001" +
+      "(\t\"A\n\"GenerateAuthorizationTokenResponse" +
+      "\022\033\n\023authorization_token\030\001 \001(\014\"5\n\"Generat" +
+      "eFirmwareDownloadUriRequest\022\017\n\007gateway\030\001" +
+      " \001(\t\"K\n#GenerateFirmwareDownloadUriRespo" +
+      "nse\022\024\n\014download_uri\030\001 \001(\t\022\016\n\006digest\030\002 \001(" +
+      "\t\"%\n#GenerateFirmwareDownloadUriMetadata" +
+      "2\204\013\n\016GatewayService\022`\n\rCreateGateway\022-.s" +
+      "alto.nebula.gateway.v1.CreateGatewayRequ" +
+      "est\032 .salto.nebula.gateway.v1.Gateway\022Z\n" +
+      "\nGetGateway\022*.salto.nebula.gateway.v1.Ge" +
+      "tGatewayRequest\032 .salto.nebula.gateway.v" +
+      "1.Gateway\022k\n\014ListGateways\022,.salto.nebula" +
+      ".gateway.v1.ListGatewaysRequest\032-.salto." +
+      "nebula.gateway.v1.ListGatewaysResponse\022`" +
+      "\n\rUpdateGateway\022-.salto.nebula.gateway.v" +
+      "1.UpdateGatewayRequest\032 .salto.nebula.ga" +
+      "teway.v1.Gateway\022V\n\rDeleteGateway\022-.salt" +
+      "o.nebula.gateway.v1.DeleteGatewayRequest" +
+      "\032\026.google.protobuf.Empty\022h\n\013BindGateway\022" +
+      "+.salto.nebula.gateway.v1.BindGatewayReq" +
+      "uest\032,.salto.nebula.gateway.v1.BindGatew" +
+      "ayResponse\022n\n\rUnbindGateway\022-.salto.nebu" +
+      "la.gateway.v1.UnbindGatewayRequest\032..sal" +
+      "to.nebula.gateway.v1.UnbindGatewayRespon" +
+      "se\022g\n\021InitializeGateway\0221.salto.nebula.g" +
+      "ateway.v1.InitializeGatewayRequest\032\037.sal" +
+      "to.longrunning.v1.Operation\022e\n\020Configure" +
+      "Gateway\0220.salto.nebula.gateway.v1.Config" +
+      "ureGatewayRequest\032\037.salto.longrunning.v1" +
+      ".Operation\022]\n\014ResetGateway\022,.salto.nebul" +
+      "a.gateway.v1.ResetGatewayRequest\032\037.salto" +
+      ".longrunning.v1.Operation\022o\n\025UpdateGatew" +
+      "ayFirmware\0225.salto.nebula.gateway.v1.Upd" +
+      "ateGatewayFirmwareRequest\032\037.salto.longru" +
+      "nning.v1.Operation\022\225\001\n\032GenerateAuthoriza" +
+      "tionToken\022:.salto.nebula.gateway.v1.Gene" +
+      "rateAuthorizationTokenRequest\032;.salto.ne" +
+      "bula.gateway.v1.GenerateAuthorizationTok" +
+      "enResponse\022{\n\033GenerateFirmwareDownloadUr" +
+      "i\022;.salto.nebula.gateway.v1.GenerateFirm" +
+      "wareDownloadUriRequest\032\037.salto.longrunni" +
+      "ng.v1.OperationB\335\001\n\037com.saltoapis.nebula" +
+      ".gateway.v1B\014GatewayProtoP\001ZDgithub.com/" +
+      "saltoapis-internal/saltoapis-go/nebula/g" +
+      "ateway/v1;gateway\252\002\033Saltoapis.Nebula.Gat" +
+      "eway.V1\312\002\033Saltoapis\\Nebula\\Gateway\\V1\342\002\'" +
+      "GPBMetadata\\Saltoapis\\Nebula\\Gateway\\V1b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -301,13 +304,14 @@ public final class GatewayProto {
           com.google.protobuf.EmptyProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.saltoapis.longrunning.v1.OperationProto.getDescriptor(),
+          com.saltoapis.nebula.type.DeviceMetadataProto.getDescriptor(),
         });
     internal_static_salto_nebula_gateway_v1_Gateway_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_salto_nebula_gateway_v1_Gateway_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_gateway_v1_Gateway_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "DeviceId", "Initialized", "Connected", "EthernetSettings", "WifiSettings", });
+        new java.lang.String[] { "Name", "DisplayName", "DeviceId", "Initialized", "DeviceMetadata", "Connected", "EthernetSettings", "WifiSettings", });
     internal_static_salto_nebula_gateway_v1_EthernetSettings_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_salto_nebula_gateway_v1_EthernetSettings_fieldAccessorTable = new
@@ -498,6 +502,7 @@ public final class GatewayProto {
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.saltoapis.longrunning.v1.OperationProto.getDescriptor();
+    com.saltoapis.nebula.type.DeviceMetadataProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
