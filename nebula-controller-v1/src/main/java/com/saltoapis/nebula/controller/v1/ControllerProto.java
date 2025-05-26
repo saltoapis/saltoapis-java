@@ -31,6 +31,16 @@ public final class ControllerProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_controller_v1_Controller_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_ControllerRelay_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_ControllerRelay_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_DestinationOutput_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_DestinationOutput_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_salto_nebula_controller_v1_CreateControllerRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -165,6 +175,66 @@ public final class ControllerProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_CreateControllerRelayRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_CreateControllerRelayRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_GetControllerRelayRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_GetControllerRelayRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_ListControllerRelaysRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_ListControllerRelaysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_ListControllerRelaysResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_ListControllerRelaysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_UpdateControllerRelayRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_UpdateControllerRelayRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_DeleteControllerRelayRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_DeleteControllerRelayRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -189,91 +259,160 @@ public final class ControllerProto {
       " \001(\010\022\026\n\tconnected\030\t \001(\010H\002\210\001\001\0223\n\017last_eve" +
       "nt_time\030\n \001(\0132\032.google.protobuf.Timestam" +
       "pB\017\n\rparent_deviceB\014\n\n_device_idB\014\n\n_con" +
-      "nected\"\223\001\n\027CreateControllerRequest\022\016\n\006pa" +
-      "rent\030\001 \001(\t\022\032\n\rcontroller_id\030\002 \001(\tH\000\210\001\001\022:" +
-      "\n\ncontroller\030\003 \001(\0132&.salto.nebula.contro" +
-      "ller.v1.ControllerB\020\n\016_controller_id\"$\n\024" +
-      "GetControllerRequest\022\014\n\004name\030\001 \001(\t\"q\n\026Li" +
-      "stControllersRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\t" +
-      "page_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006f" +
-      "ilter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"o\n\027ListCon" +
-      "trollersResponse\022;\n\013controllers\030\001 \003(\0132&." +
-      "salto.nebula.controller.v1.Controller\022\027\n" +
-      "\017next_page_token\030\002 \001(\t\"\206\001\n\027UpdateControl" +
-      "lerRequest\022:\n\ncontroller\030\001 \001(\0132&.salto.n" +
-      "ebula.controller.v1.Controller\022/\n\013update" +
-      "_mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"" +
-      "\'\n\027DeleteControllerRequest\022\014\n\004name\030\001 \001(\t" +
-      "\"8\n\025BindControllerRequest\022\014\n\004name\030\001 \001(\t\022" +
-      "\021\n\tdevice_id\030\002 \001(\t\"\030\n\026BindControllerResp" +
-      "onse\"6\n\027UnbindControllerRequest\022\014\n\004name\030" +
-      "\001 \001(\t\022\r\n\005force\030\002 \001(\010\"\032\n\030UnbindController" +
-      "Response\"+\n\033InitializeControllerRequest\022" +
-      "\014\n\004name\030\001 \001(\t\"\036\n\034InitializeControllerRes" +
-      "ponse\"8\n\034InitializeControllerMetadata\022\030\n" +
-      "\020progress_percent\030\001 \001(\005\"*\n\032ConfigureCont" +
-      "rollerRequest\022\014\n\004name\030\001 \001(\t\"\035\n\033Configure" +
-      "ControllerResponse\"7\n\033ConfigureControlle" +
-      "rMetadata\022\030\n\020progress_percent\030\001 \001(\005\"&\n\026R" +
-      "esetControllerRequest\022\014\n\004name\030\001 \001(\t\"\031\n\027R" +
-      "esetControllerResponse\"\031\n\027ResetControlle" +
-      "rMetadata\"5\n\037UpdateControllerFirmwareReq" +
-      "uest\022\022\n\ncontroller\030\001 \001(\t\"\"\n UpdateContro" +
-      "llerFirmwareResponse\"<\n UpdateController" +
-      "FirmwareMetadata\022\030\n\020progress_percent\030\001 \001" +
-      "(\005\"7\n!GenerateAuthorizationTokenRequest\022" +
-      "\022\n\ncontroller\030\001 \001(\t\"A\n\"GenerateAuthoriza" +
-      "tionTokenResponse\022\033\n\023authorization_token" +
-      "\030\001 \001(\014\"8\n\"GenerateFirmwareDownloadUriReq" +
-      "uest\022\022\n\ncontroller\030\001 \001(\t\"K\n#GenerateFirm" +
-      "wareDownloadUriResponse\022\024\n\014download_uri\030" +
-      "\001 \001(\t\022\016\n\006digest\030\002 \001(\t\"%\n#GenerateFirmwar" +
-      "eDownloadUriMetadata2\227\014\n\021ControllerServi" +
-      "ce\022o\n\020CreateController\0223.salto.nebula.co" +
-      "ntroller.v1.CreateControllerRequest\032&.sa" +
-      "lto.nebula.controller.v1.Controller\022i\n\rG" +
-      "etController\0220.salto.nebula.controller.v" +
-      "1.GetControllerRequest\032&.salto.nebula.co" +
-      "ntroller.v1.Controller\022z\n\017ListController" +
-      "s\0222.salto.nebula.controller.v1.ListContr" +
-      "ollersRequest\0323.salto.nebula.controller." +
-      "v1.ListControllersResponse\022o\n\020UpdateCont" +
-      "roller\0223.salto.nebula.controller.v1.Upda" +
+      "nected\"\304\001\n\017ControllerRelay\022\014\n\004name\030\001 \001(\t" +
+      "\022\026\n\tdipswitch\030\002 \001(\005H\001\210\001\001\022\020\n\010relay_id\030\003 \001" +
+      "(\005\022K\n\022destination_output\030\004 \001(\0132-.salto.n" +
+      "ebula.controller.v1.DestinationOutputH\000\022" +
+      "\026\n\014access_point\030\005 \001(\tH\000B\006\n\004typeB\014\n\n_dips" +
+      "witch\"(\n\021DestinationOutput\022\023\n\013destinatio" +
+      "n\030\001 \001(\t\"\223\001\n\027CreateControllerRequest\022\016\n\006p" +
+      "arent\030\001 \001(\t\022\032\n\rcontroller_id\030\002 \001(\tH\000\210\001\001\022" +
+      ":\n\ncontroller\030\003 \001(\0132&.salto.nebula.contr" +
+      "oller.v1.ControllerB\020\n\016_controller_id\"$\n" +
+      "\024GetControllerRequest\022\014\n\004name\030\001 \001(\t\"q\n\026L" +
+      "istControllersRequest\022\016\n\006parent\030\001 \001(\t\022\021\n" +
+      "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006" +
+      "filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"o\n\027ListCo" +
+      "ntrollersResponse\022;\n\013controllers\030\001 \003(\0132&" +
+      ".salto.nebula.controller.v1.Controller\022\027" +
+      "\n\017next_page_token\030\002 \001(\t\"\206\001\n\027UpdateContro" +
+      "llerRequest\022:\n\ncontroller\030\001 \001(\0132&.salto." +
+      "nebula.controller.v1.Controller\022/\n\013updat" +
+      "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask" +
+      "\"\'\n\027DeleteControllerRequest\022\014\n\004name\030\001 \001(" +
+      "\t\"8\n\025BindControllerRequest\022\014\n\004name\030\001 \001(\t" +
+      "\022\021\n\tdevice_id\030\002 \001(\t\"\030\n\026BindControllerRes" +
+      "ponse\"6\n\027UnbindControllerRequest\022\014\n\004name" +
+      "\030\001 \001(\t\022\r\n\005force\030\002 \001(\010\"\032\n\030UnbindControlle" +
+      "rResponse\"+\n\033InitializeControllerRequest" +
+      "\022\014\n\004name\030\001 \001(\t\"\036\n\034InitializeControllerRe" +
+      "sponse\"8\n\034InitializeControllerMetadata\022\030" +
+      "\n\020progress_percent\030\001 \001(\005\"*\n\032ConfigureCon" +
+      "trollerRequest\022\014\n\004name\030\001 \001(\t\"\035\n\033Configur" +
+      "eControllerResponse\"7\n\033ConfigureControll" +
+      "erMetadata\022\030\n\020progress_percent\030\001 \001(\005\"&\n\026" +
+      "ResetControllerRequest\022\014\n\004name\030\001 \001(\t\"\031\n\027" +
+      "ResetControllerResponse\"\031\n\027ResetControll" +
+      "erMetadata\"5\n\037UpdateControllerFirmwareRe" +
+      "quest\022\022\n\ncontroller\030\001 \001(\t\"\"\n UpdateContr" +
+      "ollerFirmwareResponse\"<\n UpdateControlle" +
+      "rFirmwareMetadata\022\030\n\020progress_percent\030\001 " +
+      "\001(\005\"7\n!GenerateAuthorizationTokenRequest" +
+      "\022\022\n\ncontroller\030\001 \001(\t\"A\n\"GenerateAuthoriz" +
+      "ationTokenResponse\022\033\n\023authorization_toke" +
+      "n\030\001 \001(\014\"8\n\"GenerateFirmwareDownloadUriRe" +
+      "quest\022\022\n\ncontroller\030\001 \001(\t\"K\n#GenerateFir" +
+      "mwareDownloadUriResponse\022\024\n\014download_uri" +
+      "\030\001 \001(\t\022\016\n\006digest\030\002 \001(\t\"%\n#GenerateFirmwa" +
+      "reDownloadUriMetadata\"\257\001\n\034CreateControll" +
+      "erRelayRequest\022\016\n\006parent\030\001 \001(\t\022 \n\023contro" +
+      "ller_relay_id\030\002 \001(\tH\000\210\001\001\022E\n\020controller_r" +
+      "elay\030\003 \001(\0132+.salto.nebula.controller.v1." +
+      "ControllerRelayB\026\n\024_controller_relay_id\"" +
+      ")\n\031GetControllerRelayRequest\022\014\n\004name\030\001 \001" +
+      "(\t\"\223\001\n\033ListControllerRelaysRequest\022\016\n\006pa" +
+      "rent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_to" +
+      "ken\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 " +
+      "\001(\t\022\033\n\023accurate_total_size\030\006 \001(\010\"\234\001\n\034Lis" +
+      "tControllerRelaysResponse\022F\n\021controller_" +
+      "relays\030\001 \003(\0132+.salto.nebula.controller.v" +
+      "1.ControllerRelay\022\027\n\017next_page_token\030\002 \001" +
+      "(\t\022\033\n\023accurate_total_size\030\003 \001(\005\"\226\001\n\034Upda" +
+      "teControllerRelayRequest\022E\n\020controller_r" +
+      "elay\030\001 \001(\0132+.salto.nebula.controller.v1." +
+      "ControllerRelay\022/\n\013update_mask\030\002 \001(\0132\032.g" +
+      "oogle.protobuf.FieldMask\",\n\034DeleteContro" +
+      "llerRelayRequest\022\014\n\004name\030\001 \001(\t\"\200\001\n\"Batch" +
+      "DeleteControllerRelaysRequest\022\016\n\006parent\030" +
+      "\001 \001(\t\022J\n\010requests\030\002 \003(\01328.salto.nebula.c" +
+      "ontroller.v1.DeleteControllerRelayReques" +
+      "t\"%\n#BatchDeleteControllerRelaysResponse" +
+      "\"\200\001\n\"BatchCreateControllerRelaysRequest\022" +
+      "\016\n\006parent\030\001 \001(\t\022J\n\010requests\030\002 \003(\01328.salt" +
+      "o.nebula.controller.v1.CreateControllerR" +
+      "elayRequest\"m\n#BatchCreateControllerRela" +
+      "ysResponse\022F\n\021controller_relays\030\001 \003(\0132+." +
+      "salto.nebula.controller.v1.ControllerRel" +
+      "ay\"\200\001\n\"BatchUpdateControllerRelaysReques" +
+      "t\022\016\n\006parent\030\001 \001(\t\022J\n\010requests\030\002 \003(\01328.sa" +
+      "lto.nebula.controller.v1.UpdateControlle" +
+      "rRelayRequest\"m\n#BatchUpdateControllerRe" +
+      "laysResponse\022F\n\021controller_relays\030\001 \003(\0132" +
+      "+.salto.nebula.controller.v1.ControllerR" +
+      "elay2\353\024\n\021ControllerService\022o\n\020CreateCont" +
+      "roller\0223.salto.nebula.controller.v1.Crea" +
       "teControllerRequest\032&.salto.nebula.contr" +
-      "oller.v1.Controller\022_\n\020DeleteController\022" +
-      "3.salto.nebula.controller.v1.DeleteContr" +
-      "ollerRequest\032\026.google.protobuf.Empty\022w\n\016" +
-      "BindController\0221.salto.nebula.controller" +
-      ".v1.BindControllerRequest\0322.salto.nebula" +
-      ".controller.v1.BindControllerResponse\022}\n" +
-      "\020UnbindController\0223.salto.nebula.control" +
-      "ler.v1.UnbindControllerRequest\0324.salto.n" +
-      "ebula.controller.v1.UnbindControllerResp" +
-      "onse\022p\n\024InitializeController\0227.salto.neb" +
-      "ula.controller.v1.InitializeControllerRe" +
-      "quest\032\037.salto.longrunning.v1.Operation\022n" +
-      "\n\023ConfigureController\0226.salto.nebula.con" +
-      "troller.v1.ConfigureControllerRequest\032\037." +
-      "salto.longrunning.v1.Operation\022f\n\017ResetC" +
-      "ontroller\0222.salto.nebula.controller.v1.R" +
-      "esetControllerRequest\032\037.salto.longrunnin" +
-      "g.v1.Operation\022x\n\030UpdateControllerFirmwa" +
-      "re\022;.salto.nebula.controller.v1.UpdateCo" +
-      "ntrollerFirmwareRequest\032\037.salto.longrunn" +
-      "ing.v1.Operation\022\233\001\n\032GenerateAuthorizati" +
-      "onToken\022=.salto.nebula.controller.v1.Gen" +
-      "erateAuthorizationTokenRequest\032>.salto.n" +
-      "ebula.controller.v1.GenerateAuthorizatio" +
-      "nTokenResponse\022~\n\033GenerateFirmwareDownlo" +
-      "adUri\022>.salto.nebula.controller.v1.Gener" +
-      "ateFirmwareDownloadUriRequest\032\037.salto.lo" +
-      "ngrunning.v1.OperationB\362\001\n\"com.saltoapis" +
-      ".nebula.controller.v1B\017ControllerProtoP\001" +
-      "ZJgithub.com/saltoapis-internal/saltoapi" +
-      "s-go/nebula/controller/v1;controller\252\002\036S" +
-      "altoapis.Nebula.Controller.V1\312\002\036Saltoapi" +
-      "s\\Nebula\\Controller\\V1\342\002*GPBMetadata\\Sal" +
-      "toapis\\Nebula\\Controller\\V1b\006proto3"
+      "oller.v1.Controller\022i\n\rGetController\0220.s" +
+      "alto.nebula.controller.v1.GetControllerR" +
+      "equest\032&.salto.nebula.controller.v1.Cont" +
+      "roller\022z\n\017ListControllers\0222.salto.nebula" +
+      ".controller.v1.ListControllersRequest\0323." +
+      "salto.nebula.controller.v1.ListControlle" +
+      "rsResponse\022o\n\020UpdateController\0223.salto.n" +
+      "ebula.controller.v1.UpdateControllerRequ" +
+      "est\032&.salto.nebula.controller.v1.Control" +
+      "ler\022_\n\020DeleteController\0223.salto.nebula.c" +
+      "ontroller.v1.DeleteControllerRequest\032\026.g" +
+      "oogle.protobuf.Empty\022w\n\016BindController\0221" +
+      ".salto.nebula.controller.v1.BindControll" +
+      "erRequest\0322.salto.nebula.controller.v1.B" +
+      "indControllerResponse\022}\n\020UnbindControlle" +
+      "r\0223.salto.nebula.controller.v1.UnbindCon" +
+      "trollerRequest\0324.salto.nebula.controller" +
+      ".v1.UnbindControllerResponse\022p\n\024Initiali" +
+      "zeController\0227.salto.nebula.controller.v" +
+      "1.InitializeControllerRequest\032\037.salto.lo" +
+      "ngrunning.v1.Operation\022n\n\023ConfigureContr" +
+      "oller\0226.salto.nebula.controller.v1.Confi" +
+      "gureControllerRequest\032\037.salto.longrunnin" +
+      "g.v1.Operation\022f\n\017ResetController\0222.salt" +
+      "o.nebula.controller.v1.ResetControllerRe" +
+      "quest\032\037.salto.longrunning.v1.Operation\022x" +
+      "\n\030UpdateControllerFirmware\022;.salto.nebul" +
+      "a.controller.v1.UpdateControllerFirmware" +
+      "Request\032\037.salto.longrunning.v1.Operation" +
+      "\022\233\001\n\032GenerateAuthorizationToken\022=.salto." +
+      "nebula.controller.v1.GenerateAuthorizati" +
+      "onTokenRequest\032>.salto.nebula.controller" +
+      ".v1.GenerateAuthorizationTokenResponse\022~" +
+      "\n\033GenerateFirmwareDownloadUri\022>.salto.ne" +
+      "bula.controller.v1.GenerateFirmwareDownl" +
+      "oadUriRequest\032\037.salto.longrunning.v1.Ope" +
+      "ration\022~\n\025CreateControllerRelay\0228.salto." +
+      "nebula.controller.v1.CreateControllerRel" +
+      "ayRequest\032+.salto.nebula.controller.v1.C" +
+      "ontrollerRelay\022\236\001\n\033BatchCreateController" +
+      "Relays\022>.salto.nebula.controller.v1.Batc" +
+      "hCreateControllerRelaysRequest\032?.salto.n" +
+      "ebula.controller.v1.BatchCreateControlle" +
+      "rRelaysResponse\022x\n\022GetControllerRelay\0225." +
+      "salto.nebula.controller.v1.GetController" +
+      "RelayRequest\032+.salto.nebula.controller.v" +
+      "1.ControllerRelay\022\211\001\n\024ListControllerRela" +
+      "ys\0227.salto.nebula.controller.v1.ListCont" +
+      "rollerRelaysRequest\0328.salto.nebula.contr" +
+      "oller.v1.ListControllerRelaysResponse\022~\n" +
+      "\025UpdateControllerRelay\0228.salto.nebula.co" +
+      "ntroller.v1.UpdateControllerRelayRequest" +
+      "\032+.salto.nebula.controller.v1.Controller" +
+      "Relay\022\236\001\n\033BatchUpdateControllerRelays\022>." +
+      "salto.nebula.controller.v1.BatchUpdateCo" +
+      "ntrollerRelaysRequest\032?.salto.nebula.con" +
+      "troller.v1.BatchUpdateControllerRelaysRe" +
+      "sponse\022i\n\025DeleteControllerRelay\0228.salto." +
+      "nebula.controller.v1.DeleteControllerRel" +
+      "ayRequest\032\026.google.protobuf.Empty\022\236\001\n\033Ba" +
+      "tchDeleteControllerRelays\022>.salto.nebula" +
+      ".controller.v1.BatchDeleteControllerRela" +
+      "ysRequest\032?.salto.nebula.controller.v1.B" +
+      "atchDeleteControllerRelaysResponseB\362\001\n\"c" +
+      "om.saltoapis.nebula.controller.v1B\017Contr" +
+      "ollerProtoP\001ZJgithub.com/saltoapis-inter" +
+      "nal/saltoapis-go/nebula/controller/v1;co" +
+      "ntroller\252\002\036Saltoapis.Nebula.Controller.V" +
+      "1\312\002\036Saltoapis\\Nebula\\Controller\\V1\342\002*GPB" +
+      "Metadata\\Saltoapis\\Nebula\\Controller\\V1b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -290,168 +429,252 @@ public final class ControllerProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_Controller_descriptor,
         new java.lang.String[] { "Name", "DisplayName", "DeviceId", "Gateway", "Extender", "AccessPoints", "Initialized", "DeviceMetadata", "Outdated", "Connected", "LastEventTime", "ParentDevice", });
-    internal_static_salto_nebula_controller_v1_CreateControllerRequest_descriptor =
+    internal_static_salto_nebula_controller_v1_ControllerRelay_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_salto_nebula_controller_v1_ControllerRelay_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_ControllerRelay_descriptor,
+        new java.lang.String[] { "Name", "Dipswitch", "RelayId", "DestinationOutput", "AccessPoint", "Type", });
+    internal_static_salto_nebula_controller_v1_DestinationOutput_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_salto_nebula_controller_v1_DestinationOutput_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_DestinationOutput_descriptor,
+        new java.lang.String[] { "Destination", });
+    internal_static_salto_nebula_controller_v1_CreateControllerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_salto_nebula_controller_v1_CreateControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_CreateControllerRequest_descriptor,
         new java.lang.String[] { "Parent", "ControllerId", "Controller", });
     internal_static_salto_nebula_controller_v1_GetControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_salto_nebula_controller_v1_GetControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_GetControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_controller_v1_ListControllersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_salto_nebula_controller_v1_ListControllersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_ListControllersRequest_descriptor,
         new java.lang.String[] { "Parent", "PageSize", "PageToken", "Filter", "OrderBy", });
     internal_static_salto_nebula_controller_v1_ListControllersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_salto_nebula_controller_v1_ListControllersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_ListControllersResponse_descriptor,
         new java.lang.String[] { "Controllers", "NextPageToken", });
     internal_static_salto_nebula_controller_v1_UpdateControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_salto_nebula_controller_v1_UpdateControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_UpdateControllerRequest_descriptor,
         new java.lang.String[] { "Controller", "UpdateMask", });
     internal_static_salto_nebula_controller_v1_DeleteControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_salto_nebula_controller_v1_DeleteControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_DeleteControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_controller_v1_BindControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_salto_nebula_controller_v1_BindControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_BindControllerRequest_descriptor,
         new java.lang.String[] { "Name", "DeviceId", });
     internal_static_salto_nebula_controller_v1_BindControllerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_salto_nebula_controller_v1_BindControllerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_BindControllerResponse_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_controller_v1_UnbindControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_salto_nebula_controller_v1_UnbindControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_UnbindControllerRequest_descriptor,
         new java.lang.String[] { "Name", "Force", });
     internal_static_salto_nebula_controller_v1_UnbindControllerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_salto_nebula_controller_v1_UnbindControllerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_UnbindControllerResponse_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_controller_v1_InitializeControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_salto_nebula_controller_v1_InitializeControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_InitializeControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_controller_v1_InitializeControllerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_salto_nebula_controller_v1_InitializeControllerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_InitializeControllerResponse_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_controller_v1_InitializeControllerMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_salto_nebula_controller_v1_InitializeControllerMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_InitializeControllerMetadata_descriptor,
         new java.lang.String[] { "ProgressPercent", });
     internal_static_salto_nebula_controller_v1_ConfigureControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_salto_nebula_controller_v1_ConfigureControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_ConfigureControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_controller_v1_ConfigureControllerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_salto_nebula_controller_v1_ConfigureControllerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_ConfigureControllerResponse_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_controller_v1_ConfigureControllerMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_salto_nebula_controller_v1_ConfigureControllerMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_ConfigureControllerMetadata_descriptor,
         new java.lang.String[] { "ProgressPercent", });
     internal_static_salto_nebula_controller_v1_ResetControllerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_salto_nebula_controller_v1_ResetControllerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_ResetControllerRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_controller_v1_ResetControllerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_salto_nebula_controller_v1_ResetControllerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_ResetControllerResponse_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_controller_v1_ResetControllerMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_salto_nebula_controller_v1_ResetControllerMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_ResetControllerMetadata_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_controller_v1_UpdateControllerFirmwareRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_salto_nebula_controller_v1_UpdateControllerFirmwareRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_UpdateControllerFirmwareRequest_descriptor,
         new java.lang.String[] { "Controller", });
     internal_static_salto_nebula_controller_v1_UpdateControllerFirmwareResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_salto_nebula_controller_v1_UpdateControllerFirmwareResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_UpdateControllerFirmwareResponse_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_controller_v1_UpdateControllerFirmwareMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_salto_nebula_controller_v1_UpdateControllerFirmwareMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_UpdateControllerFirmwareMetadata_descriptor,
         new java.lang.String[] { "ProgressPercent", });
     internal_static_salto_nebula_controller_v1_GenerateAuthorizationTokenRequest_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_salto_nebula_controller_v1_GenerateAuthorizationTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_GenerateAuthorizationTokenRequest_descriptor,
         new java.lang.String[] { "Controller", });
     internal_static_salto_nebula_controller_v1_GenerateAuthorizationTokenResponse_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_salto_nebula_controller_v1_GenerateAuthorizationTokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_GenerateAuthorizationTokenResponse_descriptor,
         new java.lang.String[] { "AuthorizationToken", });
     internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriRequest_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriRequest_descriptor,
         new java.lang.String[] { "Controller", });
     internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriResponse_descriptor,
         new java.lang.String[] { "DownloadUri", "Digest", });
     internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_GenerateFirmwareDownloadUriMetadata_descriptor,
         new java.lang.String[] { });
+    internal_static_salto_nebula_controller_v1_CreateControllerRelayRequest_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_salto_nebula_controller_v1_CreateControllerRelayRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_CreateControllerRelayRequest_descriptor,
+        new java.lang.String[] { "Parent", "ControllerRelayId", "ControllerRelay", });
+    internal_static_salto_nebula_controller_v1_GetControllerRelayRequest_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_salto_nebula_controller_v1_GetControllerRelayRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_GetControllerRelayRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_salto_nebula_controller_v1_ListControllerRelaysRequest_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_salto_nebula_controller_v1_ListControllerRelaysRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_ListControllerRelaysRequest_descriptor,
+        new java.lang.String[] { "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "AccurateTotalSize", });
+    internal_static_salto_nebula_controller_v1_ListControllerRelaysResponse_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_salto_nebula_controller_v1_ListControllerRelaysResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_ListControllerRelaysResponse_descriptor,
+        new java.lang.String[] { "ControllerRelays", "NextPageToken", "AccurateTotalSize", });
+    internal_static_salto_nebula_controller_v1_UpdateControllerRelayRequest_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_salto_nebula_controller_v1_UpdateControllerRelayRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_UpdateControllerRelayRequest_descriptor,
+        new java.lang.String[] { "ControllerRelay", "UpdateMask", });
+    internal_static_salto_nebula_controller_v1_DeleteControllerRelayRequest_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_salto_nebula_controller_v1_DeleteControllerRelayRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_DeleteControllerRelayRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysRequest_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysRequest_descriptor,
+        new java.lang.String[] { "Parent", "Requests", });
+    internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysResponse_descriptor =
+      getDescriptor().getMessageTypes().get(37);
+    internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_BatchDeleteControllerRelaysResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysRequest_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysRequest_descriptor,
+        new java.lang.String[] { "Parent", "Requests", });
+    internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysResponse_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_BatchCreateControllerRelaysResponse_descriptor,
+        new java.lang.String[] { "ControllerRelays", });
+    internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysRequest_descriptor =
+      getDescriptor().getMessageTypes().get(40);
+    internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysRequest_descriptor,
+        new java.lang.String[] { "Parent", "Requests", });
+    internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysResponse_descriptor =
+      getDescriptor().getMessageTypes().get(41);
+    internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_controller_v1_BatchUpdateControllerRelaysResponse_descriptor,
+        new java.lang.String[] { "ControllerRelays", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
