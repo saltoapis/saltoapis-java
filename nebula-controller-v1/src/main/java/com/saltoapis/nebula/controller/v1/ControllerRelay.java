@@ -50,7 +50,6 @@ private static final long serialVersionUID = 0L;
             com.saltoapis.nebula.controller.v1.ControllerRelay.class, com.saltoapis.nebula.controller.v1.ControllerRelay.Builder.class);
   }
 
-  private int bitField0_;
   private int typeCase_ = 0;
   @SuppressWarnings("serial")
   private java.lang.Object type_;
@@ -58,7 +57,6 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DESTINATION_OUTPUT(4),
-    ACCESS_POINT(5),
     TYPE_NOT_SET(0);
     private final int value;
     private TypeCase(int value) {
@@ -77,7 +75,6 @@ private static final long serialVersionUID = 0L;
     public static TypeCase forNumber(int value) {
       switch (value) {
         case 4: return DESTINATION_OUTPUT;
-        case 5: return ACCESS_POINT;
         case 0: return TYPE_NOT_SET;
         default: return null;
       }
@@ -144,35 +141,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DIPSWITCH_FIELD_NUMBER = 2;
-  private int dipswitch_ = 0;
-  /**
-   * <pre>
-   * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
-   * This field is not applicable for master boards or wall reader extension boards.
-   * </pre>
-   *
-   * <code>optional int32 dipswitch = 2;</code>
-   * @return Whether the dipswitch field is set.
-   */
-  @java.lang.Override
-  public boolean hasDipswitch() {
-    return ((bitField0_ & 0x00000001) != 0);
-  }
-  /**
-   * <pre>
-   * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
-   * This field is not applicable for master boards or wall reader extension boards.
-   * </pre>
-   *
-   * <code>optional int32 dipswitch = 2;</code>
-   * @return The dipswitch.
-   */
-  @java.lang.Override
-  public int getDipswitch() {
-    return dipswitch_;
-  }
-
   public static final int RELAY_ID_FIELD_NUMBER = 3;
   private int relayId_ = 0;
   /**
@@ -232,70 +200,6 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.controller.v1.DestinationOutput.getDefaultInstance();
   }
 
-  public static final int ACCESS_POINT_FIELD_NUMBER = 5;
-  /**
-   * <pre>
-   * Access point configuration for this controller relay.
-   * </pre>
-   *
-   * <code>string access_point = 5;</code>
-   * @return Whether the accessPoint field is set.
-   */
-  public boolean hasAccessPoint() {
-    return typeCase_ == 5;
-  }
-  /**
-   * <pre>
-   * Access point configuration for this controller relay.
-   * </pre>
-   *
-   * <code>string access_point = 5;</code>
-   * @return The accessPoint.
-   */
-  public java.lang.String getAccessPoint() {
-    java.lang.Object ref = "";
-    if (typeCase_ == 5) {
-      ref = type_;
-    }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (typeCase_ == 5) {
-        type_ = s;
-      }
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Access point configuration for this controller relay.
-   * </pre>
-   *
-   * <code>string access_point = 5;</code>
-   * @return The bytes for accessPoint.
-   */
-  public com.google.protobuf.ByteString
-      getAccessPointBytes() {
-    java.lang.Object ref = "";
-    if (typeCase_ == 5) {
-      ref = type_;
-    }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      if (typeCase_ == 5) {
-        type_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -313,17 +217,11 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeInt32(2, dipswitch_);
-    }
     if (relayId_ != 0) {
       output.writeInt32(3, relayId_);
     }
     if (typeCase_ == 4) {
       output.writeMessage(4, (com.saltoapis.nebula.controller.v1.DestinationOutput) type_);
-    }
-    if (typeCase_ == 5) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 5, type_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -337,10 +235,6 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, dipswitch_);
-    }
     if (relayId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, relayId_);
@@ -348,9 +242,6 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.saltoapis.nebula.controller.v1.DestinationOutput) type_);
-    }
-    if (typeCase_ == 5) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -369,11 +260,6 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
-    if (hasDipswitch() != other.hasDipswitch()) return false;
-    if (hasDipswitch()) {
-      if (getDipswitch()
-          != other.getDipswitch()) return false;
-    }
     if (getRelayId()
         != other.getRelayId()) return false;
     if (!getTypeCase().equals(other.getTypeCase())) return false;
@@ -381,10 +267,6 @@ private static final long serialVersionUID = 0L;
       case 4:
         if (!getDestinationOutput()
             .equals(other.getDestinationOutput())) return false;
-        break;
-      case 5:
-        if (!getAccessPoint()
-            .equals(other.getAccessPoint())) return false;
         break;
       case 0:
       default:
@@ -402,20 +284,12 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    if (hasDipswitch()) {
-      hash = (37 * hash) + DIPSWITCH_FIELD_NUMBER;
-      hash = (53 * hash) + getDipswitch();
-    }
     hash = (37 * hash) + RELAY_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRelayId();
     switch (typeCase_) {
       case 4:
         hash = (37 * hash) + DESTINATION_OUTPUT_FIELD_NUMBER;
         hash = (53 * hash) + getDestinationOutput().hashCode();
-        break;
-      case 5:
-        hash = (37 * hash) + ACCESS_POINT_FIELD_NUMBER;
-        hash = (53 * hash) + getAccessPoint().hashCode();
         break;
       case 0:
       default:
@@ -559,7 +433,6 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       name_ = "";
-      dipswitch_ = 0;
       relayId_ = 0;
       if (destinationOutputBuilder_ != null) {
         destinationOutputBuilder_.clear();
@@ -603,15 +476,9 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.dipswitch_ = dipswitch_;
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.relayId_ = relayId_;
       }
-      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.saltoapis.nebula.controller.v1.ControllerRelay result) {
@@ -640,21 +507,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.hasDipswitch()) {
-        setDipswitch(other.getDipswitch());
-      }
       if (other.getRelayId() != 0) {
         setRelayId(other.getRelayId());
       }
       switch (other.getTypeCase()) {
         case DESTINATION_OUTPUT: {
           mergeDestinationOutput(other.getDestinationOutput());
-          break;
-        }
-        case ACCESS_POINT: {
-          typeCase_ = 5;
-          type_ = other.type_;
-          onChanged();
           break;
         }
         case TYPE_NOT_SET: {
@@ -692,14 +550,9 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
-            case 16: {
-              dipswitch_ = input.readInt32();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 16
             case 24: {
               relayId_ = input.readInt32();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000002;
               break;
             } // case 24
             case 34: {
@@ -709,12 +562,6 @@ private static final long serialVersionUID = 0L;
               typeCase_ = 4;
               break;
             } // case 34
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-              typeCase_ = 5;
-              type_ = s;
-              break;
-            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -849,66 +696,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int dipswitch_ ;
-    /**
-     * <pre>
-     * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
-     * This field is not applicable for master boards or wall reader extension boards.
-     * </pre>
-     *
-     * <code>optional int32 dipswitch = 2;</code>
-     * @return Whether the dipswitch field is set.
-     */
-    @java.lang.Override
-    public boolean hasDipswitch() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
-     * This field is not applicable for master boards or wall reader extension boards.
-     * </pre>
-     *
-     * <code>optional int32 dipswitch = 2;</code>
-     * @return The dipswitch.
-     */
-    @java.lang.Override
-    public int getDipswitch() {
-      return dipswitch_;
-    }
-    /**
-     * <pre>
-     * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
-     * This field is not applicable for master boards or wall reader extension boards.
-     * </pre>
-     *
-     * <code>optional int32 dipswitch = 2;</code>
-     * @param value The dipswitch to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDipswitch(int value) {
-
-      dipswitch_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
-     * This field is not applicable for master boards or wall reader extension boards.
-     * </pre>
-     *
-     * <code>optional int32 dipswitch = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearDipswitch() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      dipswitch_ = 0;
-      onChanged();
-      return this;
-    }
-
     private int relayId_ ;
     /**
      * <pre>
@@ -936,7 +723,7 @@ private static final long serialVersionUID = 0L;
     public Builder setRelayId(int value) {
 
       relayId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -950,7 +737,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearRelayId() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       relayId_ = 0;
       onChanged();
       return this;
@@ -1132,123 +919,6 @@ private static final long serialVersionUID = 0L;
       typeCase_ = 4;
       onChanged();
       return destinationOutputBuilder_;
-    }
-
-    /**
-     * <pre>
-     * Access point configuration for this controller relay.
-     * </pre>
-     *
-     * <code>string access_point = 5;</code>
-     * @return Whether the accessPoint field is set.
-     */
-    @java.lang.Override
-    public boolean hasAccessPoint() {
-      return typeCase_ == 5;
-    }
-    /**
-     * <pre>
-     * Access point configuration for this controller relay.
-     * </pre>
-     *
-     * <code>string access_point = 5;</code>
-     * @return The accessPoint.
-     */
-    @java.lang.Override
-    public java.lang.String getAccessPoint() {
-      java.lang.Object ref = "";
-      if (typeCase_ == 5) {
-        ref = type_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (typeCase_ == 5) {
-          type_ = s;
-        }
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Access point configuration for this controller relay.
-     * </pre>
-     *
-     * <code>string access_point = 5;</code>
-     * @return The bytes for accessPoint.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAccessPointBytes() {
-      java.lang.Object ref = "";
-      if (typeCase_ == 5) {
-        ref = type_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        if (typeCase_ == 5) {
-          type_ = b;
-        }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Access point configuration for this controller relay.
-     * </pre>
-     *
-     * <code>string access_point = 5;</code>
-     * @param value The accessPoint to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAccessPoint(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      typeCase_ = 5;
-      type_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Access point configuration for this controller relay.
-     * </pre>
-     *
-     * <code>string access_point = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAccessPoint() {
-      if (typeCase_ == 5) {
-        typeCase_ = 0;
-        type_ = null;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Access point configuration for this controller relay.
-     * </pre>
-     *
-     * <code>string access_point = 5;</code>
-     * @param value The bytes for accessPoint to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAccessPointBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      typeCase_ = 5;
-      type_ = value;
-      onChanged();
-      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.controller.v1.ControllerRelay)
