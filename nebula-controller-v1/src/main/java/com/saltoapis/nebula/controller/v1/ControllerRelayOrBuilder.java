@@ -35,27 +35,6 @@ public interface ControllerRelayOrBuilder extends
 
   /**
    * <pre>
-   * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
-   * This field is not applicable for master boards or wall reader extension boards.
-   * </pre>
-   *
-   * <code>optional int32 dipswitch = 2;</code>
-   * @return Whether the dipswitch field is set.
-   */
-  boolean hasDipswitch();
-  /**
-   * <pre>
-   * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
-   * This field is not applicable for master boards or wall reader extension boards.
-   * </pre>
-   *
-   * <code>optional int32 dipswitch = 2;</code>
-   * @return The dipswitch.
-   */
-  int getDipswitch();
-
-  /**
-   * <pre>
    * Identifies the specific controller relay on the board (1-4). Board type determines
    * which controller relay IDs are actually available for configuration and use.
    * </pre>
@@ -91,35 +70,6 @@ public interface ControllerRelayOrBuilder extends
    * <code>.salto.nebula.controller.v1.DestinationOutput destination_output = 4;</code>
    */
   com.saltoapis.nebula.controller.v1.DestinationOutputOrBuilder getDestinationOutputOrBuilder();
-
-  /**
-   * <pre>
-   * Access point configuration for this controller relay.
-   * </pre>
-   *
-   * <code>string access_point = 5;</code>
-   * @return Whether the accessPoint field is set.
-   */
-  boolean hasAccessPoint();
-  /**
-   * <pre>
-   * Access point configuration for this controller relay.
-   * </pre>
-   *
-   * <code>string access_point = 5;</code>
-   * @return The accessPoint.
-   */
-  java.lang.String getAccessPoint();
-  /**
-   * <pre>
-   * Access point configuration for this controller relay.
-   * </pre>
-   *
-   * <code>string access_point = 5;</code>
-   * @return The bytes for accessPoint.
-   */
-  com.google.protobuf.ByteString
-      getAccessPointBytes();
 
   com.saltoapis.nebula.controller.v1.ControllerRelay.TypeCase getTypeCase();
 }
