@@ -611,6 +611,161 @@ public final class AccessRightServiceGrpc {
     return getBatchDeleteAccessRightAccessPointGroupsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest,
+      com.saltoapis.nebula.accessright.v1.AccessRightDestination> getCreateAccessRightDestinationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateAccessRightDestination",
+      requestType = com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest.class,
+      responseType = com.saltoapis.nebula.accessright.v1.AccessRightDestination.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest,
+      com.saltoapis.nebula.accessright.v1.AccessRightDestination> getCreateAccessRightDestinationMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest, com.saltoapis.nebula.accessright.v1.AccessRightDestination> getCreateAccessRightDestinationMethod;
+    if ((getCreateAccessRightDestinationMethod = AccessRightServiceGrpc.getCreateAccessRightDestinationMethod) == null) {
+      synchronized (AccessRightServiceGrpc.class) {
+        if ((getCreateAccessRightDestinationMethod = AccessRightServiceGrpc.getCreateAccessRightDestinationMethod) == null) {
+          AccessRightServiceGrpc.getCreateAccessRightDestinationMethod = getCreateAccessRightDestinationMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest, com.saltoapis.nebula.accessright.v1.AccessRightDestination>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateAccessRightDestination"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.AccessRightDestination.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessRightServiceMethodDescriptorSupplier("CreateAccessRightDestination"))
+              .build();
+        }
+      }
+    }
+    return getCreateAccessRightDestinationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest,
+      com.saltoapis.nebula.accessright.v1.AccessRightDestination> getGetAccessRightDestinationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAccessRightDestination",
+      requestType = com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest.class,
+      responseType = com.saltoapis.nebula.accessright.v1.AccessRightDestination.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest,
+      com.saltoapis.nebula.accessright.v1.AccessRightDestination> getGetAccessRightDestinationMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest, com.saltoapis.nebula.accessright.v1.AccessRightDestination> getGetAccessRightDestinationMethod;
+    if ((getGetAccessRightDestinationMethod = AccessRightServiceGrpc.getGetAccessRightDestinationMethod) == null) {
+      synchronized (AccessRightServiceGrpc.class) {
+        if ((getGetAccessRightDestinationMethod = AccessRightServiceGrpc.getGetAccessRightDestinationMethod) == null) {
+          AccessRightServiceGrpc.getGetAccessRightDestinationMethod = getGetAccessRightDestinationMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest, com.saltoapis.nebula.accessright.v1.AccessRightDestination>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetAccessRightDestination"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.AccessRightDestination.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessRightServiceMethodDescriptorSupplier("GetAccessRightDestination"))
+              .build();
+        }
+      }
+    }
+    return getGetAccessRightDestinationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest,
+      com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse> getListAccessRightDestinationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListAccessRightDestinations",
+      requestType = com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest.class,
+      responseType = com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest,
+      com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse> getListAccessRightDestinationsMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest, com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse> getListAccessRightDestinationsMethod;
+    if ((getListAccessRightDestinationsMethod = AccessRightServiceGrpc.getListAccessRightDestinationsMethod) == null) {
+      synchronized (AccessRightServiceGrpc.class) {
+        if ((getListAccessRightDestinationsMethod = AccessRightServiceGrpc.getListAccessRightDestinationsMethod) == null) {
+          AccessRightServiceGrpc.getListAccessRightDestinationsMethod = getListAccessRightDestinationsMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest, com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListAccessRightDestinations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessRightServiceMethodDescriptorSupplier("ListAccessRightDestinations"))
+              .build();
+        }
+      }
+    }
+    return getListAccessRightDestinationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest,
+      com.saltoapis.nebula.accessright.v1.AccessRightDestination> getUpdateAccessRightDestinationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAccessRightDestination",
+      requestType = com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest.class,
+      responseType = com.saltoapis.nebula.accessright.v1.AccessRightDestination.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest,
+      com.saltoapis.nebula.accessright.v1.AccessRightDestination> getUpdateAccessRightDestinationMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest, com.saltoapis.nebula.accessright.v1.AccessRightDestination> getUpdateAccessRightDestinationMethod;
+    if ((getUpdateAccessRightDestinationMethod = AccessRightServiceGrpc.getUpdateAccessRightDestinationMethod) == null) {
+      synchronized (AccessRightServiceGrpc.class) {
+        if ((getUpdateAccessRightDestinationMethod = AccessRightServiceGrpc.getUpdateAccessRightDestinationMethod) == null) {
+          AccessRightServiceGrpc.getUpdateAccessRightDestinationMethod = getUpdateAccessRightDestinationMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest, com.saltoapis.nebula.accessright.v1.AccessRightDestination>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAccessRightDestination"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.AccessRightDestination.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessRightServiceMethodDescriptorSupplier("UpdateAccessRightDestination"))
+              .build();
+        }
+      }
+    }
+    return getUpdateAccessRightDestinationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest,
+      com.google.protobuf.Empty> getDeleteAccessRightDestinationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteAccessRightDestination",
+      requestType = com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest,
+      com.google.protobuf.Empty> getDeleteAccessRightDestinationMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest, com.google.protobuf.Empty> getDeleteAccessRightDestinationMethod;
+    if ((getDeleteAccessRightDestinationMethod = AccessRightServiceGrpc.getDeleteAccessRightDestinationMethod) == null) {
+      synchronized (AccessRightServiceGrpc.class) {
+        if ((getDeleteAccessRightDestinationMethod = AccessRightServiceGrpc.getDeleteAccessRightDestinationMethod) == null) {
+          AccessRightServiceGrpc.getDeleteAccessRightDestinationMethod = getDeleteAccessRightDestinationMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteAccessRightDestination"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new AccessRightServiceMethodDescriptorSupplier("DeleteAccessRightDestination"))
+              .build();
+        }
+      }
+    }
+    return getDeleteAccessRightDestinationMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -876,6 +1031,61 @@ public final class AccessRightServiceGrpc {
     default void batchDeleteAccessRightAccessPointGroups(com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointGroupsRequest request,
         io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointGroupsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchDeleteAccessRightAccessPointGroupsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Create an access right destination
+     * Creates an access right's destination association.
+     * </pre>
+     */
+    default void createAccessRightDestination(com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightDestination> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateAccessRightDestinationMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get an access right destination
+     * Retrieves an existing access right's destination association.
+     * </pre>
+     */
+    default void getAccessRightDestination(com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightDestination> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetAccessRightDestinationMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List access right destinations
+     * Lists an existing access right's destination associations.
+     * </pre>
+     */
+    default void listAccessRightDestinations(com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListAccessRightDestinationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Update an access right destination
+     * Updates an existing access right's destination association.
+     * </pre>
+     */
+    default void updateAccessRightDestination(com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightDestination> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAccessRightDestinationMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete an access right destination
+     * Deletes an access right's destination association.
+     * </pre>
+     */
+    default void deleteAccessRightDestination(com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteAccessRightDestinationMethod(), responseObserver);
     }
   }
 
@@ -1150,6 +1360,66 @@ public final class AccessRightServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getBatchDeleteAccessRightAccessPointGroupsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Create an access right destination
+     * Creates an access right's destination association.
+     * </pre>
+     */
+    public void createAccessRightDestination(com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightDestination> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateAccessRightDestinationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get an access right destination
+     * Retrieves an existing access right's destination association.
+     * </pre>
+     */
+    public void getAccessRightDestination(com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightDestination> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetAccessRightDestinationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List access right destinations
+     * Lists an existing access right's destination associations.
+     * </pre>
+     */
+    public void listAccessRightDestinations(com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListAccessRightDestinationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Update an access right destination
+     * Updates an existing access right's destination association.
+     * </pre>
+     */
+    public void updateAccessRightDestination(com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightDestination> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAccessRightDestinationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete an access right destination
+     * Deletes an access right's destination association.
+     * </pre>
+     */
+    public void deleteAccessRightDestination(com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteAccessRightDestinationMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1385,6 +1655,61 @@ public final class AccessRightServiceGrpc {
     public com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointGroupsResponse batchDeleteAccessRightAccessPointGroups(com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointGroupsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getBatchDeleteAccessRightAccessPointGroupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Create an access right destination
+     * Creates an access right's destination association.
+     * </pre>
+     */
+    public com.saltoapis.nebula.accessright.v1.AccessRightDestination createAccessRightDestination(com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAccessRightDestinationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get an access right destination
+     * Retrieves an existing access right's destination association.
+     * </pre>
+     */
+    public com.saltoapis.nebula.accessright.v1.AccessRightDestination getAccessRightDestination(com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAccessRightDestinationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List access right destinations
+     * Lists an existing access right's destination associations.
+     * </pre>
+     */
+    public com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse listAccessRightDestinations(com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAccessRightDestinationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update an access right destination
+     * Updates an existing access right's destination association.
+     * </pre>
+     */
+    public com.saltoapis.nebula.accessright.v1.AccessRightDestination updateAccessRightDestination(com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAccessRightDestinationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete an access right destination
+     * Deletes an access right's destination association.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAccessRightDestination(com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAccessRightDestinationMethod(), getCallOptions(), request);
     }
   }
 
@@ -1641,6 +1966,66 @@ public final class AccessRightServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getBatchDeleteAccessRightAccessPointGroupsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Create an access right destination
+     * Creates an access right's destination association.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accessright.v1.AccessRightDestination> createAccessRightDestination(
+        com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateAccessRightDestinationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get an access right destination
+     * Retrieves an existing access right's destination association.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accessright.v1.AccessRightDestination> getAccessRightDestination(
+        com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetAccessRightDestinationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List access right destinations
+     * Lists an existing access right's destination associations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse> listAccessRightDestinations(
+        com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListAccessRightDestinationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Update an access right destination
+     * Updates an existing access right's destination association.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.accessright.v1.AccessRightDestination> updateAccessRightDestination(
+        com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAccessRightDestinationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete an access right destination
+     * Deletes an access right's destination association.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteAccessRightDestination(
+        com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteAccessRightDestinationMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_ACCESS_RIGHT = 0;
@@ -1662,6 +2047,11 @@ public final class AccessRightServiceGrpc {
   private static final int METHODID_UPDATE_ACCESS_RIGHT_ACCESS_POINT_GROUP = 16;
   private static final int METHODID_DELETE_ACCESS_RIGHT_ACCESS_POINT_GROUP = 17;
   private static final int METHODID_BATCH_DELETE_ACCESS_RIGHT_ACCESS_POINT_GROUPS = 18;
+  private static final int METHODID_CREATE_ACCESS_RIGHT_DESTINATION = 19;
+  private static final int METHODID_GET_ACCESS_RIGHT_DESTINATION = 20;
+  private static final int METHODID_LIST_ACCESS_RIGHT_DESTINATIONS = 21;
+  private static final int METHODID_UPDATE_ACCESS_RIGHT_DESTINATION = 22;
+  private static final int METHODID_DELETE_ACCESS_RIGHT_DESTINATION = 23;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1755,6 +2145,26 @@ public final class AccessRightServiceGrpc {
         case METHODID_BATCH_DELETE_ACCESS_RIGHT_ACCESS_POINT_GROUPS:
           serviceImpl.batchDeleteAccessRightAccessPointGroups((com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointGroupsRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointGroupsResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_ACCESS_RIGHT_DESTINATION:
+          serviceImpl.createAccessRightDestination((com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightDestination>) responseObserver);
+          break;
+        case METHODID_GET_ACCESS_RIGHT_DESTINATION:
+          serviceImpl.getAccessRightDestination((com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightDestination>) responseObserver);
+          break;
+        case METHODID_LIST_ACCESS_RIGHT_DESTINATIONS:
+          serviceImpl.listAccessRightDestinations((com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ACCESS_RIGHT_DESTINATION:
+          serviceImpl.updateAccessRightDestination((com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.accessright.v1.AccessRightDestination>) responseObserver);
+          break;
+        case METHODID_DELETE_ACCESS_RIGHT_DESTINATION:
+          serviceImpl.deleteAccessRightDestination((com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1907,6 +2317,41 @@ public final class AccessRightServiceGrpc {
               com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointGroupsRequest,
               com.saltoapis.nebula.accessright.v1.BatchDeleteAccessRightAccessPointGroupsResponse>(
                 service, METHODID_BATCH_DELETE_ACCESS_RIGHT_ACCESS_POINT_GROUPS)))
+        .addMethod(
+          getCreateAccessRightDestinationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accessright.v1.CreateAccessRightDestinationRequest,
+              com.saltoapis.nebula.accessright.v1.AccessRightDestination>(
+                service, METHODID_CREATE_ACCESS_RIGHT_DESTINATION)))
+        .addMethod(
+          getGetAccessRightDestinationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accessright.v1.GetAccessRightDestinationRequest,
+              com.saltoapis.nebula.accessright.v1.AccessRightDestination>(
+                service, METHODID_GET_ACCESS_RIGHT_DESTINATION)))
+        .addMethod(
+          getListAccessRightDestinationsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsRequest,
+              com.saltoapis.nebula.accessright.v1.ListAccessRightDestinationsResponse>(
+                service, METHODID_LIST_ACCESS_RIGHT_DESTINATIONS)))
+        .addMethod(
+          getUpdateAccessRightDestinationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accessright.v1.UpdateAccessRightDestinationRequest,
+              com.saltoapis.nebula.accessright.v1.AccessRightDestination>(
+                service, METHODID_UPDATE_ACCESS_RIGHT_DESTINATION)))
+        .addMethod(
+          getDeleteAccessRightDestinationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.accessright.v1.DeleteAccessRightDestinationRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DELETE_ACCESS_RIGHT_DESTINATION)))
         .build();
   }
 
@@ -1974,6 +2419,11 @@ public final class AccessRightServiceGrpc {
               .addMethod(getUpdateAccessRightAccessPointGroupMethod())
               .addMethod(getDeleteAccessRightAccessPointGroupMethod())
               .addMethod(getBatchDeleteAccessRightAccessPointGroupsMethod())
+              .addMethod(getCreateAccessRightDestinationMethod())
+              .addMethod(getGetAccessRightDestinationMethod())
+              .addMethod(getListAccessRightDestinationsMethod())
+              .addMethod(getUpdateAccessRightDestinationMethod())
+              .addMethod(getDeleteAccessRightDestinationMethod())
               .build();
         }
       }
