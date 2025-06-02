@@ -578,6 +578,37 @@ public final class InstallationServiceGrpc {
     return getUpdateCardMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest,
+      com.saltoapis.nebula.installation.v1.PaymentAuthorization> getCreatePaymentAuthorizationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreatePaymentAuthorization",
+      requestType = com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest.class,
+      responseType = com.saltoapis.nebula.installation.v1.PaymentAuthorization.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest,
+      com.saltoapis.nebula.installation.v1.PaymentAuthorization> getCreatePaymentAuthorizationMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest, com.saltoapis.nebula.installation.v1.PaymentAuthorization> getCreatePaymentAuthorizationMethod;
+    if ((getCreatePaymentAuthorizationMethod = InstallationServiceGrpc.getCreatePaymentAuthorizationMethod) == null) {
+      synchronized (InstallationServiceGrpc.class) {
+        if ((getCreatePaymentAuthorizationMethod = InstallationServiceGrpc.getCreatePaymentAuthorizationMethod) == null) {
+          InstallationServiceGrpc.getCreatePaymentAuthorizationMethod = getCreatePaymentAuthorizationMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest, com.saltoapis.nebula.installation.v1.PaymentAuthorization>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreatePaymentAuthorization"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.installation.v1.PaymentAuthorization.getDefaultInstance()))
+              .setSchemaDescriptor(new InstallationServiceMethodDescriptorSupplier("CreatePaymentAuthorization"))
+              .build();
+        }
+      }
+    }
+    return getCreatePaymentAuthorizationMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.ListInvoicesRequest,
       com.saltoapis.nebula.installation.v1.ListInvoicesResponse> getListInvoicesMethod;
 
@@ -934,6 +965,21 @@ public final class InstallationServiceGrpc {
 
     /**
      * <pre>
+     * Create a payment authorization
+     * Creates a payment authorization for the subscription.
+     * The payment authorization is a process that allows the customer to
+     * authorize a payment card for future use. This is done by creating a payment
+     * authorization request. The result of the request is a payment authorization
+     * that must be authorized by the client in the client's UI.
+     * </pre>
+     */
+    default void createPaymentAuthorization(com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.PaymentAuthorization> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePaymentAuthorizationMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * List invoices
      * Returns a list of invoices.
      * </pre>
@@ -1231,6 +1277,22 @@ public final class InstallationServiceGrpc {
 
     /**
      * <pre>
+     * Create a payment authorization
+     * Creates a payment authorization for the subscription.
+     * The payment authorization is a process that allows the customer to
+     * authorize a payment card for future use. This is done by creating a payment
+     * authorization request. The result of the request is a payment authorization
+     * that must be authorized by the client in the client's UI.
+     * </pre>
+     */
+    public void createPaymentAuthorization(com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.PaymentAuthorization> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePaymentAuthorizationMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * List invoices
      * Returns a list of invoices.
      * </pre>
@@ -1493,6 +1555,21 @@ public final class InstallationServiceGrpc {
     public com.saltoapis.nebula.installation.v1.UpdateCardResponse updateCard(com.saltoapis.nebula.installation.v1.UpdateCardRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCardMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Create a payment authorization
+     * Creates a payment authorization for the subscription.
+     * The payment authorization is a process that allows the customer to
+     * authorize a payment card for future use. This is done by creating a payment
+     * authorization request. The result of the request is a payment authorization
+     * that must be authorized by the client in the client's UI.
+     * </pre>
+     */
+    public com.saltoapis.nebula.installation.v1.PaymentAuthorization createPaymentAuthorization(com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePaymentAuthorizationMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1778,6 +1855,22 @@ public final class InstallationServiceGrpc {
 
     /**
      * <pre>
+     * Create a payment authorization
+     * Creates a payment authorization for the subscription.
+     * The payment authorization is a process that allows the customer to
+     * authorize a payment card for future use. This is done by creating a payment
+     * authorization request. The result of the request is a payment authorization
+     * that must be authorized by the client in the client's UI.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.installation.v1.PaymentAuthorization> createPaymentAuthorization(
+        com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePaymentAuthorizationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * List invoices
      * Returns a list of invoices.
      * </pre>
@@ -1831,9 +1924,10 @@ public final class InstallationServiceGrpc {
   private static final int METHODID_UPDATE_BILLING_INFO = 15;
   private static final int METHODID_UPDATE_PAYMENT_METHOD = 16;
   private static final int METHODID_UPDATE_CARD = 17;
-  private static final int METHODID_LIST_INVOICES = 18;
-  private static final int METHODID_APPLY_COUPON = 19;
-  private static final int METHODID_UNAPPLY_COUPON = 20;
+  private static final int METHODID_CREATE_PAYMENT_AUTHORIZATION = 18;
+  private static final int METHODID_LIST_INVOICES = 19;
+  private static final int METHODID_APPLY_COUPON = 20;
+  private static final int METHODID_UNAPPLY_COUPON = 21;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1923,6 +2017,10 @@ public final class InstallationServiceGrpc {
         case METHODID_UPDATE_CARD:
           serviceImpl.updateCard((com.saltoapis.nebula.installation.v1.UpdateCardRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.UpdateCardResponse>) responseObserver);
+          break;
+        case METHODID_CREATE_PAYMENT_AUTHORIZATION:
+          serviceImpl.createPaymentAuthorization((com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.PaymentAuthorization>) responseObserver);
           break;
         case METHODID_LIST_INVOICES:
           serviceImpl.listInvoices((com.saltoapis.nebula.installation.v1.ListInvoicesRequest) request,
@@ -2081,6 +2179,13 @@ public final class InstallationServiceGrpc {
               com.saltoapis.nebula.installation.v1.UpdateCardResponse>(
                 service, METHODID_UPDATE_CARD)))
         .addMethod(
+          getCreatePaymentAuthorizationMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.installation.v1.CreatePaymentAuthorizationRequest,
+              com.saltoapis.nebula.installation.v1.PaymentAuthorization>(
+                service, METHODID_CREATE_PAYMENT_AUTHORIZATION)))
+        .addMethod(
           getListInvoicesMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -2167,6 +2272,7 @@ public final class InstallationServiceGrpc {
               .addMethod(getUpdateBillingInfoMethod())
               .addMethod(getUpdatePaymentMethodMethod())
               .addMethod(getUpdateCardMethod())
+              .addMethod(getCreatePaymentAuthorizationMethod())
               .addMethod(getListInvoicesMethod())
               .addMethod(getApplyCouponMethod())
               .addMethod(getUnapplyCouponMethod())

@@ -49,7 +49,7 @@ public interface ControllerRelayOrBuilder extends
    * Destination output configuration for this controller relay.
    * </pre>
    *
-   * <code>.salto.nebula.controller.v1.DestinationOutput destination_output = 4;</code>
+   * <code>.salto.nebula.controller.v1.ControllerRelay.DestinationOutput destination_output = 4;</code>
    * @return Whether the destinationOutput field is set.
    */
   boolean hasDestinationOutput();
@@ -58,18 +58,18 @@ public interface ControllerRelayOrBuilder extends
    * Destination output configuration for this controller relay.
    * </pre>
    *
-   * <code>.salto.nebula.controller.v1.DestinationOutput destination_output = 4;</code>
+   * <code>.salto.nebula.controller.v1.ControllerRelay.DestinationOutput destination_output = 4;</code>
    * @return The destinationOutput.
    */
-  com.saltoapis.nebula.controller.v1.DestinationOutput getDestinationOutput();
+  com.saltoapis.nebula.controller.v1.ControllerRelay.DestinationOutput getDestinationOutput();
   /**
    * <pre>
    * Destination output configuration for this controller relay.
    * </pre>
    *
-   * <code>.salto.nebula.controller.v1.DestinationOutput destination_output = 4;</code>
+   * <code>.salto.nebula.controller.v1.ControllerRelay.DestinationOutput destination_output = 4;</code>
    */
-  com.saltoapis.nebula.controller.v1.DestinationOutputOrBuilder getDestinationOutputOrBuilder();
+  com.saltoapis.nebula.controller.v1.ControllerRelay.DestinationOutputOrBuilder getDestinationOutputOrBuilder();
 
   com.saltoapis.nebula.controller.v1.ControllerRelay.TypeCase getTypeCase();
 }

@@ -76,6 +76,11 @@ public final class InstallationProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_SEPA_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_installation_v1_PaymentAuthorization_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_installation_v1_PaymentAuthorization_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_salto_nebula_installation_v1_Coupon_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -216,6 +221,11 @@ public final class InstallationProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_installation_v1_UpdateCardResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_installation_v1_CreatePaymentAuthorizationRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_installation_v1_CreatePaymentAuthorizationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_salto_nebula_installation_v1_ListInvoicesRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -306,148 +316,156 @@ public final class InstallationProto {
       "ion.v1.PaymentMethod.DirectDebit.SEPAH\000\032" +
       "?\n\004SEPA\022\021\n\tlast_four\030\001 \001(\t\022\026\n\016account_ho" +
       "lder\030\002 \001(\t\022\014\n\004iban\030\003 \001(\tB\010\n\006schemeB\010\n\006me" +
-      "thod\"\026\n\006Coupon\022\014\n\004name\030\001 \001(\t\"\363\002\n\007Invoice" +
-      "\022\014\n\004name\030\001 \001(\t\022.\n\nstart_time\030\002 \001(\0132\032.goo" +
-      "gle.protobuf.Timestamp\022,\n\010end_time\030\003 \001(\013" +
-      "2\032.google.protobuf.Timestamp\022B\n\nline_ite" +
-      "ms\030\004 \003(\0132..salto.nebula.installation.v1." +
-      "Invoice.LineItem\022\r\n\005total\030\005 \001(\003\022:\n\005state" +
-      "\030\006 \001(\0162+.salto.nebula.installation.v1.In" +
-      "voice.State\0327\n\010LineItem\022\n\n\002id\030\001 \001(\t\022\020\n\010q" +
-      "uantity\030\002 \001(\005\022\r\n\005price\030\003 \001(\003\"4\n\005State\022\025\n" +
-      "\021STATE_UNSPECIFIED\020\000\022\n\n\006UNPAID\020\001\022\010\n\004PAID" +
-      "\020\002\"5\n\006Policy\022\014\n\004name\030\001 \001(\t\022\016\n\006member\030\002 \001" +
-      "(\t\022\r\n\005roles\030\003 \003(\t\"\275\001\n\031CreateInstallation" +
-      "Request\022\034\n\017installation_id\030\001 \001(\tH\000\210\001\001\022@\n" +
-      "\014installation\030\002 \001(\0132*.salto.nebula.insta" +
-      "llation.v1.Installation\022\032\n\rvalidate_only" +
-      "\030\005 \001(\010H\001\210\001\001B\022\n\020_installation_idB\020\n\016_vali" +
-      "date_only\"&\n\026GetInstallationRequest\022\014\n\004n" +
-      "ame\030\001 \001(\t\"y\n\030ListInstallationsRequest\022\021\n" +
-      "\tpage_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\022\016\n\006" +
-      "filter\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\022\024\n\014show_d" +
-      "eleted\030\005 \001(\010\"w\n\031ListInstallationsRespons" +
-      "e\022A\n\rinstallations\030\001 \003(\0132*.salto.nebula." +
-      "installation.v1.Installation\022\027\n\017next_pag" +
-      "e_token\030\002 \001(\t\"\216\001\n\031UpdateInstallationRequ" +
-      "est\022@\n\014installation\030\001 \001(\0132*.salto.nebula" +
-      ".installation.v1.Installation\022/\n\013update_" +
-      "mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"\201" +
-      "\001\n\031DeleteInstallationRequest\022\014\n\004name\030\001 \001" +
-      "(\t\022\032\n\rvalidate_only\030\002 \001(\010H\000\210\001\001\022\030\n\013delay_" +
-      "hours\030\003 \001(\005H\001\210\001\001B\020\n\016_validate_onlyB\016\n\014_d" +
-      "elay_hours\"+\n\033UndeleteInstallationReques" +
-      "t\022\014\n\004name\030\001 \001(\t\"n\n\023CreatePolicyRequest\022\016" +
-      "\n\006parent\030\001 \001(\t\022\021\n\tpolicy_id\030\002 \001(\t\0224\n\006pol" +
-      "icy\030\003 \001(\0132$.salto.nebula.installation.v1" +
-      ".Policy\" \n\020GetPolicyRequest\022\014\n\004name\030\001 \001(" +
-      "\t\"n\n\023ListPoliciesRequest\022\016\n\006parent\030\001 \001(\t" +
-      "\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022" +
-      "\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"g\n\024Lis" +
-      "tPoliciesResponse\0226\n\010policies\030\001 \003(\0132$.sa" +
-      "lto.nebula.installation.v1.Policy\022\027\n\017nex" +
-      "t_page_token\030\002 \001(\t\"|\n\023UpdatePolicyReques" +
-      "t\0224\n\006policy\030\001 \001(\0132$.salto.nebula.install" +
-      "ation.v1.Policy\022/\n\013update_mask\030\002 \001(\0132\032.g" +
-      "oogle.protobuf.FieldMask\"#\n\023DeletePolicy" +
-      "Request\022\014\n\004name\030\001 \001(\t\"C\n\026TestPermissions" +
-      "Request\022\024\n\014installation\030\001 \001(\t\022\023\n\013permiss" +
-      "ions\030\002 \003(\t\".\n\027TestPermissionsResponse\022\023\n" +
-      "\013permissions\030\001 \003(\t\"K\n$TransferInstallati" +
-      "onOwnershipRequest\022\024\n\014installation\030\001 \001(\t" +
-      "\022\r\n\005email\030\002 \001(\t\"\'\n%TransferInstallationO" +
-      "wnershipResponse\"\221\001\n\"AcceptInstallationO" +
-      "wnershipRequest\022\024\n\014installation\030\001 \001(\t\022D\n" +
-      "\014billing_info\030\002 \001(\0132).salto.nebula.insta" +
-      "llation.v1.BillingInfoH\000\210\001\001B\017\n\r_billing_" +
-      "info\"%\n#AcceptInstallationOwnershipRespo" +
-      "nse\"&\n\026GetSubscriptionRequest\022\014\n\004name\030\001 " +
-      "\001(\t\"[\n\030UpdateBillingInfoRequest\022?\n\014billi" +
-      "ng_info\030\001 \001(\0132).salto.nebula.installatio" +
-      "n.v1.BillingInfo\"a\n\032UpdatePaymentMethodR" +
-      "equest\022C\n\016payment_method\030\001 \001(\0132+.salto.n" +
-      "ebula.installation.v1.PaymentMethod\":\n\021U" +
-      "pdateCardRequest\022\026\n\016payment_method\030\001 \001(\t" +
-      "\022\r\n\005token\030\002 \001(\t\"\024\n\022UpdateCardResponse\"%\n" +
-      "\023ListInvoicesRequest\022\016\n\006parent\030\001 \001(\t\"O\n\024" +
-      "ListInvoicesResponse\0227\n\010invoices\030\001 \003(\0132%" +
-      ".salto.nebula.installation.v1.Invoice\":\n" +
-      "\022ApplyCouponRequest\022\024\n\014subscription\030\001 \001(" +
-      "\t\022\016\n\006coupon\030\002 \001(\t\"\025\n\023ApplyCouponResponse" +
-      "\"<\n\024UnapplyCouponRequest\022\024\n\014subscription" +
-      "\030\001 \001(\t\022\016\n\006coupon\030\002 \001(\t\"\027\n\025UnapplyCouponR" +
-      "esponse2\231\024\n\023InstallationService\022y\n\022Creat" +
-      "eInstallation\0227.salto.nebula.installatio" +
-      "n.v1.CreateInstallationRequest\032*.salto.n" +
-      "ebula.installation.v1.Installation\022s\n\017Ge" +
-      "tInstallation\0224.salto.nebula.installatio" +
-      "n.v1.GetInstallationRequest\032*.salto.nebu" +
-      "la.installation.v1.Installation\022\204\001\n\021List" +
-      "Installations\0226.salto.nebula.installatio" +
-      "n.v1.ListInstallationsRequest\0327.salto.ne" +
-      "bula.installation.v1.ListInstallationsRe" +
-      "sponse\022y\n\022UpdateInstallation\0227.salto.neb" +
-      "ula.installation.v1.UpdateInstallationRe" +
+      "thod\"$\n\024PaymentAuthorization\022\014\n\004name\030\001 \001" +
+      "(\t\"\026\n\006Coupon\022\014\n\004name\030\001 \001(\t\"\363\002\n\007Invoice\022\014" +
+      "\n\004name\030\001 \001(\t\022.\n\nstart_time\030\002 \001(\0132\032.googl" +
+      "e.protobuf.Timestamp\022,\n\010end_time\030\003 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022B\n\nline_items" +
+      "\030\004 \003(\0132..salto.nebula.installation.v1.In" +
+      "voice.LineItem\022\r\n\005total\030\005 \001(\003\022:\n\005state\030\006" +
+      " \001(\0162+.salto.nebula.installation.v1.Invo" +
+      "ice.State\0327\n\010LineItem\022\n\n\002id\030\001 \001(\t\022\020\n\010qua" +
+      "ntity\030\002 \001(\005\022\r\n\005price\030\003 \001(\003\"4\n\005State\022\025\n\021S" +
+      "TATE_UNSPECIFIED\020\000\022\n\n\006UNPAID\020\001\022\010\n\004PAID\020\002" +
+      "\"5\n\006Policy\022\014\n\004name\030\001 \001(\t\022\016\n\006member\030\002 \001(\t" +
+      "\022\r\n\005roles\030\003 \003(\t\"\275\001\n\031CreateInstallationRe" +
+      "quest\022\034\n\017installation_id\030\001 \001(\tH\000\210\001\001\022@\n\014i" +
+      "nstallation\030\002 \001(\0132*.salto.nebula.install" +
+      "ation.v1.Installation\022\032\n\rvalidate_only\030\005" +
+      " \001(\010H\001\210\001\001B\022\n\020_installation_idB\020\n\016_valida" +
+      "te_only\"&\n\026GetInstallationRequest\022\014\n\004nam" +
+      "e\030\001 \001(\t\"y\n\030ListInstallationsRequest\022\021\n\tp" +
+      "age_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\022\016\n\006fi" +
+      "lter\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\022\024\n\014show_del" +
+      "eted\030\005 \001(\010\"w\n\031ListInstallationsResponse\022" +
+      "A\n\rinstallations\030\001 \003(\0132*.salto.nebula.in" +
+      "stallation.v1.Installation\022\027\n\017next_page_" +
+      "token\030\002 \001(\t\"\216\001\n\031UpdateInstallationReques" +
+      "t\022@\n\014installation\030\001 \001(\0132*.salto.nebula.i" +
+      "nstallation.v1.Installation\022/\n\013update_ma" +
+      "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\"\201\001\n" +
+      "\031DeleteInstallationRequest\022\014\n\004name\030\001 \001(\t" +
+      "\022\032\n\rvalidate_only\030\002 \001(\010H\000\210\001\001\022\030\n\013delay_ho" +
+      "urs\030\003 \001(\005H\001\210\001\001B\020\n\016_validate_onlyB\016\n\014_del" +
+      "ay_hours\"+\n\033UndeleteInstallationRequest\022" +
+      "\014\n\004name\030\001 \001(\t\"n\n\023CreatePolicyRequest\022\016\n\006" +
+      "parent\030\001 \001(\t\022\021\n\tpolicy_id\030\002 \001(\t\0224\n\006polic" +
+      "y\030\003 \001(\0132$.salto.nebula.installation.v1.P" +
+      "olicy\" \n\020GetPolicyRequest\022\014\n\004name\030\001 \001(\t\"" +
+      "n\n\023ListPoliciesRequest\022\016\n\006parent\030\001 \001(\t\022\021" +
+      "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n" +
+      "\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"g\n\024ListP" +
+      "oliciesResponse\0226\n\010policies\030\001 \003(\0132$.salt" +
+      "o.nebula.installation.v1.Policy\022\027\n\017next_" +
+      "page_token\030\002 \001(\t\"|\n\023UpdatePolicyRequest\022" +
+      "4\n\006policy\030\001 \001(\0132$.salto.nebula.installat" +
+      "ion.v1.Policy\022/\n\013update_mask\030\002 \001(\0132\032.goo" +
+      "gle.protobuf.FieldMask\"#\n\023DeletePolicyRe" +
+      "quest\022\014\n\004name\030\001 \001(\t\"C\n\026TestPermissionsRe" +
+      "quest\022\024\n\014installation\030\001 \001(\t\022\023\n\013permissio" +
+      "ns\030\002 \003(\t\".\n\027TestPermissionsResponse\022\023\n\013p" +
+      "ermissions\030\001 \003(\t\"K\n$TransferInstallation" +
+      "OwnershipRequest\022\024\n\014installation\030\001 \001(\t\022\r" +
+      "\n\005email\030\002 \001(\t\"\'\n%TransferInstallationOwn" +
+      "ershipResponse\"\221\001\n\"AcceptInstallationOwn" +
+      "ershipRequest\022\024\n\014installation\030\001 \001(\t\022D\n\014b" +
+      "illing_info\030\002 \001(\0132).salto.nebula.install" +
+      "ation.v1.BillingInfoH\000\210\001\001B\017\n\r_billing_in" +
+      "fo\"%\n#AcceptInstallationOwnershipRespons" +
+      "e\"&\n\026GetSubscriptionRequest\022\014\n\004name\030\001 \001(" +
+      "\t\"[\n\030UpdateBillingInfoRequest\022?\n\014billing" +
+      "_info\030\001 \001(\0132).salto.nebula.installation." +
+      "v1.BillingInfo\"a\n\032UpdatePaymentMethodReq" +
+      "uest\022C\n\016payment_method\030\001 \001(\0132+.salto.neb" +
+      "ula.installation.v1.PaymentMethod\":\n\021Upd" +
+      "ateCardRequest\022\026\n\016payment_method\030\001 \001(\t\022\r" +
+      "\n\005token\030\002 \001(\t\"\024\n\022UpdateCardResponse\"\206\001\n!" +
+      "CreatePaymentAuthorizationRequest\022\016\n\006par" +
+      "ent\030\001 \001(\t\022Q\n\025payment_authorization\030\002 \001(\013" +
+      "22.salto.nebula.installation.v1.PaymentA" +
+      "uthorization\"%\n\023ListInvoicesRequest\022\016\n\006p" +
+      "arent\030\001 \001(\t\"O\n\024ListInvoicesResponse\0227\n\010i" +
+      "nvoices\030\001 \003(\0132%.salto.nebula.installatio" +
+      "n.v1.Invoice\":\n\022ApplyCouponRequest\022\024\n\014su" +
+      "bscription\030\001 \001(\t\022\016\n\006coupon\030\002 \001(\t\"\025\n\023Appl" +
+      "yCouponResponse\"<\n\024UnapplyCouponRequest\022" +
+      "\024\n\014subscription\030\001 \001(\t\022\016\n\006coupon\030\002 \001(\t\"\027\n" +
+      "\025UnapplyCouponResponse2\255\025\n\023InstallationS" +
+      "ervice\022y\n\022CreateInstallation\0227.salto.neb" +
+      "ula.installation.v1.CreateInstallationRe" +
       "quest\032*.salto.nebula.installation.v1.Ins" +
-      "tallation\022y\n\022DeleteInstallation\0227.salto." +
-      "nebula.installation.v1.DeleteInstallatio" +
-      "nRequest\032*.salto.nebula.installation.v1." +
-      "Installation\022}\n\024UndeleteInstallation\0229.s" +
-      "alto.nebula.installation.v1.UndeleteInst" +
-      "allationRequest\032*.salto.nebula.installat" +
-      "ion.v1.Installation\022g\n\014CreatePolicy\0221.sa" +
-      "lto.nebula.installation.v1.CreatePolicyR" +
-      "equest\032$.salto.nebula.installation.v1.Po" +
-      "licy\022a\n\tGetPolicy\022..salto.nebula.install" +
-      "ation.v1.GetPolicyRequest\032$.salto.nebula" +
-      ".installation.v1.Policy\022u\n\014ListPolicies\022" +
-      "1.salto.nebula.installation.v1.ListPolic" +
-      "iesRequest\0322.salto.nebula.installation.v" +
-      "1.ListPoliciesResponse\022g\n\014UpdatePolicy\0221" +
-      ".salto.nebula.installation.v1.UpdatePoli" +
-      "cyRequest\032$.salto.nebula.installation.v1" +
-      ".Policy\022Y\n\014DeletePolicy\0221.salto.nebula.i" +
-      "nstallation.v1.DeletePolicyRequest\032\026.goo" +
-      "gle.protobuf.Empty\022~\n\017TestPermissions\0224." +
-      "salto.nebula.installation.v1.TestPermiss" +
-      "ionsRequest\0325.salto.nebula.installation." +
-      "v1.TestPermissionsResponse\022\250\001\n\035TransferI" +
-      "nstallationOwnership\022B.salto.nebula.inst" +
-      "allation.v1.TransferInstallationOwnershi" +
-      "pRequest\032C.salto.nebula.installation.v1." +
-      "TransferInstallationOwnershipResponse\022\242\001" +
-      "\n\033AcceptInstallationOwnership\022@.salto.ne" +
-      "bula.installation.v1.AcceptInstallationO" +
-      "wnershipRequest\032A.salto.nebula.installat" +
-      "ion.v1.AcceptInstallationOwnershipRespon" +
-      "se\022s\n\017GetSubscription\0224.salto.nebula.ins" +
-      "tallation.v1.GetSubscriptionRequest\032*.sa" +
-      "lto.nebula.installation.v1.Subscription\022" +
-      "v\n\021UpdateBillingInfo\0226.salto.nebula.inst" +
-      "allation.v1.UpdateBillingInfoRequest\032).s" +
-      "alto.nebula.installation.v1.BillingInfo\022" +
-      "|\n\023UpdatePaymentMethod\0228.salto.nebula.in" +
-      "stallation.v1.UpdatePaymentMethodRequest" +
-      "\032+.salto.nebula.installation.v1.PaymentM" +
-      "ethod\022o\n\nUpdateCard\022/.salto.nebula.insta" +
-      "llation.v1.UpdateCardRequest\0320.salto.neb" +
-      "ula.installation.v1.UpdateCardResponse\022u" +
-      "\n\014ListInvoices\0221.salto.nebula.installati" +
-      "on.v1.ListInvoicesRequest\0322.salto.nebula" +
-      ".installation.v1.ListInvoicesResponse\022r\n" +
-      "\013ApplyCoupon\0220.salto.nebula.installation" +
-      ".v1.ApplyCouponRequest\0321.salto.nebula.in" +
-      "stallation.v1.ApplyCouponResponse\022x\n\rUna" +
-      "pplyCoupon\0222.salto.nebula.installation.v" +
-      "1.UnapplyCouponRequest\0323.salto.nebula.in" +
-      "stallation.v1.UnapplyCouponResponseB\200\002\n$" +
-      "com.saltoapis.nebula.installation.v1B\021In" +
-      "stallationProtoP\001ZNgithub.com/saltoapis-" +
-      "internal/saltoapis-go/nebula/installatio" +
-      "n/v1;installation\252\002 Saltoapis.Nebula.Ins" +
-      "tallation.V1\312\002 Saltoapis\\Nebula\\Installa" +
-      "tion\\V1\342\002,GPBMetadata\\Saltoapis\\Nebula\\I" +
-      "nstallation\\V1b\006proto3"
+      "tallation\022s\n\017GetInstallation\0224.salto.neb" +
+      "ula.installation.v1.GetInstallationReque" +
+      "st\032*.salto.nebula.installation.v1.Instal" +
+      "lation\022\204\001\n\021ListInstallations\0226.salto.neb" +
+      "ula.installation.v1.ListInstallationsReq" +
+      "uest\0327.salto.nebula.installation.v1.List" +
+      "InstallationsResponse\022y\n\022UpdateInstallat" +
+      "ion\0227.salto.nebula.installation.v1.Updat" +
+      "eInstallationRequest\032*.salto.nebula.inst" +
+      "allation.v1.Installation\022y\n\022DeleteInstal" +
+      "lation\0227.salto.nebula.installation.v1.De" +
+      "leteInstallationRequest\032*.salto.nebula.i" +
+      "nstallation.v1.Installation\022}\n\024UndeleteI" +
+      "nstallation\0229.salto.nebula.installation." +
+      "v1.UndeleteInstallationRequest\032*.salto.n" +
+      "ebula.installation.v1.Installation\022g\n\014Cr" +
+      "eatePolicy\0221.salto.nebula.installation.v" +
+      "1.CreatePolicyRequest\032$.salto.nebula.ins" +
+      "tallation.v1.Policy\022a\n\tGetPolicy\022..salto" +
+      ".nebula.installation.v1.GetPolicyRequest" +
+      "\032$.salto.nebula.installation.v1.Policy\022u" +
+      "\n\014ListPolicies\0221.salto.nebula.installati" +
+      "on.v1.ListPoliciesRequest\0322.salto.nebula" +
+      ".installation.v1.ListPoliciesResponse\022g\n" +
+      "\014UpdatePolicy\0221.salto.nebula.installatio" +
+      "n.v1.UpdatePolicyRequest\032$.salto.nebula." +
+      "installation.v1.Policy\022Y\n\014DeletePolicy\0221" +
+      ".salto.nebula.installation.v1.DeletePoli" +
+      "cyRequest\032\026.google.protobuf.Empty\022~\n\017Tes" +
+      "tPermissions\0224.salto.nebula.installation" +
+      ".v1.TestPermissionsRequest\0325.salto.nebul" +
+      "a.installation.v1.TestPermissionsRespons" +
+      "e\022\250\001\n\035TransferInstallationOwnership\022B.sa" +
+      "lto.nebula.installation.v1.TransferInsta" +
+      "llationOwnershipRequest\032C.salto.nebula.i" +
+      "nstallation.v1.TransferInstallationOwner" +
+      "shipResponse\022\242\001\n\033AcceptInstallationOwner" +
+      "ship\022@.salto.nebula.installation.v1.Acce" +
+      "ptInstallationOwnershipRequest\032A.salto.n" +
+      "ebula.installation.v1.AcceptInstallation" +
+      "OwnershipResponse\022s\n\017GetSubscription\0224.s" +
+      "alto.nebula.installation.v1.GetSubscript" +
+      "ionRequest\032*.salto.nebula.installation.v" +
+      "1.Subscription\022v\n\021UpdateBillingInfo\0226.sa" +
+      "lto.nebula.installation.v1.UpdateBilling" +
+      "InfoRequest\032).salto.nebula.installation." +
+      "v1.BillingInfo\022|\n\023UpdatePaymentMethod\0228." +
+      "salto.nebula.installation.v1.UpdatePayme" +
+      "ntMethodRequest\032+.salto.nebula.installat" +
+      "ion.v1.PaymentMethod\022o\n\nUpdateCard\022/.sal" +
+      "to.nebula.installation.v1.UpdateCardRequ" +
+      "est\0320.salto.nebula.installation.v1.Updat" +
+      "eCardResponse\022\221\001\n\032CreatePaymentAuthoriza" +
+      "tion\022?.salto.nebula.installation.v1.Crea" +
+      "tePaymentAuthorizationRequest\0322.salto.ne" +
+      "bula.installation.v1.PaymentAuthorizatio" +
+      "n\022u\n\014ListInvoices\0221.salto.nebula.install" +
+      "ation.v1.ListInvoicesRequest\0322.salto.neb" +
+      "ula.installation.v1.ListInvoicesResponse" +
+      "\022r\n\013ApplyCoupon\0220.salto.nebula.installat" +
+      "ion.v1.ApplyCouponRequest\0321.salto.nebula" +
+      ".installation.v1.ApplyCouponResponse\022x\n\r" +
+      "UnapplyCoupon\0222.salto.nebula.installatio" +
+      "n.v1.UnapplyCouponRequest\0323.salto.nebula" +
+      ".installation.v1.UnapplyCouponResponseB\200" +
+      "\002\n$com.saltoapis.nebula.installation.v1B" +
+      "\021InstallationProtoP\001ZNgithub.com/saltoap" +
+      "is-internal/saltoapis-go/nebula/installa" +
+      "tion/v1;installation\252\002 Saltoapis.Nebula." +
+      "Installation.V1\312\002 Saltoapis\\Nebula\\Insta" +
+      "llation\\V1\342\002,GPBMetadata\\Saltoapis\\Nebul" +
+      "a\\Installation\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -519,14 +537,20 @@ public final class InstallationProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_SEPA_descriptor,
         new java.lang.String[] { "LastFour", "AccountHolder", "Iban", });
-    internal_static_salto_nebula_installation_v1_Coupon_descriptor =
+    internal_static_salto_nebula_installation_v1_PaymentAuthorization_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_salto_nebula_installation_v1_PaymentAuthorization_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_installation_v1_PaymentAuthorization_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_salto_nebula_installation_v1_Coupon_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_salto_nebula_installation_v1_Coupon_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_Coupon_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_installation_v1_Invoice_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_salto_nebula_installation_v1_Invoice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_Invoice_descriptor,
@@ -538,187 +562,193 @@ public final class InstallationProto {
         internal_static_salto_nebula_installation_v1_Invoice_LineItem_descriptor,
         new java.lang.String[] { "Id", "Quantity", "Price", });
     internal_static_salto_nebula_installation_v1_Policy_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_salto_nebula_installation_v1_Policy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_Policy_descriptor,
         new java.lang.String[] { "Name", "Member", "Roles", });
     internal_static_salto_nebula_installation_v1_CreateInstallationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_salto_nebula_installation_v1_CreateInstallationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_CreateInstallationRequest_descriptor,
         new java.lang.String[] { "InstallationId", "Installation", "ValidateOnly", });
     internal_static_salto_nebula_installation_v1_GetInstallationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_salto_nebula_installation_v1_GetInstallationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_GetInstallationRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_installation_v1_ListInstallationsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_salto_nebula_installation_v1_ListInstallationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_ListInstallationsRequest_descriptor,
         new java.lang.String[] { "PageSize", "PageToken", "Filter", "OrderBy", "ShowDeleted", });
     internal_static_salto_nebula_installation_v1_ListInstallationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_salto_nebula_installation_v1_ListInstallationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_ListInstallationsResponse_descriptor,
         new java.lang.String[] { "Installations", "NextPageToken", });
     internal_static_salto_nebula_installation_v1_UpdateInstallationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_salto_nebula_installation_v1_UpdateInstallationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_UpdateInstallationRequest_descriptor,
         new java.lang.String[] { "Installation", "UpdateMask", });
     internal_static_salto_nebula_installation_v1_DeleteInstallationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_salto_nebula_installation_v1_DeleteInstallationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_DeleteInstallationRequest_descriptor,
         new java.lang.String[] { "Name", "ValidateOnly", "DelayHours", });
     internal_static_salto_nebula_installation_v1_UndeleteInstallationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_salto_nebula_installation_v1_UndeleteInstallationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_UndeleteInstallationRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_installation_v1_CreatePolicyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_salto_nebula_installation_v1_CreatePolicyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_CreatePolicyRequest_descriptor,
         new java.lang.String[] { "Parent", "PolicyId", "Policy", });
     internal_static_salto_nebula_installation_v1_GetPolicyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_salto_nebula_installation_v1_GetPolicyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_GetPolicyRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_installation_v1_ListPoliciesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_salto_nebula_installation_v1_ListPoliciesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_ListPoliciesRequest_descriptor,
         new java.lang.String[] { "Parent", "PageSize", "PageToken", "Filter", "OrderBy", });
     internal_static_salto_nebula_installation_v1_ListPoliciesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_salto_nebula_installation_v1_ListPoliciesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_ListPoliciesResponse_descriptor,
         new java.lang.String[] { "Policies", "NextPageToken", });
     internal_static_salto_nebula_installation_v1_UpdatePolicyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_salto_nebula_installation_v1_UpdatePolicyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_UpdatePolicyRequest_descriptor,
         new java.lang.String[] { "Policy", "UpdateMask", });
     internal_static_salto_nebula_installation_v1_DeletePolicyRequest_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_salto_nebula_installation_v1_DeletePolicyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_DeletePolicyRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_installation_v1_TestPermissionsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_salto_nebula_installation_v1_TestPermissionsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_TestPermissionsRequest_descriptor,
         new java.lang.String[] { "Installation", "Permissions", });
     internal_static_salto_nebula_installation_v1_TestPermissionsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_salto_nebula_installation_v1_TestPermissionsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_TestPermissionsResponse_descriptor,
         new java.lang.String[] { "Permissions", });
     internal_static_salto_nebula_installation_v1_TransferInstallationOwnershipRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_salto_nebula_installation_v1_TransferInstallationOwnershipRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_TransferInstallationOwnershipRequest_descriptor,
         new java.lang.String[] { "Installation", "Email", });
     internal_static_salto_nebula_installation_v1_TransferInstallationOwnershipResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_salto_nebula_installation_v1_TransferInstallationOwnershipResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_TransferInstallationOwnershipResponse_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_installation_v1_AcceptInstallationOwnershipRequest_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_salto_nebula_installation_v1_AcceptInstallationOwnershipRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_AcceptInstallationOwnershipRequest_descriptor,
         new java.lang.String[] { "Installation", "BillingInfo", });
     internal_static_salto_nebula_installation_v1_AcceptInstallationOwnershipResponse_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_salto_nebula_installation_v1_AcceptInstallationOwnershipResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_AcceptInstallationOwnershipResponse_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_installation_v1_GetSubscriptionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_salto_nebula_installation_v1_GetSubscriptionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_GetSubscriptionRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_salto_nebula_installation_v1_UpdateBillingInfoRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_salto_nebula_installation_v1_UpdateBillingInfoRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_UpdateBillingInfoRequest_descriptor,
         new java.lang.String[] { "BillingInfo", });
     internal_static_salto_nebula_installation_v1_UpdatePaymentMethodRequest_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_salto_nebula_installation_v1_UpdatePaymentMethodRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_UpdatePaymentMethodRequest_descriptor,
         new java.lang.String[] { "PaymentMethod", });
     internal_static_salto_nebula_installation_v1_UpdateCardRequest_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_salto_nebula_installation_v1_UpdateCardRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_UpdateCardRequest_descriptor,
         new java.lang.String[] { "PaymentMethod", "Token", });
     internal_static_salto_nebula_installation_v1_UpdateCardResponse_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_salto_nebula_installation_v1_UpdateCardResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_UpdateCardResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_salto_nebula_installation_v1_CreatePaymentAuthorizationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_salto_nebula_installation_v1_CreatePaymentAuthorizationRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_installation_v1_CreatePaymentAuthorizationRequest_descriptor,
+        new java.lang.String[] { "Parent", "PaymentAuthorization", });
     internal_static_salto_nebula_installation_v1_ListInvoicesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_salto_nebula_installation_v1_ListInvoicesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_ListInvoicesRequest_descriptor,
         new java.lang.String[] { "Parent", });
     internal_static_salto_nebula_installation_v1_ListInvoicesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_salto_nebula_installation_v1_ListInvoicesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_ListInvoicesResponse_descriptor,
         new java.lang.String[] { "Invoices", });
     internal_static_salto_nebula_installation_v1_ApplyCouponRequest_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_salto_nebula_installation_v1_ApplyCouponRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_ApplyCouponRequest_descriptor,
         new java.lang.String[] { "Subscription", "Coupon", });
     internal_static_salto_nebula_installation_v1_ApplyCouponResponse_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_salto_nebula_installation_v1_ApplyCouponResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_ApplyCouponResponse_descriptor,
         new java.lang.String[] { });
     internal_static_salto_nebula_installation_v1_UnapplyCouponRequest_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_salto_nebula_installation_v1_UnapplyCouponRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_UnapplyCouponRequest_descriptor,
         new java.lang.String[] { "Subscription", "Coupon", });
     internal_static_salto_nebula_installation_v1_UnapplyCouponResponse_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_salto_nebula_installation_v1_UnapplyCouponResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_UnapplyCouponResponse_descriptor,
