@@ -842,7 +842,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Create an access right
+     * Create a user access right
      * Creates a user's access right association.
      * </pre>
      */
@@ -853,7 +853,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Get an access right
+     * Get a user access right
      * Gets an existing user's access right association.
      * </pre>
      */
@@ -864,7 +864,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * List access rights
+     * List user access rights
      * Lists an existing user's access right associations.
      * </pre>
      */
@@ -875,7 +875,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Update an access right
+     * Update a user access right
      * Updates an existing user's access right associations.
      * </pre>
      */
@@ -886,7 +886,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Delete an access right
+     * Delete a user access right
      * Deletes a user's access right association. This cannot be undone.
      * </pre>
      */
@@ -1139,7 +1139,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Create an access right
+     * Create a user access right
      * Creates a user's access right association.
      * </pre>
      */
@@ -1151,7 +1151,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Get an access right
+     * Get a user access right
      * Gets an existing user's access right association.
      * </pre>
      */
@@ -1163,7 +1163,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * List access rights
+     * List user access rights
      * Lists an existing user's access right associations.
      * </pre>
      */
@@ -1175,7 +1175,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Update an access right
+     * Update a user access right
      * Updates an existing user's access right associations.
      * </pre>
      */
@@ -1187,7 +1187,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Delete an access right
+     * Delete a user access right
      * Deletes a user's access right association. This cannot be undone.
      * </pre>
      */
@@ -1427,7 +1427,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Create an access right
+     * Create a user access right
      * Creates a user's access right association.
      * </pre>
      */
@@ -1438,7 +1438,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Get an access right
+     * Get a user access right
      * Gets an existing user's access right association.
      * </pre>
      */
@@ -1449,7 +1449,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * List access rights
+     * List user access rights
      * Lists an existing user's access right associations.
      * </pre>
      */
@@ -1460,7 +1460,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Update an access right
+     * Update a user access right
      * Updates an existing user's access right associations.
      * </pre>
      */
@@ -1471,7 +1471,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Delete an access right
+     * Delete a user access right
      * Deletes a user's access right association. This cannot be undone.
      * </pre>
      */
@@ -1707,7 +1707,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Create an access right
+     * Create a user access right
      * Creates a user's access right association.
      * </pre>
      */
@@ -1719,7 +1719,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Get an access right
+     * Get a user access right
      * Gets an existing user's access right association.
      * </pre>
      */
@@ -1731,7 +1731,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * List access rights
+     * List user access rights
      * Lists an existing user's access right associations.
      * </pre>
      */
@@ -1743,7 +1743,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Update an access right
+     * Update a user access right
      * Updates an existing user's access right associations.
      * </pre>
      */
@@ -1755,7 +1755,7 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
-     * Delete an access right
+     * Delete a user access right
      * Deletes a user's access right association. This cannot be undone.
      * </pre>
      */
