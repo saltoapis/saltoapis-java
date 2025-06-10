@@ -457,6 +457,223 @@ public final class ControllerServiceGrpc {
     return getCreateControllerRelayMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest,
+      com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse> getBatchCreateControllerRelaysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateControllerRelays",
+      requestType = com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest.class,
+      responseType = com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest,
+      com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse> getBatchCreateControllerRelaysMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest, com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse> getBatchCreateControllerRelaysMethod;
+    if ((getBatchCreateControllerRelaysMethod = ControllerServiceGrpc.getBatchCreateControllerRelaysMethod) == null) {
+      synchronized (ControllerServiceGrpc.class) {
+        if ((getBatchCreateControllerRelaysMethod = ControllerServiceGrpc.getBatchCreateControllerRelaysMethod) == null) {
+          ControllerServiceGrpc.getBatchCreateControllerRelaysMethod = getBatchCreateControllerRelaysMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest, com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchCreateControllerRelays"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ControllerServiceMethodDescriptorSupplier("BatchCreateControllerRelays"))
+              .build();
+        }
+      }
+    }
+    return getBatchCreateControllerRelaysMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GetControllerRelayRequest,
+      com.saltoapis.nebula.controller.v1.ControllerRelay> getGetControllerRelayMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetControllerRelay",
+      requestType = com.saltoapis.nebula.controller.v1.GetControllerRelayRequest.class,
+      responseType = com.saltoapis.nebula.controller.v1.ControllerRelay.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GetControllerRelayRequest,
+      com.saltoapis.nebula.controller.v1.ControllerRelay> getGetControllerRelayMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.GetControllerRelayRequest, com.saltoapis.nebula.controller.v1.ControllerRelay> getGetControllerRelayMethod;
+    if ((getGetControllerRelayMethod = ControllerServiceGrpc.getGetControllerRelayMethod) == null) {
+      synchronized (ControllerServiceGrpc.class) {
+        if ((getGetControllerRelayMethod = ControllerServiceGrpc.getGetControllerRelayMethod) == null) {
+          ControllerServiceGrpc.getGetControllerRelayMethod = getGetControllerRelayMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.controller.v1.GetControllerRelayRequest, com.saltoapis.nebula.controller.v1.ControllerRelay>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetControllerRelay"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.GetControllerRelayRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.ControllerRelay.getDefaultInstance()))
+              .setSchemaDescriptor(new ControllerServiceMethodDescriptorSupplier("GetControllerRelay"))
+              .build();
+        }
+      }
+    }
+    return getGetControllerRelayMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest,
+      com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse> getListControllerRelaysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListControllerRelays",
+      requestType = com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest.class,
+      responseType = com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest,
+      com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse> getListControllerRelaysMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest, com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse> getListControllerRelaysMethod;
+    if ((getListControllerRelaysMethod = ControllerServiceGrpc.getListControllerRelaysMethod) == null) {
+      synchronized (ControllerServiceGrpc.class) {
+        if ((getListControllerRelaysMethod = ControllerServiceGrpc.getListControllerRelaysMethod) == null) {
+          ControllerServiceGrpc.getListControllerRelaysMethod = getListControllerRelaysMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest, com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListControllerRelays"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ControllerServiceMethodDescriptorSupplier("ListControllerRelays"))
+              .build();
+        }
+      }
+    }
+    return getListControllerRelaysMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest,
+      com.saltoapis.nebula.controller.v1.ControllerRelay> getUpdateControllerRelayMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateControllerRelay",
+      requestType = com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest.class,
+      responseType = com.saltoapis.nebula.controller.v1.ControllerRelay.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest,
+      com.saltoapis.nebula.controller.v1.ControllerRelay> getUpdateControllerRelayMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest, com.saltoapis.nebula.controller.v1.ControllerRelay> getUpdateControllerRelayMethod;
+    if ((getUpdateControllerRelayMethod = ControllerServiceGrpc.getUpdateControllerRelayMethod) == null) {
+      synchronized (ControllerServiceGrpc.class) {
+        if ((getUpdateControllerRelayMethod = ControllerServiceGrpc.getUpdateControllerRelayMethod) == null) {
+          ControllerServiceGrpc.getUpdateControllerRelayMethod = getUpdateControllerRelayMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest, com.saltoapis.nebula.controller.v1.ControllerRelay>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateControllerRelay"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.ControllerRelay.getDefaultInstance()))
+              .setSchemaDescriptor(new ControllerServiceMethodDescriptorSupplier("UpdateControllerRelay"))
+              .build();
+        }
+      }
+    }
+    return getUpdateControllerRelayMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest,
+      com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse> getBatchUpdateControllerRelaysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchUpdateControllerRelays",
+      requestType = com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest.class,
+      responseType = com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest,
+      com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse> getBatchUpdateControllerRelaysMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest, com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse> getBatchUpdateControllerRelaysMethod;
+    if ((getBatchUpdateControllerRelaysMethod = ControllerServiceGrpc.getBatchUpdateControllerRelaysMethod) == null) {
+      synchronized (ControllerServiceGrpc.class) {
+        if ((getBatchUpdateControllerRelaysMethod = ControllerServiceGrpc.getBatchUpdateControllerRelaysMethod) == null) {
+          ControllerServiceGrpc.getBatchUpdateControllerRelaysMethod = getBatchUpdateControllerRelaysMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest, com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchUpdateControllerRelays"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ControllerServiceMethodDescriptorSupplier("BatchUpdateControllerRelays"))
+              .build();
+        }
+      }
+    }
+    return getBatchUpdateControllerRelaysMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest,
+      com.google.protobuf.Empty> getDeleteControllerRelayMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteControllerRelay",
+      requestType = com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest,
+      com.google.protobuf.Empty> getDeleteControllerRelayMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest, com.google.protobuf.Empty> getDeleteControllerRelayMethod;
+    if ((getDeleteControllerRelayMethod = ControllerServiceGrpc.getDeleteControllerRelayMethod) == null) {
+      synchronized (ControllerServiceGrpc.class) {
+        if ((getDeleteControllerRelayMethod = ControllerServiceGrpc.getDeleteControllerRelayMethod) == null) {
+          ControllerServiceGrpc.getDeleteControllerRelayMethod = getDeleteControllerRelayMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteControllerRelay"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new ControllerServiceMethodDescriptorSupplier("DeleteControllerRelay"))
+              .build();
+        }
+      }
+    }
+    return getDeleteControllerRelayMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest,
+      com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse> getBatchDeleteControllerRelaysMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteControllerRelays",
+      requestType = com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest.class,
+      responseType = com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest,
+      com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse> getBatchDeleteControllerRelaysMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest, com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse> getBatchDeleteControllerRelaysMethod;
+    if ((getBatchDeleteControllerRelaysMethod = ControllerServiceGrpc.getBatchDeleteControllerRelaysMethod) == null) {
+      synchronized (ControllerServiceGrpc.class) {
+        if ((getBatchDeleteControllerRelaysMethod = ControllerServiceGrpc.getBatchDeleteControllerRelaysMethod) == null) {
+          ControllerServiceGrpc.getBatchDeleteControllerRelaysMethod = getBatchDeleteControllerRelaysMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest, com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchDeleteControllerRelays"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new ControllerServiceMethodDescriptorSupplier("BatchDeleteControllerRelays"))
+              .build();
+        }
+      }
+    }
+    return getBatchDeleteControllerRelaysMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -683,6 +900,84 @@ public final class ControllerServiceGrpc {
     default void createControllerRelay(com.saltoapis.nebula.controller.v1.CreateControllerRelayRequest request,
         io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ControllerRelay> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateControllerRelayMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Create a batch of controller relays
+     * Creates a batch of controller relays. This method allows the creation of multiple
+     * controller relays in a single operation.
+     * </pre>
+     */
+    default void batchCreateControllerRelays(com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchCreateControllerRelaysMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a controller relay
+     * Gets an existing controller relay.
+     * </pre>
+     */
+    default void getControllerRelay(com.saltoapis.nebula.controller.v1.GetControllerRelayRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ControllerRelay> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetControllerRelayMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List controller relays
+     * Returns a list of controller relays that have been previously created.
+     * </pre>
+     */
+    default void listControllerRelays(com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListControllerRelaysMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Update a controller relay
+     * Updates an existing controller relay.
+     * </pre>
+     */
+    default void updateControllerRelay(com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ControllerRelay> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateControllerRelayMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Update a batch of controller relays
+     * Updates a batch of controller relays. This method allows updating multiple controller relays in a single operation.
+     * </pre>
+     */
+    default void batchUpdateControllerRelays(com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchUpdateControllerRelaysMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a controller relay
+     * Permanently deletes a controller relay. This cannot be undone.
+     * </pre>
+     */
+    default void deleteControllerRelay(com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteControllerRelayMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of controller relays
+     * Permanently deletes a batch of controller relays. This cannot be undone.
+     * </pre>
+     */
+    default void batchDeleteControllerRelays(com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchDeleteControllerRelaysMethod(), responseObserver);
     }
   }
 
@@ -914,6 +1209,91 @@ public final class ControllerServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateControllerRelayMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Create a batch of controller relays
+     * Creates a batch of controller relays. This method allows the creation of multiple
+     * controller relays in a single operation.
+     * </pre>
+     */
+    public void batchCreateControllerRelays(com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateControllerRelaysMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a controller relay
+     * Gets an existing controller relay.
+     * </pre>
+     */
+    public void getControllerRelay(com.saltoapis.nebula.controller.v1.GetControllerRelayRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ControllerRelay> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetControllerRelayMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List controller relays
+     * Returns a list of controller relays that have been previously created.
+     * </pre>
+     */
+    public void listControllerRelays(com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListControllerRelaysMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Update a controller relay
+     * Updates an existing controller relay.
+     * </pre>
+     */
+    public void updateControllerRelay(com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ControllerRelay> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateControllerRelayMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Update a batch of controller relays
+     * Updates a batch of controller relays. This method allows updating multiple controller relays in a single operation.
+     * </pre>
+     */
+    public void batchUpdateControllerRelays(com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchUpdateControllerRelaysMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a controller relay
+     * Permanently deletes a controller relay. This cannot be undone.
+     * </pre>
+     */
+    public void deleteControllerRelay(com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteControllerRelayMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of controller relays
+     * Permanently deletes a batch of controller relays. This cannot be undone.
+     * </pre>
+     */
+    public void batchDeleteControllerRelays(com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteControllerRelaysMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1110,6 +1490,84 @@ public final class ControllerServiceGrpc {
     public com.saltoapis.nebula.controller.v1.ControllerRelay createControllerRelay(com.saltoapis.nebula.controller.v1.CreateControllerRelayRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateControllerRelayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Create a batch of controller relays
+     * Creates a batch of controller relays. This method allows the creation of multiple
+     * controller relays in a single operation.
+     * </pre>
+     */
+    public com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse batchCreateControllerRelays(com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateControllerRelaysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get a controller relay
+     * Gets an existing controller relay.
+     * </pre>
+     */
+    public com.saltoapis.nebula.controller.v1.ControllerRelay getControllerRelay(com.saltoapis.nebula.controller.v1.GetControllerRelayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetControllerRelayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List controller relays
+     * Returns a list of controller relays that have been previously created.
+     * </pre>
+     */
+    public com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse listControllerRelays(com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListControllerRelaysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update a controller relay
+     * Updates an existing controller relay.
+     * </pre>
+     */
+    public com.saltoapis.nebula.controller.v1.ControllerRelay updateControllerRelay(com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateControllerRelayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update a batch of controller relays
+     * Updates a batch of controller relays. This method allows updating multiple controller relays in a single operation.
+     * </pre>
+     */
+    public com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse batchUpdateControllerRelays(com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchUpdateControllerRelaysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a controller relay
+     * Permanently deletes a controller relay. This cannot be undone.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteControllerRelay(com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteControllerRelayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of controller relays
+     * Permanently deletes a batch of controller relays. This cannot be undone.
+     * </pre>
+     */
+    public com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse batchDeleteControllerRelays(com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteControllerRelaysMethod(), getCallOptions(), request);
     }
   }
 
@@ -1322,6 +1780,91 @@ public final class ControllerServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateControllerRelayMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Create a batch of controller relays
+     * Creates a batch of controller relays. This method allows the creation of multiple
+     * controller relays in a single operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse> batchCreateControllerRelays(
+        com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateControllerRelaysMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get a controller relay
+     * Gets an existing controller relay.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.controller.v1.ControllerRelay> getControllerRelay(
+        com.saltoapis.nebula.controller.v1.GetControllerRelayRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetControllerRelayMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List controller relays
+     * Returns a list of controller relays that have been previously created.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse> listControllerRelays(
+        com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListControllerRelaysMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Update a controller relay
+     * Updates an existing controller relay.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.controller.v1.ControllerRelay> updateControllerRelay(
+        com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateControllerRelayMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Update a batch of controller relays
+     * Updates a batch of controller relays. This method allows updating multiple controller relays in a single operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse> batchUpdateControllerRelays(
+        com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchUpdateControllerRelaysMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a controller relay
+     * Permanently deletes a controller relay. This cannot be undone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteControllerRelay(
+        com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteControllerRelayMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Delete a batch of controller relays
+     * Permanently deletes a batch of controller relays. This cannot be undone.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse> batchDeleteControllerRelays(
+        com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteControllerRelaysMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CONTROLLER = 0;
@@ -1338,6 +1881,13 @@ public final class ControllerServiceGrpc {
   private static final int METHODID_GENERATE_AUTHORIZATION_TOKEN = 11;
   private static final int METHODID_GENERATE_FIRMWARE_DOWNLOAD_URI = 12;
   private static final int METHODID_CREATE_CONTROLLER_RELAY = 13;
+  private static final int METHODID_BATCH_CREATE_CONTROLLER_RELAYS = 14;
+  private static final int METHODID_GET_CONTROLLER_RELAY = 15;
+  private static final int METHODID_LIST_CONTROLLER_RELAYS = 16;
+  private static final int METHODID_UPDATE_CONTROLLER_RELAY = 17;
+  private static final int METHODID_BATCH_UPDATE_CONTROLLER_RELAYS = 18;
+  private static final int METHODID_DELETE_CONTROLLER_RELAY = 19;
+  private static final int METHODID_BATCH_DELETE_CONTROLLER_RELAYS = 20;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1411,6 +1961,34 @@ public final class ControllerServiceGrpc {
         case METHODID_CREATE_CONTROLLER_RELAY:
           serviceImpl.createControllerRelay((com.saltoapis.nebula.controller.v1.CreateControllerRelayRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ControllerRelay>) responseObserver);
+          break;
+        case METHODID_BATCH_CREATE_CONTROLLER_RELAYS:
+          serviceImpl.batchCreateControllerRelays((com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse>) responseObserver);
+          break;
+        case METHODID_GET_CONTROLLER_RELAY:
+          serviceImpl.getControllerRelay((com.saltoapis.nebula.controller.v1.GetControllerRelayRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ControllerRelay>) responseObserver);
+          break;
+        case METHODID_LIST_CONTROLLER_RELAYS:
+          serviceImpl.listControllerRelays((com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_CONTROLLER_RELAY:
+          serviceImpl.updateControllerRelay((com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.ControllerRelay>) responseObserver);
+          break;
+        case METHODID_BATCH_UPDATE_CONTROLLER_RELAYS:
+          serviceImpl.batchUpdateControllerRelays((com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse>) responseObserver);
+          break;
+        case METHODID_DELETE_CONTROLLER_RELAY:
+          serviceImpl.deleteControllerRelay((com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_CONTROLLER_RELAYS:
+          serviceImpl.batchDeleteControllerRelays((com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1528,6 +2106,55 @@ public final class ControllerServiceGrpc {
               com.saltoapis.nebula.controller.v1.CreateControllerRelayRequest,
               com.saltoapis.nebula.controller.v1.ControllerRelay>(
                 service, METHODID_CREATE_CONTROLLER_RELAY)))
+        .addMethod(
+          getBatchCreateControllerRelaysMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysRequest,
+              com.saltoapis.nebula.controller.v1.BatchCreateControllerRelaysResponse>(
+                service, METHODID_BATCH_CREATE_CONTROLLER_RELAYS)))
+        .addMethod(
+          getGetControllerRelayMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.controller.v1.GetControllerRelayRequest,
+              com.saltoapis.nebula.controller.v1.ControllerRelay>(
+                service, METHODID_GET_CONTROLLER_RELAY)))
+        .addMethod(
+          getListControllerRelaysMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.controller.v1.ListControllerRelaysRequest,
+              com.saltoapis.nebula.controller.v1.ListControllerRelaysResponse>(
+                service, METHODID_LIST_CONTROLLER_RELAYS)))
+        .addMethod(
+          getUpdateControllerRelayMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.controller.v1.UpdateControllerRelayRequest,
+              com.saltoapis.nebula.controller.v1.ControllerRelay>(
+                service, METHODID_UPDATE_CONTROLLER_RELAY)))
+        .addMethod(
+          getBatchUpdateControllerRelaysMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysRequest,
+              com.saltoapis.nebula.controller.v1.BatchUpdateControllerRelaysResponse>(
+                service, METHODID_BATCH_UPDATE_CONTROLLER_RELAYS)))
+        .addMethod(
+          getDeleteControllerRelayMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.controller.v1.DeleteControllerRelayRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DELETE_CONTROLLER_RELAY)))
+        .addMethod(
+          getBatchDeleteControllerRelaysMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysRequest,
+              com.saltoapis.nebula.controller.v1.BatchDeleteControllerRelaysResponse>(
+                service, METHODID_BATCH_DELETE_CONTROLLER_RELAYS)))
         .build();
   }
 
@@ -1590,6 +2217,13 @@ public final class ControllerServiceGrpc {
               .addMethod(getGenerateAuthorizationTokenMethod())
               .addMethod(getGenerateFirmwareDownloadUriMethod())
               .addMethod(getCreateControllerRelayMethod())
+              .addMethod(getBatchCreateControllerRelaysMethod())
+              .addMethod(getGetControllerRelayMethod())
+              .addMethod(getListControllerRelaysMethod())
+              .addMethod(getUpdateControllerRelayMethod())
+              .addMethod(getBatchUpdateControllerRelaysMethod())
+              .addMethod(getDeleteControllerRelayMethod())
+              .addMethod(getBatchDeleteControllerRelaysMethod())
               .build();
         }
       }

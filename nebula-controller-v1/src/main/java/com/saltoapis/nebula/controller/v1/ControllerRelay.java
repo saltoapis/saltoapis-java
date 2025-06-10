@@ -635,6 +635,572 @@ private static final long serialVersionUID = 0L;
 
   }
 
+  public interface StrikeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:salto.nebula.controller.v1.ControllerRelay.Strike)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Resource name of the access point the controller relay points to.
+     * For example: `installations/surelock-homes-hq/access-points/baker-street-entrance`.
+     * </pre>
+     *
+     * <code>string access_point = 1;</code>
+     * @return The accessPoint.
+     */
+    java.lang.String getAccessPoint();
+    /**
+     * <pre>
+     * Resource name of the access point the controller relay points to.
+     * For example: `installations/surelock-homes-hq/access-points/baker-street-entrance`.
+     * </pre>
+     *
+     * <code>string access_point = 1;</code>
+     * @return The bytes for accessPoint.
+     */
+    com.google.protobuf.ByteString
+        getAccessPointBytes();
+  }
+  /**
+   * <pre>
+   * Strike contains configuration information that identifies a specific
+   * access point resource.
+   * </pre>
+   *
+   * Protobuf type {@code salto.nebula.controller.v1.ControllerRelay.Strike}
+   */
+  public static final class Strike extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:salto.nebula.controller.v1.ControllerRelay.Strike)
+      StrikeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        Strike.class.getName());
+    }
+    // Use Strike.newBuilder() to construct.
+    private Strike(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private Strike() {
+      accessPoint_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.saltoapis.nebula.controller.v1.ControllerProto.internal_static_salto_nebula_controller_v1_ControllerRelay_Strike_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.saltoapis.nebula.controller.v1.ControllerProto.internal_static_salto_nebula_controller_v1_ControllerRelay_Strike_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.class, com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.Builder.class);
+    }
+
+    public static final int ACCESS_POINT_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accessPoint_ = "";
+    /**
+     * <pre>
+     * Resource name of the access point the controller relay points to.
+     * For example: `installations/surelock-homes-hq/access-points/baker-street-entrance`.
+     * </pre>
+     *
+     * <code>string access_point = 1;</code>
+     * @return The accessPoint.
+     */
+    @java.lang.Override
+    public java.lang.String getAccessPoint() {
+      java.lang.Object ref = accessPoint_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        accessPoint_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Resource name of the access point the controller relay points to.
+     * For example: `installations/surelock-homes-hq/access-points/baker-street-entrance`.
+     * </pre>
+     *
+     * <code>string access_point = 1;</code>
+     * @return The bytes for accessPoint.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAccessPointBytes() {
+      java.lang.Object ref = accessPoint_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        accessPoint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accessPoint_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, accessPoint_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(accessPoint_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, accessPoint_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.saltoapis.nebula.controller.v1.ControllerRelay.Strike)) {
+        return super.equals(obj);
+      }
+      com.saltoapis.nebula.controller.v1.ControllerRelay.Strike other = (com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) obj;
+
+      if (!getAccessPoint()
+          .equals(other.getAccessPoint())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ACCESS_POINT_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessPoint().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.saltoapis.nebula.controller.v1.ControllerRelay.Strike prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Strike contains configuration information that identifies a specific
+     * access point resource.
+     * </pre>
+     *
+     * Protobuf type {@code salto.nebula.controller.v1.ControllerRelay.Strike}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:salto.nebula.controller.v1.ControllerRelay.Strike)
+        com.saltoapis.nebula.controller.v1.ControllerRelay.StrikeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.saltoapis.nebula.controller.v1.ControllerProto.internal_static_salto_nebula_controller_v1_ControllerRelay_Strike_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.saltoapis.nebula.controller.v1.ControllerProto.internal_static_salto_nebula_controller_v1_ControllerRelay_Strike_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.class, com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.Builder.class);
+      }
+
+      // Construct using com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        accessPoint_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.saltoapis.nebula.controller.v1.ControllerProto.internal_static_salto_nebula_controller_v1_ControllerRelay_Strike_descriptor;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.controller.v1.ControllerRelay.Strike getDefaultInstanceForType() {
+        return com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.controller.v1.ControllerRelay.Strike build() {
+        com.saltoapis.nebula.controller.v1.ControllerRelay.Strike result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.controller.v1.ControllerRelay.Strike buildPartial() {
+        com.saltoapis.nebula.controller.v1.ControllerRelay.Strike result = new com.saltoapis.nebula.controller.v1.ControllerRelay.Strike(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.saltoapis.nebula.controller.v1.ControllerRelay.Strike result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.accessPoint_ = accessPoint_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) {
+          return mergeFrom((com.saltoapis.nebula.controller.v1.ControllerRelay.Strike)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.saltoapis.nebula.controller.v1.ControllerRelay.Strike other) {
+        if (other == com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.getDefaultInstance()) return this;
+        if (!other.getAccessPoint().isEmpty()) {
+          accessPoint_ = other.accessPoint_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                accessPoint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object accessPoint_ = "";
+      /**
+       * <pre>
+       * Resource name of the access point the controller relay points to.
+       * For example: `installations/surelock-homes-hq/access-points/baker-street-entrance`.
+       * </pre>
+       *
+       * <code>string access_point = 1;</code>
+       * @return The accessPoint.
+       */
+      public java.lang.String getAccessPoint() {
+        java.lang.Object ref = accessPoint_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          accessPoint_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Resource name of the access point the controller relay points to.
+       * For example: `installations/surelock-homes-hq/access-points/baker-street-entrance`.
+       * </pre>
+       *
+       * <code>string access_point = 1;</code>
+       * @return The bytes for accessPoint.
+       */
+      public com.google.protobuf.ByteString
+          getAccessPointBytes() {
+        java.lang.Object ref = accessPoint_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          accessPoint_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Resource name of the access point the controller relay points to.
+       * For example: `installations/surelock-homes-hq/access-points/baker-street-entrance`.
+       * </pre>
+       *
+       * <code>string access_point = 1;</code>
+       * @param value The accessPoint to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccessPoint(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        accessPoint_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource name of the access point the controller relay points to.
+       * For example: `installations/surelock-homes-hq/access-points/baker-street-entrance`.
+       * </pre>
+       *
+       * <code>string access_point = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAccessPoint() {
+        accessPoint_ = getDefaultInstance().getAccessPoint();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Resource name of the access point the controller relay points to.
+       * For example: `installations/surelock-homes-hq/access-points/baker-street-entrance`.
+       * </pre>
+       *
+       * <code>string access_point = 1;</code>
+       * @param value The bytes for accessPoint to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccessPointBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        accessPoint_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:salto.nebula.controller.v1.ControllerRelay.Strike)
+    }
+
+    // @@protoc_insertion_point(class_scope:salto.nebula.controller.v1.ControllerRelay.Strike)
+    private static final com.saltoapis.nebula.controller.v1.ControllerRelay.Strike DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.saltoapis.nebula.controller.v1.ControllerRelay.Strike();
+    }
+
+    public static com.saltoapis.nebula.controller.v1.ControllerRelay.Strike getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Strike>
+        PARSER = new com.google.protobuf.AbstractParser<Strike>() {
+      @java.lang.Override
+      public Strike parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Strike> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Strike> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.saltoapis.nebula.controller.v1.ControllerRelay.Strike getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private int bitField0_;
   private int typeCase_ = 0;
   @SuppressWarnings("serial")
   private java.lang.Object type_;
@@ -642,6 +1208,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DESTINATION_OUTPUT(4),
+    STRIKE(5),
     TYPE_NOT_SET(0);
     private final int value;
     private TypeCase(int value) {
@@ -660,6 +1227,7 @@ private static final long serialVersionUID = 0L;
     public static TypeCase forNumber(int value) {
       switch (value) {
         case 4: return DESTINATION_OUTPUT;
+        case 5: return STRIKE;
         case 0: return TYPE_NOT_SET;
         default: return null;
       }
@@ -726,6 +1294,35 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DIP_SWITCH_FIELD_NUMBER = 2;
+  private int dipSwitch_ = 0;
+  /**
+   * <pre>
+   * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
+   * This field is not applicable for master boards or wall reader extension boards.
+   * </pre>
+   *
+   * <code>optional int32 dip_switch = 2;</code>
+   * @return Whether the dipSwitch field is set.
+   */
+  @java.lang.Override
+  public boolean hasDipSwitch() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
+   * This field is not applicable for master boards or wall reader extension boards.
+   * </pre>
+   *
+   * <code>optional int32 dip_switch = 2;</code>
+   * @return The dipSwitch.
+   */
+  @java.lang.Override
+  public int getDipSwitch() {
+    return dipSwitch_;
+  }
+
   public static final int RELAY_ID_FIELD_NUMBER = 3;
   private int relayId_ = 0;
   /**
@@ -785,6 +1382,49 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.controller.v1.ControllerRelay.DestinationOutput.getDefaultInstance();
   }
 
+  public static final int STRIKE_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Strike configuration for this controller relay.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+   * @return Whether the strike field is set.
+   */
+  @java.lang.Override
+  public boolean hasStrike() {
+    return typeCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Strike configuration for this controller relay.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+   * @return The strike.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.controller.v1.ControllerRelay.Strike getStrike() {
+    if (typeCase_ == 5) {
+       return (com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) type_;
+    }
+    return com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Strike configuration for this controller relay.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.controller.v1.ControllerRelay.StrikeOrBuilder getStrikeOrBuilder() {
+    if (typeCase_ == 5) {
+       return (com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) type_;
+    }
+    return com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -802,11 +1442,17 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeInt32(2, dipSwitch_);
+    }
     if (relayId_ != 0) {
       output.writeInt32(3, relayId_);
     }
     if (typeCase_ == 4) {
       output.writeMessage(4, (com.saltoapis.nebula.controller.v1.ControllerRelay.DestinationOutput) type_);
+    }
+    if (typeCase_ == 5) {
+      output.writeMessage(5, (com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) type_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -820,6 +1466,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, dipSwitch_);
+    }
     if (relayId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(3, relayId_);
@@ -827,6 +1477,10 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.saltoapis.nebula.controller.v1.ControllerRelay.DestinationOutput) type_);
+    }
+    if (typeCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, (com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -845,6 +1499,11 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (hasDipSwitch() != other.hasDipSwitch()) return false;
+    if (hasDipSwitch()) {
+      if (getDipSwitch()
+          != other.getDipSwitch()) return false;
+    }
     if (getRelayId()
         != other.getRelayId()) return false;
     if (!getTypeCase().equals(other.getTypeCase())) return false;
@@ -852,6 +1511,10 @@ private static final long serialVersionUID = 0L;
       case 4:
         if (!getDestinationOutput()
             .equals(other.getDestinationOutput())) return false;
+        break;
+      case 5:
+        if (!getStrike()
+            .equals(other.getStrike())) return false;
         break;
       case 0:
       default:
@@ -869,12 +1532,20 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (hasDipSwitch()) {
+      hash = (37 * hash) + DIP_SWITCH_FIELD_NUMBER;
+      hash = (53 * hash) + getDipSwitch();
+    }
     hash = (37 * hash) + RELAY_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRelayId();
     switch (typeCase_) {
       case 4:
         hash = (37 * hash) + DESTINATION_OUTPUT_FIELD_NUMBER;
         hash = (53 * hash) + getDestinationOutput().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + STRIKE_FIELD_NUMBER;
+        hash = (53 * hash) + getStrike().hashCode();
         break;
       case 0:
       default:
@@ -1018,9 +1689,13 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      dipSwitch_ = 0;
       relayId_ = 0;
       if (destinationOutputBuilder_ != null) {
         destinationOutputBuilder_.clear();
+      }
+      if (strikeBuilder_ != null) {
+        strikeBuilder_.clear();
       }
       typeCase_ = 0;
       type_ = null;
@@ -1061,9 +1736,15 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dipSwitch_ = dipSwitch_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.relayId_ = relayId_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.saltoapis.nebula.controller.v1.ControllerRelay result) {
@@ -1072,6 +1753,10 @@ private static final long serialVersionUID = 0L;
       if (typeCase_ == 4 &&
           destinationOutputBuilder_ != null) {
         result.type_ = destinationOutputBuilder_.build();
+      }
+      if (typeCase_ == 5 &&
+          strikeBuilder_ != null) {
+        result.type_ = strikeBuilder_.build();
       }
     }
 
@@ -1092,12 +1777,19 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (other.hasDipSwitch()) {
+        setDipSwitch(other.getDipSwitch());
+      }
       if (other.getRelayId() != 0) {
         setRelayId(other.getRelayId());
       }
       switch (other.getTypeCase()) {
         case DESTINATION_OUTPUT: {
           mergeDestinationOutput(other.getDestinationOutput());
+          break;
+        }
+        case STRIKE: {
+          mergeStrike(other.getStrike());
           break;
         }
         case TYPE_NOT_SET: {
@@ -1135,9 +1827,14 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 16: {
+              dipSwitch_ = input.readInt32();
+              bitField0_ |= 0x00000002;
+              break;
+            } // case 16
             case 24: {
               relayId_ = input.readInt32();
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               break;
             } // case 24
             case 34: {
@@ -1147,6 +1844,13 @@ private static final long serialVersionUID = 0L;
               typeCase_ = 4;
               break;
             } // case 34
+            case 42: {
+              input.readMessage(
+                  getStrikeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 5;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1281,6 +1985,66 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int dipSwitch_ ;
+    /**
+     * <pre>
+     * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
+     * This field is not applicable for master boards or wall reader extension boards.
+     * </pre>
+     *
+     * <code>optional int32 dip_switch = 2;</code>
+     * @return Whether the dipSwitch field is set.
+     */
+    @java.lang.Override
+    public boolean hasDipSwitch() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
+     * This field is not applicable for master boards or wall reader extension boards.
+     * </pre>
+     *
+     * <code>optional int32 dip_switch = 2;</code>
+     * @return The dipSwitch.
+     */
+    @java.lang.Override
+    public int getDipSwitch() {
+      return dipSwitch_;
+    }
+    /**
+     * <pre>
+     * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
+     * This field is not applicable for master boards or wall reader extension boards.
+     * </pre>
+     *
+     * <code>optional int32 dip_switch = 2;</code>
+     * @param value The dipSwitch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDipSwitch(int value) {
+
+      dipSwitch_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
+     * This field is not applicable for master boards or wall reader extension boards.
+     * </pre>
+     *
+     * <code>optional int32 dip_switch = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDipSwitch() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dipSwitch_ = 0;
+      onChanged();
+      return this;
+    }
+
     private int relayId_ ;
     /**
      * <pre>
@@ -1308,7 +2072,7 @@ private static final long serialVersionUID = 0L;
     public Builder setRelayId(int value) {
 
       relayId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1322,7 +2086,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearRelayId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       relayId_ = 0;
       onChanged();
       return this;
@@ -1504,6 +2268,184 @@ private static final long serialVersionUID = 0L;
       typeCase_ = 4;
       onChanged();
       return destinationOutputBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.controller.v1.ControllerRelay.Strike, com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.Builder, com.saltoapis.nebula.controller.v1.ControllerRelay.StrikeOrBuilder> strikeBuilder_;
+    /**
+     * <pre>
+     * Strike configuration for this controller relay.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+     * @return Whether the strike field is set.
+     */
+    @java.lang.Override
+    public boolean hasStrike() {
+      return typeCase_ == 5;
+    }
+    /**
+     * <pre>
+     * Strike configuration for this controller relay.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+     * @return The strike.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.controller.v1.ControllerRelay.Strike getStrike() {
+      if (strikeBuilder_ == null) {
+        if (typeCase_ == 5) {
+          return (com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) type_;
+        }
+        return com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.getDefaultInstance();
+      } else {
+        if (typeCase_ == 5) {
+          return strikeBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Strike configuration for this controller relay.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+     */
+    public Builder setStrike(com.saltoapis.nebula.controller.v1.ControllerRelay.Strike value) {
+      if (strikeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        strikeBuilder_.setMessage(value);
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Strike configuration for this controller relay.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+     */
+    public Builder setStrike(
+        com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.Builder builderForValue) {
+      if (strikeBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        strikeBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Strike configuration for this controller relay.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+     */
+    public Builder mergeStrike(com.saltoapis.nebula.controller.v1.ControllerRelay.Strike value) {
+      if (strikeBuilder_ == null) {
+        if (typeCase_ == 5 &&
+            type_ != com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.getDefaultInstance()) {
+          type_ = com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.newBuilder((com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) type_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 5) {
+          strikeBuilder_.mergeFrom(value);
+        } else {
+          strikeBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 5;
+      return this;
+    }
+    /**
+     * <pre>
+     * Strike configuration for this controller relay.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+     */
+    public Builder clearStrike() {
+      if (strikeBuilder_ == null) {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 5) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        strikeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Strike configuration for this controller relay.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+     */
+    public com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.Builder getStrikeBuilder() {
+      return getStrikeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Strike configuration for this controller relay.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.controller.v1.ControllerRelay.StrikeOrBuilder getStrikeOrBuilder() {
+      if ((typeCase_ == 5) && (strikeBuilder_ != null)) {
+        return strikeBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 5) {
+          return (com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) type_;
+        }
+        return com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Strike configuration for this controller relay.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.controller.v1.ControllerRelay.Strike, com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.Builder, com.saltoapis.nebula.controller.v1.ControllerRelay.StrikeOrBuilder> 
+        getStrikeFieldBuilder() {
+      if (strikeBuilder_ == null) {
+        if (!(typeCase_ == 5)) {
+          type_ = com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.getDefaultInstance();
+        }
+        strikeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.controller.v1.ControllerRelay.Strike, com.saltoapis.nebula.controller.v1.ControllerRelay.Strike.Builder, com.saltoapis.nebula.controller.v1.ControllerRelay.StrikeOrBuilder>(
+                (com.saltoapis.nebula.controller.v1.ControllerRelay.Strike) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 5;
+      onChanged();
+      return strikeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.controller.v1.ControllerRelay)
