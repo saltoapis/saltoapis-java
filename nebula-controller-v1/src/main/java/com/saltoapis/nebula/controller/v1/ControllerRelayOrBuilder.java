@@ -35,6 +35,27 @@ public interface ControllerRelayOrBuilder extends
 
   /**
    * <pre>
+   * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
+   * This field is not applicable for master boards or wall reader extension boards.
+   * </pre>
+   *
+   * <code>optional int32 dip_switch = 2;</code>
+   * @return Whether the dipSwitch field is set.
+   */
+  boolean hasDipSwitch();
+  /**
+   * <pre>
+   * Extension board address. Values range from 0-15, allowing for up to 16 boards in the system.
+   * This field is not applicable for master boards or wall reader extension boards.
+   * </pre>
+   *
+   * <code>optional int32 dip_switch = 2;</code>
+   * @return The dipSwitch.
+   */
+  int getDipSwitch();
+
+  /**
+   * <pre>
    * Identifies the specific controller relay on the board (1-4). Board type determines
    * which controller relay IDs are actually available for configuration and use.
    * </pre>
@@ -70,6 +91,33 @@ public interface ControllerRelayOrBuilder extends
    * <code>.salto.nebula.controller.v1.ControllerRelay.DestinationOutput destination_output = 4;</code>
    */
   com.saltoapis.nebula.controller.v1.ControllerRelay.DestinationOutputOrBuilder getDestinationOutputOrBuilder();
+
+  /**
+   * <pre>
+   * Strike configuration for this controller relay.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+   * @return Whether the strike field is set.
+   */
+  boolean hasStrike();
+  /**
+   * <pre>
+   * Strike configuration for this controller relay.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+   * @return The strike.
+   */
+  com.saltoapis.nebula.controller.v1.ControllerRelay.Strike getStrike();
+  /**
+   * <pre>
+   * Strike configuration for this controller relay.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.ControllerRelay.Strike strike = 5;</code>
+   */
+  com.saltoapis.nebula.controller.v1.ControllerRelay.StrikeOrBuilder getStrikeOrBuilder();
 
   com.saltoapis.nebula.controller.v1.ControllerRelay.TypeCase getTypeCase();
 }
