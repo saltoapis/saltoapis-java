@@ -305,167 +305,168 @@ public final class InstallationProto {
       "\013region_code\030\004 \001(\t\022\014\n\004city\030\005 \001(\t\022\027\n\nstat" +
       "e_code\030\006 \001(\tH\000\210\001\001\022\013\n\003zip\030\007 \001(\t\022\027\n\nvat_nu" +
       "mber\030\010 \001(\tH\001\210\001\001B\r\n\013_state_codeB\r\n\013_vat_n" +
-      "umber\"\264\003\n\rPaymentMethod\022\014\n\004name\030\001 \001(\t\022@\n" +
+      "umber\"\323\003\n\rPaymentMethod\022\014\n\004name\030\001 \001(\t\022@\n" +
       "\004card\030\002 \001(\01320.salto.nebula.installation." +
       "v1.PaymentMethod.CardH\000\022O\n\014direct_debit\030" +
       "\003 \001(\01327.salto.nebula.installation.v1.Pay" +
-      "mentMethod.DirectDebitH\000\032O\n\004Card\022%\n\013expi" +
+      "mentMethod.DirectDebitH\000\032n\n\004Card\022%\n\013expi" +
       "re_date\030\001 \001(\0132\020.salto.type.Date\022\021\n\tlast_" +
-      "four\030\002 \001(\t\022\r\n\005brand\030\003 \001(\t\032\246\001\n\013DirectDebi" +
-      "t\022L\n\004sepa\030\001 \001(\0132<.salto.nebula.installat" +
-      "ion.v1.PaymentMethod.DirectDebit.SEPAH\000\032" +
-      "?\n\004SEPA\022\021\n\tlast_four\030\001 \001(\t\022\026\n\016account_ho" +
-      "lder\030\002 \001(\t\022\014\n\004iban\030\003 \001(\tB\010\n\006schemeB\010\n\006me" +
-      "thod\"$\n\024PaymentAuthorization\022\014\n\004name\030\001 \001" +
-      "(\t\"\026\n\006Coupon\022\014\n\004name\030\001 \001(\t\"\363\002\n\007Invoice\022\014" +
-      "\n\004name\030\001 \001(\t\022.\n\nstart_time\030\002 \001(\0132\032.googl" +
-      "e.protobuf.Timestamp\022,\n\010end_time\030\003 \001(\0132\032" +
-      ".google.protobuf.Timestamp\022B\n\nline_items" +
-      "\030\004 \003(\0132..salto.nebula.installation.v1.In" +
-      "voice.LineItem\022\r\n\005total\030\005 \001(\003\022:\n\005state\030\006" +
-      " \001(\0162+.salto.nebula.installation.v1.Invo" +
-      "ice.State\0327\n\010LineItem\022\n\n\002id\030\001 \001(\t\022\020\n\010qua" +
-      "ntity\030\002 \001(\005\022\r\n\005price\030\003 \001(\003\"4\n\005State\022\025\n\021S" +
-      "TATE_UNSPECIFIED\020\000\022\n\n\006UNPAID\020\001\022\010\n\004PAID\020\002" +
-      "\"5\n\006Policy\022\014\n\004name\030\001 \001(\t\022\016\n\006member\030\002 \001(\t" +
-      "\022\r\n\005roles\030\003 \003(\t\"\275\001\n\031CreateInstallationRe" +
-      "quest\022\034\n\017installation_id\030\001 \001(\tH\000\210\001\001\022@\n\014i" +
-      "nstallation\030\002 \001(\0132*.salto.nebula.install" +
-      "ation.v1.Installation\022\032\n\rvalidate_only\030\005" +
-      " \001(\010H\001\210\001\001B\022\n\020_installation_idB\020\n\016_valida" +
-      "te_only\"&\n\026GetInstallationRequest\022\014\n\004nam" +
-      "e\030\001 \001(\t\"y\n\030ListInstallationsRequest\022\021\n\tp" +
-      "age_size\030\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\022\016\n\006fi" +
-      "lter\030\003 \001(\t\022\020\n\010order_by\030\004 \001(\t\022\024\n\014show_del" +
-      "eted\030\005 \001(\010\"w\n\031ListInstallationsResponse\022" +
-      "A\n\rinstallations\030\001 \003(\0132*.salto.nebula.in" +
-      "stallation.v1.Installation\022\027\n\017next_page_" +
-      "token\030\002 \001(\t\"\216\001\n\031UpdateInstallationReques" +
-      "t\022@\n\014installation\030\001 \001(\0132*.salto.nebula.i" +
-      "nstallation.v1.Installation\022/\n\013update_ma" +
-      "sk\030\002 \001(\0132\032.google.protobuf.FieldMask\"\201\001\n" +
-      "\031DeleteInstallationRequest\022\014\n\004name\030\001 \001(\t" +
-      "\022\032\n\rvalidate_only\030\002 \001(\010H\000\210\001\001\022\030\n\013delay_ho" +
-      "urs\030\003 \001(\005H\001\210\001\001B\020\n\016_validate_onlyB\016\n\014_del" +
-      "ay_hours\"+\n\033UndeleteInstallationRequest\022" +
-      "\014\n\004name\030\001 \001(\t\"n\n\023CreatePolicyRequest\022\016\n\006" +
-      "parent\030\001 \001(\t\022\021\n\tpolicy_id\030\002 \001(\t\0224\n\006polic" +
-      "y\030\003 \001(\0132$.salto.nebula.installation.v1.P" +
-      "olicy\" \n\020GetPolicyRequest\022\014\n\004name\030\001 \001(\t\"" +
-      "n\n\023ListPoliciesRequest\022\016\n\006parent\030\001 \001(\t\022\021" +
-      "\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n" +
-      "\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"g\n\024ListP" +
-      "oliciesResponse\0226\n\010policies\030\001 \003(\0132$.salt" +
-      "o.nebula.installation.v1.Policy\022\027\n\017next_" +
-      "page_token\030\002 \001(\t\"|\n\023UpdatePolicyRequest\022" +
-      "4\n\006policy\030\001 \001(\0132$.salto.nebula.installat" +
-      "ion.v1.Policy\022/\n\013update_mask\030\002 \001(\0132\032.goo" +
-      "gle.protobuf.FieldMask\"#\n\023DeletePolicyRe" +
-      "quest\022\014\n\004name\030\001 \001(\t\"C\n\026TestPermissionsRe" +
-      "quest\022\024\n\014installation\030\001 \001(\t\022\023\n\013permissio" +
-      "ns\030\002 \003(\t\".\n\027TestPermissionsResponse\022\023\n\013p" +
-      "ermissions\030\001 \003(\t\"K\n$TransferInstallation" +
-      "OwnershipRequest\022\024\n\014installation\030\001 \001(\t\022\r" +
-      "\n\005email\030\002 \001(\t\"\'\n%TransferInstallationOwn" +
-      "ershipResponse\"\221\001\n\"AcceptInstallationOwn" +
-      "ershipRequest\022\024\n\014installation\030\001 \001(\t\022D\n\014b" +
-      "illing_info\030\002 \001(\0132).salto.nebula.install" +
-      "ation.v1.BillingInfoH\000\210\001\001B\017\n\r_billing_in" +
-      "fo\"%\n#AcceptInstallationOwnershipRespons" +
-      "e\"&\n\026GetSubscriptionRequest\022\014\n\004name\030\001 \001(" +
-      "\t\"[\n\030UpdateBillingInfoRequest\022?\n\014billing" +
-      "_info\030\001 \001(\0132).salto.nebula.installation." +
-      "v1.BillingInfo\"a\n\032UpdatePaymentMethodReq" +
-      "uest\022C\n\016payment_method\030\001 \001(\0132+.salto.neb" +
-      "ula.installation.v1.PaymentMethod\":\n\021Upd" +
-      "ateCardRequest\022\026\n\016payment_method\030\001 \001(\t\022\r" +
-      "\n\005token\030\002 \001(\t\"\024\n\022UpdateCardResponse\"\206\001\n!" +
-      "CreatePaymentAuthorizationRequest\022\016\n\006par" +
-      "ent\030\001 \001(\t\022Q\n\025payment_authorization\030\002 \001(\013" +
-      "22.salto.nebula.installation.v1.PaymentA" +
-      "uthorization\"%\n\023ListInvoicesRequest\022\016\n\006p" +
-      "arent\030\001 \001(\t\"O\n\024ListInvoicesResponse\0227\n\010i" +
-      "nvoices\030\001 \003(\0132%.salto.nebula.installatio" +
-      "n.v1.Invoice\":\n\022ApplyCouponRequest\022\024\n\014su" +
-      "bscription\030\001 \001(\t\022\016\n\006coupon\030\002 \001(\t\"\025\n\023Appl" +
-      "yCouponResponse\"<\n\024UnapplyCouponRequest\022" +
-      "\024\n\014subscription\030\001 \001(\t\022\016\n\006coupon\030\002 \001(\t\"\027\n" +
-      "\025UnapplyCouponResponse2\255\025\n\023InstallationS" +
-      "ervice\022y\n\022CreateInstallation\0227.salto.neb" +
-      "ula.installation.v1.CreateInstallationRe" +
-      "quest\032*.salto.nebula.installation.v1.Ins" +
-      "tallation\022s\n\017GetInstallation\0224.salto.neb" +
-      "ula.installation.v1.GetInstallationReque" +
-      "st\032*.salto.nebula.installation.v1.Instal" +
-      "lation\022\204\001\n\021ListInstallations\0226.salto.neb" +
-      "ula.installation.v1.ListInstallationsReq" +
-      "uest\0327.salto.nebula.installation.v1.List" +
-      "InstallationsResponse\022y\n\022UpdateInstallat" +
-      "ion\0227.salto.nebula.installation.v1.Updat" +
-      "eInstallationRequest\032*.salto.nebula.inst" +
-      "allation.v1.Installation\022y\n\022DeleteInstal" +
-      "lation\0227.salto.nebula.installation.v1.De" +
-      "leteInstallationRequest\032*.salto.nebula.i" +
-      "nstallation.v1.Installation\022}\n\024UndeleteI" +
-      "nstallation\0229.salto.nebula.installation." +
-      "v1.UndeleteInstallationRequest\032*.salto.n" +
-      "ebula.installation.v1.Installation\022g\n\014Cr" +
-      "eatePolicy\0221.salto.nebula.installation.v" +
-      "1.CreatePolicyRequest\032$.salto.nebula.ins" +
-      "tallation.v1.Policy\022a\n\tGetPolicy\022..salto" +
-      ".nebula.installation.v1.GetPolicyRequest" +
-      "\032$.salto.nebula.installation.v1.Policy\022u" +
-      "\n\014ListPolicies\0221.salto.nebula.installati" +
-      "on.v1.ListPoliciesRequest\0322.salto.nebula" +
-      ".installation.v1.ListPoliciesResponse\022g\n" +
-      "\014UpdatePolicy\0221.salto.nebula.installatio" +
-      "n.v1.UpdatePolicyRequest\032$.salto.nebula." +
-      "installation.v1.Policy\022Y\n\014DeletePolicy\0221" +
-      ".salto.nebula.installation.v1.DeletePoli" +
-      "cyRequest\032\026.google.protobuf.Empty\022~\n\017Tes" +
-      "tPermissions\0224.salto.nebula.installation" +
-      ".v1.TestPermissionsRequest\0325.salto.nebul" +
-      "a.installation.v1.TestPermissionsRespons" +
-      "e\022\250\001\n\035TransferInstallationOwnership\022B.sa" +
-      "lto.nebula.installation.v1.TransferInsta" +
-      "llationOwnershipRequest\032C.salto.nebula.i" +
-      "nstallation.v1.TransferInstallationOwner" +
-      "shipResponse\022\242\001\n\033AcceptInstallationOwner" +
-      "ship\022@.salto.nebula.installation.v1.Acce" +
-      "ptInstallationOwnershipRequest\032A.salto.n" +
-      "ebula.installation.v1.AcceptInstallation" +
-      "OwnershipResponse\022s\n\017GetSubscription\0224.s" +
-      "alto.nebula.installation.v1.GetSubscript" +
-      "ionRequest\032*.salto.nebula.installation.v" +
-      "1.Subscription\022v\n\021UpdateBillingInfo\0226.sa" +
-      "lto.nebula.installation.v1.UpdateBilling" +
-      "InfoRequest\032).salto.nebula.installation." +
-      "v1.BillingInfo\022|\n\023UpdatePaymentMethod\0228." +
-      "salto.nebula.installation.v1.UpdatePayme" +
-      "ntMethodRequest\032+.salto.nebula.installat" +
-      "ion.v1.PaymentMethod\022o\n\nUpdateCard\022/.sal" +
-      "to.nebula.installation.v1.UpdateCardRequ" +
-      "est\0320.salto.nebula.installation.v1.Updat" +
-      "eCardResponse\022\221\001\n\032CreatePaymentAuthoriza" +
-      "tion\022?.salto.nebula.installation.v1.Crea" +
-      "tePaymentAuthorizationRequest\0322.salto.ne" +
-      "bula.installation.v1.PaymentAuthorizatio" +
-      "n\022u\n\014ListInvoices\0221.salto.nebula.install" +
-      "ation.v1.ListInvoicesRequest\0322.salto.neb" +
-      "ula.installation.v1.ListInvoicesResponse" +
-      "\022r\n\013ApplyCoupon\0220.salto.nebula.installat" +
-      "ion.v1.ApplyCouponRequest\0321.salto.nebula" +
-      ".installation.v1.ApplyCouponResponse\022x\n\r" +
-      "UnapplyCoupon\0222.salto.nebula.installatio" +
-      "n.v1.UnapplyCouponRequest\0323.salto.nebula" +
-      ".installation.v1.UnapplyCouponResponseB\200" +
-      "\002\n$com.saltoapis.nebula.installation.v1B" +
-      "\021InstallationProtoP\001ZNgithub.com/saltoap" +
-      "is-internal/saltoapis-go/nebula/installa" +
-      "tion/v1;installation\252\002 Saltoapis.Nebula." +
-      "Installation.V1\312\002 Saltoapis\\Nebula\\Insta" +
-      "llation\\V1\342\002,GPBMetadata\\Saltoapis\\Nebul" +
-      "a\\Installation\\V1b\006proto3"
+      "four\030\002 \001(\t\022\r\n\005brand\030\003 \001(\t\022\035\n\025payment_aut" +
+      "horization\030\004 \001(\t\032\246\001\n\013DirectDebit\022L\n\004sepa" +
+      "\030\001 \001(\0132<.salto.nebula.installation.v1.Pa" +
+      "ymentMethod.DirectDebit.SEPAH\000\032?\n\004SEPA\022\021" +
+      "\n\tlast_four\030\001 \001(\t\022\026\n\016account_holder\030\002 \001(" +
+      "\t\022\014\n\004iban\030\003 \001(\tB\010\n\006schemeB\010\n\006method\"$\n\024P" +
+      "aymentAuthorization\022\014\n\004name\030\001 \001(\t\"\026\n\006Cou" +
+      "pon\022\014\n\004name\030\001 \001(\t\"\363\002\n\007Invoice\022\014\n\004name\030\001 " +
+      "\001(\t\022.\n\nstart_time\030\002 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022,\n\010end_time\030\003 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022B\n\nline_items\030\004 \003(\0132.." +
+      "salto.nebula.installation.v1.Invoice.Lin" +
+      "eItem\022\r\n\005total\030\005 \001(\003\022:\n\005state\030\006 \001(\0162+.sa" +
+      "lto.nebula.installation.v1.Invoice.State" +
+      "\0327\n\010LineItem\022\n\n\002id\030\001 \001(\t\022\020\n\010quantity\030\002 \001" +
+      "(\005\022\r\n\005price\030\003 \001(\003\"4\n\005State\022\025\n\021STATE_UNSP" +
+      "ECIFIED\020\000\022\n\n\006UNPAID\020\001\022\010\n\004PAID\020\002\"5\n\006Polic" +
+      "y\022\014\n\004name\030\001 \001(\t\022\016\n\006member\030\002 \001(\t\022\r\n\005roles" +
+      "\030\003 \003(\t\"\275\001\n\031CreateInstallationRequest\022\034\n\017" +
+      "installation_id\030\001 \001(\tH\000\210\001\001\022@\n\014installati" +
+      "on\030\002 \001(\0132*.salto.nebula.installation.v1." +
+      "Installation\022\032\n\rvalidate_only\030\005 \001(\010H\001\210\001\001" +
+      "B\022\n\020_installation_idB\020\n\016_validate_only\"&" +
+      "\n\026GetInstallationRequest\022\014\n\004name\030\001 \001(\t\"y" +
+      "\n\030ListInstallationsRequest\022\021\n\tpage_size\030" +
+      "\001 \001(\005\022\022\n\npage_token\030\002 \001(\t\022\016\n\006filter\030\003 \001(" +
+      "\t\022\020\n\010order_by\030\004 \001(\t\022\024\n\014show_deleted\030\005 \001(" +
+      "\010\"w\n\031ListInstallationsResponse\022A\n\rinstal" +
+      "lations\030\001 \003(\0132*.salto.nebula.installatio" +
+      "n.v1.Installation\022\027\n\017next_page_token\030\002 \001" +
+      "(\t\"\216\001\n\031UpdateInstallationRequest\022@\n\014inst" +
+      "allation\030\001 \001(\0132*.salto.nebula.installati" +
+      "on.v1.Installation\022/\n\013update_mask\030\002 \001(\0132" +
+      "\032.google.protobuf.FieldMask\"\201\001\n\031DeleteIn" +
+      "stallationRequest\022\014\n\004name\030\001 \001(\t\022\032\n\rvalid" +
+      "ate_only\030\002 \001(\010H\000\210\001\001\022\030\n\013delay_hours\030\003 \001(\005" +
+      "H\001\210\001\001B\020\n\016_validate_onlyB\016\n\014_delay_hours\"" +
+      "+\n\033UndeleteInstallationRequest\022\014\n\004name\030\001" +
+      " \001(\t\"n\n\023CreatePolicyRequest\022\016\n\006parent\030\001 " +
+      "\001(\t\022\021\n\tpolicy_id\030\002 \001(\t\0224\n\006policy\030\003 \001(\0132$" +
+      ".salto.nebula.installation.v1.Policy\" \n\020" +
+      "GetPolicyRequest\022\014\n\004name\030\001 \001(\t\"n\n\023ListPo" +
+      "liciesRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_si" +
+      "ze\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004" +
+      " \001(\t\022\020\n\010order_by\030\005 \001(\t\"g\n\024ListPoliciesRe" +
+      "sponse\0226\n\010policies\030\001 \003(\0132$.salto.nebula." +
+      "installation.v1.Policy\022\027\n\017next_page_toke" +
+      "n\030\002 \001(\t\"|\n\023UpdatePolicyRequest\0224\n\006policy" +
+      "\030\001 \001(\0132$.salto.nebula.installation.v1.Po" +
+      "licy\022/\n\013update_mask\030\002 \001(\0132\032.google.proto" +
+      "buf.FieldMask\"#\n\023DeletePolicyRequest\022\014\n\004" +
+      "name\030\001 \001(\t\"C\n\026TestPermissionsRequest\022\024\n\014" +
+      "installation\030\001 \001(\t\022\023\n\013permissions\030\002 \003(\t\"" +
+      ".\n\027TestPermissionsResponse\022\023\n\013permission" +
+      "s\030\001 \003(\t\"K\n$TransferInstallationOwnership" +
+      "Request\022\024\n\014installation\030\001 \001(\t\022\r\n\005email\030\002" +
+      " \001(\t\"\'\n%TransferInstallationOwnershipRes" +
+      "ponse\"\221\001\n\"AcceptInstallationOwnershipReq" +
+      "uest\022\024\n\014installation\030\001 \001(\t\022D\n\014billing_in" +
+      "fo\030\002 \001(\0132).salto.nebula.installation.v1." +
+      "BillingInfoH\000\210\001\001B\017\n\r_billing_info\"%\n#Acc" +
+      "eptInstallationOwnershipResponse\"&\n\026GetS" +
+      "ubscriptionRequest\022\014\n\004name\030\001 \001(\t\"[\n\030Upda" +
+      "teBillingInfoRequest\022?\n\014billing_info\030\001 \001" +
+      "(\0132).salto.nebula.installation.v1.Billin" +
+      "gInfo\"a\n\032UpdatePaymentMethodRequest\022C\n\016p" +
+      "ayment_method\030\001 \001(\0132+.salto.nebula.insta" +
+      "llation.v1.PaymentMethod\":\n\021UpdateCardRe" +
+      "quest\022\026\n\016payment_method\030\001 \001(\t\022\r\n\005token\030\002" +
+      " \001(\t\"\024\n\022UpdateCardResponse\"\206\001\n!CreatePay" +
+      "mentAuthorizationRequest\022\016\n\006parent\030\001 \001(\t" +
+      "\022Q\n\025payment_authorization\030\002 \001(\01322.salto." +
+      "nebula.installation.v1.PaymentAuthorizat" +
+      "ion\"%\n\023ListInvoicesRequest\022\016\n\006parent\030\001 \001" +
+      "(\t\"O\n\024ListInvoicesResponse\0227\n\010invoices\030\001" +
+      " \003(\0132%.salto.nebula.installation.v1.Invo" +
+      "ice\":\n\022ApplyCouponRequest\022\024\n\014subscriptio" +
+      "n\030\001 \001(\t\022\016\n\006coupon\030\002 \001(\t\"\025\n\023ApplyCouponRe" +
+      "sponse\"<\n\024UnapplyCouponRequest\022\024\n\014subscr" +
+      "iption\030\001 \001(\t\022\016\n\006coupon\030\002 \001(\t\"\027\n\025UnapplyC" +
+      "ouponResponse2\255\025\n\023InstallationService\022y\n" +
+      "\022CreateInstallation\0227.salto.nebula.insta" +
+      "llation.v1.CreateInstallationRequest\032*.s" +
+      "alto.nebula.installation.v1.Installation" +
+      "\022s\n\017GetInstallation\0224.salto.nebula.insta" +
+      "llation.v1.GetInstallationRequest\032*.salt" +
+      "o.nebula.installation.v1.Installation\022\204\001" +
+      "\n\021ListInstallations\0226.salto.nebula.insta" +
+      "llation.v1.ListInstallationsRequest\0327.sa" +
+      "lto.nebula.installation.v1.ListInstallat" +
+      "ionsResponse\022y\n\022UpdateInstallation\0227.sal" +
+      "to.nebula.installation.v1.UpdateInstalla" +
+      "tionRequest\032*.salto.nebula.installation." +
+      "v1.Installation\022y\n\022DeleteInstallation\0227." +
+      "salto.nebula.installation.v1.DeleteInsta" +
+      "llationRequest\032*.salto.nebula.installati" +
+      "on.v1.Installation\022}\n\024UndeleteInstallati" +
+      "on\0229.salto.nebula.installation.v1.Undele" +
+      "teInstallationRequest\032*.salto.nebula.ins" +
+      "tallation.v1.Installation\022g\n\014CreatePolic" +
+      "y\0221.salto.nebula.installation.v1.CreateP" +
+      "olicyRequest\032$.salto.nebula.installation" +
+      ".v1.Policy\022a\n\tGetPolicy\022..salto.nebula.i" +
+      "nstallation.v1.GetPolicyRequest\032$.salto." +
+      "nebula.installation.v1.Policy\022u\n\014ListPol" +
+      "icies\0221.salto.nebula.installation.v1.Lis" +
+      "tPoliciesRequest\0322.salto.nebula.installa" +
+      "tion.v1.ListPoliciesResponse\022g\n\014UpdatePo" +
+      "licy\0221.salto.nebula.installation.v1.Upda" +
+      "tePolicyRequest\032$.salto.nebula.installat" +
+      "ion.v1.Policy\022Y\n\014DeletePolicy\0221.salto.ne" +
+      "bula.installation.v1.DeletePolicyRequest" +
+      "\032\026.google.protobuf.Empty\022~\n\017TestPermissi" +
+      "ons\0224.salto.nebula.installation.v1.TestP" +
+      "ermissionsRequest\0325.salto.nebula.install" +
+      "ation.v1.TestPermissionsResponse\022\250\001\n\035Tra" +
+      "nsferInstallationOwnership\022B.salto.nebul" +
+      "a.installation.v1.TransferInstallationOw" +
+      "nershipRequest\032C.salto.nebula.installati" +
+      "on.v1.TransferInstallationOwnershipRespo" +
+      "nse\022\242\001\n\033AcceptInstallationOwnership\022@.sa" +
+      "lto.nebula.installation.v1.AcceptInstall" +
+      "ationOwnershipRequest\032A.salto.nebula.ins" +
+      "tallation.v1.AcceptInstallationOwnership" +
+      "Response\022s\n\017GetSubscription\0224.salto.nebu" +
+      "la.installation.v1.GetSubscriptionReques" +
+      "t\032*.salto.nebula.installation.v1.Subscri" +
+      "ption\022v\n\021UpdateBillingInfo\0226.salto.nebul" +
+      "a.installation.v1.UpdateBillingInfoReque" +
+      "st\032).salto.nebula.installation.v1.Billin" +
+      "gInfo\022|\n\023UpdatePaymentMethod\0228.salto.neb" +
+      "ula.installation.v1.UpdatePaymentMethodR" +
+      "equest\032+.salto.nebula.installation.v1.Pa" +
+      "ymentMethod\022o\n\nUpdateCard\022/.salto.nebula" +
+      ".installation.v1.UpdateCardRequest\0320.sal" +
+      "to.nebula.installation.v1.UpdateCardResp" +
+      "onse\022\221\001\n\032CreatePaymentAuthorization\022?.sa" +
+      "lto.nebula.installation.v1.CreatePayment" +
+      "AuthorizationRequest\0322.salto.nebula.inst" +
+      "allation.v1.PaymentAuthorization\022u\n\014List" +
+      "Invoices\0221.salto.nebula.installation.v1." +
+      "ListInvoicesRequest\0322.salto.nebula.insta" +
+      "llation.v1.ListInvoicesResponse\022r\n\013Apply" +
+      "Coupon\0220.salto.nebula.installation.v1.Ap" +
+      "plyCouponRequest\0321.salto.nebula.installa" +
+      "tion.v1.ApplyCouponResponse\022x\n\rUnapplyCo" +
+      "upon\0222.salto.nebula.installation.v1.Unap" +
+      "plyCouponRequest\0323.salto.nebula.installa" +
+      "tion.v1.UnapplyCouponResponseB\200\002\n$com.sa" +
+      "ltoapis.nebula.installation.v1B\021Installa" +
+      "tionProtoP\001ZNgithub.com/saltoapis-intern" +
+      "al/saltoapis-go/nebula/installation/v1;i" +
+      "nstallation\252\002 Saltoapis.Nebula.Installat" +
+      "ion.V1\312\002 Saltoapis\\Nebula\\Installation\\V" +
+      "1\342\002,GPBMetadata\\Saltoapis\\Nebula\\Install" +
+      "ation\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -524,7 +525,7 @@ public final class InstallationProto {
     internal_static_salto_nebula_installation_v1_PaymentMethod_Card_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_installation_v1_PaymentMethod_Card_descriptor,
-        new java.lang.String[] { "ExpireDate", "LastFour", "Brand", });
+        new java.lang.String[] { "ExpireDate", "LastFour", "Brand", "PaymentAuthorization", });
     internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_descriptor =
       internal_static_salto_nebula_installation_v1_PaymentMethod_descriptor.getNestedTypes().get(1);
     internal_static_salto_nebula_installation_v1_PaymentMethod_DirectDebit_fieldAccessorTable = new
