@@ -67,6 +67,38 @@ public interface CardKeyOrBuilder extends
 
   /**
    * <pre>
+   * Globally unique identifier that is used across all devices manufactured
+   * by SALTO.
+   * </pre>
+   *
+   * <code>string device_id = 5;</code>
+   * @return Whether the deviceId field is set.
+   */
+  boolean hasDeviceId();
+  /**
+   * <pre>
+   * Globally unique identifier that is used across all devices manufactured
+   * by SALTO.
+   * </pre>
+   *
+   * <code>string device_id = 5;</code>
+   * @return The deviceId.
+   */
+  java.lang.String getDeviceId();
+  /**
+   * <pre>
+   * Globally unique identifier that is used across all devices manufactured
+   * by SALTO.
+   * </pre>
+   *
+   * <code>string device_id = 5;</code>
+   * @return The bytes for deviceId.
+   */
+  com.google.protobuf.ByteString
+      getDeviceIdBytes();
+
+  /**
+   * <pre>
    * Indicates whether this card key has been assigned, not assigned or is
    * active and ready for use. This field cannot be modified using a standard
    * [`UpdateCardKey`][salto.nebula.user.v1.UserService.UpdateCardKey]

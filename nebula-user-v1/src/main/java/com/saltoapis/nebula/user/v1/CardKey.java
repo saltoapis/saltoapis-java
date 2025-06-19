@@ -228,6 +228,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     UID(2),
+    DEVICE_ID(5),
     CARDID_NOT_SET(0);
     private final int value;
     private CardIdCase(int value) {
@@ -246,6 +247,7 @@ private static final long serialVersionUID = 0L;
     public static CardIdCase forNumber(int value) {
       switch (value) {
         case 2: return UID;
+        case 5: return DEVICE_ID;
         case 0: return CARDID_NOT_SET;
         default: return null;
       }
@@ -379,6 +381,73 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int DEVICE_ID_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * Globally unique identifier that is used across all devices manufactured
+   * by SALTO.
+   * </pre>
+   *
+   * <code>string device_id = 5;</code>
+   * @return Whether the deviceId field is set.
+   */
+  public boolean hasDeviceId() {
+    return cardIdCase_ == 5;
+  }
+  /**
+   * <pre>
+   * Globally unique identifier that is used across all devices manufactured
+   * by SALTO.
+   * </pre>
+   *
+   * <code>string device_id = 5;</code>
+   * @return The deviceId.
+   */
+  public java.lang.String getDeviceId() {
+    java.lang.Object ref = "";
+    if (cardIdCase_ == 5) {
+      ref = cardId_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (cardIdCase_ == 5) {
+        cardId_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Globally unique identifier that is used across all devices manufactured
+   * by SALTO.
+   * </pre>
+   *
+   * <code>string device_id = 5;</code>
+   * @return The bytes for deviceId.
+   */
+  public com.google.protobuf.ByteString
+      getDeviceIdBytes() {
+    java.lang.Object ref = "";
+    if (cardIdCase_ == 5) {
+      ref = cardId_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (cardIdCase_ == 5) {
+        cardId_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
   /**
@@ -464,6 +533,9 @@ private static final long serialVersionUID = 0L;
     if (outdated_ != false) {
       output.writeBool(4, outdated_);
     }
+    if (cardIdCase_ == 5) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 5, cardId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -486,6 +558,9 @@ private static final long serialVersionUID = 0L;
     if (outdated_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, outdated_);
+    }
+    if (cardIdCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(5, cardId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -513,6 +588,10 @@ private static final long serialVersionUID = 0L;
         if (!getUid()
             .equals(other.getUid())) return false;
         break;
+      case 5:
+        if (!getDeviceId()
+            .equals(other.getDeviceId())) return false;
+        break;
       case 0:
       default:
     }
@@ -538,6 +617,10 @@ private static final long serialVersionUID = 0L;
       case 2:
         hash = (37 * hash) + UID_FIELD_NUMBER;
         hash = (53 * hash) + getUid().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceId().hashCode();
         break;
       case 0:
       default:
@@ -719,10 +802,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.outdated_ = outdated_;
       }
     }
@@ -758,6 +841,12 @@ private static final long serialVersionUID = 0L;
       switch (other.getCardIdCase()) {
         case UID: {
           cardIdCase_ = 2;
+          cardId_ = other.cardId_;
+          onChanged();
+          break;
+        }
+        case DEVICE_ID: {
+          cardIdCase_ = 5;
           cardId_ = other.cardId_;
           onChanged();
           break;
@@ -805,14 +894,20 @@ private static final long serialVersionUID = 0L;
             } // case 18
             case 24: {
               state_ = input.readEnum();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               break;
             } // case 24
             case 32: {
               outdated_ = input.readBool();
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               break;
             } // case 32
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              cardIdCase_ = 5;
+              cardId_ = s;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1070,6 +1165,129 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    /**
+     * <pre>
+     * Globally unique identifier that is used across all devices manufactured
+     * by SALTO.
+     * </pre>
+     *
+     * <code>string device_id = 5;</code>
+     * @return Whether the deviceId field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeviceId() {
+      return cardIdCase_ == 5;
+    }
+    /**
+     * <pre>
+     * Globally unique identifier that is used across all devices manufactured
+     * by SALTO.
+     * </pre>
+     *
+     * <code>string device_id = 5;</code>
+     * @return The deviceId.
+     */
+    @java.lang.Override
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = "";
+      if (cardIdCase_ == 5) {
+        ref = cardId_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (cardIdCase_ == 5) {
+          cardId_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Globally unique identifier that is used across all devices manufactured
+     * by SALTO.
+     * </pre>
+     *
+     * <code>string device_id = 5;</code>
+     * @return The bytes for deviceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      java.lang.Object ref = "";
+      if (cardIdCase_ == 5) {
+        ref = cardId_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (cardIdCase_ == 5) {
+          cardId_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Globally unique identifier that is used across all devices manufactured
+     * by SALTO.
+     * </pre>
+     *
+     * <code>string device_id = 5;</code>
+     * @param value The deviceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeviceId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      cardIdCase_ = 5;
+      cardId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Globally unique identifier that is used across all devices manufactured
+     * by SALTO.
+     * </pre>
+     *
+     * <code>string device_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeviceId() {
+      if (cardIdCase_ == 5) {
+        cardIdCase_ = 0;
+        cardId_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Globally unique identifier that is used across all devices manufactured
+     * by SALTO.
+     * </pre>
+     *
+     * <code>string device_id = 5;</code>
+     * @param value The bytes for deviceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeviceIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      cardIdCase_ = 5;
+      cardId_ = value;
+      onChanged();
+      return this;
+    }
+
     private int state_ = 0;
     /**
      * <pre>
@@ -1107,7 +1325,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1151,7 +1369,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -1172,7 +1390,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -1211,7 +1429,7 @@ private static final long serialVersionUID = 0L;
     public Builder setOutdated(boolean value) {
 
       outdated_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1228,7 +1446,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearOutdated() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       outdated_ = false;
       onChanged();
       return this;
