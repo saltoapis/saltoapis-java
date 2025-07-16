@@ -84,6 +84,37 @@ public final class DestinationServiceGrpc {
     return getGetDestinationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest,
+      com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse> getBatchGetDestinationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchGetDestinations",
+      requestType = com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest.class,
+      responseType = com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest,
+      com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse> getBatchGetDestinationsMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest, com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse> getBatchGetDestinationsMethod;
+    if ((getBatchGetDestinationsMethod = DestinationServiceGrpc.getBatchGetDestinationsMethod) == null) {
+      synchronized (DestinationServiceGrpc.class) {
+        if ((getBatchGetDestinationsMethod = DestinationServiceGrpc.getBatchGetDestinationsMethod) == null) {
+          DestinationServiceGrpc.getBatchGetDestinationsMethod = getBatchGetDestinationsMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest, com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchGetDestinations"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new DestinationServiceMethodDescriptorSupplier("BatchGetDestinations"))
+              .build();
+        }
+      }
+    }
+    return getBatchGetDestinationsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.destination.v1.UpdateDestinationRequest,
       com.saltoapis.nebula.destination.v1.Destination> getUpdateDestinationMethod;
 
@@ -256,6 +287,17 @@ public final class DestinationServiceGrpc {
 
     /**
      * <pre>
+     * Get a batch of destinations
+     * Retrieves a batch of existing destinations.
+     * </pre>
+     */
+    default void batchGetDestinations(com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchGetDestinationsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Update an existing destination
      * Updates an existing destination.
      * </pre>
@@ -355,6 +397,18 @@ public final class DestinationServiceGrpc {
 
     /**
      * <pre>
+     * Get a batch of destinations
+     * Retrieves a batch of existing destinations.
+     * </pre>
+     */
+    public void batchGetDestinations(com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchGetDestinationsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Update an existing destination
      * Updates an existing destination.
      * </pre>
@@ -433,6 +487,17 @@ public final class DestinationServiceGrpc {
     public com.saltoapis.nebula.destination.v1.Destination getDestination(com.saltoapis.nebula.destination.v1.GetDestinationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetDestinationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get a batch of destinations
+     * Retrieves a batch of existing destinations.
+     * </pre>
+     */
+    public com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse batchGetDestinations(com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchGetDestinationsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -518,6 +583,18 @@ public final class DestinationServiceGrpc {
 
     /**
      * <pre>
+     * Get a batch of destinations
+     * Retrieves a batch of existing destinations.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse> batchGetDestinations(
+        com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchGetDestinationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Update an existing destination
      * Updates an existing destination.
      * </pre>
@@ -555,9 +632,10 @@ public final class DestinationServiceGrpc {
 
   private static final int METHODID_CREATE_DESTINATION = 0;
   private static final int METHODID_GET_DESTINATION = 1;
-  private static final int METHODID_UPDATE_DESTINATION = 2;
-  private static final int METHODID_LIST_DESTINATIONS = 3;
-  private static final int METHODID_DELETE_DESTINATION = 4;
+  private static final int METHODID_BATCH_GET_DESTINATIONS = 2;
+  private static final int METHODID_UPDATE_DESTINATION = 3;
+  private static final int METHODID_LIST_DESTINATIONS = 4;
+  private static final int METHODID_DELETE_DESTINATION = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -583,6 +661,10 @@ public final class DestinationServiceGrpc {
         case METHODID_GET_DESTINATION:
           serviceImpl.getDestination((com.saltoapis.nebula.destination.v1.GetDestinationRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.destination.v1.Destination>) responseObserver);
+          break;
+        case METHODID_BATCH_GET_DESTINATIONS:
+          serviceImpl.batchGetDestinations((com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse>) responseObserver);
           break;
         case METHODID_UPDATE_DESTINATION:
           serviceImpl.updateDestination((com.saltoapis.nebula.destination.v1.UpdateDestinationRequest) request,
@@ -628,6 +710,13 @@ public final class DestinationServiceGrpc {
               com.saltoapis.nebula.destination.v1.GetDestinationRequest,
               com.saltoapis.nebula.destination.v1.Destination>(
                 service, METHODID_GET_DESTINATION)))
+        .addMethod(
+          getBatchGetDestinationsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.destination.v1.BatchGetDestinationsRequest,
+              com.saltoapis.nebula.destination.v1.BatchGetDestinationsResponse>(
+                service, METHODID_BATCH_GET_DESTINATIONS)))
         .addMethod(
           getUpdateDestinationMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -699,6 +788,7 @@ public final class DestinationServiceGrpc {
               .setSchemaDescriptor(new DestinationServiceFileDescriptorSupplier())
               .addMethod(getCreateDestinationMethod())
               .addMethod(getGetDestinationMethod())
+              .addMethod(getBatchGetDestinationsMethod())
               .addMethod(getUpdateDestinationMethod())
               .addMethod(getListDestinationsMethod())
               .addMethod(getDeleteDestinationMethod())
