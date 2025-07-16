@@ -41,6 +41,16 @@ public final class DestinationProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_destination_v1_GetDestinationRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_destination_v1_BatchGetDestinationsRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_destination_v1_BatchGetDestinationsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_destination_v1_BatchGetDestinationsResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_destination_v1_BatchGetDestinationsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_salto_nebula_destination_v1_UpdateDestinationRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -78,39 +88,47 @@ public final class DestinationProto {
       "estination_id\030\002 \001(\tH\000\210\001\001\022=\n\013destination\030" +
       "\003 \001(\0132(.salto.nebula.destination.v1.Dest" +
       "inationB\021\n\017_destination_id\"%\n\025GetDestina" +
-      "tionRequest\022\014\n\004name\030\001 \001(\t\"\212\001\n\030UpdateDest" +
-      "inationRequest\022=\n\013destination\030\001 \001(\0132(.sa" +
-      "lto.nebula.destination.v1.Destination\022/\n" +
-      "\013update_mask\030\002 \001(\0132\032.google.protobuf.Fie" +
-      "ldMask\"r\n\027ListDestinationsRequest\022\016\n\006par" +
-      "ent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok" +
-      "en\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001" +
-      "(\t\"s\n\030ListDestinationsResponse\022>\n\014destin" +
-      "ations\030\001 \003(\0132(.salto.nebula.destination." +
-      "v1.Destination\022\027\n\017next_page_token\030\002 \001(\t\"" +
-      "(\n\030DeleteDestinationRequest\022\014\n\004name\030\001 \001(" +
-      "\t2\325\004\n\022DestinationService\022t\n\021CreateDestin" +
-      "ation\0225.salto.nebula.destination.v1.Crea" +
-      "teDestinationRequest\032(.salto.nebula.dest" +
-      "ination.v1.Destination\022n\n\016GetDestination" +
-      "\0222.salto.nebula.destination.v1.GetDestin" +
-      "ationRequest\032(.salto.nebula.destination." +
-      "v1.Destination\022t\n\021UpdateDestination\0225.sa" +
-      "lto.nebula.destination.v1.UpdateDestinat" +
+      "tionRequest\022\014\n\004name\030\001 \001(\t\"<\n\033BatchGetDes" +
+      "tinationsRequest\022\016\n\006parent\030\001 \001(\t\022\r\n\005name" +
+      "s\030\002 \003(\t\"^\n\034BatchGetDestinationsResponse\022" +
+      ">\n\014destinations\030\001 \003(\0132(.salto.nebula.des" +
+      "tination.v1.Destination\"\212\001\n\030UpdateDestin" +
+      "ationRequest\022=\n\013destination\030\001 \001(\0132(.salt" +
+      "o.nebula.destination.v1.Destination\022/\n\013u" +
+      "pdate_mask\030\002 \001(\0132\032.google.protobuf.Field" +
+      "Mask\"r\n\027ListDestinationsRequest\022\016\n\006paren" +
+      "t\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token" +
+      "\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t" +
+      "\"s\n\030ListDestinationsResponse\022>\n\014destinat" +
+      "ions\030\001 \003(\0132(.salto.nebula.destination.v1" +
+      ".Destination\022\027\n\017next_page_token\030\002 \001(\t\"(\n" +
+      "\030DeleteDestinationRequest\022\014\n\004name\030\001 \001(\t2" +
+      "\343\005\n\022DestinationService\022t\n\021CreateDestinat" +
+      "ion\0225.salto.nebula.destination.v1.Create" +
+      "DestinationRequest\032(.salto.nebula.destin" +
+      "ation.v1.Destination\022n\n\016GetDestination\0222" +
+      ".salto.nebula.destination.v1.GetDestinat" +
       "ionRequest\032(.salto.nebula.destination.v1" +
-      ".Destination\022\177\n\020ListDestinations\0224.salto" +
-      ".nebula.destination.v1.ListDestinationsR" +
-      "equest\0325.salto.nebula.destination.v1.Lis" +
-      "tDestinationsResponse\022b\n\021DeleteDestinati" +
-      "on\0225.salto.nebula.destination.v1.DeleteD" +
-      "estinationRequest\032\026.google.protobuf.Empt" +
-      "yB\371\001\n#com.saltoapis.nebula.destination.v" +
-      "1B\020DestinationProtoP\001ZLgithub.com/saltoa" +
-      "pis-internal/saltoapis-go/nebula/destina" +
-      "tion/v1;destination\252\002\037Saltoapis.Nebula.D" +
-      "estination.V1\312\002\037Saltoapis\\Nebula\\Destina" +
-      "tion\\V1\342\002+GPBMetadata\\Saltoapis\\Nebula\\D" +
-      "estination\\V1b\006proto3"
+      ".Destination\022\213\001\n\024BatchGetDestinations\0228." +
+      "salto.nebula.destination.v1.BatchGetDest" +
+      "inationsRequest\0329.salto.nebula.destinati" +
+      "on.v1.BatchGetDestinationsResponse\022t\n\021Up" +
+      "dateDestination\0225.salto.nebula.destinati" +
+      "on.v1.UpdateDestinationRequest\032(.salto.n" +
+      "ebula.destination.v1.Destination\022\177\n\020List" +
+      "Destinations\0224.salto.nebula.destination." +
+      "v1.ListDestinationsRequest\0325.salto.nebul" +
+      "a.destination.v1.ListDestinationsRespons" +
+      "e\022b\n\021DeleteDestination\0225.salto.nebula.de" +
+      "stination.v1.DeleteDestinationRequest\032\026." +
+      "google.protobuf.EmptyB\371\001\n#com.saltoapis." +
+      "nebula.destination.v1B\020DestinationProtoP" +
+      "\001ZLgithub.com/saltoapis-internal/saltoap" +
+      "is-go/nebula/destination/v1;destination\252" +
+      "\002\037Saltoapis.Nebula.Destination.V1\312\002\037Salt" +
+      "oapis\\Nebula\\Destination\\V1\342\002+GPBMetadat" +
+      "a\\Saltoapis\\Nebula\\Destination\\V1b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -136,26 +154,38 @@ public final class DestinationProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_destination_v1_GetDestinationRequest_descriptor,
         new java.lang.String[] { "Name", });
-    internal_static_salto_nebula_destination_v1_UpdateDestinationRequest_descriptor =
+    internal_static_salto_nebula_destination_v1_BatchGetDestinationsRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_salto_nebula_destination_v1_BatchGetDestinationsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_destination_v1_BatchGetDestinationsRequest_descriptor,
+        new java.lang.String[] { "Parent", "Names", });
+    internal_static_salto_nebula_destination_v1_BatchGetDestinationsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_salto_nebula_destination_v1_BatchGetDestinationsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_destination_v1_BatchGetDestinationsResponse_descriptor,
+        new java.lang.String[] { "Destinations", });
+    internal_static_salto_nebula_destination_v1_UpdateDestinationRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_salto_nebula_destination_v1_UpdateDestinationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_destination_v1_UpdateDestinationRequest_descriptor,
         new java.lang.String[] { "Destination", "UpdateMask", });
     internal_static_salto_nebula_destination_v1_ListDestinationsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_salto_nebula_destination_v1_ListDestinationsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_destination_v1_ListDestinationsRequest_descriptor,
         new java.lang.String[] { "Parent", "PageSize", "PageToken", "Filter", "OrderBy", });
     internal_static_salto_nebula_destination_v1_ListDestinationsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_salto_nebula_destination_v1_ListDestinationsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_destination_v1_ListDestinationsResponse_descriptor,
         new java.lang.String[] { "Destinations", "NextPageToken", });
     internal_static_salto_nebula_destination_v1_DeleteDestinationRequest_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_salto_nebula_destination_v1_DeleteDestinationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_destination_v1_DeleteDestinationRequest_descriptor,
