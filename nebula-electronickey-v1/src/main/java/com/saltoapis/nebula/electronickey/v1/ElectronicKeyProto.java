@@ -168,7 +168,7 @@ public final class ElectronicKeyProto {
       "Key\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022" +
       "\023\n\013initialized\030\003 \001(\010\022\026\n\tdevice_id\030\004 \001(\tH" +
       "\000\210\001\001\022\020\n\010outdated\030\005 \001(\010\022:\n\017device_metadat" +
-      "a\030\010 \001(\0132!.salto.nebula.type.DeviceMetada" +
+      "a\030\006 \001(\0132!.salto.nebula.type.DeviceMetada" +
       "ta\022\023\n\013low_battery\030\007 \001(\010B\014\n\n_device_id\"\250\001" +
       "\n\032CreateElectronicKeyRequest\022\016\n\006parent\030\001" +
       " \001(\t\022\036\n\021electronic_key_id\030\002 \001(\tH\000\210\001\001\022D\n\016" +

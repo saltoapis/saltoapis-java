@@ -119,7 +119,7 @@ public interface ElectronicKeyOrBuilder extends
    * Device metadata contains information about a device hardware and firmware.
    * </pre>
    *
-   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
    * @return Whether the deviceMetadata field is set.
    */
   boolean hasDeviceMetadata();
@@ -128,7 +128,7 @@ public interface ElectronicKeyOrBuilder extends
    * Device metadata contains information about a device hardware and firmware.
    * </pre>
    *
-   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
    * @return The deviceMetadata.
    */
   com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata();
@@ -137,7 +137,7 @@ public interface ElectronicKeyOrBuilder extends
    * Device metadata contains information about a device hardware and firmware.
    * </pre>
    *
-   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
    */
   com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder();
 
