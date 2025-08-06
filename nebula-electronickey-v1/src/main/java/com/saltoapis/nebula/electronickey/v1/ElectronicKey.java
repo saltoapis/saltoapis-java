@@ -249,14 +249,14 @@ private static final long serialVersionUID = 0L;
     return outdated_;
   }
 
-  public static final int DEVICE_METADATA_FIELD_NUMBER = 8;
+  public static final int DEVICE_METADATA_FIELD_NUMBER = 6;
   private com.saltoapis.nebula.type.DeviceMetadata deviceMetadata_;
   /**
    * <pre>
    * Device metadata contains information about a device hardware and firmware.
    * </pre>
    *
-   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
    * @return Whether the deviceMetadata field is set.
    */
   @java.lang.Override
@@ -268,7 +268,7 @@ private static final long serialVersionUID = 0L;
    * Device metadata contains information about a device hardware and firmware.
    * </pre>
    *
-   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
    * @return The deviceMetadata.
    */
   @java.lang.Override
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
    * Device metadata contains information about a device hardware and firmware.
    * </pre>
    *
-   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+   * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
    */
   @java.lang.Override
   public com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder() {
@@ -332,11 +332,11 @@ private static final long serialVersionUID = 0L;
     if (outdated_ != false) {
       output.writeBool(5, outdated_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(6, getDeviceMetadata());
+    }
     if (lowBattery_ != false) {
       output.writeBool(7, lowBattery_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(8, getDeviceMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -364,13 +364,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(5, outdated_);
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getDeviceMetadata());
+    }
     if (lowBattery_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, lowBattery_);
-    }
-    if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getDeviceMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -743,18 +743,18 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 40
-            case 56: {
-              lowBattery_ = input.readBool();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 56
-            case 66: {
+            case 50: {
               input.readMessage(
                   getDeviceMetadataFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000020;
               break;
-            } // case 66
+            } // case 50
+            case 56: {
+              lowBattery_ = input.readBool();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 56
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1198,7 +1198,7 @@ private static final long serialVersionUID = 0L;
      * Device metadata contains information about a device hardware and firmware.
      * </pre>
      *
-     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
      * @return Whether the deviceMetadata field is set.
      */
     public boolean hasDeviceMetadata() {
@@ -1209,7 +1209,7 @@ private static final long serialVersionUID = 0L;
      * Device metadata contains information about a device hardware and firmware.
      * </pre>
      *
-     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
      * @return The deviceMetadata.
      */
     public com.saltoapis.nebula.type.DeviceMetadata getDeviceMetadata() {
@@ -1224,7 +1224,7 @@ private static final long serialVersionUID = 0L;
      * Device metadata contains information about a device hardware and firmware.
      * </pre>
      *
-     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
      */
     public Builder setDeviceMetadata(com.saltoapis.nebula.type.DeviceMetadata value) {
       if (deviceMetadataBuilder_ == null) {
@@ -1244,7 +1244,7 @@ private static final long serialVersionUID = 0L;
      * Device metadata contains information about a device hardware and firmware.
      * </pre>
      *
-     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
      */
     public Builder setDeviceMetadata(
         com.saltoapis.nebula.type.DeviceMetadata.Builder builderForValue) {
@@ -1262,7 +1262,7 @@ private static final long serialVersionUID = 0L;
      * Device metadata contains information about a device hardware and firmware.
      * </pre>
      *
-     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
      */
     public Builder mergeDeviceMetadata(com.saltoapis.nebula.type.DeviceMetadata value) {
       if (deviceMetadataBuilder_ == null) {
@@ -1287,7 +1287,7 @@ private static final long serialVersionUID = 0L;
      * Device metadata contains information about a device hardware and firmware.
      * </pre>
      *
-     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
      */
     public Builder clearDeviceMetadata() {
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1304,7 +1304,7 @@ private static final long serialVersionUID = 0L;
      * Device metadata contains information about a device hardware and firmware.
      * </pre>
      *
-     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
      */
     public com.saltoapis.nebula.type.DeviceMetadata.Builder getDeviceMetadataBuilder() {
       bitField0_ |= 0x00000020;
@@ -1316,7 +1316,7 @@ private static final long serialVersionUID = 0L;
      * Device metadata contains information about a device hardware and firmware.
      * </pre>
      *
-     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
      */
     public com.saltoapis.nebula.type.DeviceMetadataOrBuilder getDeviceMetadataOrBuilder() {
       if (deviceMetadataBuilder_ != null) {
@@ -1331,7 +1331,7 @@ private static final long serialVersionUID = 0L;
      * Device metadata contains information about a device hardware and firmware.
      * </pre>
      *
-     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 8;</code>
+     * <code>.salto.nebula.type.DeviceMetadata device_metadata = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilder<
         com.saltoapis.nebula.type.DeviceMetadata, com.saltoapis.nebula.type.DeviceMetadata.Builder, com.saltoapis.nebula.type.DeviceMetadataOrBuilder> 

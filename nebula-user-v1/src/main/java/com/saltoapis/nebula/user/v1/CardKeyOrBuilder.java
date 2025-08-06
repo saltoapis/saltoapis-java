@@ -40,16 +40,6 @@ public interface CardKeyOrBuilder extends
    * </pre>
    *
    * <code>string uid = 2;</code>
-   * @return Whether the uid field is set.
-   */
-  boolean hasUid();
-  /**
-   * <pre>
-   * Unique identifier of the physical card. Length dependent of technology.
-   * Max length for ISO14443-3 is 10 bytes.
-   * </pre>
-   *
-   * <code>string uid = 2;</code>
    * @return The uid.
    */
   java.lang.String getUid();
@@ -64,38 +54,6 @@ public interface CardKeyOrBuilder extends
    */
   com.google.protobuf.ByteString
       getUidBytes();
-
-  /**
-   * <pre>
-   * Globally unique identifier that is used across all devices manufactured
-   * by SALTO.
-   * </pre>
-   *
-   * <code>string device_id = 5;</code>
-   * @return Whether the deviceId field is set.
-   */
-  boolean hasDeviceId();
-  /**
-   * <pre>
-   * Globally unique identifier that is used across all devices manufactured
-   * by SALTO.
-   * </pre>
-   *
-   * <code>string device_id = 5;</code>
-   * @return The deviceId.
-   */
-  java.lang.String getDeviceId();
-  /**
-   * <pre>
-   * Globally unique identifier that is used across all devices manufactured
-   * by SALTO.
-   * </pre>
-   *
-   * <code>string device_id = 5;</code>
-   * @return The bytes for deviceId.
-   */
-  com.google.protobuf.ByteString
-      getDeviceIdBytes();
 
   /**
    * <pre>
@@ -143,6 +101,4 @@ public interface CardKeyOrBuilder extends
    * @return The outdated.
    */
   boolean getOutdated();
-
-  com.saltoapis.nebula.user.v1.CardKey.CardIdCase getCardIdCase();
 }
