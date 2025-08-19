@@ -316,6 +316,33 @@ public interface UserOrBuilder extends
 
   /**
    * <pre>
+   * The electronic key resource that belongs to the user.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+   * @return Whether the electronicKey field is set.
+   */
+  boolean hasElectronicKey();
+  /**
+   * <pre>
+   * The electronic key resource that belongs to the user.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+   * @return The electronicKey.
+   */
+  com.saltoapis.nebula.user.v1.ElectronicKey getElectronicKey();
+  /**
+   * <pre>
+   * The electronic key resource that belongs to the user.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+   */
+  com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder getElectronicKeyOrBuilder();
+
+  /**
+   * <pre>
    * The app key resource that belongs to the user.
    * </pre>
    *
