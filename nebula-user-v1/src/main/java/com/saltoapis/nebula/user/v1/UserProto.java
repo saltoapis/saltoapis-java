@@ -274,7 +274,7 @@ public final class UserProto {
       "roto\032 google/protobuf/field_mask.proto\032\037" +
       "google/protobuf/timestamp.proto\032$salto/l" +
       "ongrunning/v1/operation.proto\032 salto/neb" +
-      "ula/type/schedule.proto\"\223\004\n\004User\022\014\n\004name" +
+      "ula/type/schedule.proto\"\320\004\n\004User\022\014\n\004name" +
       "\030\001 \001(\t\022\023\n\006parent\030\002 \001(\tH\000\210\001\001\022\022\n\ngiven_nam" +
       "e\030\003 \001(\t\022\030\n\013family_name\030\004 \001(\tH\001\210\001\001\022\024\n\014dis" +
       "play_name\030\005 \001(\t\022\022\n\005email\030\006 \001(\tH\002\210\001\001\0221\n\ra" +
@@ -282,177 +282,179 @@ public final class UserProto {
       "estamp\022/\n\013expire_time\030\010 \001(\0132\032.google.pro" +
       "tobuf.Timestamp\022\022\n\005photo\030\t \001(\tH\003\210\001\001\022\021\n\tp" +
       "hoto_uri\030\n \001(\t\022/\n\010card_key\030\013 \001(\0132\035.salto" +
-      ".nebula.user.v1.CardKey\022-\n\007app_key\030\014 \001(\013" +
-      "2\034.salto.nebula.user.v1.AppKey\0223\n\nwallet" +
-      "_key\030\r \001(\0132\037.salto.nebula.user.v1.Wallet" +
-      "Key\0220\n\010passcode\030\017 \001(\0132\036.salto.nebula.use" +
-      "r.v1.Passcode\022\017\n\007blocked\030\016 \001(\010B\t\n\007_paren" +
-      "tB\016\n\014_family_nameB\010\n\006_emailB\010\n\006_photo\"\305\002" +
-      "\n\017UserAccessRight\022\014\n\004name\030\001 \001(\t\022\024\n\014acces" +
-      "s_right\030\002 \001(\t\022\024\n\014display_name\030\003 \001(\t\022.\n\ts" +
-      "chedules\030\004 \003(\0132\033.salto.nebula.type.Sched" +
-      "ule\0228\n\023effective_schedules\030\005 \003(\0132\033.salto" +
-      ".nebula.type.Schedule\0226\n\ractivate_time\030\006" +
-      " \001(\0132\032.google.protobuf.TimestampH\000\210\001\001\0224\n" +
-      "\013expire_time\030\007 \001(\0132\032.google.protobuf.Tim" +
-      "estampH\001\210\001\001B\020\n\016_activate_timeB\016\n\014_expire" +
-      "_time\"\265\001\n\007CardKey\022\014\n\004name\030\001 \001(\t\022\013\n\003uid\030\002" +
-      " \001(\t\0222\n\005state\030\003 \001(\0162#.salto.nebula.user." +
-      "v1.CardKey.State\022\020\n\010outdated\030\004 \001(\010\"I\n\005St" +
+      ".nebula.user.v1.CardKey\022;\n\016electronic_ke" +
+      "y\030\020 \001(\0132#.salto.nebula.user.v1.Electroni" +
+      "cKey\022-\n\007app_key\030\014 \001(\0132\034.salto.nebula.use" +
+      "r.v1.AppKey\0223\n\nwallet_key\030\r \001(\0132\037.salto." +
+      "nebula.user.v1.WalletKey\0220\n\010passcode\030\017 \001" +
+      "(\0132\036.salto.nebula.user.v1.Passcode\022\017\n\007bl" +
+      "ocked\030\016 \001(\010B\t\n\007_parentB\016\n\014_family_nameB\010" +
+      "\n\006_emailB\010\n\006_photo\"\305\002\n\017UserAccessRight\022\014" +
+      "\n\004name\030\001 \001(\t\022\024\n\014access_right\030\002 \001(\t\022\024\n\014di" +
+      "splay_name\030\003 \001(\t\022.\n\tschedules\030\004 \003(\0132\033.sa" +
+      "lto.nebula.type.Schedule\0228\n\023effective_sc" +
+      "hedules\030\005 \003(\0132\033.salto.nebula.type.Schedu" +
+      "le\0226\n\ractivate_time\030\006 \001(\0132\032.google.proto" +
+      "buf.TimestampH\000\210\001\001\0224\n\013expire_time\030\007 \001(\0132" +
+      "\032.google.protobuf.TimestampH\001\210\001\001B\020\n\016_act" +
+      "ivate_timeB\016\n\014_expire_time\"\265\001\n\007CardKey\022\014" +
+      "\n\004name\030\001 \001(\t\022\013\n\003uid\030\002 \001(\t\0222\n\005state\030\003 \001(\016" +
+      "2#.salto.nebula.user.v1.CardKey.State\022\020\n" +
+      "\010outdated\030\004 \001(\010\"I\n\005State\022\025\n\021STATE_UNSPEC" +
+      "IFIED\020\000\022\020\n\014NOT_ASSIGNED\020\001\022\013\n\007PENDING\020\002\022\n" +
+      "\n\006ACTIVE\020\003\"\246\001\n\006AppKey\022\014\n\004name\030\001 \001(\t\0221\n\005s" +
+      "tate\030\002 \001(\0162\".salto.nebula.user.v1.AppKey" +
+      ".State\022\020\n\010outdated\030\003 \001(\010\"I\n\005State\022\025\n\021STA" +
+      "TE_UNSPECIFIED\020\000\022\020\n\014NOT_ASSIGNED\020\001\022\013\n\007PE" +
+      "NDING\020\002\022\n\n\006ACTIVE\020\003\"\254\001\n\tWalletKey\022\014\n\004nam" +
+      "e\030\001 \001(\t\0224\n\005state\030\002 \001(\0162%.salto.nebula.us" +
+      "er.v1.WalletKey.State\022\020\n\010outdated\030\003 \001(\010\"" +
+      "I\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014NOT_A" +
+      "SSIGNED\020\001\022\013\n\007PENDING\020\002\022\n\n\006ACTIVE\020\003\"\213\001\n\010P" +
+      "asscode\022\014\n\004name\030\001 \001(\t\0223\n\005state\030\002 \001(\0162$.s" +
+      "alto.nebula.user.v1.Passcode.State\"<\n\005St" +
       "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014NOT_ASSIGN" +
-      "ED\020\001\022\013\n\007PENDING\020\002\022\n\n\006ACTIVE\020\003\"\246\001\n\006AppKey" +
-      "\022\014\n\004name\030\001 \001(\t\0221\n\005state\030\002 \001(\0162\".salto.ne" +
-      "bula.user.v1.AppKey.State\022\020\n\010outdated\030\003 " +
-      "\001(\010\"I\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014N" +
-      "OT_ASSIGNED\020\001\022\013\n\007PENDING\020\002\022\n\n\006ACTIVE\020\003\"\254" +
-      "\001\n\tWalletKey\022\014\n\004name\030\001 \001(\t\0224\n\005state\030\002 \001(" +
-      "\0162%.salto.nebula.user.v1.WalletKey.State" +
-      "\022\020\n\010outdated\030\003 \001(\010\"I\n\005State\022\025\n\021STATE_UNS" +
-      "PECIFIED\020\000\022\020\n\014NOT_ASSIGNED\020\001\022\013\n\007PENDING\020" +
-      "\002\022\n\n\006ACTIVE\020\003\"\213\001\n\010Passcode\022\014\n\004name\030\001 \001(\t" +
-      "\0223\n\005state\030\002 \001(\0162$.salto.nebula.user.v1.P" +
-      "asscode.State\"<\n\005State\022\025\n\021STATE_UNSPECIF" +
-      "IED\020\000\022\020\n\014NOT_ASSIGNED\020\001\022\n\n\006ACTIVE\020\002\"\307\001\n\r" +
-      "ElectronicKey\022\014\n\004name\030\001 \001(\t\022\021\n\tdevice_id" +
-      "\030\002 \001(\t\0228\n\005state\030\003 \001(\0162).salto.nebula.use" +
-      "r.v1.ElectronicKey.State\022\020\n\010outdated\030\004 \001" +
-      "(\010\"I\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014NO" +
-      "T_ASSIGNED\020\001\022\013\n\007PENDING\020\002\022\n\n\006ACTIVE\020\003\"o\n" +
-      "\021CreateUserRequest\022\016\n\006parent\030\001 \001(\t\022\024\n\007us" +
-      "er_id\030\002 \001(\tH\000\210\001\001\022(\n\004user\030\003 \001(\0132\032.salto.n" +
-      "ebula.user.v1.UserB\n\n\010_user_id\"\036\n\016GetUse" +
-      "rRequest\022\014\n\004name\030\001 \001(\t\"k\n\020ListUsersReque" +
-      "st\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n" +
-      "\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010ord" +
-      "er_by\030\005 \001(\t\"k\n\021ListUsersResponse\022)\n\005user" +
-      "s\030\001 \003(\0132\032.salto.nebula.user.v1.User\022\027\n\017n" +
-      "ext_page_token\030\002 \001(\t\022\022\n\ntotal_size\030\003 \001(\005" +
-      "\"n\n\021UpdateUserRequest\022(\n\004user\030\001 \001(\0132\032.sa" +
-      "lto.nebula.user.v1.User\022/\n\013update_mask\030\002" +
-      " \001(\0132\032.google.protobuf.FieldMask\"!\n\021Dele" +
-      "teUserRequest\022\014\n\004name\030\001 \001(\t\" \n\020BlockUser" +
-      "Request\022\014\n\004name\030\001 \001(\t\"\023\n\021BlockUserRespon" +
-      "se\"\"\n\022UnblockUserRequest\022\014\n\004name\030\001 \001(\t\"\025" +
-      "\n\023UnblockUserResponse\"p\n\034CreateUserAcces" +
-      "sRightRequest\022\016\n\006parent\030\001 \001(\t\022@\n\021user_ac" +
-      "cess_right\030\002 \001(\0132%.salto.nebula.user.v1." +
-      "UserAccessRight\")\n\031GetUserAccessRightReq" +
-      "uest\022\014\n\004name\030\001 \001(\t\"v\n\033ListUserAccessRigh" +
-      "tsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002" +
-      " \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t" +
-      "\022\020\n\010order_by\030\005 \001(\t\"z\n\034ListUserAccessRigh" +
-      "tsResponse\022A\n\022user_access_rights\030\001 \003(\0132%" +
-      ".salto.nebula.user.v1.UserAccessRight\022\027\n" +
-      "\017next_page_token\030\002 \001(\t\"\221\001\n\034UpdateUserAcc" +
-      "essRightRequest\022@\n\021user_access_right\030\001 \001" +
-      "(\0132%.salto.nebula.user.v1.UserAccessRigh" +
-      "t\022/\n\013update_mask\030\002 \001(\0132\032.google.protobuf" +
-      ".FieldMask\",\n\034DeleteUserAccessRightReque" +
-      "st\022\014\n\004name\030\001 \001(\t\"1\n\024AssignCardKeyRequest" +
-      "\022\014\n\004name\030\001 \001(\t\022\013\n\003uid\030\002 \001(\t\"$\n\024CancelCar" +
-      "dKeyRequest\022\014\n\004name\030\001 \001(\t\"r\n\024EncodeCardK" +
-      "eyRequest\022\014\n\004name\030\001 \001(\t\022\021\n\007encoder\030\002 \001(\t" +
-      "H\000\022\031\n\017electronic_lock\030\003 \001(\tH\000\022\024\n\ncontrol" +
-      "ler\030\004 \001(\tH\000B\010\n\006device\"\027\n\025EncodeCardKeyRe" +
-      "sponse\"\027\n\025EncodeCardKeyMetadata\"#\n\023Assig" +
-      "nAppKeyRequest\022\014\n\004name\030\001 \001(\t\"#\n\023CancelAp" +
-      "pKeyRequest\022\014\n\004name\030\001 \001(\t\"(\n\030ComputeAppK" +
-      "eyDataRequest\022\014\n\004name\030\001 \001(\t\")\n\031ComputeAp" +
-      "pKeyDataResponse\022\014\n\004data\030\001 \001(\014\"&\n\026Assign" +
-      "WalletKeyRequest\022\014\n\004name\030\001 \001(\t\"b\n\027Assign" +
-      "WalletKeyResponse\0223\n\nwallet_key\030\001 \001(\0132\037." +
-      "salto.nebula.user.v1.WalletKey\022\022\n\naccess" +
-      "_uri\030\002 \001(\t\"&\n\026CancelWalletKeyRequest\022\014\n\004" +
-      "name\030\001 \001(\t\"N\n\027CancelWalletKeyResponse\0223\n" +
-      "\nwallet_key\030\001 \001(\0132\037.salto.nebula.user.v1" +
-      ".WalletKey\"%\n\025AssignPasscodeRequest\022\014\n\004n" +
-      "ame\030\001 \001(\t\"Y\n\026AssignPasscodeResponse\0220\n\010p" +
-      "asscode\030\001 \001(\0132\036.salto.nebula.user.v1.Pas" +
-      "scode\022\r\n\005value\030\002 \001(\t\"%\n\025CancelPasscodeRe" +
-      "quest\022\014\n\004name\030\001 \001(\t\"J\n\026CancelPasscodeRes" +
-      "ponse\0220\n\010passcode\030\001 \001(\0132\036.salto.nebula.u" +
-      "ser.v1.Passcode\"=\n\032AssignElectronicKeyRe" +
-      "quest\022\014\n\004name\030\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\"Z" +
-      "\n\033AssignElectronicKeyResponse\022;\n\016electro" +
-      "nic_key\030\001 \001(\0132#.salto.nebula.user.v1.Ele" +
-      "ctronicKey\"*\n\032CancelElectronicKeyRequest" +
-      "\022\014\n\004name\030\001 \001(\t\"Z\n\033CancelElectronicKeyRes" +
-      "ponse\022;\n\016electronic_key\030\001 \001(\0132#.salto.ne" +
-      "bula.user.v1.ElectronicKey\"x\n\032EncodeElec" +
-      "tronicKeyRequest\022\014\n\004name\030\001 \001(\t\022\021\n\007encode" +
-      "r\030\002 \001(\tH\000\022\031\n\017electronic_lock\030\003 \001(\tH\000\022\024\n\n" +
-      "controller\030\004 \001(\tH\000B\010\n\006device\"\035\n\033EncodeEl" +
-      "ectronicKeyResponse\"\035\n\033EncodeElectronicK" +
-      "eyMetadata2\203\024\n\013UserService\022Q\n\nCreateUser" +
-      "\022\'.salto.nebula.user.v1.CreateUserReques" +
-      "t\032\032.salto.nebula.user.v1.User\022K\n\007GetUser" +
-      "\022$.salto.nebula.user.v1.GetUserRequest\032\032" +
-      ".salto.nebula.user.v1.User\022\\\n\tListUsers\022" +
-      "&.salto.nebula.user.v1.ListUsersRequest\032" +
-      "\'.salto.nebula.user.v1.ListUsersResponse" +
-      "\022Q\n\nUpdateUser\022\'.salto.nebula.user.v1.Up" +
-      "dateUserRequest\032\032.salto.nebula.user.v1.U" +
-      "ser\022M\n\nDeleteUser\022\'.salto.nebula.user.v1" +
-      ".DeleteUserRequest\032\026.google.protobuf.Emp" +
-      "ty\022\\\n\tBlockUser\022&.salto.nebula.user.v1.B" +
-      "lockUserRequest\032\'.salto.nebula.user.v1.B" +
-      "lockUserResponse\022b\n\013UnblockUser\022(.salto." +
-      "nebula.user.v1.UnblockUserRequest\032).salt" +
-      "o.nebula.user.v1.UnblockUserResponse\022r\n\025" +
-      "CreateUserAccessRight\0222.salto.nebula.use" +
-      "r.v1.CreateUserAccessRightRequest\032%.salt" +
-      "o.nebula.user.v1.UserAccessRight\022l\n\022GetU" +
-      "serAccessRight\022/.salto.nebula.user.v1.Ge" +
-      "tUserAccessRightRequest\032%.salto.nebula.u" +
-      "ser.v1.UserAccessRight\022}\n\024ListUserAccess" +
-      "Rights\0221.salto.nebula.user.v1.ListUserAc" +
-      "cessRightsRequest\0322.salto.nebula.user.v1" +
-      ".ListUserAccessRightsResponse\022r\n\025UpdateU" +
-      "serAccessRight\0222.salto.nebula.user.v1.Up" +
-      "dateUserAccessRightRequest\032%.salto.nebul" +
-      "a.user.v1.UserAccessRight\022c\n\025DeleteUserA" +
-      "ccessRight\0222.salto.nebula.user.v1.Delete" +
-      "UserAccessRightRequest\032\026.google.protobuf" +
-      ".Empty\022Z\n\rAssignCardKey\022*.salto.nebula.u" +
-      "ser.v1.AssignCardKeyRequest\032\035.salto.nebu" +
-      "la.user.v1.CardKey\022Z\n\rCancelCardKey\022*.sa" +
-      "lto.nebula.user.v1.CancelCardKeyRequest\032" +
-      "\035.salto.nebula.user.v1.CardKey\022\\\n\rEncode" +
-      "CardKey\022*.salto.nebula.user.v1.EncodeCar" +
-      "dKeyRequest\032\037.salto.longrunning.v1.Opera" +
-      "tion\022W\n\014AssignAppKey\022).salto.nebula.user" +
-      ".v1.AssignAppKeyRequest\032\034.salto.nebula.u" +
-      "ser.v1.AppKey\022W\n\014CancelAppKey\022).salto.ne" +
-      "bula.user.v1.CancelAppKeyRequest\032\034.salto" +
-      ".nebula.user.v1.AppKey\022t\n\021ComputeAppKeyD" +
-      "ata\022..salto.nebula.user.v1.ComputeAppKey" +
-      "DataRequest\032/.salto.nebula.user.v1.Compu" +
-      "teAppKeyDataResponse\022n\n\017AssignWalletKey\022" +
-      ",.salto.nebula.user.v1.AssignWalletKeyRe" +
-      "quest\032-.salto.nebula.user.v1.AssignWalle" +
-      "tKeyResponse\022n\n\017CancelWalletKey\022,.salto." +
-      "nebula.user.v1.CancelWalletKeyRequest\032-." +
-      "salto.nebula.user.v1.CancelWalletKeyResp" +
-      "onse\022k\n\016AssignPasscode\022+.salto.nebula.us" +
-      "er.v1.AssignPasscodeRequest\032,.salto.nebu" +
-      "la.user.v1.AssignPasscodeResponse\022k\n\016Can" +
-      "celPasscode\022+.salto.nebula.user.v1.Cance" +
-      "lPasscodeRequest\032,.salto.nebula.user.v1." +
-      "CancelPasscodeResponse\022z\n\023AssignElectron" +
-      "icKey\0220.salto.nebula.user.v1.AssignElect" +
-      "ronicKeyRequest\0321.salto.nebula.user.v1.A" +
-      "ssignElectronicKeyResponse\022z\n\023CancelElec" +
-      "tronicKey\0220.salto.nebula.user.v1.CancelE" +
-      "lectronicKeyRequest\0321.salto.nebula.user." +
-      "v1.CancelElectronicKeyResponse\022h\n\023Encode" +
-      "ElectronicKey\0220.salto.nebula.user.v1.Enc" +
-      "odeElectronicKeyRequest\032\037.salto.longrunn" +
-      "ing.v1.OperationB\310\001\n\034com.saltoapis.nebul" +
-      "a.user.v1B\tUserProtoP\001Z>github.com/salto" +
-      "apis-internal/saltoapis-go/nebula/user/v" +
-      "1;user\252\002\030Saltoapis.Nebula.User.V1\312\002\030Salt" +
-      "oapis\\Nebula\\User\\V1\342\002$GPBMetadata\\Salto" +
-      "apis\\Nebula\\User\\V1b\006proto3"
+      "ED\020\001\022\n\n\006ACTIVE\020\002\"\307\001\n\rElectronicKey\022\014\n\004na" +
+      "me\030\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\0228\n\005state\030\003 \001" +
+      "(\0162).salto.nebula.user.v1.ElectronicKey." +
+      "State\022\020\n\010outdated\030\004 \001(\010\"I\n\005State\022\025\n\021STAT" +
+      "E_UNSPECIFIED\020\000\022\020\n\014NOT_ASSIGNED\020\001\022\013\n\007PEN" +
+      "DING\020\002\022\n\n\006ACTIVE\020\003\"o\n\021CreateUserRequest\022" +
+      "\016\n\006parent\030\001 \001(\t\022\024\n\007user_id\030\002 \001(\tH\000\210\001\001\022(\n" +
+      "\004user\030\003 \001(\0132\032.salto.nebula.user.v1.UserB" +
+      "\n\n\010_user_id\"\036\n\016GetUserRequest\022\014\n\004name\030\001 " +
+      "\001(\t\"k\n\020ListUsersRequest\022\016\n\006parent\030\001 \001(\t\022" +
+      "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016" +
+      "\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"k\n\021List" +
+      "UsersResponse\022)\n\005users\030\001 \003(\0132\032.salto.neb" +
+      "ula.user.v1.User\022\027\n\017next_page_token\030\002 \001(" +
+      "\t\022\022\n\ntotal_size\030\003 \001(\005\"n\n\021UpdateUserReque" +
+      "st\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1." +
+      "User\022/\n\013update_mask\030\002 \001(\0132\032.google.proto" +
+      "buf.FieldMask\"!\n\021DeleteUserRequest\022\014\n\004na" +
+      "me\030\001 \001(\t\" \n\020BlockUserRequest\022\014\n\004name\030\001 \001" +
+      "(\t\"\023\n\021BlockUserResponse\"\"\n\022UnblockUserRe" +
+      "quest\022\014\n\004name\030\001 \001(\t\"\025\n\023UnblockUserRespon" +
+      "se\"p\n\034CreateUserAccessRightRequest\022\016\n\006pa" +
+      "rent\030\001 \001(\t\022@\n\021user_access_right\030\002 \001(\0132%." +
+      "salto.nebula.user.v1.UserAccessRight\")\n\031" +
+      "GetUserAccessRightRequest\022\014\n\004name\030\001 \001(\t\"" +
+      "v\n\033ListUserAccessRightsRequest\022\016\n\006parent" +
+      "\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030" +
+      "\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"" +
+      "z\n\034ListUserAccessRightsResponse\022A\n\022user_" +
+      "access_rights\030\001 \003(\0132%.salto.nebula.user." +
+      "v1.UserAccessRight\022\027\n\017next_page_token\030\002 " +
+      "\001(\t\"\221\001\n\034UpdateUserAccessRightRequest\022@\n\021" +
+      "user_access_right\030\001 \001(\0132%.salto.nebula.u" +
+      "ser.v1.UserAccessRight\022/\n\013update_mask\030\002 " +
+      "\001(\0132\032.google.protobuf.FieldMask\",\n\034Delet" +
+      "eUserAccessRightRequest\022\014\n\004name\030\001 \001(\t\"1\n" +
+      "\024AssignCardKeyRequest\022\014\n\004name\030\001 \001(\t\022\013\n\003u" +
+      "id\030\002 \001(\t\"$\n\024CancelCardKeyRequest\022\014\n\004name" +
+      "\030\001 \001(\t\"r\n\024EncodeCardKeyRequest\022\014\n\004name\030\001" +
+      " \001(\t\022\021\n\007encoder\030\002 \001(\tH\000\022\031\n\017electronic_lo" +
+      "ck\030\003 \001(\tH\000\022\024\n\ncontroller\030\004 \001(\tH\000B\010\n\006devi" +
+      "ce\"\027\n\025EncodeCardKeyResponse\"\027\n\025EncodeCar" +
+      "dKeyMetadata\"#\n\023AssignAppKeyRequest\022\014\n\004n" +
+      "ame\030\001 \001(\t\"#\n\023CancelAppKeyRequest\022\014\n\004name" +
+      "\030\001 \001(\t\"(\n\030ComputeAppKeyDataRequest\022\014\n\004na" +
+      "me\030\001 \001(\t\")\n\031ComputeAppKeyDataResponse\022\014\n" +
+      "\004data\030\001 \001(\014\"&\n\026AssignWalletKeyRequest\022\014\n" +
+      "\004name\030\001 \001(\t\"b\n\027AssignWalletKeyResponse\0223" +
+      "\n\nwallet_key\030\001 \001(\0132\037.salto.nebula.user.v" +
+      "1.WalletKey\022\022\n\naccess_uri\030\002 \001(\t\"&\n\026Cance" +
+      "lWalletKeyRequest\022\014\n\004name\030\001 \001(\t\"N\n\027Cance" +
+      "lWalletKeyResponse\0223\n\nwallet_key\030\001 \001(\0132\037" +
+      ".salto.nebula.user.v1.WalletKey\"%\n\025Assig" +
+      "nPasscodeRequest\022\014\n\004name\030\001 \001(\t\"Y\n\026Assign" +
+      "PasscodeResponse\0220\n\010passcode\030\001 \001(\0132\036.sal" +
+      "to.nebula.user.v1.Passcode\022\r\n\005value\030\002 \001(" +
+      "\t\"%\n\025CancelPasscodeRequest\022\014\n\004name\030\001 \001(\t" +
+      "\"J\n\026CancelPasscodeResponse\0220\n\010passcode\030\001" +
+      " \001(\0132\036.salto.nebula.user.v1.Passcode\"=\n\032" +
+      "AssignElectronicKeyRequest\022\014\n\004name\030\001 \001(\t" +
+      "\022\021\n\tdevice_id\030\002 \001(\t\"Z\n\033AssignElectronicK" +
+      "eyResponse\022;\n\016electronic_key\030\001 \001(\0132#.sal" +
+      "to.nebula.user.v1.ElectronicKey\"*\n\032Cance" +
+      "lElectronicKeyRequest\022\014\n\004name\030\001 \001(\t\"Z\n\033C" +
+      "ancelElectronicKeyResponse\022;\n\016electronic" +
+      "_key\030\001 \001(\0132#.salto.nebula.user.v1.Electr" +
+      "onicKey\"x\n\032EncodeElectronicKeyRequest\022\014\n" +
+      "\004name\030\001 \001(\t\022\021\n\007encoder\030\002 \001(\tH\000\022\031\n\017electr" +
+      "onic_lock\030\003 \001(\tH\000\022\024\n\ncontroller\030\004 \001(\tH\000B" +
+      "\010\n\006device\"\035\n\033EncodeElectronicKeyResponse" +
+      "\"\035\n\033EncodeElectronicKeyMetadata2\203\024\n\013User" +
+      "Service\022Q\n\nCreateUser\022\'.salto.nebula.use" +
+      "r.v1.CreateUserRequest\032\032.salto.nebula.us" +
+      "er.v1.User\022K\n\007GetUser\022$.salto.nebula.use" +
+      "r.v1.GetUserRequest\032\032.salto.nebula.user." +
+      "v1.User\022\\\n\tListUsers\022&.salto.nebula.user" +
+      ".v1.ListUsersRequest\032\'.salto.nebula.user" +
+      ".v1.ListUsersResponse\022Q\n\nUpdateUser\022\'.sa" +
+      "lto.nebula.user.v1.UpdateUserRequest\032\032.s" +
+      "alto.nebula.user.v1.User\022M\n\nDeleteUser\022\'" +
+      ".salto.nebula.user.v1.DeleteUserRequest\032" +
+      "\026.google.protobuf.Empty\022\\\n\tBlockUser\022&.s" +
+      "alto.nebula.user.v1.BlockUserRequest\032\'.s" +
+      "alto.nebula.user.v1.BlockUserResponse\022b\n" +
+      "\013UnblockUser\022(.salto.nebula.user.v1.Unbl" +
+      "ockUserRequest\032).salto.nebula.user.v1.Un" +
+      "blockUserResponse\022r\n\025CreateUserAccessRig" +
+      "ht\0222.salto.nebula.user.v1.CreateUserAcce" +
+      "ssRightRequest\032%.salto.nebula.user.v1.Us" +
+      "erAccessRight\022l\n\022GetUserAccessRight\022/.sa" +
+      "lto.nebula.user.v1.GetUserAccessRightReq" +
+      "uest\032%.salto.nebula.user.v1.UserAccessRi" +
+      "ght\022}\n\024ListUserAccessRights\0221.salto.nebu" +
+      "la.user.v1.ListUserAccessRightsRequest\0322" +
+      ".salto.nebula.user.v1.ListUserAccessRigh" +
+      "tsResponse\022r\n\025UpdateUserAccessRight\0222.sa" +
+      "lto.nebula.user.v1.UpdateUserAccessRight" +
+      "Request\032%.salto.nebula.user.v1.UserAcces" +
+      "sRight\022c\n\025DeleteUserAccessRight\0222.salto." +
+      "nebula.user.v1.DeleteUserAccessRightRequ" +
+      "est\032\026.google.protobuf.Empty\022Z\n\rAssignCar" +
+      "dKey\022*.salto.nebula.user.v1.AssignCardKe" +
+      "yRequest\032\035.salto.nebula.user.v1.CardKey\022" +
+      "Z\n\rCancelCardKey\022*.salto.nebula.user.v1." +
+      "CancelCardKeyRequest\032\035.salto.nebula.user" +
+      ".v1.CardKey\022\\\n\rEncodeCardKey\022*.salto.neb" +
+      "ula.user.v1.EncodeCardKeyRequest\032\037.salto" +
+      ".longrunning.v1.Operation\022W\n\014AssignAppKe" +
+      "y\022).salto.nebula.user.v1.AssignAppKeyReq" +
+      "uest\032\034.salto.nebula.user.v1.AppKey\022W\n\014Ca" +
+      "ncelAppKey\022).salto.nebula.user.v1.Cancel" +
+      "AppKeyRequest\032\034.salto.nebula.user.v1.App" +
+      "Key\022t\n\021ComputeAppKeyData\022..salto.nebula." +
+      "user.v1.ComputeAppKeyDataRequest\032/.salto" +
+      ".nebula.user.v1.ComputeAppKeyDataRespons" +
+      "e\022n\n\017AssignWalletKey\022,.salto.nebula.user" +
+      ".v1.AssignWalletKeyRequest\032-.salto.nebul" +
+      "a.user.v1.AssignWalletKeyResponse\022n\n\017Can" +
+      "celWalletKey\022,.salto.nebula.user.v1.Canc" +
+      "elWalletKeyRequest\032-.salto.nebula.user.v" +
+      "1.CancelWalletKeyResponse\022k\n\016AssignPassc" +
+      "ode\022+.salto.nebula.user.v1.AssignPasscod" +
+      "eRequest\032,.salto.nebula.user.v1.AssignPa" +
+      "sscodeResponse\022k\n\016CancelPasscode\022+.salto" +
+      ".nebula.user.v1.CancelPasscodeRequest\032,." +
+      "salto.nebula.user.v1.CancelPasscodeRespo" +
+      "nse\022z\n\023AssignElectronicKey\0220.salto.nebul" +
+      "a.user.v1.AssignElectronicKeyRequest\0321.s" +
+      "alto.nebula.user.v1.AssignElectronicKeyR" +
+      "esponse\022z\n\023CancelElectronicKey\0220.salto.n" +
+      "ebula.user.v1.CancelElectronicKeyRequest" +
+      "\0321.salto.nebula.user.v1.CancelElectronic" +
+      "KeyResponse\022h\n\023EncodeElectronicKey\0220.sal" +
+      "to.nebula.user.v1.EncodeElectronicKeyReq" +
+      "uest\032\037.salto.longrunning.v1.OperationB\310\001" +
+      "\n\034com.saltoapis.nebula.user.v1B\tUserProt" +
+      "oP\001Z>github.com/saltoapis-internal/salto" +
+      "apis-go/nebula/user/v1;user\252\002\030Saltoapis." +
+      "Nebula.User.V1\312\002\030Saltoapis\\Nebula\\User\\V" +
+      "1\342\002$GPBMetadata\\Saltoapis\\Nebula\\User\\V1" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -468,7 +470,7 @@ public final class UserProto {
     internal_static_salto_nebula_user_v1_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_user_v1_User_descriptor,
-        new java.lang.String[] { "Name", "Parent", "GivenName", "FamilyName", "DisplayName", "Email", "ActivateTime", "ExpireTime", "Photo", "PhotoUri", "CardKey", "AppKey", "WalletKey", "Passcode", "Blocked", });
+        new java.lang.String[] { "Name", "Parent", "GivenName", "FamilyName", "DisplayName", "Email", "ActivateTime", "ExpireTime", "Photo", "PhotoUri", "CardKey", "ElectronicKey", "AppKey", "WalletKey", "Passcode", "Blocked", });
     internal_static_salto_nebula_user_v1_UserAccessRight_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_salto_nebula_user_v1_UserAccessRight_fieldAccessorTable = new

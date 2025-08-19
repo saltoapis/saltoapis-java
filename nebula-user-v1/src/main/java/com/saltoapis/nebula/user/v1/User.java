@@ -621,6 +621,44 @@ private static final long serialVersionUID = 0L;
     return cardKey_ == null ? com.saltoapis.nebula.user.v1.CardKey.getDefaultInstance() : cardKey_;
   }
 
+  public static final int ELECTRONIC_KEY_FIELD_NUMBER = 16;
+  private com.saltoapis.nebula.user.v1.ElectronicKey electronicKey_;
+  /**
+   * <pre>
+   * The electronic key resource that belongs to the user.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+   * @return Whether the electronicKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasElectronicKey() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   * <pre>
+   * The electronic key resource that belongs to the user.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+   * @return The electronicKey.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.ElectronicKey getElectronicKey() {
+    return electronicKey_ == null ? com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance() : electronicKey_;
+  }
+  /**
+   * <pre>
+   * The electronic key resource that belongs to the user.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder getElectronicKeyOrBuilder() {
+    return electronicKey_ == null ? com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance() : electronicKey_;
+  }
+
   public static final int APP_KEY_FIELD_NUMBER = 12;
   private com.saltoapis.nebula.user.v1.AppKey appKey_;
   /**
@@ -633,7 +671,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAppKey() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    * <pre>
@@ -671,7 +709,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasWalletKey() {
-    return ((bitField0_ & 0x00000100) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <pre>
@@ -709,7 +747,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasPasscode() {
-    return ((bitField0_ & 0x00000200) != 0);
+    return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    * <pre>
@@ -800,17 +838,20 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(11, getCardKey());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(12, getAppKey());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(13, getWalletKey());
     }
     if (blocked_ != false) {
       output.writeBool(14, blocked_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(15, getPasscode());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(16, getElectronicKey());
     }
     getUnknownFields().writeTo(output);
   }
@@ -857,11 +898,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getCardKey());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getAppKey());
     }
-    if (((bitField0_ & 0x00000100) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getWalletKey());
     }
@@ -869,9 +910,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(14, blocked_);
     }
-    if (((bitField0_ & 0x00000200) != 0)) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, getPasscode());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(16, getElectronicKey());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -930,6 +975,11 @@ private static final long serialVersionUID = 0L;
     if (hasCardKey()) {
       if (!getCardKey()
           .equals(other.getCardKey())) return false;
+    }
+    if (hasElectronicKey() != other.hasElectronicKey()) return false;
+    if (hasElectronicKey()) {
+      if (!getElectronicKey()
+          .equals(other.getElectronicKey())) return false;
     }
     if (hasAppKey() != other.hasAppKey()) return false;
     if (hasAppKey()) {
@@ -994,6 +1044,10 @@ private static final long serialVersionUID = 0L;
     if (hasCardKey()) {
       hash = (37 * hash) + CARD_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getCardKey().hashCode();
+    }
+    if (hasElectronicKey()) {
+      hash = (37 * hash) + ELECTRONIC_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getElectronicKey().hashCode();
     }
     if (hasAppKey()) {
       hash = (37 * hash) + APP_KEY_FIELD_NUMBER;
@@ -1147,6 +1201,7 @@ private static final long serialVersionUID = 0L;
         getActivateTimeFieldBuilder();
         getExpireTimeFieldBuilder();
         getCardKeyFieldBuilder();
+        getElectronicKeyFieldBuilder();
         getAppKeyFieldBuilder();
         getWalletKeyFieldBuilder();
         getPasscodeFieldBuilder();
@@ -1178,6 +1233,11 @@ private static final long serialVersionUID = 0L;
       if (cardKeyBuilder_ != null) {
         cardKeyBuilder_.dispose();
         cardKeyBuilder_ = null;
+      }
+      electronicKey_ = null;
+      if (electronicKeyBuilder_ != null) {
+        electronicKeyBuilder_.dispose();
+        electronicKeyBuilder_ = null;
       }
       appKey_ = null;
       if (appKeyBuilder_ != null) {
@@ -1276,24 +1336,30 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.appKey_ = appKeyBuilder_ == null
-            ? appKey_
-            : appKeyBuilder_.build();
+        result.electronicKey_ = electronicKeyBuilder_ == null
+            ? electronicKey_
+            : electronicKeyBuilder_.build();
         to_bitField0_ |= 0x00000080;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.walletKey_ = walletKeyBuilder_ == null
-            ? walletKey_
-            : walletKeyBuilder_.build();
+        result.appKey_ = appKeyBuilder_ == null
+            ? appKey_
+            : appKeyBuilder_.build();
         to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.passcode_ = passcodeBuilder_ == null
-            ? passcode_
-            : passcodeBuilder_.build();
+        result.walletKey_ = walletKeyBuilder_ == null
+            ? walletKey_
+            : walletKeyBuilder_.build();
         to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.passcode_ = passcodeBuilder_ == null
+            ? passcode_
+            : passcodeBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.blocked_ = blocked_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1359,6 +1425,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasCardKey()) {
         mergeCardKey(other.getCardKey());
+      }
+      if (other.hasElectronicKey()) {
+        mergeElectronicKey(other.getElectronicKey());
       }
       if (other.hasAppKey()) {
         mergeAppKey(other.getAppKey());
@@ -1463,28 +1532,35 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getAppKeyFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00001000;
               break;
             } // case 98
             case 106: {
               input.readMessage(
                   getWalletKeyFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00002000;
               break;
             } // case 106
             case 112: {
               blocked_ = input.readBool();
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00008000;
               break;
             } // case 112
             case 122: {
               input.readMessage(
                   getPasscodeFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00004000;
               break;
             } // case 122
+            case 130: {
+              input.readMessage(
+                  getElectronicKeyFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 130
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2814,6 +2890,163 @@ private static final long serialVersionUID = 0L;
       return cardKeyBuilder_;
     }
 
+    private com.saltoapis.nebula.user.v1.ElectronicKey electronicKey_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.ElectronicKey, com.saltoapis.nebula.user.v1.ElectronicKey.Builder, com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder> electronicKeyBuilder_;
+    /**
+     * <pre>
+     * The electronic key resource that belongs to the user.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+     * @return Whether the electronicKey field is set.
+     */
+    public boolean hasElectronicKey() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <pre>
+     * The electronic key resource that belongs to the user.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+     * @return The electronicKey.
+     */
+    public com.saltoapis.nebula.user.v1.ElectronicKey getElectronicKey() {
+      if (electronicKeyBuilder_ == null) {
+        return electronicKey_ == null ? com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance() : electronicKey_;
+      } else {
+        return electronicKeyBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The electronic key resource that belongs to the user.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+     */
+    public Builder setElectronicKey(com.saltoapis.nebula.user.v1.ElectronicKey value) {
+      if (electronicKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        electronicKey_ = value;
+      } else {
+        electronicKeyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The electronic key resource that belongs to the user.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+     */
+    public Builder setElectronicKey(
+        com.saltoapis.nebula.user.v1.ElectronicKey.Builder builderForValue) {
+      if (electronicKeyBuilder_ == null) {
+        electronicKey_ = builderForValue.build();
+      } else {
+        electronicKeyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The electronic key resource that belongs to the user.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+     */
+    public Builder mergeElectronicKey(com.saltoapis.nebula.user.v1.ElectronicKey value) {
+      if (electronicKeyBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0) &&
+          electronicKey_ != null &&
+          electronicKey_ != com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance()) {
+          getElectronicKeyBuilder().mergeFrom(value);
+        } else {
+          electronicKey_ = value;
+        }
+      } else {
+        electronicKeyBuilder_.mergeFrom(value);
+      }
+      if (electronicKey_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The electronic key resource that belongs to the user.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+     */
+    public Builder clearElectronicKey() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      electronicKey_ = null;
+      if (electronicKeyBuilder_ != null) {
+        electronicKeyBuilder_.dispose();
+        electronicKeyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The electronic key resource that belongs to the user.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+     */
+    public com.saltoapis.nebula.user.v1.ElectronicKey.Builder getElectronicKeyBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getElectronicKeyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The electronic key resource that belongs to the user.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+     */
+    public com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder getElectronicKeyOrBuilder() {
+      if (electronicKeyBuilder_ != null) {
+        return electronicKeyBuilder_.getMessageOrBuilder();
+      } else {
+        return electronicKey_ == null ?
+            com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance() : electronicKey_;
+      }
+    }
+    /**
+     * <pre>
+     * The electronic key resource that belongs to the user.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 16;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.ElectronicKey, com.saltoapis.nebula.user.v1.ElectronicKey.Builder, com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder> 
+        getElectronicKeyFieldBuilder() {
+      if (electronicKeyBuilder_ == null) {
+        electronicKeyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.user.v1.ElectronicKey, com.saltoapis.nebula.user.v1.ElectronicKey.Builder, com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder>(
+                getElectronicKey(),
+                getParentForChildren(),
+                isClean());
+        electronicKey_ = null;
+      }
+      return electronicKeyBuilder_;
+    }
+
     private com.saltoapis.nebula.user.v1.AppKey appKey_;
     private com.google.protobuf.SingleFieldBuilder<
         com.saltoapis.nebula.user.v1.AppKey, com.saltoapis.nebula.user.v1.AppKey.Builder, com.saltoapis.nebula.user.v1.AppKeyOrBuilder> appKeyBuilder_;
@@ -2826,7 +3059,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the appKey field is set.
      */
     public boolean hasAppKey() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <pre>
@@ -2859,7 +3092,7 @@ private static final long serialVersionUID = 0L;
       } else {
         appKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2877,7 +3110,7 @@ private static final long serialVersionUID = 0L;
       } else {
         appKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -2890,7 +3123,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAppKey(com.saltoapis.nebula.user.v1.AppKey value) {
       if (appKeyBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0) &&
+        if (((bitField0_ & 0x00001000) != 0) &&
           appKey_ != null &&
           appKey_ != com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance()) {
           getAppKeyBuilder().mergeFrom(value);
@@ -2901,7 +3134,7 @@ private static final long serialVersionUID = 0L;
         appKeyBuilder_.mergeFrom(value);
       }
       if (appKey_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -2914,7 +3147,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.user.v1.AppKey app_key = 12;</code>
      */
     public Builder clearAppKey() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       appKey_ = null;
       if (appKeyBuilder_ != null) {
         appKeyBuilder_.dispose();
@@ -2931,7 +3164,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.user.v1.AppKey app_key = 12;</code>
      */
     public com.saltoapis.nebula.user.v1.AppKey.Builder getAppKeyBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getAppKeyFieldBuilder().getBuilder();
     }
@@ -2983,7 +3216,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the walletKey field is set.
      */
     public boolean hasWalletKey() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <pre>
@@ -3016,7 +3249,7 @@ private static final long serialVersionUID = 0L;
       } else {
         walletKeyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3034,7 +3267,7 @@ private static final long serialVersionUID = 0L;
       } else {
         walletKeyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -3047,7 +3280,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeWalletKey(com.saltoapis.nebula.user.v1.WalletKey value) {
       if (walletKeyBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0) &&
+        if (((bitField0_ & 0x00002000) != 0) &&
           walletKey_ != null &&
           walletKey_ != com.saltoapis.nebula.user.v1.WalletKey.getDefaultInstance()) {
           getWalletKeyBuilder().mergeFrom(value);
@@ -3058,7 +3291,7 @@ private static final long serialVersionUID = 0L;
         walletKeyBuilder_.mergeFrom(value);
       }
       if (walletKey_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -3071,7 +3304,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.user.v1.WalletKey wallet_key = 13;</code>
      */
     public Builder clearWalletKey() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       walletKey_ = null;
       if (walletKeyBuilder_ != null) {
         walletKeyBuilder_.dispose();
@@ -3088,7 +3321,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.user.v1.WalletKey wallet_key = 13;</code>
      */
     public com.saltoapis.nebula.user.v1.WalletKey.Builder getWalletKeyBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getWalletKeyFieldBuilder().getBuilder();
     }
@@ -3140,7 +3373,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the passcode field is set.
      */
     public boolean hasPasscode() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <pre>
@@ -3173,7 +3406,7 @@ private static final long serialVersionUID = 0L;
       } else {
         passcodeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3191,7 +3424,7 @@ private static final long serialVersionUID = 0L;
       } else {
         passcodeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3204,7 +3437,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePasscode(com.saltoapis.nebula.user.v1.Passcode value) {
       if (passcodeBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0) &&
+        if (((bitField0_ & 0x00004000) != 0) &&
           passcode_ != null &&
           passcode_ != com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance()) {
           getPasscodeBuilder().mergeFrom(value);
@@ -3215,7 +3448,7 @@ private static final long serialVersionUID = 0L;
         passcodeBuilder_.mergeFrom(value);
       }
       if (passcode_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -3228,7 +3461,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.user.v1.Passcode passcode = 15;</code>
      */
     public Builder clearPasscode() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       passcode_ = null;
       if (passcodeBuilder_ != null) {
         passcodeBuilder_.dispose();
@@ -3245,7 +3478,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.user.v1.Passcode passcode = 15;</code>
      */
     public com.saltoapis.nebula.user.v1.Passcode.Builder getPasscodeBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getPasscodeFieldBuilder().getBuilder();
     }
@@ -3316,7 +3549,7 @@ private static final long serialVersionUID = 0L;
     public Builder setBlocked(boolean value) {
 
       blocked_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -3332,7 +3565,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearBlocked() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       blocked_ = false;
       onChanged();
       return this;
