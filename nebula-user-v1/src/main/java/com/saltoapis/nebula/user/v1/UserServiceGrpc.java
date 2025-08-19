@@ -703,6 +703,99 @@ public final class UserServiceGrpc {
     return getCancelPasscodeMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest,
+      com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse> getAssignElectronicKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AssignElectronicKey",
+      requestType = com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest.class,
+      responseType = com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest,
+      com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse> getAssignElectronicKeyMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest, com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse> getAssignElectronicKeyMethod;
+    if ((getAssignElectronicKeyMethod = UserServiceGrpc.getAssignElectronicKeyMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getAssignElectronicKeyMethod = UserServiceGrpc.getAssignElectronicKeyMethod) == null) {
+          UserServiceGrpc.getAssignElectronicKeyMethod = getAssignElectronicKeyMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest, com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AssignElectronicKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("AssignElectronicKey"))
+              .build();
+        }
+      }
+    }
+    return getAssignElectronicKeyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest,
+      com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse> getCancelElectronicKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CancelElectronicKey",
+      requestType = com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest.class,
+      responseType = com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest,
+      com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse> getCancelElectronicKeyMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest, com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse> getCancelElectronicKeyMethod;
+    if ((getCancelElectronicKeyMethod = UserServiceGrpc.getCancelElectronicKeyMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getCancelElectronicKeyMethod = UserServiceGrpc.getCancelElectronicKeyMethod) == null) {
+          UserServiceGrpc.getCancelElectronicKeyMethod = getCancelElectronicKeyMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest, com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CancelElectronicKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("CancelElectronicKey"))
+              .build();
+        }
+      }
+    }
+    return getCancelElectronicKeyMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest,
+      com.saltoapis.longrunning.v1.Operation> getEncodeElectronicKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EncodeElectronicKey",
+      requestType = com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest.class,
+      responseType = com.saltoapis.longrunning.v1.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest,
+      com.saltoapis.longrunning.v1.Operation> getEncodeElectronicKeyMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest, com.saltoapis.longrunning.v1.Operation> getEncodeElectronicKeyMethod;
+    if ((getEncodeElectronicKeyMethod = UserServiceGrpc.getEncodeElectronicKeyMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getEncodeElectronicKeyMethod = UserServiceGrpc.getEncodeElectronicKeyMethod) == null) {
+          UserServiceGrpc.getEncodeElectronicKeyMethod = getEncodeElectronicKeyMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest, com.saltoapis.longrunning.v1.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EncodeElectronicKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.longrunning.v1.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("EncodeElectronicKey"))
+              .build();
+        }
+      }
+    }
+    return getEncodeElectronicKeyMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -1005,6 +1098,39 @@ public final class UserServiceGrpc {
     default void cancelPasscode(com.saltoapis.nebula.user.v1.CancelPasscodeRequest request,
         io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.CancelPasscodeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelPasscodeMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Assign an electronic key
+     * Assigns an electronic key to an existing user.
+     * </pre>
+     */
+    default void assignElectronicKey(com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAssignElectronicKeyMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Cancel an electronic key
+     * Cancels an existing user's electronic key.
+     * </pre>
+     */
+    default void cancelElectronicKey(com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCancelElectronicKeyMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Encode an electronic key
+     * Encodes an existing user's electronic key.
+     * </pre>
+     */
+    default void encodeElectronicKey(com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getEncodeElectronicKeyMethod(), responseObserver);
     }
   }
 
@@ -1318,6 +1444,42 @@ public final class UserServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCancelPasscodeMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Assign an electronic key
+     * Assigns an electronic key to an existing user.
+     * </pre>
+     */
+    public void assignElectronicKey(com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAssignElectronicKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Cancel an electronic key
+     * Cancels an existing user's electronic key.
+     * </pre>
+     */
+    public void cancelElectronicKey(com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCancelElectronicKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Encode an electronic key
+     * Encodes an existing user's electronic key.
+     * </pre>
+     */
+    public void encodeElectronicKey(com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEncodeElectronicKeyMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1590,6 +1752,39 @@ public final class UserServiceGrpc {
     public com.saltoapis.nebula.user.v1.CancelPasscodeResponse cancelPasscode(com.saltoapis.nebula.user.v1.CancelPasscodeRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCancelPasscodeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Assign an electronic key
+     * Assigns an electronic key to an existing user.
+     * </pre>
+     */
+    public com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse assignElectronicKey(com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAssignElectronicKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Cancel an electronic key
+     * Cancels an existing user's electronic key.
+     * </pre>
+     */
+    public com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse cancelElectronicKey(com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelElectronicKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Encode an electronic key
+     * Encodes an existing user's electronic key.
+     * </pre>
+     */
+    public com.saltoapis.longrunning.v1.Operation encodeElectronicKey(com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEncodeElectronicKeyMethod(), getCallOptions(), request);
     }
   }
 
@@ -1886,6 +2081,42 @@ public final class UserServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCancelPasscodeMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Assign an electronic key
+     * Assigns an electronic key to an existing user.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse> assignElectronicKey(
+        com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAssignElectronicKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Cancel an electronic key
+     * Cancels an existing user's electronic key.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse> cancelElectronicKey(
+        com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCancelElectronicKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Encode an electronic key
+     * Encodes an existing user's electronic key.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.longrunning.v1.Operation> encodeElectronicKey(
+        com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEncodeElectronicKeyMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_USER = 0;
@@ -1910,6 +2141,9 @@ public final class UserServiceGrpc {
   private static final int METHODID_CANCEL_WALLET_KEY = 19;
   private static final int METHODID_ASSIGN_PASSCODE = 20;
   private static final int METHODID_CANCEL_PASSCODE = 21;
+  private static final int METHODID_ASSIGN_ELECTRONIC_KEY = 22;
+  private static final int METHODID_CANCEL_ELECTRONIC_KEY = 23;
+  private static final int METHODID_ENCODE_ELECTRONIC_KEY = 24;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2015,6 +2249,18 @@ public final class UserServiceGrpc {
         case METHODID_CANCEL_PASSCODE:
           serviceImpl.cancelPasscode((com.saltoapis.nebula.user.v1.CancelPasscodeRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.CancelPasscodeResponse>) responseObserver);
+          break;
+        case METHODID_ASSIGN_ELECTRONIC_KEY:
+          serviceImpl.assignElectronicKey((com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse>) responseObserver);
+          break;
+        case METHODID_CANCEL_ELECTRONIC_KEY:
+          serviceImpl.cancelElectronicKey((com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse>) responseObserver);
+          break;
+        case METHODID_ENCODE_ELECTRONIC_KEY:
+          serviceImpl.encodeElectronicKey((com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2188,6 +2434,27 @@ public final class UserServiceGrpc {
               com.saltoapis.nebula.user.v1.CancelPasscodeRequest,
               com.saltoapis.nebula.user.v1.CancelPasscodeResponse>(
                 service, METHODID_CANCEL_PASSCODE)))
+        .addMethod(
+          getAssignElectronicKeyMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.user.v1.AssignElectronicKeyRequest,
+              com.saltoapis.nebula.user.v1.AssignElectronicKeyResponse>(
+                service, METHODID_ASSIGN_ELECTRONIC_KEY)))
+        .addMethod(
+          getCancelElectronicKeyMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.user.v1.CancelElectronicKeyRequest,
+              com.saltoapis.nebula.user.v1.CancelElectronicKeyResponse>(
+                service, METHODID_CANCEL_ELECTRONIC_KEY)))
+        .addMethod(
+          getEncodeElectronicKeyMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.user.v1.EncodeElectronicKeyRequest,
+              com.saltoapis.longrunning.v1.Operation>(
+                service, METHODID_ENCODE_ELECTRONIC_KEY)))
         .build();
   }
 
@@ -2258,6 +2525,9 @@ public final class UserServiceGrpc {
               .addMethod(getCancelWalletKeyMethod())
               .addMethod(getAssignPasscodeMethod())
               .addMethod(getCancelPasscodeMethod())
+              .addMethod(getAssignElectronicKeyMethod())
+              .addMethod(getCancelElectronicKeyMethod())
+              .addMethod(getEncodeElectronicKeyMethod())
               .build();
         }
       }
