@@ -34,6 +34,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     displayName_ = "";
     deviceId_ = "";
+    user_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -303,6 +304,65 @@ private static final long serialVersionUID = 0L;
     return lowBattery_;
   }
 
+  public static final int USER_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object user_ = "";
+  /**
+   * <pre>
+   * User associated with this electronic key.
+   * </pre>
+   *
+   * <code>optional string user = 8;</code>
+   * @return Whether the user field is set.
+   */
+  @java.lang.Override
+  public boolean hasUser() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * User associated with this electronic key.
+   * </pre>
+   *
+   * <code>optional string user = 8;</code>
+   * @return The user.
+   */
+  @java.lang.Override
+  public java.lang.String getUser() {
+    java.lang.Object ref = user_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      user_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * User associated with this electronic key.
+   * </pre>
+   *
+   * <code>optional string user = 8;</code>
+   * @return The bytes for user.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUserBytes() {
+    java.lang.Object ref = user_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      user_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -338,6 +398,9 @@ private static final long serialVersionUID = 0L;
     if (lowBattery_ != false) {
       output.writeBool(7, lowBattery_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, user_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -371,6 +434,9 @@ private static final long serialVersionUID = 0L;
     if (lowBattery_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, lowBattery_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, user_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -407,6 +473,11 @@ private static final long serialVersionUID = 0L;
     }
     if (getLowBattery()
         != other.getLowBattery()) return false;
+    if (hasUser() != other.hasUser()) return false;
+    if (hasUser()) {
+      if (!getUser()
+          .equals(other.getUser())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -439,6 +510,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + LOW_BATTERY_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getLowBattery());
+    if (hasUser()) {
+      hash = (37 * hash) + USER_FIELD_NUMBER;
+      hash = (53 * hash) + getUser().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -591,6 +666,7 @@ private static final long serialVersionUID = 0L;
         deviceMetadataBuilder_ = null;
       }
       lowBattery_ = false;
+      user_ = "";
       return this;
     }
 
@@ -650,6 +726,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.lowBattery_ = lowBattery_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.user_ = user_;
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -691,6 +771,11 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getLowBattery() != false) {
         setLowBattery(other.getLowBattery());
+      }
+      if (other.hasUser()) {
+        user_ = other.user_;
+        bitField0_ |= 0x00000080;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -755,6 +840,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000040;
               break;
             } // case 56
+            case 66: {
+              user_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1390,6 +1480,109 @@ private static final long serialVersionUID = 0L;
     public Builder clearLowBattery() {
       bitField0_ = (bitField0_ & ~0x00000040);
       lowBattery_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object user_ = "";
+    /**
+     * <pre>
+     * User associated with this electronic key.
+     * </pre>
+     *
+     * <code>optional string user = 8;</code>
+     * @return Whether the user field is set.
+     */
+    public boolean hasUser() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <pre>
+     * User associated with this electronic key.
+     * </pre>
+     *
+     * <code>optional string user = 8;</code>
+     * @return The user.
+     */
+    public java.lang.String getUser() {
+      java.lang.Object ref = user_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        user_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * User associated with this electronic key.
+     * </pre>
+     *
+     * <code>optional string user = 8;</code>
+     * @return The bytes for user.
+     */
+    public com.google.protobuf.ByteString
+        getUserBytes() {
+      java.lang.Object ref = user_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        user_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * User associated with this electronic key.
+     * </pre>
+     *
+     * <code>optional string user = 8;</code>
+     * @param value The user to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUser(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      user_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * User associated with this electronic key.
+     * </pre>
+     *
+     * <code>optional string user = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUser() {
+      user_ = getDefaultInstance().getUser();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * User associated with this electronic key.
+     * </pre>
+     *
+     * <code>optional string user = 8;</code>
+     * @param value The bytes for user to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      user_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

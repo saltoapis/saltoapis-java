@@ -164,96 +164,96 @@ public final class ElectronicKeyProto {
       ".v1\032\033google/protobuf/empty.proto\032 google" +
       "/protobuf/field_mask.proto\032$salto/longru" +
       "nning/v1/operation.proto\032\'salto/nebula/t" +
-      "ype/device_metadata.proto\"\321\001\n\rElectronic" +
+      "ype/device_metadata.proto\"\355\001\n\rElectronic" +
       "Key\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022" +
       "\023\n\013initialized\030\003 \001(\010\022\026\n\tdevice_id\030\004 \001(\tH" +
       "\000\210\001\001\022\020\n\010outdated\030\005 \001(\010\022:\n\017device_metadat" +
       "a\030\006 \001(\0132!.salto.nebula.type.DeviceMetada" +
-      "ta\022\023\n\013low_battery\030\007 \001(\010B\014\n\n_device_id\"\250\001" +
-      "\n\032CreateElectronicKeyRequest\022\016\n\006parent\030\001" +
-      " \001(\t\022\036\n\021electronic_key_id\030\002 \001(\tH\000\210\001\001\022D\n\016" +
-      "electronic_key\030\003 \001(\0132,.salto.nebula.elec" +
-      "tronickey.v1.ElectronicKeyB\024\n\022_electroni" +
-      "c_key_id\"\'\n\027GetElectronicKeyRequest\022\014\n\004n" +
-      "ame\030\001 \001(\t\"t\n\031ListElectronicKeysRequest\022\016" +
-      "\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag" +
-      "e_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_b" +
-      "y\030\005 \001(\t\"|\n\032ListElectronicKeysResponse\022E\n" +
-      "\017electronic_keys\030\001 \003(\0132,.salto.nebula.el" +
-      "ectronickey.v1.ElectronicKey\022\027\n\017next_pag" +
-      "e_token\030\002 \001(\t\"\223\001\n\032UpdateElectronicKeyReq" +
-      "uest\022D\n\016electronic_key\030\001 \001(\0132,.salto.neb" +
-      "ula.electronickey.v1.ElectronicKey\022/\n\013up" +
-      "date_mask\030\002 \001(\0132\032.google.protobuf.FieldM" +
-      "ask\"*\n\032DeleteElectronicKeyRequest\022\014\n\004nam" +
-      "e\030\001 \001(\t\";\n\030BindElectronicKeyRequest\022\014\n\004n" +
-      "ame\030\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\"\033\n\031BindElec" +
-      "tronicKeyResponse\"9\n\032UnbindElectronicKey" +
-      "Request\022\014\n\004name\030\001 \001(\t\022\r\n\005force\030\002 \001(\010\"\035\n\033" +
-      "UnbindElectronicKeyResponse\".\n\036Initializ" +
-      "eElectronicKeyRequest\022\014\n\004name\030\001 \001(\t\"!\n\037I" +
-      "nitializeElectronicKeyResponse\"!\n\037Initia" +
-      "lizeElectronicKeyMetadata\"-\n\035ConfigureEl" +
-      "ectronicKeyRequest\022\014\n\004name\030\001 \001(\t\" \n\036Conf" +
-      "igureElectronicKeyResponse\" \n\036ConfigureE" +
-      "lectronicKeyMetadata\")\n\031ResetElectronicK" +
-      "eyRequest\022\014\n\004name\030\001 \001(\t\"\034\n\032ResetElectron" +
-      "icKeyResponse\"\034\n\032ResetElectronicKeyMetad" +
-      "ata\";\n!GenerateAuthorizationTokenRequest" +
-      "\022\026\n\016electronic_key\030\001 \001(\t\"A\n\"GenerateAuth" +
-      "orizationTokenResponse\022\033\n\023authorization_" +
-      "token\030\001 \001(\014\"<\n\"GenerateFirmwareDownloadU" +
-      "riRequest\022\026\n\016electronic_key\030\001 \001(\t\"K\n#Gen" +
-      "erateFirmwareDownloadUriResponse\022\024\n\014down" +
-      "load_uri\030\001 \001(\t\022\016\n\006digest\030\002 \001(\t\"%\n#Genera" +
-      "teFirmwareDownloadUriMetadata2\253\014\n\024Electr" +
-      "onicKeyService\022~\n\023CreateElectronicKey\0229." +
-      "salto.nebula.electronickey.v1.CreateElec" +
-      "tronicKeyRequest\032,.salto.nebula.electron" +
-      "ickey.v1.ElectronicKey\022x\n\020GetElectronicK" +
-      "ey\0226.salto.nebula.electronickey.v1.GetEl" +
-      "ectronicKeyRequest\032,.salto.nebula.electr" +
-      "onickey.v1.ElectronicKey\022\211\001\n\022ListElectro" +
-      "nicKeys\0228.salto.nebula.electronickey.v1." +
-      "ListElectronicKeysRequest\0329.salto.nebula" +
-      ".electronickey.v1.ListElectronicKeysResp" +
-      "onse\022~\n\023UpdateElectronicKey\0229.salto.nebu" +
-      "la.electronickey.v1.UpdateElectronicKeyR" +
+      "ta\022\023\n\013low_battery\030\007 \001(\010\022\021\n\004user\030\010 \001(\tH\001\210" +
+      "\001\001B\014\n\n_device_idB\007\n\005_user\"\250\001\n\032CreateElec" +
+      "tronicKeyRequest\022\016\n\006parent\030\001 \001(\t\022\036\n\021elec" +
+      "tronic_key_id\030\002 \001(\tH\000\210\001\001\022D\n\016electronic_k" +
+      "ey\030\003 \001(\0132,.salto.nebula.electronickey.v1" +
+      ".ElectronicKeyB\024\n\022_electronic_key_id\"\'\n\027" +
+      "GetElectronicKeyRequest\022\014\n\004name\030\001 \001(\t\"t\n" +
+      "\031ListElectronicKeysRequest\022\016\n\006parent\030\001 \001" +
+      "(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(" +
+      "\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"|\n\032L" +
+      "istElectronicKeysResponse\022E\n\017electronic_" +
+      "keys\030\001 \003(\0132,.salto.nebula.electronickey." +
+      "v1.ElectronicKey\022\027\n\017next_page_token\030\002 \001(" +
+      "\t\"\223\001\n\032UpdateElectronicKeyRequest\022D\n\016elec" +
+      "tronic_key\030\001 \001(\0132,.salto.nebula.electron" +
+      "ickey.v1.ElectronicKey\022/\n\013update_mask\030\002 " +
+      "\001(\0132\032.google.protobuf.FieldMask\"*\n\032Delet" +
+      "eElectronicKeyRequest\022\014\n\004name\030\001 \001(\t\";\n\030B" +
+      "indElectronicKeyRequest\022\014\n\004name\030\001 \001(\t\022\021\n" +
+      "\tdevice_id\030\002 \001(\t\"\033\n\031BindElectronicKeyRes" +
+      "ponse\"9\n\032UnbindElectronicKeyRequest\022\014\n\004n" +
+      "ame\030\001 \001(\t\022\r\n\005force\030\002 \001(\010\"\035\n\033UnbindElectr" +
+      "onicKeyResponse\".\n\036InitializeElectronicK" +
+      "eyRequest\022\014\n\004name\030\001 \001(\t\"!\n\037InitializeEle" +
+      "ctronicKeyResponse\"!\n\037InitializeElectron" +
+      "icKeyMetadata\"-\n\035ConfigureElectronicKeyR" +
+      "equest\022\014\n\004name\030\001 \001(\t\" \n\036ConfigureElectro" +
+      "nicKeyResponse\" \n\036ConfigureElectronicKey" +
+      "Metadata\")\n\031ResetElectronicKeyRequest\022\014\n" +
+      "\004name\030\001 \001(\t\"\034\n\032ResetElectronicKeyRespons" +
+      "e\"\034\n\032ResetElectronicKeyMetadata\";\n!Gener" +
+      "ateAuthorizationTokenRequest\022\026\n\016electron" +
+      "ic_key\030\001 \001(\t\"A\n\"GenerateAuthorizationTok" +
+      "enResponse\022\033\n\023authorization_token\030\001 \001(\014\"" +
+      "<\n\"GenerateFirmwareDownloadUriRequest\022\026\n" +
+      "\016electronic_key\030\001 \001(\t\"K\n#GenerateFirmwar" +
+      "eDownloadUriResponse\022\024\n\014download_uri\030\001 \001" +
+      "(\t\022\016\n\006digest\030\002 \001(\t\"%\n#GenerateFirmwareDo" +
+      "wnloadUriMetadata2\253\014\n\024ElectronicKeyServi" +
+      "ce\022~\n\023CreateElectronicKey\0229.salto.nebula" +
+      ".electronickey.v1.CreateElectronicKeyReq" +
+      "uest\032,.salto.nebula.electronickey.v1.Ele" +
+      "ctronicKey\022x\n\020GetElectronicKey\0226.salto.n" +
+      "ebula.electronickey.v1.GetElectronicKeyR" +
       "equest\032,.salto.nebula.electronickey.v1.E" +
-      "lectronicKey\022h\n\023DeleteElectronicKey\0229.sa" +
-      "lto.nebula.electronickey.v1.DeleteElectr" +
-      "onicKeyRequest\032\026.google.protobuf.Empty\022\206" +
-      "\001\n\021BindElectronicKey\0227.salto.nebula.elec" +
-      "tronickey.v1.BindElectronicKeyRequest\0328." +
-      "salto.nebula.electronickey.v1.BindElectr" +
-      "onicKeyResponse\022\214\001\n\023UnbindElectronicKey\022" +
-      "9.salto.nebula.electronickey.v1.UnbindEl" +
-      "ectronicKeyRequest\032:.salto.nebula.electr" +
-      "onickey.v1.UnbindElectronicKeyResponse\022y" +
-      "\n\027InitializeElectronicKey\022=.salto.nebula" +
-      ".electronickey.v1.InitializeElectronicKe" +
-      "yRequest\032\037.salto.longrunning.v1.Operatio" +
-      "n\022w\n\026ConfigureElectronicKey\022<.salto.nebu" +
-      "la.electronickey.v1.ConfigureElectronicK" +
-      "eyRequest\032\037.salto.longrunning.v1.Operati" +
-      "on\022o\n\022ResetElectronicKey\0228.salto.nebula." +
-      "electronickey.v1.ResetElectronicKeyReque" +
-      "st\032\037.salto.longrunning.v1.Operation\022\241\001\n\032" +
-      "GenerateAuthorizationToken\022@.salto.nebul" +
-      "a.electronickey.v1.GenerateAuthorization" +
-      "TokenRequest\032A.salto.nebula.electronicke" +
-      "y.v1.GenerateAuthorizationTokenResponse\022" +
-      "\201\001\n\033GenerateFirmwareDownloadUri\022A.salto." +
-      "nebula.electronickey.v1.GenerateFirmware" +
-      "DownloadUriRequest\032\037.salto.longrunning.v" +
-      "1.OperationB\207\002\n%com.saltoapis.nebula.ele" +
-      "ctronickey.v1B\022ElectronicKeyProtoP\001ZPgit" +
-      "hub.com/saltoapis-internal/saltoapis-go/" +
-      "nebula/electronickey/v1;electronickey\252\002!" +
-      "Saltoapis.Nebula.ElectronicKey.V1\312\002!Salt" +
-      "oapis\\Nebula\\ElectronicKey\\V1\342\002-GPBMetad" +
-      "ata\\Saltoapis\\Nebula\\ElectronicKey\\V1b\006p" +
-      "roto3"
+      "lectronicKey\022\211\001\n\022ListElectronicKeys\0228.sa" +
+      "lto.nebula.electronickey.v1.ListElectron" +
+      "icKeysRequest\0329.salto.nebula.electronick" +
+      "ey.v1.ListElectronicKeysResponse\022~\n\023Upda" +
+      "teElectronicKey\0229.salto.nebula.electroni" +
+      "ckey.v1.UpdateElectronicKeyRequest\032,.sal" +
+      "to.nebula.electronickey.v1.ElectronicKey" +
+      "\022h\n\023DeleteElectronicKey\0229.salto.nebula.e" +
+      "lectronickey.v1.DeleteElectronicKeyReque" +
+      "st\032\026.google.protobuf.Empty\022\206\001\n\021BindElect" +
+      "ronicKey\0227.salto.nebula.electronickey.v1" +
+      ".BindElectronicKeyRequest\0328.salto.nebula" +
+      ".electronickey.v1.BindElectronicKeyRespo" +
+      "nse\022\214\001\n\023UnbindElectronicKey\0229.salto.nebu" +
+      "la.electronickey.v1.UnbindElectronicKeyR" +
+      "equest\032:.salto.nebula.electronickey.v1.U" +
+      "nbindElectronicKeyResponse\022y\n\027Initialize" +
+      "ElectronicKey\022=.salto.nebula.electronick" +
+      "ey.v1.InitializeElectronicKeyRequest\032\037.s" +
+      "alto.longrunning.v1.Operation\022w\n\026Configu" +
+      "reElectronicKey\022<.salto.nebula.electroni" +
+      "ckey.v1.ConfigureElectronicKeyRequest\032\037." +
+      "salto.longrunning.v1.Operation\022o\n\022ResetE" +
+      "lectronicKey\0228.salto.nebula.electronicke" +
+      "y.v1.ResetElectronicKeyRequest\032\037.salto.l" +
+      "ongrunning.v1.Operation\022\241\001\n\032GenerateAuth" +
+      "orizationToken\022@.salto.nebula.electronic" +
+      "key.v1.GenerateAuthorizationTokenRequest" +
+      "\032A.salto.nebula.electronickey.v1.Generat" +
+      "eAuthorizationTokenResponse\022\201\001\n\033Generate" +
+      "FirmwareDownloadUri\022A.salto.nebula.elect" +
+      "ronickey.v1.GenerateFirmwareDownloadUriR" +
+      "equest\032\037.salto.longrunning.v1.OperationB" +
+      "\207\002\n%com.saltoapis.nebula.electronickey.v" +
+      "1B\022ElectronicKeyProtoP\001ZPgithub.com/salt" +
+      "oapis-internal/saltoapis-go/nebula/elect" +
+      "ronickey/v1;electronickey\252\002!Saltoapis.Ne" +
+      "bula.ElectronicKey.V1\312\002!Saltoapis\\Nebula" +
+      "\\ElectronicKey\\V1\342\002-GPBMetadata\\Saltoapi" +
+      "s\\Nebula\\ElectronicKey\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -268,7 +268,7 @@ public final class ElectronicKeyProto {
     internal_static_salto_nebula_electronickey_v1_ElectronicKey_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_electronickey_v1_ElectronicKey_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "Initialized", "DeviceId", "Outdated", "DeviceMetadata", "LowBattery", });
+        new java.lang.String[] { "Name", "DisplayName", "Initialized", "DeviceId", "Outdated", "DeviceMetadata", "LowBattery", "User", });
     internal_static_salto_nebula_electronickey_v1_CreateElectronicKeyRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_salto_nebula_electronickey_v1_CreateElectronicKeyRequest_fieldAccessorTable = new
