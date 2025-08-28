@@ -151,4 +151,33 @@ public interface ElectronicKeyOrBuilder extends
    * @return The lowBattery.
    */
   boolean getLowBattery();
+
+  /**
+   * <pre>
+   * User associated with this electronic key.
+   * </pre>
+   *
+   * <code>optional string user = 8;</code>
+   * @return Whether the user field is set.
+   */
+  boolean hasUser();
+  /**
+   * <pre>
+   * User associated with this electronic key.
+   * </pre>
+   *
+   * <code>optional string user = 8;</code>
+   * @return The user.
+   */
+  java.lang.String getUser();
+  /**
+   * <pre>
+   * User associated with this electronic key.
+   * </pre>
+   *
+   * <code>optional string user = 8;</code>
+   * @return The bytes for user.
+   */
+  com.google.protobuf.ByteString
+      getUserBytes();
 }
