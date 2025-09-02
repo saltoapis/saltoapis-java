@@ -215,5 +215,94 @@ public interface AccessPointOrBuilder extends
    */
   boolean getLeftOpen();
 
+  /**
+   * <pre>
+   * Source name, when source is an electronic lock.
+   * </pre>
+   *
+   * <code>string electronic_lock = 9;</code>
+   * @return Whether the electronicLock field is set.
+   */
+  boolean hasElectronicLock();
+  /**
+   * <pre>
+   * Source name, when source is an electronic lock.
+   * </pre>
+   *
+   * <code>string electronic_lock = 9;</code>
+   * @return The electronicLock.
+   */
+  java.lang.String getElectronicLock();
+  /**
+   * <pre>
+   * Source name, when source is an electronic lock.
+   * </pre>
+   *
+   * <code>string electronic_lock = 9;</code>
+   * @return The bytes for electronicLock.
+   */
+  com.google.protobuf.ByteString
+      getElectronicLockBytes();
+
+  /**
+   * <pre>
+   * Source name, when source is a controller.
+   * </pre>
+   *
+   * <code>string controller = 10;</code>
+   * @return Whether the controller field is set.
+   */
+  boolean hasController();
+  /**
+   * <pre>
+   * Source name, when source is a controller.
+   * </pre>
+   *
+   * <code>string controller = 10;</code>
+   * @return The controller.
+   */
+  java.lang.String getController();
+  /**
+   * <pre>
+   * Source name, when source is a controller.
+   * </pre>
+   *
+   * <code>string controller = 10;</code>
+   * @return The bytes for controller.
+   */
+  com.google.protobuf.ByteString
+      getControllerBytes();
+
+  /**
+   * <pre>
+   * Source name, when source is an intercom adaptor.
+   * </pre>
+   *
+   * <code>string intercom_adaptor = 11;</code>
+   * @return Whether the intercomAdaptor field is set.
+   */
+  boolean hasIntercomAdaptor();
+  /**
+   * <pre>
+   * Source name, when source is an intercom adaptor.
+   * </pre>
+   *
+   * <code>string intercom_adaptor = 11;</code>
+   * @return The intercomAdaptor.
+   */
+  java.lang.String getIntercomAdaptor();
+  /**
+   * <pre>
+   * Source name, when source is an intercom adaptor.
+   * </pre>
+   *
+   * <code>string intercom_adaptor = 11;</code>
+   * @return The bytes for intercomAdaptor.
+   */
+  com.google.protobuf.ByteString
+      getIntercomAdaptorBytes();
+
   com.saltoapis.nebula.accesspoint.v1.AccessPoint.OpeningModeCase getOpeningModeCase();
+
+  com.saltoapis.nebula.accesspoint.v1.AccessPoint.SourceCase getSourceCase();
 }

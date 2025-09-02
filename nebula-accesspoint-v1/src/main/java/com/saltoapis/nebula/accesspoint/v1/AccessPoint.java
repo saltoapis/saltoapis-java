@@ -92,6 +92,50 @@ private static final long serialVersionUID = 0L;
         openingModeCase_);
   }
 
+  private int sourceCase_ = 0;
+  @SuppressWarnings("serial")
+  private java.lang.Object source_;
+  public enum SourceCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    ELECTRONIC_LOCK(9),
+    CONTROLLER(10),
+    INTERCOM_ADAPTOR(11),
+    SOURCE_NOT_SET(0);
+    private final int value;
+    private SourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceCase forNumber(int value) {
+      switch (value) {
+        case 9: return ELECTRONIC_LOCK;
+        case 10: return CONTROLLER;
+        case 11: return INTERCOM_ADAPTOR;
+        case 0: return SOURCE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceCase
+  getSourceCase() {
+    return SourceCase.forNumber(
+        sourceCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -456,6 +500,198 @@ private static final long serialVersionUID = 0L;
     return leftOpen_;
   }
 
+  public static final int ELECTRONIC_LOCK_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * Source name, when source is an electronic lock.
+   * </pre>
+   *
+   * <code>string electronic_lock = 9;</code>
+   * @return Whether the electronicLock field is set.
+   */
+  public boolean hasElectronicLock() {
+    return sourceCase_ == 9;
+  }
+  /**
+   * <pre>
+   * Source name, when source is an electronic lock.
+   * </pre>
+   *
+   * <code>string electronic_lock = 9;</code>
+   * @return The electronicLock.
+   */
+  public java.lang.String getElectronicLock() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 9) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 9) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Source name, when source is an electronic lock.
+   * </pre>
+   *
+   * <code>string electronic_lock = 9;</code>
+   * @return The bytes for electronicLock.
+   */
+  public com.google.protobuf.ByteString
+      getElectronicLockBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 9) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (sourceCase_ == 9) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONTROLLER_FIELD_NUMBER = 10;
+  /**
+   * <pre>
+   * Source name, when source is a controller.
+   * </pre>
+   *
+   * <code>string controller = 10;</code>
+   * @return Whether the controller field is set.
+   */
+  public boolean hasController() {
+    return sourceCase_ == 10;
+  }
+  /**
+   * <pre>
+   * Source name, when source is a controller.
+   * </pre>
+   *
+   * <code>string controller = 10;</code>
+   * @return The controller.
+   */
+  public java.lang.String getController() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 10) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 10) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Source name, when source is a controller.
+   * </pre>
+   *
+   * <code>string controller = 10;</code>
+   * @return The bytes for controller.
+   */
+  public com.google.protobuf.ByteString
+      getControllerBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 10) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (sourceCase_ == 10) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int INTERCOM_ADAPTOR_FIELD_NUMBER = 11;
+  /**
+   * <pre>
+   * Source name, when source is an intercom adaptor.
+   * </pre>
+   *
+   * <code>string intercom_adaptor = 11;</code>
+   * @return Whether the intercomAdaptor field is set.
+   */
+  public boolean hasIntercomAdaptor() {
+    return sourceCase_ == 11;
+  }
+  /**
+   * <pre>
+   * Source name, when source is an intercom adaptor.
+   * </pre>
+   *
+   * <code>string intercom_adaptor = 11;</code>
+   * @return The intercomAdaptor.
+   */
+  public java.lang.String getIntercomAdaptor() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 11) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 11) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Source name, when source is an intercom adaptor.
+   * </pre>
+   *
+   * <code>string intercom_adaptor = 11;</code>
+   * @return The bytes for intercomAdaptor.
+   */
+  public com.google.protobuf.ByteString
+      getIntercomAdaptorBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 11) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (sourceCase_ == 11) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -494,6 +730,15 @@ private static final long serialVersionUID = 0L;
     if (leftOpen_ != false) {
       output.writeBool(8, leftOpen_);
     }
+    if (sourceCase_ == 9) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 9, source_);
+    }
+    if (sourceCase_ == 10) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 10, source_);
+    }
+    if (sourceCase_ == 11) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 11, source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -530,6 +775,15 @@ private static final long serialVersionUID = 0L;
     if (leftOpen_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(8, leftOpen_);
+    }
+    if (sourceCase_ == 9) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(9, source_);
+    }
+    if (sourceCase_ == 10) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(10, source_);
+    }
+    if (sourceCase_ == 11) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(11, source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -580,6 +834,23 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
+    switch (sourceCase_) {
+      case 9:
+        if (!getElectronicLock()
+            .equals(other.getElectronicLock())) return false;
+        break;
+      case 10:
+        if (!getController()
+            .equals(other.getController())) return false;
+        break;
+      case 11:
+        if (!getIntercomAdaptor()
+            .equals(other.getIntercomAdaptor())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -619,6 +890,22 @@ private static final long serialVersionUID = 0L;
       case 4:
         hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
         hash = (53 * hash) + getSchedule().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (sourceCase_) {
+      case 9:
+        hash = (37 * hash) + ELECTRONIC_LOCK_FIELD_NUMBER;
+        hash = (53 * hash) + getElectronicLock().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + CONTROLLER_FIELD_NUMBER;
+        hash = (53 * hash) + getController().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + INTERCOM_ADAPTOR_FIELD_NUMBER;
+        hash = (53 * hash) + getIntercomAdaptor().hashCode();
         break;
       case 0:
       default:
@@ -776,6 +1063,8 @@ private static final long serialVersionUID = 0L;
       leftOpen_ = false;
       openingModeCase_ = 0;
       openingMode_ = null;
+      sourceCase_ = 0;
+      source_ = null;
       return this;
     }
 
@@ -840,6 +1129,8 @@ private static final long serialVersionUID = 0L;
     private void buildPartialOneofs(com.saltoapis.nebula.accesspoint.v1.AccessPoint result) {
       result.openingModeCase_ = openingModeCase_;
       result.openingMode_ = this.openingMode_;
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -890,6 +1181,29 @@ private static final long serialVersionUID = 0L;
           break;
         }
         case OPENINGMODE_NOT_SET: {
+          break;
+        }
+      }
+      switch (other.getSourceCase()) {
+        case ELECTRONIC_LOCK: {
+          sourceCase_ = 9;
+          source_ = other.source_;
+          onChanged();
+          break;
+        }
+        case CONTROLLER: {
+          sourceCase_ = 10;
+          source_ = other.source_;
+          onChanged();
+          break;
+        }
+        case INTERCOM_ADAPTOR: {
+          sourceCase_ = 11;
+          source_ = other.source_;
+          onChanged();
+          break;
+        }
+        case SOURCE_NOT_SET: {
           break;
         }
       }
@@ -963,6 +1277,24 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000080;
               break;
             } // case 64
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+              sourceCase_ = 9;
+              source_ = s;
+              break;
+            } // case 74
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+              sourceCase_ = 10;
+              source_ = s;
+              break;
+            } // case 82
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+              sourceCase_ = 11;
+              source_ = s;
+              break;
+            } // case 90
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -989,6 +1321,21 @@ private static final long serialVersionUID = 0L;
     public Builder clearOpeningMode() {
       openingModeCase_ = 0;
       openingMode_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int sourceCase_ = 0;
+    private java.lang.Object source_;
+    public SourceCase
+        getSourceCase() {
+      return SourceCase.forNumber(
+          sourceCase_);
+    }
+
+    public Builder clearSource() {
+      sourceCase_ = 0;
+      source_ = null;
       onChanged();
       return this;
     }
@@ -1799,6 +2146,357 @@ private static final long serialVersionUID = 0L;
     public Builder clearLeftOpen() {
       bitField0_ = (bitField0_ & ~0x00000080);
       leftOpen_ = false;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Source name, when source is an electronic lock.
+     * </pre>
+     *
+     * <code>string electronic_lock = 9;</code>
+     * @return Whether the electronicLock field is set.
+     */
+    @java.lang.Override
+    public boolean hasElectronicLock() {
+      return sourceCase_ == 9;
+    }
+    /**
+     * <pre>
+     * Source name, when source is an electronic lock.
+     * </pre>
+     *
+     * <code>string electronic_lock = 9;</code>
+     * @return The electronicLock.
+     */
+    @java.lang.Override
+    public java.lang.String getElectronicLock() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 9) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 9) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Source name, when source is an electronic lock.
+     * </pre>
+     *
+     * <code>string electronic_lock = 9;</code>
+     * @return The bytes for electronicLock.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getElectronicLockBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 9) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (sourceCase_ == 9) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Source name, when source is an electronic lock.
+     * </pre>
+     *
+     * <code>string electronic_lock = 9;</code>
+     * @param value The electronicLock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setElectronicLock(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      sourceCase_ = 9;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Source name, when source is an electronic lock.
+     * </pre>
+     *
+     * <code>string electronic_lock = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearElectronicLock() {
+      if (sourceCase_ == 9) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Source name, when source is an electronic lock.
+     * </pre>
+     *
+     * <code>string electronic_lock = 9;</code>
+     * @param value The bytes for electronicLock to set.
+     * @return This builder for chaining.
+     */
+    public Builder setElectronicLockBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 9;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Source name, when source is a controller.
+     * </pre>
+     *
+     * <code>string controller = 10;</code>
+     * @return Whether the controller field is set.
+     */
+    @java.lang.Override
+    public boolean hasController() {
+      return sourceCase_ == 10;
+    }
+    /**
+     * <pre>
+     * Source name, when source is a controller.
+     * </pre>
+     *
+     * <code>string controller = 10;</code>
+     * @return The controller.
+     */
+    @java.lang.Override
+    public java.lang.String getController() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 10) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 10) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Source name, when source is a controller.
+     * </pre>
+     *
+     * <code>string controller = 10;</code>
+     * @return The bytes for controller.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getControllerBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 10) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (sourceCase_ == 10) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Source name, when source is a controller.
+     * </pre>
+     *
+     * <code>string controller = 10;</code>
+     * @param value The controller to set.
+     * @return This builder for chaining.
+     */
+    public Builder setController(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      sourceCase_ = 10;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Source name, when source is a controller.
+     * </pre>
+     *
+     * <code>string controller = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearController() {
+      if (sourceCase_ == 10) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Source name, when source is a controller.
+     * </pre>
+     *
+     * <code>string controller = 10;</code>
+     * @param value The bytes for controller to set.
+     * @return This builder for chaining.
+     */
+    public Builder setControllerBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 10;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Source name, when source is an intercom adaptor.
+     * </pre>
+     *
+     * <code>string intercom_adaptor = 11;</code>
+     * @return Whether the intercomAdaptor field is set.
+     */
+    @java.lang.Override
+    public boolean hasIntercomAdaptor() {
+      return sourceCase_ == 11;
+    }
+    /**
+     * <pre>
+     * Source name, when source is an intercom adaptor.
+     * </pre>
+     *
+     * <code>string intercom_adaptor = 11;</code>
+     * @return The intercomAdaptor.
+     */
+    @java.lang.Override
+    public java.lang.String getIntercomAdaptor() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 11) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 11) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Source name, when source is an intercom adaptor.
+     * </pre>
+     *
+     * <code>string intercom_adaptor = 11;</code>
+     * @return The bytes for intercomAdaptor.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIntercomAdaptorBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 11) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (sourceCase_ == 11) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Source name, when source is an intercom adaptor.
+     * </pre>
+     *
+     * <code>string intercom_adaptor = 11;</code>
+     * @param value The intercomAdaptor to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntercomAdaptor(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      sourceCase_ = 11;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Source name, when source is an intercom adaptor.
+     * </pre>
+     *
+     * <code>string intercom_adaptor = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIntercomAdaptor() {
+      if (sourceCase_ == 11) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Source name, when source is an intercom adaptor.
+     * </pre>
+     *
+     * <code>string intercom_adaptor = 11;</code>
+     * @param value The bytes for intercomAdaptor to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIntercomAdaptorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 11;
+      source_ = value;
       onChanged();
       return this;
     }
