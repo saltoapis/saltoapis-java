@@ -83,6 +83,37 @@ public final class UserServiceGrpc {
     return getGetUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.BatchGetUsersRequest,
+      com.saltoapis.nebula.user.v1.BatchGetUsersResponse> getBatchGetUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchGetUsers",
+      requestType = com.saltoapis.nebula.user.v1.BatchGetUsersRequest.class,
+      responseType = com.saltoapis.nebula.user.v1.BatchGetUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.BatchGetUsersRequest,
+      com.saltoapis.nebula.user.v1.BatchGetUsersResponse> getBatchGetUsersMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.BatchGetUsersRequest, com.saltoapis.nebula.user.v1.BatchGetUsersResponse> getBatchGetUsersMethod;
+    if ((getBatchGetUsersMethod = UserServiceGrpc.getBatchGetUsersMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getBatchGetUsersMethod = UserServiceGrpc.getBatchGetUsersMethod) == null) {
+          UserServiceGrpc.getBatchGetUsersMethod = getBatchGetUsersMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.user.v1.BatchGetUsersRequest, com.saltoapis.nebula.user.v1.BatchGetUsersResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchGetUsers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.user.v1.BatchGetUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.user.v1.BatchGetUsersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("BatchGetUsers"))
+              .build();
+        }
+      }
+    }
+    return getBatchGetUsersMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.ListUsersRequest,
       com.saltoapis.nebula.user.v1.ListUsersResponse> getListUsersMethod;
 
@@ -874,6 +905,17 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Get a batch of users
+     * Retrieves a batch of existing users.
+     * </pre>
+     */
+    default void batchGetUsers(com.saltoapis.nebula.user.v1.BatchGetUsersRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.BatchGetUsersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchGetUsersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * List users
      * Returns a list of users that have been previously created.
      * </pre>
@@ -1199,6 +1241,18 @@ public final class UserServiceGrpc {
         io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.User> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetUserMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get a batch of users
+     * Retrieves a batch of existing users.
+     * </pre>
+     */
+    public void batchGetUsers(com.saltoapis.nebula.user.v1.BatchGetUsersRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.BatchGetUsersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchGetUsersMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1536,6 +1590,17 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Get a batch of users
+     * Retrieves a batch of existing users.
+     * </pre>
+     */
+    public com.saltoapis.nebula.user.v1.BatchGetUsersResponse batchGetUsers(com.saltoapis.nebula.user.v1.BatchGetUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchGetUsersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * List users
      * Returns a list of users that have been previously created.
      * </pre>
@@ -1848,6 +1913,18 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Get a batch of users
+     * Retrieves a batch of existing users.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.user.v1.BatchGetUsersResponse> batchGetUsers(
+        com.saltoapis.nebula.user.v1.BatchGetUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchGetUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * List users
      * Returns a list of users that have been previously created.
      * </pre>
@@ -2137,29 +2214,30 @@ public final class UserServiceGrpc {
 
   private static final int METHODID_CREATE_USER = 0;
   private static final int METHODID_GET_USER = 1;
-  private static final int METHODID_LIST_USERS = 2;
-  private static final int METHODID_UPDATE_USER = 3;
-  private static final int METHODID_DELETE_USER = 4;
-  private static final int METHODID_BLOCK_USER = 5;
-  private static final int METHODID_UNBLOCK_USER = 6;
-  private static final int METHODID_CREATE_USER_ACCESS_RIGHT = 7;
-  private static final int METHODID_GET_USER_ACCESS_RIGHT = 8;
-  private static final int METHODID_LIST_USER_ACCESS_RIGHTS = 9;
-  private static final int METHODID_UPDATE_USER_ACCESS_RIGHT = 10;
-  private static final int METHODID_DELETE_USER_ACCESS_RIGHT = 11;
-  private static final int METHODID_ASSIGN_CARD_KEY = 12;
-  private static final int METHODID_CANCEL_CARD_KEY = 13;
-  private static final int METHODID_ENCODE_CARD_KEY = 14;
-  private static final int METHODID_ASSIGN_APP_KEY = 15;
-  private static final int METHODID_CANCEL_APP_KEY = 16;
-  private static final int METHODID_COMPUTE_APP_KEY_DATA = 17;
-  private static final int METHODID_ASSIGN_WALLET_KEY = 18;
-  private static final int METHODID_CANCEL_WALLET_KEY = 19;
-  private static final int METHODID_ASSIGN_PASSCODE = 20;
-  private static final int METHODID_CANCEL_PASSCODE = 21;
-  private static final int METHODID_ASSIGN_ELECTRONIC_KEY = 22;
-  private static final int METHODID_CANCEL_ELECTRONIC_KEY = 23;
-  private static final int METHODID_ENCODE_ELECTRONIC_KEY = 24;
+  private static final int METHODID_BATCH_GET_USERS = 2;
+  private static final int METHODID_LIST_USERS = 3;
+  private static final int METHODID_UPDATE_USER = 4;
+  private static final int METHODID_DELETE_USER = 5;
+  private static final int METHODID_BLOCK_USER = 6;
+  private static final int METHODID_UNBLOCK_USER = 7;
+  private static final int METHODID_CREATE_USER_ACCESS_RIGHT = 8;
+  private static final int METHODID_GET_USER_ACCESS_RIGHT = 9;
+  private static final int METHODID_LIST_USER_ACCESS_RIGHTS = 10;
+  private static final int METHODID_UPDATE_USER_ACCESS_RIGHT = 11;
+  private static final int METHODID_DELETE_USER_ACCESS_RIGHT = 12;
+  private static final int METHODID_ASSIGN_CARD_KEY = 13;
+  private static final int METHODID_CANCEL_CARD_KEY = 14;
+  private static final int METHODID_ENCODE_CARD_KEY = 15;
+  private static final int METHODID_ASSIGN_APP_KEY = 16;
+  private static final int METHODID_CANCEL_APP_KEY = 17;
+  private static final int METHODID_COMPUTE_APP_KEY_DATA = 18;
+  private static final int METHODID_ASSIGN_WALLET_KEY = 19;
+  private static final int METHODID_CANCEL_WALLET_KEY = 20;
+  private static final int METHODID_ASSIGN_PASSCODE = 21;
+  private static final int METHODID_CANCEL_PASSCODE = 22;
+  private static final int METHODID_ASSIGN_ELECTRONIC_KEY = 23;
+  private static final int METHODID_CANCEL_ELECTRONIC_KEY = 24;
+  private static final int METHODID_ENCODE_ELECTRONIC_KEY = 25;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2185,6 +2263,10 @@ public final class UserServiceGrpc {
         case METHODID_GET_USER:
           serviceImpl.getUser((com.saltoapis.nebula.user.v1.GetUserRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.User>) responseObserver);
+          break;
+        case METHODID_BATCH_GET_USERS:
+          serviceImpl.batchGetUsers((com.saltoapis.nebula.user.v1.BatchGetUsersRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.BatchGetUsersResponse>) responseObserver);
           break;
         case METHODID_LIST_USERS:
           serviceImpl.listUsers((com.saltoapis.nebula.user.v1.ListUsersRequest) request,
@@ -2310,6 +2392,13 @@ public final class UserServiceGrpc {
               com.saltoapis.nebula.user.v1.GetUserRequest,
               com.saltoapis.nebula.user.v1.User>(
                 service, METHODID_GET_USER)))
+        .addMethod(
+          getBatchGetUsersMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.user.v1.BatchGetUsersRequest,
+              com.saltoapis.nebula.user.v1.BatchGetUsersResponse>(
+                service, METHODID_BATCH_GET_USERS)))
         .addMethod(
           getListUsersMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2521,6 +2610,7 @@ public final class UserServiceGrpc {
               .setSchemaDescriptor(new UserServiceFileDescriptorSupplier())
               .addMethod(getCreateUserMethod())
               .addMethod(getGetUserMethod())
+              .addMethod(getBatchGetUsersMethod())
               .addMethod(getListUsersMethod())
               .addMethod(getUpdateUserMethod())
               .addMethod(getDeleteUserMethod())
