@@ -215,6 +215,16 @@ public final class TypesProto {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_event_v1_EmergencyKeyDeleted_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_event_v1_ElectronicKeyAssigned_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_event_v1_ElectronicKeyAssigned_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_event_v1_ElectronicKeyCanceled_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_event_v1_ElectronicKeyCanceled_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -338,12 +348,19 @@ public final class TypesProto {
       "\001(\0132*.salto.nebula.emergencykey.v1.Emerg" +
       "encyKey\"X\n\023EmergencyKeyDeleted\022A\n\remerge" +
       "ncy_key\030\001 \001(\0132*.salto.nebula.emergencyke" +
-      "y.v1.EmergencyKeyB\317\001\n\035com.saltoapis.nebu" +
-      "la.event.v1B\nTypesProtoP\001Z@github.com/sa" +
-      "ltoapis-internal/saltoapis-go/nebula/eve" +
-      "nt/v1;event\252\002\031Saltoapis.Nebula.Event.V1\312" +
-      "\002\031Saltoapis\\Nebula\\Event\\V1\342\002%GPBMetadat" +
-      "a\\Saltoapis\\Nebula\\Event\\V1b\006proto3"
+      "y.v1.EmergencyKey\"~\n\025ElectronicKeyAssign" +
+      "ed\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1." +
+      "User\022;\n\016electronic_key\030\002 \001(\0132#.salto.neb" +
+      "ula.user.v1.ElectronicKey\"~\n\025ElectronicK" +
+      "eyCanceled\022(\n\004user\030\001 \001(\0132\032.salto.nebula." +
+      "user.v1.User\022;\n\016electronic_key\030\002 \001(\0132#.s" +
+      "alto.nebula.user.v1.ElectronicKeyB\317\001\n\035co" +
+      "m.saltoapis.nebula.event.v1B\nTypesProtoP" +
+      "\001Z@github.com/saltoapis-internal/saltoap" +
+      "is-go/nebula/event/v1;event\252\002\031Saltoapis." +
+      "Nebula.Event.V1\312\002\031Saltoapis\\Nebula\\Event" +
+      "\\V1\342\002%GPBMetadata\\Saltoapis\\Nebula\\Event" +
+      "\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -582,6 +599,18 @@ public final class TypesProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_EmergencyKeyDeleted_descriptor,
         new java.lang.String[] { "EmergencyKey", });
+    internal_static_salto_nebula_event_v1_ElectronicKeyAssigned_descriptor =
+      getDescriptor().getMessageTypes().get(38);
+    internal_static_salto_nebula_event_v1_ElectronicKeyAssigned_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_event_v1_ElectronicKeyAssigned_descriptor,
+        new java.lang.String[] { "User", "ElectronicKey", });
+    internal_static_salto_nebula_event_v1_ElectronicKeyCanceled_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_salto_nebula_event_v1_ElectronicKeyCanceled_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_event_v1_ElectronicKeyCanceled_descriptor,
+        new java.lang.String[] { "User", "ElectronicKey", });
     descriptor.resolveAllFeaturesImmutable();
     com.saltoapis.nebula.accesspoint.v1.AccessPointProto.getDescriptor();
     com.saltoapis.nebula.accessright.v1.AccessRightProto.getDescriptor();
