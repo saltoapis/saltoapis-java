@@ -277,5 +277,17 @@ public interface DeviceOrBuilder extends
    */
   com.google.protobuf.TimestampOrBuilder getLastEventTimeOrBuilder();
 
+  /**
+   * <pre>
+   * Indicates whether this device has been initialized or not. To change
+   * the value of this field, you must call the device-type-specific
+   * initialization operation (for example, InitializeElectronicLock).
+   * </pre>
+   *
+   * <code>bool initialized = 12;</code>
+   * @return The initialized.
+   */
+  boolean getInitialized();
+
   com.saltoapis.nebula.device.v1.Device.ParentDeviceCase getParentDeviceCase();
 }

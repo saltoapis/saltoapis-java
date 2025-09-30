@@ -582,6 +582,23 @@ private static final long serialVersionUID = 0L;
     return lastEventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastEventTime_;
   }
 
+  public static final int INITIALIZED_FIELD_NUMBER = 12;
+  private boolean initialized_ = false;
+  /**
+   * <pre>
+   * Indicates whether this device has been initialized or not. To change
+   * the value of this field, you must call the device-type-specific
+   * initialization operation (for example, InitializeElectronicLock).
+   * </pre>
+   *
+   * <code>bool initialized = 12;</code>
+   * @return The initialized.
+   */
+  @java.lang.Override
+  public boolean getInitialized() {
+    return initialized_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -628,6 +645,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(11, getLastEventTime());
+    }
+    if (initialized_ != false) {
+      output.writeBool(12, initialized_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -676,6 +696,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getLastEventTime());
     }
+    if (initialized_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, initialized_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -720,6 +744,8 @@ private static final long serialVersionUID = 0L;
       if (!getLastEventTime()
           .equals(other.getLastEventTime())) return false;
     }
+    if (getInitialized()
+        != other.getInitialized()) return false;
     if (!getParentDeviceCase().equals(other.getParentDeviceCase())) return false;
     switch (parentDeviceCase_) {
       case 6:
@@ -773,6 +799,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LAST_EVENT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastEventTime().hashCode();
     }
+    hash = (37 * hash) + INITIALIZED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getInitialized());
     switch (parentDeviceCase_) {
       case 6:
         hash = (37 * hash) + GATEWAY_FIELD_NUMBER;
@@ -939,6 +968,7 @@ private static final long serialVersionUID = 0L;
         lastEventTimeBuilder_.dispose();
         lastEventTimeBuilder_ = null;
       }
+      initialized_ = false;
       parentDeviceCase_ = 0;
       parentDevice_ = null;
       return this;
@@ -1009,6 +1039,9 @@ private static final long serialVersionUID = 0L;
             : lastEventTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.initialized_ = initialized_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1063,6 +1096,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasLastEventTime()) {
         mergeLastEventTime(other.getLastEventTime());
+      }
+      if (other.getInitialized() != false) {
+        setInitialized(other.getInitialized());
       }
       switch (other.getParentDeviceCase()) {
         case GATEWAY: {
@@ -1166,6 +1202,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000400;
               break;
             } // case 90
+            case 96: {
+              initialized_ = input.readBool();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 96
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2257,6 +2298,56 @@ private static final long serialVersionUID = 0L;
         lastEventTime_ = null;
       }
       return lastEventTimeBuilder_;
+    }
+
+    private boolean initialized_ ;
+    /**
+     * <pre>
+     * Indicates whether this device has been initialized or not. To change
+     * the value of this field, you must call the device-type-specific
+     * initialization operation (for example, InitializeElectronicLock).
+     * </pre>
+     *
+     * <code>bool initialized = 12;</code>
+     * @return The initialized.
+     */
+    @java.lang.Override
+    public boolean getInitialized() {
+      return initialized_;
+    }
+    /**
+     * <pre>
+     * Indicates whether this device has been initialized or not. To change
+     * the value of this field, you must call the device-type-specific
+     * initialization operation (for example, InitializeElectronicLock).
+     * </pre>
+     *
+     * <code>bool initialized = 12;</code>
+     * @param value The initialized to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInitialized(boolean value) {
+
+      initialized_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether this device has been initialized or not. To change
+     * the value of this field, you must call the device-type-specific
+     * initialization operation (for example, InitializeElectronicLock).
+     * </pre>
+     *
+     * <code>bool initialized = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearInitialized() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      initialized_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.device.v1.Device)
