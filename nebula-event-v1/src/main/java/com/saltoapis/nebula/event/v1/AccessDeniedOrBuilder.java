@@ -62,4 +62,23 @@ public interface AccessDeniedOrBuilder extends
    * <code>.salto.nebula.user.v1.User user = 2;</code>
    */
   com.saltoapis.nebula.user.v1.UserOrBuilder getUserOrBuilder();
+
+  /**
+   * <pre>
+   * The reason for the access denial.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.AccessDenied.Reason reason = 3;</code>
+   * @return The enum numeric value on the wire for reason.
+   */
+  int getReasonValue();
+  /**
+   * <pre>
+   * The reason for the access denial.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.AccessDenied.Reason reason = 3;</code>
+   * @return The reason.
+   */
+  com.saltoapis.nebula.event.v1.AccessDenied.Reason getReason();
 }
