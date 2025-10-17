@@ -64,6 +64,14 @@ private static final long serialVersionUID = 0L;
      * <code>REASON_UNSPECIFIED = 0;</code>
      */
     REASON_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * The presented credential has expired.
+     * </pre>
+     *
+     * <code>CREDENTIAL_EXPIRED = 1;</code>
+     */
+    CREDENTIAL_EXPIRED(1),
     UNRECOGNIZED(-1),
     ;
 
@@ -84,6 +92,14 @@ private static final long serialVersionUID = 0L;
      * <code>REASON_UNSPECIFIED = 0;</code>
      */
     public static final int REASON_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * The presented credential has expired.
+     * </pre>
+     *
+     * <code>CREDENTIAL_EXPIRED = 1;</code>
+     */
+    public static final int CREDENTIAL_EXPIRED_VALUE = 1;
 
 
     public final int getNumber() {
@@ -111,6 +127,7 @@ private static final long serialVersionUID = 0L;
     public static Reason forNumber(int value) {
       switch (value) {
         case 0: return REASON_UNSPECIFIED;
+        case 1: return CREDENTIAL_EXPIRED;
         default: return null;
       }
     }
