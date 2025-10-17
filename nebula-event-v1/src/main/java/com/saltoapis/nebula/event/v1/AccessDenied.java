@@ -31,6 +31,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AccessDenied() {
+    reason_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -44,6 +45,126 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessDenied_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.saltoapis.nebula.event.v1.AccessDenied.class, com.saltoapis.nebula.event.v1.AccessDenied.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * The reason for the access denial.
+   * </pre>
+   *
+   * Protobuf enum {@code salto.nebula.event.v1.AccessDenied.Reason}
+   */
+  public enum Reason
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * The reason is not specified.
+     * </pre>
+     *
+     * <code>REASON_UNSPECIFIED = 0;</code>
+     */
+    REASON_UNSPECIFIED(0),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        Reason.class.getName());
+    }
+    /**
+     * <pre>
+     * The reason is not specified.
+     * </pre>
+     *
+     * <code>REASON_UNSPECIFIED = 0;</code>
+     */
+    public static final int REASON_UNSPECIFIED_VALUE = 0;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Reason valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Reason forNumber(int value) {
+      switch (value) {
+        case 0: return REASON_UNSPECIFIED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Reason>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Reason> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Reason>() {
+            public Reason findValueByNumber(int number) {
+              return Reason.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.saltoapis.nebula.event.v1.AccessDenied.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Reason[] VALUES = values();
+
+    public static Reason valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Reason(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:salto.nebula.event.v1.AccessDenied.Reason)
   }
 
   private int bitField0_;
@@ -123,6 +244,32 @@ private static final long serialVersionUID = 0L;
     return user_ == null ? com.saltoapis.nebula.user.v1.User.getDefaultInstance() : user_;
   }
 
+  public static final int REASON_FIELD_NUMBER = 3;
+  private int reason_ = 0;
+  /**
+   * <pre>
+   * The reason for the access denial.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.AccessDenied.Reason reason = 3;</code>
+   * @return The enum numeric value on the wire for reason.
+   */
+  @java.lang.Override public int getReasonValue() {
+    return reason_;
+  }
+  /**
+   * <pre>
+   * The reason for the access denial.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.AccessDenied.Reason reason = 3;</code>
+   * @return The reason.
+   */
+  @java.lang.Override public com.saltoapis.nebula.event.v1.AccessDenied.Reason getReason() {
+    com.saltoapis.nebula.event.v1.AccessDenied.Reason result = com.saltoapis.nebula.event.v1.AccessDenied.Reason.forNumber(reason_);
+    return result == null ? com.saltoapis.nebula.event.v1.AccessDenied.Reason.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -143,6 +290,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getUser());
     }
+    if (reason_ != com.saltoapis.nebula.event.v1.AccessDenied.Reason.REASON_UNSPECIFIED.getNumber()) {
+      output.writeEnum(3, reason_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -159,6 +309,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getUser());
+    }
+    if (reason_ != com.saltoapis.nebula.event.v1.AccessDenied.Reason.REASON_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(3, reason_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -185,6 +339,7 @@ private static final long serialVersionUID = 0L;
       if (!getUser()
           .equals(other.getUser())) return false;
     }
+    if (reason_ != other.reason_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -204,6 +359,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
     }
+    hash = (37 * hash) + REASON_FIELD_NUMBER;
+    hash = (53 * hash) + reason_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -356,6 +513,7 @@ private static final long serialVersionUID = 0L;
         userBuilder_.dispose();
         userBuilder_ = null;
       }
+      reason_ = 0;
       return this;
     }
 
@@ -402,6 +560,9 @@ private static final long serialVersionUID = 0L;
             : userBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.reason_ = reason_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -422,6 +583,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUser()) {
         mergeUser(other.getUser());
+      }
+      if (other.reason_ != 0) {
+        setReasonValue(other.getReasonValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -463,6 +627,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 24: {
+              reason_ = input.readEnum();
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 24
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -792,6 +961,79 @@ private static final long serialVersionUID = 0L;
         user_ = null;
       }
       return userBuilder_;
+    }
+
+    private int reason_ = 0;
+    /**
+     * <pre>
+     * The reason for the access denial.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessDenied.Reason reason = 3;</code>
+     * @return The enum numeric value on the wire for reason.
+     */
+    @java.lang.Override public int getReasonValue() {
+      return reason_;
+    }
+    /**
+     * <pre>
+     * The reason for the access denial.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessDenied.Reason reason = 3;</code>
+     * @param value The enum numeric value on the wire for reason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReasonValue(int value) {
+      reason_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The reason for the access denial.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessDenied.Reason reason = 3;</code>
+     * @return The reason.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.event.v1.AccessDenied.Reason getReason() {
+      com.saltoapis.nebula.event.v1.AccessDenied.Reason result = com.saltoapis.nebula.event.v1.AccessDenied.Reason.forNumber(reason_);
+      return result == null ? com.saltoapis.nebula.event.v1.AccessDenied.Reason.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The reason for the access denial.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessDenied.Reason reason = 3;</code>
+     * @param value The reason to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReason(com.saltoapis.nebula.event.v1.AccessDenied.Reason value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000004;
+      reason_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The reason for the access denial.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessDenied.Reason reason = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearReason() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      reason_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessDenied)
