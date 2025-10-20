@@ -35,4 +35,31 @@ public interface AccessRightDeletedOrBuilder extends
    * <code>.salto.nebula.accessright.v1.AccessRight access_right = 1;</code>
    */
   com.saltoapis.nebula.accessright.v1.AccessRightOrBuilder getAccessRightOrBuilder();
+
+  /**
+   * <pre>
+   * The actor who deleted the access right.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
+   * @return Whether the actor field is set.
+   */
+  boolean hasActor();
+  /**
+   * <pre>
+   * The actor who deleted the access right.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
+   * @return The actor.
+   */
+  com.saltoapis.nebula.event.v1.Principal getActor();
+  /**
+   * <pre>
+   * The actor who deleted the access right.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
+   */
+  com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder();
 }
