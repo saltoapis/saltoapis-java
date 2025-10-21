@@ -81,4 +81,141 @@ public interface AccessDeniedOrBuilder extends
    * @return The reason.
    */
   com.saltoapis.nebula.event.v1.AccessDenied.Reason getReason();
+
+  /**
+   * <pre>
+   * The emergency key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 4;</code>
+   * @return Whether the emergencyKey field is set.
+   */
+  boolean hasEmergencyKey();
+  /**
+   * <pre>
+   * The emergency key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 4;</code>
+   * @return The emergencyKey.
+   */
+  com.salto.nebula.emergencykey.v1.EmergencyKey getEmergencyKey();
+  /**
+   * <pre>
+   * The emergency key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 4;</code>
+   */
+  com.salto.nebula.emergencykey.v1.EmergencyKeyOrBuilder getEmergencyKeyOrBuilder();
+
+  /**
+   * <pre>
+   * The card key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.CardKey card_key = 5;</code>
+   * @return Whether the cardKey field is set.
+   */
+  boolean hasCardKey();
+  /**
+   * <pre>
+   * The card key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.CardKey card_key = 5;</code>
+   * @return The cardKey.
+   */
+  com.saltoapis.nebula.user.v1.CardKey getCardKey();
+  /**
+   * <pre>
+   * The card key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.CardKey card_key = 5;</code>
+   */
+  com.saltoapis.nebula.user.v1.CardKeyOrBuilder getCardKeyOrBuilder();
+
+  /**
+   * <pre>
+   * The app key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AppKey app_key = 6;</code>
+   * @return Whether the appKey field is set.
+   */
+  boolean hasAppKey();
+  /**
+   * <pre>
+   * The app key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AppKey app_key = 6;</code>
+   * @return The appKey.
+   */
+  com.saltoapis.nebula.user.v1.AppKey getAppKey();
+  /**
+   * <pre>
+   * The app key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AppKey app_key = 6;</code>
+   */
+  com.saltoapis.nebula.user.v1.AppKeyOrBuilder getAppKeyOrBuilder();
+
+  /**
+   * <pre>
+   * The wallet key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.WalletKey wallet_key = 7;</code>
+   * @return Whether the walletKey field is set.
+   */
+  boolean hasWalletKey();
+  /**
+   * <pre>
+   * The wallet key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.WalletKey wallet_key = 7;</code>
+   * @return The walletKey.
+   */
+  com.saltoapis.nebula.user.v1.WalletKey getWalletKey();
+  /**
+   * <pre>
+   * The wallet key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.WalletKey wallet_key = 7;</code>
+   */
+  com.saltoapis.nebula.user.v1.WalletKeyOrBuilder getWalletKeyOrBuilder();
+
+  /**
+   * <pre>
+   * The passcode used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.Passcode passcode = 8;</code>
+   * @return Whether the passcode field is set.
+   */
+  boolean hasPasscode();
+  /**
+   * <pre>
+   * The passcode used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.Passcode passcode = 8;</code>
+   * @return The passcode.
+   */
+  com.saltoapis.nebula.user.v1.Passcode getPasscode();
+  /**
+   * <pre>
+   * The passcode used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.Passcode passcode = 8;</code>
+   */
+  com.saltoapis.nebula.user.v1.PasscodeOrBuilder getPasscodeOrBuilder();
+
+  com.saltoapis.nebula.event.v1.AccessDenied.CredentialCase getCredentialCase();
 }
