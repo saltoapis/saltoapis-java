@@ -35,4 +35,31 @@ public interface EmergencyKeyDeletedOrBuilder extends
    * <code>.salto.nebula.emergencykey.v1.EmergencyKey emergency_key = 1;</code>
    */
   com.salto.nebula.emergencykey.v1.EmergencyKeyOrBuilder getEmergencyKeyOrBuilder();
+
+  /**
+   * <pre>
+   * The actor who deleted the Emergency Key.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
+   * @return Whether the actor field is set.
+   */
+  boolean hasActor();
+  /**
+   * <pre>
+   * The actor who deleted the Emergency Key.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
+   * @return The actor.
+   */
+  com.saltoapis.nebula.event.v1.Principal getActor();
+  /**
+   * <pre>
+   * The actor who deleted the Emergency Key.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
+   */
+  com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder();
 }
