@@ -62,4 +62,31 @@ public interface UserAccessRightUpdatedOrBuilder extends
    * <code>.salto.nebula.accessright.v1.AccessRight access_right = 2;</code>
    */
   com.saltoapis.nebula.accessright.v1.AccessRightOrBuilder getAccessRightOrBuilder();
+
+  /**
+   * <pre>
+   * The actor who updated the user access right association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return Whether the actor field is set.
+   */
+  boolean hasActor();
+  /**
+   * <pre>
+   * The actor who updated the user access right association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return The actor.
+   */
+  com.saltoapis.nebula.event.v1.Principal getActor();
+  /**
+   * <pre>
+   * The actor who updated the user access right association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   */
+  com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder();
 }

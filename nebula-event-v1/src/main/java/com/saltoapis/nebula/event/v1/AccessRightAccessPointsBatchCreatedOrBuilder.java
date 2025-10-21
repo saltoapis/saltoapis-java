@@ -79,4 +79,31 @@ public interface AccessRightAccessPointsBatchCreatedOrBuilder extends
    */
   com.saltoapis.nebula.accesspoint.v1.AccessPointOrBuilder getAccessPointsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The actor who created the multiple access rights access points association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return Whether the actor field is set.
+   */
+  boolean hasActor();
+  /**
+   * <pre>
+   * The actor who created the multiple access rights access points association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return The actor.
+   */
+  com.saltoapis.nebula.event.v1.Principal getActor();
+  /**
+   * <pre>
+   * The actor who created the multiple access rights access points association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   */
+  com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder();
 }
