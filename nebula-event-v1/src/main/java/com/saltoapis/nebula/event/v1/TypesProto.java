@@ -395,39 +395,45 @@ public final class TypesProto {
       "\030\001 \001(\0132\032.salto.nebula.user.v1.User\0223\n\nwa" +
       "llet_key\030\002 \001(\0132\037.salto.nebula.user.v1.Wa" +
       "lletKey\022/\n\005actor\030\003 \001(\0132 .salto.nebula.ev" +
-      "ent.v1.Principal\"7\n\013UnitMovedIn\022(\n\004unit\030" +
-      "\001 \001(\0132\032.salto.nebula.unit.v1.Unit\"8\n\014Uni" +
-      "tMovedOut\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.u" +
-      "nit.v1.Unit\"7\n\013UnitCreated\022(\n\004unit\030\001 \001(\013" +
-      "2\032.salto.nebula.unit.v1.Unit\"7\n\013UnitUpda" +
-      "ted\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v1" +
-      ".Unit\"7\n\013UnitDeleted\022(\n\004unit\030\001 \001(\0132\032.sal" +
-      "to.nebula.unit.v1.Unit\"\211\001\n\023EmergencyKeyC" +
-      "reated\022A\n\remergency_key\030\001 \001(\0132*.salto.ne" +
-      "bula.emergencykey.v1.EmergencyKey\022/\n\005act" +
+      "ent.v1.Principal\"h\n\013UnitMovedIn\022(\n\004unit\030" +
+      "\001 \001(\0132\032.salto.nebula.unit.v1.Unit\022/\n\005act" +
       "or\030\002 \001(\0132 .salto.nebula.event.v1.Princip" +
-      "al\"\211\001\n\023EmergencyKeyUpdated\022A\n\remergency_" +
-      "key\030\001 \001(\0132*.salto.nebula.emergencykey.v1" +
-      ".EmergencyKey\022/\n\005actor\030\002 \001(\0132 .salto.neb" +
-      "ula.event.v1.Principal\"\211\001\n\023EmergencyKeyD" +
-      "eleted\022A\n\remergency_key\030\001 \001(\0132*.salto.ne" +
-      "bula.emergencykey.v1.EmergencyKey\022/\n\005act" +
-      "or\030\002 \001(\0132 .salto.nebula.event.v1.Princip" +
-      "al\"\257\001\n\025ElectronicKeyAssigned\022(\n\004user\030\001 \001" +
-      "(\0132\032.salto.nebula.user.v1.User\022;\n\016electr" +
-      "onic_key\030\002 \001(\0132#.salto.nebula.user.v1.El" +
-      "ectronicKey\022/\n\005actor\030\003 \001(\0132 .salto.nebul" +
-      "a.event.v1.Principal\"\257\001\n\025ElectronicKeyCa" +
-      "nceled\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user" +
-      ".v1.User\022;\n\016electronic_key\030\002 \001(\0132#.salto" +
-      ".nebula.user.v1.ElectronicKey\022/\n\005actor\030\003" +
-      " \001(\0132 .salto.nebula.event.v1.PrincipalB\317" +
-      "\001\n\035com.saltoapis.nebula.event.v1B\nTypesP" +
-      "rotoP\001Z@github.com/saltoapis-internal/sa" +
-      "ltoapis-go/nebula/event/v1;event\252\002\031Salto" +
-      "apis.Nebula.Event.V1\312\002\031Saltoapis\\Nebula\\" +
-      "Event\\V1\342\002%GPBMetadata\\Saltoapis\\Nebula\\" +
-      "Event\\V1b\006proto3"
+      "al\"i\n\014UnitMovedOut\022(\n\004unit\030\001 \001(\0132\032.salto" +
+      ".nebula.unit.v1.Unit\022/\n\005actor\030\002 \001(\0132 .sa" +
+      "lto.nebula.event.v1.Principal\"h\n\013UnitCre" +
+      "ated\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v" +
+      "1.Unit\022/\n\005actor\030\002 \001(\0132 .salto.nebula.eve" +
+      "nt.v1.Principal\"h\n\013UnitUpdated\022(\n\004unit\030\001" +
+      " \001(\0132\032.salto.nebula.unit.v1.Unit\022/\n\005acto" +
+      "r\030\002 \001(\0132 .salto.nebula.event.v1.Principa" +
+      "l\"h\n\013UnitDeleted\022(\n\004unit\030\001 \001(\0132\032.salto.n" +
+      "ebula.unit.v1.Unit\022/\n\005actor\030\002 \001(\0132 .salt" +
+      "o.nebula.event.v1.Principal\"\211\001\n\023Emergenc" +
+      "yKeyCreated\022A\n\remergency_key\030\001 \001(\0132*.sal" +
+      "to.nebula.emergencykey.v1.EmergencyKey\022/" +
+      "\n\005actor\030\002 \001(\0132 .salto.nebula.event.v1.Pr" +
+      "incipal\"\211\001\n\023EmergencyKeyUpdated\022A\n\remerg" +
+      "ency_key\030\001 \001(\0132*.salto.nebula.emergencyk" +
+      "ey.v1.EmergencyKey\022/\n\005actor\030\002 \001(\0132 .salt" +
+      "o.nebula.event.v1.Principal\"\211\001\n\023Emergenc" +
+      "yKeyDeleted\022A\n\remergency_key\030\001 \001(\0132*.sal" +
+      "to.nebula.emergencykey.v1.EmergencyKey\022/" +
+      "\n\005actor\030\002 \001(\0132 .salto.nebula.event.v1.Pr" +
+      "incipal\"\257\001\n\025ElectronicKeyAssigned\022(\n\004use" +
+      "r\030\001 \001(\0132\032.salto.nebula.user.v1.User\022;\n\016e" +
+      "lectronic_key\030\002 \001(\0132#.salto.nebula.user." +
+      "v1.ElectronicKey\022/\n\005actor\030\003 \001(\0132 .salto." +
+      "nebula.event.v1.Principal\"\257\001\n\025Electronic" +
+      "KeyCanceled\022(\n\004user\030\001 \001(\0132\032.salto.nebula" +
+      ".user.v1.User\022;\n\016electronic_key\030\002 \001(\0132#." +
+      "salto.nebula.user.v1.ElectronicKey\022/\n\005ac" +
+      "tor\030\003 \001(\0132 .salto.nebula.event.v1.Princi" +
+      "palB\317\001\n\035com.saltoapis.nebula.event.v1B\nT" +
+      "ypesProtoP\001Z@github.com/saltoapis-intern" +
+      "al/saltoapis-go/nebula/event/v1;event\252\002\031" +
+      "Saltoapis.Nebula.Event.V1\312\002\031Saltoapis\\Ne" +
+      "bula\\Event\\V1\342\002%GPBMetadata\\Saltoapis\\Ne" +
+      "bula\\Event\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -642,31 +648,31 @@ public final class TypesProto {
     internal_static_salto_nebula_event_v1_UnitMovedIn_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitMovedIn_descriptor,
-        new java.lang.String[] { "Unit", });
+        new java.lang.String[] { "Unit", "Actor", });
     internal_static_salto_nebula_event_v1_UnitMovedOut_descriptor =
       getDescriptor().getMessageTypes().get(33);
     internal_static_salto_nebula_event_v1_UnitMovedOut_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitMovedOut_descriptor,
-        new java.lang.String[] { "Unit", });
+        new java.lang.String[] { "Unit", "Actor", });
     internal_static_salto_nebula_event_v1_UnitCreated_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_salto_nebula_event_v1_UnitCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitCreated_descriptor,
-        new java.lang.String[] { "Unit", });
+        new java.lang.String[] { "Unit", "Actor", });
     internal_static_salto_nebula_event_v1_UnitUpdated_descriptor =
       getDescriptor().getMessageTypes().get(35);
     internal_static_salto_nebula_event_v1_UnitUpdated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitUpdated_descriptor,
-        new java.lang.String[] { "Unit", });
+        new java.lang.String[] { "Unit", "Actor", });
     internal_static_salto_nebula_event_v1_UnitDeleted_descriptor =
       getDescriptor().getMessageTypes().get(36);
     internal_static_salto_nebula_event_v1_UnitDeleted_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_UnitDeleted_descriptor,
-        new java.lang.String[] { "Unit", });
+        new java.lang.String[] { "Unit", "Actor", });
     internal_static_salto_nebula_event_v1_EmergencyKeyCreated_descriptor =
       getDescriptor().getMessageTypes().get(37);
     internal_static_salto_nebula_event_v1_EmergencyKeyCreated_fieldAccessorTable = new
