@@ -371,49 +371,63 @@ public final class TypesProto {
       "bula.user.v1.User\022>\n\014access_right\030\002 \001(\0132" +
       "(.salto.nebula.accessright.v1.AccessRigh" +
       "t\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1" +
-      ".Principal\"l\n\017CardKeyAssigned\022(\n\004user\030\001 " +
-      "\001(\0132\032.salto.nebula.user.v1.User\022/\n\010card_" +
-      "key\030\002 \001(\0132\035.salto.nebula.user.v1.CardKey" +
-      "\"l\n\017CardKeyCanceled\022(\n\004user\030\001 \001(\0132\032.salt" +
-      "o.nebula.user.v1.User\022/\n\010card_key\030\002 \001(\0132" +
-      "\035.salto.nebula.user.v1.CardKey\"i\n\016AppKey" +
-      "Assigned\022(\n\004user\030\001 \001(\0132\032.salto.nebula.us" +
-      "er.v1.User\022-\n\007app_key\030\002 \001(\0132\034.salto.nebu" +
-      "la.user.v1.AppKey\"i\n\016AppKeyCanceled\022(\n\004u" +
-      "ser\030\001 \001(\0132\032.salto.nebula.user.v1.User\022-\n" +
-      "\007app_key\030\002 \001(\0132\034.salto.nebula.user.v1.Ap" +
-      "pKey\"r\n\021WalletKeyAssigned\022(\n\004user\030\001 \001(\0132" +
-      "\032.salto.nebula.user.v1.User\0223\n\nwallet_ke" +
-      "y\030\002 \001(\0132\037.salto.nebula.user.v1.WalletKey" +
-      "\"r\n\021WalletKeyCanceled\022(\n\004user\030\001 \001(\0132\032.sa" +
-      "lto.nebula.user.v1.User\0223\n\nwallet_key\030\002 " +
-      "\001(\0132\037.salto.nebula.user.v1.WalletKey\"7\n\013" +
-      "UnitMovedIn\022(\n\004unit\030\001 \001(\0132\032.salto.nebula" +
-      ".unit.v1.Unit\"8\n\014UnitMovedOut\022(\n\004unit\030\001 " +
-      "\001(\0132\032.salto.nebula.unit.v1.Unit\"7\n\013UnitC" +
-      "reated\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit" +
-      ".v1.Unit\"7\n\013UnitUpdated\022(\n\004unit\030\001 \001(\0132\032." +
-      "salto.nebula.unit.v1.Unit\"7\n\013UnitDeleted" +
-      "\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v1.Un" +
-      "it\"X\n\023EmergencyKeyCreated\022A\n\remergency_k" +
-      "ey\030\001 \001(\0132*.salto.nebula.emergencykey.v1." +
-      "EmergencyKey\"X\n\023EmergencyKeyUpdated\022A\n\re" +
-      "mergency_key\030\001 \001(\0132*.salto.nebula.emerge" +
-      "ncykey.v1.EmergencyKey\"X\n\023EmergencyKeyDe" +
-      "leted\022A\n\remergency_key\030\001 \001(\0132*.salto.neb" +
-      "ula.emergencykey.v1.EmergencyKey\"~\n\025Elec" +
-      "tronicKeyAssigned\022(\n\004user\030\001 \001(\0132\032.salto." +
-      "nebula.user.v1.User\022;\n\016electronic_key\030\002 " +
-      "\001(\0132#.salto.nebula.user.v1.ElectronicKey" +
-      "\"~\n\025ElectronicKeyCanceled\022(\n\004user\030\001 \001(\0132" +
-      "\032.salto.nebula.user.v1.User\022;\n\016electroni" +
-      "c_key\030\002 \001(\0132#.salto.nebula.user.v1.Elect" +
-      "ronicKeyB\317\001\n\035com.saltoapis.nebula.event." +
-      "v1B\nTypesProtoP\001Z@github.com/saltoapis-i" +
-      "nternal/saltoapis-go/nebula/event/v1;eve" +
-      "nt\252\002\031Saltoapis.Nebula.Event.V1\312\002\031Saltoap" +
-      "is\\Nebula\\Event\\V1\342\002%GPBMetadata\\Saltoap" +
-      "is\\Nebula\\Event\\V1b\006proto3"
+      ".Principal\"\235\001\n\017CardKeyAssigned\022(\n\004user\030\001" +
+      " \001(\0132\032.salto.nebula.user.v1.User\022/\n\010card" +
+      "_key\030\002 \001(\0132\035.salto.nebula.user.v1.CardKe" +
+      "y\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1" +
+      ".Principal\"\235\001\n\017CardKeyCanceled\022(\n\004user\030\001" +
+      " \001(\0132\032.salto.nebula.user.v1.User\022/\n\010card" +
+      "_key\030\002 \001(\0132\035.salto.nebula.user.v1.CardKe" +
+      "y\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1" +
+      ".Principal\"\232\001\n\016AppKeyAssigned\022(\n\004user\030\001 " +
+      "\001(\0132\032.salto.nebula.user.v1.User\022-\n\007app_k" +
+      "ey\030\002 \001(\0132\034.salto.nebula.user.v1.AppKey\022/" +
+      "\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1.Pr" +
+      "incipal\"\232\001\n\016AppKeyCanceled\022(\n\004user\030\001 \001(\013" +
+      "2\032.salto.nebula.user.v1.User\022-\n\007app_key\030" +
+      "\002 \001(\0132\034.salto.nebula.user.v1.AppKey\022/\n\005a" +
+      "ctor\030\003 \001(\0132 .salto.nebula.event.v1.Princ" +
+      "ipal\"\243\001\n\021WalletKeyAssigned\022(\n\004user\030\001 \001(\013" +
+      "2\032.salto.nebula.user.v1.User\0223\n\nwallet_k" +
+      "ey\030\002 \001(\0132\037.salto.nebula.user.v1.WalletKe" +
+      "y\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1" +
+      ".Principal\"\243\001\n\021WalletKeyCanceled\022(\n\004user" +
+      "\030\001 \001(\0132\032.salto.nebula.user.v1.User\0223\n\nwa" +
+      "llet_key\030\002 \001(\0132\037.salto.nebula.user.v1.Wa" +
+      "lletKey\022/\n\005actor\030\003 \001(\0132 .salto.nebula.ev" +
+      "ent.v1.Principal\"7\n\013UnitMovedIn\022(\n\004unit\030" +
+      "\001 \001(\0132\032.salto.nebula.unit.v1.Unit\"8\n\014Uni" +
+      "tMovedOut\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.u" +
+      "nit.v1.Unit\"7\n\013UnitCreated\022(\n\004unit\030\001 \001(\013" +
+      "2\032.salto.nebula.unit.v1.Unit\"7\n\013UnitUpda" +
+      "ted\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v1" +
+      ".Unit\"7\n\013UnitDeleted\022(\n\004unit\030\001 \001(\0132\032.sal" +
+      "to.nebula.unit.v1.Unit\"\211\001\n\023EmergencyKeyC" +
+      "reated\022A\n\remergency_key\030\001 \001(\0132*.salto.ne" +
+      "bula.emergencykey.v1.EmergencyKey\022/\n\005act" +
+      "or\030\002 \001(\0132 .salto.nebula.event.v1.Princip" +
+      "al\"\211\001\n\023EmergencyKeyUpdated\022A\n\remergency_" +
+      "key\030\001 \001(\0132*.salto.nebula.emergencykey.v1" +
+      ".EmergencyKey\022/\n\005actor\030\002 \001(\0132 .salto.neb" +
+      "ula.event.v1.Principal\"\211\001\n\023EmergencyKeyD" +
+      "eleted\022A\n\remergency_key\030\001 \001(\0132*.salto.ne" +
+      "bula.emergencykey.v1.EmergencyKey\022/\n\005act" +
+      "or\030\002 \001(\0132 .salto.nebula.event.v1.Princip" +
+      "al\"\257\001\n\025ElectronicKeyAssigned\022(\n\004user\030\001 \001" +
+      "(\0132\032.salto.nebula.user.v1.User\022;\n\016electr" +
+      "onic_key\030\002 \001(\0132#.salto.nebula.user.v1.El" +
+      "ectronicKey\022/\n\005actor\030\003 \001(\0132 .salto.nebul" +
+      "a.event.v1.Principal\"\257\001\n\025ElectronicKeyCa" +
+      "nceled\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user" +
+      ".v1.User\022;\n\016electronic_key\030\002 \001(\0132#.salto" +
+      ".nebula.user.v1.ElectronicKey\022/\n\005actor\030\003" +
+      " \001(\0132 .salto.nebula.event.v1.PrincipalB\317" +
+      "\001\n\035com.saltoapis.nebula.event.v1B\nTypesP" +
+      "rotoP\001Z@github.com/saltoapis-internal/sa" +
+      "ltoapis-go/nebula/event/v1;event\252\002\031Salto" +
+      "apis.Nebula.Event.V1\312\002\031Saltoapis\\Nebula\\" +
+      "Event\\V1\342\002%GPBMetadata\\Saltoapis\\Nebula\\" +
+      "Event\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -592,37 +606,37 @@ public final class TypesProto {
     internal_static_salto_nebula_event_v1_CardKeyAssigned_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_CardKeyAssigned_descriptor,
-        new java.lang.String[] { "User", "CardKey", });
+        new java.lang.String[] { "User", "CardKey", "Actor", });
     internal_static_salto_nebula_event_v1_CardKeyCanceled_descriptor =
       getDescriptor().getMessageTypes().get(27);
     internal_static_salto_nebula_event_v1_CardKeyCanceled_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_CardKeyCanceled_descriptor,
-        new java.lang.String[] { "User", "CardKey", });
+        new java.lang.String[] { "User", "CardKey", "Actor", });
     internal_static_salto_nebula_event_v1_AppKeyAssigned_descriptor =
       getDescriptor().getMessageTypes().get(28);
     internal_static_salto_nebula_event_v1_AppKeyAssigned_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_AppKeyAssigned_descriptor,
-        new java.lang.String[] { "User", "AppKey", });
+        new java.lang.String[] { "User", "AppKey", "Actor", });
     internal_static_salto_nebula_event_v1_AppKeyCanceled_descriptor =
       getDescriptor().getMessageTypes().get(29);
     internal_static_salto_nebula_event_v1_AppKeyCanceled_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_AppKeyCanceled_descriptor,
-        new java.lang.String[] { "User", "AppKey", });
+        new java.lang.String[] { "User", "AppKey", "Actor", });
     internal_static_salto_nebula_event_v1_WalletKeyAssigned_descriptor =
       getDescriptor().getMessageTypes().get(30);
     internal_static_salto_nebula_event_v1_WalletKeyAssigned_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_WalletKeyAssigned_descriptor,
-        new java.lang.String[] { "User", "WalletKey", });
+        new java.lang.String[] { "User", "WalletKey", "Actor", });
     internal_static_salto_nebula_event_v1_WalletKeyCanceled_descriptor =
       getDescriptor().getMessageTypes().get(31);
     internal_static_salto_nebula_event_v1_WalletKeyCanceled_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_WalletKeyCanceled_descriptor,
-        new java.lang.String[] { "User", "WalletKey", });
+        new java.lang.String[] { "User", "WalletKey", "Actor", });
     internal_static_salto_nebula_event_v1_UnitMovedIn_descriptor =
       getDescriptor().getMessageTypes().get(32);
     internal_static_salto_nebula_event_v1_UnitMovedIn_fieldAccessorTable = new
@@ -658,31 +672,31 @@ public final class TypesProto {
     internal_static_salto_nebula_event_v1_EmergencyKeyCreated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_EmergencyKeyCreated_descriptor,
-        new java.lang.String[] { "EmergencyKey", });
+        new java.lang.String[] { "EmergencyKey", "Actor", });
     internal_static_salto_nebula_event_v1_EmergencyKeyUpdated_descriptor =
       getDescriptor().getMessageTypes().get(38);
     internal_static_salto_nebula_event_v1_EmergencyKeyUpdated_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_EmergencyKeyUpdated_descriptor,
-        new java.lang.String[] { "EmergencyKey", });
+        new java.lang.String[] { "EmergencyKey", "Actor", });
     internal_static_salto_nebula_event_v1_EmergencyKeyDeleted_descriptor =
       getDescriptor().getMessageTypes().get(39);
     internal_static_salto_nebula_event_v1_EmergencyKeyDeleted_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_EmergencyKeyDeleted_descriptor,
-        new java.lang.String[] { "EmergencyKey", });
+        new java.lang.String[] { "EmergencyKey", "Actor", });
     internal_static_salto_nebula_event_v1_ElectronicKeyAssigned_descriptor =
       getDescriptor().getMessageTypes().get(40);
     internal_static_salto_nebula_event_v1_ElectronicKeyAssigned_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_ElectronicKeyAssigned_descriptor,
-        new java.lang.String[] { "User", "ElectronicKey", });
+        new java.lang.String[] { "User", "ElectronicKey", "Actor", });
     internal_static_salto_nebula_event_v1_ElectronicKeyCanceled_descriptor =
       getDescriptor().getMessageTypes().get(41);
     internal_static_salto_nebula_event_v1_ElectronicKeyCanceled_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_ElectronicKeyCanceled_descriptor,
-        new java.lang.String[] { "User", "ElectronicKey", });
+        new java.lang.String[] { "User", "ElectronicKey", "Actor", });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.StructProto.getDescriptor();
     com.saltoapis.nebula.accesspoint.v1.AccessPointProto.getDescriptor();

@@ -62,4 +62,31 @@ public interface CardKeyAssignedOrBuilder extends
    * <code>.salto.nebula.user.v1.CardKey card_key = 2;</code>
    */
   com.saltoapis.nebula.user.v1.CardKeyOrBuilder getCardKeyOrBuilder();
+
+  /**
+   * <pre>
+   * The actor who assigned a user's card key.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return Whether the actor field is set.
+   */
+  boolean hasActor();
+  /**
+   * <pre>
+   * The actor who assigned a user's card key.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return The actor.
+   */
+  com.saltoapis.nebula.event.v1.Principal getActor();
+  /**
+   * <pre>
+   * The actor who assigned a user's card key.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   */
+  com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder();
 }
