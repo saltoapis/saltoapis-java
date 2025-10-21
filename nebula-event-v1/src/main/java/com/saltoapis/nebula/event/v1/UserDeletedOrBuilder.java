@@ -35,4 +35,31 @@ public interface UserDeletedOrBuilder extends
    * <code>.salto.nebula.user.v1.User user = 1;</code>
    */
   com.saltoapis.nebula.user.v1.UserOrBuilder getUserOrBuilder();
+
+  /**
+   * <pre>
+   * The actor who deleted the user.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
+   * @return Whether the actor field is set.
+   */
+  boolean hasActor();
+  /**
+   * <pre>
+   * The actor who deleted the user.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
+   * @return The actor.
+   */
+  com.saltoapis.nebula.event.v1.Principal getActor();
+  /**
+   * <pre>
+   * The actor who deleted the user.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
+   */
+  com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder();
 }

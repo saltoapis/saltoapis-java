@@ -62,4 +62,31 @@ public interface AccessRightAccessPointCreatedOrBuilder extends
    * <code>.salto.nebula.accesspoint.v1.AccessPoint access_point = 2;</code>
    */
   com.saltoapis.nebula.accesspoint.v1.AccessPointOrBuilder getAccessPointOrBuilder();
+
+  /**
+   * <pre>
+   * The actor who created the access right's access point association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return Whether the actor field is set.
+   */
+  boolean hasActor();
+  /**
+   * <pre>
+   * The actor who created the access right's access point association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return The actor.
+   */
+  com.saltoapis.nebula.event.v1.Principal getActor();
+  /**
+   * <pre>
+   * The actor who created the access right's access point association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   */
+  com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder();
 }

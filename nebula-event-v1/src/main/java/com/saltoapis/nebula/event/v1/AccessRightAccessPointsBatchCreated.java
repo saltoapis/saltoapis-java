@@ -147,6 +147,44 @@ private static final long serialVersionUID = 0L;
     return accessPoints_.get(index);
   }
 
+  public static final int ACTOR_FIELD_NUMBER = 3;
+  private com.saltoapis.nebula.event.v1.Principal actor_;
+  /**
+   * <pre>
+   * The actor who created the multiple access rights access points association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return Whether the actor field is set.
+   */
+  @java.lang.Override
+  public boolean hasActor() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   * <pre>
+   * The actor who created the multiple access rights access points association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   * @return The actor.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.event.v1.Principal getActor() {
+    return actor_ == null ? com.saltoapis.nebula.event.v1.Principal.getDefaultInstance() : actor_;
+  }
+  /**
+   * <pre>
+   * The actor who created the multiple access rights access points association.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder() {
+    return actor_ == null ? com.saltoapis.nebula.event.v1.Principal.getDefaultInstance() : actor_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -167,6 +205,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < accessPoints_.size(); i++) {
       output.writeMessage(2, accessPoints_.get(i));
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(3, getActor());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -183,6 +224,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < accessPoints_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, accessPoints_.get(i));
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getActor());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -206,6 +251,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getAccessPointsList()
         .equals(other.getAccessPointsList())) return false;
+    if (hasActor() != other.hasActor()) return false;
+    if (hasActor()) {
+      if (!getActor()
+          .equals(other.getActor())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -224,6 +274,10 @@ private static final long serialVersionUID = 0L;
     if (getAccessPointsCount() > 0) {
       hash = (37 * hash) + ACCESS_POINTS_FIELD_NUMBER;
       hash = (53 * hash) + getAccessPointsList().hashCode();
+    }
+    if (hasActor()) {
+      hash = (37 * hash) + ACTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getActor().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -361,6 +415,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getAccessRightFieldBuilder();
         getAccessPointsFieldBuilder();
+        getActorFieldBuilder();
       }
     }
     @java.lang.Override
@@ -379,6 +434,11 @@ private static final long serialVersionUID = 0L;
         accessPointsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
+      actor_ = null;
+      if (actorBuilder_ != null) {
+        actorBuilder_.dispose();
+        actorBuilder_ = null;
+      }
       return this;
     }
 
@@ -432,6 +492,12 @@ private static final long serialVersionUID = 0L;
             : accessRightBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.actor_ = actorBuilder_ == null
+            ? actor_
+            : actorBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -475,6 +541,9 @@ private static final long serialVersionUID = 0L;
             accessPointsBuilder_.addAllMessages(other.accessPoints_);
           }
         }
+      }
+      if (other.hasActor()) {
+        mergeActor(other.getActor());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -522,6 +591,13 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 18
+            case 26: {
+              input.readMessage(
+                  getActorFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1006,6 +1082,163 @@ private static final long serialVersionUID = 0L;
         accessPoints_ = null;
       }
       return accessPointsBuilder_;
+    }
+
+    private com.saltoapis.nebula.event.v1.Principal actor_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.event.v1.Principal, com.saltoapis.nebula.event.v1.Principal.Builder, com.saltoapis.nebula.event.v1.PrincipalOrBuilder> actorBuilder_;
+    /**
+     * <pre>
+     * The actor who created the multiple access rights access points association.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+     * @return Whether the actor field is set.
+     */
+    public boolean hasActor() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * The actor who created the multiple access rights access points association.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+     * @return The actor.
+     */
+    public com.saltoapis.nebula.event.v1.Principal getActor() {
+      if (actorBuilder_ == null) {
+        return actor_ == null ? com.saltoapis.nebula.event.v1.Principal.getDefaultInstance() : actor_;
+      } else {
+        return actorBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The actor who created the multiple access rights access points association.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+     */
+    public Builder setActor(com.saltoapis.nebula.event.v1.Principal value) {
+      if (actorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actor_ = value;
+      } else {
+        actorBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The actor who created the multiple access rights access points association.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+     */
+    public Builder setActor(
+        com.saltoapis.nebula.event.v1.Principal.Builder builderForValue) {
+      if (actorBuilder_ == null) {
+        actor_ = builderForValue.build();
+      } else {
+        actorBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The actor who created the multiple access rights access points association.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+     */
+    public Builder mergeActor(com.saltoapis.nebula.event.v1.Principal value) {
+      if (actorBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0) &&
+          actor_ != null &&
+          actor_ != com.saltoapis.nebula.event.v1.Principal.getDefaultInstance()) {
+          getActorBuilder().mergeFrom(value);
+        } else {
+          actor_ = value;
+        }
+      } else {
+        actorBuilder_.mergeFrom(value);
+      }
+      if (actor_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The actor who created the multiple access rights access points association.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+     */
+    public Builder clearActor() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      actor_ = null;
+      if (actorBuilder_ != null) {
+        actorBuilder_.dispose();
+        actorBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The actor who created the multiple access rights access points association.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+     */
+    public com.saltoapis.nebula.event.v1.Principal.Builder getActorBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getActorFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The actor who created the multiple access rights access points association.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+     */
+    public com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder() {
+      if (actorBuilder_ != null) {
+        return actorBuilder_.getMessageOrBuilder();
+      } else {
+        return actor_ == null ?
+            com.saltoapis.nebula.event.v1.Principal.getDefaultInstance() : actor_;
+      }
+    }
+    /**
+     * <pre>
+     * The actor who created the multiple access rights access points association.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.event.v1.Principal, com.saltoapis.nebula.event.v1.Principal.Builder, com.saltoapis.nebula.event.v1.PrincipalOrBuilder> 
+        getActorFieldBuilder() {
+      if (actorBuilder_ == null) {
+        actorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.event.v1.Principal, com.saltoapis.nebula.event.v1.Principal.Builder, com.saltoapis.nebula.event.v1.PrincipalOrBuilder>(
+                getActor(),
+                getParentForChildren(),
+                isClean());
+        actor_ = null;
+      }
+      return actorBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessRightAccessPointsBatchCreated)
