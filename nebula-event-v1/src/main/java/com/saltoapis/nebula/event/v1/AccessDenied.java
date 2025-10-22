@@ -72,6 +72,15 @@ private static final long serialVersionUID = 0L;
      * <code>CREDENTIAL_EXPIRED = 1;</code>
      */
     CREDENTIAL_EXPIRED(1),
+    /**
+     * <pre>
+     * The provided key is not yet activated.
+     * The key's activation date and time are scheduled for a future moment.
+     * </pre>
+     *
+     * <code>CREDENTIAL_UNACTIVATED = 2;</code>
+     */
+    CREDENTIAL_UNACTIVATED(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -100,6 +109,15 @@ private static final long serialVersionUID = 0L;
      * <code>CREDENTIAL_EXPIRED = 1;</code>
      */
     public static final int CREDENTIAL_EXPIRED_VALUE = 1;
+    /**
+     * <pre>
+     * The provided key is not yet activated.
+     * The key's activation date and time are scheduled for a future moment.
+     * </pre>
+     *
+     * <code>CREDENTIAL_UNACTIVATED = 2;</code>
+     */
+    public static final int CREDENTIAL_UNACTIVATED_VALUE = 2;
 
 
     public final int getNumber() {
@@ -128,6 +146,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return REASON_UNSPECIFIED;
         case 1: return CREDENTIAL_EXPIRED;
+        case 2: return CREDENTIAL_UNACTIVATED;
         default: return null;
       }
     }
