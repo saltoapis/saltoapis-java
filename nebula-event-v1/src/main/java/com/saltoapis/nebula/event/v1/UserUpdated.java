@@ -123,6 +123,44 @@ private static final long serialVersionUID = 0L;
     return actor_ == null ? com.saltoapis.nebula.event.v1.Principal.getDefaultInstance() : actor_;
   }
 
+  public static final int PREVIOUS_VALUES_FIELD_NUMBER = 3;
+  private com.saltoapis.nebula.event.v1.PreviousValues previousValues_;
+  /**
+   * <pre>
+   * The previous values of the user's fields that were changed.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+   * @return Whether the previousValues field is set.
+   */
+  @java.lang.Override
+  public boolean hasPreviousValues() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * The previous values of the user's fields that were changed.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+   * @return The previousValues.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.event.v1.PreviousValues getPreviousValues() {
+    return previousValues_ == null ? com.saltoapis.nebula.event.v1.PreviousValues.getDefaultInstance() : previousValues_;
+  }
+  /**
+   * <pre>
+   * The previous values of the user's fields that were changed.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.event.v1.PreviousValuesOrBuilder getPreviousValuesOrBuilder() {
+    return previousValues_ == null ? com.saltoapis.nebula.event.v1.PreviousValues.getDefaultInstance() : previousValues_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -143,6 +181,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getActor());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getPreviousValues());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -159,6 +200,10 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getActor());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getPreviousValues());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -185,6 +230,11 @@ private static final long serialVersionUID = 0L;
       if (!getActor()
           .equals(other.getActor())) return false;
     }
+    if (hasPreviousValues() != other.hasPreviousValues()) return false;
+    if (hasPreviousValues()) {
+      if (!getPreviousValues()
+          .equals(other.getPreviousValues())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -203,6 +253,10 @@ private static final long serialVersionUID = 0L;
     if (hasActor()) {
       hash = (37 * hash) + ACTOR_FIELD_NUMBER;
       hash = (53 * hash) + getActor().hashCode();
+    }
+    if (hasPreviousValues()) {
+      hash = (37 * hash) + PREVIOUS_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getPreviousValues().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -340,6 +394,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getUserFieldBuilder();
         getActorFieldBuilder();
+        getPreviousValuesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -355,6 +410,11 @@ private static final long serialVersionUID = 0L;
       if (actorBuilder_ != null) {
         actorBuilder_.dispose();
         actorBuilder_ = null;
+      }
+      previousValues_ = null;
+      if (previousValuesBuilder_ != null) {
+        previousValuesBuilder_.dispose();
+        previousValuesBuilder_ = null;
       }
       return this;
     }
@@ -402,6 +462,12 @@ private static final long serialVersionUID = 0L;
             : actorBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.previousValues_ = previousValuesBuilder_ == null
+            ? previousValues_
+            : previousValuesBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -422,6 +488,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasActor()) {
         mergeActor(other.getActor());
+      }
+      if (other.hasPreviousValues()) {
+        mergePreviousValues(other.getPreviousValues());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -463,6 +532,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 26: {
+              input.readMessage(
+                  getPreviousValuesFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -792,6 +868,163 @@ private static final long serialVersionUID = 0L;
         actor_ = null;
       }
       return actorBuilder_;
+    }
+
+    private com.saltoapis.nebula.event.v1.PreviousValues previousValues_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.event.v1.PreviousValues, com.saltoapis.nebula.event.v1.PreviousValues.Builder, com.saltoapis.nebula.event.v1.PreviousValuesOrBuilder> previousValuesBuilder_;
+    /**
+     * <pre>
+     * The previous values of the user's fields that were changed.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+     * @return Whether the previousValues field is set.
+     */
+    public boolean hasPreviousValues() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * The previous values of the user's fields that were changed.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+     * @return The previousValues.
+     */
+    public com.saltoapis.nebula.event.v1.PreviousValues getPreviousValues() {
+      if (previousValuesBuilder_ == null) {
+        return previousValues_ == null ? com.saltoapis.nebula.event.v1.PreviousValues.getDefaultInstance() : previousValues_;
+      } else {
+        return previousValuesBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The previous values of the user's fields that were changed.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+     */
+    public Builder setPreviousValues(com.saltoapis.nebula.event.v1.PreviousValues value) {
+      if (previousValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        previousValues_ = value;
+      } else {
+        previousValuesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The previous values of the user's fields that were changed.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+     */
+    public Builder setPreviousValues(
+        com.saltoapis.nebula.event.v1.PreviousValues.Builder builderForValue) {
+      if (previousValuesBuilder_ == null) {
+        previousValues_ = builderForValue.build();
+      } else {
+        previousValuesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The previous values of the user's fields that were changed.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+     */
+    public Builder mergePreviousValues(com.saltoapis.nebula.event.v1.PreviousValues value) {
+      if (previousValuesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0) &&
+          previousValues_ != null &&
+          previousValues_ != com.saltoapis.nebula.event.v1.PreviousValues.getDefaultInstance()) {
+          getPreviousValuesBuilder().mergeFrom(value);
+        } else {
+          previousValues_ = value;
+        }
+      } else {
+        previousValuesBuilder_.mergeFrom(value);
+      }
+      if (previousValues_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The previous values of the user's fields that were changed.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+     */
+    public Builder clearPreviousValues() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      previousValues_ = null;
+      if (previousValuesBuilder_ != null) {
+        previousValuesBuilder_.dispose();
+        previousValuesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The previous values of the user's fields that were changed.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+     */
+    public com.saltoapis.nebula.event.v1.PreviousValues.Builder getPreviousValuesBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getPreviousValuesFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The previous values of the user's fields that were changed.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+     */
+    public com.saltoapis.nebula.event.v1.PreviousValuesOrBuilder getPreviousValuesOrBuilder() {
+      if (previousValuesBuilder_ != null) {
+        return previousValuesBuilder_.getMessageOrBuilder();
+      } else {
+        return previousValues_ == null ?
+            com.saltoapis.nebula.event.v1.PreviousValues.getDefaultInstance() : previousValues_;
+      }
+    }
+    /**
+     * <pre>
+     * The previous values of the user's fields that were changed.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.event.v1.PreviousValues, com.saltoapis.nebula.event.v1.PreviousValues.Builder, com.saltoapis.nebula.event.v1.PreviousValuesOrBuilder> 
+        getPreviousValuesFieldBuilder() {
+      if (previousValuesBuilder_ == null) {
+        previousValuesBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.event.v1.PreviousValues, com.saltoapis.nebula.event.v1.PreviousValues.Builder, com.saltoapis.nebula.event.v1.PreviousValuesOrBuilder>(
+                getPreviousValues(),
+                getParentForChildren(),
+                isClean());
+        previousValues_ = null;
+      }
+      return previousValuesBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.UserUpdated)
