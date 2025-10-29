@@ -62,4 +62,31 @@ public interface EmergencyKeyUpdatedOrBuilder extends
    * <code>.salto.nebula.event.v1.Principal actor = 2;</code>
    */
   com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder();
+
+  /**
+   * <pre>
+   * The previous values of the emergency key's fields that were changed.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+   * @return Whether the previousValues field is set.
+   */
+  boolean hasPreviousValues();
+  /**
+   * <pre>
+   * The previous values of the emergency key's fields that were changed.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+   * @return The previousValues.
+   */
+  com.saltoapis.nebula.event.v1.PreviousValues getPreviousValues();
+  /**
+   * <pre>
+   * The previous values of the emergency key's fields that were changed.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.PreviousValues previous_values = 3;</code>
+   */
+  com.saltoapis.nebula.event.v1.PreviousValuesOrBuilder getPreviousValuesOrBuilder();
 }
