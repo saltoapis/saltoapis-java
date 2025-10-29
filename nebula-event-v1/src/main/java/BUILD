@@ -8,6 +8,7 @@ load_rules(
     internal_dependencies = [
         '//nebula-accesspoint-v1/src/main/java',
         '//nebula-accessright-v1/src/main/java',
+        '//nebula-controller-v1/src/main/java',
         '//nebula-emergencykey-v1/src/main/java',
         '//nebula-unit-v1/src/main/java',
         '//nebula-user-v1/src/main/java',
