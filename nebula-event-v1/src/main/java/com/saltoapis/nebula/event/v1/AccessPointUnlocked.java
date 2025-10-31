@@ -31,6 +31,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AccessPointUnlocked() {
+    direction_ = 0;
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -44,6 +45,160 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_AccessPointUnlocked_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.saltoapis.nebula.event.v1.AccessPointUnlocked.class, com.saltoapis.nebula.event.v1.AccessPointUnlocked.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Direction of passage through an access point.
+   * </pre>
+   *
+   * Protobuf enum {@code salto.nebula.event.v1.AccessPointUnlocked.Direction}
+   */
+  public enum Direction
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Direction is not specified. Used for remote opening.
+     * </pre>
+     *
+     * <code>DIRECTION_UNSPECIFIED = 0;</code>
+     */
+    DIRECTION_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * Credential used to gain access from outside to inside.
+     * </pre>
+     *
+     * <code>ENTRY = 1;</code>
+     */
+    ENTRY(1),
+    /**
+     * <pre>
+     * Credential used to leave from inside to outside.
+     * </pre>
+     *
+     * <code>EXIT = 2;</code>
+     */
+    EXIT(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 2,
+        /* suffix= */ "",
+        Direction.class.getName());
+    }
+    /**
+     * <pre>
+     * Direction is not specified. Used for remote opening.
+     * </pre>
+     *
+     * <code>DIRECTION_UNSPECIFIED = 0;</code>
+     */
+    public static final int DIRECTION_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * Credential used to gain access from outside to inside.
+     * </pre>
+     *
+     * <code>ENTRY = 1;</code>
+     */
+    public static final int ENTRY_VALUE = 1;
+    /**
+     * <pre>
+     * Credential used to leave from inside to outside.
+     * </pre>
+     *
+     * <code>EXIT = 2;</code>
+     */
+    public static final int EXIT_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Direction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Direction forNumber(int value) {
+      switch (value) {
+        case 0: return DIRECTION_UNSPECIFIED;
+        case 1: return ENTRY;
+        case 2: return EXIT;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Direction>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Direction> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Direction>() {
+            public Direction findValueByNumber(int number) {
+              return Direction.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.saltoapis.nebula.event.v1.AccessPointUnlocked.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Direction[] VALUES = values();
+
+    public static Direction valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Direction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:salto.nebula.event.v1.AccessPointUnlocked.Direction)
   }
 
   private int bitField0_;
@@ -386,6 +541,32 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance();
   }
 
+  public static final int DIRECTION_FIELD_NUMBER = 8;
+  private int direction_ = 0;
+  /**
+   * <pre>
+   * Indicates the direction of passage for this unlock event.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.AccessPointUnlocked.Direction direction = 8;</code>
+   * @return The enum numeric value on the wire for direction.
+   */
+  @java.lang.Override public int getDirectionValue() {
+    return direction_;
+  }
+  /**
+   * <pre>
+   * Indicates the direction of passage for this unlock event.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.AccessPointUnlocked.Direction direction = 8;</code>
+   * @return The direction.
+   */
+  @java.lang.Override public com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction getDirection() {
+    com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction result = com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction.forNumber(direction_);
+    return result == null ? com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -420,6 +601,9 @@ private static final long serialVersionUID = 0L;
     }
     if (credentialCase_ == 7) {
       output.writeMessage(7, (com.saltoapis.nebula.user.v1.Passcode) credential_);
+    }
+    if (direction_ != com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction.DIRECTION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(8, direction_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -458,6 +642,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, (com.saltoapis.nebula.user.v1.Passcode) credential_);
     }
+    if (direction_ != com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction.DIRECTION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(8, direction_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -483,6 +671,7 @@ private static final long serialVersionUID = 0L;
       if (!getUser()
           .equals(other.getUser())) return false;
     }
+    if (direction_ != other.direction_) return false;
     if (!getCredentialCase().equals(other.getCredentialCase())) return false;
     switch (credentialCase_) {
       case 3:
@@ -527,6 +716,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
     }
+    hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
+    hash = (53 * hash) + direction_;
     switch (credentialCase_) {
       case 3:
         hash = (37 * hash) + EMERGENCY_KEY_FIELD_NUMBER;
@@ -718,6 +909,7 @@ private static final long serialVersionUID = 0L;
       if (passcodeBuilder_ != null) {
         passcodeBuilder_.clear();
       }
+      direction_ = 0;
       credentialCase_ = 0;
       credential_ = null;
       return this;
@@ -767,6 +959,9 @@ private static final long serialVersionUID = 0L;
             : userBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.direction_ = direction_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -812,6 +1007,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUser()) {
         mergeUser(other.getUser());
+      }
+      if (other.direction_ != 0) {
+        setDirectionValue(other.getDirectionValue());
       }
       switch (other.getCredentialCase()) {
         case EMERGENCY_KEY: {
@@ -913,6 +1111,11 @@ private static final long serialVersionUID = 0L;
               credentialCase_ = 7;
               break;
             } // case 58
+            case 64: {
+              direction_ = input.readEnum();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 64
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2147,6 +2350,79 @@ private static final long serialVersionUID = 0L;
       credentialCase_ = 7;
       onChanged();
       return passcodeBuilder_;
+    }
+
+    private int direction_ = 0;
+    /**
+     * <pre>
+     * Indicates the direction of passage for this unlock event.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessPointUnlocked.Direction direction = 8;</code>
+     * @return The enum numeric value on the wire for direction.
+     */
+    @java.lang.Override public int getDirectionValue() {
+      return direction_;
+    }
+    /**
+     * <pre>
+     * Indicates the direction of passage for this unlock event.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessPointUnlocked.Direction direction = 8;</code>
+     * @param value The enum numeric value on the wire for direction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDirectionValue(int value) {
+      direction_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates the direction of passage for this unlock event.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessPointUnlocked.Direction direction = 8;</code>
+     * @return The direction.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction getDirection() {
+      com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction result = com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction.forNumber(direction_);
+      return result == null ? com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Indicates the direction of passage for this unlock event.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessPointUnlocked.Direction direction = 8;</code>
+     * @param value The direction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDirection(com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      direction_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates the direction of passage for this unlock event.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.AccessPointUnlocked.Direction direction = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDirection() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      direction_ = 0;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessPointUnlocked)
