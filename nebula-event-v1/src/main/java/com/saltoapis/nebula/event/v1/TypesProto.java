@@ -279,7 +279,7 @@ public final class TypesProto {
       "ousValues\"\205\001\n\022AccessPointDeleted\022>\n\014acce" +
       "ss_point\030\001 \001(\0132(.salto.nebula.accesspoin" +
       "t.v1.AccessPoint\022/\n\005actor\030\002 \001(\0132 .salto." +
-      "nebula.event.v1.Principal\"\241\003\n\023AccessPoin" +
+      "nebula.event.v1.Principal\"\247\004\n\023AccessPoin" +
       "tUnlocked\022>\n\014access_point\030\001 \001(\0132(.salto." +
       "nebula.accesspoint.v1.AccessPoint\022(\n\004use" +
       "r\030\002 \001(\0132\032.salto.nebula.user.v1.User\022C\n\re" +
@@ -289,176 +289,180 @@ public final class TypesProto {
       "pp_key\030\005 \001(\0132\034.salto.nebula.user.v1.AppK" +
       "eyH\000\0225\n\nwallet_key\030\006 \001(\0132\037.salto.nebula." +
       "user.v1.WalletKeyH\000\0222\n\010passcode\030\007 \001(\0132\036." +
-      "salto.nebula.user.v1.PasscodeH\000B\014\n\ncrede" +
-      "ntial\"\237\003\n\021AccessPointLocked\022>\n\014access_po" +
+      "salto.nebula.user.v1.PasscodeH\000\022G\n\tdirec" +
+      "tion\030\010 \001(\01624.salto.nebula.event.v1.Acces" +
+      "sPointUnlocked.Direction\";\n\tDirection\022\031\n" +
+      "\025DIRECTION_UNSPECIFIED\020\000\022\t\n\005ENTRY\020\001\022\010\n\004E" +
+      "XIT\020\002B\014\n\ncredential\"\237\003\n\021AccessPointLocke" +
+      "d\022>\n\014access_point\030\001 \001(\0132(.salto.nebula.a" +
+      "ccesspoint.v1.AccessPoint\022(\n\004user\030\002 \001(\0132" +
+      "\032.salto.nebula.user.v1.User\022C\n\remergency" +
+      "_key\030\003 \001(\0132*.salto.nebula.emergencykey.v" +
+      "1.EmergencyKeyH\000\0221\n\010card_key\030\004 \001(\0132\035.sal" +
+      "to.nebula.user.v1.CardKeyH\000\022/\n\007app_key\030\005" +
+      " \001(\0132\034.salto.nebula.user.v1.AppKeyH\000\0225\n\n" +
+      "wallet_key\030\006 \001(\0132\037.salto.nebula.user.v1." +
+      "WalletKeyH\000\0222\n\010passcode\030\007 \001(\0132\036.salto.ne" +
+      "bula.user.v1.PasscodeH\000B\014\n\ncredential\"W\n" +
+      "\025AccessPointForcedOpen\022>\n\014access_point\030\001" +
+      " \001(\0132(.salto.nebula.accesspoint.v1.Acces" +
+      "sPoint\"S\n\021AccessPointClosed\022>\n\014access_po" +
       "int\030\001 \001(\0132(.salto.nebula.accesspoint.v1." +
-      "AccessPoint\022(\n\004user\030\002 \001(\0132\032.salto.nebula" +
-      ".user.v1.User\022C\n\remergency_key\030\003 \001(\0132*.s" +
-      "alto.nebula.emergencykey.v1.EmergencyKey" +
-      "H\000\0221\n\010card_key\030\004 \001(\0132\035.salto.nebula.user" +
-      ".v1.CardKeyH\000\022/\n\007app_key\030\005 \001(\0132\034.salto.n" +
-      "ebula.user.v1.AppKeyH\000\0225\n\nwallet_key\030\006 \001" +
-      "(\0132\037.salto.nebula.user.v1.WalletKeyH\000\0222\n" +
-      "\010passcode\030\007 \001(\0132\036.salto.nebula.user.v1.P" +
-      "asscodeH\000B\014\n\ncredential\"W\n\025AccessPointFo" +
-      "rcedOpen\022>\n\014access_point\030\001 \001(\0132(.salto.n" +
-      "ebula.accesspoint.v1.AccessPoint\"S\n\021Acce" +
-      "ssPointClosed\022>\n\014access_point\030\001 \001(\0132(.sa" +
-      "lto.nebula.accesspoint.v1.AccessPoint\"\254\004" +
-      "\n\014AccessDenied\022>\n\014access_point\030\001 \001(\0132(.s" +
-      "alto.nebula.accesspoint.v1.AccessPoint\022(" +
-      "\n\004user\030\002 \001(\0132\032.salto.nebula.user.v1.User" +
-      "\022:\n\006reason\030\003 \001(\0162*.salto.nebula.event.v1" +
-      ".AccessDenied.Reason\022C\n\remergency_key\030\004 " +
-      "\001(\0132*.salto.nebula.emergencykey.v1.Emerg" +
-      "encyKeyH\000\0221\n\010card_key\030\005 \001(\0132\035.salto.nebu" +
-      "la.user.v1.CardKeyH\000\022/\n\007app_key\030\006 \001(\0132\034." +
-      "salto.nebula.user.v1.AppKeyH\000\0225\n\nwallet_" +
-      "key\030\007 \001(\0132\037.salto.nebula.user.v1.WalletK" +
-      "eyH\000\0222\n\010passcode\030\010 \001(\0132\036.salto.nebula.us" +
-      "er.v1.PasscodeH\000\"T\n\006Reason\022\026\n\022REASON_UNS" +
-      "PECIFIED\020\000\022\026\n\022CREDENTIAL_EXPIRED\020\001\022\032\n\026CR" +
-      "EDENTIAL_UNACTIVATED\020\002B\014\n\ncredential\"U\n\023" +
-      "AccessPointLeftOpen\022>\n\014access_point\030\001 \001(" +
-      "\0132(.salto.nebula.accesspoint.v1.AccessPo" +
-      "int\"\205\001\n\022AccessRightCreated\022>\n\014access_rig" +
-      "ht\030\001 \001(\0132(.salto.nebula.accessright.v1.A" +
-      "ccessRight\022/\n\005actor\030\002 \001(\0132 .salto.nebula" +
-      ".event.v1.Principal\"\305\001\n\022AccessRightUpdat" +
-      "ed\022>\n\014access_right\030\001 \001(\0132(.salto.nebula." +
-      "accessright.v1.AccessRight\022/\n\005actor\030\002 \001(" +
-      "\0132 .salto.nebula.event.v1.Principal\022>\n\017p" +
-      "revious_values\030\003 \001(\0132%.salto.nebula.even" +
-      "t.v1.PreviousValues\"\205\001\n\022AccessRightDelet" +
-      "ed\022>\n\014access_right\030\001 \001(\0132(.salto.nebula." +
-      "accessright.v1.AccessRight\022/\n\005actor\030\002 \001(" +
-      "\0132 .salto.nebula.event.v1.Principal\"\320\001\n\035" +
-      "AccessRightAccessPointCreated\022>\n\014access_" +
-      "right\030\001 \001(\0132(.salto.nebula.accessright.v" +
-      "1.AccessRight\022>\n\014access_point\030\002 \001(\0132(.sa" +
-      "lto.nebula.accesspoint.v1.AccessPoint\022/\n" +
-      "\005actor\030\003 \001(\0132 .salto.nebula.event.v1.Pri" +
-      "ncipal\"\327\001\n#AccessRightAccessPointsBatchC" +
-      "reated\022>\n\014access_right\030\001 \001(\0132(.salto.neb" +
-      "ula.accessright.v1.AccessRight\022?\n\raccess" +
-      "_points\030\002 \003(\0132(.salto.nebula.accesspoint" +
-      ".v1.AccessPoint\022/\n\005actor\030\003 \001(\0132 .salto.n" +
-      "ebula.event.v1.Principal\"\320\001\n\035AccessRight" +
-      "AccessPointDeleted\022>\n\014access_right\030\001 \001(\013" +
-      "2(.salto.nebula.accessright.v1.AccessRig" +
-      "ht\022>\n\014access_point\030\002 \001(\0132(.salto.nebula." +
-      "accesspoint.v1.AccessPoint\022/\n\005actor\030\003 \001(" +
-      "\0132 .salto.nebula.event.v1.Principal\"\327\001\n#" +
-      "AccessRightAccessPointsBatchDeleted\022>\n\014a" +
-      "ccess_right\030\001 \001(\0132(.salto.nebula.accessr" +
-      "ight.v1.AccessRight\022?\n\raccess_points\030\002 \003" +
-      "(\0132(.salto.nebula.accesspoint.v1.AccessP" +
-      "oint\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event" +
-      ".v1.Principal\"h\n\013UserCreated\022(\n\004user\030\001 \001" +
-      "(\0132\032.salto.nebula.user.v1.User\022/\n\005actor\030" +
-      "\002 \001(\0132 .salto.nebula.event.v1.Principal\"" +
-      "\250\001\n\013UserUpdated\022(\n\004user\030\001 \001(\0132\032.salto.ne" +
-      "bula.user.v1.User\022/\n\005actor\030\002 \001(\0132 .salto" +
-      ".nebula.event.v1.Principal\022>\n\017previous_v" +
-      "alues\030\003 \001(\0132%.salto.nebula.event.v1.Prev" +
-      "iousValues\"h\n\013UserBlocked\022(\n\004user\030\001 \001(\0132" +
-      "\032.salto.nebula.user.v1.User\022/\n\005actor\030\002 \001" +
-      "(\0132 .salto.nebula.event.v1.Principal\"j\n\r" +
-      "UserUnblocked\022(\n\004user\030\001 \001(\0132\032.salto.nebu" +
-      "la.user.v1.User\022/\n\005actor\030\002 \001(\0132 .salto.n" +
-      "ebula.event.v1.Principal\"h\n\013UserDeleted\022" +
+      "AccessPoint\"\254\004\n\014AccessDenied\022>\n\014access_p" +
+      "oint\030\001 \001(\0132(.salto.nebula.accesspoint.v1" +
+      ".AccessPoint\022(\n\004user\030\002 \001(\0132\032.salto.nebul" +
+      "a.user.v1.User\022:\n\006reason\030\003 \001(\0162*.salto.n" +
+      "ebula.event.v1.AccessDenied.Reason\022C\n\rem" +
+      "ergency_key\030\004 \001(\0132*.salto.nebula.emergen" +
+      "cykey.v1.EmergencyKeyH\000\0221\n\010card_key\030\005 \001(" +
+      "\0132\035.salto.nebula.user.v1.CardKeyH\000\022/\n\007ap" +
+      "p_key\030\006 \001(\0132\034.salto.nebula.user.v1.AppKe" +
+      "yH\000\0225\n\nwallet_key\030\007 \001(\0132\037.salto.nebula.u" +
+      "ser.v1.WalletKeyH\000\0222\n\010passcode\030\010 \001(\0132\036.s" +
+      "alto.nebula.user.v1.PasscodeH\000\"T\n\006Reason" +
+      "\022\026\n\022REASON_UNSPECIFIED\020\000\022\026\n\022CREDENTIAL_E" +
+      "XPIRED\020\001\022\032\n\026CREDENTIAL_UNACTIVATED\020\002B\014\n\n" +
+      "credential\"U\n\023AccessPointLeftOpen\022>\n\014acc" +
+      "ess_point\030\001 \001(\0132(.salto.nebula.accesspoi" +
+      "nt.v1.AccessPoint\"\205\001\n\022AccessRightCreated" +
+      "\022>\n\014access_right\030\001 \001(\0132(.salto.nebula.ac" +
+      "cessright.v1.AccessRight\022/\n\005actor\030\002 \001(\0132" +
+      " .salto.nebula.event.v1.Principal\"\305\001\n\022Ac" +
+      "cessRightUpdated\022>\n\014access_right\030\001 \001(\0132(" +
+      ".salto.nebula.accessright.v1.AccessRight" +
+      "\022/\n\005actor\030\002 \001(\0132 .salto.nebula.event.v1." +
+      "Principal\022>\n\017previous_values\030\003 \001(\0132%.sal" +
+      "to.nebula.event.v1.PreviousValues\"\205\001\n\022Ac" +
+      "cessRightDeleted\022>\n\014access_right\030\001 \001(\0132(" +
+      ".salto.nebula.accessright.v1.AccessRight" +
+      "\022/\n\005actor\030\002 \001(\0132 .salto.nebula.event.v1." +
+      "Principal\"\320\001\n\035AccessRightAccessPointCrea" +
+      "ted\022>\n\014access_right\030\001 \001(\0132(.salto.nebula" +
+      ".accessright.v1.AccessRight\022>\n\014access_po" +
+      "int\030\002 \001(\0132(.salto.nebula.accesspoint.v1." +
+      "AccessPoint\022/\n\005actor\030\003 \001(\0132 .salto.nebul" +
+      "a.event.v1.Principal\"\327\001\n#AccessRightAcce" +
+      "ssPointsBatchCreated\022>\n\014access_right\030\001 \001" +
+      "(\0132(.salto.nebula.accessright.v1.AccessR" +
+      "ight\022?\n\raccess_points\030\002 \003(\0132(.salto.nebu" +
+      "la.accesspoint.v1.AccessPoint\022/\n\005actor\030\003" +
+      " \001(\0132 .salto.nebula.event.v1.Principal\"\320" +
+      "\001\n\035AccessRightAccessPointDeleted\022>\n\014acce" +
+      "ss_right\030\001 \001(\0132(.salto.nebula.accessrigh" +
+      "t.v1.AccessRight\022>\n\014access_point\030\002 \001(\0132(" +
+      ".salto.nebula.accesspoint.v1.AccessPoint" +
+      "\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1." +
+      "Principal\"\327\001\n#AccessRightAccessPointsBat" +
+      "chDeleted\022>\n\014access_right\030\001 \001(\0132(.salto." +
+      "nebula.accessright.v1.AccessRight\022?\n\racc" +
+      "ess_points\030\002 \003(\0132(.salto.nebula.accesspo" +
+      "int.v1.AccessPoint\022/\n\005actor\030\003 \001(\0132 .salt" +
+      "o.nebula.event.v1.Principal\"h\n\013UserCreat" +
+      "ed\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1." +
+      "User\022/\n\005actor\030\002 \001(\0132 .salto.nebula.event" +
+      ".v1.Principal\"\250\001\n\013UserUpdated\022(\n\004user\030\001 " +
+      "\001(\0132\032.salto.nebula.user.v1.User\022/\n\005actor" +
+      "\030\002 \001(\0132 .salto.nebula.event.v1.Principal" +
+      "\022>\n\017previous_values\030\003 \001(\0132%.salto.nebula" +
+      ".event.v1.PreviousValues\"h\n\013UserBlocked\022" +
       "(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1.Use" +
       "r\022/\n\005actor\030\002 \001(\0132 .salto.nebula.event.v1" +
-      ".Principal\"\263\001\n\026UserAccessRightCreated\022(\n" +
-      "\004user\030\001 \001(\0132\032.salto.nebula.user.v1.User\022" +
-      ">\n\014access_right\030\002 \001(\0132(.salto.nebula.acc" +
-      "essright.v1.AccessRight\022/\n\005actor\030\003 \001(\0132 " +
-      ".salto.nebula.event.v1.Principal\"\263\001\n\026Use" +
-      "rAccessRightUpdated\022(\n\004user\030\001 \001(\0132\032.salt" +
-      "o.nebula.user.v1.User\022>\n\014access_right\030\002 " +
-      "\001(\0132(.salto.nebula.accessright.v1.Access" +
-      "Right\022/\n\005actor\030\003 \001(\0132 .salto.nebula.even" +
-      "t.v1.Principal\"\263\001\n\026UserAccessRightDelete" +
-      "d\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1.U" +
-      "ser\022>\n\014access_right\030\002 \001(\0132(.salto.nebula" +
-      ".accessright.v1.AccessRight\022/\n\005actor\030\003 \001" +
-      "(\0132 .salto.nebula.event.v1.Principal\"\235\001\n" +
-      "\017CardKeyAssigned\022(\n\004user\030\001 \001(\0132\032.salto.n" +
-      "ebula.user.v1.User\022/\n\010card_key\030\002 \001(\0132\035.s" +
-      "alto.nebula.user.v1.CardKey\022/\n\005actor\030\003 \001" +
-      "(\0132 .salto.nebula.event.v1.Principal\"\235\001\n" +
-      "\017CardKeyCanceled\022(\n\004user\030\001 \001(\0132\032.salto.n" +
-      "ebula.user.v1.User\022/\n\010card_key\030\002 \001(\0132\035.s" +
-      "alto.nebula.user.v1.CardKey\022/\n\005actor\030\003 \001" +
-      "(\0132 .salto.nebula.event.v1.Principal\"\232\001\n" +
-      "\016AppKeyAssigned\022(\n\004user\030\001 \001(\0132\032.salto.ne" +
-      "bula.user.v1.User\022-\n\007app_key\030\002 \001(\0132\034.sal" +
-      "to.nebula.user.v1.AppKey\022/\n\005actor\030\003 \001(\0132" +
-      " .salto.nebula.event.v1.Principal\"\232\001\n\016Ap" +
-      "pKeyCanceled\022(\n\004user\030\001 \001(\0132\032.salto.nebul" +
-      "a.user.v1.User\022-\n\007app_key\030\002 \001(\0132\034.salto." +
-      "nebula.user.v1.AppKey\022/\n\005actor\030\003 \001(\0132 .s" +
-      "alto.nebula.event.v1.Principal\"\243\001\n\021Walle" +
-      "tKeyAssigned\022(\n\004user\030\001 \001(\0132\032.salto.nebul" +
-      "a.user.v1.User\0223\n\nwallet_key\030\002 \001(\0132\037.sal" +
-      "to.nebula.user.v1.WalletKey\022/\n\005actor\030\003 \001" +
-      "(\0132 .salto.nebula.event.v1.Principal\"\243\001\n" +
-      "\021WalletKeyCanceled\022(\n\004user\030\001 \001(\0132\032.salto" +
-      ".nebula.user.v1.User\0223\n\nwallet_key\030\002 \001(\013" +
-      "2\037.salto.nebula.user.v1.WalletKey\022/\n\005act" +
-      "or\030\003 \001(\0132 .salto.nebula.event.v1.Princip" +
-      "al\"h\n\013UnitMovedIn\022(\n\004unit\030\001 \001(\0132\032.salto." +
-      "nebula.unit.v1.Unit\022/\n\005actor\030\002 \001(\0132 .sal" +
-      "to.nebula.event.v1.Principal\"i\n\014UnitMove" +
-      "dOut\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v" +
-      "1.Unit\022/\n\005actor\030\002 \001(\0132 .salto.nebula.eve" +
-      "nt.v1.Principal\"h\n\013UnitCreated\022(\n\004unit\030\001" +
-      " \001(\0132\032.salto.nebula.unit.v1.Unit\022/\n\005acto" +
-      "r\030\002 \001(\0132 .salto.nebula.event.v1.Principa" +
-      "l\"\250\001\n\013UnitUpdated\022(\n\004unit\030\001 \001(\0132\032.salto." +
-      "nebula.unit.v1.Unit\022/\n\005actor\030\002 \001(\0132 .sal" +
-      "to.nebula.event.v1.Principal\022>\n\017previous" +
-      "_values\030\003 \001(\0132%.salto.nebula.event.v1.Pr" +
-      "eviousValues\"h\n\013UnitDeleted\022(\n\004unit\030\001 \001(" +
-      "\0132\032.salto.nebula.unit.v1.Unit\022/\n\005actor\030\002" +
-      " \001(\0132 .salto.nebula.event.v1.Principal\"\211" +
-      "\001\n\023EmergencyKeyCreated\022A\n\remergency_key\030" +
-      "\001 \001(\0132*.salto.nebula.emergencykey.v1.Eme" +
-      "rgencyKey\022/\n\005actor\030\002 \001(\0132 .salto.nebula." +
-      "event.v1.Principal\"\311\001\n\023EmergencyKeyUpdat" +
-      "ed\022A\n\remergency_key\030\001 \001(\0132*.salto.nebula" +
-      ".emergencykey.v1.EmergencyKey\022/\n\005actor\030\002" +
-      " \001(\0132 .salto.nebula.event.v1.Principal\022>" +
-      "\n\017previous_values\030\003 \001(\0132%.salto.nebula.e" +
-      "vent.v1.PreviousValues\"\211\001\n\023EmergencyKeyD" +
-      "eleted\022A\n\remergency_key\030\001 \001(\0132*.salto.ne" +
-      "bula.emergencykey.v1.EmergencyKey\022/\n\005act" +
+      ".Principal\"j\n\rUserUnblocked\022(\n\004user\030\001 \001(" +
+      "\0132\032.salto.nebula.user.v1.User\022/\n\005actor\030\002" +
+      " \001(\0132 .salto.nebula.event.v1.Principal\"h" +
+      "\n\013UserDeleted\022(\n\004user\030\001 \001(\0132\032.salto.nebu" +
+      "la.user.v1.User\022/\n\005actor\030\002 \001(\0132 .salto.n" +
+      "ebula.event.v1.Principal\"\263\001\n\026UserAccessR" +
+      "ightCreated\022(\n\004user\030\001 \001(\0132\032.salto.nebula" +
+      ".user.v1.User\022>\n\014access_right\030\002 \001(\0132(.sa" +
+      "lto.nebula.accessright.v1.AccessRight\022/\n" +
+      "\005actor\030\003 \001(\0132 .salto.nebula.event.v1.Pri" +
+      "ncipal\"\263\001\n\026UserAccessRightUpdated\022(\n\004use" +
+      "r\030\001 \001(\0132\032.salto.nebula.user.v1.User\022>\n\014a" +
+      "ccess_right\030\002 \001(\0132(.salto.nebula.accessr" +
+      "ight.v1.AccessRight\022/\n\005actor\030\003 \001(\0132 .sal" +
+      "to.nebula.event.v1.Principal\"\263\001\n\026UserAcc" +
+      "essRightDeleted\022(\n\004user\030\001 \001(\0132\032.salto.ne" +
+      "bula.user.v1.User\022>\n\014access_right\030\002 \001(\0132" +
+      "(.salto.nebula.accessright.v1.AccessRigh" +
+      "t\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1" +
+      ".Principal\"\235\001\n\017CardKeyAssigned\022(\n\004user\030\001" +
+      " \001(\0132\032.salto.nebula.user.v1.User\022/\n\010card" +
+      "_key\030\002 \001(\0132\035.salto.nebula.user.v1.CardKe" +
+      "y\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1" +
+      ".Principal\"\235\001\n\017CardKeyCanceled\022(\n\004user\030\001" +
+      " \001(\0132\032.salto.nebula.user.v1.User\022/\n\010card" +
+      "_key\030\002 \001(\0132\035.salto.nebula.user.v1.CardKe" +
+      "y\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1" +
+      ".Principal\"\232\001\n\016AppKeyAssigned\022(\n\004user\030\001 " +
+      "\001(\0132\032.salto.nebula.user.v1.User\022-\n\007app_k" +
+      "ey\030\002 \001(\0132\034.salto.nebula.user.v1.AppKey\022/" +
+      "\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1.Pr" +
+      "incipal\"\232\001\n\016AppKeyCanceled\022(\n\004user\030\001 \001(\013" +
+      "2\032.salto.nebula.user.v1.User\022-\n\007app_key\030" +
+      "\002 \001(\0132\034.salto.nebula.user.v1.AppKey\022/\n\005a" +
+      "ctor\030\003 \001(\0132 .salto.nebula.event.v1.Princ" +
+      "ipal\"\243\001\n\021WalletKeyAssigned\022(\n\004user\030\001 \001(\013" +
+      "2\032.salto.nebula.user.v1.User\0223\n\nwallet_k" +
+      "ey\030\002 \001(\0132\037.salto.nebula.user.v1.WalletKe" +
+      "y\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event.v1" +
+      ".Principal\"\243\001\n\021WalletKeyCanceled\022(\n\004user" +
+      "\030\001 \001(\0132\032.salto.nebula.user.v1.User\0223\n\nwa" +
+      "llet_key\030\002 \001(\0132\037.salto.nebula.user.v1.Wa" +
+      "lletKey\022/\n\005actor\030\003 \001(\0132 .salto.nebula.ev" +
+      "ent.v1.Principal\"h\n\013UnitMovedIn\022(\n\004unit\030" +
+      "\001 \001(\0132\032.salto.nebula.unit.v1.Unit\022/\n\005act" +
       "or\030\002 \001(\0132 .salto.nebula.event.v1.Princip" +
-      "al\"\257\001\n\025ElectronicKeyAssigned\022(\n\004user\030\001 \001" +
-      "(\0132\032.salto.nebula.user.v1.User\022;\n\016electr" +
-      "onic_key\030\002 \001(\0132#.salto.nebula.user.v1.El" +
-      "ectronicKey\022/\n\005actor\030\003 \001(\0132 .salto.nebul" +
-      "a.event.v1.Principal\"\257\001\n\025ElectronicKeyCa" +
-      "nceled\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user" +
-      ".v1.User\022;\n\016electronic_key\030\002 \001(\0132#.salto" +
-      ".nebula.user.v1.ElectronicKey\022/\n\005actor\030\003" +
-      " \001(\0132 .salto.nebula.event.v1.Principal\"\243" +
-      "\003\n\rAccessGranted\022<\n\ncontroller\030\001 \001(\0132&.s" +
-      "alto.nebula.controller.v1.ControllerH\000\022(" +
-      "\n\004user\030\002 \001(\0132\032.salto.nebula.user.v1.User" +
-      "\022C\n\remergency_key\030\003 \001(\0132*.salto.nebula.e" +
-      "mergencykey.v1.EmergencyKeyH\001\0221\n\010card_ke" +
-      "y\030\004 \001(\0132\035.salto.nebula.user.v1.CardKeyH\001" +
-      "\022/\n\007app_key\030\005 \001(\0132\034.salto.nebula.user.v1" +
-      ".AppKeyH\001\0225\n\nwallet_key\030\006 \001(\0132\037.salto.ne" +
-      "bula.user.v1.WalletKeyH\001\0222\n\010passcode\030\007 \001" +
-      "(\0132\036.salto.nebula.user.v1.PasscodeH\001B\010\n\006" +
-      "deviceB\014\n\ncredentialB\317\001\n\035com.saltoapis.n" +
-      "ebula.event.v1B\nTypesProtoP\001Z@github.com" +
-      "/saltoapis-internal/saltoapis-go/nebula/" +
-      "event/v1;event\252\002\031Saltoapis.Nebula.Event." +
-      "V1\312\002\031Saltoapis\\Nebula\\Event\\V1\342\002%GPBMeta" +
-      "data\\Saltoapis\\Nebula\\Event\\V1b\006proto3"
+      "al\"i\n\014UnitMovedOut\022(\n\004unit\030\001 \001(\0132\032.salto" +
+      ".nebula.unit.v1.Unit\022/\n\005actor\030\002 \001(\0132 .sa" +
+      "lto.nebula.event.v1.Principal\"h\n\013UnitCre" +
+      "ated\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v" +
+      "1.Unit\022/\n\005actor\030\002 \001(\0132 .salto.nebula.eve" +
+      "nt.v1.Principal\"\250\001\n\013UnitUpdated\022(\n\004unit\030" +
+      "\001 \001(\0132\032.salto.nebula.unit.v1.Unit\022/\n\005act" +
+      "or\030\002 \001(\0132 .salto.nebula.event.v1.Princip" +
+      "al\022>\n\017previous_values\030\003 \001(\0132%.salto.nebu" +
+      "la.event.v1.PreviousValues\"h\n\013UnitDelete" +
+      "d\022(\n\004unit\030\001 \001(\0132\032.salto.nebula.unit.v1.U" +
+      "nit\022/\n\005actor\030\002 \001(\0132 .salto.nebula.event." +
+      "v1.Principal\"\211\001\n\023EmergencyKeyCreated\022A\n\r" +
+      "emergency_key\030\001 \001(\0132*.salto.nebula.emerg" +
+      "encykey.v1.EmergencyKey\022/\n\005actor\030\002 \001(\0132 " +
+      ".salto.nebula.event.v1.Principal\"\311\001\n\023Eme" +
+      "rgencyKeyUpdated\022A\n\remergency_key\030\001 \001(\0132" +
+      "*.salto.nebula.emergencykey.v1.Emergency" +
+      "Key\022/\n\005actor\030\002 \001(\0132 .salto.nebula.event." +
+      "v1.Principal\022>\n\017previous_values\030\003 \001(\0132%." +
+      "salto.nebula.event.v1.PreviousValues\"\211\001\n" +
+      "\023EmergencyKeyDeleted\022A\n\remergency_key\030\001 " +
+      "\001(\0132*.salto.nebula.emergencykey.v1.Emerg" +
+      "encyKey\022/\n\005actor\030\002 \001(\0132 .salto.nebula.ev" +
+      "ent.v1.Principal\"\257\001\n\025ElectronicKeyAssign" +
+      "ed\022(\n\004user\030\001 \001(\0132\032.salto.nebula.user.v1." +
+      "User\022;\n\016electronic_key\030\002 \001(\0132#.salto.neb" +
+      "ula.user.v1.ElectronicKey\022/\n\005actor\030\003 \001(\013" +
+      "2 .salto.nebula.event.v1.Principal\"\257\001\n\025E" +
+      "lectronicKeyCanceled\022(\n\004user\030\001 \001(\0132\032.sal" +
+      "to.nebula.user.v1.User\022;\n\016electronic_key" +
+      "\030\002 \001(\0132#.salto.nebula.user.v1.Electronic" +
+      "Key\022/\n\005actor\030\003 \001(\0132 .salto.nebula.event." +
+      "v1.Principal\"\243\003\n\rAccessGranted\022<\n\ncontro" +
+      "ller\030\001 \001(\0132&.salto.nebula.controller.v1." +
+      "ControllerH\000\022(\n\004user\030\002 \001(\0132\032.salto.nebul" +
+      "a.user.v1.User\022C\n\remergency_key\030\003 \001(\0132*." +
+      "salto.nebula.emergencykey.v1.EmergencyKe" +
+      "yH\001\0221\n\010card_key\030\004 \001(\0132\035.salto.nebula.use" +
+      "r.v1.CardKeyH\001\022/\n\007app_key\030\005 \001(\0132\034.salto." +
+      "nebula.user.v1.AppKeyH\001\0225\n\nwallet_key\030\006 " +
+      "\001(\0132\037.salto.nebula.user.v1.WalletKeyH\001\0222" +
+      "\n\010passcode\030\007 \001(\0132\036.salto.nebula.user.v1." +
+      "PasscodeH\001B\010\n\006deviceB\014\n\ncredentialB\317\001\n\035c" +
+      "om.saltoapis.nebula.event.v1B\nTypesProto" +
+      "P\001Z@github.com/saltoapis-internal/saltoa" +
+      "pis-go/nebula/event/v1;event\252\002\031Saltoapis" +
+      ".Nebula.Event.V1\312\002\031Saltoapis\\Nebula\\Even" +
+      "t\\V1\342\002%GPBMetadata\\Saltoapis\\Nebula\\Even" +
+      "t\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -512,7 +516,7 @@ public final class TypesProto {
     internal_static_salto_nebula_event_v1_AccessPointUnlocked_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_event_v1_AccessPointUnlocked_descriptor,
-        new java.lang.String[] { "AccessPoint", "User", "EmergencyKey", "CardKey", "AppKey", "WalletKey", "Passcode", "Credential", });
+        new java.lang.String[] { "AccessPoint", "User", "EmergencyKey", "CardKey", "AppKey", "WalletKey", "Passcode", "Direction", "Credential", });
     internal_static_salto_nebula_event_v1_AccessPointLocked_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_salto_nebula_event_v1_AccessPointLocked_fieldAccessorTable = new

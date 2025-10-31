@@ -198,5 +198,24 @@ public interface AccessPointUnlockedOrBuilder extends
    */
   com.saltoapis.nebula.user.v1.PasscodeOrBuilder getPasscodeOrBuilder();
 
+  /**
+   * <pre>
+   * Indicates the direction of passage for this unlock event.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.AccessPointUnlocked.Direction direction = 8;</code>
+   * @return The enum numeric value on the wire for direction.
+   */
+  int getDirectionValue();
+  /**
+   * <pre>
+   * Indicates the direction of passage for this unlock event.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.AccessPointUnlocked.Direction direction = 8;</code>
+   * @return The direction.
+   */
+  com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction getDirection();
+
   com.saltoapis.nebula.event.v1.AccessPointUnlocked.CredentialCase getCredentialCase();
 }
