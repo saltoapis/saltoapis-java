@@ -35,4 +35,6 @@ public interface PrincipalOrBuilder extends
    * <code>.salto.nebula.user.v1.User user = 1;</code>
    */
   com.saltoapis.nebula.user.v1.UserOrBuilder getUserOrBuilder();
+
+  com.saltoapis.nebula.event.v1.Principal.ActorCase getActorCase();
 }
