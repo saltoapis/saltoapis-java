@@ -34,6 +34,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     displayName_ = "";
     deviceId_ = "";
+    supportedTechnologies_ = emptyIntList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -194,6 +195,84 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SUPPORTED_TECHNOLOGIES_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList supportedTechnologies_;
+  private static final com.google.protobuf.Internal.IntListAdapter.IntConverter<
+      com.saltoapis.nebula.type.AppKeyTechnology> supportedTechnologies_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.saltoapis.nebula.type.AppKeyTechnology>() {
+            public com.saltoapis.nebula.type.AppKeyTechnology convert(int from) {
+              com.saltoapis.nebula.type.AppKeyTechnology result = com.saltoapis.nebula.type.AppKeyTechnology.forNumber(from);
+              return result == null ? com.saltoapis.nebula.type.AppKeyTechnology.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @return A list containing the supportedTechnologies.
+   */
+  @java.lang.Override
+  public java.util.List<com.saltoapis.nebula.type.AppKeyTechnology> getSupportedTechnologiesList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.saltoapis.nebula.type.AppKeyTechnology>(supportedTechnologies_, supportedTechnologies_converter_);
+  }
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @return The count of supportedTechnologies.
+   */
+  @java.lang.Override
+  public int getSupportedTechnologiesCount() {
+    return supportedTechnologies_.size();
+  }
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @param index The index of the element to return.
+   * @return The supportedTechnologies at the given index.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.AppKeyTechnology getSupportedTechnologies(int index) {
+    return supportedTechnologies_converter_.convert(supportedTechnologies_.getInt(index));
+  }
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @return A list containing the enum numeric values on the wire for supportedTechnologies.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getSupportedTechnologiesValueList() {
+    return supportedTechnologies_;
+  }
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedTechnologies at the given index.
+   */
+  @java.lang.Override
+  public int getSupportedTechnologiesValue(int index) {
+    return supportedTechnologies_.getInt(index);
+  }
+  private int supportedTechnologiesMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -208,6 +287,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
@@ -216,6 +296,13 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deviceId_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, deviceId_);
+    }
+    if (getSupportedTechnologiesList().size() > 0) {
+      output.writeUInt32NoTag(34);
+      output.writeUInt32NoTag(supportedTechnologiesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < supportedTechnologies_.size(); i++) {
+      output.writeEnumNoTag(supportedTechnologies_.getInt(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -234,6 +321,18 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deviceId_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, deviceId_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < supportedTechnologies_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(supportedTechnologies_.getInt(i));
+      }
+      size += dataSize;
+      if (!getSupportedTechnologiesList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }supportedTechnologiesMemoizedSerializedSize = dataSize;
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -256,6 +355,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDisplayName())) return false;
     if (!getDeviceId()
         .equals(other.getDeviceId())) return false;
+    if (!supportedTechnologies_.equals(other.supportedTechnologies_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -273,6 +373,10 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getDeviceId().hashCode();
+    if (getSupportedTechnologiesCount() > 0) {
+      hash = (37 * hash) + SUPPORTED_TECHNOLOGIES_FIELD_NUMBER;
+      hash = (53 * hash) + supportedTechnologies_.hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -411,6 +515,8 @@ private static final long serialVersionUID = 0L;
       name_ = "";
       displayName_ = "";
       deviceId_ = "";
+      supportedTechnologies_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -437,9 +543,18 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.saltoapis.nebula.digitalkey.v1.DigitalKeyAccessPoint buildPartial() {
       com.saltoapis.nebula.digitalkey.v1.DigitalKeyAccessPoint result = new com.saltoapis.nebula.digitalkey.v1.DigitalKeyAccessPoint(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.saltoapis.nebula.digitalkey.v1.DigitalKeyAccessPoint result) {
+      if (((bitField0_ & 0x00000008) != 0)) {
+        supportedTechnologies_.makeImmutable();
+        bitField0_ = (bitField0_ & ~0x00000008);
+      }
+      result.supportedTechnologies_ = supportedTechnologies_;
     }
 
     private void buildPartial0(com.saltoapis.nebula.digitalkey.v1.DigitalKeyAccessPoint result) {
@@ -480,6 +595,16 @@ private static final long serialVersionUID = 0L;
       if (!other.getDeviceId().isEmpty()) {
         deviceId_ = other.deviceId_;
         bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.supportedTechnologies_.isEmpty()) {
+        if (supportedTechnologies_.isEmpty()) {
+          supportedTechnologies_ = other.supportedTechnologies_;
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          ensureSupportedTechnologiesIsMutable();
+          supportedTechnologies_.addAll(other.supportedTechnologies_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -523,6 +648,23 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000004;
               break;
             } // case 26
+            case 32: {
+              int tmpRaw = input.readEnum();
+              ensureSupportedTechnologiesIsMutable();
+              supportedTechnologies_.addInt(tmpRaw);
+              break;
+            } // case 32
+            case 34: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int tmpRaw = input.readEnum();
+                ensureSupportedTechnologiesIsMutable();
+                supportedTechnologies_.addInt(tmpRaw);
+              }
+              input.popLimit(oldLimit);
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -822,6 +964,194 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       deviceId_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList supportedTechnologies_ =
+      emptyIntList();
+    private void ensureSupportedTechnologiesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        supportedTechnologies_ = makeMutableCopy(supportedTechnologies_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @return A list containing the supportedTechnologies.
+     */
+    public java.util.List<com.saltoapis.nebula.type.AppKeyTechnology> getSupportedTechnologiesList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.saltoapis.nebula.type.AppKeyTechnology>(supportedTechnologies_, supportedTechnologies_converter_);
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @return The count of supportedTechnologies.
+     */
+    public int getSupportedTechnologiesCount() {
+      return supportedTechnologies_.size();
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @param index The index of the element to return.
+     * @return The supportedTechnologies at the given index.
+     */
+    public com.saltoapis.nebula.type.AppKeyTechnology getSupportedTechnologies(int index) {
+      return supportedTechnologies_converter_.convert(supportedTechnologies_.getInt(index));
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The supportedTechnologies to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportedTechnologies(
+        int index, com.saltoapis.nebula.type.AppKeyTechnology value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedTechnologiesIsMutable();
+      supportedTechnologies_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @param value The supportedTechnologies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedTechnologies(com.saltoapis.nebula.type.AppKeyTechnology value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedTechnologiesIsMutable();
+      supportedTechnologies_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @param values The supportedTechnologies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSupportedTechnologies(
+        java.lang.Iterable<? extends com.saltoapis.nebula.type.AppKeyTechnology> values) {
+      ensureSupportedTechnologiesIsMutable();
+      for (com.saltoapis.nebula.type.AppKeyTechnology value : values) {
+        supportedTechnologies_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportedTechnologies() {
+      supportedTechnologies_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @return A list containing the enum numeric values on the wire for supportedTechnologies.
+     */
+    public java.util.List<java.lang.Integer>
+    getSupportedTechnologiesValueList() {
+      return java.util.Collections.unmodifiableList(supportedTechnologies_);
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of supportedTechnologies at the given index.
+     */
+    public int getSupportedTechnologiesValue(int index) {
+      return supportedTechnologies_.getInt(index);
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for supportedTechnologies to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportedTechnologiesValue(
+        int index, int value) {
+      ensureSupportedTechnologiesIsMutable();
+      supportedTechnologies_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @param value The enum numeric value on the wire for supportedTechnologies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedTechnologiesValue(int value) {
+      ensureSupportedTechnologiesIsMutable();
+      supportedTechnologies_.addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported technologies used by the app to open an access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+     * @param values The enum numeric values on the wire for supportedTechnologies to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSupportedTechnologiesValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureSupportedTechnologiesIsMutable();
+      for (int value : values) {
+        supportedTechnologies_.addInt(value);
+      }
       onChanged();
       return this;
     }

@@ -72,4 +72,53 @@ public interface DigitalKeyAccessPointOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDeviceIdBytes();
+
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @return A list containing the supportedTechnologies.
+   */
+  java.util.List<com.saltoapis.nebula.type.AppKeyTechnology> getSupportedTechnologiesList();
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @return The count of supportedTechnologies.
+   */
+  int getSupportedTechnologiesCount();
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @param index The index of the element to return.
+   * @return The supportedTechnologies at the given index.
+   */
+  com.saltoapis.nebula.type.AppKeyTechnology getSupportedTechnologies(int index);
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @return A list containing the enum numeric values on the wire for supportedTechnologies.
+   */
+  java.util.List<java.lang.Integer>
+  getSupportedTechnologiesValueList();
+  /**
+   * <pre>
+   * Supported technologies used by the app to open an access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyTechnology supported_technologies = 4;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedTechnologies at the given index.
+   */
+  int getSupportedTechnologiesValue(int index);
 }
