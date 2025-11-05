@@ -86,6 +86,48 @@ private static final long serialVersionUID = 0L;
         keyCase_);
   }
 
+  private int keyIdCase_ = 0;
+  @SuppressWarnings("serial")
+  private java.lang.Object keyId_;
+  public enum KeyIdCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    UID(3),
+    DEVICE_ID(4),
+    KEYID_NOT_SET(0);
+    private final int value;
+    private KeyIdCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static KeyIdCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static KeyIdCase forNumber(int value) {
+      switch (value) {
+        case 3: return UID;
+        case 4: return DEVICE_ID;
+        case 0: return KEYID_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public KeyIdCase
+  getKeyIdCase() {
+    return KeyIdCase.forNumber(
+        keyIdCase_);
+  }
+
   public static final int CARD_KEY_FIELD_NUMBER = 1;
   /**
    * <pre>
@@ -150,6 +192,134 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int UID_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * UID of the key that was read.
+   * </pre>
+   *
+   * <code>string uid = 3;</code>
+   * @return Whether the uid field is set.
+   */
+  public boolean hasUid() {
+    return keyIdCase_ == 3;
+  }
+  /**
+   * <pre>
+   * UID of the key that was read.
+   * </pre>
+   *
+   * <code>string uid = 3;</code>
+   * @return The uid.
+   */
+  public java.lang.String getUid() {
+    java.lang.Object ref = "";
+    if (keyIdCase_ == 3) {
+      ref = keyId_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (keyIdCase_ == 3) {
+        keyId_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * UID of the key that was read.
+   * </pre>
+   *
+   * <code>string uid = 3;</code>
+   * @return The bytes for uid.
+   */
+  public com.google.protobuf.ByteString
+      getUidBytes() {
+    java.lang.Object ref = "";
+    if (keyIdCase_ == 3) {
+      ref = keyId_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (keyIdCase_ == 3) {
+        keyId_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEVICE_ID_FIELD_NUMBER = 4;
+  /**
+   * <pre>
+   * Device ID of the key that was read.
+   * </pre>
+   *
+   * <code>string device_id = 4;</code>
+   * @return Whether the deviceId field is set.
+   */
+  public boolean hasDeviceId() {
+    return keyIdCase_ == 4;
+  }
+  /**
+   * <pre>
+   * Device ID of the key that was read.
+   * </pre>
+   *
+   * <code>string device_id = 4;</code>
+   * @return The deviceId.
+   */
+  public java.lang.String getDeviceId() {
+    java.lang.Object ref = "";
+    if (keyIdCase_ == 4) {
+      ref = keyId_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (keyIdCase_ == 4) {
+        keyId_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Device ID of the key that was read.
+   * </pre>
+   *
+   * <code>string device_id = 4;</code>
+   * @return The bytes for deviceId.
+   */
+  public com.google.protobuf.ByteString
+      getDeviceIdBytes() {
+    java.lang.Object ref = "";
+    if (keyIdCase_ == 4) {
+      ref = keyId_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (keyIdCase_ == 4) {
+        keyId_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -167,6 +337,12 @@ private static final long serialVersionUID = 0L;
     if (keyCase_ == 1) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, key_);
     }
+    if (keyIdCase_ == 3) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 3, keyId_);
+    }
+    if (keyIdCase_ == 4) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 4, keyId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -178,6 +354,12 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (keyCase_ == 1) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, key_);
+    }
+    if (keyIdCase_ == 3) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(3, keyId_);
+    }
+    if (keyIdCase_ == 4) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(4, keyId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -203,6 +385,19 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
+    if (!getKeyIdCase().equals(other.getKeyIdCase())) return false;
+    switch (keyIdCase_) {
+      case 3:
+        if (!getUid()
+            .equals(other.getUid())) return false;
+        break;
+      case 4:
+        if (!getDeviceId()
+            .equals(other.getDeviceId())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -218,6 +413,18 @@ private static final long serialVersionUID = 0L;
       case 1:
         hash = (37 * hash) + CARD_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getCardKey().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (keyIdCase_) {
+      case 3:
+        hash = (37 * hash) + UID_FIELD_NUMBER;
+        hash = (53 * hash) + getUid().hashCode();
+        break;
+      case 4:
+        hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getDeviceId().hashCode();
         break;
       case 0:
       default:
@@ -359,6 +566,8 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       keyCase_ = 0;
       key_ = null;
+      keyIdCase_ = 0;
+      keyId_ = null;
       return this;
     }
 
@@ -398,6 +607,8 @@ private static final long serialVersionUID = 0L;
     private void buildPartialOneofs(com.saltoapis.nebula.encoder.v1.ReadKeyResponse result) {
       result.keyCase_ = keyCase_;
       result.key_ = this.key_;
+      result.keyIdCase_ = keyIdCase_;
+      result.keyId_ = this.keyId_;
     }
 
     @java.lang.Override
@@ -420,6 +631,23 @@ private static final long serialVersionUID = 0L;
           break;
         }
         case KEY_NOT_SET: {
+          break;
+        }
+      }
+      switch (other.getKeyIdCase()) {
+        case UID: {
+          keyIdCase_ = 3;
+          keyId_ = other.keyId_;
+          onChanged();
+          break;
+        }
+        case DEVICE_ID: {
+          keyIdCase_ = 4;
+          keyId_ = other.keyId_;
+          onChanged();
+          break;
+        }
+        case KEYID_NOT_SET: {
           break;
         }
       }
@@ -455,6 +683,18 @@ private static final long serialVersionUID = 0L;
               key_ = s;
               break;
             } // case 10
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              keyIdCase_ = 3;
+              keyId_ = s;
+              break;
+            } // case 26
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              keyIdCase_ = 4;
+              keyId_ = s;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -481,6 +721,21 @@ private static final long serialVersionUID = 0L;
     public Builder clearKey() {
       keyCase_ = 0;
       key_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int keyIdCase_ = 0;
+    private java.lang.Object keyId_;
+    public KeyIdCase
+        getKeyIdCase() {
+      return KeyIdCase.forNumber(
+          keyIdCase_);
+    }
+
+    public Builder clearKeyId() {
+      keyIdCase_ = 0;
+      keyId_ = null;
       onChanged();
       return this;
     }
@@ -600,6 +855,240 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       keyCase_ = 1;
       key_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * UID of the key that was read.
+     * </pre>
+     *
+     * <code>string uid = 3;</code>
+     * @return Whether the uid field is set.
+     */
+    @java.lang.Override
+    public boolean hasUid() {
+      return keyIdCase_ == 3;
+    }
+    /**
+     * <pre>
+     * UID of the key that was read.
+     * </pre>
+     *
+     * <code>string uid = 3;</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public java.lang.String getUid() {
+      java.lang.Object ref = "";
+      if (keyIdCase_ == 3) {
+        ref = keyId_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (keyIdCase_ == 3) {
+          keyId_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * UID of the key that was read.
+     * </pre>
+     *
+     * <code>string uid = 3;</code>
+     * @return The bytes for uid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUidBytes() {
+      java.lang.Object ref = "";
+      if (keyIdCase_ == 3) {
+        ref = keyId_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (keyIdCase_ == 3) {
+          keyId_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * UID of the key that was read.
+     * </pre>
+     *
+     * <code>string uid = 3;</code>
+     * @param value The uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUid(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      keyIdCase_ = 3;
+      keyId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * UID of the key that was read.
+     * </pre>
+     *
+     * <code>string uid = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUid() {
+      if (keyIdCase_ == 3) {
+        keyIdCase_ = 0;
+        keyId_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * UID of the key that was read.
+     * </pre>
+     *
+     * <code>string uid = 3;</code>
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      keyIdCase_ = 3;
+      keyId_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Device ID of the key that was read.
+     * </pre>
+     *
+     * <code>string device_id = 4;</code>
+     * @return Whether the deviceId field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeviceId() {
+      return keyIdCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Device ID of the key that was read.
+     * </pre>
+     *
+     * <code>string device_id = 4;</code>
+     * @return The deviceId.
+     */
+    @java.lang.Override
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = "";
+      if (keyIdCase_ == 4) {
+        ref = keyId_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (keyIdCase_ == 4) {
+          keyId_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Device ID of the key that was read.
+     * </pre>
+     *
+     * <code>string device_id = 4;</code>
+     * @return The bytes for deviceId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      java.lang.Object ref = "";
+      if (keyIdCase_ == 4) {
+        ref = keyId_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (keyIdCase_ == 4) {
+          keyId_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Device ID of the key that was read.
+     * </pre>
+     *
+     * <code>string device_id = 4;</code>
+     * @param value The deviceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeviceId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      keyIdCase_ = 4;
+      keyId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Device ID of the key that was read.
+     * </pre>
+     *
+     * <code>string device_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeviceId() {
+      if (keyIdCase_ == 4) {
+        keyIdCase_ = 0;
+        keyId_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Device ID of the key that was read.
+     * </pre>
+     *
+     * <code>string device_id = 4;</code>
+     * @param value The bytes for deviceId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeviceIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      keyIdCase_ = 4;
+      keyId_ = value;
       onChanged();
       return this;
     }

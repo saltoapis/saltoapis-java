@@ -38,5 +38,65 @@ public interface ReadKeyResponseOrBuilder extends
   com.google.protobuf.ByteString
       getCardKeyBytes();
 
+  /**
+   * <pre>
+   * UID of the key that was read.
+   * </pre>
+   *
+   * <code>string uid = 3;</code>
+   * @return Whether the uid field is set.
+   */
+  boolean hasUid();
+  /**
+   * <pre>
+   * UID of the key that was read.
+   * </pre>
+   *
+   * <code>string uid = 3;</code>
+   * @return The uid.
+   */
+  java.lang.String getUid();
+  /**
+   * <pre>
+   * UID of the key that was read.
+   * </pre>
+   *
+   * <code>string uid = 3;</code>
+   * @return The bytes for uid.
+   */
+  com.google.protobuf.ByteString
+      getUidBytes();
+
+  /**
+   * <pre>
+   * Device ID of the key that was read.
+   * </pre>
+   *
+   * <code>string device_id = 4;</code>
+   * @return Whether the deviceId field is set.
+   */
+  boolean hasDeviceId();
+  /**
+   * <pre>
+   * Device ID of the key that was read.
+   * </pre>
+   *
+   * <code>string device_id = 4;</code>
+   * @return The deviceId.
+   */
+  java.lang.String getDeviceId();
+  /**
+   * <pre>
+   * Device ID of the key that was read.
+   * </pre>
+   *
+   * <code>string device_id = 4;</code>
+   * @return The bytes for deviceId.
+   */
+  com.google.protobuf.ByteString
+      getDeviceIdBytes();
+
   com.saltoapis.nebula.encoder.v1.ReadKeyResponse.KeyCase getKeyCase();
+
+  com.saltoapis.nebula.encoder.v1.ReadKeyResponse.KeyIdCase getKeyIdCase();
 }
