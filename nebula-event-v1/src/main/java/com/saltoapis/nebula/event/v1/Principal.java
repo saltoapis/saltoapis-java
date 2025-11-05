@@ -9,10 +9,11 @@ package com.saltoapis.nebula.event.v1;
  * <pre>
  * Represents the principal entity that initiated or performed an action
  * associated with an event. This could be a user, a service account, or
- * potentially other types of entities in the future. Implemented as a
- * `oneof` to support future expansion—new principal types may be added over
- * time without breaking compatibility. Clients should be prepared to handle
- * additional actor variants as the API evolves.
+ * potentially other types of entities in the future.
+ *
+ * Implemented as a `oneof` to support future expansion—new principal types may
+ * be added over time without breaking compatibility for existing event
+ * messages. Clients should be prepared to handle additional kind of principals.
  * </pre>
  *
  * Protobuf type {@code salto.nebula.event.v1.Principal}
@@ -51,16 +52,16 @@ private static final long serialVersionUID = 0L;
             com.saltoapis.nebula.event.v1.Principal.class, com.saltoapis.nebula.event.v1.Principal.Builder.class);
   }
 
-  private int actorCase_ = 0;
+  private int typeCase_ = 0;
   @SuppressWarnings("serial")
-  private java.lang.Object actor_;
-  public enum ActorCase
+  private java.lang.Object type_;
+  public enum TypeCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     USER(1),
-    ACTOR_NOT_SET(0);
+    TYPE_NOT_SET(0);
     private final int value;
-    private ActorCase(int value) {
+    private TypeCase(int value) {
       this.value = value;
     }
     /**
@@ -69,14 +70,14 @@ private static final long serialVersionUID = 0L;
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static ActorCase valueOf(int value) {
+    public static TypeCase valueOf(int value) {
       return forNumber(value);
     }
 
-    public static ActorCase forNumber(int value) {
+    public static TypeCase forNumber(int value) {
       switch (value) {
         case 1: return USER;
-        case 0: return ACTOR_NOT_SET;
+        case 0: return TYPE_NOT_SET;
         default: return null;
       }
     }
@@ -85,10 +86,10 @@ private static final long serialVersionUID = 0L;
     }
   };
 
-  public ActorCase
-  getActorCase() {
-    return ActorCase.forNumber(
-        actorCase_);
+  public TypeCase
+  getTypeCase() {
+    return TypeCase.forNumber(
+        typeCase_);
   }
 
   public static final int USER_FIELD_NUMBER = 1;
@@ -102,7 +103,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasUser() {
-    return actorCase_ == 1;
+    return typeCase_ == 1;
   }
   /**
    * <pre>
@@ -114,8 +115,8 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.saltoapis.nebula.user.v1.User getUser() {
-    if (actorCase_ == 1) {
-       return (com.saltoapis.nebula.user.v1.User) actor_;
+    if (typeCase_ == 1) {
+       return (com.saltoapis.nebula.user.v1.User) type_;
     }
     return com.saltoapis.nebula.user.v1.User.getDefaultInstance();
   }
@@ -128,8 +129,8 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.saltoapis.nebula.user.v1.UserOrBuilder getUserOrBuilder() {
-    if (actorCase_ == 1) {
-       return (com.saltoapis.nebula.user.v1.User) actor_;
+    if (typeCase_ == 1) {
+       return (com.saltoapis.nebula.user.v1.User) type_;
     }
     return com.saltoapis.nebula.user.v1.User.getDefaultInstance();
   }
@@ -148,8 +149,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (actorCase_ == 1) {
-      output.writeMessage(1, (com.saltoapis.nebula.user.v1.User) actor_);
+    if (typeCase_ == 1) {
+      output.writeMessage(1, (com.saltoapis.nebula.user.v1.User) type_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -160,9 +161,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (actorCase_ == 1) {
+    if (typeCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.saltoapis.nebula.user.v1.User) actor_);
+        .computeMessageSize(1, (com.saltoapis.nebula.user.v1.User) type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -179,8 +180,8 @@ private static final long serialVersionUID = 0L;
     }
     com.saltoapis.nebula.event.v1.Principal other = (com.saltoapis.nebula.event.v1.Principal) obj;
 
-    if (!getActorCase().equals(other.getActorCase())) return false;
-    switch (actorCase_) {
+    if (!getTypeCase().equals(other.getTypeCase())) return false;
+    switch (typeCase_) {
       case 1:
         if (!getUser()
             .equals(other.getUser())) return false;
@@ -199,7 +200,7 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    switch (actorCase_) {
+    switch (typeCase_) {
       case 1:
         hash = (37 * hash) + USER_FIELD_NUMBER;
         hash = (53 * hash) + getUser().hashCode();
@@ -308,10 +309,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Represents the principal entity that initiated or performed an action
    * associated with an event. This could be a user, a service account, or
-   * potentially other types of entities in the future. Implemented as a
-   * `oneof` to support future expansion—new principal types may be added over
-   * time without breaking compatibility. Clients should be prepared to handle
-   * additional actor variants as the API evolves.
+   * potentially other types of entities in the future.
+   *
+   * Implemented as a `oneof` to support future expansion—new principal types may
+   * be added over time without breaking compatibility for existing event
+   * messages. Clients should be prepared to handle additional kind of principals.
    * </pre>
    *
    * Protobuf type {@code salto.nebula.event.v1.Principal}
@@ -350,8 +352,8 @@ private static final long serialVersionUID = 0L;
       if (userBuilder_ != null) {
         userBuilder_.clear();
       }
-      actorCase_ = 0;
-      actor_ = null;
+      typeCase_ = 0;
+      type_ = null;
       return this;
     }
 
@@ -389,11 +391,11 @@ private static final long serialVersionUID = 0L;
     }
 
     private void buildPartialOneofs(com.saltoapis.nebula.event.v1.Principal result) {
-      result.actorCase_ = actorCase_;
-      result.actor_ = this.actor_;
-      if (actorCase_ == 1 &&
+      result.typeCase_ = typeCase_;
+      result.type_ = this.type_;
+      if (typeCase_ == 1 &&
           userBuilder_ != null) {
-        result.actor_ = userBuilder_.build();
+        result.type_ = userBuilder_.build();
       }
     }
 
@@ -409,12 +411,12 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.saltoapis.nebula.event.v1.Principal other) {
       if (other == com.saltoapis.nebula.event.v1.Principal.getDefaultInstance()) return this;
-      switch (other.getActorCase()) {
+      switch (other.getTypeCase()) {
         case USER: {
           mergeUser(other.getUser());
           break;
         }
-        case ACTOR_NOT_SET: {
+        case TYPE_NOT_SET: {
           break;
         }
       }
@@ -448,7 +450,7 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getUserFieldBuilder().getBuilder(),
                   extensionRegistry);
-              actorCase_ = 1;
+              typeCase_ = 1;
               break;
             } // case 10
             default: {
@@ -466,17 +468,17 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
-    private int actorCase_ = 0;
-    private java.lang.Object actor_;
-    public ActorCase
-        getActorCase() {
-      return ActorCase.forNumber(
-          actorCase_);
+    private int typeCase_ = 0;
+    private java.lang.Object type_;
+    public TypeCase
+        getTypeCase() {
+      return TypeCase.forNumber(
+          typeCase_);
     }
 
-    public Builder clearActor() {
-      actorCase_ = 0;
-      actor_ = null;
+    public Builder clearType() {
+      typeCase_ = 0;
+      type_ = null;
       onChanged();
       return this;
     }
@@ -495,7 +497,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public boolean hasUser() {
-      return actorCase_ == 1;
+      return typeCase_ == 1;
     }
     /**
      * <pre>
@@ -508,12 +510,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.saltoapis.nebula.user.v1.User getUser() {
       if (userBuilder_ == null) {
-        if (actorCase_ == 1) {
-          return (com.saltoapis.nebula.user.v1.User) actor_;
+        if (typeCase_ == 1) {
+          return (com.saltoapis.nebula.user.v1.User) type_;
         }
         return com.saltoapis.nebula.user.v1.User.getDefaultInstance();
       } else {
-        if (actorCase_ == 1) {
+        if (typeCase_ == 1) {
           return userBuilder_.getMessage();
         }
         return com.saltoapis.nebula.user.v1.User.getDefaultInstance();
@@ -531,12 +533,12 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        actor_ = value;
+        type_ = value;
         onChanged();
       } else {
         userBuilder_.setMessage(value);
       }
-      actorCase_ = 1;
+      typeCase_ = 1;
       return this;
     }
     /**
@@ -549,12 +551,12 @@ private static final long serialVersionUID = 0L;
     public Builder setUser(
         com.saltoapis.nebula.user.v1.User.Builder builderForValue) {
       if (userBuilder_ == null) {
-        actor_ = builderForValue.build();
+        type_ = builderForValue.build();
         onChanged();
       } else {
         userBuilder_.setMessage(builderForValue.build());
       }
-      actorCase_ = 1;
+      typeCase_ = 1;
       return this;
     }
     /**
@@ -566,22 +568,22 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeUser(com.saltoapis.nebula.user.v1.User value) {
       if (userBuilder_ == null) {
-        if (actorCase_ == 1 &&
-            actor_ != com.saltoapis.nebula.user.v1.User.getDefaultInstance()) {
-          actor_ = com.saltoapis.nebula.user.v1.User.newBuilder((com.saltoapis.nebula.user.v1.User) actor_)
+        if (typeCase_ == 1 &&
+            type_ != com.saltoapis.nebula.user.v1.User.getDefaultInstance()) {
+          type_ = com.saltoapis.nebula.user.v1.User.newBuilder((com.saltoapis.nebula.user.v1.User) type_)
               .mergeFrom(value).buildPartial();
         } else {
-          actor_ = value;
+          type_ = value;
         }
         onChanged();
       } else {
-        if (actorCase_ == 1) {
+        if (typeCase_ == 1) {
           userBuilder_.mergeFrom(value);
         } else {
           userBuilder_.setMessage(value);
         }
       }
-      actorCase_ = 1;
+      typeCase_ = 1;
       return this;
     }
     /**
@@ -593,15 +595,15 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUser() {
       if (userBuilder_ == null) {
-        if (actorCase_ == 1) {
-          actorCase_ = 0;
-          actor_ = null;
+        if (typeCase_ == 1) {
+          typeCase_ = 0;
+          type_ = null;
           onChanged();
         }
       } else {
-        if (actorCase_ == 1) {
-          actorCase_ = 0;
-          actor_ = null;
+        if (typeCase_ == 1) {
+          typeCase_ = 0;
+          type_ = null;
         }
         userBuilder_.clear();
       }
@@ -626,11 +628,11 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public com.saltoapis.nebula.user.v1.UserOrBuilder getUserOrBuilder() {
-      if ((actorCase_ == 1) && (userBuilder_ != null)) {
+      if ((typeCase_ == 1) && (userBuilder_ != null)) {
         return userBuilder_.getMessageOrBuilder();
       } else {
-        if (actorCase_ == 1) {
-          return (com.saltoapis.nebula.user.v1.User) actor_;
+        if (typeCase_ == 1) {
+          return (com.saltoapis.nebula.user.v1.User) type_;
         }
         return com.saltoapis.nebula.user.v1.User.getDefaultInstance();
       }
@@ -646,17 +648,17 @@ private static final long serialVersionUID = 0L;
         com.saltoapis.nebula.user.v1.User, com.saltoapis.nebula.user.v1.User.Builder, com.saltoapis.nebula.user.v1.UserOrBuilder> 
         getUserFieldBuilder() {
       if (userBuilder_ == null) {
-        if (!(actorCase_ == 1)) {
-          actor_ = com.saltoapis.nebula.user.v1.User.getDefaultInstance();
+        if (!(typeCase_ == 1)) {
+          type_ = com.saltoapis.nebula.user.v1.User.getDefaultInstance();
         }
         userBuilder_ = new com.google.protobuf.SingleFieldBuilder<
             com.saltoapis.nebula.user.v1.User, com.saltoapis.nebula.user.v1.User.Builder, com.saltoapis.nebula.user.v1.UserOrBuilder>(
-                (com.saltoapis.nebula.user.v1.User) actor_,
+                (com.saltoapis.nebula.user.v1.User) type_,
                 getParentForChildren(),
                 isClean());
-        actor_ = null;
+        type_ = null;
       }
-      actorCase_ = 1;
+      typeCase_ = 1;
       onChanged();
       return userBuilder_;
     }
