@@ -81,6 +81,14 @@ private static final long serialVersionUID = 0L;
      * <code>CREDENTIAL_UNACTIVATED = 2;</code>
      */
     CREDENTIAL_UNACTIVATED(2),
+    /**
+     * <pre>
+     * The provided credential does not have the required access rights.
+     * </pre>
+     *
+     * <code>CREDENTIAL_LACKS_ACCESS_RIGHTS = 3;</code>
+     */
+    CREDENTIAL_LACKS_ACCESS_RIGHTS(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -118,6 +126,14 @@ private static final long serialVersionUID = 0L;
      * <code>CREDENTIAL_UNACTIVATED = 2;</code>
      */
     public static final int CREDENTIAL_UNACTIVATED_VALUE = 2;
+    /**
+     * <pre>
+     * The provided credential does not have the required access rights.
+     * </pre>
+     *
+     * <code>CREDENTIAL_LACKS_ACCESS_RIGHTS = 3;</code>
+     */
+    public static final int CREDENTIAL_LACKS_ACCESS_RIGHTS_VALUE = 3;
 
 
     public final int getNumber() {
@@ -147,6 +163,7 @@ private static final long serialVersionUID = 0L;
         case 0: return REASON_UNSPECIFIED;
         case 1: return CREDENTIAL_EXPIRED;
         case 2: return CREDENTIAL_UNACTIVATED;
+        case 3: return CREDENTIAL_LACKS_ACCESS_RIGHTS;
         default: return null;
       }
     }
