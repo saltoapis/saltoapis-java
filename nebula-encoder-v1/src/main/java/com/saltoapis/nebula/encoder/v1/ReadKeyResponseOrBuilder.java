@@ -40,6 +40,35 @@ public interface ReadKeyResponseOrBuilder extends
 
   /**
    * <pre>
+   * Electronic key reference, belonging to a user.
+   * </pre>
+   *
+   * <code>string electronic_key = 2;</code>
+   * @return Whether the electronicKey field is set.
+   */
+  boolean hasElectronicKey();
+  /**
+   * <pre>
+   * Electronic key reference, belonging to a user.
+   * </pre>
+   *
+   * <code>string electronic_key = 2;</code>
+   * @return The electronicKey.
+   */
+  java.lang.String getElectronicKey();
+  /**
+   * <pre>
+   * Electronic key reference, belonging to a user.
+   * </pre>
+   *
+   * <code>string electronic_key = 2;</code>
+   * @return The bytes for electronicKey.
+   */
+  com.google.protobuf.ByteString
+      getElectronicKeyBytes();
+
+  /**
+   * <pre>
    * UID of the key that was read.
    * </pre>
    *
