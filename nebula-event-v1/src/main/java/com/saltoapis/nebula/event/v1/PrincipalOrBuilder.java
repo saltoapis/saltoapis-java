@@ -36,5 +36,5 @@ public interface PrincipalOrBuilder extends
    */
   com.saltoapis.nebula.user.v1.UserOrBuilder getUserOrBuilder();
 
-  com.saltoapis.nebula.event.v1.Principal.ActorCase getActorCase();
+  com.saltoapis.nebula.event.v1.Principal.TypeCase getTypeCase();
 }
