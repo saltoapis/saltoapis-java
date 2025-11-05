@@ -53,6 +53,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     CARD_KEY(1),
+    ELECTRONIC_KEY(2),
     KEY_NOT_SET(0);
     private final int value;
     private KeyCase(int value) {
@@ -71,6 +72,7 @@ private static final long serialVersionUID = 0L;
     public static KeyCase forNumber(int value) {
       switch (value) {
         case 1: return CARD_KEY;
+        case 2: return ELECTRONIC_KEY;
         case 0: return KEY_NOT_SET;
         default: return null;
       }
@@ -184,6 +186,70 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       if (keyCase_ == 1) {
+        key_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ELECTRONIC_KEY_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * Electronic key reference, belonging to a user.
+   * </pre>
+   *
+   * <code>string electronic_key = 2;</code>
+   * @return Whether the electronicKey field is set.
+   */
+  public boolean hasElectronicKey() {
+    return keyCase_ == 2;
+  }
+  /**
+   * <pre>
+   * Electronic key reference, belonging to a user.
+   * </pre>
+   *
+   * <code>string electronic_key = 2;</code>
+   * @return The electronicKey.
+   */
+  public java.lang.String getElectronicKey() {
+    java.lang.Object ref = "";
+    if (keyCase_ == 2) {
+      ref = key_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (keyCase_ == 2) {
+        key_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Electronic key reference, belonging to a user.
+   * </pre>
+   *
+   * <code>string electronic_key = 2;</code>
+   * @return The bytes for electronicKey.
+   */
+  public com.google.protobuf.ByteString
+      getElectronicKeyBytes() {
+    java.lang.Object ref = "";
+    if (keyCase_ == 2) {
+      ref = key_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (keyCase_ == 2) {
         key_ = b;
       }
       return b;
@@ -337,6 +403,9 @@ private static final long serialVersionUID = 0L;
     if (keyCase_ == 1) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, key_);
     }
+    if (keyCase_ == 2) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 2, key_);
+    }
     if (keyIdCase_ == 3) {
       com.google.protobuf.GeneratedMessage.writeString(output, 3, keyId_);
     }
@@ -354,6 +423,9 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (keyCase_ == 1) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, key_);
+    }
+    if (keyCase_ == 2) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(2, key_);
     }
     if (keyIdCase_ == 3) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(3, keyId_);
@@ -381,6 +453,10 @@ private static final long serialVersionUID = 0L;
       case 1:
         if (!getCardKey()
             .equals(other.getCardKey())) return false;
+        break;
+      case 2:
+        if (!getElectronicKey()
+            .equals(other.getElectronicKey())) return false;
         break;
       case 0:
       default:
@@ -413,6 +489,10 @@ private static final long serialVersionUID = 0L;
       case 1:
         hash = (37 * hash) + CARD_KEY_FIELD_NUMBER;
         hash = (53 * hash) + getCardKey().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + ELECTRONIC_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getElectronicKey().hashCode();
         break;
       case 0:
       default:
@@ -630,6 +710,12 @@ private static final long serialVersionUID = 0L;
           onChanged();
           break;
         }
+        case ELECTRONIC_KEY: {
+          keyCase_ = 2;
+          key_ = other.key_;
+          onChanged();
+          break;
+        }
         case KEY_NOT_SET: {
           break;
         }
@@ -683,6 +769,12 @@ private static final long serialVersionUID = 0L;
               key_ = s;
               break;
             } // case 10
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              keyCase_ = 2;
+              key_ = s;
+              break;
+            } // case 18
             case 26: {
               java.lang.String s = input.readStringRequireUtf8();
               keyIdCase_ = 3;
@@ -854,6 +946,123 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       keyCase_ = 1;
+      key_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * Electronic key reference, belonging to a user.
+     * </pre>
+     *
+     * <code>string electronic_key = 2;</code>
+     * @return Whether the electronicKey field is set.
+     */
+    @java.lang.Override
+    public boolean hasElectronicKey() {
+      return keyCase_ == 2;
+    }
+    /**
+     * <pre>
+     * Electronic key reference, belonging to a user.
+     * </pre>
+     *
+     * <code>string electronic_key = 2;</code>
+     * @return The electronicKey.
+     */
+    @java.lang.Override
+    public java.lang.String getElectronicKey() {
+      java.lang.Object ref = "";
+      if (keyCase_ == 2) {
+        ref = key_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (keyCase_ == 2) {
+          key_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Electronic key reference, belonging to a user.
+     * </pre>
+     *
+     * <code>string electronic_key = 2;</code>
+     * @return The bytes for electronicKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getElectronicKeyBytes() {
+      java.lang.Object ref = "";
+      if (keyCase_ == 2) {
+        ref = key_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (keyCase_ == 2) {
+          key_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Electronic key reference, belonging to a user.
+     * </pre>
+     *
+     * <code>string electronic_key = 2;</code>
+     * @param value The electronicKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setElectronicKey(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      keyCase_ = 2;
+      key_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Electronic key reference, belonging to a user.
+     * </pre>
+     *
+     * <code>string electronic_key = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearElectronicKey() {
+      if (keyCase_ == 2) {
+        keyCase_ = 0;
+        key_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Electronic key reference, belonging to a user.
+     * </pre>
+     *
+     * <code>string electronic_key = 2;</code>
+     * @param value The bytes for electronicKey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setElectronicKeyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      keyCase_ = 2;
       key_ = value;
       onChanged();
       return this;
