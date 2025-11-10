@@ -116,28 +116,29 @@ public final class ErrorDetailsProto {
       "entries\030\001 \003(\t\022\016\n\006detail\030\002 \001(\t\"y\n\014QuotaFa" +
       "ilure\0226\n\nviolations\030\001 \003(\0132\".google.rpc.Q" +
       "uotaFailure.Violation\0321\n\tViolation\022\017\n\007su" +
-      "bject\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"\217\001\n\tErr" +
+      "bject\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"\223\001\n\tErr" +
       "orInfo\022\016\n\006reason\030\001 \001(\t\022\016\n\006domain\030\002 \001(\t\0225" +
       "\n\010metadata\030\003 \003(\0132#.google.rpc.ErrorInfo." +
-      "MetadataEntry\032+\n\rMetadataEntry\022\013\n\003key\030\001 " +
-      "\001(\t\022\r\n\005value\030\002 \001(\t\"\225\001\n\023PreconditionFailu" +
-      "re\022=\n\nviolations\030\001 \003(\0132).google.rpc.Prec" +
-      "onditionFailure.Violation\032?\n\tViolation\022\014" +
-      "\n\004type\030\001 \001(\t\022\017\n\007subject\030\002 \001(\t\022\023\n\013descrip" +
-      "tion\030\003 \001(\t\"\203\001\n\nBadRequest\022?\n\020field_viola" +
-      "tions\030\001 \003(\0132%.google.rpc.BadRequest.Fiel" +
-      "dViolation\0324\n\016FieldViolation\022\r\n\005field\030\001 " +
-      "\001(\t\022\023\n\013description\030\002 \001(\t\"7\n\013RequestInfo\022" +
-      "\022\n\nrequest_id\030\001 \001(\t\022\024\n\014serving_data\030\002 \001(" +
-      "\t\"`\n\014ResourceInfo\022\025\n\rresource_type\030\001 \001(\t" +
-      "\022\025\n\rresource_name\030\002 \001(\t\022\r\n\005owner\030\003 \001(\t\022\023" +
-      "\n\013description\030\004 \001(\t\"V\n\004Help\022$\n\005links\030\001 \003" +
-      "(\0132\025.google.rpc.Help.Link\032(\n\004Link\022\023\n\013des" +
-      "cription\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\"3\n\020Localized" +
-      "Message\022\016\n\006locale\030\001 \001(\t\022\017\n\007message\030\002 \001(\t" +
-      "Bl\n\016com.google.rpcB\021ErrorDetailsProtoP\001Z" +
-      "?google.golang.org/genproto/googleapis/r" +
-      "pc/errdetails;errdetails\242\002\003RPCb\006proto3"
+      "MetadataEntry\032/\n\rMetadataEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\225\001\n\023PreconditionF" +
+      "ailure\022=\n\nviolations\030\001 \003(\0132).google.rpc." +
+      "PreconditionFailure.Violation\032?\n\tViolati" +
+      "on\022\014\n\004type\030\001 \001(\t\022\017\n\007subject\030\002 \001(\t\022\023\n\013des" +
+      "cription\030\003 \001(\t\"\203\001\n\nBadRequest\022?\n\020field_v" +
+      "iolations\030\001 \003(\0132%.google.rpc.BadRequest." +
+      "FieldViolation\0324\n\016FieldViolation\022\r\n\005fiel" +
+      "d\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\"7\n\013RequestI" +
+      "nfo\022\022\n\nrequest_id\030\001 \001(\t\022\024\n\014serving_data\030" +
+      "\002 \001(\t\"`\n\014ResourceInfo\022\025\n\rresource_type\030\001" +
+      " \001(\t\022\025\n\rresource_name\030\002 \001(\t\022\r\n\005owner\030\003 \001" +
+      "(\t\022\023\n\013description\030\004 \001(\t\"V\n\004Help\022$\n\005links" +
+      "\030\001 \003(\0132\025.google.rpc.Help.Link\032(\n\004Link\022\023\n" +
+      "\013description\030\001 \001(\t\022\013\n\003url\030\002 \001(\t\"3\n\020Local" +
+      "izedMessage\022\016\n\006locale\030\001 \001(\t\022\017\n\007message\030\002" +
+      " \001(\tBl\n\016com.google.rpcB\021ErrorDetailsProt" +
+      "oP\001Z?google.golang.org/genproto/googleap" +
+      "is/rpc/errdetails;errdetails\242\002\003RPCb\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -77,38 +77,7 @@ public interface ErrorInfoOrBuilder extends
    * instances that can be created in a single (batch) request.
    * </pre>
    *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-   */
-  java.util.List<com.google.rpc.ErrorInfo.MetadataEntry> 
-      getMetadataList();
-  /**
-   * <pre>
-   * Additional structured details about this error.
-   *
-   * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-   * length. When identifying the current value of an exceeded limit, the units
-   * should be contained in the key, not the value.  For example, rather than
-   * {"instanceLimit": "100/request"}, should be returned as,
-   * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-   * instances that can be created in a single (batch) request.
-   * </pre>
-   *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-   */
-  com.google.rpc.ErrorInfo.MetadataEntry getMetadata(int index);
-  /**
-   * <pre>
-   * Additional structured details about this error.
-   *
-   * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-   * length. When identifying the current value of an exceeded limit, the units
-   * should be contained in the key, not the value.  For example, rather than
-   * {"instanceLimit": "100/request"}, should be returned as,
-   * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-   * instances that can be created in a single (batch) request.
-   * </pre>
-   *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+   * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   int getMetadataCount();
   /**
@@ -123,10 +92,16 @@ public interface ErrorInfoOrBuilder extends
    * instances that can be created in a single (batch) request.
    * </pre>
    *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+   * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-  java.util.List<? extends com.google.rpc.ErrorInfo.MetadataEntryOrBuilder> 
-      getMetadataOrBuilderList();
+  boolean containsMetadata(
+      java.lang.String key);
+  /**
+   * Use {@link #getMetadataMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadata();
   /**
    * <pre>
    * Additional structured details about this error.
@@ -139,8 +114,43 @@ public interface ErrorInfoOrBuilder extends
    * instances that can be created in a single (batch) request.
    * </pre>
    *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+   * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-  com.google.rpc.ErrorInfo.MetadataEntryOrBuilder getMetadataOrBuilder(
-      int index);
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadataMap();
+  /**
+   * <pre>
+   * Additional structured details about this error.
+   *
+   * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
+   * length. When identifying the current value of an exceeded limit, the units
+   * should be contained in the key, not the value.  For example, rather than
+   * {"instanceLimit": "100/request"}, should be returned as,
+   * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
+   * instances that can be created in a single (batch) request.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 3;</code>
+   */
+  /* nullable */
+java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * Additional structured details about this error.
+   *
+   * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
+   * length. When identifying the current value of an exceeded limit, the units
+   * should be contained in the key, not the value.  For example, rather than
+   * {"instanceLimit": "100/request"}, should be returned as,
+   * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
+   * instances that can be created in a single (batch) request.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 3;</code>
+   */
+  java.lang.String getMetadataOrThrow(
+      java.lang.String key);
 }

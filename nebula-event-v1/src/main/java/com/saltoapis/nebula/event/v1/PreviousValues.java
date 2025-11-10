@@ -35,7 +35,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PreviousValues() {
-    values_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -43,6 +42,18 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_PreviousValues_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 1:
+        return internalGetValues();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -51,769 +62,31 @@ private static final long serialVersionUID = 0L;
             com.saltoapis.nebula.event.v1.PreviousValues.class, com.saltoapis.nebula.event.v1.PreviousValues.Builder.class);
   }
 
-  public interface ValuesEntryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:salto.nebula.event.v1.PreviousValues.ValuesEntry)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string key = 1;</code>
-     * @return The key.
-     */
-    java.lang.String getKey();
-    /**
-     * <code>string key = 1;</code>
-     * @return The bytes for key.
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>.google.protobuf.Value value = 2;</code>
-     * @return Whether the value field is set.
-     */
-    boolean hasValue();
-    /**
-     * <code>.google.protobuf.Value value = 2;</code>
-     * @return The value.
-     */
-    com.google.protobuf.Value getValue();
-    /**
-     * <code>.google.protobuf.Value value = 2;</code>
-     */
-    com.google.protobuf.ValueOrBuilder getValueOrBuilder();
-  }
-  /**
-   * Protobuf type {@code salto.nebula.event.v1.PreviousValues.ValuesEntry}
-   */
-  public static final class ValuesEntry extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:salto.nebula.event.v1.PreviousValues.ValuesEntry)
-      ValuesEntryOrBuilder {
-  private static final long serialVersionUID = 0L;
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-        /* major= */ 4,
-        /* minor= */ 29,
-        /* patch= */ 2,
-        /* suffix= */ "",
-        ValuesEntry.class.getName());
-    }
-    // Use ValuesEntry.newBuilder() to construct.
-    private ValuesEntry(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-    }
-    private ValuesEntry() {
-      key_ = "";
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_PreviousValues_ValuesEntry_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_PreviousValues_ValuesEntry_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.class, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int KEY_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object key_ = "";
-    /**
-     * <code>string key = 1;</code>
-     * @return The key.
-     */
-    @java.lang.Override
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        key_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string key = 1;</code>
-     * @return The bytes for key.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        key_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 2;
-    private com.google.protobuf.Value value_;
-    /**
-     * <code>.google.protobuf.Value value = 2;</code>
-     * @return Whether the value field is set.
-     */
-    @java.lang.Override
-    public boolean hasValue() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2;</code>
-     * @return The value.
-     */
-    @java.lang.Override
-    public com.google.protobuf.Value getValue() {
-      return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
-    }
-    /**
-     * <code>.google.protobuf.Value value = 2;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
-      return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(key_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, key_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(2, getValue());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(key_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, key_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getValue());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry)) {
-        return super.equals(obj);
-      }
-      com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry other = (com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry) obj;
-
-      if (!getKey()
-          .equals(other.getKey())) return false;
-      if (hasValue() != other.hasValue()) return false;
-      if (hasValue()) {
-        if (!getValue()
-            .equals(other.getValue())) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getKey().hashCode();
-      if (hasValue()) {
-        hash = (37 * hash) + VALUE_FIELD_NUMBER;
-        hash = (53 * hash) + getValue().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code salto.nebula.event.v1.PreviousValues.ValuesEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:salto.nebula.event.v1.PreviousValues.ValuesEntry)
-        com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_PreviousValues_ValuesEntry_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_PreviousValues_ValuesEntry_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.class, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder.class);
-      }
-
-      // Construct using com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage
-                .alwaysUseFieldBuilders) {
-          getValueFieldBuilder();
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        key_ = "";
-        value_ = null;
-        if (valueBuilder_ != null) {
-          valueBuilder_.dispose();
-          valueBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_PreviousValues_ValuesEntry_descriptor;
-      }
-
-      @java.lang.Override
-      public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry getDefaultInstanceForType() {
-        return com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry build() {
-        com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry buildPartial() {
-        com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry result = new com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.key_ = key_;
-        }
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.value_ = valueBuilder_ == null
-              ? value_
-              : valueBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry) {
-          return mergeFrom((com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry other) {
-        if (other == com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.getDefaultInstance()) return this;
-        if (!other.getKey().isEmpty()) {
-          key_ = other.key_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (other.hasValue()) {
-          mergeValue(other.getValue());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                key_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                input.readMessage(
-                    getValueFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object key_ = "";
-      /**
-       * <code>string key = 1;</code>
-       * @return The key.
-       */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          key_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @return The bytes for key.
-       */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        key_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKey() {
-        key_ = getDefaultInstance().getKey();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @param value The bytes for key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        key_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Value value_;
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> valueBuilder_;
-      /**
-       * <code>.google.protobuf.Value value = 2;</code>
-       * @return Whether the value field is set.
-       */
-      public boolean hasValue() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2;</code>
-       * @return The value.
-       */
-      public com.google.protobuf.Value getValue() {
-        if (valueBuilder_ == null) {
-          return value_ == null ? com.google.protobuf.Value.getDefaultInstance() : value_;
-        } else {
-          return valueBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2;</code>
-       */
-      public Builder setValue(com.google.protobuf.Value value) {
-        if (valueBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          value_ = value;
-        } else {
-          valueBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2;</code>
-       */
-      public Builder setValue(
-          com.google.protobuf.Value.Builder builderForValue) {
-        if (valueBuilder_ == null) {
-          value_ = builderForValue.build();
-        } else {
-          valueBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2;</code>
-       */
-      public Builder mergeValue(com.google.protobuf.Value value) {
-        if (valueBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            value_ != null &&
-            value_ != com.google.protobuf.Value.getDefaultInstance()) {
-            getValueBuilder().mergeFrom(value);
-          } else {
-            value_ = value;
-          }
-        } else {
-          valueBuilder_.mergeFrom(value);
-        }
-        if (value_ != null) {
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2;</code>
-       */
-      public Builder clearValue() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        value_ = null;
-        if (valueBuilder_ != null) {
-          valueBuilder_.dispose();
-          valueBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2;</code>
-       */
-      public com.google.protobuf.Value.Builder getValueBuilder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getValueFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2;</code>
-       */
-      public com.google.protobuf.ValueOrBuilder getValueOrBuilder() {
-        if (valueBuilder_ != null) {
-          return valueBuilder_.getMessageOrBuilder();
-        } else {
-          return value_ == null ?
-              com.google.protobuf.Value.getDefaultInstance() : value_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Value value = 2;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder> 
-          getValueFieldBuilder() {
-        if (valueBuilder_ == null) {
-          valueBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.Value, com.google.protobuf.Value.Builder, com.google.protobuf.ValueOrBuilder>(
-                  getValue(),
-                  getParentForChildren(),
-                  isClean());
-          value_ = null;
-        }
-        return valueBuilder_;
-      }
-
-      // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.PreviousValues.ValuesEntry)
-    }
-
-    // @@protoc_insertion_point(class_scope:salto.nebula.event.v1.PreviousValues.ValuesEntry)
-    private static final com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry();
-    }
-
-    public static com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ValuesEntry>
-        PARSER = new com.google.protobuf.AbstractParser<ValuesEntry>() {
-      @java.lang.Override
-      public ValuesEntry parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<ValuesEntry> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ValuesEntry> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public static final int VALUES_FIELD_NUMBER = 1;
+  private static final class ValuesDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, com.google.protobuf.Value> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, com.google.protobuf.Value>newDefaultInstance(
+                com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_PreviousValues_ValuesEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                com.google.protobuf.Value.getDefaultInstance());
+  }
   @SuppressWarnings("serial")
-  private java.util.List<com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry> values_;
-  /**
-   * <pre>
-   * A map where the key is the field name of the changed attribute (for
-   * example, "display_name") and the value is the field's value before the
-   * update was applied. Only fields that were actually changed will be present
-   * in this map.
-   * </pre>
-   *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry> getValuesList() {
+  private com.google.protobuf.MapField<
+      java.lang.String, com.google.protobuf.Value> values_;
+  private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
+  internalGetValues() {
+    if (values_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ValuesDefaultEntryHolder.defaultEntry);
+    }
     return values_;
   }
-  /**
-   * <pre>
-   * A map where the key is the field name of the changed attribute (for
-   * example, "display_name") and the value is the field's value before the
-   * update was applied. Only fields that were actually changed will be present
-   * in this map.
-   * </pre>
-   *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder> 
-      getValuesOrBuilderList() {
-    return values_;
-  }
-  /**
-   * <pre>
-   * A map where the key is the field name of the changed attribute (for
-   * example, "display_name") and the value is the field's value before the
-   * update was applied. Only fields that were actually changed will be present
-   * in this map.
-   * </pre>
-   *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-   */
-  @java.lang.Override
   public int getValuesCount() {
-    return values_.size();
+    return internalGetValues().getMap().size();
   }
   /**
    * <pre>
@@ -823,11 +96,21 @@ private static final long serialVersionUID = 0L;
    * in this map.
    * </pre>
    *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
    */
   @java.lang.Override
-  public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry getValues(int index) {
-    return values_.get(index);
+  public boolean containsValues(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetValues().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getValuesMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, com.google.protobuf.Value> getValues() {
+    return getValuesMap();
   }
   /**
    * <pre>
@@ -837,12 +120,53 @@ private static final long serialVersionUID = 0L;
    * in this map.
    * </pre>
    *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
    */
   @java.lang.Override
-  public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder getValuesOrBuilder(
-      int index) {
-    return values_.get(index);
+  public java.util.Map<java.lang.String, com.google.protobuf.Value> getValuesMap() {
+    return internalGetValues().getMap();
+  }
+  /**
+   * <pre>
+   * A map where the key is the field name of the changed attribute (for
+   * example, "display_name") and the value is the field's value before the
+   * update was applied. Only fields that were actually changed will be present
+   * in this map.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+com.google.protobuf.Value getValuesOrDefault(
+      java.lang.String key,
+      /* nullable */
+com.google.protobuf.Value defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+        internalGetValues().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * A map where the key is the field name of the changed attribute (for
+   * example, "display_name") and the value is the field's value before the
+   * update was applied. Only fields that were actually changed will be present
+   * in this map.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.Value getValuesOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, com.google.protobuf.Value> map =
+        internalGetValues().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -859,9 +183,12 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    for (int i = 0; i < values_.size(); i++) {
-      output.writeMessage(1, values_.get(i));
-    }
+    com.google.protobuf.GeneratedMessage
+      .serializeStringMapTo(
+        output,
+        internalGetValues(),
+        ValuesDefaultEntryHolder.defaultEntry,
+        1);
     getUnknownFields().writeTo(output);
   }
 
@@ -871,9 +198,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    for (int i = 0; i < values_.size(); i++) {
+    for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry
+         : internalGetValues().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
+      values__ = ValuesDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, values_.get(i));
+          .computeMessageSize(1, values__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -890,8 +223,8 @@ private static final long serialVersionUID = 0L;
     }
     com.saltoapis.nebula.event.v1.PreviousValues other = (com.saltoapis.nebula.event.v1.PreviousValues) obj;
 
-    if (!getValuesList()
-        .equals(other.getValuesList())) return false;
+    if (!internalGetValues().equals(
+        other.internalGetValues())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -903,9 +236,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (getValuesCount() > 0) {
+    if (!internalGetValues().getMap().isEmpty()) {
       hash = (37 * hash) + VALUES_FIELD_NUMBER;
-      hash = (53 * hash) + getValuesList().hashCode();
+      hash = (53 * hash) + internalGetValues().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1024,6 +357,28 @@ private static final long serialVersionUID = 0L;
       return com.saltoapis.nebula.event.v1.TypesProto.internal_static_salto_nebula_event_v1_PreviousValues_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetValues();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetMutableValues();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1046,13 +401,7 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      if (valuesBuilder_ == null) {
-        values_ = java.util.Collections.emptyList();
-      } else {
-        values_ = null;
-        valuesBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      internalGetMutableValues().clear();
       return this;
     }
 
@@ -1079,26 +428,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.saltoapis.nebula.event.v1.PreviousValues buildPartial() {
       com.saltoapis.nebula.event.v1.PreviousValues result = new com.saltoapis.nebula.event.v1.PreviousValues(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
     }
 
-    private void buildPartialRepeatedFields(com.saltoapis.nebula.event.v1.PreviousValues result) {
-      if (valuesBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
-          values_ = java.util.Collections.unmodifiableList(values_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.values_ = values_;
-      } else {
-        result.values_ = valuesBuilder_.build();
-      }
-    }
-
     private void buildPartial0(com.saltoapis.nebula.event.v1.PreviousValues result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.values_ = internalGetValues().build(ValuesDefaultEntryHolder.defaultEntry);
+      }
     }
 
     @java.lang.Override
@@ -1113,32 +452,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.saltoapis.nebula.event.v1.PreviousValues other) {
       if (other == com.saltoapis.nebula.event.v1.PreviousValues.getDefaultInstance()) return this;
-      if (valuesBuilder_ == null) {
-        if (!other.values_.isEmpty()) {
-          if (values_.isEmpty()) {
-            values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureValuesIsMutable();
-            values_.addAll(other.values_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.values_.isEmpty()) {
-          if (valuesBuilder_.isEmpty()) {
-            valuesBuilder_.dispose();
-            valuesBuilder_ = null;
-            values_ = other.values_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            valuesBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                 getValuesFieldBuilder() : null;
-          } else {
-            valuesBuilder_.addAllMessages(other.values_);
-          }
-        }
-      }
+      internalGetMutableValues().mergeFrom(
+          other.internalGetValues());
+      bitField0_ |= 0x00000001;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1166,16 +482,12 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             case 10: {
-              com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry m =
-                  input.readMessage(
-                      com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.parser(),
-                      extensionRegistry);
-              if (valuesBuilder_ == null) {
-                ensureValuesIsMutable();
-                values_.add(m);
-              } else {
-                valuesBuilder_.addMessage(m);
-              }
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
+              values__ = input.readMessage(
+                  ValuesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableValues().ensureBuilderMap().put(
+                  values__.getKey(), values__.getValue());
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             default: {
@@ -1195,51 +507,40 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private java.util.List<com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry> values_ =
-      java.util.Collections.emptyList();
-    private void ensureValuesIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
-        values_ = new java.util.ArrayList<com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry>(values_);
-        bitField0_ |= 0x00000001;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilder<
-        com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder> valuesBuilder_;
-
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
-    public java.util.List<com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry> getValuesList() {
-      if (valuesBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(values_);
-      } else {
-        return valuesBuilder_.getMessageList();
+    private static final class ValuesConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, com.google.protobuf.ValueOrBuilder, com.google.protobuf.Value> {
+      @java.lang.Override
+      public com.google.protobuf.Value build(com.google.protobuf.ValueOrBuilder val) {
+        if (val instanceof com.google.protobuf.Value) { return (com.google.protobuf.Value) val; }
+        return ((com.google.protobuf.Value.Builder) val).build();
       }
+
+      @java.lang.Override
+      public com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value> defaultEntry() {
+        return ValuesDefaultEntryHolder.defaultEntry;
+      }
+    };
+    private static final ValuesConverter valuesConverter = new ValuesConverter();
+
+    private com.google.protobuf.MapFieldBuilder<
+        java.lang.String, com.google.protobuf.ValueOrBuilder, com.google.protobuf.Value, com.google.protobuf.Value.Builder> values_;
+    private com.google.protobuf.MapFieldBuilder<java.lang.String, com.google.protobuf.ValueOrBuilder, com.google.protobuf.Value, com.google.protobuf.Value.Builder>
+        internalGetValues() {
+      if (values_ == null) {
+        return new com.google.protobuf.MapFieldBuilder<>(valuesConverter);
+      }
+      return values_;
     }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
+    private com.google.protobuf.MapFieldBuilder<java.lang.String, com.google.protobuf.ValueOrBuilder, com.google.protobuf.Value, com.google.protobuf.Value.Builder>
+        internalGetMutableValues() {
+      if (values_ == null) {
+        values_ = new com.google.protobuf.MapFieldBuilder<>(valuesConverter);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return values_;
+    }
     public int getValuesCount() {
-      if (valuesBuilder_ == null) {
-        return values_.size();
-      } else {
-        return valuesBuilder_.getCount();
-      }
+      return internalGetValues().ensureBuilderMap().size();
     }
     /**
      * <pre>
@@ -1249,14 +550,21 @@ private static final long serialVersionUID = 0L;
      * in this map.
      * </pre>
      *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
      */
-    public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry getValues(int index) {
-      if (valuesBuilder_ == null) {
-        return values_.get(index);
-      } else {
-        return valuesBuilder_.getMessage(index);
-      }
+    @java.lang.Override
+    public boolean containsValues(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetValues().ensureBuilderMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getValuesMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.Value> getValues() {
+      return getValuesMap();
     }
     /**
      * <pre>
@@ -1266,21 +574,11 @@ private static final long serialVersionUID = 0L;
      * in this map.
      * </pre>
      *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
      */
-    public Builder setValues(
-        int index, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry value) {
-      if (valuesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureValuesIsMutable();
-        values_.set(index, value);
-        onChanged();
-      } else {
-        valuesBuilder_.setMessage(index, value);
-      }
-      return this;
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.protobuf.Value> getValuesMap() {
+      return internalGetValues().getImmutableMap();
     }
     /**
      * <pre>
@@ -1290,18 +588,17 @@ private static final long serialVersionUID = 0L;
      * in this map.
      * </pre>
      *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
      */
-    public Builder setValues(
-        int index, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder builderForValue) {
-      if (valuesBuilder_ == null) {
-        ensureValuesIsMutable();
-        values_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        valuesBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
+    @java.lang.Override
+    public /* nullable */
+com.google.protobuf.Value getValuesOrDefault(
+        java.lang.String key,
+        /* nullable */
+com.google.protobuf.Value defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, com.google.protobuf.ValueOrBuilder> map = internalGetMutableValues().ensureBuilderMap();
+      return map.containsKey(key) ? valuesConverter.build(map.get(key)) : defaultValue;
     }
     /**
      * <pre>
@@ -1311,127 +608,21 @@ private static final long serialVersionUID = 0L;
      * in this map.
      * </pre>
      *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
      */
-    public Builder addValues(com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry value) {
-      if (valuesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureValuesIsMutable();
-        values_.add(value);
-        onChanged();
-      } else {
-        valuesBuilder_.addMessage(value);
+    @java.lang.Override
+    public com.google.protobuf.Value getValuesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, com.google.protobuf.ValueOrBuilder> map = internalGetMutableValues().ensureBuilderMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
-      return this;
+      return valuesConverter.build(map.get(key));
     }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
-    public Builder addValues(
-        int index, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry value) {
-      if (valuesBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureValuesIsMutable();
-        values_.add(index, value);
-        onChanged();
-      } else {
-        valuesBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
-    public Builder addValues(
-        com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder builderForValue) {
-      if (valuesBuilder_ == null) {
-        ensureValuesIsMutable();
-        values_.add(builderForValue.build());
-        onChanged();
-      } else {
-        valuesBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
-    public Builder addValues(
-        int index, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder builderForValue) {
-      if (valuesBuilder_ == null) {
-        ensureValuesIsMutable();
-        values_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        valuesBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
-    public Builder addAllValues(
-        java.lang.Iterable<? extends com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry> values) {
-      if (valuesBuilder_ == null) {
-        ensureValuesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, values_);
-        onChanged();
-      } else {
-        valuesBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
     public Builder clearValues() {
-      if (valuesBuilder_ == null) {
-        values_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-      } else {
-        valuesBuilder_.clear();
-      }
+      bitField0_ = (bitField0_ & ~0x00000001);
+      internalGetMutableValues().clear();
       return this;
     }
     /**
@@ -1442,16 +633,42 @@ private static final long serialVersionUID = 0L;
      * in this map.
      * </pre>
      *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
      */
-    public Builder removeValues(int index) {
-      if (valuesBuilder_ == null) {
-        ensureValuesIsMutable();
-        values_.remove(index);
-        onChanged();
-      } else {
-        valuesBuilder_.remove(index);
-      }
+    public Builder removeValues(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableValues().ensureBuilderMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.Value>
+        getMutableValues() {
+      bitField0_ |= 0x00000001;
+      return internalGetMutableValues().ensureMessageMap();
+    }
+    /**
+     * <pre>
+     * A map where the key is the field name of the changed attribute (for
+     * example, "display_name") and the value is the field's value before the
+     * update was applied. Only fields that were actually changed will be present
+     * in this map.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
+     */
+    public Builder putValues(
+        java.lang.String key,
+        com.google.protobuf.Value value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutableValues().ensureBuilderMap()
+          .put(key, value);
+      bitField0_ |= 0x00000001;
       return this;
     }
     /**
@@ -1462,28 +679,19 @@ private static final long serialVersionUID = 0L;
      * in this map.
      * </pre>
      *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
      */
-    public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder getValuesBuilder(
-        int index) {
-      return getValuesFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
-    public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder getValuesOrBuilder(
-        int index) {
-      if (valuesBuilder_ == null) {
-        return values_.get(index);  } else {
-        return valuesBuilder_.getMessageOrBuilder(index);
+    public Builder putAllValues(
+        java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> e : values.entrySet()) {
+        if (e.getKey() == null || e.getValue() == null) {
+          throw new NullPointerException();
+        }
       }
+      internalGetMutableValues().ensureBuilderMap()
+          .putAll(values);
+      bitField0_ |= 0x00000001;
+      return this;
     }
     /**
      * <pre>
@@ -1493,72 +701,21 @@ private static final long serialVersionUID = 0L;
      * in this map.
      * </pre>
      *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
      */
-    public java.util.List<? extends com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder> 
-         getValuesOrBuilderList() {
-      if (valuesBuilder_ != null) {
-        return valuesBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(values_);
+    public com.google.protobuf.Value.Builder putValuesBuilderIfAbsent(
+        java.lang.String key) {
+      java.util.Map<java.lang.String, com.google.protobuf.ValueOrBuilder> builderMap = internalGetMutableValues().ensureBuilderMap();
+      com.google.protobuf.ValueOrBuilder entry = builderMap.get(key);
+      if (entry == null) {
+        entry = com.google.protobuf.Value.newBuilder();
+        builderMap.put(key, entry);
       }
-    }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
-    public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder addValuesBuilder() {
-      return getValuesFieldBuilder().addBuilder(
-          com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
-    public com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder addValuesBuilder(
-        int index) {
-      return getValuesFieldBuilder().addBuilder(
-          index, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * A map where the key is the field name of the changed attribute (for
-     * example, "display_name") and the value is the field's value before the
-     * update was applied. Only fields that were actually changed will be present
-     * in this map.
-     * </pre>
-     *
-     * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-     */
-    public java.util.List<com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder> 
-         getValuesBuilderList() {
-      return getValuesFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilder<
-        com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder> 
-        getValuesFieldBuilder() {
-      if (valuesBuilder_ == null) {
-        valuesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry.Builder, com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder>(
-                values_,
-                ((bitField0_ & 0x00000001) != 0),
-                getParentForChildren(),
-                isClean());
-        values_ = null;
+      if (entry instanceof com.google.protobuf.Value) {
+        entry = ((com.google.protobuf.Value) entry).toBuilder();
+        builderMap.put(key, entry);
       }
-      return valuesBuilder_;
+      return (com.google.protobuf.Value.Builder) entry;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.PreviousValues)
