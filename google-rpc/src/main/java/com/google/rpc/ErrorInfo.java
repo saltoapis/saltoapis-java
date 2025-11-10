@@ -56,7 +56,6 @@ private static final long serialVersionUID = 0L;
   private ErrorInfo() {
     reason_ = "";
     domain_ = "";
-    metadata_ = java.util.Collections.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -64,670 +63,24 @@ private static final long serialVersionUID = 0L;
     return com.google.rpc.ErrorDetailsProto.internal_static_google_rpc_ErrorInfo_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 3:
+        return internalGetMetadata();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.rpc.ErrorDetailsProto.internal_static_google_rpc_ErrorInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.rpc.ErrorInfo.class, com.google.rpc.ErrorInfo.Builder.class);
-  }
-
-  public interface MetadataEntryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.rpc.ErrorInfo.MetadataEntry)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string key = 1;</code>
-     * @return The key.
-     */
-    java.lang.String getKey();
-    /**
-     * <code>string key = 1;</code>
-     * @return The bytes for key.
-     */
-    com.google.protobuf.ByteString
-        getKeyBytes();
-
-    /**
-     * <code>string value = 2;</code>
-     * @return The value.
-     */
-    java.lang.String getValue();
-    /**
-     * <code>string value = 2;</code>
-     * @return The bytes for value.
-     */
-    com.google.protobuf.ByteString
-        getValueBytes();
-  }
-  /**
-   * Protobuf type {@code google.rpc.ErrorInfo.MetadataEntry}
-   */
-  public static final class MetadataEntry extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:google.rpc.ErrorInfo.MetadataEntry)
-      MetadataEntryOrBuilder {
-  private static final long serialVersionUID = 0L;
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-        /* major= */ 4,
-        /* minor= */ 29,
-        /* patch= */ 2,
-        /* suffix= */ "",
-        MetadataEntry.class.getName());
-    }
-    // Use MetadataEntry.newBuilder() to construct.
-    private MetadataEntry(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-    }
-    private MetadataEntry() {
-      key_ = "";
-      value_ = "";
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.rpc.ErrorDetailsProto.internal_static_google_rpc_ErrorInfo_MetadataEntry_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.rpc.ErrorDetailsProto.internal_static_google_rpc_ErrorInfo_MetadataEntry_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.rpc.ErrorInfo.MetadataEntry.class, com.google.rpc.ErrorInfo.MetadataEntry.Builder.class);
-    }
-
-    public static final int KEY_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object key_ = "";
-    /**
-     * <code>string key = 1;</code>
-     * @return The key.
-     */
-    @java.lang.Override
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        key_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string key = 1;</code>
-     * @return The bytes for key.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        key_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int VALUE_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object value_ = "";
-    /**
-     * <code>string value = 2;</code>
-     * @return The value.
-     */
-    @java.lang.Override
-    public java.lang.String getValue() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        value_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string value = 2;</code>
-     * @return The bytes for value.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getValueBytes() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        value_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(key_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, key_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, value_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(key_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, key_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, value_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.rpc.ErrorInfo.MetadataEntry)) {
-        return super.equals(obj);
-      }
-      com.google.rpc.ErrorInfo.MetadataEntry other = (com.google.rpc.ErrorInfo.MetadataEntry) obj;
-
-      if (!getKey()
-          .equals(other.getKey())) return false;
-      if (!getValue()
-          .equals(other.getValue())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getKey().hashCode();
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.rpc.ErrorInfo.MetadataEntry parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.rpc.ErrorInfo.MetadataEntry prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code google.rpc.ErrorInfo.MetadataEntry}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.rpc.ErrorInfo.MetadataEntry)
-        com.google.rpc.ErrorInfo.MetadataEntryOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.rpc.ErrorDetailsProto.internal_static_google_rpc_ErrorInfo_MetadataEntry_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.rpc.ErrorDetailsProto.internal_static_google_rpc_ErrorInfo_MetadataEntry_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.rpc.ErrorInfo.MetadataEntry.class, com.google.rpc.ErrorInfo.MetadataEntry.Builder.class);
-      }
-
-      // Construct using com.google.rpc.ErrorInfo.MetadataEntry.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        key_ = "";
-        value_ = "";
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.rpc.ErrorDetailsProto.internal_static_google_rpc_ErrorInfo_MetadataEntry_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.rpc.ErrorInfo.MetadataEntry getDefaultInstanceForType() {
-        return com.google.rpc.ErrorInfo.MetadataEntry.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.rpc.ErrorInfo.MetadataEntry build() {
-        com.google.rpc.ErrorInfo.MetadataEntry result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.rpc.ErrorInfo.MetadataEntry buildPartial() {
-        com.google.rpc.ErrorInfo.MetadataEntry result = new com.google.rpc.ErrorInfo.MetadataEntry(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.google.rpc.ErrorInfo.MetadataEntry result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.key_ = key_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.value_ = value_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.rpc.ErrorInfo.MetadataEntry) {
-          return mergeFrom((com.google.rpc.ErrorInfo.MetadataEntry)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.rpc.ErrorInfo.MetadataEntry other) {
-        if (other == com.google.rpc.ErrorInfo.MetadataEntry.getDefaultInstance()) return this;
-        if (!other.getKey().isEmpty()) {
-          key_ = other.key_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (!other.getValue().isEmpty()) {
-          value_ = other.value_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                key_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                value_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object key_ = "";
-      /**
-       * <code>string key = 1;</code>
-       * @return The key.
-       */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          key_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @return The bytes for key.
-       */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @param value The key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKey(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        key_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearKey() {
-        key_ = getDefaultInstance().getKey();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string key = 1;</code>
-       * @param value The bytes for key to set.
-       * @return This builder for chaining.
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        key_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object value_ = "";
-      /**
-       * <code>string value = 2;</code>
-       * @return The value.
-       */
-      public java.lang.String getValue() {
-        java.lang.Object ref = value_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          value_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string value = 2;</code>
-       * @return The bytes for value.
-       */
-      public com.google.protobuf.ByteString
-          getValueBytes() {
-        java.lang.Object ref = value_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          value_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string value = 2;</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValue(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        value_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string value = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearValue() {
-        value_ = getDefaultInstance().getValue();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string value = 2;</code>
-       * @param value The bytes for value to set.
-       * @return This builder for chaining.
-       */
-      public Builder setValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        value_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.rpc.ErrorInfo.MetadataEntry)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.rpc.ErrorInfo.MetadataEntry)
-    private static final com.google.rpc.ErrorInfo.MetadataEntry DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.rpc.ErrorInfo.MetadataEntry();
-    }
-
-    public static com.google.rpc.ErrorInfo.MetadataEntry getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<MetadataEntry>
-        PARSER = new com.google.protobuf.AbstractParser<MetadataEntry>() {
-      @java.lang.Override
-      public MetadataEntry parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<MetadataEntry> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<MetadataEntry> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.rpc.ErrorInfo.MetadataEntry getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   public static final int REASON_FIELD_NUMBER = 1;
@@ -841,62 +194,30 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int METADATA_FIELD_NUMBER = 3;
+  private static final class MetadataDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.rpc.ErrorDetailsProto.internal_static_google_rpc_ErrorInfo_MetadataEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
   @SuppressWarnings("serial")
-  private java.util.List<com.google.rpc.ErrorInfo.MetadataEntry> metadata_;
-  /**
-   * <pre>
-   * Additional structured details about this error.
-   *
-   * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-   * length. When identifying the current value of an exceeded limit, the units
-   * should be contained in the key, not the value.  For example, rather than
-   * {"instanceLimit": "100/request"}, should be returned as,
-   * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-   * instances that can be created in a single (batch) request.
-   * </pre>
-   *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.rpc.ErrorInfo.MetadataEntry> getMetadataList() {
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> metadata_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetMetadata() {
+    if (metadata_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          MetadataDefaultEntryHolder.defaultEntry);
+    }
     return metadata_;
   }
-  /**
-   * <pre>
-   * Additional structured details about this error.
-   *
-   * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-   * length. When identifying the current value of an exceeded limit, the units
-   * should be contained in the key, not the value.  For example, rather than
-   * {"instanceLimit": "100/request"}, should be returned as,
-   * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-   * instances that can be created in a single (batch) request.
-   * </pre>
-   *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-   */
-  @java.lang.Override
-  public java.util.List<? extends com.google.rpc.ErrorInfo.MetadataEntryOrBuilder> 
-      getMetadataOrBuilderList() {
-    return metadata_;
-  }
-  /**
-   * <pre>
-   * Additional structured details about this error.
-   *
-   * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-   * length. When identifying the current value of an exceeded limit, the units
-   * should be contained in the key, not the value.  For example, rather than
-   * {"instanceLimit": "100/request"}, should be returned as,
-   * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-   * instances that can be created in a single (batch) request.
-   * </pre>
-   *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-   */
-  @java.lang.Override
   public int getMetadataCount() {
-    return metadata_.size();
+    return internalGetMetadata().getMap().size();
   }
   /**
    * <pre>
@@ -910,11 +231,21 @@ private static final long serialVersionUID = 0L;
    * instances that can be created in a single (batch) request.
    * </pre>
    *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+   * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   @java.lang.Override
-  public com.google.rpc.ErrorInfo.MetadataEntry getMetadata(int index) {
-    return metadata_.get(index);
+  public boolean containsMetadata(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetMetadata().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getMetadataMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+    return getMetadataMap();
   }
   /**
    * <pre>
@@ -928,12 +259,61 @@ private static final long serialVersionUID = 0L;
    * instances that can be created in a single (batch) request.
    * </pre>
    *
-   * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+   * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   @java.lang.Override
-  public com.google.rpc.ErrorInfo.MetadataEntryOrBuilder getMetadataOrBuilder(
-      int index) {
-    return metadata_.get(index);
+  public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+    return internalGetMetadata().getMap();
+  }
+  /**
+   * <pre>
+   * Additional structured details about this error.
+   *
+   * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
+   * length. When identifying the current value of an exceeded limit, the units
+   * should be contained in the key, not the value.  For example, rather than
+   * {"instanceLimit": "100/request"}, should be returned as,
+   * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
+   * instances that can be created in a single (batch) request.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 3;</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetMetadata().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * Additional structured details about this error.
+   *
+   * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
+   * length. When identifying the current value of an exceeded limit, the units
+   * should be contained in the key, not the value.  For example, rather than
+   * {"instanceLimit": "100/request"}, should be returned as,
+   * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
+   * instances that can be created in a single (batch) request.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 3;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getMetadataOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetMetadata().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -956,9 +336,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(domain_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 2, domain_);
     }
-    for (int i = 0; i < metadata_.size(); i++) {
-      output.writeMessage(3, metadata_.get(i));
-    }
+    com.google.protobuf.GeneratedMessage
+      .serializeStringMapTo(
+        output,
+        internalGetMetadata(),
+        MetadataDefaultEntryHolder.defaultEntry,
+        3);
     getUnknownFields().writeTo(output);
   }
 
@@ -974,9 +357,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(domain_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(2, domain_);
     }
-    for (int i = 0; i < metadata_.size(); i++) {
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, metadata_.get(i));
+          .computeMessageSize(3, metadata__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -997,8 +386,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getReason())) return false;
     if (!getDomain()
         .equals(other.getDomain())) return false;
-    if (!getMetadataList()
-        .equals(other.getMetadataList())) return false;
+    if (!internalGetMetadata().equals(
+        other.internalGetMetadata())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1014,9 +403,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getReason().hashCode();
     hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
     hash = (53 * hash) + getDomain().hashCode();
-    if (getMetadataCount() > 0) {
+    if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
-      hash = (53 * hash) + getMetadataList().hashCode();
+      hash = (53 * hash) + internalGetMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1154,6 +543,28 @@ private static final long serialVersionUID = 0L;
       return com.google.rpc.ErrorDetailsProto.internal_static_google_rpc_ErrorInfo_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetMetadata();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 3:
+          return internalGetMutableMetadata();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1178,13 +589,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       reason_ = "";
       domain_ = "";
-      if (metadataBuilder_ == null) {
-        metadata_ = java.util.Collections.emptyList();
-      } else {
-        metadata_ = null;
-        metadataBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableMetadata().clear();
       return this;
     }
 
@@ -1211,22 +616,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.rpc.ErrorInfo buildPartial() {
       com.google.rpc.ErrorInfo result = new com.google.rpc.ErrorInfo(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.google.rpc.ErrorInfo result) {
-      if (metadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
-          metadata_ = java.util.Collections.unmodifiableList(metadata_);
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.metadata_ = metadata_;
-      } else {
-        result.metadata_ = metadataBuilder_.build();
-      }
     }
 
     private void buildPartial0(com.google.rpc.ErrorInfo result) {
@@ -1236,6 +628,10 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.domain_ = domain_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
       }
     }
 
@@ -1261,32 +657,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (metadataBuilder_ == null) {
-        if (!other.metadata_.isEmpty()) {
-          if (metadata_.isEmpty()) {
-            metadata_ = other.metadata_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-          } else {
-            ensureMetadataIsMutable();
-            metadata_.addAll(other.metadata_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.metadata_.isEmpty()) {
-          if (metadataBuilder_.isEmpty()) {
-            metadataBuilder_.dispose();
-            metadataBuilder_ = null;
-            metadata_ = other.metadata_;
-            bitField0_ = (bitField0_ & ~0x00000004);
-            metadataBuilder_ = 
-              com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                 getMetadataFieldBuilder() : null;
-          } else {
-            metadataBuilder_.addAllMessages(other.metadata_);
-          }
-        }
-      }
+      internalGetMutableMetadata().mergeFrom(
+          other.internalGetMetadata());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1324,16 +697,12 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              com.google.rpc.ErrorInfo.MetadataEntry m =
-                  input.readMessage(
-                      com.google.rpc.ErrorInfo.MetadataEntry.parser(),
-                      extensionRegistry);
-              if (metadataBuilder_ == null) {
-                ensureMetadataIsMutable();
-                metadata_.add(m);
-              } else {
-                metadataBuilder_.addMessage(m);
-              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableMetadata().getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              bitField0_ |= 0x00000004;
               break;
             } // case 26
             default: {
@@ -1577,59 +946,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.util.List<com.google.rpc.ErrorInfo.MetadataEntry> metadata_ =
-      java.util.Collections.emptyList();
-    private void ensureMetadataIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
-        metadata_ = new java.util.ArrayList<com.google.rpc.ErrorInfo.MetadataEntry>(metadata_);
-        bitField0_ |= 0x00000004;
-       }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilder<
-        com.google.rpc.ErrorInfo.MetadataEntry, com.google.rpc.ErrorInfo.MetadataEntry.Builder, com.google.rpc.ErrorInfo.MetadataEntryOrBuilder> metadataBuilder_;
-
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public java.util.List<com.google.rpc.ErrorInfo.MetadataEntry> getMetadataList() {
-      if (metadataBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(metadata_);
-      } else {
-        return metadataBuilder_.getMessageList();
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
       }
+      return metadata_;
     }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableMetadata() {
+      if (metadata_ == null) {
+        metadata_ = com.google.protobuf.MapField.newMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      if (!metadata_.isMutable()) {
+        metadata_ = metadata_.copy();
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return metadata_;
+    }
     public int getMetadataCount() {
-      if (metadataBuilder_ == null) {
-        return metadata_.size();
-      } else {
-        return metadataBuilder_.getCount();
-      }
+      return internalGetMetadata().getMap().size();
     }
     /**
      * <pre>
@@ -1643,14 +984,21 @@ private static final long serialVersionUID = 0L;
      * instances that can be created in a single (batch) request.
      * </pre>
      *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+     * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-    public com.google.rpc.ErrorInfo.MetadataEntry getMetadata(int index) {
-      if (metadataBuilder_ == null) {
-        return metadata_.get(index);
-      } else {
-        return metadataBuilder_.getMessage(index);
-      }
+    @java.lang.Override
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
     }
     /**
      * <pre>
@@ -1664,21 +1012,11 @@ private static final long serialVersionUID = 0L;
      * instances that can be created in a single (batch) request.
      * </pre>
      *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+     * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-    public Builder setMetadata(
-        int index, com.google.rpc.ErrorInfo.MetadataEntry value) {
-      if (metadataBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureMetadataIsMutable();
-        metadata_.set(index, value);
-        onChanged();
-      } else {
-        metadataBuilder_.setMessage(index, value);
-      }
-      return this;
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
     }
     /**
      * <pre>
@@ -1692,18 +1030,18 @@ private static final long serialVersionUID = 0L;
      * instances that can be created in a single (batch) request.
      * </pre>
      *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+     * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-    public Builder setMetadata(
-        int index, com.google.rpc.ErrorInfo.MetadataEntry.Builder builderForValue) {
-      if (metadataBuilder_ == null) {
-        ensureMetadataIsMutable();
-        metadata_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        metadataBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
      * <pre>
@@ -1717,147 +1055,23 @@ private static final long serialVersionUID = 0L;
      * instances that can be created in a single (batch) request.
      * </pre>
      *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+     * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-    public Builder addMetadata(com.google.rpc.ErrorInfo.MetadataEntry value) {
-      if (metadataBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureMetadataIsMutable();
-        metadata_.add(value);
-        onChanged();
-      } else {
-        metadataBuilder_.addMessage(value);
+    @java.lang.Override
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
       }
-      return this;
+      return map.get(key);
     }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public Builder addMetadata(
-        int index, com.google.rpc.ErrorInfo.MetadataEntry value) {
-      if (metadataBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureMetadataIsMutable();
-        metadata_.add(index, value);
-        onChanged();
-      } else {
-        metadataBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public Builder addMetadata(
-        com.google.rpc.ErrorInfo.MetadataEntry.Builder builderForValue) {
-      if (metadataBuilder_ == null) {
-        ensureMetadataIsMutable();
-        metadata_.add(builderForValue.build());
-        onChanged();
-      } else {
-        metadataBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public Builder addMetadata(
-        int index, com.google.rpc.ErrorInfo.MetadataEntry.Builder builderForValue) {
-      if (metadataBuilder_ == null) {
-        ensureMetadataIsMutable();
-        metadata_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        metadataBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public Builder addAllMetadata(
-        java.lang.Iterable<? extends com.google.rpc.ErrorInfo.MetadataEntry> values) {
-      if (metadataBuilder_ == null) {
-        ensureMetadataIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, metadata_);
-        onChanged();
-      } else {
-        metadataBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
     public Builder clearMetadata() {
-      if (metadataBuilder_ == null) {
-        metadata_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-      } else {
-        metadataBuilder_.clear();
-      }
+      bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableMetadata().getMutableMap()
+          .clear();
       return this;
     }
     /**
@@ -1872,16 +1086,46 @@ private static final long serialVersionUID = 0L;
      * instances that can be created in a single (batch) request.
      * </pre>
      *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+     * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-    public Builder removeMetadata(int index) {
-      if (metadataBuilder_ == null) {
-        ensureMetadataIsMutable();
-        metadata_.remove(index);
-        onChanged();
-      } else {
-        metadataBuilder_.remove(index);
-      }
+    public Builder removeMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableMetadata().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+        getMutableMetadata() {
+      bitField0_ |= 0x00000004;
+      return internalGetMutableMetadata().getMutableMap();
+    }
+    /**
+     * <pre>
+     * Additional structured details about this error.
+     *
+     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
+     * length. When identifying the current value of an exceeded limit, the units
+     * should be contained in the key, not the value.  For example, rather than
+     * {"instanceLimit": "100/request"}, should be returned as,
+     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
+     * instances that can be created in a single (batch) request.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 3;</code>
+     */
+    public Builder putMetadata(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutableMetadata().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00000004;
       return this;
     }
     /**
@@ -1896,123 +1140,14 @@ private static final long serialVersionUID = 0L;
      * instances that can be created in a single (batch) request.
      * </pre>
      *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
+     * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-    public com.google.rpc.ErrorInfo.MetadataEntry.Builder getMetadataBuilder(
-        int index) {
-      return getMetadataFieldBuilder().getBuilder(index);
-    }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public com.google.rpc.ErrorInfo.MetadataEntryOrBuilder getMetadataOrBuilder(
-        int index) {
-      if (metadataBuilder_ == null) {
-        return metadata_.get(index);  } else {
-        return metadataBuilder_.getMessageOrBuilder(index);
-      }
-    }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public java.util.List<? extends com.google.rpc.ErrorInfo.MetadataEntryOrBuilder> 
-         getMetadataOrBuilderList() {
-      if (metadataBuilder_ != null) {
-        return metadataBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(metadata_);
-      }
-    }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public com.google.rpc.ErrorInfo.MetadataEntry.Builder addMetadataBuilder() {
-      return getMetadataFieldBuilder().addBuilder(
-          com.google.rpc.ErrorInfo.MetadataEntry.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public com.google.rpc.ErrorInfo.MetadataEntry.Builder addMetadataBuilder(
-        int index) {
-      return getMetadataFieldBuilder().addBuilder(
-          index, com.google.rpc.ErrorInfo.MetadataEntry.getDefaultInstance());
-    }
-    /**
-     * <pre>
-     * Additional structured details about this error.
-     *
-     * Keys should match /[a-zA-Z0-9-_]/ and be limited to 64 characters in
-     * length. When identifying the current value of an exceeded limit, the units
-     * should be contained in the key, not the value.  For example, rather than
-     * {"instanceLimit": "100/request"}, should be returned as,
-     * {"instanceLimitPerRequest": "100"}, if the client exceeds the number of
-     * instances that can be created in a single (batch) request.
-     * </pre>
-     *
-     * <code>repeated .google.rpc.ErrorInfo.MetadataEntry metadata = 3;</code>
-     */
-    public java.util.List<com.google.rpc.ErrorInfo.MetadataEntry.Builder> 
-         getMetadataBuilderList() {
-      return getMetadataFieldBuilder().getBuilderList();
-    }
-    private com.google.protobuf.RepeatedFieldBuilder<
-        com.google.rpc.ErrorInfo.MetadataEntry, com.google.rpc.ErrorInfo.MetadataEntry.Builder, com.google.rpc.ErrorInfo.MetadataEntryOrBuilder> 
-        getMetadataFieldBuilder() {
-      if (metadataBuilder_ == null) {
-        metadataBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-            com.google.rpc.ErrorInfo.MetadataEntry, com.google.rpc.ErrorInfo.MetadataEntry.Builder, com.google.rpc.ErrorInfo.MetadataEntryOrBuilder>(
-                metadata_,
-                ((bitField0_ & 0x00000004) != 0),
-                getParentForChildren(),
-                isClean());
-        metadata_ = null;
-      }
-      return metadataBuilder_;
+    public Builder putAllMetadata(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMetadata().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00000004;
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:google.rpc.ErrorInfo)

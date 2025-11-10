@@ -17,30 +17,7 @@ public interface PreviousValuesOrBuilder extends
    * in this map.
    * </pre>
    *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-   */
-  java.util.List<com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry> 
-      getValuesList();
-  /**
-   * <pre>
-   * A map where the key is the field name of the changed attribute (for
-   * example, "display_name") and the value is the field's value before the
-   * update was applied. Only fields that were actually changed will be present
-   * in this map.
-   * </pre>
-   *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
-   */
-  com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntry getValues(int index);
-  /**
-   * <pre>
-   * A map where the key is the field name of the changed attribute (for
-   * example, "display_name") and the value is the field's value before the
-   * update was applied. Only fields that were actually changed will be present
-   * in this map.
-   * </pre>
-   *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
    */
   int getValuesCount();
   /**
@@ -51,10 +28,16 @@ public interface PreviousValuesOrBuilder extends
    * in this map.
    * </pre>
    *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
    */
-  java.util.List<? extends com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder> 
-      getValuesOrBuilderList();
+  boolean containsValues(
+      java.lang.String key);
+  /**
+   * Use {@link #getValuesMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, com.google.protobuf.Value>
+  getValues();
   /**
    * <pre>
    * A map where the key is the field name of the changed attribute (for
@@ -63,8 +46,35 @@ public interface PreviousValuesOrBuilder extends
    * in this map.
    * </pre>
    *
-   * <code>repeated .salto.nebula.event.v1.PreviousValues.ValuesEntry values = 1;</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
    */
-  com.saltoapis.nebula.event.v1.PreviousValues.ValuesEntryOrBuilder getValuesOrBuilder(
-      int index);
+  java.util.Map<java.lang.String, com.google.protobuf.Value>
+  getValuesMap();
+  /**
+   * <pre>
+   * A map where the key is the field name of the changed attribute (for
+   * example, "display_name") and the value is the field's value before the
+   * update was applied. Only fields that were actually changed will be present
+   * in this map.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
+   */
+  /* nullable */
+com.google.protobuf.Value getValuesOrDefault(
+      java.lang.String key,
+      /* nullable */
+com.google.protobuf.Value defaultValue);
+  /**
+   * <pre>
+   * A map where the key is the field name of the changed attribute (for
+   * example, "display_name") and the value is the field's value before the
+   * update was applied. Only fields that were actually changed will be present
+   * in this map.
+   * </pre>
+   *
+   * <code>map&lt;string, .google.protobuf.Value&gt; values = 1;</code>
+   */
+  com.google.protobuf.Value getValuesOrThrow(
+      java.lang.String key);
 }
