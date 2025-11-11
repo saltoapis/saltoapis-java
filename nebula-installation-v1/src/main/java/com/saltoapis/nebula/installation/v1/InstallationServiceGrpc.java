@@ -702,6 +702,37 @@ public final class InstallationServiceGrpc {
     return getUnapplyCouponMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest,
+      com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse> getGenerateAuthorizationTokenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateAuthorizationToken",
+      requestType = com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest.class,
+      responseType = com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest,
+      com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse> getGenerateAuthorizationTokenMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest, com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse> getGenerateAuthorizationTokenMethod;
+    if ((getGenerateAuthorizationTokenMethod = InstallationServiceGrpc.getGenerateAuthorizationTokenMethod) == null) {
+      synchronized (InstallationServiceGrpc.class) {
+        if ((getGenerateAuthorizationTokenMethod = InstallationServiceGrpc.getGenerateAuthorizationTokenMethod) == null) {
+          InstallationServiceGrpc.getGenerateAuthorizationTokenMethod = getGenerateAuthorizationTokenMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest, com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GenerateAuthorizationToken"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new InstallationServiceMethodDescriptorSupplier("GenerateAuthorizationToken"))
+              .build();
+        }
+      }
+    }
+    return getGenerateAuthorizationTokenMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -1009,6 +1040,25 @@ public final class InstallationServiceGrpc {
     default void unapplyCoupon(com.saltoapis.nebula.installation.v1.UnapplyCouponRequest request,
         io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.UnapplyCouponResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUnapplyCouponMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Generate authorization token for uninitialized devices
+     * Generates an authorization token for a client application to use when
+     * connecting to an uninitialized Salto device. The token contains the
+     * necessary security material for the client to validate the device's
+     * identity. This prevents man-in-the-middle (MITM) attacks and ensures the
+     * client is connecting to a genuine Salto device during its initial
+     * initialization.
+     * This token is distinct from other `GenerateAuthorizationToken` methods, it
+     * is used only for the client to validate the device and does not contain a
+     * client certificate for authenticating the client itself.
+     * </pre>
+     */
+    default void generateAuthorizationToken(com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGenerateAuthorizationTokenMethod(), responseObserver);
     }
   }
 
@@ -1326,6 +1376,26 @@ public final class InstallationServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUnapplyCouponMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Generate authorization token for uninitialized devices
+     * Generates an authorization token for a client application to use when
+     * connecting to an uninitialized Salto device. The token contains the
+     * necessary security material for the client to validate the device's
+     * identity. This prevents man-in-the-middle (MITM) attacks and ensures the
+     * client is connecting to a genuine Salto device during its initial
+     * initialization.
+     * This token is distinct from other `GenerateAuthorizationToken` methods, it
+     * is used only for the client to validate the device and does not contain a
+     * client certificate for authenticating the client itself.
+     * </pre>
+     */
+    public void generateAuthorizationToken(com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateAuthorizationTokenMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -1603,6 +1673,25 @@ public final class InstallationServiceGrpc {
     public com.saltoapis.nebula.installation.v1.UnapplyCouponResponse unapplyCoupon(com.saltoapis.nebula.installation.v1.UnapplyCouponRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUnapplyCouponMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Generate authorization token for uninitialized devices
+     * Generates an authorization token for a client application to use when
+     * connecting to an uninitialized Salto device. The token contains the
+     * necessary security material for the client to validate the device's
+     * identity. This prevents man-in-the-middle (MITM) attacks and ensures the
+     * client is connecting to a genuine Salto device during its initial
+     * initialization.
+     * This token is distinct from other `GenerateAuthorizationToken` methods, it
+     * is used only for the client to validate the device and does not contain a
+     * client certificate for authenticating the client itself.
+     * </pre>
+     */
+    public com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse generateAuthorizationToken(com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateAuthorizationTokenMethod(), getCallOptions(), request);
     }
   }
 
@@ -1904,6 +1993,26 @@ public final class InstallationServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUnapplyCouponMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Generate authorization token for uninitialized devices
+     * Generates an authorization token for a client application to use when
+     * connecting to an uninitialized Salto device. The token contains the
+     * necessary security material for the client to validate the device's
+     * identity. This prevents man-in-the-middle (MITM) attacks and ensures the
+     * client is connecting to a genuine Salto device during its initial
+     * initialization.
+     * This token is distinct from other `GenerateAuthorizationToken` methods, it
+     * is used only for the client to validate the device and does not contain a
+     * client certificate for authenticating the client itself.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse> generateAuthorizationToken(
+        com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateAuthorizationTokenMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INSTALLATION = 0;
@@ -1928,6 +2037,7 @@ public final class InstallationServiceGrpc {
   private static final int METHODID_LIST_INVOICES = 19;
   private static final int METHODID_APPLY_COUPON = 20;
   private static final int METHODID_UNAPPLY_COUPON = 21;
+  private static final int METHODID_GENERATE_AUTHORIZATION_TOKEN = 22;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2033,6 +2143,10 @@ public final class InstallationServiceGrpc {
         case METHODID_UNAPPLY_COUPON:
           serviceImpl.unapplyCoupon((com.saltoapis.nebula.installation.v1.UnapplyCouponRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.UnapplyCouponResponse>) responseObserver);
+          break;
+        case METHODID_GENERATE_AUTHORIZATION_TOKEN:
+          serviceImpl.generateAuthorizationToken((com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2206,6 +2320,13 @@ public final class InstallationServiceGrpc {
               com.saltoapis.nebula.installation.v1.UnapplyCouponRequest,
               com.saltoapis.nebula.installation.v1.UnapplyCouponResponse>(
                 service, METHODID_UNAPPLY_COUPON)))
+        .addMethod(
+          getGenerateAuthorizationTokenMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenRequest,
+              com.saltoapis.nebula.installation.v1.GenerateAuthorizationTokenResponse>(
+                service, METHODID_GENERATE_AUTHORIZATION_TOKEN)))
         .build();
   }
 
@@ -2276,6 +2397,7 @@ public final class InstallationServiceGrpc {
               .addMethod(getListInvoicesMethod())
               .addMethod(getApplyCouponMethod())
               .addMethod(getUnapplyCouponMethod())
+              .addMethod(getGenerateAuthorizationTokenMethod())
               .build();
         }
       }
