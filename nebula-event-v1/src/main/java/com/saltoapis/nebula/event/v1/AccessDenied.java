@@ -89,6 +89,24 @@ private static final long serialVersionUID = 0L;
      * <code>CREDENTIAL_LACKS_ACCESS_RIGHTS = 3;</code>
      */
     CREDENTIAL_LACKS_ACCESS_RIGHTS(3),
+    /**
+     * <pre>
+     * The provided credential is not permitted on this calendar day.
+     * Example: access attempted on a weekend for a weekday-only schedule
+     * </pre>
+     *
+     * <code>CREDENTIAL_OUTSIDE_CALENDAR_DAY = 4;</code>
+     */
+    CREDENTIAL_OUTSIDE_CALENDAR_DAY(4),
+    /**
+     * <pre>
+     * The provided credential is not permitted within the allowed time window.
+     * Example: access attempted at 8 PM for a 9 AM-5 PM schedule).
+     * </pre>
+     *
+     * <code>CREDENTIAL_OUTSIDE_TIME_WINDOW = 5;</code>
+     */
+    CREDENTIAL_OUTSIDE_TIME_WINDOW(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -134,6 +152,24 @@ private static final long serialVersionUID = 0L;
      * <code>CREDENTIAL_LACKS_ACCESS_RIGHTS = 3;</code>
      */
     public static final int CREDENTIAL_LACKS_ACCESS_RIGHTS_VALUE = 3;
+    /**
+     * <pre>
+     * The provided credential is not permitted on this calendar day.
+     * Example: access attempted on a weekend for a weekday-only schedule
+     * </pre>
+     *
+     * <code>CREDENTIAL_OUTSIDE_CALENDAR_DAY = 4;</code>
+     */
+    public static final int CREDENTIAL_OUTSIDE_CALENDAR_DAY_VALUE = 4;
+    /**
+     * <pre>
+     * The provided credential is not permitted within the allowed time window.
+     * Example: access attempted at 8 PM for a 9 AM-5 PM schedule).
+     * </pre>
+     *
+     * <code>CREDENTIAL_OUTSIDE_TIME_WINDOW = 5;</code>
+     */
+    public static final int CREDENTIAL_OUTSIDE_TIME_WINDOW_VALUE = 5;
 
 
     public final int getNumber() {
@@ -164,6 +200,8 @@ private static final long serialVersionUID = 0L;
         case 1: return CREDENTIAL_EXPIRED;
         case 2: return CREDENTIAL_UNACTIVATED;
         case 3: return CREDENTIAL_LACKS_ACCESS_RIGHTS;
+        case 4: return CREDENTIAL_OUTSIDE_CALENDAR_DAY;
+        case 5: return CREDENTIAL_OUTSIDE_TIME_WINDOW;
         default: return null;
       }
     }
