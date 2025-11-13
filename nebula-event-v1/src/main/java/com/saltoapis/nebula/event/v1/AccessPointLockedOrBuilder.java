@@ -198,5 +198,32 @@ public interface AccessPointLockedOrBuilder extends
    */
   com.saltoapis.nebula.user.v1.PasscodeOrBuilder getPasscodeOrBuilder();
 
+  /**
+   * <pre>
+   * The electronic key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 8;</code>
+   * @return Whether the electronicKey field is set.
+   */
+  boolean hasElectronicKey();
+  /**
+   * <pre>
+   * The electronic key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 8;</code>
+   * @return The electronicKey.
+   */
+  com.saltoapis.nebula.user.v1.ElectronicKey getElectronicKey();
+  /**
+   * <pre>
+   * The electronic key used to lock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 8;</code>
+   */
+  com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder getElectronicKeyOrBuilder();
+
   com.saltoapis.nebula.event.v1.AccessPointLocked.CredentialCase getCredentialCase();
 }
