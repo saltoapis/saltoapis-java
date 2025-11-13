@@ -200,6 +200,33 @@ public interface AccessPointUnlockedOrBuilder extends
 
   /**
    * <pre>
+   * The electronic key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+   * @return Whether the electronicKey field is set.
+   */
+  boolean hasElectronicKey();
+  /**
+   * <pre>
+   * The electronic key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+   * @return The electronicKey.
+   */
+  com.saltoapis.nebula.user.v1.ElectronicKey getElectronicKey();
+  /**
+   * <pre>
+   * The electronic key used to unlock the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+   */
+  com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder getElectronicKeyOrBuilder();
+
+  /**
+   * <pre>
    * Indicates the direction of passage for this unlock event.
    * </pre>
    *

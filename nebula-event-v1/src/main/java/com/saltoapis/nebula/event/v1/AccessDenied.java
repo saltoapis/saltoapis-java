@@ -270,6 +270,7 @@ private static final long serialVersionUID = 0L;
     APP_KEY(6),
     WALLET_KEY(7),
     PASSCODE(8),
+    ELECTRONIC_KEY(9),
     CREDENTIAL_NOT_SET(0);
     private final int value;
     private CredentialCase(int value) {
@@ -292,6 +293,7 @@ private static final long serialVersionUID = 0L;
         case 6: return APP_KEY;
         case 7: return WALLET_KEY;
         case 8: return PASSCODE;
+        case 9: return ELECTRONIC_KEY;
         case 0: return CREDENTIAL_NOT_SET;
         default: return null;
       }
@@ -624,6 +626,49 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.user.v1.Passcode.getDefaultInstance();
   }
 
+  public static final int ELECTRONIC_KEY_FIELD_NUMBER = 9;
+  /**
+   * <pre>
+   * The electronic key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+   * @return Whether the electronicKey field is set.
+   */
+  @java.lang.Override
+  public boolean hasElectronicKey() {
+    return credentialCase_ == 9;
+  }
+  /**
+   * <pre>
+   * The electronic key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+   * @return The electronicKey.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.ElectronicKey getElectronicKey() {
+    if (credentialCase_ == 9) {
+       return (com.saltoapis.nebula.user.v1.ElectronicKey) credential_;
+    }
+    return com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * The electronic key used to attempt access to the access point.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder getElectronicKeyOrBuilder() {
+    if (credentialCase_ == 9) {
+       return (com.saltoapis.nebula.user.v1.ElectronicKey) credential_;
+    }
+    return com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -661,6 +706,9 @@ private static final long serialVersionUID = 0L;
     }
     if (credentialCase_ == 8) {
       output.writeMessage(8, (com.saltoapis.nebula.user.v1.Passcode) credential_);
+    }
+    if (credentialCase_ == 9) {
+      output.writeMessage(9, (com.saltoapis.nebula.user.v1.ElectronicKey) credential_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -702,6 +750,10 @@ private static final long serialVersionUID = 0L;
     if (credentialCase_ == 8) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, (com.saltoapis.nebula.user.v1.Passcode) credential_);
+    }
+    if (credentialCase_ == 9) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(9, (com.saltoapis.nebula.user.v1.ElectronicKey) credential_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -751,6 +803,10 @@ private static final long serialVersionUID = 0L;
         if (!getPasscode()
             .equals(other.getPasscode())) return false;
         break;
+      case 9:
+        if (!getElectronicKey()
+            .equals(other.getElectronicKey())) return false;
+        break;
       case 0:
       default:
     }
@@ -795,6 +851,10 @@ private static final long serialVersionUID = 0L;
       case 8:
         hash = (37 * hash) + PASSCODE_FIELD_NUMBER;
         hash = (53 * hash) + getPasscode().hashCode();
+        break;
+      case 9:
+        hash = (37 * hash) + ELECTRONIC_KEY_FIELD_NUMBER;
+        hash = (53 * hash) + getElectronicKey().hashCode();
         break;
       case 0:
       default:
@@ -967,6 +1027,9 @@ private static final long serialVersionUID = 0L;
       if (passcodeBuilder_ != null) {
         passcodeBuilder_.clear();
       }
+      if (electronicKeyBuilder_ != null) {
+        electronicKeyBuilder_.clear();
+      }
       credentialCase_ = 0;
       credential_ = null;
       return this;
@@ -1045,6 +1108,10 @@ private static final long serialVersionUID = 0L;
           passcodeBuilder_ != null) {
         result.credential_ = passcodeBuilder_.build();
       }
+      if (credentialCase_ == 9 &&
+          electronicKeyBuilder_ != null) {
+        result.credential_ = electronicKeyBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1087,6 +1154,10 @@ private static final long serialVersionUID = 0L;
         }
         case PASSCODE: {
           mergePasscode(other.getPasscode());
+          break;
+        }
+        case ELECTRONIC_KEY: {
+          mergeElectronicKey(other.getElectronicKey());
           break;
         }
         case CREDENTIAL_NOT_SET: {
@@ -1173,6 +1244,13 @@ private static final long serialVersionUID = 0L;
               credentialCase_ = 8;
               break;
             } // case 66
+            case 74: {
+              input.readMessage(
+                  getElectronicKeyFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              credentialCase_ = 9;
+              break;
+            } // case 74
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2480,6 +2558,184 @@ private static final long serialVersionUID = 0L;
       credentialCase_ = 8;
       onChanged();
       return passcodeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.ElectronicKey, com.saltoapis.nebula.user.v1.ElectronicKey.Builder, com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder> electronicKeyBuilder_;
+    /**
+     * <pre>
+     * The electronic key used to attempt access to the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+     * @return Whether the electronicKey field is set.
+     */
+    @java.lang.Override
+    public boolean hasElectronicKey() {
+      return credentialCase_ == 9;
+    }
+    /**
+     * <pre>
+     * The electronic key used to attempt access to the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+     * @return The electronicKey.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.ElectronicKey getElectronicKey() {
+      if (electronicKeyBuilder_ == null) {
+        if (credentialCase_ == 9) {
+          return (com.saltoapis.nebula.user.v1.ElectronicKey) credential_;
+        }
+        return com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance();
+      } else {
+        if (credentialCase_ == 9) {
+          return electronicKeyBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The electronic key used to attempt access to the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+     */
+    public Builder setElectronicKey(com.saltoapis.nebula.user.v1.ElectronicKey value) {
+      if (electronicKeyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        credential_ = value;
+        onChanged();
+      } else {
+        electronicKeyBuilder_.setMessage(value);
+      }
+      credentialCase_ = 9;
+      return this;
+    }
+    /**
+     * <pre>
+     * The electronic key used to attempt access to the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+     */
+    public Builder setElectronicKey(
+        com.saltoapis.nebula.user.v1.ElectronicKey.Builder builderForValue) {
+      if (electronicKeyBuilder_ == null) {
+        credential_ = builderForValue.build();
+        onChanged();
+      } else {
+        electronicKeyBuilder_.setMessage(builderForValue.build());
+      }
+      credentialCase_ = 9;
+      return this;
+    }
+    /**
+     * <pre>
+     * The electronic key used to attempt access to the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+     */
+    public Builder mergeElectronicKey(com.saltoapis.nebula.user.v1.ElectronicKey value) {
+      if (electronicKeyBuilder_ == null) {
+        if (credentialCase_ == 9 &&
+            credential_ != com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance()) {
+          credential_ = com.saltoapis.nebula.user.v1.ElectronicKey.newBuilder((com.saltoapis.nebula.user.v1.ElectronicKey) credential_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          credential_ = value;
+        }
+        onChanged();
+      } else {
+        if (credentialCase_ == 9) {
+          electronicKeyBuilder_.mergeFrom(value);
+        } else {
+          electronicKeyBuilder_.setMessage(value);
+        }
+      }
+      credentialCase_ = 9;
+      return this;
+    }
+    /**
+     * <pre>
+     * The electronic key used to attempt access to the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+     */
+    public Builder clearElectronicKey() {
+      if (electronicKeyBuilder_ == null) {
+        if (credentialCase_ == 9) {
+          credentialCase_ = 0;
+          credential_ = null;
+          onChanged();
+        }
+      } else {
+        if (credentialCase_ == 9) {
+          credentialCase_ = 0;
+          credential_ = null;
+        }
+        electronicKeyBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The electronic key used to attempt access to the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+     */
+    public com.saltoapis.nebula.user.v1.ElectronicKey.Builder getElectronicKeyBuilder() {
+      return getElectronicKeyFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The electronic key used to attempt access to the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder getElectronicKeyOrBuilder() {
+      if ((credentialCase_ == 9) && (electronicKeyBuilder_ != null)) {
+        return electronicKeyBuilder_.getMessageOrBuilder();
+      } else {
+        if (credentialCase_ == 9) {
+          return (com.saltoapis.nebula.user.v1.ElectronicKey) credential_;
+        }
+        return com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The electronic key used to attempt access to the access point.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.ElectronicKey, com.saltoapis.nebula.user.v1.ElectronicKey.Builder, com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder> 
+        getElectronicKeyFieldBuilder() {
+      if (electronicKeyBuilder_ == null) {
+        if (!(credentialCase_ == 9)) {
+          credential_ = com.saltoapis.nebula.user.v1.ElectronicKey.getDefaultInstance();
+        }
+        electronicKeyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.user.v1.ElectronicKey, com.saltoapis.nebula.user.v1.ElectronicKey.Builder, com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder>(
+                (com.saltoapis.nebula.user.v1.ElectronicKey) credential_,
+                getParentForChildren(),
+                isClean());
+        credential_ = null;
+      }
+      credentialCase_ = 9;
+      onChanged();
+      return electronicKeyBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.AccessDenied)
