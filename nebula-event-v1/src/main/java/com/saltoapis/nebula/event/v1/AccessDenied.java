@@ -107,6 +107,17 @@ private static final long serialVersionUID = 0L;
      * <code>CREDENTIAL_OUTSIDE_TIME_WINDOW = 5;</code>
      */
     CREDENTIAL_OUTSIDE_TIME_WINDOW(5),
+    /**
+     * <pre>
+     * The provided access code is invalid. Access codes are numeric passcodes
+     * entered by users on a device keypad to gain access.
+     * An access code may be considered invalid either if the entered digits
+     * are incorrect or if the code does not meet required formatting rules.
+     * </pre>
+     *
+     * <code>INVALID_ACCESS_CODE = 6;</code>
+     */
+    INVALID_ACCESS_CODE(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -170,6 +181,17 @@ private static final long serialVersionUID = 0L;
      * <code>CREDENTIAL_OUTSIDE_TIME_WINDOW = 5;</code>
      */
     public static final int CREDENTIAL_OUTSIDE_TIME_WINDOW_VALUE = 5;
+    /**
+     * <pre>
+     * The provided access code is invalid. Access codes are numeric passcodes
+     * entered by users on a device keypad to gain access.
+     * An access code may be considered invalid either if the entered digits
+     * are incorrect or if the code does not meet required formatting rules.
+     * </pre>
+     *
+     * <code>INVALID_ACCESS_CODE = 6;</code>
+     */
+    public static final int INVALID_ACCESS_CODE_VALUE = 6;
 
 
     public final int getNumber() {
@@ -202,6 +224,7 @@ private static final long serialVersionUID = 0L;
         case 3: return CREDENTIAL_LACKS_ACCESS_RIGHTS;
         case 4: return CREDENTIAL_OUTSIDE_CALENDAR_DAY;
         case 5: return CREDENTIAL_OUTSIDE_TIME_WINDOW;
+        case 6: return INVALID_ACCESS_CODE;
         default: return null;
       }
     }
