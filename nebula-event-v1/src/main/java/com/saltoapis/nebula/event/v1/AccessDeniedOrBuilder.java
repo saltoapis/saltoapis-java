@@ -38,6 +38,33 @@ public interface AccessDeniedOrBuilder extends
 
   /**
    * <pre>
+   * Access denied by the controller.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+   * @return Whether the controller field is set.
+   */
+  boolean hasController();
+  /**
+   * <pre>
+   * Access denied by the controller.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+   * @return The controller.
+   */
+  com.saltoapis.nebula.controller.v1.Controller getController();
+  /**
+   * <pre>
+   * Access denied by the controller.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+   */
+  com.saltoapis.nebula.controller.v1.ControllerOrBuilder getControllerOrBuilder();
+
+  /**
+   * <pre>
    * The user whose access was rejected.
    * </pre>
    *
@@ -243,6 +270,8 @@ public interface AccessDeniedOrBuilder extends
    * <code>.salto.nebula.user.v1.ElectronicKey electronic_key = 9;</code>
    */
   com.saltoapis.nebula.user.v1.ElectronicKeyOrBuilder getElectronicKeyOrBuilder();
+
+  com.saltoapis.nebula.event.v1.AccessDenied.SourceCase getSourceCase();
 
   com.saltoapis.nebula.event.v1.AccessDenied.CredentialCase getCredentialCase();
 }
