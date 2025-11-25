@@ -282,6 +282,48 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
+  private int sourceCase_ = 0;
+  @SuppressWarnings("serial")
+  private java.lang.Object source_;
+  public enum SourceCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    ACCESS_POINT(1),
+    CONTROLLER(10),
+    SOURCE_NOT_SET(0);
+    private final int value;
+    private SourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceCase forNumber(int value) {
+      switch (value) {
+        case 1: return ACCESS_POINT;
+        case 10: return CONTROLLER;
+        case 0: return SOURCE_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceCase
+  getSourceCase() {
+    return SourceCase.forNumber(
+        sourceCase_);
+  }
+
   private int credentialCase_ = 0;
   @SuppressWarnings("serial")
   private java.lang.Object credential_;
@@ -333,7 +375,6 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ACCESS_POINT_FIELD_NUMBER = 1;
-  private com.saltoapis.nebula.accesspoint.v1.AccessPoint accessPoint_;
   /**
    * <pre>
    * Access denied by the access point.
@@ -344,7 +385,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasAccessPoint() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return sourceCase_ == 1;
   }
   /**
    * <pre>
@@ -356,7 +397,10 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.saltoapis.nebula.accesspoint.v1.AccessPoint getAccessPoint() {
-    return accessPoint_ == null ? com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance() : accessPoint_;
+    if (sourceCase_ == 1) {
+       return (com.saltoapis.nebula.accesspoint.v1.AccessPoint) source_;
+    }
+    return com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance();
   }
   /**
    * <pre>
@@ -367,7 +411,53 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.saltoapis.nebula.accesspoint.v1.AccessPointOrBuilder getAccessPointOrBuilder() {
-    return accessPoint_ == null ? com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance() : accessPoint_;
+    if (sourceCase_ == 1) {
+       return (com.saltoapis.nebula.accesspoint.v1.AccessPoint) source_;
+    }
+    return com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance();
+  }
+
+  public static final int CONTROLLER_FIELD_NUMBER = 10;
+  /**
+   * <pre>
+   * Access denied by the controller.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+   * @return Whether the controller field is set.
+   */
+  @java.lang.Override
+  public boolean hasController() {
+    return sourceCase_ == 10;
+  }
+  /**
+   * <pre>
+   * Access denied by the controller.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+   * @return The controller.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.controller.v1.Controller getController() {
+    if (sourceCase_ == 10) {
+       return (com.saltoapis.nebula.controller.v1.Controller) source_;
+    }
+    return com.saltoapis.nebula.controller.v1.Controller.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Access denied by the controller.
+   * </pre>
+   *
+   * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.controller.v1.ControllerOrBuilder getControllerOrBuilder() {
+    if (sourceCase_ == 10) {
+       return (com.saltoapis.nebula.controller.v1.Controller) source_;
+    }
+    return com.saltoapis.nebula.controller.v1.Controller.getDefaultInstance();
   }
 
   public static final int USER_FIELD_NUMBER = 2;
@@ -382,7 +472,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasUser() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -706,10 +796,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getAccessPoint());
+    if (sourceCase_ == 1) {
+      output.writeMessage(1, (com.saltoapis.nebula.accesspoint.v1.AccessPoint) source_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getUser());
     }
     if (reason_ != com.saltoapis.nebula.event.v1.AccessDenied.Reason.REASON_UNSPECIFIED.getNumber()) {
@@ -733,6 +823,9 @@ private static final long serialVersionUID = 0L;
     if (credentialCase_ == 9) {
       output.writeMessage(9, (com.saltoapis.nebula.user.v1.ElectronicKey) credential_);
     }
+    if (sourceCase_ == 10) {
+      output.writeMessage(10, (com.saltoapis.nebula.controller.v1.Controller) source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -742,11 +835,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (sourceCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getAccessPoint());
+        .computeMessageSize(1, (com.saltoapis.nebula.accesspoint.v1.AccessPoint) source_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getUser());
     }
@@ -778,6 +871,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, (com.saltoapis.nebula.user.v1.ElectronicKey) credential_);
     }
+    if (sourceCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, (com.saltoapis.nebula.controller.v1.Controller) source_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -793,17 +890,25 @@ private static final long serialVersionUID = 0L;
     }
     com.saltoapis.nebula.event.v1.AccessDenied other = (com.saltoapis.nebula.event.v1.AccessDenied) obj;
 
-    if (hasAccessPoint() != other.hasAccessPoint()) return false;
-    if (hasAccessPoint()) {
-      if (!getAccessPoint()
-          .equals(other.getAccessPoint())) return false;
-    }
     if (hasUser() != other.hasUser()) return false;
     if (hasUser()) {
       if (!getUser()
           .equals(other.getUser())) return false;
     }
     if (reason_ != other.reason_) return false;
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
+    switch (sourceCase_) {
+      case 1:
+        if (!getAccessPoint()
+            .equals(other.getAccessPoint())) return false;
+        break;
+      case 10:
+        if (!getController()
+            .equals(other.getController())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getCredentialCase().equals(other.getCredentialCase())) return false;
     switch (credentialCase_) {
       case 4:
@@ -844,16 +949,24 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasAccessPoint()) {
-      hash = (37 * hash) + ACCESS_POINT_FIELD_NUMBER;
-      hash = (53 * hash) + getAccessPoint().hashCode();
-    }
     if (hasUser()) {
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
     }
     hash = (37 * hash) + REASON_FIELD_NUMBER;
     hash = (53 * hash) + reason_;
+    switch (sourceCase_) {
+      case 1:
+        hash = (37 * hash) + ACCESS_POINT_FIELD_NUMBER;
+        hash = (53 * hash) + getAccessPoint().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + CONTROLLER_FIELD_NUMBER;
+        hash = (53 * hash) + getController().hashCode();
+        break;
+      case 0:
+      default:
+    }
     switch (credentialCase_) {
       case 4:
         hash = (37 * hash) + EMERGENCY_KEY_FIELD_NUMBER;
@@ -1016,7 +1129,6 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessage
               .alwaysUseFieldBuilders) {
-        getAccessPointFieldBuilder();
         getUserFieldBuilder();
       }
     }
@@ -1024,10 +1136,11 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      accessPoint_ = null;
       if (accessPointBuilder_ != null) {
-        accessPointBuilder_.dispose();
-        accessPointBuilder_ = null;
+        accessPointBuilder_.clear();
+      }
+      if (controllerBuilder_ != null) {
+        controllerBuilder_.clear();
       }
       user_ = null;
       if (userBuilder_ != null) {
@@ -1053,6 +1166,8 @@ private static final long serialVersionUID = 0L;
       if (electronicKeyBuilder_ != null) {
         electronicKeyBuilder_.clear();
       }
+      sourceCase_ = 0;
+      source_ = null;
       credentialCase_ = 0;
       credential_ = null;
       return this;
@@ -1090,25 +1205,29 @@ private static final long serialVersionUID = 0L;
     private void buildPartial0(com.saltoapis.nebula.event.v1.AccessDenied result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.accessPoint_ = accessPointBuilder_ == null
-            ? accessPoint_
-            : accessPointBuilder_.build();
-        to_bitField0_ |= 0x00000001;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.user_ = userBuilder_ == null
             ? user_
             : userBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.reason_ = reason_;
       }
       result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(com.saltoapis.nebula.event.v1.AccessDenied result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
+      if (sourceCase_ == 1 &&
+          accessPointBuilder_ != null) {
+        result.source_ = accessPointBuilder_.build();
+      }
+      if (sourceCase_ == 10 &&
+          controllerBuilder_ != null) {
+        result.source_ = controllerBuilder_.build();
+      }
       result.credentialCase_ = credentialCase_;
       result.credential_ = this.credential_;
       if (credentialCase_ == 4 &&
@@ -1149,14 +1268,24 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.saltoapis.nebula.event.v1.AccessDenied other) {
       if (other == com.saltoapis.nebula.event.v1.AccessDenied.getDefaultInstance()) return this;
-      if (other.hasAccessPoint()) {
-        mergeAccessPoint(other.getAccessPoint());
-      }
       if (other.hasUser()) {
         mergeUser(other.getUser());
       }
       if (other.reason_ != 0) {
         setReasonValue(other.getReasonValue());
+      }
+      switch (other.getSourceCase()) {
+        case ACCESS_POINT: {
+          mergeAccessPoint(other.getAccessPoint());
+          break;
+        }
+        case CONTROLLER: {
+          mergeController(other.getController());
+          break;
+        }
+        case SOURCE_NOT_SET: {
+          break;
+        }
       }
       switch (other.getCredentialCase()) {
         case EMERGENCY_KEY: {
@@ -1217,19 +1346,19 @@ private static final long serialVersionUID = 0L;
               input.readMessage(
                   getAccessPointFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000001;
+              sourceCase_ = 1;
               break;
             } // case 10
             case 18: {
               input.readMessage(
                   getUserFieldBuilder().getBuilder(),
                   extensionRegistry);
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               break;
             } // case 18
             case 24: {
               reason_ = input.readEnum();
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               break;
             } // case 24
             case 34: {
@@ -1274,6 +1403,13 @@ private static final long serialVersionUID = 0L;
               credentialCase_ = 9;
               break;
             } // case 74
+            case 82: {
+              input.readMessage(
+                  getControllerFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              sourceCase_ = 10;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1289,6 +1425,21 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int sourceCase_ = 0;
+    private java.lang.Object source_;
+    public SourceCase
+        getSourceCase() {
+      return SourceCase.forNumber(
+          sourceCase_);
+    }
+
+    public Builder clearSource() {
+      sourceCase_ = 0;
+      source_ = null;
+      onChanged();
+      return this;
+    }
+
     private int credentialCase_ = 0;
     private java.lang.Object credential_;
     public CredentialCase
@@ -1306,7 +1457,6 @@ private static final long serialVersionUID = 0L;
 
     private int bitField0_;
 
-    private com.saltoapis.nebula.accesspoint.v1.AccessPoint accessPoint_;
     private com.google.protobuf.SingleFieldBuilder<
         com.saltoapis.nebula.accesspoint.v1.AccessPoint, com.saltoapis.nebula.accesspoint.v1.AccessPoint.Builder, com.saltoapis.nebula.accesspoint.v1.AccessPointOrBuilder> accessPointBuilder_;
     /**
@@ -1317,8 +1467,9 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.accesspoint.v1.AccessPoint access_point = 1;</code>
      * @return Whether the accessPoint field is set.
      */
+    @java.lang.Override
     public boolean hasAccessPoint() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return sourceCase_ == 1;
     }
     /**
      * <pre>
@@ -1328,11 +1479,18 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.accesspoint.v1.AccessPoint access_point = 1;</code>
      * @return The accessPoint.
      */
+    @java.lang.Override
     public com.saltoapis.nebula.accesspoint.v1.AccessPoint getAccessPoint() {
       if (accessPointBuilder_ == null) {
-        return accessPoint_ == null ? com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance() : accessPoint_;
+        if (sourceCase_ == 1) {
+          return (com.saltoapis.nebula.accesspoint.v1.AccessPoint) source_;
+        }
+        return com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance();
       } else {
-        return accessPointBuilder_.getMessage();
+        if (sourceCase_ == 1) {
+          return accessPointBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance();
       }
     }
     /**
@@ -1347,12 +1505,12 @@ private static final long serialVersionUID = 0L;
         if (value == null) {
           throw new NullPointerException();
         }
-        accessPoint_ = value;
+        source_ = value;
+        onChanged();
       } else {
         accessPointBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      sourceCase_ = 1;
       return this;
     }
     /**
@@ -1365,12 +1523,12 @@ private static final long serialVersionUID = 0L;
     public Builder setAccessPoint(
         com.saltoapis.nebula.accesspoint.v1.AccessPoint.Builder builderForValue) {
       if (accessPointBuilder_ == null) {
-        accessPoint_ = builderForValue.build();
+        source_ = builderForValue.build();
+        onChanged();
       } else {
         accessPointBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      sourceCase_ = 1;
       return this;
     }
     /**
@@ -1382,20 +1540,22 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAccessPoint(com.saltoapis.nebula.accesspoint.v1.AccessPoint value) {
       if (accessPointBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
-          accessPoint_ != null &&
-          accessPoint_ != com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance()) {
-          getAccessPointBuilder().mergeFrom(value);
+        if (sourceCase_ == 1 &&
+            source_ != com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance()) {
+          source_ = com.saltoapis.nebula.accesspoint.v1.AccessPoint.newBuilder((com.saltoapis.nebula.accesspoint.v1.AccessPoint) source_)
+              .mergeFrom(value).buildPartial();
         } else {
-          accessPoint_ = value;
+          source_ = value;
         }
-      } else {
-        accessPointBuilder_.mergeFrom(value);
-      }
-      if (accessPoint_ != null) {
-        bitField0_ |= 0x00000001;
         onChanged();
+      } else {
+        if (sourceCase_ == 1) {
+          accessPointBuilder_.mergeFrom(value);
+        } else {
+          accessPointBuilder_.setMessage(value);
+        }
       }
+      sourceCase_ = 1;
       return this;
     }
     /**
@@ -1406,13 +1566,19 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.accesspoint.v1.AccessPoint access_point = 1;</code>
      */
     public Builder clearAccessPoint() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      accessPoint_ = null;
-      if (accessPointBuilder_ != null) {
-        accessPointBuilder_.dispose();
-        accessPointBuilder_ = null;
+      if (accessPointBuilder_ == null) {
+        if (sourceCase_ == 1) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 1) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        accessPointBuilder_.clear();
       }
-      onChanged();
       return this;
     }
     /**
@@ -1423,8 +1589,6 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.accesspoint.v1.AccessPoint access_point = 1;</code>
      */
     public com.saltoapis.nebula.accesspoint.v1.AccessPoint.Builder getAccessPointBuilder() {
-      bitField0_ |= 0x00000001;
-      onChanged();
       return getAccessPointFieldBuilder().getBuilder();
     }
     /**
@@ -1434,12 +1598,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.salto.nebula.accesspoint.v1.AccessPoint access_point = 1;</code>
      */
+    @java.lang.Override
     public com.saltoapis.nebula.accesspoint.v1.AccessPointOrBuilder getAccessPointOrBuilder() {
-      if (accessPointBuilder_ != null) {
+      if ((sourceCase_ == 1) && (accessPointBuilder_ != null)) {
         return accessPointBuilder_.getMessageOrBuilder();
       } else {
-        return accessPoint_ == null ?
-            com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance() : accessPoint_;
+        if (sourceCase_ == 1) {
+          return (com.saltoapis.nebula.accesspoint.v1.AccessPoint) source_;
+        }
+        return com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance();
       }
     }
     /**
@@ -1453,14 +1620,197 @@ private static final long serialVersionUID = 0L;
         com.saltoapis.nebula.accesspoint.v1.AccessPoint, com.saltoapis.nebula.accesspoint.v1.AccessPoint.Builder, com.saltoapis.nebula.accesspoint.v1.AccessPointOrBuilder> 
         getAccessPointFieldBuilder() {
       if (accessPointBuilder_ == null) {
+        if (!(sourceCase_ == 1)) {
+          source_ = com.saltoapis.nebula.accesspoint.v1.AccessPoint.getDefaultInstance();
+        }
         accessPointBuilder_ = new com.google.protobuf.SingleFieldBuilder<
             com.saltoapis.nebula.accesspoint.v1.AccessPoint, com.saltoapis.nebula.accesspoint.v1.AccessPoint.Builder, com.saltoapis.nebula.accesspoint.v1.AccessPointOrBuilder>(
-                getAccessPoint(),
+                (com.saltoapis.nebula.accesspoint.v1.AccessPoint) source_,
                 getParentForChildren(),
                 isClean());
-        accessPoint_ = null;
+        source_ = null;
       }
+      sourceCase_ = 1;
+      onChanged();
       return accessPointBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.controller.v1.Controller, com.saltoapis.nebula.controller.v1.Controller.Builder, com.saltoapis.nebula.controller.v1.ControllerOrBuilder> controllerBuilder_;
+    /**
+     * <pre>
+     * Access denied by the controller.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+     * @return Whether the controller field is set.
+     */
+    @java.lang.Override
+    public boolean hasController() {
+      return sourceCase_ == 10;
+    }
+    /**
+     * <pre>
+     * Access denied by the controller.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+     * @return The controller.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.controller.v1.Controller getController() {
+      if (controllerBuilder_ == null) {
+        if (sourceCase_ == 10) {
+          return (com.saltoapis.nebula.controller.v1.Controller) source_;
+        }
+        return com.saltoapis.nebula.controller.v1.Controller.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 10) {
+          return controllerBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.controller.v1.Controller.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Access denied by the controller.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+     */
+    public Builder setController(com.saltoapis.nebula.controller.v1.Controller value) {
+      if (controllerBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        controllerBuilder_.setMessage(value);
+      }
+      sourceCase_ = 10;
+      return this;
+    }
+    /**
+     * <pre>
+     * Access denied by the controller.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+     */
+    public Builder setController(
+        com.saltoapis.nebula.controller.v1.Controller.Builder builderForValue) {
+      if (controllerBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        controllerBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 10;
+      return this;
+    }
+    /**
+     * <pre>
+     * Access denied by the controller.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+     */
+    public Builder mergeController(com.saltoapis.nebula.controller.v1.Controller value) {
+      if (controllerBuilder_ == null) {
+        if (sourceCase_ == 10 &&
+            source_ != com.saltoapis.nebula.controller.v1.Controller.getDefaultInstance()) {
+          source_ = com.saltoapis.nebula.controller.v1.Controller.newBuilder((com.saltoapis.nebula.controller.v1.Controller) source_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 10) {
+          controllerBuilder_.mergeFrom(value);
+        } else {
+          controllerBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 10;
+      return this;
+    }
+    /**
+     * <pre>
+     * Access denied by the controller.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+     */
+    public Builder clearController() {
+      if (controllerBuilder_ == null) {
+        if (sourceCase_ == 10) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 10) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        controllerBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Access denied by the controller.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+     */
+    public com.saltoapis.nebula.controller.v1.Controller.Builder getControllerBuilder() {
+      return getControllerFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Access denied by the controller.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.controller.v1.ControllerOrBuilder getControllerOrBuilder() {
+      if ((sourceCase_ == 10) && (controllerBuilder_ != null)) {
+        return controllerBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 10) {
+          return (com.saltoapis.nebula.controller.v1.Controller) source_;
+        }
+        return com.saltoapis.nebula.controller.v1.Controller.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Access denied by the controller.
+     * </pre>
+     *
+     * <code>.salto.nebula.controller.v1.Controller controller = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.controller.v1.Controller, com.saltoapis.nebula.controller.v1.Controller.Builder, com.saltoapis.nebula.controller.v1.ControllerOrBuilder> 
+        getControllerFieldBuilder() {
+      if (controllerBuilder_ == null) {
+        if (!(sourceCase_ == 10)) {
+          source_ = com.saltoapis.nebula.controller.v1.Controller.getDefaultInstance();
+        }
+        controllerBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.controller.v1.Controller, com.saltoapis.nebula.controller.v1.Controller.Builder, com.saltoapis.nebula.controller.v1.ControllerOrBuilder>(
+                (com.saltoapis.nebula.controller.v1.Controller) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 10;
+      onChanged();
+      return controllerBuilder_;
     }
 
     private com.saltoapis.nebula.user.v1.User user_;
@@ -1475,7 +1825,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the user field is set.
      */
     public boolean hasUser() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <pre>
@@ -1508,7 +1858,7 @@ private static final long serialVersionUID = 0L;
       } else {
         userBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1526,7 +1876,7 @@ private static final long serialVersionUID = 0L;
       } else {
         userBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1539,7 +1889,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeUser(com.saltoapis.nebula.user.v1.User value) {
       if (userBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0) &&
+        if (((bitField0_ & 0x00000004) != 0) &&
           user_ != null &&
           user_ != com.saltoapis.nebula.user.v1.User.getDefaultInstance()) {
           getUserBuilder().mergeFrom(value);
@@ -1550,7 +1900,7 @@ private static final long serialVersionUID = 0L;
         userBuilder_.mergeFrom(value);
       }
       if (user_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1563,7 +1913,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.user.v1.User user = 2;</code>
      */
     public Builder clearUser() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       user_ = null;
       if (userBuilder_ != null) {
         userBuilder_.dispose();
@@ -1580,7 +1930,7 @@ private static final long serialVersionUID = 0L;
      * <code>.salto.nebula.user.v1.User user = 2;</code>
      */
     public com.saltoapis.nebula.user.v1.User.Builder getUserBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getUserFieldBuilder().getBuilder();
     }
@@ -1643,7 +1993,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setReasonValue(int value) {
       reason_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1673,7 +2023,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       reason_ = value.getNumber();
       onChanged();
       return this;
@@ -1687,7 +2037,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearReason() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       reason_ = 0;
       onChanged();
       return this;
