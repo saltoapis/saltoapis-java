@@ -66,7 +66,10 @@ private static final long serialVersionUID = 0L;
     REASON_UNSPECIFIED(0),
     /**
      * <pre>
-     * The presented credential has expired.
+     * The presented credential has expired and is no longer valid.
+     * Example: the user's expiration date has passed.
+     * Example: the user's key has expired. To prevent this,
+     * renew the key before the installation's key-renewal-duration ends.
      * </pre>
      *
      * <code>CREDENTIAL_EXPIRED = 1;</code>
@@ -76,6 +79,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The provided key is not yet activated.
      * The key's activation date and time are scheduled for a future moment.
+     * Example: the user's activation date has not yet been reached.
      * </pre>
      *
      * <code>CREDENTIAL_UNACTIVATED = 2;</code>
@@ -83,30 +87,34 @@ private static final long serialVersionUID = 0L;
     CREDENTIAL_UNACTIVATED(2),
     /**
      * <pre>
-     * The provided credential does not have the required access rights.
+     * The provided credential does not have the required permission.
+     * Example: the user does not have permission to access the access point.
      * </pre>
      *
-     * <code>CREDENTIAL_LACKS_ACCESS_RIGHTS = 3;</code>
+     * <code>CREDENTIAL_LACKS_PERMISSION = 3;</code>
      */
-    CREDENTIAL_LACKS_ACCESS_RIGHTS(3),
+    CREDENTIAL_LACKS_PERMISSION(3),
     /**
      * <pre>
-     * The provided credential is not permitted on this calendar day.
-     * Example: access attempted on a weekend for a weekday-only schedule
+     * The provided credential is permitted within the allowed schedule
+     * but the permission is not activated at this time.
+     * Example: access attempted before the activation date of the permission.
+     * Example: access attempted after the expiration date of the permission.
      * </pre>
      *
-     * <code>CREDENTIAL_OUTSIDE_CALENDAR_DAY = 4;</code>
+     * <code>CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY = 4;</code>
      */
-    CREDENTIAL_OUTSIDE_CALENDAR_DAY(4),
+    CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY(4),
     /**
      * <pre>
-     * The provided credential is not permitted within the allowed time window.
+     * The provided credential is not permitted within the allowed schedule.
+     * Example: access attempted on a weekend for a weekday-only schedule.
      * Example: access attempted at 8 PM for a 9 AM-5 PM schedule).
      * </pre>
      *
-     * <code>CREDENTIAL_OUTSIDE_TIME_WINDOW = 5;</code>
+     * <code>CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE = 5;</code>
      */
-    CREDENTIAL_OUTSIDE_TIME_WINDOW(5),
+    CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE(5),
     /**
      * <pre>
      * The provided access code is invalid. Access codes are numeric passcodes
@@ -140,7 +148,10 @@ private static final long serialVersionUID = 0L;
     public static final int REASON_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * The presented credential has expired.
+     * The presented credential has expired and is no longer valid.
+     * Example: the user's expiration date has passed.
+     * Example: the user's key has expired. To prevent this,
+     * renew the key before the installation's key-renewal-duration ends.
      * </pre>
      *
      * <code>CREDENTIAL_EXPIRED = 1;</code>
@@ -150,6 +161,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The provided key is not yet activated.
      * The key's activation date and time are scheduled for a future moment.
+     * Example: the user's activation date has not yet been reached.
      * </pre>
      *
      * <code>CREDENTIAL_UNACTIVATED = 2;</code>
@@ -157,30 +169,34 @@ private static final long serialVersionUID = 0L;
     public static final int CREDENTIAL_UNACTIVATED_VALUE = 2;
     /**
      * <pre>
-     * The provided credential does not have the required access rights.
+     * The provided credential does not have the required permission.
+     * Example: the user does not have permission to access the access point.
      * </pre>
      *
-     * <code>CREDENTIAL_LACKS_ACCESS_RIGHTS = 3;</code>
+     * <code>CREDENTIAL_LACKS_PERMISSION = 3;</code>
      */
-    public static final int CREDENTIAL_LACKS_ACCESS_RIGHTS_VALUE = 3;
+    public static final int CREDENTIAL_LACKS_PERMISSION_VALUE = 3;
     /**
      * <pre>
-     * The provided credential is not permitted on this calendar day.
-     * Example: access attempted on a weekend for a weekday-only schedule
+     * The provided credential is permitted within the allowed schedule
+     * but the permission is not activated at this time.
+     * Example: access attempted before the activation date of the permission.
+     * Example: access attempted after the expiration date of the permission.
      * </pre>
      *
-     * <code>CREDENTIAL_OUTSIDE_CALENDAR_DAY = 4;</code>
+     * <code>CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY = 4;</code>
      */
-    public static final int CREDENTIAL_OUTSIDE_CALENDAR_DAY_VALUE = 4;
+    public static final int CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY_VALUE = 4;
     /**
      * <pre>
-     * The provided credential is not permitted within the allowed time window.
+     * The provided credential is not permitted within the allowed schedule.
+     * Example: access attempted on a weekend for a weekday-only schedule.
      * Example: access attempted at 8 PM for a 9 AM-5 PM schedule).
      * </pre>
      *
-     * <code>CREDENTIAL_OUTSIDE_TIME_WINDOW = 5;</code>
+     * <code>CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE = 5;</code>
      */
-    public static final int CREDENTIAL_OUTSIDE_TIME_WINDOW_VALUE = 5;
+    public static final int CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE_VALUE = 5;
     /**
      * <pre>
      * The provided access code is invalid. Access codes are numeric passcodes
@@ -221,9 +237,9 @@ private static final long serialVersionUID = 0L;
         case 0: return REASON_UNSPECIFIED;
         case 1: return CREDENTIAL_EXPIRED;
         case 2: return CREDENTIAL_UNACTIVATED;
-        case 3: return CREDENTIAL_LACKS_ACCESS_RIGHTS;
-        case 4: return CREDENTIAL_OUTSIDE_CALENDAR_DAY;
-        case 5: return CREDENTIAL_OUTSIDE_TIME_WINDOW;
+        case 3: return CREDENTIAL_LACKS_PERMISSION;
+        case 4: return CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY;
+        case 5: return CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE;
         case 6: return INVALID_ACCESS_CODE;
         default: return null;
       }
