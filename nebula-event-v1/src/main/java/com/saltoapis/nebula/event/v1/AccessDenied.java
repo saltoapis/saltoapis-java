@@ -91,9 +91,9 @@ private static final long serialVersionUID = 0L;
      * Example: the user does not have permission to access the access point.
      * </pre>
      *
-     * <code>CREDENTIAL_LACKS_PERMISSION = 3;</code>
+     * <code>CREDENTIAL_PERMISSION_INSUFFICIENT = 3;</code>
      */
-    CREDENTIAL_LACKS_PERMISSION(3),
+    CREDENTIAL_PERMISSION_INSUFFICIENT(3),
     /**
      * <pre>
      * The provided credential is permitted within the allowed schedule
@@ -126,6 +126,15 @@ private static final long serialVersionUID = 0L;
      * <code>INVALID_ACCESS_CODE = 6;</code>
      */
     INVALID_ACCESS_CODE(6),
+    /**
+     * <pre>
+     * The device at which the credential was presented has insufficient battery level
+     * and cannot process the access request.
+     * </pre>
+     *
+     * <code>DEVICE_BATTERY_INSUFFICIENT = 7;</code>
+     */
+    DEVICE_BATTERY_INSUFFICIENT(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -173,9 +182,9 @@ private static final long serialVersionUID = 0L;
      * Example: the user does not have permission to access the access point.
      * </pre>
      *
-     * <code>CREDENTIAL_LACKS_PERMISSION = 3;</code>
+     * <code>CREDENTIAL_PERMISSION_INSUFFICIENT = 3;</code>
      */
-    public static final int CREDENTIAL_LACKS_PERMISSION_VALUE = 3;
+    public static final int CREDENTIAL_PERMISSION_INSUFFICIENT_VALUE = 3;
     /**
      * <pre>
      * The provided credential is permitted within the allowed schedule
@@ -208,6 +217,15 @@ private static final long serialVersionUID = 0L;
      * <code>INVALID_ACCESS_CODE = 6;</code>
      */
     public static final int INVALID_ACCESS_CODE_VALUE = 6;
+    /**
+     * <pre>
+     * The device at which the credential was presented has insufficient battery level
+     * and cannot process the access request.
+     * </pre>
+     *
+     * <code>DEVICE_BATTERY_INSUFFICIENT = 7;</code>
+     */
+    public static final int DEVICE_BATTERY_INSUFFICIENT_VALUE = 7;
 
 
     public final int getNumber() {
@@ -237,10 +255,11 @@ private static final long serialVersionUID = 0L;
         case 0: return REASON_UNSPECIFIED;
         case 1: return CREDENTIAL_EXPIRED;
         case 2: return CREDENTIAL_UNACTIVATED;
-        case 3: return CREDENTIAL_LACKS_PERMISSION;
+        case 3: return CREDENTIAL_PERMISSION_INSUFFICIENT;
         case 4: return CREDENTIAL_PERMISSION_OUTSIDE_VALIDITY;
         case 5: return CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE;
         case 6: return INVALID_ACCESS_CODE;
+        case 7: return DEVICE_BATTERY_INSUFFICIENT;
         default: return null;
       }
     }

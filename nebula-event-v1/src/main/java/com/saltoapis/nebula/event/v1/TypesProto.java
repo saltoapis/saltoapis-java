@@ -311,7 +311,7 @@ public final class TypesProto {
       "en\022>\n\014access_point\030\001 \001(\0132(.salto.nebula." +
       "accesspoint.v1.AccessPoint\"S\n\021AccessPoin" +
       "tClosed\022>\n\014access_point\030\001 \001(\0132(.salto.ne" +
-      "bula.accesspoint.v1.AccessPoint\"\310\006\n\014Acce" +
+      "bula.accesspoint.v1.AccessPoint\"\360\006\n\014Acce" +
       "ssDenied\022@\n\014access_point\030\001 \001(\0132(.salto.n" +
       "ebula.accesspoint.v1.AccessPointH\000\022<\n\nco" +
       "ntroller\030\n \001(\0132&.salto.nebula.controller" +
@@ -326,13 +326,14 @@ public final class TypesProto {
       "la.user.v1.WalletKeyH\001\0222\n\010passcode\030\010 \001(\013" +
       "2\036.salto.nebula.user.v1.PasscodeH\001\022=\n\016el" +
       "ectronic_key\030\t \001(\0132#.salto.nebula.user.v" +
-      "1.ElectronicKeyH\001\"\346\001\n\006Reason\022\026\n\022REASON_U" +
+      "1.ElectronicKeyH\001\"\216\002\n\006Reason\022\026\n\022REASON_U" +
       "NSPECIFIED\020\000\022\026\n\022CREDENTIAL_EXPIRED\020\001\022\032\n\026" +
-      "CREDENTIAL_UNACTIVATED\020\002\022\037\n\033CREDENTIAL_L" +
-      "ACKS_PERMISSION\020\003\022*\n&CREDENTIAL_PERMISSI" +
-      "ON_OUTSIDE_VALIDITY\020\004\022*\n&CREDENTIAL_PERM" +
-      "ISSION_OUTSIDE_SCHEDULE\020\005\022\027\n\023INVALID_ACC" +
-      "ESS_CODE\020\006B\010\n\006sourceB\014\n\ncredential\"U\n\023Ac" +
+      "CREDENTIAL_UNACTIVATED\020\002\022&\n\"CREDENTIAL_P" +
+      "ERMISSION_INSUFFICIENT\020\003\022*\n&CREDENTIAL_P" +
+      "ERMISSION_OUTSIDE_VALIDITY\020\004\022*\n&CREDENTI" +
+      "AL_PERMISSION_OUTSIDE_SCHEDULE\020\005\022\027\n\023INVA" +
+      "LID_ACCESS_CODE\020\006\022\037\n\033DEVICE_BATTERY_INSU" +
+      "FFICIENT\020\007B\010\n\006sourceB\014\n\ncredential\"U\n\023Ac" +
       "cessPointLeftOpen\022>\n\014access_point\030\001 \001(\0132" +
       "(.salto.nebula.accesspoint.v1.AccessPoin" +
       "t\"\205\001\n\022AccessRightCreated\022>\n\014access_right" +
