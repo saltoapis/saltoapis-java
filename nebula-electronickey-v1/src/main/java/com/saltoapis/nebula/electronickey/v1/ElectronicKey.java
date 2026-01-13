@@ -288,22 +288,6 @@ private static final long serialVersionUID = 0L;
     return deviceMetadata_ == null ? com.saltoapis.nebula.type.DeviceMetadata.getDefaultInstance() : deviceMetadata_;
   }
 
-  public static final int LOW_BATTERY_FIELD_NUMBER = 7;
-  private boolean lowBattery_ = false;
-  /**
-   * <pre>
-   * Indicates whether the battery of this electronic key is low, and needs
-   * replacing, or is normal and doesn't need replacing.
-   * </pre>
-   *
-   * <code>bool low_battery = 7;</code>
-   * @return The lowBattery.
-   */
-  @java.lang.Override
-  public boolean getLowBattery() {
-    return lowBattery_;
-  }
-
   public static final int USER_FIELD_NUMBER = 8;
   @SuppressWarnings("serial")
   private volatile java.lang.Object user_ = "";
@@ -395,9 +379,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getDeviceMetadata());
     }
-    if (lowBattery_ != false) {
-      output.writeBool(7, lowBattery_);
-    }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, user_);
     }
@@ -430,10 +411,6 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getDeviceMetadata());
-    }
-    if (lowBattery_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, lowBattery_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(8, user_);
@@ -471,8 +448,6 @@ private static final long serialVersionUID = 0L;
       if (!getDeviceMetadata()
           .equals(other.getDeviceMetadata())) return false;
     }
-    if (getLowBattery()
-        != other.getLowBattery()) return false;
     if (hasUser() != other.hasUser()) return false;
     if (hasUser()) {
       if (!getUser()
@@ -507,9 +482,6 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + DEVICE_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getDeviceMetadata().hashCode();
     }
-    hash = (37 * hash) + LOW_BATTERY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getLowBattery());
     if (hasUser()) {
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
@@ -665,7 +637,6 @@ private static final long serialVersionUID = 0L;
         deviceMetadataBuilder_.dispose();
         deviceMetadataBuilder_ = null;
       }
-      lowBattery_ = false;
       user_ = "";
       return this;
     }
@@ -724,9 +695,6 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.lowBattery_ = lowBattery_;
-      }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.user_ = user_;
         to_bitField0_ |= 0x00000004;
       }
@@ -769,12 +737,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasDeviceMetadata()) {
         mergeDeviceMetadata(other.getDeviceMetadata());
       }
-      if (other.getLowBattery() != false) {
-        setLowBattery(other.getLowBattery());
-      }
       if (other.hasUser()) {
         user_ = other.user_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -835,14 +800,9 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000020;
               break;
             } // case 50
-            case 56: {
-              lowBattery_ = input.readBool();
-              bitField0_ |= 0x00000040;
-              break;
-            } // case 56
             case 66: {
               user_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000040;
               break;
             } // case 66
             default: {
@@ -1437,53 +1397,6 @@ private static final long serialVersionUID = 0L;
       return deviceMetadataBuilder_;
     }
 
-    private boolean lowBattery_ ;
-    /**
-     * <pre>
-     * Indicates whether the battery of this electronic key is low, and needs
-     * replacing, or is normal and doesn't need replacing.
-     * </pre>
-     *
-     * <code>bool low_battery = 7;</code>
-     * @return The lowBattery.
-     */
-    @java.lang.Override
-    public boolean getLowBattery() {
-      return lowBattery_;
-    }
-    /**
-     * <pre>
-     * Indicates whether the battery of this electronic key is low, and needs
-     * replacing, or is normal and doesn't need replacing.
-     * </pre>
-     *
-     * <code>bool low_battery = 7;</code>
-     * @param value The lowBattery to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLowBattery(boolean value) {
-
-      lowBattery_ = value;
-      bitField0_ |= 0x00000040;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Indicates whether the battery of this electronic key is low, and needs
-     * replacing, or is normal and doesn't need replacing.
-     * </pre>
-     *
-     * <code>bool low_battery = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearLowBattery() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      lowBattery_ = false;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object user_ = "";
     /**
      * <pre>
@@ -1494,7 +1407,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the user field is set.
      */
     public boolean hasUser() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <pre>
@@ -1550,7 +1463,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       user_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1564,7 +1477,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearUser() {
       user_ = getDefaultInstance().getUser();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1582,7 +1495,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       user_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
