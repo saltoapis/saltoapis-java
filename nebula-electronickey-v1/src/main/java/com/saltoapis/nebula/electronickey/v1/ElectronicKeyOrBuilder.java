@@ -143,17 +143,6 @@ public interface ElectronicKeyOrBuilder extends
 
   /**
    * <pre>
-   * Indicates whether the battery of this electronic key is low, and needs
-   * replacing, or is normal and doesn't need replacing.
-   * </pre>
-   *
-   * <code>bool low_battery = 7;</code>
-   * @return The lowBattery.
-   */
-  boolean getLowBattery();
-
-  /**
-   * <pre>
    * User associated with this electronic key.
    * </pre>
    *
