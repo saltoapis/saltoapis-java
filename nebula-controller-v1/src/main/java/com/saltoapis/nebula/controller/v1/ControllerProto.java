@@ -256,7 +256,7 @@ public final class ControllerProto extends com.google.protobuf.GeneratedFile {
       "field_mask.proto\032\037google/protobuf/timest" +
       "amp.proto\032$salto/longrunning/v1/operatio" +
       "n.proto\032\'salto/nebula/type/device_metada" +
-      "ta.proto\"\343\002\n\nController\022\014\n\004name\030\001 \001(\t\022\024\n" +
+      "ta.proto\"\227\003\n\nController\022\014\n\004name\030\001 \001(\t\022\024\n" +
       "\014display_name\030\002 \001(\t\022\026\n\tdevice_id\030\003 \001(\tH\001" +
       "\210\001\001\022\021\n\007gateway\030\004 \001(\tH\000\022\022\n\010extender\030\005 \001(\t" +
       "H\000\022\025\n\raccess_points\030\006 \003(\t\022\023\n\013initialized" +
@@ -264,162 +264,163 @@ public final class ControllerProto extends com.google.protobuf.GeneratedFile {
       "nebula.type.DeviceMetadata\022\020\n\010outdated\030\010" +
       " \001(\010\022\026\n\tconnected\030\t \001(\010H\002\210\001\001\0223\n\017last_eve" +
       "nt_time\030\n \001(\0132\032.google.protobuf.Timestam" +
-      "pB\017\n\rparent_deviceB\014\n\n_device_idB\014\n\n_con" +
-      "nected\"\316\002\n\017ControllerRelay\022\014\n\004name\030\001 \001(\t" +
-      "\022\027\n\ndip_switch\030\002 \001(\005H\001\210\001\001\022\020\n\010relay_id\030\003 " +
-      "\001(\005\022[\n\022destination_output\030\004 \001(\0132=.salto." +
-      "nebula.controller.v1.ControllerRelay.Des" +
-      "tinationOutputH\000\022D\n\006strike\030\005 \001(\01322.salto" +
-      ".nebula.controller.v1.ControllerRelay.St" +
-      "rikeH\000\032(\n\021DestinationOutput\022\023\n\013destinati" +
-      "on\030\001 \001(\t\032\036\n\006Strike\022\024\n\014access_point\030\001 \001(\t" +
-      "B\006\n\004typeB\r\n\013_dip_switch\"\223\001\n\027CreateContro" +
-      "llerRequest\022\016\n\006parent\030\001 \001(\t\022\032\n\rcontrolle" +
-      "r_id\030\002 \001(\tH\000\210\001\001\022:\n\ncontroller\030\003 \001(\0132&.sa" +
-      "lto.nebula.controller.v1.ControllerB\020\n\016_" +
-      "controller_id\"$\n\024GetControllerRequest\022\014\n" +
-      "\004name\030\001 \001(\t\"q\n\026ListControllersRequest\022\016\n" +
-      "\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage" +
-      "_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by" +
-      "\030\005 \001(\t\"o\n\027ListControllersResponse\022;\n\013con" +
-      "trollers\030\001 \003(\0132&.salto.nebula.controller" +
-      ".v1.Controller\022\027\n\017next_page_token\030\002 \001(\t\"" +
-      "\206\001\n\027UpdateControllerRequest\022:\n\ncontrolle" +
-      "r\030\001 \001(\0132&.salto.nebula.controller.v1.Con" +
-      "troller\022/\n\013update_mask\030\002 \001(\0132\032.google.pr" +
-      "otobuf.FieldMask\"\'\n\027DeleteControllerRequ" +
-      "est\022\014\n\004name\030\001 \001(\t\"8\n\025BindControllerReque" +
-      "st\022\014\n\004name\030\001 \001(\t\022\021\n\tdevice_id\030\002 \001(\t\"\030\n\026B" +
-      "indControllerResponse\"6\n\027UnbindControlle" +
-      "rRequest\022\014\n\004name\030\001 \001(\t\022\r\n\005force\030\002 \001(\010\"\032\n" +
-      "\030UnbindControllerResponse\"+\n\033InitializeC" +
-      "ontrollerRequest\022\014\n\004name\030\001 \001(\t\"\036\n\034Initia" +
-      "lizeControllerResponse\"8\n\034InitializeCont" +
-      "rollerMetadata\022\030\n\020progress_percent\030\001 \001(\005" +
-      "\"*\n\032ConfigureControllerRequest\022\014\n\004name\030\001" +
-      " \001(\t\"\035\n\033ConfigureControllerResponse\"7\n\033C" +
-      "onfigureControllerMetadata\022\030\n\020progress_p" +
-      "ercent\030\001 \001(\005\"&\n\026ResetControllerRequest\022\014" +
-      "\n\004name\030\001 \001(\t\"\031\n\027ResetControllerResponse\"" +
-      "\031\n\027ResetControllerMetadata\"5\n\037UpdateCont" +
-      "rollerFirmwareRequest\022\022\n\ncontroller\030\001 \001(" +
-      "\t\"\"\n UpdateControllerFirmwareResponse\"<\n" +
-      " UpdateControllerFirmwareMetadata\022\030\n\020pro" +
-      "gress_percent\030\001 \001(\005\"7\n!GenerateAuthoriza" +
-      "tionTokenRequest\022\022\n\ncontroller\030\001 \001(\t\"A\n\"" +
-      "GenerateAuthorizationTokenResponse\022\033\n\023au" +
-      "thorization_token\030\001 \001(\014\"8\n\"GenerateFirmw" +
-      "areDownloadUriRequest\022\022\n\ncontroller\030\001 \001(" +
-      "\t\"K\n#GenerateFirmwareDownloadUriResponse" +
-      "\022\024\n\014download_uri\030\001 \001(\t\022\016\n\006digest\030\002 \001(\t\"%" +
-      "\n#GenerateFirmwareDownloadUriMetadata\"\257\001" +
-      "\n\034CreateControllerRelayRequest\022\016\n\006parent" +
-      "\030\001 \001(\t\022 \n\023controller_relay_id\030\002 \001(\tH\000\210\001\001" +
-      "\022E\n\020controller_relay\030\003 \001(\0132+.salto.nebul" +
-      "a.controller.v1.ControllerRelayB\026\n\024_cont" +
-      "roller_relay_id\")\n\031GetControllerRelayReq" +
-      "uest\022\014\n\004name\030\001 \001(\t\"v\n\033ListControllerRela" +
-      "ysRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002" +
+      "p\022\035\n\020card_key_updater\030\014 \001(\010H\003\210\001\001B\017\n\rpare" +
+      "nt_deviceB\014\n\n_device_idB\014\n\n_connectedB\023\n" +
+      "\021_card_key_updater\"\316\002\n\017ControllerRelay\022\014" +
+      "\n\004name\030\001 \001(\t\022\027\n\ndip_switch\030\002 \001(\005H\001\210\001\001\022\020\n" +
+      "\010relay_id\030\003 \001(\005\022[\n\022destination_output\030\004 " +
+      "\001(\0132=.salto.nebula.controller.v1.Control" +
+      "lerRelay.DestinationOutputH\000\022D\n\006strike\030\005" +
+      " \001(\01322.salto.nebula.controller.v1.Contro" +
+      "llerRelay.StrikeH\000\032(\n\021DestinationOutput\022" +
+      "\023\n\013destination\030\001 \001(\t\032\036\n\006Strike\022\024\n\014access" +
+      "_point\030\001 \001(\tB\006\n\004typeB\r\n\013_dip_switch\"\223\001\n\027" +
+      "CreateControllerRequest\022\016\n\006parent\030\001 \001(\t\022" +
+      "\032\n\rcontroller_id\030\002 \001(\tH\000\210\001\001\022:\n\ncontrolle" +
+      "r\030\003 \001(\0132&.salto.nebula.controller.v1.Con" +
+      "trollerB\020\n\016_controller_id\"$\n\024GetControll" +
+      "erRequest\022\014\n\004name\030\001 \001(\t\"q\n\026ListControlle" +
+      "rsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_size\030\002" +
       " \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t" +
-      "\022\020\n\010order_by\030\005 \001(\t\"\177\n\034ListControllerRela" +
-      "ysResponse\022F\n\021controller_relays\030\001 \003(\0132+." +
-      "salto.nebula.controller.v1.ControllerRel" +
-      "ay\022\027\n\017next_page_token\030\002 \001(\t\"\226\001\n\034UpdateCo" +
-      "ntrollerRelayRequest\022E\n\020controller_relay" +
-      "\030\001 \001(\0132+.salto.nebula.controller.v1.Cont" +
-      "rollerRelay\022/\n\013update_mask\030\002 \001(\0132\032.googl" +
-      "e.protobuf.FieldMask\",\n\034DeleteController" +
-      "RelayRequest\022\014\n\004name\030\001 \001(\t\"\200\001\n\"BatchDele" +
-      "teControllerRelaysRequest\022\016\n\006parent\030\001 \001(" +
-      "\t\022J\n\010requests\030\002 \003(\01328.salto.nebula.contr" +
-      "oller.v1.DeleteControllerRelayRequest\"%\n" +
-      "#BatchDeleteControllerRelaysResponse\"\200\001\n" +
-      "\"BatchCreateControllerRelaysRequest\022\016\n\006p" +
-      "arent\030\001 \001(\t\022J\n\010requests\030\002 \003(\01328.salto.ne" +
-      "bula.controller.v1.CreateControllerRelay" +
-      "Request\"m\n#BatchCreateControllerRelaysRe" +
-      "sponse\022F\n\021controller_relays\030\001 \003(\0132+.salt" +
-      "o.nebula.controller.v1.ControllerRelay\"\200" +
-      "\001\n\"BatchUpdateControllerRelaysRequest\022\016\n" +
+      "\022\020\n\010order_by\030\005 \001(\t\"o\n\027ListControllersRes" +
+      "ponse\022;\n\013controllers\030\001 \003(\0132&.salto.nebul" +
+      "a.controller.v1.Controller\022\027\n\017next_page_" +
+      "token\030\002 \001(\t\"\206\001\n\027UpdateControllerRequest\022" +
+      ":\n\ncontroller\030\001 \001(\0132&.salto.nebula.contr" +
+      "oller.v1.Controller\022/\n\013update_mask\030\002 \001(\013" +
+      "2\032.google.protobuf.FieldMask\"\'\n\027DeleteCo" +
+      "ntrollerRequest\022\014\n\004name\030\001 \001(\t\"8\n\025BindCon" +
+      "trollerRequest\022\014\n\004name\030\001 \001(\t\022\021\n\tdevice_i" +
+      "d\030\002 \001(\t\"\030\n\026BindControllerResponse\"6\n\027Unb" +
+      "indControllerRequest\022\014\n\004name\030\001 \001(\t\022\r\n\005fo" +
+      "rce\030\002 \001(\010\"\032\n\030UnbindControllerResponse\"+\n" +
+      "\033InitializeControllerRequest\022\014\n\004name\030\001 \001" +
+      "(\t\"\036\n\034InitializeControllerResponse\"8\n\034In" +
+      "itializeControllerMetadata\022\030\n\020progress_p" +
+      "ercent\030\001 \001(\005\"*\n\032ConfigureControllerReque" +
+      "st\022\014\n\004name\030\001 \001(\t\"\035\n\033ConfigureControllerR" +
+      "esponse\"7\n\033ConfigureControllerMetadata\022\030" +
+      "\n\020progress_percent\030\001 \001(\005\"&\n\026ResetControl" +
+      "lerRequest\022\014\n\004name\030\001 \001(\t\"\031\n\027ResetControl" +
+      "lerResponse\"\031\n\027ResetControllerMetadata\"5" +
+      "\n\037UpdateControllerFirmwareRequest\022\022\n\ncon" +
+      "troller\030\001 \001(\t\"\"\n UpdateControllerFirmwar" +
+      "eResponse\"<\n UpdateControllerFirmwareMet" +
+      "adata\022\030\n\020progress_percent\030\001 \001(\005\"7\n!Gener" +
+      "ateAuthorizationTokenRequest\022\022\n\ncontroll" +
+      "er\030\001 \001(\t\"A\n\"GenerateAuthorizationTokenRe" +
+      "sponse\022\033\n\023authorization_token\030\001 \001(\014\"8\n\"G" +
+      "enerateFirmwareDownloadUriRequest\022\022\n\ncon" +
+      "troller\030\001 \001(\t\"K\n#GenerateFirmwareDownloa" +
+      "dUriResponse\022\024\n\014download_uri\030\001 \001(\t\022\016\n\006di" +
+      "gest\030\002 \001(\t\"%\n#GenerateFirmwareDownloadUr" +
+      "iMetadata\"\257\001\n\034CreateControllerRelayReque" +
+      "st\022\016\n\006parent\030\001 \001(\t\022 \n\023controller_relay_i" +
+      "d\030\002 \001(\tH\000\210\001\001\022E\n\020controller_relay\030\003 \001(\0132+" +
+      ".salto.nebula.controller.v1.ControllerRe" +
+      "layB\026\n\024_controller_relay_id\")\n\031GetContro" +
+      "llerRelayRequest\022\014\n\004name\030\001 \001(\t\"v\n\033ListCo" +
+      "ntrollerRelaysRequest\022\016\n\006parent\030\001 \001(\t\022\021\n" +
+      "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006" +
+      "filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\177\n\034ListCo" +
+      "ntrollerRelaysResponse\022F\n\021controller_rel" +
+      "ays\030\001 \003(\0132+.salto.nebula.controller.v1.C" +
+      "ontrollerRelay\022\027\n\017next_page_token\030\002 \001(\t\"" +
+      "\226\001\n\034UpdateControllerRelayRequest\022E\n\020cont" +
+      "roller_relay\030\001 \001(\0132+.salto.nebula.contro" +
+      "ller.v1.ControllerRelay\022/\n\013update_mask\030\002" +
+      " \001(\0132\032.google.protobuf.FieldMask\",\n\034Dele" +
+      "teControllerRelayRequest\022\014\n\004name\030\001 \001(\t\"\200" +
+      "\001\n\"BatchDeleteControllerRelaysRequest\022\016\n" +
       "\006parent\030\001 \001(\t\022J\n\010requests\030\002 \003(\01328.salto." +
-      "nebula.controller.v1.UpdateControllerRel" +
-      "ayRequest\"m\n#BatchUpdateControllerRelays" +
-      "Response\022F\n\021controller_relays\030\001 \003(\0132+.sa" +
-      "lto.nebula.controller.v1.ControllerRelay" +
-      "2\353\024\n\021ControllerService\022o\n\020CreateControll" +
-      "er\0223.salto.nebula.controller.v1.CreateCo" +
-      "ntrollerRequest\032&.salto.nebula.controlle" +
-      "r.v1.Controller\022i\n\rGetController\0220.salto" +
-      ".nebula.controller.v1.GetControllerReque" +
-      "st\032&.salto.nebula.controller.v1.Controll" +
-      "er\022z\n\017ListControllers\0222.salto.nebula.con" +
-      "troller.v1.ListControllersRequest\0323.salt" +
+      "nebula.controller.v1.DeleteControllerRel" +
+      "ayRequest\"%\n#BatchDeleteControllerRelays" +
+      "Response\"\200\001\n\"BatchCreateControllerRelays" +
+      "Request\022\016\n\006parent\030\001 \001(\t\022J\n\010requests\030\002 \003(" +
+      "\01328.salto.nebula.controller.v1.CreateCon" +
+      "trollerRelayRequest\"m\n#BatchCreateContro" +
+      "llerRelaysResponse\022F\n\021controller_relays\030" +
+      "\001 \003(\0132+.salto.nebula.controller.v1.Contr" +
+      "ollerRelay\"\200\001\n\"BatchUpdateControllerRela" +
+      "ysRequest\022\016\n\006parent\030\001 \001(\t\022J\n\010requests\030\002 " +
+      "\003(\01328.salto.nebula.controller.v1.UpdateC" +
+      "ontrollerRelayRequest\"m\n#BatchUpdateCont" +
+      "rollerRelaysResponse\022F\n\021controller_relay" +
+      "s\030\001 \003(\0132+.salto.nebula.controller.v1.Con" +
+      "trollerRelay2\353\024\n\021ControllerService\022o\n\020Cr" +
+      "eateController\0223.salto.nebula.controller" +
+      ".v1.CreateControllerRequest\032&.salto.nebu" +
+      "la.controller.v1.Controller\022i\n\rGetContro" +
+      "ller\0220.salto.nebula.controller.v1.GetCon" +
+      "trollerRequest\032&.salto.nebula.controller" +
+      ".v1.Controller\022z\n\017ListControllers\0222.salt" +
       "o.nebula.controller.v1.ListControllersRe" +
-      "sponse\022o\n\020UpdateController\0223.salto.nebul" +
-      "a.controller.v1.UpdateControllerRequest\032" +
-      "&.salto.nebula.controller.v1.Controller\022" +
-      "_\n\020DeleteController\0223.salto.nebula.contr" +
-      "oller.v1.DeleteControllerRequest\032\026.googl" +
-      "e.protobuf.Empty\022w\n\016BindController\0221.sal" +
-      "to.nebula.controller.v1.BindControllerRe" +
-      "quest\0322.salto.nebula.controller.v1.BindC" +
-      "ontrollerResponse\022}\n\020UnbindController\0223." +
-      "salto.nebula.controller.v1.UnbindControl" +
-      "lerRequest\0324.salto.nebula.controller.v1." +
-      "UnbindControllerResponse\022p\n\024InitializeCo" +
-      "ntroller\0227.salto.nebula.controller.v1.In" +
-      "itializeControllerRequest\032\037.salto.longru" +
-      "nning.v1.Operation\022n\n\023ConfigureControlle" +
-      "r\0226.salto.nebula.controller.v1.Configure" +
-      "ControllerRequest\032\037.salto.longrunning.v1" +
-      ".Operation\022f\n\017ResetController\0222.salto.ne" +
-      "bula.controller.v1.ResetControllerReques" +
-      "t\032\037.salto.longrunning.v1.Operation\022x\n\030Up" +
-      "dateControllerFirmware\022;.salto.nebula.co" +
-      "ntroller.v1.UpdateControllerFirmwareRequ" +
-      "est\032\037.salto.longrunning.v1.Operation\022\233\001\n" +
-      "\032GenerateAuthorizationToken\022=.salto.nebu" +
-      "la.controller.v1.GenerateAuthorizationTo" +
-      "kenRequest\032>.salto.nebula.controller.v1." +
-      "GenerateAuthorizationTokenResponse\022~\n\033Ge" +
-      "nerateFirmwareDownloadUri\022>.salto.nebula" +
-      ".controller.v1.GenerateFirmwareDownloadU" +
-      "riRequest\032\037.salto.longrunning.v1.Operati" +
-      "on\022~\n\025CreateControllerRelay\0228.salto.nebu" +
-      "la.controller.v1.CreateControllerRelayRe" +
-      "quest\032+.salto.nebula.controller.v1.Contr" +
-      "ollerRelay\022\236\001\n\033BatchCreateControllerRela" +
-      "ys\022>.salto.nebula.controller.v1.BatchCre" +
-      "ateControllerRelaysRequest\032?.salto.nebul" +
-      "a.controller.v1.BatchCreateControllerRel" +
-      "aysResponse\022x\n\022GetControllerRelay\0225.salt" +
-      "o.nebula.controller.v1.GetControllerRela" +
+      "quest\0323.salto.nebula.controller.v1.ListC" +
+      "ontrollersResponse\022o\n\020UpdateController\0223" +
+      ".salto.nebula.controller.v1.UpdateContro" +
+      "llerRequest\032&.salto.nebula.controller.v1" +
+      ".Controller\022_\n\020DeleteController\0223.salto." +
+      "nebula.controller.v1.DeleteControllerReq" +
+      "uest\032\026.google.protobuf.Empty\022w\n\016BindCont" +
+      "roller\0221.salto.nebula.controller.v1.Bind" +
+      "ControllerRequest\0322.salto.nebula.control" +
+      "ler.v1.BindControllerResponse\022}\n\020UnbindC" +
+      "ontroller\0223.salto.nebula.controller.v1.U" +
+      "nbindControllerRequest\0324.salto.nebula.co" +
+      "ntroller.v1.UnbindControllerResponse\022p\n\024" +
+      "InitializeController\0227.salto.nebula.cont" +
+      "roller.v1.InitializeControllerRequest\032\037." +
+      "salto.longrunning.v1.Operation\022n\n\023Config" +
+      "ureController\0226.salto.nebula.controller." +
+      "v1.ConfigureControllerRequest\032\037.salto.lo" +
+      "ngrunning.v1.Operation\022f\n\017ResetControlle" +
+      "r\0222.salto.nebula.controller.v1.ResetCont" +
+      "rollerRequest\032\037.salto.longrunning.v1.Ope" +
+      "ration\022x\n\030UpdateControllerFirmware\022;.sal" +
+      "to.nebula.controller.v1.UpdateController" +
+      "FirmwareRequest\032\037.salto.longrunning.v1.O" +
+      "peration\022\233\001\n\032GenerateAuthorizationToken\022" +
+      "=.salto.nebula.controller.v1.GenerateAut" +
+      "horizationTokenRequest\032>.salto.nebula.co" +
+      "ntroller.v1.GenerateAuthorizationTokenRe" +
+      "sponse\022~\n\033GenerateFirmwareDownloadUri\022>." +
+      "salto.nebula.controller.v1.GenerateFirmw" +
+      "areDownloadUriRequest\032\037.salto.longrunnin" +
+      "g.v1.Operation\022~\n\025CreateControllerRelay\022" +
+      "8.salto.nebula.controller.v1.CreateContr" +
+      "ollerRelayRequest\032+.salto.nebula.control" +
+      "ler.v1.ControllerRelay\022\236\001\n\033BatchCreateCo" +
+      "ntrollerRelays\022>.salto.nebula.controller" +
+      ".v1.BatchCreateControllerRelaysRequest\032?" +
+      ".salto.nebula.controller.v1.BatchCreateC" +
+      "ontrollerRelaysResponse\022x\n\022GetController" +
+      "Relay\0225.salto.nebula.controller.v1.GetCo" +
+      "ntrollerRelayRequest\032+.salto.nebula.cont" +
+      "roller.v1.ControllerRelay\022\211\001\n\024ListContro" +
+      "llerRelays\0227.salto.nebula.controller.v1." +
+      "ListControllerRelaysRequest\0328.salto.nebu" +
+      "la.controller.v1.ListControllerRelaysRes" +
+      "ponse\022~\n\025UpdateControllerRelay\0228.salto.n" +
+      "ebula.controller.v1.UpdateControllerRela" +
       "yRequest\032+.salto.nebula.controller.v1.Co" +
-      "ntrollerRelay\022\211\001\n\024ListControllerRelays\0227" +
-      ".salto.nebula.controller.v1.ListControll" +
-      "erRelaysRequest\0328.salto.nebula.controlle" +
-      "r.v1.ListControllerRelaysResponse\022~\n\025Upd" +
-      "ateControllerRelay\0228.salto.nebula.contro" +
-      "ller.v1.UpdateControllerRelayRequest\032+.s" +
-      "alto.nebula.controller.v1.ControllerRela" +
-      "y\022\236\001\n\033BatchUpdateControllerRelays\022>.salt" +
-      "o.nebula.controller.v1.BatchUpdateContro" +
+      "ntrollerRelay\022\236\001\n\033BatchUpdateControllerR" +
+      "elays\022>.salto.nebula.controller.v1.Batch" +
+      "UpdateControllerRelaysRequest\032?.salto.ne" +
+      "bula.controller.v1.BatchUpdateController" +
+      "RelaysResponse\022i\n\025DeleteControllerRelay\022" +
+      "8.salto.nebula.controller.v1.DeleteContr" +
+      "ollerRelayRequest\032\026.google.protobuf.Empt" +
+      "y\022\236\001\n\033BatchDeleteControllerRelays\022>.salt" +
+      "o.nebula.controller.v1.BatchDeleteContro" +
       "llerRelaysRequest\032?.salto.nebula.control" +
-      "ler.v1.BatchUpdateControllerRelaysRespon" +
-      "se\022i\n\025DeleteControllerRelay\0228.salto.nebu" +
-      "la.controller.v1.DeleteControllerRelayRe" +
-      "quest\032\026.google.protobuf.Empty\022\236\001\n\033BatchD" +
-      "eleteControllerRelays\022>.salto.nebula.con" +
-      "troller.v1.BatchDeleteControllerRelaysRe" +
-      "quest\032?.salto.nebula.controller.v1.Batch" +
-      "DeleteControllerRelaysResponseB\362\001\n\"com.s" +
-      "altoapis.nebula.controller.v1B\017Controlle" +
-      "rProtoP\001ZJgithub.com/saltoapis-internal/" +
-      "saltoapis-go/nebula/controller/v1;contro" +
-      "ller\252\002\036Saltoapis.Nebula.Controller.V1\312\002\036" +
-      "Saltoapis\\Nebula\\Controller\\V1\342\002*GPBMeta" +
-      "data\\Saltoapis\\Nebula\\Controller\\V1b\006pro" +
-      "to3"
+      "ler.v1.BatchDeleteControllerRelaysRespon" +
+      "seB\362\001\n\"com.saltoapis.nebula.controller.v" +
+      "1B\017ControllerProtoP\001ZJgithub.com/saltoap" +
+      "is-internal/saltoapis-go/nebula/controll" +
+      "er/v1;controller\252\002\036Saltoapis.Nebula.Cont" +
+      "roller.V1\312\002\036Saltoapis\\Nebula\\Controller\\" +
+      "V1\342\002*GPBMetadata\\Saltoapis\\Nebula\\Contro" +
+      "ller\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -435,7 +436,7 @@ public final class ControllerProto extends com.google.protobuf.GeneratedFile {
     internal_static_salto_nebula_controller_v1_Controller_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_controller_v1_Controller_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "DeviceId", "Gateway", "Extender", "AccessPoints", "Initialized", "DeviceMetadata", "Outdated", "Connected", "LastEventTime", "ParentDevice", });
+        new java.lang.String[] { "Name", "DisplayName", "DeviceId", "Gateway", "Extender", "AccessPoints", "Initialized", "DeviceMetadata", "Outdated", "Connected", "LastEventTime", "CardKeyUpdater", "ParentDevice", });
     internal_static_salto_nebula_controller_v1_ControllerRelay_descriptor =
       getDescriptor().getMessageType(1);
     internal_static_salto_nebula_controller_v1_ControllerRelay_fieldAccessorTable = new
