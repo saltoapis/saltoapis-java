@@ -37,6 +37,7 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     schedules_ = java.util.Collections.emptyList();
     effectiveSchedules_ = java.util.Collections.emptyList();
+    manager_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -448,6 +449,86 @@ private static final long serialVersionUID = 0L;
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
 
+  public static final int MANAGER_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object manager_ = "";
+  /**
+   * <pre>
+   * The resource name of the manager resource that owns this user access right. A manager
+   * resource is any resource (such as a booking) that creates and governs the
+   * lifecycle of this user access right.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this user access right is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource.
+   * </pre>
+   *
+   * <code>optional string manager = 8;</code>
+   * @return Whether the manager field is set.
+   */
+  @java.lang.Override
+  public boolean hasManager() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * The resource name of the manager resource that owns this user access right. A manager
+   * resource is any resource (such as a booking) that creates and governs the
+   * lifecycle of this user access right.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this user access right is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource.
+   * </pre>
+   *
+   * <code>optional string manager = 8;</code>
+   * @return The manager.
+   */
+  @java.lang.Override
+  public java.lang.String getManager() {
+    java.lang.Object ref = manager_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      manager_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The resource name of the manager resource that owns this user access right. A manager
+   * resource is any resource (such as a booking) that creates and governs the
+   * lifecycle of this user access right.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this user access right is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource.
+   * </pre>
+   *
+   * <code>optional string manager = 8;</code>
+   * @return The bytes for manager.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getManagerBytes() {
+    java.lang.Object ref = manager_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      manager_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -483,6 +564,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getExpireTime());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 8, manager_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -516,6 +600,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getExpireTime());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(8, manager_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -552,6 +639,11 @@ private static final long serialVersionUID = 0L;
       if (!getExpireTime()
           .equals(other.getExpireTime())) return false;
     }
+    if (hasManager() != other.hasManager()) return false;
+    if (hasManager()) {
+      if (!getManager()
+          .equals(other.getManager())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -584,6 +676,10 @@ private static final long serialVersionUID = 0L;
     if (hasExpireTime()) {
       hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExpireTime().hashCode();
+    }
+    if (hasManager()) {
+      hash = (37 * hash) + MANAGER_FIELD_NUMBER;
+      hash = (53 * hash) + getManager().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -756,6 +852,7 @@ private static final long serialVersionUID = 0L;
         expireTimeBuilder_.dispose();
         expireTimeBuilder_ = null;
       }
+      manager_ = "";
       return this;
     }
 
@@ -832,6 +929,10 @@ private static final long serialVersionUID = 0L;
             ? expireTime_
             : expireTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.manager_ = manager_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -921,6 +1022,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasExpireTime()) {
         mergeExpireTime(other.getExpireTime());
       }
+      if (other.hasManager()) {
+        manager_ = other.manager_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1002,6 +1108,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              manager_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2400,6 +2511,151 @@ private static final long serialVersionUID = 0L;
         expireTime_ = null;
       }
       return expireTimeBuilder_;
+    }
+
+    private java.lang.Object manager_ = "";
+    /**
+     * <pre>
+     * The resource name of the manager resource that owns this user access right. A manager
+     * resource is any resource (such as a booking) that creates and governs the
+     * lifecycle of this user access right.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this user access right is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource.
+     * </pre>
+     *
+     * <code>optional string manager = 8;</code>
+     * @return Whether the manager field is set.
+     */
+    public boolean hasManager() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that owns this user access right. A manager
+     * resource is any resource (such as a booking) that creates and governs the
+     * lifecycle of this user access right.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this user access right is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource.
+     * </pre>
+     *
+     * <code>optional string manager = 8;</code>
+     * @return The manager.
+     */
+    public java.lang.String getManager() {
+      java.lang.Object ref = manager_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        manager_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that owns this user access right. A manager
+     * resource is any resource (such as a booking) that creates and governs the
+     * lifecycle of this user access right.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this user access right is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource.
+     * </pre>
+     *
+     * <code>optional string manager = 8;</code>
+     * @return The bytes for manager.
+     */
+    public com.google.protobuf.ByteString
+        getManagerBytes() {
+      java.lang.Object ref = manager_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        manager_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that owns this user access right. A manager
+     * resource is any resource (such as a booking) that creates and governs the
+     * lifecycle of this user access right.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this user access right is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource.
+     * </pre>
+     *
+     * <code>optional string manager = 8;</code>
+     * @param value The manager to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManager(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      manager_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that owns this user access right. A manager
+     * resource is any resource (such as a booking) that creates and governs the
+     * lifecycle of this user access right.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this user access right is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource.
+     * </pre>
+     *
+     * <code>optional string manager = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearManager() {
+      manager_ = getDefaultInstance().getManager();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that owns this user access right. A manager
+     * resource is any resource (such as a booking) that creates and governs the
+     * lifecycle of this user access right.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this user access right is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource.
+     * </pre>
+     *
+     * <code>optional string manager = 8;</code>
+     * @param value The bytes for manager to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagerBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      manager_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.user.v1.UserAccessRight)

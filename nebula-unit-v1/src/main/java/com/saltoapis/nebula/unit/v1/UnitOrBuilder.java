@@ -140,4 +140,53 @@ public interface UnitOrBuilder extends
    * <code>.salto.nebula.unit.v1.Unit.PrivacySettings privacy_settings = 5;</code>
    */
   com.saltoapis.nebula.unit.v1.Unit.PrivacySettingsOrBuilder getPrivacySettingsOrBuilder();
+
+  /**
+   * <pre>
+   * The resource names of the default access rights to be associated within this unit.
+   * For example: installations/surelock-homes-hq/access-rights/baskerville.
+   * A maximum of 5 access rights can be specified.
+   * </pre>
+   *
+   * <code>repeated string default_access_rights = 6;</code>
+   * @return A list containing the defaultAccessRights.
+   */
+  java.util.List<java.lang.String>
+      getDefaultAccessRightsList();
+  /**
+   * <pre>
+   * The resource names of the default access rights to be associated within this unit.
+   * For example: installations/surelock-homes-hq/access-rights/baskerville.
+   * A maximum of 5 access rights can be specified.
+   * </pre>
+   *
+   * <code>repeated string default_access_rights = 6;</code>
+   * @return The count of defaultAccessRights.
+   */
+  int getDefaultAccessRightsCount();
+  /**
+   * <pre>
+   * The resource names of the default access rights to be associated within this unit.
+   * For example: installations/surelock-homes-hq/access-rights/baskerville.
+   * A maximum of 5 access rights can be specified.
+   * </pre>
+   *
+   * <code>repeated string default_access_rights = 6;</code>
+   * @param index The index of the element to return.
+   * @return The defaultAccessRights at the given index.
+   */
+  java.lang.String getDefaultAccessRights(int index);
+  /**
+   * <pre>
+   * The resource names of the default access rights to be associated within this unit.
+   * For example: installations/surelock-homes-hq/access-rights/baskerville.
+   * A maximum of 5 access rights can be specified.
+   * </pre>
+   *
+   * <code>repeated string default_access_rights = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the defaultAccessRights at the given index.
+   */
+  com.google.protobuf.ByteString
+      getDefaultAccessRightsBytes(int index);
 }
