@@ -293,5 +293,26 @@ public interface ControllerOrBuilder extends
    */
   com.google.protobuf.TimestampOrBuilder getLastEventTimeOrBuilder();
 
+  /**
+   * <pre>
+   * Enables or disables card key updates. This property is only relevant when
+   * the controller functions as a destination enabler.
+   * </pre>
+   *
+   * <code>optional bool card_key_updater = 12;</code>
+   * @return Whether the cardKeyUpdater field is set.
+   */
+  boolean hasCardKeyUpdater();
+  /**
+   * <pre>
+   * Enables or disables card key updates. This property is only relevant when
+   * the controller functions as a destination enabler.
+   * </pre>
+   *
+   * <code>optional bool card_key_updater = 12;</code>
+   * @return The cardKeyUpdater.
+   */
+  boolean getCardKeyUpdater();
+
   com.saltoapis.nebula.controller.v1.Controller.ParentDeviceCase getParentDeviceCase();
 }

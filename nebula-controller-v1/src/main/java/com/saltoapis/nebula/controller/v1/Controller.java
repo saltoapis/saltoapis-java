@@ -584,6 +584,35 @@ private static final long serialVersionUID = 0L;
     return lastEventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastEventTime_;
   }
 
+  public static final int CARD_KEY_UPDATER_FIELD_NUMBER = 12;
+  private boolean cardKeyUpdater_ = false;
+  /**
+   * <pre>
+   * Enables or disables card key updates. This property is only relevant when
+   * the controller functions as a destination enabler.
+   * </pre>
+   *
+   * <code>optional bool card_key_updater = 12;</code>
+   * @return Whether the cardKeyUpdater field is set.
+   */
+  @java.lang.Override
+  public boolean hasCardKeyUpdater() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+  /**
+   * <pre>
+   * Enables or disables card key updates. This property is only relevant when
+   * the controller functions as a destination enabler.
+   * </pre>
+   *
+   * <code>optional bool card_key_updater = 12;</code>
+   * @return The cardKeyUpdater.
+   */
+  @java.lang.Override
+  public boolean getCardKeyUpdater() {
+    return cardKeyUpdater_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -630,6 +659,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(11, getDeviceMetadata());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeBool(12, cardKeyUpdater_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -683,6 +715,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getDeviceMetadata());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(12, cardKeyUpdater_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -727,6 +763,11 @@ private static final long serialVersionUID = 0L;
     if (hasLastEventTime()) {
       if (!getLastEventTime()
           .equals(other.getLastEventTime())) return false;
+    }
+    if (hasCardKeyUpdater() != other.hasCardKeyUpdater()) return false;
+    if (hasCardKeyUpdater()) {
+      if (getCardKeyUpdater()
+          != other.getCardKeyUpdater()) return false;
     }
     if (!getParentDeviceCase().equals(other.getParentDeviceCase())) return false;
     switch (parentDeviceCase_) {
@@ -782,6 +823,11 @@ private static final long serialVersionUID = 0L;
     if (hasLastEventTime()) {
       hash = (37 * hash) + LAST_EVENT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastEventTime().hashCode();
+    }
+    if (hasCardKeyUpdater()) {
+      hash = (37 * hash) + CARD_KEY_UPDATER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCardKeyUpdater());
     }
     switch (parentDeviceCase_) {
       case 4:
@@ -955,6 +1001,7 @@ private static final long serialVersionUID = 0L;
         lastEventTimeBuilder_.dispose();
         lastEventTimeBuilder_ = null;
       }
+      cardKeyUpdater_ = false;
       parentDeviceCase_ = 0;
       parentDevice_ = null;
       return this;
@@ -1028,6 +1075,10 @@ private static final long serialVersionUID = 0L;
             : lastEventTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.cardKeyUpdater_ = cardKeyUpdater_;
+        to_bitField0_ |= 0x00000010;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1087,6 +1138,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasLastEventTime()) {
         mergeLastEventTime(other.getLastEventTime());
+      }
+      if (other.hasCardKeyUpdater()) {
+        setCardKeyUpdater(other.getCardKeyUpdater());
       }
       switch (other.getParentDeviceCase()) {
         case GATEWAY: {
@@ -1193,6 +1247,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000080;
               break;
             } // case 90
+            case 96: {
+              cardKeyUpdater_ = input.readBool();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 96
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2404,6 +2463,66 @@ private static final long serialVersionUID = 0L;
         lastEventTime_ = null;
       }
       return lastEventTimeBuilder_;
+    }
+
+    private boolean cardKeyUpdater_ ;
+    /**
+     * <pre>
+     * Enables or disables card key updates. This property is only relevant when
+     * the controller functions as a destination enabler.
+     * </pre>
+     *
+     * <code>optional bool card_key_updater = 12;</code>
+     * @return Whether the cardKeyUpdater field is set.
+     */
+    @java.lang.Override
+    public boolean hasCardKeyUpdater() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <pre>
+     * Enables or disables card key updates. This property is only relevant when
+     * the controller functions as a destination enabler.
+     * </pre>
+     *
+     * <code>optional bool card_key_updater = 12;</code>
+     * @return The cardKeyUpdater.
+     */
+    @java.lang.Override
+    public boolean getCardKeyUpdater() {
+      return cardKeyUpdater_;
+    }
+    /**
+     * <pre>
+     * Enables or disables card key updates. This property is only relevant when
+     * the controller functions as a destination enabler.
+     * </pre>
+     *
+     * <code>optional bool card_key_updater = 12;</code>
+     * @param value The cardKeyUpdater to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCardKeyUpdater(boolean value) {
+
+      cardKeyUpdater_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Enables or disables card key updates. This property is only relevant when
+     * the controller functions as a destination enabler.
+     * </pre>
+     *
+     * <code>optional bool card_key_updater = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCardKeyUpdater() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      cardKeyUpdater_ = false;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.controller.v1.Controller)
