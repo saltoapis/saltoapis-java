@@ -34,6 +34,8 @@ private static final long serialVersionUID = 0L;
   private Unit() {
     name_ = "";
     displayName_ = "";
+    defaultAccessRights_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -731,6 +733,67 @@ private static final long serialVersionUID = 0L;
     return privacySettings_ == null ? com.saltoapis.nebula.unit.v1.Unit.PrivacySettings.getDefaultInstance() : privacySettings_;
   }
 
+  public static final int DEFAULT_ACCESS_RIGHTS_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList defaultAccessRights_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <pre>
+   * The resource names of the default access rights to be associated within this unit.
+   * For example: installations/surelock-homes-hq/access-rights/baskerville.
+   * A maximum of 5 access rights can be specified.
+   * </pre>
+   *
+   * <code>repeated string default_access_rights = 6;</code>
+   * @return A list containing the defaultAccessRights.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getDefaultAccessRightsList() {
+    return defaultAccessRights_;
+  }
+  /**
+   * <pre>
+   * The resource names of the default access rights to be associated within this unit.
+   * For example: installations/surelock-homes-hq/access-rights/baskerville.
+   * A maximum of 5 access rights can be specified.
+   * </pre>
+   *
+   * <code>repeated string default_access_rights = 6;</code>
+   * @return The count of defaultAccessRights.
+   */
+  public int getDefaultAccessRightsCount() {
+    return defaultAccessRights_.size();
+  }
+  /**
+   * <pre>
+   * The resource names of the default access rights to be associated within this unit.
+   * For example: installations/surelock-homes-hq/access-rights/baskerville.
+   * A maximum of 5 access rights can be specified.
+   * </pre>
+   *
+   * <code>repeated string default_access_rights = 6;</code>
+   * @param index The index of the element to return.
+   * @return The defaultAccessRights at the given index.
+   */
+  public java.lang.String getDefaultAccessRights(int index) {
+    return defaultAccessRights_.get(index);
+  }
+  /**
+   * <pre>
+   * The resource names of the default access rights to be associated within this unit.
+   * For example: installations/surelock-homes-hq/access-rights/baskerville.
+   * A maximum of 5 access rights can be specified.
+   * </pre>
+   *
+   * <code>repeated string default_access_rights = 6;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the defaultAccessRights at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getDefaultAccessRightsBytes(int index) {
+    return defaultAccessRights_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -760,6 +823,9 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(5, getPrivacySettings());
     }
+    for (int i = 0; i < defaultAccessRights_.size(); i++) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 6, defaultAccessRights_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -786,6 +852,14 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getPrivacySettings());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < defaultAccessRights_.size(); i++) {
+        dataSize += computeStringSizeNoTag(defaultAccessRights_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDefaultAccessRightsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -821,6 +895,8 @@ private static final long serialVersionUID = 0L;
       if (!getPrivacySettings()
           .equals(other.getPrivacySettings())) return false;
     }
+    if (!getDefaultAccessRightsList()
+        .equals(other.getDefaultAccessRightsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -847,6 +923,10 @@ private static final long serialVersionUID = 0L;
     if (hasPrivacySettings()) {
       hash = (37 * hash) + PRIVACY_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getPrivacySettings().hashCode();
+    }
+    if (getDefaultAccessRightsCount() > 0) {
+      hash = (37 * hash) + DEFAULT_ACCESS_RIGHTS_FIELD_NUMBER;
+      hash = (53 * hash) + getDefaultAccessRightsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1008,6 +1088,8 @@ private static final long serialVersionUID = 0L;
         privacySettingsBuilder_.dispose();
         privacySettingsBuilder_ = null;
       }
+      defaultAccessRights_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1066,6 +1148,10 @@ private static final long serialVersionUID = 0L;
             : privacySettingsBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        defaultAccessRights_.makeImmutable();
+        result.defaultAccessRights_ = defaultAccessRights_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1099,6 +1185,16 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasPrivacySettings()) {
         mergePrivacySettings(other.getPrivacySettings());
+      }
+      if (!other.defaultAccessRights_.isEmpty()) {
+        if (defaultAccessRights_.isEmpty()) {
+          defaultAccessRights_ = other.defaultAccessRights_;
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureDefaultAccessRightsIsMutable();
+          defaultAccessRights_.addAll(other.defaultAccessRights_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1157,6 +1253,12 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000010;
               break;
             } // case 42
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureDefaultAccessRightsIsMutable();
+              defaultAccessRights_.add(s);
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1855,6 +1957,171 @@ private static final long serialVersionUID = 0L;
         privacySettings_ = null;
       }
       return privacySettingsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList defaultAccessRights_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureDefaultAccessRightsIsMutable() {
+      if (!defaultAccessRights_.isModifiable()) {
+        defaultAccessRights_ = new com.google.protobuf.LazyStringArrayList(defaultAccessRights_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+    /**
+     * <pre>
+     * The resource names of the default access rights to be associated within this unit.
+     * For example: installations/surelock-homes-hq/access-rights/baskerville.
+     * A maximum of 5 access rights can be specified.
+     * </pre>
+     *
+     * <code>repeated string default_access_rights = 6;</code>
+     * @return A list containing the defaultAccessRights.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDefaultAccessRightsList() {
+      defaultAccessRights_.makeImmutable();
+      return defaultAccessRights_;
+    }
+    /**
+     * <pre>
+     * The resource names of the default access rights to be associated within this unit.
+     * For example: installations/surelock-homes-hq/access-rights/baskerville.
+     * A maximum of 5 access rights can be specified.
+     * </pre>
+     *
+     * <code>repeated string default_access_rights = 6;</code>
+     * @return The count of defaultAccessRights.
+     */
+    public int getDefaultAccessRightsCount() {
+      return defaultAccessRights_.size();
+    }
+    /**
+     * <pre>
+     * The resource names of the default access rights to be associated within this unit.
+     * For example: installations/surelock-homes-hq/access-rights/baskerville.
+     * A maximum of 5 access rights can be specified.
+     * </pre>
+     *
+     * <code>repeated string default_access_rights = 6;</code>
+     * @param index The index of the element to return.
+     * @return The defaultAccessRights at the given index.
+     */
+    public java.lang.String getDefaultAccessRights(int index) {
+      return defaultAccessRights_.get(index);
+    }
+    /**
+     * <pre>
+     * The resource names of the default access rights to be associated within this unit.
+     * For example: installations/surelock-homes-hq/access-rights/baskerville.
+     * A maximum of 5 access rights can be specified.
+     * </pre>
+     *
+     * <code>repeated string default_access_rights = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the defaultAccessRights at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDefaultAccessRightsBytes(int index) {
+      return defaultAccessRights_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * The resource names of the default access rights to be associated within this unit.
+     * For example: installations/surelock-homes-hq/access-rights/baskerville.
+     * A maximum of 5 access rights can be specified.
+     * </pre>
+     *
+     * <code>repeated string default_access_rights = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The defaultAccessRights to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultAccessRights(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureDefaultAccessRightsIsMutable();
+      defaultAccessRights_.set(index, value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The resource names of the default access rights to be associated within this unit.
+     * For example: installations/surelock-homes-hq/access-rights/baskerville.
+     * A maximum of 5 access rights can be specified.
+     * </pre>
+     *
+     * <code>repeated string default_access_rights = 6;</code>
+     * @param value The defaultAccessRights to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDefaultAccessRights(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureDefaultAccessRightsIsMutable();
+      defaultAccessRights_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The resource names of the default access rights to be associated within this unit.
+     * For example: installations/surelock-homes-hq/access-rights/baskerville.
+     * A maximum of 5 access rights can be specified.
+     * </pre>
+     *
+     * <code>repeated string default_access_rights = 6;</code>
+     * @param values The defaultAccessRights to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDefaultAccessRights(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureDefaultAccessRightsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, defaultAccessRights_);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The resource names of the default access rights to be associated within this unit.
+     * For example: installations/surelock-homes-hq/access-rights/baskerville.
+     * A maximum of 5 access rights can be specified.
+     * </pre>
+     *
+     * <code>repeated string default_access_rights = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultAccessRights() {
+      defaultAccessRights_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The resource names of the default access rights to be associated within this unit.
+     * For example: installations/surelock-homes-hq/access-rights/baskerville.
+     * A maximum of 5 access rights can be specified.
+     * </pre>
+     *
+     * <code>repeated string default_access_rights = 6;</code>
+     * @param value The bytes of the defaultAccessRights to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDefaultAccessRightsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureDefaultAccessRightsIsMutable();
+      defaultAccessRights_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.unit.v1.Unit)

@@ -158,90 +158,91 @@ public final class UnitProto extends com.google.protobuf.GeneratedFile {
       "\n\037salto/nebula/unit/v1/unit.proto\022\024salto" +
       ".nebula.unit.v1\032\033google/protobuf/empty.p" +
       "roto\032 google/protobuf/field_mask.proto\032\037" +
-      "google/protobuf/timestamp.proto\"\371\001\n\004Unit" +
+      "google/protobuf/timestamp.proto\"\230\002\n\004Unit" +
       "\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\0220\n\014" +
       "move_in_time\030\003 \001(\0132\032.google.protobuf.Tim" +
       "estamp\0221\n\rmove_out_time\030\004 \001(\0132\032.google.p" +
       "rotobuf.Timestamp\022D\n\020privacy_settings\030\005 " +
       "\001(\0132*.salto.nebula.unit.v1.Unit.PrivacyS" +
-      "ettings\032\"\n\017PrivacySettings\022\017\n\007enabled\030\001 " +
-      "\001(\010\"5\n\006Policy\022\014\n\004name\030\001 \001(\t\022\016\n\006member\030\002 " +
-      "\001(\t\022\r\n\005roles\030\003 \003(\t\"o\n\021CreateUnitRequest\022" +
-      "\016\n\006parent\030\001 \001(\t\022\024\n\007unit_id\030\002 \001(\tH\000\210\001\001\022(\n" +
-      "\004unit\030\003 \001(\0132\032.salto.nebula.unit.v1.UnitB" +
-      "\n\n\010_unit_id\"\036\n\016GetUnitRequest\022\014\n\004name\030\001 " +
-      "\001(\t\"k\n\020ListUnitsRequest\022\016\n\006parent\030\001 \001(\t\022" +
-      "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016" +
-      "\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"W\n\021List" +
-      "UnitsResponse\022)\n\005units\030\001 \003(\0132\032.salto.neb" +
-      "ula.unit.v1.Unit\022\027\n\017next_page_token\030\002 \001(" +
-      "\t\"n\n\021UpdateUnitRequest\022(\n\004unit\030\001 \001(\0132\032.s" +
-      "alto.nebula.unit.v1.Unit\022/\n\013update_mask\030" +
-      "\002 \001(\0132\032.google.protobuf.FieldMask\"!\n\021Del" +
-      "eteUnitRequest\022\014\n\004name\030\001 \001(\t\"#\n\023CleanOut" +
-      "UnitRequest\022\014\n\004name\030\001 \001(\t\"\026\n\024CleanOutUni" +
-      "tResponse\"\371\001\n\021MoveInUnitRequest\022\014\n\004name\030" +
-      "\001 \001(\t\022C\n\toccupants\030\002 \003(\01320.salto.nebula." +
-      "unit.v1.MoveInUnitRequest.Occupant\032\220\001\n\010O" +
-      "ccupant\022\022\n\ngiven_name\030\001 \001(\t\022\030\n\013family_na" +
-      "me\030\002 \001(\tH\000\210\001\001\022\022\n\005email\030\003 \001(\tH\001\210\001\001\022\025\n\racc" +
-      "ess_rights\030\004 \003(\t\022\021\n\tiam_roles\030\005 \003(\tB\016\n\014_" +
-      "family_nameB\010\n\006_email\"\024\n\022MoveInUnitRespo" +
-      "nse\"\"\n\022MoveOutUnitRequest\022\014\n\004name\030\001 \001(\t\"" +
-      "\025\n\023MoveOutUnitResponse\"f\n\023CreatePolicyRe" +
-      "quest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpolicy_id\030\002 \001(\t" +
-      "\022,\n\006policy\030\003 \001(\0132\034.salto.nebula.unit.v1." +
-      "Policy\" \n\020GetPolicyRequest\022\014\n\004name\030\001 \001(\t" +
-      "\"n\n\023ListPoliciesRequest\022\016\n\006parent\030\001 \001(\t\022" +
-      "\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016" +
-      "\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"_\n\024List" +
-      "PoliciesResponse\022.\n\010policies\030\001 \003(\0132\034.sal" +
-      "to.nebula.unit.v1.Policy\022\027\n\017next_page_to" +
-      "ken\030\002 \001(\t\"t\n\023UpdatePolicyRequest\022,\n\006poli" +
-      "cy\030\001 \001(\0132\034.salto.nebula.unit.v1.Policy\022/" +
-      "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi" +
-      "eldMask\"#\n\023DeletePolicyRequest\022\014\n\004name\030\001" +
-      " \001(\t\";\n\026TestPermissionsRequest\022\014\n\004unit\030\001" +
-      " \001(\t\022\023\n\013permissions\030\002 \003(\t\".\n\027TestPermiss" +
-      "ionsResponse\022\023\n\013permissions\030\001 \003(\t2\210\n\n\013Un" +
-      "itService\022Q\n\nCreateUnit\022\'.salto.nebula.u" +
-      "nit.v1.CreateUnitRequest\032\032.salto.nebula." +
-      "unit.v1.Unit\022K\n\007GetUnit\022$.salto.nebula.u" +
-      "nit.v1.GetUnitRequest\032\032.salto.nebula.uni" +
-      "t.v1.Unit\022\\\n\tListUnits\022&.salto.nebula.un" +
-      "it.v1.ListUnitsRequest\032\'.salto.nebula.un" +
-      "it.v1.ListUnitsResponse\022Q\n\nUpdateUnit\022\'." +
-      "salto.nebula.unit.v1.UpdateUnitRequest\032\032" +
-      ".salto.nebula.unit.v1.Unit\022M\n\nDeleteUnit" +
-      "\022\'.salto.nebula.unit.v1.DeleteUnitReques" +
-      "t\032\026.google.protobuf.Empty\022e\n\014CleanOutUni" +
-      "t\022).salto.nebula.unit.v1.CleanOutUnitReq" +
-      "uest\032*.salto.nebula.unit.v1.CleanOutUnit" +
-      "Response\022_\n\nMoveInUnit\022\'.salto.nebula.un" +
-      "it.v1.MoveInUnitRequest\032(.salto.nebula.u" +
-      "nit.v1.MoveInUnitResponse\022b\n\013MoveOutUnit" +
-      "\022(.salto.nebula.unit.v1.MoveOutUnitReque" +
-      "st\032).salto.nebula.unit.v1.MoveOutUnitRes" +
-      "ponse\022W\n\014CreatePolicy\022).salto.nebula.uni" +
-      "t.v1.CreatePolicyRequest\032\034.salto.nebula." +
-      "unit.v1.Policy\022Q\n\tGetPolicy\022&.salto.nebu" +
-      "la.unit.v1.GetPolicyRequest\032\034.salto.nebu" +
-      "la.unit.v1.Policy\022e\n\014ListPolicies\022).salt" +
-      "o.nebula.unit.v1.ListPoliciesRequest\032*.s" +
-      "alto.nebula.unit.v1.ListPoliciesResponse" +
-      "\022W\n\014UpdatePolicy\022).salto.nebula.unit.v1." +
-      "UpdatePolicyRequest\032\034.salto.nebula.unit." +
-      "v1.Policy\022Q\n\014DeletePolicy\022).salto.nebula" +
-      ".unit.v1.DeletePolicyRequest\032\026.google.pr" +
-      "otobuf.Empty\022n\n\017TestPermissions\022,.salto." +
-      "nebula.unit.v1.TestPermissionsRequest\032-." +
-      "salto.nebula.unit.v1.TestPermissionsResp" +
-      "onseB\310\001\n\034com.saltoapis.nebula.unit.v1B\tU" +
-      "nitProtoP\001Z>github.com/saltoapis-interna" +
-      "l/saltoapis-go/nebula/unit/v1;unit\252\002\030Sal" +
-      "toapis.Nebula.Unit.V1\312\002\030Saltoapis\\Nebula" +
-      "\\Unit\\V1\342\002$GPBMetadata\\Saltoapis\\Nebula\\" +
-      "Unit\\V1b\006proto3"
+      "ettings\022\035\n\025default_access_rights\030\006 \003(\t\032\"" +
+      "\n\017PrivacySettings\022\017\n\007enabled\030\001 \001(\010\"5\n\006Po" +
+      "licy\022\014\n\004name\030\001 \001(\t\022\016\n\006member\030\002 \001(\t\022\r\n\005ro" +
+      "les\030\003 \003(\t\"o\n\021CreateUnitRequest\022\016\n\006parent" +
+      "\030\001 \001(\t\022\024\n\007unit_id\030\002 \001(\tH\000\210\001\001\022(\n\004unit\030\003 \001" +
+      "(\0132\032.salto.nebula.unit.v1.UnitB\n\n\010_unit_" +
+      "id\"\036\n\016GetUnitRequest\022\014\n\004name\030\001 \001(\t\"k\n\020Li" +
+      "stUnitsRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_s" +
+      "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030" +
+      "\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"W\n\021ListUnitsResp" +
+      "onse\022)\n\005units\030\001 \003(\0132\032.salto.nebula.unit." +
+      "v1.Unit\022\027\n\017next_page_token\030\002 \001(\t\"n\n\021Upda" +
+      "teUnitRequest\022(\n\004unit\030\001 \001(\0132\032.salto.nebu" +
+      "la.unit.v1.Unit\022/\n\013update_mask\030\002 \001(\0132\032.g" +
+      "oogle.protobuf.FieldMask\"!\n\021DeleteUnitRe" +
+      "quest\022\014\n\004name\030\001 \001(\t\"#\n\023CleanOutUnitReque" +
+      "st\022\014\n\004name\030\001 \001(\t\"\026\n\024CleanOutUnitResponse" +
+      "\"\371\001\n\021MoveInUnitRequest\022\014\n\004name\030\001 \001(\t\022C\n\t" +
+      "occupants\030\002 \003(\01320.salto.nebula.unit.v1.M" +
+      "oveInUnitRequest.Occupant\032\220\001\n\010Occupant\022\022" +
+      "\n\ngiven_name\030\001 \001(\t\022\030\n\013family_name\030\002 \001(\tH" +
+      "\000\210\001\001\022\022\n\005email\030\003 \001(\tH\001\210\001\001\022\025\n\raccess_right" +
+      "s\030\004 \003(\t\022\021\n\tiam_roles\030\005 \003(\tB\016\n\014_family_na" +
+      "meB\010\n\006_email\"\024\n\022MoveInUnitResponse\"\"\n\022Mo" +
+      "veOutUnitRequest\022\014\n\004name\030\001 \001(\t\"\025\n\023MoveOu" +
+      "tUnitResponse\"f\n\023CreatePolicyRequest\022\016\n\006" +
+      "parent\030\001 \001(\t\022\021\n\tpolicy_id\030\002 \001(\t\022,\n\006polic" +
+      "y\030\003 \001(\0132\034.salto.nebula.unit.v1.Policy\" \n" +
+      "\020GetPolicyRequest\022\014\n\004name\030\001 \001(\t\"n\n\023ListP" +
+      "oliciesRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_s" +
+      "ize\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030" +
+      "\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"_\n\024ListPoliciesR" +
+      "esponse\022.\n\010policies\030\001 \003(\0132\034.salto.nebula" +
+      ".unit.v1.Policy\022\027\n\017next_page_token\030\002 \001(\t" +
+      "\"t\n\023UpdatePolicyRequest\022,\n\006policy\030\001 \001(\0132" +
+      "\034.salto.nebula.unit.v1.Policy\022/\n\013update_" +
+      "mask\030\002 \001(\0132\032.google.protobuf.FieldMask\"#" +
+      "\n\023DeletePolicyRequest\022\014\n\004name\030\001 \001(\t\";\n\026T" +
+      "estPermissionsRequest\022\014\n\004unit\030\001 \001(\t\022\023\n\013p" +
+      "ermissions\030\002 \003(\t\".\n\027TestPermissionsRespo" +
+      "nse\022\023\n\013permissions\030\001 \003(\t2\210\n\n\013UnitService" +
+      "\022Q\n\nCreateUnit\022\'.salto.nebula.unit.v1.Cr" +
+      "eateUnitRequest\032\032.salto.nebula.unit.v1.U" +
+      "nit\022K\n\007GetUnit\022$.salto.nebula.unit.v1.Ge" +
+      "tUnitRequest\032\032.salto.nebula.unit.v1.Unit" +
+      "\022\\\n\tListUnits\022&.salto.nebula.unit.v1.Lis" +
+      "tUnitsRequest\032\'.salto.nebula.unit.v1.Lis" +
+      "tUnitsResponse\022Q\n\nUpdateUnit\022\'.salto.neb" +
+      "ula.unit.v1.UpdateUnitRequest\032\032.salto.ne" +
+      "bula.unit.v1.Unit\022M\n\nDeleteUnit\022\'.salto." +
+      "nebula.unit.v1.DeleteUnitRequest\032\026.googl" +
+      "e.protobuf.Empty\022e\n\014CleanOutUnit\022).salto" +
+      ".nebula.unit.v1.CleanOutUnitRequest\032*.sa" +
+      "lto.nebula.unit.v1.CleanOutUnitResponse\022" +
+      "_\n\nMoveInUnit\022\'.salto.nebula.unit.v1.Mov" +
+      "eInUnitRequest\032(.salto.nebula.unit.v1.Mo" +
+      "veInUnitResponse\022b\n\013MoveOutUnit\022(.salto." +
+      "nebula.unit.v1.MoveOutUnitRequest\032).salt" +
+      "o.nebula.unit.v1.MoveOutUnitResponse\022W\n\014" +
+      "CreatePolicy\022).salto.nebula.unit.v1.Crea" +
+      "tePolicyRequest\032\034.salto.nebula.unit.v1.P" +
+      "olicy\022Q\n\tGetPolicy\022&.salto.nebula.unit.v" +
+      "1.GetPolicyRequest\032\034.salto.nebula.unit.v" +
+      "1.Policy\022e\n\014ListPolicies\022).salto.nebula." +
+      "unit.v1.ListPoliciesRequest\032*.salto.nebu" +
+      "la.unit.v1.ListPoliciesResponse\022W\n\014Updat" +
+      "ePolicy\022).salto.nebula.unit.v1.UpdatePol" +
+      "icyRequest\032\034.salto.nebula.unit.v1.Policy" +
+      "\022Q\n\014DeletePolicy\022).salto.nebula.unit.v1." +
+      "DeletePolicyRequest\032\026.google.protobuf.Em" +
+      "pty\022n\n\017TestPermissions\022,.salto.nebula.un" +
+      "it.v1.TestPermissionsRequest\032-.salto.neb" +
+      "ula.unit.v1.TestPermissionsResponseB\310\001\n\034" +
+      "com.saltoapis.nebula.unit.v1B\tUnitProtoP" +
+      "\001Z>github.com/saltoapis-internal/saltoap" +
+      "is-go/nebula/unit/v1;unit\252\002\030Saltoapis.Ne" +
+      "bula.Unit.V1\312\002\030Saltoapis\\Nebula\\Unit\\V1\342" +
+      "\002$GPBMetadata\\Saltoapis\\Nebula\\Unit\\V1b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -255,7 +256,7 @@ public final class UnitProto extends com.google.protobuf.GeneratedFile {
     internal_static_salto_nebula_unit_v1_Unit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_unit_v1_Unit_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "MoveInTime", "MoveOutTime", "PrivacySettings", });
+        new java.lang.String[] { "Name", "DisplayName", "MoveInTime", "MoveOutTime", "PrivacySettings", "DefaultAccessRights", });
     internal_static_salto_nebula_unit_v1_Unit_PrivacySettings_descriptor =
       internal_static_salto_nebula_unit_v1_Unit_descriptor.getNestedType(0);
     internal_static_salto_nebula_unit_v1_Unit_PrivacySettings_fieldAccessorTable = new

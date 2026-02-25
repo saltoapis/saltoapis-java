@@ -435,4 +435,54 @@ public interface UserOrBuilder extends
    * @return The blocked.
    */
   boolean getBlocked();
+
+  /**
+   * <pre>
+   * The resource name of the manager resource that owns this user. A manager
+   * resource is any resource (such as a booking) that creates and governs the
+   * lifecycle of this user.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this user is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource.
+   * </pre>
+   *
+   * <code>optional string manager = 17;</code>
+   * @return Whether the manager field is set.
+   */
+  boolean hasManager();
+  /**
+   * <pre>
+   * The resource name of the manager resource that owns this user. A manager
+   * resource is any resource (such as a booking) that creates and governs the
+   * lifecycle of this user.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this user is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource.
+   * </pre>
+   *
+   * <code>optional string manager = 17;</code>
+   * @return The manager.
+   */
+  java.lang.String getManager();
+  /**
+   * <pre>
+   * The resource name of the manager resource that owns this user. A manager
+   * resource is any resource (such as a booking) that creates and governs the
+   * lifecycle of this user.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this user is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource.
+   * </pre>
+   *
+   * <code>optional string manager = 17;</code>
+   * @return The bytes for manager.
+   */
+  com.google.protobuf.ByteString
+      getManagerBytes();
 }
