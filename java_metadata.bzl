@@ -53,6 +53,7 @@ VALE_VERSION="3.7.1"
 java_projects = [
     '//intercom-v1/src/main/java',
     '//nebula-accesspointgroup-v1/src/main/java',
+    '//nebula-booking-v1/src/main/java',
     '//nebula-destination-v1/src/main/java',
     '//nebula-emergencykey-v1/src/main/java',
     '//nebula-file-v1/src/main/java',
