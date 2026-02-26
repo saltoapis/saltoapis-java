@@ -335,37 +335,6 @@ public final class BookingServiceGrpc {
     return getListBookingUsersMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest,
-      com.saltoapis.nebula.booking.v1.BookingUser> getUpdateBookingUserMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "UpdateBookingUser",
-      requestType = com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest.class,
-      responseType = com.saltoapis.nebula.booking.v1.BookingUser.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest,
-      com.saltoapis.nebula.booking.v1.BookingUser> getUpdateBookingUserMethod() {
-    io.grpc.MethodDescriptor<com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest, com.saltoapis.nebula.booking.v1.BookingUser> getUpdateBookingUserMethod;
-    if ((getUpdateBookingUserMethod = BookingServiceGrpc.getUpdateBookingUserMethod) == null) {
-      synchronized (BookingServiceGrpc.class) {
-        if ((getUpdateBookingUserMethod = BookingServiceGrpc.getUpdateBookingUserMethod) == null) {
-          BookingServiceGrpc.getUpdateBookingUserMethod = getUpdateBookingUserMethod =
-              io.grpc.MethodDescriptor.<com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest, com.saltoapis.nebula.booking.v1.BookingUser>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateBookingUser"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.saltoapis.nebula.booking.v1.BookingUser.getDefaultInstance()))
-              .setSchemaDescriptor(new BookingServiceMethodDescriptorSupplier("UpdateBookingUser"))
-              .build();
-        }
-      }
-    }
-    return getUpdateBookingUserMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.booking.v1.DeleteBookingUserRequest,
       com.google.protobuf.Empty> getDeleteBookingUserMethod;
 
@@ -567,17 +536,6 @@ public final class BookingServiceGrpc {
 
     /**
      * <pre>
-     * Update a booking user
-     * Updates an existing booking's user association.
-     * </pre>
-     */
-    default void updateBookingUser(com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest request,
-        io.grpc.stub.StreamObserver<com.saltoapis.nebula.booking.v1.BookingUser> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateBookingUserMethod(), responseObserver);
-    }
-
-    /**
-     * <pre>
      * Delete a booking user
      * Deletes a booking's user association.
      * </pre>
@@ -757,18 +715,6 @@ public final class BookingServiceGrpc {
 
     /**
      * <pre>
-     * Update a booking user
-     * Updates an existing booking's user association.
-     * </pre>
-     */
-    public void updateBookingUser(com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest request,
-        io.grpc.stub.StreamObserver<com.saltoapis.nebula.booking.v1.BookingUser> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getUpdateBookingUserMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     * <pre>
      * Delete a booking user
      * Deletes a booking's user association.
      * </pre>
@@ -914,17 +860,6 @@ public final class BookingServiceGrpc {
     public com.saltoapis.nebula.booking.v1.ListBookingUsersResponse listBookingUsers(com.saltoapis.nebula.booking.v1.ListBookingUsersRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListBookingUsersMethod(), getCallOptions(), request);
-    }
-
-    /**
-     * <pre>
-     * Update a booking user
-     * Updates an existing booking's user association.
-     * </pre>
-     */
-    public com.saltoapis.nebula.booking.v1.BookingUser updateBookingUser(com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getUpdateBookingUserMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1087,18 +1022,6 @@ public final class BookingServiceGrpc {
 
     /**
      * <pre>
-     * Update a booking user
-     * Updates an existing booking's user association.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.booking.v1.BookingUser> updateBookingUser(
-        com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getUpdateBookingUserMethod(), getCallOptions()), request);
-    }
-
-    /**
-     * <pre>
      * Delete a booking user
      * Deletes a booking's user association.
      * </pre>
@@ -1120,8 +1043,7 @@ public final class BookingServiceGrpc {
   private static final int METHODID_CREATE_BOOKING_USER = 7;
   private static final int METHODID_GET_BOOKING_USER = 8;
   private static final int METHODID_LIST_BOOKING_USERS = 9;
-  private static final int METHODID_UPDATE_BOOKING_USER = 10;
-  private static final int METHODID_DELETE_BOOKING_USER = 11;
+  private static final int METHODID_DELETE_BOOKING_USER = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1179,10 +1101,6 @@ public final class BookingServiceGrpc {
         case METHODID_LIST_BOOKING_USERS:
           serviceImpl.listBookingUsers((com.saltoapis.nebula.booking.v1.ListBookingUsersRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.booking.v1.ListBookingUsersResponse>) responseObserver);
-          break;
-        case METHODID_UPDATE_BOOKING_USER:
-          serviceImpl.updateBookingUser((com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest) request,
-              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.booking.v1.BookingUser>) responseObserver);
           break;
         case METHODID_DELETE_BOOKING_USER:
           serviceImpl.deleteBookingUser((com.saltoapis.nebula.booking.v1.DeleteBookingUserRequest) request,
@@ -1277,13 +1195,6 @@ public final class BookingServiceGrpc {
               com.saltoapis.nebula.booking.v1.ListBookingUsersResponse>(
                 service, METHODID_LIST_BOOKING_USERS)))
         .addMethod(
-          getUpdateBookingUserMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
-            new MethodHandlers<
-              com.saltoapis.nebula.booking.v1.UpdateBookingUserRequest,
-              com.saltoapis.nebula.booking.v1.BookingUser>(
-                service, METHODID_UPDATE_BOOKING_USER)))
-        .addMethod(
           getDeleteBookingUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1348,7 +1259,6 @@ public final class BookingServiceGrpc {
               .addMethod(getCreateBookingUserMethod())
               .addMethod(getGetBookingUserMethod())
               .addMethod(getListBookingUsersMethod())
-              .addMethod(getUpdateBookingUserMethod())
               .addMethod(getDeleteBookingUserMethod())
               .build();
         }
