@@ -36,6 +36,7 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     defaultAccessRights_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+    manager_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -794,6 +795,92 @@ private static final long serialVersionUID = 0L;
     return defaultAccessRights_.getByteString(index);
   }
 
+  public static final int MANAGER_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object manager_ = "";
+  /**
+   * <pre>
+   * The resource name of the manager resource that currently controls this
+   * unit. A manager resource is any resource (such as a booking) that creates
+   * and governs the lifecycle of this unit.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this unit is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource. For example, a unit
+   * may become managed when a booking is checked in, and unmanaged when the
+   * booking is checked out.
+   * </pre>
+   *
+   * <code>optional string manager = 7;</code>
+   * @return Whether the manager field is set.
+   */
+  @java.lang.Override
+  public boolean hasManager() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <pre>
+   * The resource name of the manager resource that currently controls this
+   * unit. A manager resource is any resource (such as a booking) that creates
+   * and governs the lifecycle of this unit.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this unit is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource. For example, a unit
+   * may become managed when a booking is checked in, and unmanaged when the
+   * booking is checked out.
+   * </pre>
+   *
+   * <code>optional string manager = 7;</code>
+   * @return The manager.
+   */
+  @java.lang.Override
+  public java.lang.String getManager() {
+    java.lang.Object ref = manager_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      manager_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The resource name of the manager resource that currently controls this
+   * unit. A manager resource is any resource (such as a booking) that creates
+   * and governs the lifecycle of this unit.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this unit is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource. For example, a unit
+   * may become managed when a booking is checked in, and unmanaged when the
+   * booking is checked out.
+   * </pre>
+   *
+   * <code>optional string manager = 7;</code>
+   * @return The bytes for manager.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getManagerBytes() {
+    java.lang.Object ref = manager_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      manager_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -825,6 +912,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < defaultAccessRights_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 6, defaultAccessRights_.getRaw(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 7, manager_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -860,6 +950,9 @@ private static final long serialVersionUID = 0L;
       }
       size += dataSize;
       size += 1 * getDefaultAccessRightsList().size();
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, manager_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -897,6 +990,11 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDefaultAccessRightsList()
         .equals(other.getDefaultAccessRightsList())) return false;
+    if (hasManager() != other.hasManager()) return false;
+    if (hasManager()) {
+      if (!getManager()
+          .equals(other.getManager())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -927,6 +1025,10 @@ private static final long serialVersionUID = 0L;
     if (getDefaultAccessRightsCount() > 0) {
       hash = (37 * hash) + DEFAULT_ACCESS_RIGHTS_FIELD_NUMBER;
       hash = (53 * hash) + getDefaultAccessRightsList().hashCode();
+    }
+    if (hasManager()) {
+      hash = (37 * hash) + MANAGER_FIELD_NUMBER;
+      hash = (53 * hash) + getManager().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1090,6 +1192,7 @@ private static final long serialVersionUID = 0L;
       }
       defaultAccessRights_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      manager_ = "";
       return this;
     }
 
@@ -1152,6 +1255,10 @@ private static final long serialVersionUID = 0L;
         defaultAccessRights_.makeImmutable();
         result.defaultAccessRights_ = defaultAccessRights_;
       }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.manager_ = manager_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1194,6 +1301,11 @@ private static final long serialVersionUID = 0L;
           ensureDefaultAccessRightsIsMutable();
           defaultAccessRights_.addAll(other.defaultAccessRights_);
         }
+        onChanged();
+      }
+      if (other.hasManager()) {
+        manager_ = other.manager_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1259,6 +1371,11 @@ private static final long serialVersionUID = 0L;
               defaultAccessRights_.add(s);
               break;
             } // case 50
+            case 58: {
+              manager_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2120,6 +2237,163 @@ private static final long serialVersionUID = 0L;
       ensureDefaultAccessRightsIsMutable();
       defaultAccessRights_.add(value);
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object manager_ = "";
+    /**
+     * <pre>
+     * The resource name of the manager resource that currently controls this
+     * unit. A manager resource is any resource (such as a booking) that creates
+     * and governs the lifecycle of this unit.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this unit is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource. For example, a unit
+     * may become managed when a booking is checked in, and unmanaged when the
+     * booking is checked out.
+     * </pre>
+     *
+     * <code>optional string manager = 7;</code>
+     * @return Whether the manager field is set.
+     */
+    public boolean hasManager() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that currently controls this
+     * unit. A manager resource is any resource (such as a booking) that creates
+     * and governs the lifecycle of this unit.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this unit is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource. For example, a unit
+     * may become managed when a booking is checked in, and unmanaged when the
+     * booking is checked out.
+     * </pre>
+     *
+     * <code>optional string manager = 7;</code>
+     * @return The manager.
+     */
+    public java.lang.String getManager() {
+      java.lang.Object ref = manager_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        manager_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that currently controls this
+     * unit. A manager resource is any resource (such as a booking) that creates
+     * and governs the lifecycle of this unit.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this unit is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource. For example, a unit
+     * may become managed when a booking is checked in, and unmanaged when the
+     * booking is checked out.
+     * </pre>
+     *
+     * <code>optional string manager = 7;</code>
+     * @return The bytes for manager.
+     */
+    public com.google.protobuf.ByteString
+        getManagerBytes() {
+      java.lang.Object ref = manager_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        manager_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that currently controls this
+     * unit. A manager resource is any resource (such as a booking) that creates
+     * and governs the lifecycle of this unit.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this unit is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource. For example, a unit
+     * may become managed when a booking is checked in, and unmanaged when the
+     * booking is checked out.
+     * </pre>
+     *
+     * <code>optional string manager = 7;</code>
+     * @param value The manager to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManager(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      manager_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that currently controls this
+     * unit. A manager resource is any resource (such as a booking) that creates
+     * and governs the lifecycle of this unit.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this unit is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource. For example, a unit
+     * may become managed when a booking is checked in, and unmanaged when the
+     * booking is checked out.
+     * </pre>
+     *
+     * <code>optional string manager = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearManager() {
+      manager_ = getDefaultInstance().getManager();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The resource name of the manager resource that currently controls this
+     * unit. A manager resource is any resource (such as a booking) that creates
+     * and governs the lifecycle of this unit.
+     *
+     * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+     *
+     * If set, this unit is considered "managed" and cannot be modified directly.
+     * It behaves as a side-effect of the manager resource. For example, a unit
+     * may become managed when a booking is checked in, and unmanaged when the
+     * booking is checked out.
+     * </pre>
+     *
+     * <code>optional string manager = 7;</code>
+     * @param value The bytes for manager to set.
+     * @return This builder for chaining.
+     */
+    public Builder setManagerBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      manager_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }

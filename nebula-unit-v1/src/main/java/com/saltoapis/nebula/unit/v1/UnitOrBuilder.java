@@ -189,4 +189,60 @@ public interface UnitOrBuilder extends
    */
   com.google.protobuf.ByteString
       getDefaultAccessRightsBytes(int index);
+
+  /**
+   * <pre>
+   * The resource name of the manager resource that currently controls this
+   * unit. A manager resource is any resource (such as a booking) that creates
+   * and governs the lifecycle of this unit.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this unit is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource. For example, a unit
+   * may become managed when a booking is checked in, and unmanaged when the
+   * booking is checked out.
+   * </pre>
+   *
+   * <code>optional string manager = 7;</code>
+   * @return Whether the manager field is set.
+   */
+  boolean hasManager();
+  /**
+   * <pre>
+   * The resource name of the manager resource that currently controls this
+   * unit. A manager resource is any resource (such as a booking) that creates
+   * and governs the lifecycle of this unit.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this unit is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource. For example, a unit
+   * may become managed when a booking is checked in, and unmanaged when the
+   * booking is checked out.
+   * </pre>
+   *
+   * <code>optional string manager = 7;</code>
+   * @return The manager.
+   */
+  java.lang.String getManager();
+  /**
+   * <pre>
+   * The resource name of the manager resource that currently controls this
+   * unit. A manager resource is any resource (such as a booking) that creates
+   * and governs the lifecycle of this unit.
+   *
+   * Example: "installations/surelock-homes-hq/bookings/watson-family-booking"
+   *
+   * If set, this unit is considered "managed" and cannot be modified directly.
+   * It behaves as a side-effect of the manager resource. For example, a unit
+   * may become managed when a booking is checked in, and unmanaged when the
+   * booking is checked out.
+   * </pre>
+   *
+   * <code>optional string manager = 7;</code>
+   * @return The bytes for manager.
+   */
+  com.google.protobuf.ByteString
+      getManagerBytes();
 }
