@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The credential does not have permission to override the Do Not Disturb
-     * mode active on the device.
+     * mode that is active on the device.
      *
      * Example: a user without the Do Not Disturb override permission attempts
      * to unlock a device while its Do Not Disturb mode is active.
@@ -242,7 +242,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The credential does not have permission to override the Do Not Disturb
-     * mode active on the device.
+     * mode that is active on the device.
      *
      * Example: a user without the Do Not Disturb override permission attempts
      * to unlock a device while its Do Not Disturb mode is active.
