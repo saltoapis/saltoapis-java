@@ -136,6 +136,18 @@ private static final long serialVersionUID = 0L;
      * <code>DEVICE_BATTERY_INSUFFICIENT = 7;</code>
      */
     DEVICE_BATTERY_INSUFFICIENT(7),
+    /**
+     * <pre>
+     * The credential does not have permission to override the Do Not Disturb
+     * mode active on the device.
+     *
+     * Example: a user without the Do Not Disturb override permission attempts
+     * to unlock a device while its Do Not Disturb mode is active.
+     * </pre>
+     *
+     * <code>CREDENTIAL_DO_NOT_DISTURB_OVERRIDE_PERMISSION_NOT_PRESENT = 8;</code>
+     */
+    CREDENTIAL_DO_NOT_DISTURB_OVERRIDE_PERMISSION_NOT_PRESENT(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -227,6 +239,18 @@ private static final long serialVersionUID = 0L;
      * <code>DEVICE_BATTERY_INSUFFICIENT = 7;</code>
      */
     public static final int DEVICE_BATTERY_INSUFFICIENT_VALUE = 7;
+    /**
+     * <pre>
+     * The credential does not have permission to override the Do Not Disturb
+     * mode active on the device.
+     *
+     * Example: a user without the Do Not Disturb override permission attempts
+     * to unlock a device while its Do Not Disturb mode is active.
+     * </pre>
+     *
+     * <code>CREDENTIAL_DO_NOT_DISTURB_OVERRIDE_PERMISSION_NOT_PRESENT = 8;</code>
+     */
+    public static final int CREDENTIAL_DO_NOT_DISTURB_OVERRIDE_PERMISSION_NOT_PRESENT_VALUE = 8;
 
 
     public final int getNumber() {
@@ -261,6 +285,7 @@ private static final long serialVersionUID = 0L;
         case 5: return CREDENTIAL_PERMISSION_OUTSIDE_SCHEDULE;
         case 6: return INVALID_ACCESS_CODE;
         case 7: return DEVICE_BATTERY_INSUFFICIENT;
+        case 8: return CREDENTIAL_DO_NOT_DISTURB_OVERRIDE_PERMISSION_NOT_PRESENT;
         default: return null;
       }
     }
