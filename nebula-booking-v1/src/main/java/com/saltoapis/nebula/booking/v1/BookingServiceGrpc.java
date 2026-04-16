@@ -273,6 +273,37 @@ public final class BookingServiceGrpc {
     return getCreateBookingUserMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest,
+      com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse> getBatchCreateBookingUsersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateBookingUsers",
+      requestType = com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest.class,
+      responseType = com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest,
+      com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse> getBatchCreateBookingUsersMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest, com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse> getBatchCreateBookingUsersMethod;
+    if ((getBatchCreateBookingUsersMethod = BookingServiceGrpc.getBatchCreateBookingUsersMethod) == null) {
+      synchronized (BookingServiceGrpc.class) {
+        if ((getBatchCreateBookingUsersMethod = BookingServiceGrpc.getBatchCreateBookingUsersMethod) == null) {
+          BookingServiceGrpc.getBatchCreateBookingUsersMethod = getBatchCreateBookingUsersMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest, com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchCreateBookingUsers"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BookingServiceMethodDescriptorSupplier("BatchCreateBookingUsers"))
+              .build();
+        }
+      }
+    }
+    return getBatchCreateBookingUsersMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.booking.v1.GetBookingUserRequest,
       com.saltoapis.nebula.booking.v1.BookingUser> getGetBookingUserMethod;
 
@@ -514,6 +545,18 @@ public final class BookingServiceGrpc {
 
     /**
      * <pre>
+     * Create a batch of booking users
+     * Creates a batch of booking users. This method allows the creation of
+     * multiple booking users in a single operation.
+     * </pre>
+     */
+    default void batchCreateBookingUsers(com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBatchCreateBookingUsersMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get a booking user
      * Retrieves an existing booking's user association.
      * </pre>
@@ -691,6 +734,19 @@ public final class BookingServiceGrpc {
 
     /**
      * <pre>
+     * Create a batch of booking users
+     * Creates a batch of booking users. This method allows the creation of
+     * multiple booking users in a single operation.
+     * </pre>
+     */
+    public void batchCreateBookingUsers(com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateBookingUsersMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Get a booking user
      * Retrieves an existing booking's user association.
      * </pre>
@@ -838,6 +894,18 @@ public final class BookingServiceGrpc {
     public com.saltoapis.nebula.booking.v1.BookingUser createBookingUser(com.saltoapis.nebula.booking.v1.CreateBookingUserRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateBookingUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Create a batch of booking users
+     * Creates a batch of booking users. This method allows the creation of
+     * multiple booking users in a single operation.
+     * </pre>
+     */
+    public com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse batchCreateBookingUsers(com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateBookingUsersMethod(), getCallOptions(), request);
     }
 
     /**
@@ -998,6 +1066,19 @@ public final class BookingServiceGrpc {
 
     /**
      * <pre>
+     * Create a batch of booking users
+     * Creates a batch of booking users. This method allows the creation of
+     * multiple booking users in a single operation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse> batchCreateBookingUsers(
+        com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateBookingUsersMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Get a booking user
      * Retrieves an existing booking's user association.
      * </pre>
@@ -1041,9 +1122,10 @@ public final class BookingServiceGrpc {
   private static final int METHODID_CHECK_IN_BOOKING = 5;
   private static final int METHODID_CHECK_OUT_BOOKING = 6;
   private static final int METHODID_CREATE_BOOKING_USER = 7;
-  private static final int METHODID_GET_BOOKING_USER = 8;
-  private static final int METHODID_LIST_BOOKING_USERS = 9;
-  private static final int METHODID_DELETE_BOOKING_USER = 10;
+  private static final int METHODID_BATCH_CREATE_BOOKING_USERS = 8;
+  private static final int METHODID_GET_BOOKING_USER = 9;
+  private static final int METHODID_LIST_BOOKING_USERS = 10;
+  private static final int METHODID_DELETE_BOOKING_USER = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1093,6 +1175,10 @@ public final class BookingServiceGrpc {
         case METHODID_CREATE_BOOKING_USER:
           serviceImpl.createBookingUser((com.saltoapis.nebula.booking.v1.CreateBookingUserRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.nebula.booking.v1.BookingUser>) responseObserver);
+          break;
+        case METHODID_BATCH_CREATE_BOOKING_USERS:
+          serviceImpl.batchCreateBookingUsers((com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse>) responseObserver);
           break;
         case METHODID_GET_BOOKING_USER:
           serviceImpl.getBookingUser((com.saltoapis.nebula.booking.v1.GetBookingUserRequest) request,
@@ -1181,6 +1267,13 @@ public final class BookingServiceGrpc {
               com.saltoapis.nebula.booking.v1.BookingUser>(
                 service, METHODID_CREATE_BOOKING_USER)))
         .addMethod(
+          getBatchCreateBookingUsersMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersRequest,
+              com.saltoapis.nebula.booking.v1.BatchCreateBookingUsersResponse>(
+                service, METHODID_BATCH_CREATE_BOOKING_USERS)))
+        .addMethod(
           getGetBookingUserMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -1257,6 +1350,7 @@ public final class BookingServiceGrpc {
               .addMethod(getCheckInBookingMethod())
               .addMethod(getCheckOutBookingMethod())
               .addMethod(getCreateBookingUserMethod())
+              .addMethod(getBatchCreateBookingUsersMethod())
               .addMethod(getGetBookingUserMethod())
               .addMethod(getListBookingUsersMethod())
               .addMethod(getDeleteBookingUserMethod())
