@@ -485,4 +485,18 @@ public interface UserOrBuilder extends
    */
   com.google.protobuf.ByteString
       getManagerBytes();
+
+  /**
+   * <pre>
+   * Indicates whether the user has permission to override Do Not Disturb mode
+   * on a device.
+   *
+   * Example: a user with this field set to true can unlock a device while
+   * its Do Not Disturb mode is active.
+   * </pre>
+   *
+   * <code>bool allow_do_not_disturb_override = 18;</code>
+   * @return The allowDoNotDisturbOverride.
+   */
+  boolean getAllowDoNotDisturbOverride();
 }

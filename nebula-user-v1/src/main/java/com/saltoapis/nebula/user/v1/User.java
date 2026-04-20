@@ -873,6 +873,25 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int ALLOW_DO_NOT_DISTURB_OVERRIDE_FIELD_NUMBER = 18;
+  private boolean allowDoNotDisturbOverride_ = false;
+  /**
+   * <pre>
+   * Indicates whether the user has permission to override Do Not Disturb mode
+   * on a device.
+   *
+   * Example: a user with this field set to true can unlock a device while
+   * its Do Not Disturb mode is active.
+   * </pre>
+   *
+   * <code>bool allow_do_not_disturb_override = 18;</code>
+   * @return The allowDoNotDisturbOverride.
+   */
+  @java.lang.Override
+  public boolean getAllowDoNotDisturbOverride() {
+    return allowDoNotDisturbOverride_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -937,6 +956,9 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 17, manager_);
+    }
+    if (allowDoNotDisturbOverride_ != false) {
+      output.writeBool(18, allowDoNotDisturbOverride_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1005,6 +1027,10 @@ private static final long serialVersionUID = 0L;
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(17, manager_);
+    }
+    if (allowDoNotDisturbOverride_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(18, allowDoNotDisturbOverride_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1091,6 +1117,8 @@ private static final long serialVersionUID = 0L;
       if (!getManager()
           .equals(other.getManager())) return false;
     }
+    if (getAllowDoNotDisturbOverride()
+        != other.getAllowDoNotDisturbOverride()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1161,6 +1189,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MANAGER_FIELD_NUMBER;
       hash = (53 * hash) + getManager().hashCode();
     }
+    hash = (37 * hash) + ALLOW_DO_NOT_DISTURB_OVERRIDE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAllowDoNotDisturbOverride());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1353,6 +1384,7 @@ private static final long serialVersionUID = 0L;
       }
       blocked_ = false;
       manager_ = "";
+      allowDoNotDisturbOverride_ = false;
       return this;
     }
 
@@ -1464,6 +1496,9 @@ private static final long serialVersionUID = 0L;
         result.manager_ = manager_;
         to_bitField0_ |= 0x00000800;
       }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.allowDoNotDisturbOverride_ = allowDoNotDisturbOverride_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1547,6 +1582,9 @@ private static final long serialVersionUID = 0L;
         manager_ = other.manager_;
         bitField0_ |= 0x00010000;
         onChanged();
+      }
+      if (other.getAllowDoNotDisturbOverride() != false) {
+        setAllowDoNotDisturbOverride(other.getAllowDoNotDisturbOverride());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1673,6 +1711,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00010000;
               break;
             } // case 138
+            case 144: {
+              allowDoNotDisturbOverride_ = input.readBool();
+              bitField0_ |= 0x00020000;
+              break;
+            } // case 144
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3824,6 +3867,62 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       manager_ = value;
       bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowDoNotDisturbOverride_ ;
+    /**
+     * <pre>
+     * Indicates whether the user has permission to override Do Not Disturb mode
+     * on a device.
+     *
+     * Example: a user with this field set to true can unlock a device while
+     * its Do Not Disturb mode is active.
+     * </pre>
+     *
+     * <code>bool allow_do_not_disturb_override = 18;</code>
+     * @return The allowDoNotDisturbOverride.
+     */
+    @java.lang.Override
+    public boolean getAllowDoNotDisturbOverride() {
+      return allowDoNotDisturbOverride_;
+    }
+    /**
+     * <pre>
+     * Indicates whether the user has permission to override Do Not Disturb mode
+     * on a device.
+     *
+     * Example: a user with this field set to true can unlock a device while
+     * its Do Not Disturb mode is active.
+     * </pre>
+     *
+     * <code>bool allow_do_not_disturb_override = 18;</code>
+     * @param value The allowDoNotDisturbOverride to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowDoNotDisturbOverride(boolean value) {
+
+      allowDoNotDisturbOverride_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether the user has permission to override Do Not Disturb mode
+     * on a device.
+     *
+     * Example: a user with this field set to true can unlock a device while
+     * its Do Not Disturb mode is active.
+     * </pre>
+     *
+     * <code>bool allow_do_not_disturb_override = 18;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowDoNotDisturbOverride() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      allowDoNotDisturbOverride_ = false;
       onChanged();
       return this;
     }
