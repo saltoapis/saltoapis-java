@@ -289,6 +289,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The event entry payload, represented as a structure that is
    * expressed as a JSON object.
+   *
+   * While the entire field is not filterable, filtering is only supported on data.access_point.
+   * This can be used in the filter field of ListEventsRequest:
+   * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+   * This returns all events where the access point matches the specified name.
    * </pre>
    *
    * <code>.google.protobuf.Struct data = 6;</code>
@@ -302,6 +307,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The event entry payload, represented as a structure that is
    * expressed as a JSON object.
+   *
+   * While the entire field is not filterable, filtering is only supported on data.access_point.
+   * This can be used in the filter field of ListEventsRequest:
+   * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+   * This returns all events where the access point matches the specified name.
    * </pre>
    *
    * <code>.google.protobuf.Struct data = 6;</code>
@@ -315,6 +325,11 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The event entry payload, represented as a structure that is
    * expressed as a JSON object.
+   *
+   * While the entire field is not filterable, filtering is only supported on data.access_point.
+   * This can be used in the filter field of ListEventsRequest:
+   * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+   * This returns all events where the access point matches the specified name.
    * </pre>
    *
    * <code>.google.protobuf.Struct data = 6;</code>
@@ -1430,6 +1445,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The event entry payload, represented as a structure that is
      * expressed as a JSON object.
+     *
+     * While the entire field is not filterable, filtering is only supported on data.access_point.
+     * This can be used in the filter field of ListEventsRequest:
+     * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+     * This returns all events where the access point matches the specified name.
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
@@ -1442,6 +1462,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The event entry payload, represented as a structure that is
      * expressed as a JSON object.
+     *
+     * While the entire field is not filterable, filtering is only supported on data.access_point.
+     * This can be used in the filter field of ListEventsRequest:
+     * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+     * This returns all events where the access point matches the specified name.
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
@@ -1458,6 +1483,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The event entry payload, represented as a structure that is
      * expressed as a JSON object.
+     *
+     * While the entire field is not filterable, filtering is only supported on data.access_point.
+     * This can be used in the filter field of ListEventsRequest:
+     * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+     * This returns all events where the access point matches the specified name.
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
@@ -1479,6 +1509,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The event entry payload, represented as a structure that is
      * expressed as a JSON object.
+     *
+     * While the entire field is not filterable, filtering is only supported on data.access_point.
+     * This can be used in the filter field of ListEventsRequest:
+     * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+     * This returns all events where the access point matches the specified name.
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
@@ -1498,6 +1533,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The event entry payload, represented as a structure that is
      * expressed as a JSON object.
+     *
+     * While the entire field is not filterable, filtering is only supported on data.access_point.
+     * This can be used in the filter field of ListEventsRequest:
+     * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+     * This returns all events where the access point matches the specified name.
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
@@ -1524,6 +1564,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The event entry payload, represented as a structure that is
      * expressed as a JSON object.
+     *
+     * While the entire field is not filterable, filtering is only supported on data.access_point.
+     * This can be used in the filter field of ListEventsRequest:
+     * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+     * This returns all events where the access point matches the specified name.
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
@@ -1542,6 +1587,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The event entry payload, represented as a structure that is
      * expressed as a JSON object.
+     *
+     * While the entire field is not filterable, filtering is only supported on data.access_point.
+     * This can be used in the filter field of ListEventsRequest:
+     * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+     * This returns all events where the access point matches the specified name.
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
@@ -1555,6 +1605,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The event entry payload, represented as a structure that is
      * expressed as a JSON object.
+     *
+     * While the entire field is not filterable, filtering is only supported on data.access_point.
+     * This can be used in the filter field of ListEventsRequest:
+     * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+     * This returns all events where the access point matches the specified name.
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
@@ -1571,6 +1626,11 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The event entry payload, represented as a structure that is
      * expressed as a JSON object.
+     *
+     * While the entire field is not filterable, filtering is only supported on data.access_point.
+     * This can be used in the filter field of ListEventsRequest:
+     * "data.access_point == 'installations/surelock-homes-hq/access-points/baker-street-entrance'"
+     * This returns all events where the access point matches the specified name.
      * </pre>
      *
      * <code>.google.protobuf.Struct data = 6;</code>
