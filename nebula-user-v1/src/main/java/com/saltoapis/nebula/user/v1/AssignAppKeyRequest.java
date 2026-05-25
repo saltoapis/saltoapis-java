@@ -7,7 +7,7 @@ package com.saltoapis.nebula.user.v1;
 
 /**
  * <pre>
- * The request message for [`AssignDigitalkey`][salto.nebula.user.v1.UserService.AssignDigitalkey]
+ * The request message for [`AssignAppKey`][salto.nebula.user.v1.UserService.AssignAppKey]
  * </pre>
  *
  * Protobuf type {@code salto.nebula.user.v1.AssignAppKeyRequest}
@@ -255,7 +255,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for [`AssignDigitalkey`][salto.nebula.user.v1.UserService.AssignDigitalkey]
+   * The request message for [`AssignAppKey`][salto.nebula.user.v1.UserService.AssignAppKey]
    * </pre>
    *
    * Protobuf type {@code salto.nebula.user.v1.AssignAppKeyRequest}
