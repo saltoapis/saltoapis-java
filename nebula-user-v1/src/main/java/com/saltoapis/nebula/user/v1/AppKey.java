@@ -312,10 +312,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Indicates whether this app key has pending updates or not.
-   * This field cannot be modified using a standard
-   * [`UpdateAppKey`][salto.nebula.user.v1.UserService.UpdateAppKey]
-   * operation. To change the value of this field, you must call
-   * [`OutdateAppKey`][salto.nebula.user.v1.UserService.OutdateAppKey].
+   *
+   * Deprecated: This field is deprecated and should not be used.
    * </pre>
    *
    * <code>bool outdated = 3;</code>
@@ -867,10 +865,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Indicates whether this app key has pending updates or not.
-     * This field cannot be modified using a standard
-     * [`UpdateAppKey`][salto.nebula.user.v1.UserService.UpdateAppKey]
-     * operation. To change the value of this field, you must call
-     * [`OutdateAppKey`][salto.nebula.user.v1.UserService.OutdateAppKey].
+     *
+     * Deprecated: This field is deprecated and should not be used.
      * </pre>
      *
      * <code>bool outdated = 3;</code>
@@ -883,10 +879,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Indicates whether this app key has pending updates or not.
-     * This field cannot be modified using a standard
-     * [`UpdateAppKey`][salto.nebula.user.v1.UserService.UpdateAppKey]
-     * operation. To change the value of this field, you must call
-     * [`OutdateAppKey`][salto.nebula.user.v1.UserService.OutdateAppKey].
+     *
+     * Deprecated: This field is deprecated and should not be used.
      * </pre>
      *
      * <code>bool outdated = 3;</code>
@@ -903,10 +897,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Indicates whether this app key has pending updates or not.
-     * This field cannot be modified using a standard
-     * [`UpdateAppKey`][salto.nebula.user.v1.UserService.UpdateAppKey]
-     * operation. To change the value of this field, you must call
-     * [`OutdateAppKey`][salto.nebula.user.v1.UserService.OutdateAppKey].
+     *
+     * Deprecated: This field is deprecated and should not be used.
      * </pre>
      *
      * <code>bool outdated = 3;</code>
