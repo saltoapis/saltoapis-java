@@ -11,6 +11,7 @@ load_rules(
         '//nebula-booking-v1/src/main/java',
         '//nebula-controller-v1/src/main/java',
         '//nebula-emergencykey-v1/src/main/java',
+        '//nebula-installation-v1/src/main/java',
         '//nebula-unit-v1/src/main/java',
         '//nebula-user-v1/src/main/java',
     ],
