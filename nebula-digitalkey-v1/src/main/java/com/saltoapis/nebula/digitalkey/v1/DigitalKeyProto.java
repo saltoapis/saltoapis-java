@@ -116,6 +116,21 @@ public final class DigitalKeyProto extends com.google.protobuf.GeneratedFile {
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_digitalkey_v1_UnlockDigitalKeyAccessPointMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -182,34 +197,40 @@ public final class DigitalKeyProto extends com.google.protobuf.GeneratedFile {
       "alKeyAccessPointsMetadata\"2\n\"UnlockDigit" +
       "alKeyAccessPointRequest\022\014\n\004name\030\001 \001(\t\"%\n" +
       "#UnlockDigitalKeyAccessPointResponse\"%\n#" +
-      "UnlockDigitalKeyAccessPointMetadata2\243\006\n\021" +
-      "DigitalKeyService\022i\n\rGetDigitalKey\0220.sal" +
-      "to.nebula.digitalkey.v1.GetDigitalKeyReq" +
-      "uest\032&.salto.nebula.digitalkey.v1.Digita" +
-      "lKey\022z\n\017ListDigitalKeys\0222.salto.nebula.d" +
-      "igitalkey.v1.ListDigitalKeysRequest\0323.sa" +
-      "lto.nebula.digitalkey.v1.ListDigitalKeys" +
-      "Response\022\212\001\n\030GetDigitalKeyAccessPoint\022;." +
-      "salto.nebula.digitalkey.v1.GetDigitalKey" +
-      "AccessPointRequest\0321.salto.nebula.digita" +
-      "lkey.v1.DigitalKeyAccessPoint\022\233\001\n\032ListDi" +
-      "gitalKeyAccessPoints\022=.salto.nebula.digi" +
-      "talkey.v1.ListDigitalKeyAccessPointsRequ" +
-      "est\032>.salto.nebula.digitalkey.v1.ListDig" +
-      "italKeyAccessPointsResponse\022|\n\032SyncDigit" +
-      "alKeyAccessPoints\022=.salto.nebula.digital" +
-      "key.v1.SyncDigitalKeyAccessPointsRequest" +
-      "\032\037.salto.longrunning.v1.Operation\022~\n\033Unl" +
-      "ockDigitalKeyAccessPoint\022>.salto.nebula." +
-      "digitalkey.v1.UnlockDigitalKeyAccessPoin" +
-      "tRequest\032\037.salto.longrunning.v1.Operatio" +
-      "nB\362\001\n\"com.saltoapis.nebula.digitalkey.v1" +
-      "B\017DigitalKeyProtoP\001ZJgithub.com/saltoapi" +
-      "s-internal/saltoapis-go/nebula/digitalke" +
-      "y/v1;digitalkey\252\002\036Saltoapis.Nebula.Digit" +
-      "alKey.V1\312\002\036Saltoapis\\Nebula\\DigitalKey\\V" +
-      "1\342\002*GPBMetadata\\Saltoapis\\Nebula\\Digital" +
-      "Key\\V1b\006proto3"
+      "UnlockDigitalKeyAccessPointMetadata\"0\n L" +
+      "ockDigitalKeyAccessPointRequest\022\014\n\004name\030" +
+      "\001 \001(\t\"#\n!LockDigitalKeyAccessPointRespon" +
+      "se\"#\n!LockDigitalKeyAccessPointMetadata2" +
+      "\237\007\n\021DigitalKeyService\022i\n\rGetDigitalKey\0220" +
+      ".salto.nebula.digitalkey.v1.GetDigitalKe" +
+      "yRequest\032&.salto.nebula.digitalkey.v1.Di" +
+      "gitalKey\022z\n\017ListDigitalKeys\0222.salto.nebu" +
+      "la.digitalkey.v1.ListDigitalKeysRequest\032" +
+      "3.salto.nebula.digitalkey.v1.ListDigital" +
+      "KeysResponse\022\212\001\n\030GetDigitalKeyAccessPoin" +
+      "t\022;.salto.nebula.digitalkey.v1.GetDigita" +
+      "lKeyAccessPointRequest\0321.salto.nebula.di" +
+      "gitalkey.v1.DigitalKeyAccessPoint\022\233\001\n\032Li" +
+      "stDigitalKeyAccessPoints\022=.salto.nebula." +
+      "digitalkey.v1.ListDigitalKeyAccessPoints" +
+      "Request\032>.salto.nebula.digitalkey.v1.Lis" +
+      "tDigitalKeyAccessPointsResponse\022|\n\032SyncD" +
+      "igitalKeyAccessPoints\022=.salto.nebula.dig" +
+      "italkey.v1.SyncDigitalKeyAccessPointsReq" +
+      "uest\032\037.salto.longrunning.v1.Operation\022~\n" +
+      "\033UnlockDigitalKeyAccessPoint\022>.salto.neb" +
+      "ula.digitalkey.v1.UnlockDigitalKeyAccess" +
+      "PointRequest\032\037.salto.longrunning.v1.Oper" +
+      "ation\022z\n\031LockDigitalKeyAccessPoint\022<.sal" +
+      "to.nebula.digitalkey.v1.LockDigitalKeyAc" +
+      "cessPointRequest\032\037.salto.longrunning.v1." +
+      "OperationB\362\001\n\"com.saltoapis.nebula.digit" +
+      "alkey.v1B\017DigitalKeyProtoP\001ZJgithub.com/" +
+      "saltoapis-internal/saltoapis-go/nebula/d" +
+      "igitalkey/v1;digitalkey\252\002\036Saltoapis.Nebu" +
+      "la.DigitalKey.V1\312\002\036Saltoapis\\Nebula\\Digi" +
+      "talKey\\V1\342\002*GPBMetadata\\Saltoapis\\Nebula" +
+      "\\DigitalKey\\V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -326,6 +347,24 @@ public final class DigitalKeyProto extends com.google.protobuf.GeneratedFile {
     internal_static_salto_nebula_digitalkey_v1_UnlockDigitalKeyAccessPointMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_digitalkey_v1_UnlockDigitalKeyAccessPointMetadata_descriptor,
+        new java.lang.String[] { });
+    internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointRequest_descriptor =
+      getDescriptor().getMessageType(14);
+    internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointRequest_descriptor,
+        new java.lang.String[] { "Name", });
+    internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointResponse_descriptor =
+      getDescriptor().getMessageType(15);
+    internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointMetadata_descriptor =
+      getDescriptor().getMessageType(16);
+    internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_digitalkey_v1_LockDigitalKeyAccessPointMetadata_descriptor,
         new java.lang.String[] { });
     descriptor.resolveAllFeaturesImmutable();
     com.google.protobuf.TimestampProto.getDescriptor();
