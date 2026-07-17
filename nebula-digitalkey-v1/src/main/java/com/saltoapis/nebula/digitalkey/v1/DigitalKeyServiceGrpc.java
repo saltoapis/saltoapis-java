@@ -206,6 +206,37 @@ public final class DigitalKeyServiceGrpc {
     return getUnlockDigitalKeyAccessPointMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest,
+      com.saltoapis.longrunning.v1.Operation> getLockDigitalKeyAccessPointMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "LockDigitalKeyAccessPoint",
+      requestType = com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest.class,
+      responseType = com.saltoapis.longrunning.v1.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest,
+      com.saltoapis.longrunning.v1.Operation> getLockDigitalKeyAccessPointMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest, com.saltoapis.longrunning.v1.Operation> getLockDigitalKeyAccessPointMethod;
+    if ((getLockDigitalKeyAccessPointMethod = DigitalKeyServiceGrpc.getLockDigitalKeyAccessPointMethod) == null) {
+      synchronized (DigitalKeyServiceGrpc.class) {
+        if ((getLockDigitalKeyAccessPointMethod = DigitalKeyServiceGrpc.getLockDigitalKeyAccessPointMethod) == null) {
+          DigitalKeyServiceGrpc.getLockDigitalKeyAccessPointMethod = getLockDigitalKeyAccessPointMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest, com.saltoapis.longrunning.v1.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "LockDigitalKeyAccessPoint"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.longrunning.v1.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new DigitalKeyServiceMethodDescriptorSupplier("LockDigitalKeyAccessPoint"))
+              .build();
+        }
+      }
+    }
+    return getLockDigitalKeyAccessPointMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -330,6 +361,20 @@ public final class DigitalKeyServiceGrpc {
         io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUnlockDigitalKeyAccessPointMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Lock an user access point
+     * Remotely locks an access point. This can be run against those access
+     * points where their associated devices are online and connected.
+     * The user related to the digital key must have the necessary access rights
+     * and the access point has to include a permitted schedule to perform a remote lock.
+     * </pre>
+     */
+    default void lockDigitalKeyAccessPoint(com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getLockDigitalKeyAccessPointMethod(), responseObserver);
+    }
   }
 
   /**
@@ -446,6 +491,21 @@ public final class DigitalKeyServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUnlockDigitalKeyAccessPointMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Lock an user access point
+     * Remotely locks an access point. This can be run against those access
+     * points where their associated devices are online and connected.
+     * The user related to the digital key must have the necessary access rights
+     * and the access point has to include a permitted schedule to perform a remote lock.
+     * </pre>
+     */
+    public void lockDigitalKeyAccessPoint(com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getLockDigitalKeyAccessPointMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -539,6 +599,20 @@ public final class DigitalKeyServiceGrpc {
     public com.saltoapis.longrunning.v1.Operation unlockDigitalKeyAccessPoint(com.saltoapis.nebula.digitalkey.v1.UnlockDigitalKeyAccessPointRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUnlockDigitalKeyAccessPointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Lock an user access point
+     * Remotely locks an access point. This can be run against those access
+     * points where their associated devices are online and connected.
+     * The user related to the digital key must have the necessary access rights
+     * and the access point has to include a permitted schedule to perform a remote lock.
+     * </pre>
+     */
+    public com.saltoapis.longrunning.v1.Operation lockDigitalKeyAccessPoint(com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLockDigitalKeyAccessPointMethod(), getCallOptions(), request);
     }
   }
 
@@ -640,6 +714,21 @@ public final class DigitalKeyServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUnlockDigitalKeyAccessPointMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Lock an user access point
+     * Remotely locks an access point. This can be run against those access
+     * points where their associated devices are online and connected.
+     * The user related to the digital key must have the necessary access rights
+     * and the access point has to include a permitted schedule to perform a remote lock.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.longrunning.v1.Operation> lockDigitalKeyAccessPoint(
+        com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getLockDigitalKeyAccessPointMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_DIGITAL_KEY = 0;
@@ -648,6 +737,7 @@ public final class DigitalKeyServiceGrpc {
   private static final int METHODID_LIST_DIGITAL_KEY_ACCESS_POINTS = 3;
   private static final int METHODID_SYNC_DIGITAL_KEY_ACCESS_POINTS = 4;
   private static final int METHODID_UNLOCK_DIGITAL_KEY_ACCESS_POINT = 5;
+  private static final int METHODID_LOCK_DIGITAL_KEY_ACCESS_POINT = 6;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -688,6 +778,10 @@ public final class DigitalKeyServiceGrpc {
           break;
         case METHODID_UNLOCK_DIGITAL_KEY_ACCESS_POINT:
           serviceImpl.unlockDigitalKeyAccessPoint((com.saltoapis.nebula.digitalkey.v1.UnlockDigitalKeyAccessPointRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
+          break;
+        case METHODID_LOCK_DIGITAL_KEY_ACCESS_POINT:
+          serviceImpl.lockDigitalKeyAccessPoint((com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
           break;
         default:
@@ -750,6 +844,13 @@ public final class DigitalKeyServiceGrpc {
               com.saltoapis.nebula.digitalkey.v1.UnlockDigitalKeyAccessPointRequest,
               com.saltoapis.longrunning.v1.Operation>(
                 service, METHODID_UNLOCK_DIGITAL_KEY_ACCESS_POINT)))
+        .addMethod(
+          getLockDigitalKeyAccessPointMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.digitalkey.v1.LockDigitalKeyAccessPointRequest,
+              com.saltoapis.longrunning.v1.Operation>(
+                service, METHODID_LOCK_DIGITAL_KEY_ACCESS_POINT)))
         .build();
   }
 
@@ -804,6 +905,7 @@ public final class DigitalKeyServiceGrpc {
               .addMethod(getListDigitalKeyAccessPointsMethod())
               .addMethod(getSyncDigitalKeyAccessPointsMethod())
               .addMethod(getUnlockDigitalKeyAccessPointMethod())
+              .addMethod(getLockDigitalKeyAccessPointMethod())
               .build();
         }
       }
