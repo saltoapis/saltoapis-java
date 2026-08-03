@@ -35,6 +35,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     displayName_ = "";
     calendar_ = "";
+    userRemoteOperations_ = emptyIntList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -693,6 +694,90 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int USER_REMOTE_OPERATIONS_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList userRemoteOperations_ =
+      emptyIntList();
+  private static final     com.google.protobuf.Internal.IntListAdapter.IntConverter<
+      com.saltoapis.nebula.type.AppKeyRemoteOperation> userRemoteOperations_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.saltoapis.nebula.type.AppKeyRemoteOperation>() {
+            public com.saltoapis.nebula.type.AppKeyRemoteOperation convert(int from) {
+              com.saltoapis.nebula.type.AppKeyRemoteOperation result = com.saltoapis.nebula.type.AppKeyRemoteOperation.forNumber(from);
+              return result == null ? com.saltoapis.nebula.type.AppKeyRemoteOperation.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @return A list containing the userRemoteOperations.
+   */
+  @java.lang.Override
+  public java.util.List<com.saltoapis.nebula.type.AppKeyRemoteOperation> getUserRemoteOperationsList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.saltoapis.nebula.type.AppKeyRemoteOperation>(userRemoteOperations_, userRemoteOperations_converter_);
+  }
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @return The count of userRemoteOperations.
+   */
+  @java.lang.Override
+  public int getUserRemoteOperationsCount() {
+    return userRemoteOperations_.size();
+  }
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @param index The index of the element to return.
+   * @return The userRemoteOperations at the given index.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.AppKeyRemoteOperation getUserRemoteOperations(int index) {
+    return userRemoteOperations_converter_.convert(userRemoteOperations_.getInt(index));
+  }
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @return A list containing the enum numeric values on the wire for userRemoteOperations.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getUserRemoteOperationsValueList() {
+    return userRemoteOperations_;
+  }
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of userRemoteOperations at the given index.
+   */
+  @java.lang.Override
+  public int getUserRemoteOperationsValue(int index) {
+    return userRemoteOperations_.getInt(index);
+  }
+  private int userRemoteOperationsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -707,6 +792,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    getSerializedSize();
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
@@ -739,6 +825,13 @@ private static final long serialVersionUID = 0L;
     }
     if (sourceCase_ == 11) {
       com.google.protobuf.GeneratedMessage.writeString(output, 11, source_);
+    }
+    if (getUserRemoteOperationsList().size() > 0) {
+      output.writeUInt32NoTag(98);
+      output.writeUInt32NoTag(userRemoteOperationsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < userRemoteOperations_.size(); i++) {
+      output.writeEnumNoTag(userRemoteOperations_.getInt(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -786,6 +879,18 @@ private static final long serialVersionUID = 0L;
     if (sourceCase_ == 11) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(11, source_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < userRemoteOperations_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(userRemoteOperations_.getInt(i));
+      }
+      size += dataSize;
+      if (!getUserRemoteOperationsList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }userRemoteOperationsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -822,6 +927,7 @@ private static final long serialVersionUID = 0L;
     }
     if (getLeftOpen()
         != other.getLeftOpen()) return false;
+    if (!userRemoteOperations_.equals(other.userRemoteOperations_)) return false;
     if (!getOpeningModeCase().equals(other.getOpeningModeCase())) return false;
     switch (openingModeCase_) {
       case 3:
@@ -883,6 +989,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + LEFT_OPEN_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getLeftOpen());
+    if (getUserRemoteOperationsCount() > 0) {
+      hash = (37 * hash) + USER_REMOTE_OPERATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + userRemoteOperations_.hashCode();
+    }
     switch (openingModeCase_) {
       case 3:
         hash = (37 * hash) + FIXED_FIELD_NUMBER;
@@ -1062,6 +1172,7 @@ private static final long serialVersionUID = 0L;
         unlockDurationBuilder_ = null;
       }
       leftOpen_ = false;
+      userRemoteOperations_ = emptyIntList();
       openingModeCase_ = 0;
       openingMode_ = null;
       sourceCase_ = 0;
@@ -1124,6 +1235,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.leftOpen_ = leftOpen_;
       }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        userRemoteOperations_.makeImmutable();
+        result.userRemoteOperations_ = userRemoteOperations_;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1169,6 +1284,17 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getLeftOpen() != false) {
         setLeftOpen(other.getLeftOpen());
+      }
+      if (!other.userRemoteOperations_.isEmpty()) {
+        if (userRemoteOperations_.isEmpty()) {
+          userRemoteOperations_ = other.userRemoteOperations_;
+          userRemoteOperations_.makeImmutable();
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureUserRemoteOperationsIsMutable();
+          userRemoteOperations_.addAll(other.userRemoteOperations_);
+        }
+        onChanged();
       }
       switch (other.getOpeningModeCase()) {
         case FIXED: {
@@ -1296,6 +1422,22 @@ private static final long serialVersionUID = 0L;
               source_ = s;
               break;
             } // case 90
+            case 96: {
+              int tmpRaw = input.readEnum();
+              ensureUserRemoteOperationsIsMutable();
+              userRemoteOperations_.addInt(tmpRaw);
+              break;
+            } // case 96
+            case 98: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              ensureUserRemoteOperationsIsMutable();
+              while (input.getBytesUntilLimit() > 0) {
+                userRemoteOperations_.addInt(input.readEnum());
+              }
+              input.popLimit(limit);
+              break;
+            } // case 98
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2496,6 +2638,202 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       sourceCase_ = 11;
       source_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList userRemoteOperations_ = emptyIntList();
+    private void ensureUserRemoteOperationsIsMutable() {
+      if (!userRemoteOperations_.isModifiable()) {
+        userRemoteOperations_ = makeMutableCopy(userRemoteOperations_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @return A list containing the userRemoteOperations.
+     */
+    public java.util.List<com.saltoapis.nebula.type.AppKeyRemoteOperation> getUserRemoteOperationsList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.saltoapis.nebula.type.AppKeyRemoteOperation>(userRemoteOperations_, userRemoteOperations_converter_);
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @return The count of userRemoteOperations.
+     */
+    public int getUserRemoteOperationsCount() {
+      return userRemoteOperations_.size();
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @param index The index of the element to return.
+     * @return The userRemoteOperations at the given index.
+     */
+    public com.saltoapis.nebula.type.AppKeyRemoteOperation getUserRemoteOperations(int index) {
+      return userRemoteOperations_converter_.convert(userRemoteOperations_.getInt(index));
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @param index The index to set the value at.
+     * @param value The userRemoteOperations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserRemoteOperations(
+        int index, com.saltoapis.nebula.type.AppKeyRemoteOperation value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureUserRemoteOperationsIsMutable();
+      userRemoteOperations_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @param value The userRemoteOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUserRemoteOperations(com.saltoapis.nebula.type.AppKeyRemoteOperation value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureUserRemoteOperationsIsMutable();
+      userRemoteOperations_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @param values The userRemoteOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUserRemoteOperations(
+        java.lang.Iterable<? extends com.saltoapis.nebula.type.AppKeyRemoteOperation> values) {
+      ensureUserRemoteOperationsIsMutable();
+      for (com.saltoapis.nebula.type.AppKeyRemoteOperation value : values) {
+        userRemoteOperations_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserRemoteOperations() {
+      userRemoteOperations_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @return A list containing the enum numeric values on the wire for userRemoteOperations.
+     */
+    public java.util.List<java.lang.Integer>
+    getUserRemoteOperationsValueList() {
+      userRemoteOperations_.makeImmutable();
+      return userRemoteOperations_;
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of userRemoteOperations at the given index.
+     */
+    public int getUserRemoteOperationsValue(int index) {
+      return userRemoteOperations_.getInt(index);
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for userRemoteOperations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserRemoteOperationsValue(
+        int index, int value) {
+      ensureUserRemoteOperationsIsMutable();
+      userRemoteOperations_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @param value The enum numeric value on the wire for userRemoteOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addUserRemoteOperationsValue(int value) {
+      ensureUserRemoteOperationsIsMutable();
+      userRemoteOperations_.addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Remote operations (for example: lock, unlock) that end users can perform on this
+     * access point via an app key.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+     * @param values The enum numeric values on the wire for userRemoteOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllUserRemoteOperationsValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureUserRemoteOperationsIsMutable();
+      for (int value : values) {
+        userRemoteOperations_.addInt(value);
+      }
       onChanged();
       return this;
     }

@@ -122,4 +122,53 @@ public interface DigitalKeyAccessPointOrBuilder extends
    * @return The enum numeric value on the wire of supportedTechnologies at the given index.
    */
   int getSupportedTechnologiesValue(int index);
+
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @return A list containing the remoteOperations.
+   */
+  java.util.List<com.saltoapis.nebula.type.AppKeyRemoteOperation> getRemoteOperationsList();
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @return The count of remoteOperations.
+   */
+  int getRemoteOperationsCount();
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @param index The index of the element to return.
+   * @return The remoteOperations at the given index.
+   */
+  com.saltoapis.nebula.type.AppKeyRemoteOperation getRemoteOperations(int index);
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @return A list containing the enum numeric values on the wire for remoteOperations.
+   */
+  java.util.List<java.lang.Integer>
+  getRemoteOperationsValueList();
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of remoteOperations at the given index.
+   */
+  int getRemoteOperationsValue(int index);
 }
