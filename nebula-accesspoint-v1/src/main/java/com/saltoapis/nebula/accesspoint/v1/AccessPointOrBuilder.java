@@ -303,6 +303,60 @@ public interface AccessPointOrBuilder extends
   com.google.protobuf.ByteString
       getIntercomAdaptorBytes();
 
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @return A list containing the userRemoteOperations.
+   */
+  java.util.List<com.saltoapis.nebula.type.AppKeyRemoteOperation> getUserRemoteOperationsList();
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @return The count of userRemoteOperations.
+   */
+  int getUserRemoteOperationsCount();
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @param index The index of the element to return.
+   * @return The userRemoteOperations at the given index.
+   */
+  com.saltoapis.nebula.type.AppKeyRemoteOperation getUserRemoteOperations(int index);
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @return A list containing the enum numeric values on the wire for userRemoteOperations.
+   */
+  java.util.List<java.lang.Integer>
+  getUserRemoteOperationsValueList();
+  /**
+   * <pre>
+   * Remote operations (for example: lock, unlock) that end users can perform on this
+   * access point via an app key.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation user_remote_operations = 12;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of userRemoteOperations at the given index.
+   */
+  int getUserRemoteOperationsValue(int index);
+
   com.saltoapis.nebula.accesspoint.v1.AccessPoint.OpeningModeCase getOpeningModeCase();
 
   com.saltoapis.nebula.accesspoint.v1.AccessPoint.SourceCase getSourceCase();

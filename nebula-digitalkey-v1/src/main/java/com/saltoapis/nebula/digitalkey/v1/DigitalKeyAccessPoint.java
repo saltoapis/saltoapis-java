@@ -36,6 +36,7 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     deviceId_ = "";
     supportedTechnologies_ = emptyIntList();
+    remoteOperations_ = emptyIntList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -275,6 +276,85 @@ private static final long serialVersionUID = 0L;
   }
   private int supportedTechnologiesMemoizedSerializedSize;
 
+  public static final int REMOTE_OPERATIONS_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList remoteOperations_ =
+      emptyIntList();
+  private static final     com.google.protobuf.Internal.IntListAdapter.IntConverter<
+      com.saltoapis.nebula.type.AppKeyRemoteOperation> remoteOperations_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.saltoapis.nebula.type.AppKeyRemoteOperation>() {
+            public com.saltoapis.nebula.type.AppKeyRemoteOperation convert(int from) {
+              com.saltoapis.nebula.type.AppKeyRemoteOperation result = com.saltoapis.nebula.type.AppKeyRemoteOperation.forNumber(from);
+              return result == null ? com.saltoapis.nebula.type.AppKeyRemoteOperation.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @return A list containing the remoteOperations.
+   */
+  @java.lang.Override
+  public java.util.List<com.saltoapis.nebula.type.AppKeyRemoteOperation> getRemoteOperationsList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.saltoapis.nebula.type.AppKeyRemoteOperation>(remoteOperations_, remoteOperations_converter_);
+  }
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @return The count of remoteOperations.
+   */
+  @java.lang.Override
+  public int getRemoteOperationsCount() {
+    return remoteOperations_.size();
+  }
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @param index The index of the element to return.
+   * @return The remoteOperations at the given index.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.AppKeyRemoteOperation getRemoteOperations(int index) {
+    return remoteOperations_converter_.convert(remoteOperations_.getInt(index));
+  }
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @return A list containing the enum numeric values on the wire for remoteOperations.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getRemoteOperationsValueList() {
+    return remoteOperations_;
+  }
+  /**
+   * <pre>
+   * Allowed remote operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of remoteOperations at the given index.
+   */
+  @java.lang.Override
+  public int getRemoteOperationsValue(int index) {
+    return remoteOperations_.getInt(index);
+  }
+  private int remoteOperationsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -306,6 +386,13 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < supportedTechnologies_.size(); i++) {
       output.writeEnumNoTag(supportedTechnologies_.getInt(i));
     }
+    if (getRemoteOperationsList().size() > 0) {
+      output.writeUInt32NoTag(42);
+      output.writeUInt32NoTag(remoteOperationsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < remoteOperations_.size(); i++) {
+      output.writeEnumNoTag(remoteOperations_.getInt(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -336,6 +423,18 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }supportedTechnologiesMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < remoteOperations_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(remoteOperations_.getInt(i));
+      }
+      size += dataSize;
+      if (!getRemoteOperationsList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }remoteOperationsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -358,6 +457,7 @@ private static final long serialVersionUID = 0L;
     if (!getDeviceId()
         .equals(other.getDeviceId())) return false;
     if (!supportedTechnologies_.equals(other.supportedTechnologies_)) return false;
+    if (!remoteOperations_.equals(other.remoteOperations_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -378,6 +478,10 @@ private static final long serialVersionUID = 0L;
     if (getSupportedTechnologiesCount() > 0) {
       hash = (37 * hash) + SUPPORTED_TECHNOLOGIES_FIELD_NUMBER;
       hash = (53 * hash) + supportedTechnologies_.hashCode();
+    }
+    if (getRemoteOperationsCount() > 0) {
+      hash = (37 * hash) + REMOTE_OPERATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + remoteOperations_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -518,6 +622,7 @@ private static final long serialVersionUID = 0L;
       displayName_ = "";
       deviceId_ = "";
       supportedTechnologies_ = emptyIntList();
+      remoteOperations_ = emptyIntList();
       return this;
     }
 
@@ -564,6 +669,10 @@ private static final long serialVersionUID = 0L;
         supportedTechnologies_.makeImmutable();
         result.supportedTechnologies_ = supportedTechnologies_;
       }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        remoteOperations_.makeImmutable();
+        result.remoteOperations_ = remoteOperations_;
+      }
     }
 
     @java.lang.Override
@@ -601,6 +710,17 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureSupportedTechnologiesIsMutable();
           supportedTechnologies_.addAll(other.supportedTechnologies_);
+        }
+        onChanged();
+      }
+      if (!other.remoteOperations_.isEmpty()) {
+        if (remoteOperations_.isEmpty()) {
+          remoteOperations_ = other.remoteOperations_;
+          remoteOperations_.makeImmutable();
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureRemoteOperationsIsMutable();
+          remoteOperations_.addAll(other.remoteOperations_);
         }
         onChanged();
       }
@@ -661,6 +781,22 @@ private static final long serialVersionUID = 0L;
               input.popLimit(limit);
               break;
             } // case 34
+            case 40: {
+              int tmpRaw = input.readEnum();
+              ensureRemoteOperationsIsMutable();
+              remoteOperations_.addInt(tmpRaw);
+              break;
+            } // case 40
+            case 42: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              ensureRemoteOperationsIsMutable();
+              while (input.getBytesUntilLimit() > 0) {
+                remoteOperations_.addInt(input.readEnum());
+              }
+              input.popLimit(limit);
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1143,6 +1279,190 @@ private static final long serialVersionUID = 0L;
       ensureSupportedTechnologiesIsMutable();
       for (int value : values) {
         supportedTechnologies_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList remoteOperations_ = emptyIntList();
+    private void ensureRemoteOperationsIsMutable() {
+      if (!remoteOperations_.isModifiable()) {
+        remoteOperations_ = makeMutableCopy(remoteOperations_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @return A list containing the remoteOperations.
+     */
+    public java.util.List<com.saltoapis.nebula.type.AppKeyRemoteOperation> getRemoteOperationsList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.saltoapis.nebula.type.AppKeyRemoteOperation>(remoteOperations_, remoteOperations_converter_);
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @return The count of remoteOperations.
+     */
+    public int getRemoteOperationsCount() {
+      return remoteOperations_.size();
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @param index The index of the element to return.
+     * @return The remoteOperations at the given index.
+     */
+    public com.saltoapis.nebula.type.AppKeyRemoteOperation getRemoteOperations(int index) {
+      return remoteOperations_converter_.convert(remoteOperations_.getInt(index));
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The remoteOperations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRemoteOperations(
+        int index, com.saltoapis.nebula.type.AppKeyRemoteOperation value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRemoteOperationsIsMutable();
+      remoteOperations_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @param value The remoteOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRemoteOperations(com.saltoapis.nebula.type.AppKeyRemoteOperation value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureRemoteOperationsIsMutable();
+      remoteOperations_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @param values The remoteOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRemoteOperations(
+        java.lang.Iterable<? extends com.saltoapis.nebula.type.AppKeyRemoteOperation> values) {
+      ensureRemoteOperationsIsMutable();
+      for (com.saltoapis.nebula.type.AppKeyRemoteOperation value : values) {
+        remoteOperations_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRemoteOperations() {
+      remoteOperations_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @return A list containing the enum numeric values on the wire for remoteOperations.
+     */
+    public java.util.List<java.lang.Integer>
+    getRemoteOperationsValueList() {
+      remoteOperations_.makeImmutable();
+      return remoteOperations_;
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of remoteOperations at the given index.
+     */
+    public int getRemoteOperationsValue(int index) {
+      return remoteOperations_.getInt(index);
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for remoteOperations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRemoteOperationsValue(
+        int index, int value) {
+      ensureRemoteOperationsIsMutable();
+      remoteOperations_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @param value The enum numeric value on the wire for remoteOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRemoteOperationsValue(int value) {
+      ensureRemoteOperationsIsMutable();
+      remoteOperations_.addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed remote operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyRemoteOperation remote_operations = 5;</code>
+     * @param values The enum numeric values on the wire for remoteOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRemoteOperationsValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureRemoteOperationsIsMutable();
+      for (int value : values) {
+        remoteOperations_.addInt(value);
       }
       onChanged();
       return this;

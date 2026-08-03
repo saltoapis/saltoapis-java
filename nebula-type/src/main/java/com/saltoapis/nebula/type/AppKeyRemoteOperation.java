@@ -7,7 +7,8 @@ package com.saltoapis.nebula.type;
 
 /**
  * <pre>
- * Specifies the remote operation supported by the app key.
+ * Specifies a remote operation that an app key can perform on an access
+ * point via a mobile phone.
  * </pre>
  *
  * Protobuf enum {@code salto.nebula.type.AppKeyRemoteOperation}
@@ -17,7 +18,7 @@ public enum AppKeyRemoteOperation
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
-   * Unspecified or unknown remote operation.
+   * Unspecified. This value is not allowed and will be rejected by the API.
    * </pre>
    *
    * <code>APP_KEY_REMOTE_OPERATION_UNSPECIFIED = 0;</code>
@@ -25,7 +26,7 @@ public enum AppKeyRemoteOperation
   APP_KEY_REMOTE_OPERATION_UNSPECIFIED(0),
   /**
    * <pre>
-   * Locks the access point remotely.
+   * Remotely locks the access point.
    * </pre>
    *
    * <code>LOCK = 1;</code>
@@ -33,7 +34,7 @@ public enum AppKeyRemoteOperation
   LOCK(1),
   /**
    * <pre>
-   * Unlocks the access point remotely.
+   * Remotely unlocks the access point.
    * </pre>
    *
    * <code>UNLOCK = 2;</code>
@@ -53,7 +54,7 @@ public enum AppKeyRemoteOperation
   }
   /**
    * <pre>
-   * Unspecified or unknown remote operation.
+   * Unspecified. This value is not allowed and will be rejected by the API.
    * </pre>
    *
    * <code>APP_KEY_REMOTE_OPERATION_UNSPECIFIED = 0;</code>
@@ -61,7 +62,7 @@ public enum AppKeyRemoteOperation
   public static final int APP_KEY_REMOTE_OPERATION_UNSPECIFIED_VALUE = 0;
   /**
    * <pre>
-   * Locks the access point remotely.
+   * Remotely locks the access point.
    * </pre>
    *
    * <code>LOCK = 1;</code>
@@ -69,7 +70,7 @@ public enum AppKeyRemoteOperation
   public static final int LOCK_VALUE = 1;
   /**
    * <pre>
-   * Unlocks the access point remotely.
+   * Remotely unlocks the access point.
    * </pre>
    *
    * <code>UNLOCK = 2;</code>
