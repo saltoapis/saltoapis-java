@@ -36,6 +36,7 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     calendar_ = "";
     userRemoteOperations_ = emptyIntList();
+    timeZone_ = "";
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -778,6 +779,74 @@ private static final long serialVersionUID = 0L;
   }
   private int userRemoteOperationsMemoizedSerializedSize;
 
+  public static final int TIME_ZONE_FIELD_NUMBER = 13;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object timeZone_ = "";
+  /**
+   * <pre>
+   * Time zone where the access point is located. It must follow the IANA Time
+   * Zone Database format. For example, "America/New_York." If not set, it falls
+   * back to the installation's time zone.
+   * This field is only usable on allowlisted installations.
+   * </pre>
+   *
+   * <code>optional string time_zone = 13;</code>
+   * @return Whether the timeZone field is set.
+   */
+  @java.lang.Override
+  public boolean hasTimeZone() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+  /**
+   * <pre>
+   * Time zone where the access point is located. It must follow the IANA Time
+   * Zone Database format. For example, "America/New_York." If not set, it falls
+   * back to the installation's time zone.
+   * This field is only usable on allowlisted installations.
+   * </pre>
+   *
+   * <code>optional string time_zone = 13;</code>
+   * @return The timeZone.
+   */
+  @java.lang.Override
+  public java.lang.String getTimeZone() {
+    java.lang.Object ref = timeZone_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      timeZone_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Time zone where the access point is located. It must follow the IANA Time
+   * Zone Database format. For example, "America/New_York." If not set, it falls
+   * back to the installation's time zone.
+   * This field is only usable on allowlisted installations.
+   * </pre>
+   *
+   * <code>optional string time_zone = 13;</code>
+   * @return The bytes for timeZone.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTimeZoneBytes() {
+    java.lang.Object ref = timeZone_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      timeZone_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -832,6 +901,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < userRemoteOperations_.size(); i++) {
       output.writeEnumNoTag(userRemoteOperations_.getInt(i));
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      com.google.protobuf.GeneratedMessage.writeString(output, 13, timeZone_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -891,6 +963,9 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }userRemoteOperationsMemoizedSerializedSize = dataSize;
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.GeneratedMessage.computeStringSize(13, timeZone_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -928,6 +1003,11 @@ private static final long serialVersionUID = 0L;
     if (getLeftOpen()
         != other.getLeftOpen()) return false;
     if (!userRemoteOperations_.equals(other.userRemoteOperations_)) return false;
+    if (hasTimeZone() != other.hasTimeZone()) return false;
+    if (hasTimeZone()) {
+      if (!getTimeZone()
+          .equals(other.getTimeZone())) return false;
+    }
     if (!getOpeningModeCase().equals(other.getOpeningModeCase())) return false;
     switch (openingModeCase_) {
       case 3:
@@ -992,6 +1072,10 @@ private static final long serialVersionUID = 0L;
     if (getUserRemoteOperationsCount() > 0) {
       hash = (37 * hash) + USER_REMOTE_OPERATIONS_FIELD_NUMBER;
       hash = (53 * hash) + userRemoteOperations_.hashCode();
+    }
+    if (hasTimeZone()) {
+      hash = (37 * hash) + TIME_ZONE_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeZone().hashCode();
     }
     switch (openingModeCase_) {
       case 3:
@@ -1173,6 +1257,7 @@ private static final long serialVersionUID = 0L;
       }
       leftOpen_ = false;
       userRemoteOperations_ = emptyIntList();
+      timeZone_ = "";
       openingModeCase_ = 0;
       openingMode_ = null;
       sourceCase_ = 0;
@@ -1239,6 +1324,10 @@ private static final long serialVersionUID = 0L;
         userRemoteOperations_.makeImmutable();
         result.userRemoteOperations_ = userRemoteOperations_;
       }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.timeZone_ = timeZone_;
+        to_bitField0_ |= 0x00000008;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1294,6 +1383,11 @@ private static final long serialVersionUID = 0L;
           ensureUserRemoteOperationsIsMutable();
           userRemoteOperations_.addAll(other.userRemoteOperations_);
         }
+        onChanged();
+      }
+      if (other.hasTimeZone()) {
+        timeZone_ = other.timeZone_;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       switch (other.getOpeningModeCase()) {
@@ -1438,6 +1532,11 @@ private static final long serialVersionUID = 0L;
               input.popLimit(limit);
               break;
             } // case 98
+            case 106: {
+              timeZone_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 106
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2834,6 +2933,127 @@ private static final long serialVersionUID = 0L;
       for (int value : values) {
         userRemoteOperations_.addInt(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object timeZone_ = "";
+    /**
+     * <pre>
+     * Time zone where the access point is located. It must follow the IANA Time
+     * Zone Database format. For example, "America/New_York." If not set, it falls
+     * back to the installation's time zone.
+     * This field is only usable on allowlisted installations.
+     * </pre>
+     *
+     * <code>optional string time_zone = 13;</code>
+     * @return Whether the timeZone field is set.
+     */
+    public boolean hasTimeZone() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <pre>
+     * Time zone where the access point is located. It must follow the IANA Time
+     * Zone Database format. For example, "America/New_York." If not set, it falls
+     * back to the installation's time zone.
+     * This field is only usable on allowlisted installations.
+     * </pre>
+     *
+     * <code>optional string time_zone = 13;</code>
+     * @return The timeZone.
+     */
+    public java.lang.String getTimeZone() {
+      java.lang.Object ref = timeZone_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        timeZone_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Time zone where the access point is located. It must follow the IANA Time
+     * Zone Database format. For example, "America/New_York." If not set, it falls
+     * back to the installation's time zone.
+     * This field is only usable on allowlisted installations.
+     * </pre>
+     *
+     * <code>optional string time_zone = 13;</code>
+     * @return The bytes for timeZone.
+     */
+    public com.google.protobuf.ByteString
+        getTimeZoneBytes() {
+      java.lang.Object ref = timeZone_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        timeZone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Time zone where the access point is located. It must follow the IANA Time
+     * Zone Database format. For example, "America/New_York." If not set, it falls
+     * back to the installation's time zone.
+     * This field is only usable on allowlisted installations.
+     * </pre>
+     *
+     * <code>optional string time_zone = 13;</code>
+     * @param value The timeZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimeZone(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      timeZone_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Time zone where the access point is located. It must follow the IANA Time
+     * Zone Database format. For example, "America/New_York." If not set, it falls
+     * back to the installation's time zone.
+     * This field is only usable on allowlisted installations.
+     * </pre>
+     *
+     * <code>optional string time_zone = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTimeZone() {
+      timeZone_ = getDefaultInstance().getTimeZone();
+      bitField0_ = (bitField0_ & ~0x00001000);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Time zone where the access point is located. It must follow the IANA Time
+     * Zone Database format. For example, "America/New_York." If not set, it falls
+     * back to the installation's time zone.
+     * This field is only usable on allowlisted installations.
+     * </pre>
+     *
+     * <code>optional string time_zone = 13;</code>
+     * @param value The bytes for timeZone to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTimeZoneBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      timeZone_ = value;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
