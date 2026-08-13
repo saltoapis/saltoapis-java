@@ -357,6 +357,44 @@ public interface AccessPointOrBuilder extends
    */
   int getUserRemoteOperationsValue(int index);
 
+  /**
+   * <pre>
+   * Time zone where the access point is located. It must follow the IANA Time
+   * Zone Database format. For example, "America/New_York." If not set, it falls
+   * back to the installation's time zone.
+   * This field is only usable on allowlisted installations.
+   * </pre>
+   *
+   * <code>optional string time_zone = 13;</code>
+   * @return Whether the timeZone field is set.
+   */
+  boolean hasTimeZone();
+  /**
+   * <pre>
+   * Time zone where the access point is located. It must follow the IANA Time
+   * Zone Database format. For example, "America/New_York." If not set, it falls
+   * back to the installation's time zone.
+   * This field is only usable on allowlisted installations.
+   * </pre>
+   *
+   * <code>optional string time_zone = 13;</code>
+   * @return The timeZone.
+   */
+  java.lang.String getTimeZone();
+  /**
+   * <pre>
+   * Time zone where the access point is located. It must follow the IANA Time
+   * Zone Database format. For example, "America/New_York." If not set, it falls
+   * back to the installation's time zone.
+   * This field is only usable on allowlisted installations.
+   * </pre>
+   *
+   * <code>optional string time_zone = 13;</code>
+   * @return The bytes for timeZone.
+   */
+  com.google.protobuf.ByteString
+      getTimeZoneBytes();
+
   com.saltoapis.nebula.accesspoint.v1.AccessPoint.OpeningModeCase getOpeningModeCase();
 
   com.saltoapis.nebula.accesspoint.v1.AccessPoint.SourceCase getSourceCase();
