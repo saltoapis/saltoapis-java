@@ -517,6 +517,37 @@ public final class UserServiceGrpc {
     return getEncodeCardKeyMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.UpdateAppKeyRequest,
+      com.saltoapis.nebula.user.v1.AppKey> getUpdateAppKeyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateAppKey",
+      requestType = com.saltoapis.nebula.user.v1.UpdateAppKeyRequest.class,
+      responseType = com.saltoapis.nebula.user.v1.AppKey.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.UpdateAppKeyRequest,
+      com.saltoapis.nebula.user.v1.AppKey> getUpdateAppKeyMethod() {
+    io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.UpdateAppKeyRequest, com.saltoapis.nebula.user.v1.AppKey> getUpdateAppKeyMethod;
+    if ((getUpdateAppKeyMethod = UserServiceGrpc.getUpdateAppKeyMethod) == null) {
+      synchronized (UserServiceGrpc.class) {
+        if ((getUpdateAppKeyMethod = UserServiceGrpc.getUpdateAppKeyMethod) == null) {
+          UserServiceGrpc.getUpdateAppKeyMethod = getUpdateAppKeyMethod =
+              io.grpc.MethodDescriptor.<com.saltoapis.nebula.user.v1.UpdateAppKeyRequest, com.saltoapis.nebula.user.v1.AppKey>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateAppKey"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.user.v1.UpdateAppKeyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.saltoapis.nebula.user.v1.AppKey.getDefaultInstance()))
+              .setSchemaDescriptor(new UserServiceMethodDescriptorSupplier("UpdateAppKey"))
+              .build();
+        }
+      }
+    }
+    return getUpdateAppKeyMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.saltoapis.nebula.user.v1.AssignAppKeyRequest,
       com.saltoapis.nebula.user.v1.AppKey> getAssignAppKeyMethod;
 
@@ -1065,6 +1096,17 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Update an app key
+     * Updates an existing user's app key.
+     * </pre>
+     */
+    default void updateAppKey(com.saltoapis.nebula.user.v1.UpdateAppKeyRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.AppKey> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateAppKeyMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Assign an app key
      * Assigns an app key to an existing user.
      * </pre>
@@ -1419,6 +1461,18 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Update an app key
+     * Updates an existing user's app key.
+     * </pre>
+     */
+    public void updateAppKey(com.saltoapis.nebula.user.v1.UpdateAppKeyRequest request,
+        io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.AppKey> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateAppKeyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Assign an app key
      * Assigns an app key to an existing user.
      * </pre>
@@ -1746,6 +1800,17 @@ public final class UserServiceGrpc {
     public com.saltoapis.longrunning.v1.Operation encodeCardKey(com.saltoapis.nebula.user.v1.EncodeCardKeyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getEncodeCardKeyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Update an app key
+     * Updates an existing user's app key.
+     * </pre>
+     */
+    public com.saltoapis.nebula.user.v1.AppKey updateAppKey(com.saltoapis.nebula.user.v1.UpdateAppKeyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAppKeyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2087,6 +2152,18 @@ public final class UserServiceGrpc {
 
     /**
      * <pre>
+     * Update an app key
+     * Updates an existing user's app key.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.saltoapis.nebula.user.v1.AppKey> updateAppKey(
+        com.saltoapis.nebula.user.v1.UpdateAppKeyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateAppKeyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Assign an app key
      * Assigns an app key to an existing user.
      * </pre>
@@ -2228,16 +2305,17 @@ public final class UserServiceGrpc {
   private static final int METHODID_ASSIGN_CARD_KEY = 13;
   private static final int METHODID_CANCEL_CARD_KEY = 14;
   private static final int METHODID_ENCODE_CARD_KEY = 15;
-  private static final int METHODID_ASSIGN_APP_KEY = 16;
-  private static final int METHODID_CANCEL_APP_KEY = 17;
-  private static final int METHODID_COMPUTE_APP_KEY_DATA = 18;
-  private static final int METHODID_ASSIGN_WALLET_KEY = 19;
-  private static final int METHODID_CANCEL_WALLET_KEY = 20;
-  private static final int METHODID_ASSIGN_PASSCODE = 21;
-  private static final int METHODID_CANCEL_PASSCODE = 22;
-  private static final int METHODID_ASSIGN_ELECTRONIC_KEY = 23;
-  private static final int METHODID_CANCEL_ELECTRONIC_KEY = 24;
-  private static final int METHODID_ENCODE_ELECTRONIC_KEY = 25;
+  private static final int METHODID_UPDATE_APP_KEY = 16;
+  private static final int METHODID_ASSIGN_APP_KEY = 17;
+  private static final int METHODID_CANCEL_APP_KEY = 18;
+  private static final int METHODID_COMPUTE_APP_KEY_DATA = 19;
+  private static final int METHODID_ASSIGN_WALLET_KEY = 20;
+  private static final int METHODID_CANCEL_WALLET_KEY = 21;
+  private static final int METHODID_ASSIGN_PASSCODE = 22;
+  private static final int METHODID_CANCEL_PASSCODE = 23;
+  private static final int METHODID_ASSIGN_ELECTRONIC_KEY = 24;
+  private static final int METHODID_CANCEL_ELECTRONIC_KEY = 25;
+  private static final int METHODID_ENCODE_ELECTRONIC_KEY = 26;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2319,6 +2397,10 @@ public final class UserServiceGrpc {
         case METHODID_ENCODE_CARD_KEY:
           serviceImpl.encodeCardKey((com.saltoapis.nebula.user.v1.EncodeCardKeyRequest) request,
               (io.grpc.stub.StreamObserver<com.saltoapis.longrunning.v1.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_APP_KEY:
+          serviceImpl.updateAppKey((com.saltoapis.nebula.user.v1.UpdateAppKeyRequest) request,
+              (io.grpc.stub.StreamObserver<com.saltoapis.nebula.user.v1.AppKey>) responseObserver);
           break;
         case METHODID_ASSIGN_APP_KEY:
           serviceImpl.assignAppKey((com.saltoapis.nebula.user.v1.AssignAppKeyRequest) request,
@@ -2491,6 +2573,13 @@ public final class UserServiceGrpc {
               com.saltoapis.longrunning.v1.Operation>(
                 service, METHODID_ENCODE_CARD_KEY)))
         .addMethod(
+          getUpdateAppKeyMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.saltoapis.nebula.user.v1.UpdateAppKeyRequest,
+              com.saltoapis.nebula.user.v1.AppKey>(
+                service, METHODID_UPDATE_APP_KEY)))
+        .addMethod(
           getAssignAppKeyMethod(),
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
@@ -2624,6 +2713,7 @@ public final class UserServiceGrpc {
               .addMethod(getAssignCardKeyMethod())
               .addMethod(getCancelCardKeyMethod())
               .addMethod(getEncodeCardKeyMethod())
+              .addMethod(getUpdateAppKeyMethod())
               .addMethod(getAssignAppKeyMethod())
               .addMethod(getCancelAppKeyMethod())
               .addMethod(getComputeAppKeyDataMethod())
