@@ -171,4 +171,53 @@ public interface DigitalKeyAccessPointOrBuilder extends
    * @return The enum numeric value on the wire of remoteOperations at the given index.
    */
   int getRemoteOperationsValue(int index);
+
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @return A list containing the localOperations.
+   */
+  java.util.List<com.saltoapis.nebula.type.AppKeyLocalOperation> getLocalOperationsList();
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @return The count of localOperations.
+   */
+  int getLocalOperationsCount();
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @param index The index of the element to return.
+   * @return The localOperations at the given index.
+   */
+  com.saltoapis.nebula.type.AppKeyLocalOperation getLocalOperations(int index);
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @return A list containing the enum numeric values on the wire for localOperations.
+   */
+  java.util.List<java.lang.Integer>
+  getLocalOperationsValueList();
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of localOperations at the given index.
+   */
+  int getLocalOperationsValue(int index);
 }
