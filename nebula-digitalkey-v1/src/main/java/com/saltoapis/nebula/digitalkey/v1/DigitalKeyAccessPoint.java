@@ -37,6 +37,7 @@ private static final long serialVersionUID = 0L;
     deviceId_ = "";
     supportedTechnologies_ = emptyIntList();
     remoteOperations_ = emptyIntList();
+    localOperations_ = emptyIntList();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor
@@ -355,6 +356,85 @@ private static final long serialVersionUID = 0L;
   }
   private int remoteOperationsMemoizedSerializedSize;
 
+  public static final int LOCAL_OPERATIONS_FIELD_NUMBER = 6;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.Internal.IntList localOperations_ =
+      emptyIntList();
+  private static final     com.google.protobuf.Internal.IntListAdapter.IntConverter<
+      com.saltoapis.nebula.type.AppKeyLocalOperation> localOperations_converter_ =
+          new com.google.protobuf.Internal.IntListAdapter.IntConverter<
+              com.saltoapis.nebula.type.AppKeyLocalOperation>() {
+            public com.saltoapis.nebula.type.AppKeyLocalOperation convert(int from) {
+              com.saltoapis.nebula.type.AppKeyLocalOperation result = com.saltoapis.nebula.type.AppKeyLocalOperation.forNumber(from);
+              return result == null ? com.saltoapis.nebula.type.AppKeyLocalOperation.UNRECOGNIZED : result;
+            }
+          };
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @return A list containing the localOperations.
+   */
+  @java.lang.Override
+  public java.util.List<com.saltoapis.nebula.type.AppKeyLocalOperation> getLocalOperationsList() {
+    return new com.google.protobuf.Internal.IntListAdapter<
+        com.saltoapis.nebula.type.AppKeyLocalOperation>(localOperations_, localOperations_converter_);
+  }
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @return The count of localOperations.
+   */
+  @java.lang.Override
+  public int getLocalOperationsCount() {
+    return localOperations_.size();
+  }
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @param index The index of the element to return.
+   * @return The localOperations at the given index.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.type.AppKeyLocalOperation getLocalOperations(int index) {
+    return localOperations_converter_.convert(localOperations_.getInt(index));
+  }
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @return A list containing the enum numeric values on the wire for localOperations.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer>
+  getLocalOperationsValueList() {
+    return localOperations_;
+  }
+  /**
+   * <pre>
+   * Allowed local operations for the digital key access point.
+   * </pre>
+   *
+   * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of localOperations at the given index.
+   */
+  @java.lang.Override
+  public int getLocalOperationsValue(int index) {
+    return localOperations_.getInt(index);
+  }
+  private int localOperationsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -392,6 +472,13 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < remoteOperations_.size(); i++) {
       output.writeEnumNoTag(remoteOperations_.getInt(i));
+    }
+    if (getLocalOperationsList().size() > 0) {
+      output.writeUInt32NoTag(50);
+      output.writeUInt32NoTag(localOperationsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < localOperations_.size(); i++) {
+      output.writeEnumNoTag(localOperations_.getInt(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -435,6 +522,18 @@ private static final long serialVersionUID = 0L;
           .computeUInt32SizeNoTag(dataSize);
       }remoteOperationsMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < localOperations_.size(); i++) {
+        dataSize += com.google.protobuf.CodedOutputStream
+          .computeEnumSizeNoTag(localOperations_.getInt(i));
+      }
+      size += dataSize;
+      if (!getLocalOperationsList().isEmpty()) {  size += 1;
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32SizeNoTag(dataSize);
+      }localOperationsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -458,6 +557,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDeviceId())) return false;
     if (!supportedTechnologies_.equals(other.supportedTechnologies_)) return false;
     if (!remoteOperations_.equals(other.remoteOperations_)) return false;
+    if (!localOperations_.equals(other.localOperations_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -482,6 +582,10 @@ private static final long serialVersionUID = 0L;
     if (getRemoteOperationsCount() > 0) {
       hash = (37 * hash) + REMOTE_OPERATIONS_FIELD_NUMBER;
       hash = (53 * hash) + remoteOperations_.hashCode();
+    }
+    if (getLocalOperationsCount() > 0) {
+      hash = (37 * hash) + LOCAL_OPERATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + localOperations_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -623,6 +727,7 @@ private static final long serialVersionUID = 0L;
       deviceId_ = "";
       supportedTechnologies_ = emptyIntList();
       remoteOperations_ = emptyIntList();
+      localOperations_ = emptyIntList();
       return this;
     }
 
@@ -673,6 +778,10 @@ private static final long serialVersionUID = 0L;
         remoteOperations_.makeImmutable();
         result.remoteOperations_ = remoteOperations_;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        localOperations_.makeImmutable();
+        result.localOperations_ = localOperations_;
+      }
     }
 
     @java.lang.Override
@@ -721,6 +830,17 @@ private static final long serialVersionUID = 0L;
         } else {
           ensureRemoteOperationsIsMutable();
           remoteOperations_.addAll(other.remoteOperations_);
+        }
+        onChanged();
+      }
+      if (!other.localOperations_.isEmpty()) {
+        if (localOperations_.isEmpty()) {
+          localOperations_ = other.localOperations_;
+          localOperations_.makeImmutable();
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureLocalOperationsIsMutable();
+          localOperations_.addAll(other.localOperations_);
         }
         onChanged();
       }
@@ -797,6 +917,22 @@ private static final long serialVersionUID = 0L;
               input.popLimit(limit);
               break;
             } // case 42
+            case 48: {
+              int tmpRaw = input.readEnum();
+              ensureLocalOperationsIsMutable();
+              localOperations_.addInt(tmpRaw);
+              break;
+            } // case 48
+            case 50: {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              ensureLocalOperationsIsMutable();
+              while (input.getBytesUntilLimit() > 0) {
+                localOperations_.addInt(input.readEnum());
+              }
+              input.popLimit(limit);
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1463,6 +1599,190 @@ private static final long serialVersionUID = 0L;
       ensureRemoteOperationsIsMutable();
       for (int value : values) {
         remoteOperations_.addInt(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Internal.IntList localOperations_ = emptyIntList();
+    private void ensureLocalOperationsIsMutable() {
+      if (!localOperations_.isModifiable()) {
+        localOperations_ = makeMutableCopy(localOperations_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @return A list containing the localOperations.
+     */
+    public java.util.List<com.saltoapis.nebula.type.AppKeyLocalOperation> getLocalOperationsList() {
+      return new com.google.protobuf.Internal.IntListAdapter<
+          com.saltoapis.nebula.type.AppKeyLocalOperation>(localOperations_, localOperations_converter_);
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @return The count of localOperations.
+     */
+    public int getLocalOperationsCount() {
+      return localOperations_.size();
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @param index The index of the element to return.
+     * @return The localOperations at the given index.
+     */
+    public com.saltoapis.nebula.type.AppKeyLocalOperation getLocalOperations(int index) {
+      return localOperations_converter_.convert(localOperations_.getInt(index));
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The localOperations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalOperations(
+        int index, com.saltoapis.nebula.type.AppKeyLocalOperation value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureLocalOperationsIsMutable();
+      localOperations_.setInt(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @param value The localOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLocalOperations(com.saltoapis.nebula.type.AppKeyLocalOperation value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureLocalOperationsIsMutable();
+      localOperations_.addInt(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @param values The localOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLocalOperations(
+        java.lang.Iterable<? extends com.saltoapis.nebula.type.AppKeyLocalOperation> values) {
+      ensureLocalOperationsIsMutable();
+      for (com.saltoapis.nebula.type.AppKeyLocalOperation value : values) {
+        localOperations_.addInt(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLocalOperations() {
+      localOperations_ = emptyIntList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @return A list containing the enum numeric values on the wire for localOperations.
+     */
+    public java.util.List<java.lang.Integer>
+    getLocalOperationsValueList() {
+      localOperations_.makeImmutable();
+      return localOperations_;
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of localOperations at the given index.
+     */
+    public int getLocalOperationsValue(int index) {
+      return localOperations_.getInt(index);
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for localOperations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLocalOperationsValue(
+        int index, int value) {
+      ensureLocalOperationsIsMutable();
+      localOperations_.setInt(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @param value The enum numeric value on the wire for localOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addLocalOperationsValue(int value) {
+      ensureLocalOperationsIsMutable();
+      localOperations_.addInt(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Allowed local operations for the digital key access point.
+     * </pre>
+     *
+     * <code>repeated .salto.nebula.type.AppKeyLocalOperation local_operations = 6;</code>
+     * @param values The enum numeric values on the wire for localOperations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllLocalOperationsValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureLocalOperationsIsMutable();
+      for (int value : values) {
+        localOperations_.addInt(value);
       }
       onChanged();
       return this;

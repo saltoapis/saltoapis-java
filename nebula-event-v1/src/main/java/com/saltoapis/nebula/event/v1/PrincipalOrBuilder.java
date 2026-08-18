@@ -37,5 +37,35 @@ public interface PrincipalOrBuilder extends
    */
   com.saltoapis.nebula.user.v1.UserOrBuilder getUserOrBuilder();
 
+  /**
+   * <pre>
+   * A service account represents a non-human actor within the system,
+   * such as an application, an integration or an automated process.
+   * </pre>
+   *
+   * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+   * @return Whether the serviceAccount field is set.
+   */
+  boolean hasServiceAccount();
+  /**
+   * <pre>
+   * A service account represents a non-human actor within the system,
+   * such as an application, an integration or an automated process.
+   * </pre>
+   *
+   * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+   * @return The serviceAccount.
+   */
+  com.saltoapis.nebula.serviceaccount.v1.ServiceAccount getServiceAccount();
+  /**
+   * <pre>
+   * A service account represents a non-human actor within the system,
+   * such as an application, an integration or an automated process.
+   * </pre>
+   *
+   * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+   */
+  com.saltoapis.nebula.serviceaccount.v1.ServiceAccountOrBuilder getServiceAccountOrBuilder();
+
   com.saltoapis.nebula.event.v1.Principal.TypeCase getTypeCase();
 }

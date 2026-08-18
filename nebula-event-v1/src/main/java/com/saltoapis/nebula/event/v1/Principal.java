@@ -60,6 +60,7 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     USER(1),
+    SERVICE_ACCOUNT(2),
     TYPE_NOT_SET(0);
     private final int value;
     private TypeCase(int value) {
@@ -78,6 +79,7 @@ private static final long serialVersionUID = 0L;
     public static TypeCase forNumber(int value) {
       switch (value) {
         case 1: return USER;
+        case 2: return SERVICE_ACCOUNT;
         case 0: return TYPE_NOT_SET;
         default: return null;
       }
@@ -136,6 +138,52 @@ private static final long serialVersionUID = 0L;
     return com.saltoapis.nebula.user.v1.User.getDefaultInstance();
   }
 
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * A service account represents a non-human actor within the system,
+   * such as an application, an integration or an automated process.
+   * </pre>
+   *
+   * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+   * @return Whether the serviceAccount field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceAccount() {
+    return typeCase_ == 2;
+  }
+  /**
+   * <pre>
+   * A service account represents a non-human actor within the system,
+   * such as an application, an integration or an automated process.
+   * </pre>
+   *
+   * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.serviceaccount.v1.ServiceAccount getServiceAccount() {
+    if (typeCase_ == 2) {
+       return (com.saltoapis.nebula.serviceaccount.v1.ServiceAccount) type_;
+    }
+    return com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * A service account represents a non-human actor within the system,
+   * such as an application, an integration or an automated process.
+   * </pre>
+   *
+   * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.serviceaccount.v1.ServiceAccountOrBuilder getServiceAccountOrBuilder() {
+    if (typeCase_ == 2) {
+       return (com.saltoapis.nebula.serviceaccount.v1.ServiceAccount) type_;
+    }
+    return com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -153,6 +201,9 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 1) {
       output.writeMessage(1, (com.saltoapis.nebula.user.v1.User) type_);
     }
+    if (typeCase_ == 2) {
+      output.writeMessage(2, (com.saltoapis.nebula.serviceaccount.v1.ServiceAccount) type_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -165,6 +216,10 @@ private static final long serialVersionUID = 0L;
     if (typeCase_ == 1) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, (com.saltoapis.nebula.user.v1.User) type_);
+    }
+    if (typeCase_ == 2) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, (com.saltoapis.nebula.serviceaccount.v1.ServiceAccount) type_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -187,6 +242,10 @@ private static final long serialVersionUID = 0L;
         if (!getUser()
             .equals(other.getUser())) return false;
         break;
+      case 2:
+        if (!getServiceAccount()
+            .equals(other.getServiceAccount())) return false;
+        break;
       case 0:
       default:
     }
@@ -205,6 +264,10 @@ private static final long serialVersionUID = 0L;
       case 1:
         hash = (37 * hash) + USER_FIELD_NUMBER;
         hash = (53 * hash) + getUser().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getServiceAccount().hashCode();
         break;
       case 0:
       default:
@@ -353,6 +416,9 @@ private static final long serialVersionUID = 0L;
       if (userBuilder_ != null) {
         userBuilder_.clear();
       }
+      if (serviceAccountBuilder_ != null) {
+        serviceAccountBuilder_.clear();
+      }
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -398,6 +464,10 @@ private static final long serialVersionUID = 0L;
           userBuilder_ != null) {
         result.type_ = userBuilder_.build();
       }
+      if (typeCase_ == 2 &&
+          serviceAccountBuilder_ != null) {
+        result.type_ = serviceAccountBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -415,6 +485,10 @@ private static final long serialVersionUID = 0L;
       switch (other.getTypeCase()) {
         case USER: {
           mergeUser(other.getUser());
+          break;
+        }
+        case SERVICE_ACCOUNT: {
+          mergeServiceAccount(other.getServiceAccount());
           break;
         }
         case TYPE_NOT_SET: {
@@ -454,6 +528,13 @@ private static final long serialVersionUID = 0L;
               typeCase_ = 1;
               break;
             } // case 10
+            case 18: {
+              input.readMessage(
+                  internalGetServiceAccountFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              typeCase_ = 2;
+              break;
+            } // case 18
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -662,6 +743,193 @@ private static final long serialVersionUID = 0L;
       typeCase_ = 1;
       onChanged();
       return userBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.serviceaccount.v1.ServiceAccount, com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.Builder, com.saltoapis.nebula.serviceaccount.v1.ServiceAccountOrBuilder> serviceAccountBuilder_;
+    /**
+     * <pre>
+     * A service account represents a non-human actor within the system,
+     * such as an application, an integration or an automated process.
+     * </pre>
+     *
+     * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+     * @return Whether the serviceAccount field is set.
+     */
+    @java.lang.Override
+    public boolean hasServiceAccount() {
+      return typeCase_ == 2;
+    }
+    /**
+     * <pre>
+     * A service account represents a non-human actor within the system,
+     * such as an application, an integration or an automated process.
+     * </pre>
+     *
+     * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+     * @return The serviceAccount.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.serviceaccount.v1.ServiceAccount getServiceAccount() {
+      if (serviceAccountBuilder_ == null) {
+        if (typeCase_ == 2) {
+          return (com.saltoapis.nebula.serviceaccount.v1.ServiceAccount) type_;
+        }
+        return com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.getDefaultInstance();
+      } else {
+        if (typeCase_ == 2) {
+          return serviceAccountBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * A service account represents a non-human actor within the system,
+     * such as an application, an integration or an automated process.
+     * </pre>
+     *
+     * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+     */
+    public Builder setServiceAccount(com.saltoapis.nebula.serviceaccount.v1.ServiceAccount value) {
+      if (serviceAccountBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        type_ = value;
+        onChanged();
+      } else {
+        serviceAccountBuilder_.setMessage(value);
+      }
+      typeCase_ = 2;
+      return this;
+    }
+    /**
+     * <pre>
+     * A service account represents a non-human actor within the system,
+     * such as an application, an integration or an automated process.
+     * </pre>
+     *
+     * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+     */
+    public Builder setServiceAccount(
+        com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.Builder builderForValue) {
+      if (serviceAccountBuilder_ == null) {
+        type_ = builderForValue.build();
+        onChanged();
+      } else {
+        serviceAccountBuilder_.setMessage(builderForValue.build());
+      }
+      typeCase_ = 2;
+      return this;
+    }
+    /**
+     * <pre>
+     * A service account represents a non-human actor within the system,
+     * such as an application, an integration or an automated process.
+     * </pre>
+     *
+     * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+     */
+    public Builder mergeServiceAccount(com.saltoapis.nebula.serviceaccount.v1.ServiceAccount value) {
+      if (serviceAccountBuilder_ == null) {
+        if (typeCase_ == 2 &&
+            type_ != com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.getDefaultInstance()) {
+          type_ = com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.newBuilder((com.saltoapis.nebula.serviceaccount.v1.ServiceAccount) type_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          type_ = value;
+        }
+        onChanged();
+      } else {
+        if (typeCase_ == 2) {
+          serviceAccountBuilder_.mergeFrom(value);
+        } else {
+          serviceAccountBuilder_.setMessage(value);
+        }
+      }
+      typeCase_ = 2;
+      return this;
+    }
+    /**
+     * <pre>
+     * A service account represents a non-human actor within the system,
+     * such as an application, an integration or an automated process.
+     * </pre>
+     *
+     * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+     */
+    public Builder clearServiceAccount() {
+      if (serviceAccountBuilder_ == null) {
+        if (typeCase_ == 2) {
+          typeCase_ = 0;
+          type_ = null;
+          onChanged();
+        }
+      } else {
+        if (typeCase_ == 2) {
+          typeCase_ = 0;
+          type_ = null;
+        }
+        serviceAccountBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * A service account represents a non-human actor within the system,
+     * such as an application, an integration or an automated process.
+     * </pre>
+     *
+     * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+     */
+    public com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.Builder getServiceAccountBuilder() {
+      return internalGetServiceAccountFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A service account represents a non-human actor within the system,
+     * such as an application, an integration or an automated process.
+     * </pre>
+     *
+     * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.serviceaccount.v1.ServiceAccountOrBuilder getServiceAccountOrBuilder() {
+      if ((typeCase_ == 2) && (serviceAccountBuilder_ != null)) {
+        return serviceAccountBuilder_.getMessageOrBuilder();
+      } else {
+        if (typeCase_ == 2) {
+          return (com.saltoapis.nebula.serviceaccount.v1.ServiceAccount) type_;
+        }
+        return com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * A service account represents a non-human actor within the system,
+     * such as an application, an integration or an automated process.
+     * </pre>
+     *
+     * <code>.salto.nebula.serviceaccount.v1.ServiceAccount service_account = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.serviceaccount.v1.ServiceAccount, com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.Builder, com.saltoapis.nebula.serviceaccount.v1.ServiceAccountOrBuilder> 
+        internalGetServiceAccountFieldBuilder() {
+      if (serviceAccountBuilder_ == null) {
+        if (!(typeCase_ == 2)) {
+          type_ = com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.getDefaultInstance();
+        }
+        serviceAccountBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.serviceaccount.v1.ServiceAccount, com.saltoapis.nebula.serviceaccount.v1.ServiceAccount.Builder, com.saltoapis.nebula.serviceaccount.v1.ServiceAccountOrBuilder>(
+                (com.saltoapis.nebula.serviceaccount.v1.ServiceAccount) type_,
+                getParentForChildren(),
+                isClean());
+        type_ = null;
+      }
+      typeCase_ = 2;
+      onChanged();
+      return serviceAccountBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.event.v1.Principal)
