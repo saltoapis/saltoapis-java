@@ -58,6 +58,7 @@ java_projects = [
     '//nebula-emergencykey-v1/src/main/java',
     '//nebula-file-v1/src/main/java',
     '//nebula-iam-v1/src/main/java',
+    '//nebula-serviceaccount-v1/src/main/java',
     '//nebula-unit-v1/src/main/java',
     '//type/src/main/java',
     '//google-rpc/src/main/java',
