@@ -36,15 +36,16 @@ public final class RemoteOperationProto extends com.google.protobuf.GeneratedFil
   static {
     java.lang.String[] descriptorData = {
       "\n(salto/nebula/type/remote_operation.pro" +
-      "to\022\021salto.nebula.type*W\n\025AppKeyRemoteOpe" +
-      "ration\022(\n$APP_KEY_REMOTE_OPERATION_UNSPE" +
-      "CIFIED\020\000\022\010\n\004LOCK\020\001\022\n\n\006UNLOCK\020\002B\337\001\n\031com.s" +
-      "altoapis.nebula.typeB\024RemoteOperationPro" +
-      "toP\001ZVgithub.com/saltoapis-internal/salt" +
-      "oapis-go/nebula/type/remoteoperation;rem" +
-      "oteoperation\252\002\025Saltoapis.Nebula.Type\312\002\025S" +
-      "altoapis\\Nebula\\Type\342\002!GPBMetadata\\Salto" +
-      "apis\\Nebula\\Typeb\006proto3"
+      "to\022\021salto.nebula.type*\211\001\n\025AppKeyRemoteOp" +
+      "eration\022(\n$APP_KEY_REMOTE_OPERATION_UNSP" +
+      "ECIFIED\020\000\022!\n\035APP_KEY_REMOTE_OPERATION_LO" +
+      "CK\020\001\022#\n\037APP_KEY_REMOTE_OPERATION_UNLOCK\020" +
+      "\002B\337\001\n\031com.saltoapis.nebula.typeB\024RemoteO" +
+      "perationProtoP\001ZVgithub.com/saltoapis-in" +
+      "ternal/saltoapis-go/nebula/type/remoteop" +
+      "eration;remoteoperation\252\002\025Saltoapis.Nebu" +
+      "la.Type\312\002\025Saltoapis\\Nebula\\Type\342\002!GPBMet" +
+      "adata\\Saltoapis\\Nebula\\Typeb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
