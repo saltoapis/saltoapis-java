@@ -29,17 +29,17 @@ public enum AppKeyRemoteOperation
    * Remotely locks the access point.
    * </pre>
    *
-   * <code>LOCK = 1;</code>
+   * <code>APP_KEY_REMOTE_OPERATION_LOCK = 1;</code>
    */
-  LOCK(1),
+  APP_KEY_REMOTE_OPERATION_LOCK(1),
   /**
    * <pre>
    * Remotely unlocks the access point.
    * </pre>
    *
-   * <code>UNLOCK = 2;</code>
+   * <code>APP_KEY_REMOTE_OPERATION_UNLOCK = 2;</code>
    */
-  UNLOCK(2),
+  APP_KEY_REMOTE_OPERATION_UNLOCK(2),
   UNRECOGNIZED(-1),
   ;
 
@@ -65,17 +65,17 @@ public enum AppKeyRemoteOperation
    * Remotely locks the access point.
    * </pre>
    *
-   * <code>LOCK = 1;</code>
+   * <code>APP_KEY_REMOTE_OPERATION_LOCK = 1;</code>
    */
-  public static final int LOCK_VALUE = 1;
+  public static final int APP_KEY_REMOTE_OPERATION_LOCK_VALUE = 1;
   /**
    * <pre>
    * Remotely unlocks the access point.
    * </pre>
    *
-   * <code>UNLOCK = 2;</code>
+   * <code>APP_KEY_REMOTE_OPERATION_UNLOCK = 2;</code>
    */
-  public static final int UNLOCK_VALUE = 2;
+  public static final int APP_KEY_REMOTE_OPERATION_UNLOCK_VALUE = 2;
 
 
   public final int getNumber() {
@@ -103,8 +103,8 @@ public enum AppKeyRemoteOperation
   public static AppKeyRemoteOperation forNumber(int value) {
     switch (value) {
       case 0: return APP_KEY_REMOTE_OPERATION_UNSPECIFIED;
-      case 1: return LOCK;
-      case 2: return UNLOCK;
+      case 1: return APP_KEY_REMOTE_OPERATION_LOCK;
+      case 2: return APP_KEY_REMOTE_OPERATION_UNLOCK;
       default: return null;
     }
   }
