@@ -102,4 +102,40 @@ public interface CardKeyOrBuilder extends
    * @return The outdated.
    */
   boolean getOutdated();
+
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * The expiration time can be different depending on the status of the device.
+   * For further information, see:
+   * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   * @return Whether the expireTime field is set.
+   */
+  boolean hasExpireTime();
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * The expiration time can be different depending on the status of the device.
+   * For further information, see:
+   * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   * @return The expireTime.
+   */
+  com.google.protobuf.Timestamp getExpireTime();
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * The expiration time can be different depending on the status of the device.
+   * For further information, see:
+   * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
 }

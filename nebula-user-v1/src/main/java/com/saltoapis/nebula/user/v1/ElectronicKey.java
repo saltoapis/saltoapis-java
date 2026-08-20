@@ -223,6 +223,7 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:salto.nebula.user.v1.ElectronicKey.State)
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -382,6 +383,53 @@ private static final long serialVersionUID = 0L;
     return outdated_;
   }
 
+  public static final int EXPIRE_TIME_FIELD_NUMBER = 5;
+  private com.google.protobuf.Timestamp expireTime_;
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * The expiration time can be different depending on the status of the device.
+   * For further information, see:
+   * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   * @return Whether the expireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpireTime() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * The expiration time can be different depending on the status of the device.
+   * For further information, see:
+   * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   * @return The expireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpireTime() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+  /**
+   * <pre>
+   * Expiration time independent of any time zone or calendar.
+   * The expiration time can be different depending on the status of the device.
+   * For further information, see:
+   * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -408,6 +456,9 @@ private static final long serialVersionUID = 0L;
     if (outdated_ != false) {
       output.writeBool(4, outdated_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getExpireTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -431,6 +482,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(4, outdated_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getExpireTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -453,6 +508,11 @@ private static final long serialVersionUID = 0L;
     if (state_ != other.state_) return false;
     if (getOutdated()
         != other.getOutdated()) return false;
+    if (hasExpireTime() != other.hasExpireTime()) return false;
+    if (hasExpireTime()) {
+      if (!getExpireTime()
+          .equals(other.getExpireTime())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -473,6 +533,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + OUTDATED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getOutdated());
+    if (hasExpireTime()) {
+      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getExpireTime().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -596,13 +660,19 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.saltoapis.nebula.user.v1.ElectronicKey.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessage
+              .alwaysUseFieldBuilders) {
+        internalGetExpireTimeFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -612,6 +682,11 @@ private static final long serialVersionUID = 0L;
       deviceId_ = "";
       state_ = 0;
       outdated_ = false;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
       return this;
     }
 
@@ -657,6 +732,14 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.outdated_ = outdated_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null
+            ? expireTime_
+            : expireTimeBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -686,6 +769,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getOutdated() != false) {
         setOutdated(other.getOutdated());
+      }
+      if (other.hasExpireTime()) {
+        mergeExpireTime(other.getExpireTime());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -733,6 +819,13 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 32
+            case 42: {
+              input.readMessage(
+                  internalGetExpireTimeFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000010;
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1109,6 +1202,190 @@ private static final long serialVersionUID = 0L;
       outdated_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Timestamp expireTime_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expireTimeBuilder_;
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * The expiration time can be different depending on the status of the device.
+     * For further information, see:
+     * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     * @return Whether the expireTime field is set.
+     */
+    public boolean hasExpireTime() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * The expiration time can be different depending on the status of the device.
+     * For further information, see:
+     * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     * @return The expireTime.
+     */
+    public com.google.protobuf.Timestamp getExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+      } else {
+        return expireTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * The expiration time can be different depending on the status of the device.
+     * For further information, see:
+     * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expireTime_ = value;
+      } else {
+        expireTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * The expiration time can be different depending on the status of the device.
+     * For further information, see:
+     * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     */
+    public Builder setExpireTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expireTimeBuilder_ == null) {
+        expireTime_ = builderForValue.build();
+      } else {
+        expireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * The expiration time can be different depending on the status of the device.
+     * For further information, see:
+     * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     */
+    public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0) &&
+          expireTime_ != null &&
+          expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
+        } else {
+          expireTime_ = value;
+        }
+      } else {
+        expireTimeBuilder_.mergeFrom(value);
+      }
+      if (expireTime_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * The expiration time can be different depending on the status of the device.
+     * For further information, see:
+     * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     */
+    public Builder clearExpireTime() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * The expiration time can be different depending on the status of the device.
+     * For further information, see:
+     * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return internalGetExpireTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * The expiration time can be different depending on the status of the device.
+     * For further information, see:
+     * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+      if (expireTimeBuilder_ != null) {
+        return expireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return expireTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Expiration time independent of any time zone or calendar.
+     * The expiration time can be different depending on the status of the device.
+     * For further information, see:
+     * https://support.saltosystems.com/homelok/user-guide/property-manager/getting-started/core-concepts/
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        internalGetExpireTimeFieldBuilder() {
+      if (expireTimeBuilder_ == null) {
+        expireTimeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getExpireTime(),
+                getParentForChildren(),
+                isClean());
+        expireTime_ = null;
+      }
+      return expireTimeBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.user.v1.ElectronicKey)
