@@ -36,16 +36,17 @@ public final class LocalOperationProto extends com.google.protobuf.GeneratedFile
   static {
     java.lang.String[] descriptorData = {
       "\n\'salto/nebula/type/local_operation.prot" +
-      "o\022\021salto.nebula.type*\205\001\n\024AppKeyLocalOper" +
+      "o\022\021salto.nebula.type*\251\001\n\024AppKeyLocalOper" +
       "ation\022\'\n#APP_KEY_LOCAL_OPERATION_UNSPECI" +
       "FIED\020\000\022\"\n\036APP_KEY_LOCAL_OPERATION_UNLOCK" +
-      "\020\001\022 \n\034APP_KEY_LOCAL_OPERATION_LOCK\020\002B\334\001\n" +
-      "\031com.saltoapis.nebula.typeB\023LocalOperati" +
-      "onProtoP\001ZTgithub.com/saltoapis-internal" +
-      "/saltoapis-go/nebula/type/localoperation" +
-      ";localoperation\252\002\025Saltoapis.Nebula.Type\312" +
-      "\002\025Saltoapis\\Nebula\\Type\342\002!GPBMetadata\\Sa" +
-      "ltoapis\\Nebula\\Typeb\006proto3"
+      "\020\001\022 \n\034APP_KEY_LOCAL_OPERATION_LOCK\020\002\022\"\n\036" +
+      "APP_KEY_LOCAL_OPERATION_OFFICE\020\003B\334\001\n\031com" +
+      ".saltoapis.nebula.typeB\023LocalOperationPr" +
+      "otoP\001ZTgithub.com/saltoapis-internal/sal" +
+      "toapis-go/nebula/type/localoperation;loc" +
+      "aloperation\252\002\025Saltoapis.Nebula.Type\312\002\025Sa" +
+      "ltoapis\\Nebula\\Type\342\002!GPBMetadata\\Saltoa" +
+      "pis\\Nebula\\Typeb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -40,6 +40,14 @@ public enum AppKeyLocalOperation
    * <code>APP_KEY_LOCAL_OPERATION_LOCK = 2;</code>
    */
   APP_KEY_LOCAL_OPERATION_LOCK(2),
+  /**
+   * <pre>
+   * Locally enables office mode on the access point.
+   * </pre>
+   *
+   * <code>APP_KEY_LOCAL_OPERATION_OFFICE = 3;</code>
+   */
+  APP_KEY_LOCAL_OPERATION_OFFICE(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -76,6 +84,14 @@ public enum AppKeyLocalOperation
    * <code>APP_KEY_LOCAL_OPERATION_LOCK = 2;</code>
    */
   public static final int APP_KEY_LOCAL_OPERATION_LOCK_VALUE = 2;
+  /**
+   * <pre>
+   * Locally enables office mode on the access point.
+   * </pre>
+   *
+   * <code>APP_KEY_LOCAL_OPERATION_OFFICE = 3;</code>
+   */
+  public static final int APP_KEY_LOCAL_OPERATION_OFFICE_VALUE = 3;
 
 
   public final int getNumber() {
@@ -105,6 +121,7 @@ public enum AppKeyLocalOperation
       case 0: return APP_KEY_LOCAL_OPERATION_UNSPECIFIED;
       case 1: return APP_KEY_LOCAL_OPERATION_UNLOCK;
       case 2: return APP_KEY_LOCAL_OPERATION_LOCK;
+      case 3: return APP_KEY_LOCAL_OPERATION_OFFICE;
       default: return null;
     }
   }
