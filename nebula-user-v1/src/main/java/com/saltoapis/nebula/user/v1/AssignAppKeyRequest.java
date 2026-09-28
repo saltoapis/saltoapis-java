@@ -48,6 +48,1737 @@ private static final long serialVersionUID = 0L;
             com.saltoapis.nebula.user.v1.AssignAppKeyRequest.class, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Builder.class);
   }
 
+  public interface ManagedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:salto.nebula.user.v1.AssignAppKeyRequest.Managed)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Use the supplied email address and send an invitation.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+     * @return Whether the email field is set.
+     */
+    boolean hasEmail();
+    /**
+     * <pre>
+     * Use the supplied email address and send an invitation.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+     * @return The email.
+     */
+    com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email getEmail();
+    /**
+     * <pre>
+     * Use the supplied email address and send an invitation.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+     */
+    com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.EmailOrBuilder getEmailOrBuilder();
+
+    com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.IdentityCase getIdentityCase();
+  }
+  /**
+   * <pre>
+   * A digital key is created and managed for the app key.
+   * </pre>
+   *
+   * Protobuf type {@code salto.nebula.user.v1.AssignAppKeyRequest.Managed}
+   */
+  public static final class Managed extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:salto.nebula.user.v1.AssignAppKeyRequest.Managed)
+      ManagedOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 6,
+        /* suffix= */ "",
+        "Managed");
+    }
+    // Use Managed.newBuilder() to construct.
+    private Managed(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private Managed() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.class, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Builder.class);
+    }
+
+    public interface EmailOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * The email address to which the digital key is issued.
+       *
+       * This does not modify `User.email`. This is required at the moment,
+       * as it is the email that is going to be used for the digital key
+       * binding.
+       * </pre>
+       *
+       * <code>string address = 1;</code>
+       * @return The address.
+       */
+      java.lang.String getAddress();
+      /**
+       * <pre>
+       * The email address to which the digital key is issued.
+       *
+       * This does not modify `User.email`. This is required at the moment,
+       * as it is the email that is going to be used for the digital key
+       * binding.
+       * </pre>
+       *
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
+       */
+      com.google.protobuf.ByteString
+          getAddressBytes();
+    }
+    /**
+     * <pre>
+     * The email identity to which the digital key is issued. An
+     * invitation is sent to this address.
+     * </pre>
+     *
+     * Protobuf type {@code salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email}
+     */
+    public static final class Email extends
+        com.google.protobuf.GeneratedMessage implements
+        // @@protoc_insertion_point(message_implements:salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email)
+        EmailOrBuilder {
+    private static final long serialVersionUID = 0L;
+      static {
+        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+          com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+          /* major= */ 4,
+          /* minor= */ 33,
+          /* patch= */ 6,
+          /* suffix= */ "",
+          "Email");
+      }
+      // Use Email.newBuilder() to construct.
+      private Email(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+        super(builder);
+      }
+      private Email() {
+        address_ = "";
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_Email_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_Email_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.class, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.Builder.class);
+      }
+
+      public static final int ADDRESS_FIELD_NUMBER = 1;
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object address_ = "";
+      /**
+       * <pre>
+       * The email address to which the digital key is issued.
+       *
+       * This does not modify `User.email`. This is required at the moment,
+       * as it is the email that is going to be used for the digital key
+       * binding.
+       * </pre>
+       *
+       * <code>string address = 1;</code>
+       * @return The address.
+       */
+      @java.lang.Override
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        }
+      }
+      /**
+       * <pre>
+       * The email address to which the digital key is issued.
+       *
+       * This does not modify `User.email`. This is required at the moment,
+       * as it is the email that is going to be used for the digital key
+       * binding.
+       * </pre>
+       *
+       * <code>string address = 1;</code>
+       * @return The bytes for address.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(address_)) {
+          com.google.protobuf.GeneratedMessage.writeString(output, 1, address_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessage.isStringEmpty(address_)) {
+          size += com.google.protobuf.GeneratedMessage.computeStringSize(1, address_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email)) {
+          return super.equals(obj);
+        }
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email other = (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) obj;
+
+        if (!getAddress()
+            .equals(other.getAddress())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+        hash = (53 * hash) + getAddress().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessage
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * The email identity to which the digital key is issued. An
+       * invitation is sent to this address.
+       * </pre>
+       *
+       * Protobuf type {@code salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email)
+          com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.EmailOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_Email_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_Email_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.class, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.Builder.class);
+        }
+
+        // Construct using com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.newBuilder()
+        private Builder() {
+
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          super(parent);
+
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          address_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_Email_descriptor;
+        }
+
+        @java.lang.Override
+        public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email getDefaultInstanceForType() {
+          return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email build() {
+          com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email buildPartial() {
+          com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email result = new com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email(this);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.address_ = address_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) {
+            return mergeFrom((com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email other) {
+          if (other == com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.getDefaultInstance()) return this;
+          if (!other.getAddress().isEmpty()) {
+            address_ = other.address_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  address_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+        private int bitField0_;
+
+        private java.lang.Object address_ = "";
+        /**
+         * <pre>
+         * The email address to which the digital key is issued.
+         *
+         * This does not modify `User.email`. This is required at the moment,
+         * as it is the email that is going to be used for the digital key
+         * binding.
+         * </pre>
+         *
+         * <code>string address = 1;</code>
+         * @return The address.
+         */
+        public java.lang.String getAddress() {
+          java.lang.Object ref = address_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            address_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The email address to which the digital key is issued.
+         *
+         * This does not modify `User.email`. This is required at the moment,
+         * as it is the email that is going to be used for the digital key
+         * binding.
+         * </pre>
+         *
+         * <code>string address = 1;</code>
+         * @return The bytes for address.
+         */
+        public com.google.protobuf.ByteString
+            getAddressBytes() {
+          java.lang.Object ref = address_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            address_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <pre>
+         * The email address to which the digital key is issued.
+         *
+         * This does not modify `User.email`. This is required at the moment,
+         * as it is the email that is going to be used for the digital key
+         * binding.
+         * </pre>
+         *
+         * <code>string address = 1;</code>
+         * @param value The address to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAddress(
+            java.lang.String value) {
+          if (value == null) { throw new NullPointerException(); }
+          address_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The email address to which the digital key is issued.
+         *
+         * This does not modify `User.email`. This is required at the moment,
+         * as it is the email that is going to be used for the digital key
+         * binding.
+         * </pre>
+         *
+         * <code>string address = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearAddress() {
+          address_ = getDefaultInstance().getAddress();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The email address to which the digital key is issued.
+         *
+         * This does not modify `User.email`. This is required at the moment,
+         * as it is the email that is going to be used for the digital key
+         * binding.
+         * </pre>
+         *
+         * <code>string address = 1;</code>
+         * @param value The bytes for address to set.
+         * @return This builder for chaining.
+         */
+        public Builder setAddressBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) { throw new NullPointerException(); }
+          checkByteStringIsUtf8(value);
+          address_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        // @@protoc_insertion_point(builder_scope:salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email)
+      }
+
+      // @@protoc_insertion_point(class_scope:salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email)
+      private static final com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email();
+      }
+
+      public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Email>
+          PARSER = new com.google.protobuf.AbstractParser<Email>() {
+        @java.lang.Override
+        public Email parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
+        }
+      };
+
+      public static com.google.protobuf.Parser<Email> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Email> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int identityCase_ = 0;
+    @SuppressWarnings("serial")
+    private java.lang.Object identity_;
+    public enum IdentityCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      EMAIL(1),
+      IDENTITY_NOT_SET(0);
+      private final int value;
+      private IdentityCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static IdentityCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static IdentityCase forNumber(int value) {
+        switch (value) {
+          case 1: return EMAIL;
+          case 0: return IDENTITY_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public IdentityCase
+    getIdentityCase() {
+      return IdentityCase.forNumber(
+          identityCase_);
+    }
+
+    public static final int EMAIL_FIELD_NUMBER = 1;
+    /**
+     * <pre>
+     * Use the supplied email address and send an invitation.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+     * @return Whether the email field is set.
+     */
+    @java.lang.Override
+    public boolean hasEmail() {
+      return identityCase_ == 1;
+    }
+    /**
+     * <pre>
+     * Use the supplied email address and send an invitation.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+     * @return The email.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email getEmail() {
+      if (identityCase_ == 1) {
+         return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) identity_;
+      }
+      return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Use the supplied email address and send an invitation.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.EmailOrBuilder getEmailOrBuilder() {
+      if (identityCase_ == 1) {
+         return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) identity_;
+      }
+      return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (identityCase_ == 1) {
+        output.writeMessage(1, (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) identity_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (identityCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) identity_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed)) {
+        return super.equals(obj);
+      }
+      com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed other = (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) obj;
+
+      if (!getIdentityCase().equals(other.getIdentityCase())) return false;
+      switch (identityCase_) {
+        case 1:
+          if (!getEmail()
+              .equals(other.getEmail())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (identityCase_) {
+        case 1:
+          hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+          hash = (53 * hash) + getEmail().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A digital key is created and managed for the app key.
+     * </pre>
+     *
+     * Protobuf type {@code salto.nebula.user.v1.AssignAppKeyRequest.Managed}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:salto.nebula.user.v1.AssignAppKeyRequest.Managed)
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.ManagedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.class, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Builder.class);
+      }
+
+      // Construct using com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (emailBuilder_ != null) {
+          emailBuilder_.clear();
+        }
+        identityCase_ = 0;
+        identity_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_Managed_descriptor;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed getDefaultInstanceForType() {
+        return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed build() {
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed buildPartial() {
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed result = new com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed result) {
+        result.identityCase_ = identityCase_;
+        result.identity_ = this.identity_;
+        if (identityCase_ == 1 &&
+            emailBuilder_ != null) {
+          result.identity_ = emailBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) {
+          return mergeFrom((com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed other) {
+        if (other == com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.getDefaultInstance()) return this;
+        switch (other.getIdentityCase()) {
+          case EMAIL: {
+            mergeEmail(other.getEmail());
+            break;
+          }
+          case IDENTITY_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    internalGetEmailFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                identityCase_ = 1;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int identityCase_ = 0;
+      private java.lang.Object identity_;
+      public IdentityCase
+          getIdentityCase() {
+        return IdentityCase.forNumber(
+            identityCase_);
+      }
+
+      public Builder clearIdentity() {
+        identityCase_ = 0;
+        identity_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+          com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.Builder, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.EmailOrBuilder> emailBuilder_;
+      /**
+       * <pre>
+       * Use the supplied email address and send an invitation.
+       * </pre>
+       *
+       * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+       * @return Whether the email field is set.
+       */
+      @java.lang.Override
+      public boolean hasEmail() {
+        return identityCase_ == 1;
+      }
+      /**
+       * <pre>
+       * Use the supplied email address and send an invitation.
+       * </pre>
+       *
+       * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+       * @return The email.
+       */
+      @java.lang.Override
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email getEmail() {
+        if (emailBuilder_ == null) {
+          if (identityCase_ == 1) {
+            return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) identity_;
+          }
+          return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.getDefaultInstance();
+        } else {
+          if (identityCase_ == 1) {
+            return emailBuilder_.getMessage();
+          }
+          return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Use the supplied email address and send an invitation.
+       * </pre>
+       *
+       * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+       */
+      public Builder setEmail(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email value) {
+        if (emailBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          identity_ = value;
+          onChanged();
+        } else {
+          emailBuilder_.setMessage(value);
+        }
+        identityCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * Use the supplied email address and send an invitation.
+       * </pre>
+       *
+       * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+       */
+      public Builder setEmail(
+          com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.Builder builderForValue) {
+        if (emailBuilder_ == null) {
+          identity_ = builderForValue.build();
+          onChanged();
+        } else {
+          emailBuilder_.setMessage(builderForValue.build());
+        }
+        identityCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * Use the supplied email address and send an invitation.
+       * </pre>
+       *
+       * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+       */
+      public Builder mergeEmail(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email value) {
+        if (emailBuilder_ == null) {
+          if (identityCase_ == 1 &&
+              identity_ != com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.getDefaultInstance()) {
+            identity_ = com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.newBuilder((com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) identity_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            identity_ = value;
+          }
+          onChanged();
+        } else {
+          if (identityCase_ == 1) {
+            emailBuilder_.mergeFrom(value);
+          } else {
+            emailBuilder_.setMessage(value);
+          }
+        }
+        identityCase_ = 1;
+        return this;
+      }
+      /**
+       * <pre>
+       * Use the supplied email address and send an invitation.
+       * </pre>
+       *
+       * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+       */
+      public Builder clearEmail() {
+        if (emailBuilder_ == null) {
+          if (identityCase_ == 1) {
+            identityCase_ = 0;
+            identity_ = null;
+            onChanged();
+          }
+        } else {
+          if (identityCase_ == 1) {
+            identityCase_ = 0;
+            identity_ = null;
+          }
+          emailBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Use the supplied email address and send an invitation.
+       * </pre>
+       *
+       * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+       */
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.Builder getEmailBuilder() {
+        return internalGetEmailFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Use the supplied email address and send an invitation.
+       * </pre>
+       *
+       * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+       */
+      @java.lang.Override
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.EmailOrBuilder getEmailOrBuilder() {
+        if ((identityCase_ == 1) && (emailBuilder_ != null)) {
+          return emailBuilder_.getMessageOrBuilder();
+        } else {
+          if (identityCase_ == 1) {
+            return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) identity_;
+          }
+          return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Use the supplied email address and send an invitation.
+       * </pre>
+       *
+       * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed.Email email = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.Builder, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.EmailOrBuilder> 
+          internalGetEmailFieldBuilder() {
+        if (emailBuilder_ == null) {
+          if (!(identityCase_ == 1)) {
+            identity_ = com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.getDefaultInstance();
+          }
+          emailBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email.Builder, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.EmailOrBuilder>(
+                  (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Email) identity_,
+                  getParentForChildren(),
+                  isClean());
+          identity_ = null;
+        }
+        identityCase_ = 1;
+        onChanged();
+        return emailBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:salto.nebula.user.v1.AssignAppKeyRequest.Managed)
+    }
+
+    // @@protoc_insertion_point(class_scope:salto.nebula.user.v1.AssignAppKeyRequest.Managed)
+    private static final com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed();
+    }
+
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Managed>
+        PARSER = new com.google.protobuf.AbstractParser<Managed>() {
+      @java.lang.Override
+      public Managed parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Managed> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Managed> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CallerManagedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * The caller retrieves and distributes the credential.
+   *
+   * No digital key is created and no invitation is sent.
+   * </pre>
+   *
+   * Protobuf type {@code salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged}
+   */
+  public static final class CallerManaged extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged)
+      CallerManagedOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 6,
+        /* suffix= */ "",
+        "CallerManaged");
+    }
+    // Use CallerManaged.newBuilder() to construct.
+    private CallerManaged(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private CallerManaged() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_CallerManaged_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_CallerManaged_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.class, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged)) {
+        return super.equals(obj);
+      }
+      com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged other = (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential.
+     *
+     * No digital key is created and no invitation is sent.
+     * </pre>
+     *
+     * Protobuf type {@code salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged)
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManagedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_CallerManaged_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_CallerManaged_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.class, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.Builder.class);
+      }
+
+      // Construct using com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.saltoapis.nebula.user.v1.UserProto.internal_static_salto_nebula_user_v1_AssignAppKeyRequest_CallerManaged_descriptor;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged getDefaultInstanceForType() {
+        return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged build() {
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged buildPartial() {
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged result = new com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) {
+          return mergeFrom((com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged other) {
+        if (other == com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged)
+    }
+
+    // @@protoc_insertion_point(class_scope:salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged)
+    private static final com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged();
+    }
+
+    public static com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CallerManaged>
+        PARSER = new com.google.protobuf.AbstractParser<CallerManaged>() {
+      @java.lang.Override
+      public CallerManaged parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CallerManaged> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CallerManaged> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private int managementCase_ = 0;
+  @SuppressWarnings("serial")
+  private java.lang.Object management_;
+  public enum ManagementCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    MANAGED(2),
+    CALLER_MANAGED(3),
+    MANAGEMENT_NOT_SET(0);
+    private final int value;
+    private ManagementCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ManagementCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ManagementCase forNumber(int value) {
+      switch (value) {
+        case 2: return MANAGED;
+        case 3: return CALLER_MANAGED;
+        case 0: return MANAGEMENT_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ManagementCase
+  getManagementCase() {
+    return ManagementCase.forNumber(
+        managementCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -97,6 +1828,95 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MANAGED_FIELD_NUMBER = 2;
+  /**
+   * <pre>
+   * A digital key is created and managed.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+   * @return Whether the managed field is set.
+   */
+  @java.lang.Override
+  public boolean hasManaged() {
+    return managementCase_ == 2;
+  }
+  /**
+   * <pre>
+   * A digital key is created and managed.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+   * @return The managed.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed getManaged() {
+    if (managementCase_ == 2) {
+       return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) management_;
+    }
+    return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * A digital key is created and managed.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.ManagedOrBuilder getManagedOrBuilder() {
+    if (managementCase_ == 2) {
+       return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) management_;
+    }
+    return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.getDefaultInstance();
+  }
+
+  public static final int CALLER_MANAGED_FIELD_NUMBER = 3;
+  /**
+   * <pre>
+   * The caller retrieves and distributes the credential. No digital key
+   * is created.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+   * @return Whether the callerManaged field is set.
+   */
+  @java.lang.Override
+  public boolean hasCallerManaged() {
+    return managementCase_ == 3;
+  }
+  /**
+   * <pre>
+   * The caller retrieves and distributes the credential. No digital key
+   * is created.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+   * @return The callerManaged.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged getCallerManaged() {
+    if (managementCase_ == 3) {
+       return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) management_;
+    }
+    return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * The caller retrieves and distributes the credential. No digital key
+   * is created.
+   * </pre>
+   *
+   * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManagedOrBuilder getCallerManagedOrBuilder() {
+    if (managementCase_ == 3) {
+       return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) management_;
+    }
+    return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -114,6 +1934,12 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessage.writeString(output, 1, name_);
     }
+    if (managementCase_ == 2) {
+      output.writeMessage(2, (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) management_);
+    }
+    if (managementCase_ == 3) {
+      output.writeMessage(3, (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) management_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -125,6 +1951,14 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
+    }
+    if (managementCase_ == 2) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) management_);
+    }
+    if (managementCase_ == 3) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) management_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -143,6 +1977,19 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (!getManagementCase().equals(other.getManagementCase())) return false;
+    switch (managementCase_) {
+      case 2:
+        if (!getManaged()
+            .equals(other.getManaged())) return false;
+        break;
+      case 3:
+        if (!getCallerManaged()
+            .equals(other.getCallerManaged())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -156,6 +2003,18 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    switch (managementCase_) {
+      case 2:
+        hash = (37 * hash) + MANAGED_FIELD_NUMBER;
+        hash = (53 * hash) + getManaged().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + CALLER_MANAGED_FIELD_NUMBER;
+        hash = (53 * hash) + getCallerManaged().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -292,6 +2151,14 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      if (managedBuilder_ != null) {
+        managedBuilder_.clear();
+      }
+      if (callerManagedBuilder_ != null) {
+        callerManagedBuilder_.clear();
+      }
+      managementCase_ = 0;
+      management_ = null;
       return this;
     }
 
@@ -319,6 +2186,7 @@ private static final long serialVersionUID = 0L;
     public com.saltoapis.nebula.user.v1.AssignAppKeyRequest buildPartial() {
       com.saltoapis.nebula.user.v1.AssignAppKeyRequest result = new com.saltoapis.nebula.user.v1.AssignAppKeyRequest(this);
       if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -327,6 +2195,19 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+    }
+
+    private void buildPartialOneofs(com.saltoapis.nebula.user.v1.AssignAppKeyRequest result) {
+      result.managementCase_ = managementCase_;
+      result.management_ = this.management_;
+      if (managementCase_ == 2 &&
+          managedBuilder_ != null) {
+        result.management_ = managedBuilder_.build();
+      }
+      if (managementCase_ == 3 &&
+          callerManagedBuilder_ != null) {
+        result.management_ = callerManagedBuilder_.build();
       }
     }
 
@@ -346,6 +2227,19 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         bitField0_ |= 0x00000001;
         onChanged();
+      }
+      switch (other.getManagementCase()) {
+        case MANAGED: {
+          mergeManaged(other.getManaged());
+          break;
+        }
+        case CALLER_MANAGED: {
+          mergeCallerManaged(other.getCallerManaged());
+          break;
+        }
+        case MANAGEMENT_NOT_SET: {
+          break;
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -378,6 +2272,20 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 10
+            case 18: {
+              input.readMessage(
+                  internalGetManagedFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              managementCase_ = 2;
+              break;
+            } // case 18
+            case 26: {
+              input.readMessage(
+                  internalGetCallerManagedFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              managementCase_ = 3;
+              break;
+            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -393,6 +2301,21 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int managementCase_ = 0;
+    private java.lang.Object management_;
+    public ManagementCase
+        getManagementCase() {
+      return ManagementCase.forNumber(
+          managementCase_);
+    }
+
+    public Builder clearManagement() {
+      managementCase_ = 0;
+      management_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
@@ -490,6 +2413,371 @@ private static final long serialVersionUID = 0L;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Builder, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.ManagedOrBuilder> managedBuilder_;
+    /**
+     * <pre>
+     * A digital key is created and managed.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+     * @return Whether the managed field is set.
+     */
+    @java.lang.Override
+    public boolean hasManaged() {
+      return managementCase_ == 2;
+    }
+    /**
+     * <pre>
+     * A digital key is created and managed.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+     * @return The managed.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed getManaged() {
+      if (managedBuilder_ == null) {
+        if (managementCase_ == 2) {
+          return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) management_;
+        }
+        return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.getDefaultInstance();
+      } else {
+        if (managementCase_ == 2) {
+          return managedBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * A digital key is created and managed.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+     */
+    public Builder setManaged(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed value) {
+      if (managedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        management_ = value;
+        onChanged();
+      } else {
+        managedBuilder_.setMessage(value);
+      }
+      managementCase_ = 2;
+      return this;
+    }
+    /**
+     * <pre>
+     * A digital key is created and managed.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+     */
+    public Builder setManaged(
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Builder builderForValue) {
+      if (managedBuilder_ == null) {
+        management_ = builderForValue.build();
+        onChanged();
+      } else {
+        managedBuilder_.setMessage(builderForValue.build());
+      }
+      managementCase_ = 2;
+      return this;
+    }
+    /**
+     * <pre>
+     * A digital key is created and managed.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+     */
+    public Builder mergeManaged(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed value) {
+      if (managedBuilder_ == null) {
+        if (managementCase_ == 2 &&
+            management_ != com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.getDefaultInstance()) {
+          management_ = com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.newBuilder((com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) management_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          management_ = value;
+        }
+        onChanged();
+      } else {
+        if (managementCase_ == 2) {
+          managedBuilder_.mergeFrom(value);
+        } else {
+          managedBuilder_.setMessage(value);
+        }
+      }
+      managementCase_ = 2;
+      return this;
+    }
+    /**
+     * <pre>
+     * A digital key is created and managed.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+     */
+    public Builder clearManaged() {
+      if (managedBuilder_ == null) {
+        if (managementCase_ == 2) {
+          managementCase_ = 0;
+          management_ = null;
+          onChanged();
+        }
+      } else {
+        if (managementCase_ == 2) {
+          managementCase_ = 0;
+          management_ = null;
+        }
+        managedBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * A digital key is created and managed.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+     */
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Builder getManagedBuilder() {
+      return internalGetManagedFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * A digital key is created and managed.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.ManagedOrBuilder getManagedOrBuilder() {
+      if ((managementCase_ == 2) && (managedBuilder_ != null)) {
+        return managedBuilder_.getMessageOrBuilder();
+      } else {
+        if (managementCase_ == 2) {
+          return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) management_;
+        }
+        return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * A digital key is created and managed.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.Managed managed = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Builder, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.ManagedOrBuilder> 
+        internalGetManagedFieldBuilder() {
+      if (managedBuilder_ == null) {
+        if (!(managementCase_ == 2)) {
+          management_ = com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.getDefaultInstance();
+        }
+        managedBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed.Builder, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.ManagedOrBuilder>(
+                (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.Managed) management_,
+                getParentForChildren(),
+                isClean());
+        management_ = null;
+      }
+      managementCase_ = 2;
+      onChanged();
+      return managedBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.Builder, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManagedOrBuilder> callerManagedBuilder_;
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential. No digital key
+     * is created.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+     * @return Whether the callerManaged field is set.
+     */
+    @java.lang.Override
+    public boolean hasCallerManaged() {
+      return managementCase_ == 3;
+    }
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential. No digital key
+     * is created.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+     * @return The callerManaged.
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged getCallerManaged() {
+      if (callerManagedBuilder_ == null) {
+        if (managementCase_ == 3) {
+          return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) management_;
+        }
+        return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.getDefaultInstance();
+      } else {
+        if (managementCase_ == 3) {
+          return callerManagedBuilder_.getMessage();
+        }
+        return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential. No digital key
+     * is created.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+     */
+    public Builder setCallerManaged(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged value) {
+      if (callerManagedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        management_ = value;
+        onChanged();
+      } else {
+        callerManagedBuilder_.setMessage(value);
+      }
+      managementCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential. No digital key
+     * is created.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+     */
+    public Builder setCallerManaged(
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.Builder builderForValue) {
+      if (callerManagedBuilder_ == null) {
+        management_ = builderForValue.build();
+        onChanged();
+      } else {
+        callerManagedBuilder_.setMessage(builderForValue.build());
+      }
+      managementCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential. No digital key
+     * is created.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+     */
+    public Builder mergeCallerManaged(com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged value) {
+      if (callerManagedBuilder_ == null) {
+        if (managementCase_ == 3 &&
+            management_ != com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.getDefaultInstance()) {
+          management_ = com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.newBuilder((com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) management_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          management_ = value;
+        }
+        onChanged();
+      } else {
+        if (managementCase_ == 3) {
+          callerManagedBuilder_.mergeFrom(value);
+        } else {
+          callerManagedBuilder_.setMessage(value);
+        }
+      }
+      managementCase_ = 3;
+      return this;
+    }
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential. No digital key
+     * is created.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+     */
+    public Builder clearCallerManaged() {
+      if (callerManagedBuilder_ == null) {
+        if (managementCase_ == 3) {
+          managementCase_ = 0;
+          management_ = null;
+          onChanged();
+        }
+      } else {
+        if (managementCase_ == 3) {
+          managementCase_ = 0;
+          management_ = null;
+        }
+        callerManagedBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential. No digital key
+     * is created.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+     */
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.Builder getCallerManagedBuilder() {
+      return internalGetCallerManagedFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential. No digital key
+     * is created.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManagedOrBuilder getCallerManagedOrBuilder() {
+      if ((managementCase_ == 3) && (callerManagedBuilder_ != null)) {
+        return callerManagedBuilder_.getMessageOrBuilder();
+      } else {
+        if (managementCase_ == 3) {
+          return (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) management_;
+        }
+        return com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The caller retrieves and distributes the credential. No digital key
+     * is created.
+     * </pre>
+     *
+     * <code>.salto.nebula.user.v1.AssignAppKeyRequest.CallerManaged caller_managed = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.Builder, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManagedOrBuilder> 
+        internalGetCallerManagedFieldBuilder() {
+      if (callerManagedBuilder_ == null) {
+        if (!(managementCase_ == 3)) {
+          management_ = com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.getDefaultInstance();
+        }
+        callerManagedBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged.Builder, com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManagedOrBuilder>(
+                (com.saltoapis.nebula.user.v1.AssignAppKeyRequest.CallerManaged) management_,
+                getParentForChildren(),
+                isClean());
+        management_ = null;
+      }
+      managementCase_ = 3;
+      onChanged();
+      return callerManagedBuilder_;
     }
 
     // @@protoc_insertion_point(builder_scope:salto.nebula.user.v1.AssignAppKeyRequest)
