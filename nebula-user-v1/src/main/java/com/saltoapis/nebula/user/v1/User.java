@@ -892,6 +892,47 @@ private static final long serialVersionUID = 0L;
     return allowDoNotDisturbOverride_;
   }
 
+  public static final int ALLOW_OFFICE_ACTIVATION_FIELD_NUMBER = 19;
+  private boolean allowOfficeActivation_ = false;
+  /**
+   * <pre>
+   * Indicates whether the user has permission to enable office mode on a
+   * device.
+   *
+   * When omitted on creation, the server defaults to true to preserve
+   * backward compatibility.
+   *
+   * Example: a user with this field set to true can enable office mode on a
+   * device, allowing it to remain unlocked without requiring a credential.
+   * </pre>
+   *
+   * <code>optional bool allow_office_activation = 19;</code>
+   * @return Whether the allowOfficeActivation field is set.
+   */
+  @java.lang.Override
+  public boolean hasAllowOfficeActivation() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   * <pre>
+   * Indicates whether the user has permission to enable office mode on a
+   * device.
+   *
+   * When omitted on creation, the server defaults to true to preserve
+   * backward compatibility.
+   *
+   * Example: a user with this field set to true can enable office mode on a
+   * device, allowing it to remain unlocked without requiring a credential.
+   * </pre>
+   *
+   * <code>optional bool allow_office_activation = 19;</code>
+   * @return The allowOfficeActivation.
+   */
+  @java.lang.Override
+  public boolean getAllowOfficeActivation() {
+    return allowOfficeActivation_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -959,6 +1000,9 @@ private static final long serialVersionUID = 0L;
     }
     if (allowDoNotDisturbOverride_ != false) {
       output.writeBool(18, allowDoNotDisturbOverride_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeBool(19, allowOfficeActivation_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1031,6 +1075,10 @@ private static final long serialVersionUID = 0L;
     if (allowDoNotDisturbOverride_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(18, allowDoNotDisturbOverride_);
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(19, allowOfficeActivation_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1119,6 +1167,11 @@ private static final long serialVersionUID = 0L;
     }
     if (getAllowDoNotDisturbOverride()
         != other.getAllowDoNotDisturbOverride()) return false;
+    if (hasAllowOfficeActivation() != other.hasAllowOfficeActivation()) return false;
+    if (hasAllowOfficeActivation()) {
+      if (getAllowOfficeActivation()
+          != other.getAllowOfficeActivation()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1192,6 +1245,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ALLOW_DO_NOT_DISTURB_OVERRIDE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getAllowDoNotDisturbOverride());
+    if (hasAllowOfficeActivation()) {
+      hash = (37 * hash) + ALLOW_OFFICE_ACTIVATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getAllowOfficeActivation());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1385,6 +1443,7 @@ private static final long serialVersionUID = 0L;
       blocked_ = false;
       manager_ = "";
       allowDoNotDisturbOverride_ = false;
+      allowOfficeActivation_ = false;
       return this;
     }
 
@@ -1499,6 +1558,10 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.allowDoNotDisturbOverride_ = allowDoNotDisturbOverride_;
       }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.allowOfficeActivation_ = allowOfficeActivation_;
+        to_bitField0_ |= 0x00001000;
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -1585,6 +1648,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getAllowDoNotDisturbOverride() != false) {
         setAllowDoNotDisturbOverride(other.getAllowDoNotDisturbOverride());
+      }
+      if (other.hasAllowOfficeActivation()) {
+        setAllowOfficeActivation(other.getAllowOfficeActivation());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1716,6 +1782,11 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00020000;
               break;
             } // case 144
+            case 152: {
+              allowOfficeActivation_ = input.readBool();
+              bitField0_ |= 0x00040000;
+              break;
+            } // case 152
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -3923,6 +3994,90 @@ private static final long serialVersionUID = 0L;
     public Builder clearAllowDoNotDisturbOverride() {
       bitField0_ = (bitField0_ & ~0x00020000);
       allowDoNotDisturbOverride_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowOfficeActivation_ ;
+    /**
+     * <pre>
+     * Indicates whether the user has permission to enable office mode on a
+     * device.
+     *
+     * When omitted on creation, the server defaults to true to preserve
+     * backward compatibility.
+     *
+     * Example: a user with this field set to true can enable office mode on a
+     * device, allowing it to remain unlocked without requiring a credential.
+     * </pre>
+     *
+     * <code>optional bool allow_office_activation = 19;</code>
+     * @return Whether the allowOfficeActivation field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowOfficeActivation() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     * <pre>
+     * Indicates whether the user has permission to enable office mode on a
+     * device.
+     *
+     * When omitted on creation, the server defaults to true to preserve
+     * backward compatibility.
+     *
+     * Example: a user with this field set to true can enable office mode on a
+     * device, allowing it to remain unlocked without requiring a credential.
+     * </pre>
+     *
+     * <code>optional bool allow_office_activation = 19;</code>
+     * @return The allowOfficeActivation.
+     */
+    @java.lang.Override
+    public boolean getAllowOfficeActivation() {
+      return allowOfficeActivation_;
+    }
+    /**
+     * <pre>
+     * Indicates whether the user has permission to enable office mode on a
+     * device.
+     *
+     * When omitted on creation, the server defaults to true to preserve
+     * backward compatibility.
+     *
+     * Example: a user with this field set to true can enable office mode on a
+     * device, allowing it to remain unlocked without requiring a credential.
+     * </pre>
+     *
+     * <code>optional bool allow_office_activation = 19;</code>
+     * @param value The allowOfficeActivation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowOfficeActivation(boolean value) {
+
+      allowOfficeActivation_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether the user has permission to enable office mode on a
+     * device.
+     *
+     * When omitted on creation, the server defaults to true to preserve
+     * backward compatibility.
+     *
+     * Example: a user with this field set to true can enable office mode on a
+     * device, allowing it to remain unlocked without requiring a credential.
+     * </pre>
+     *
+     * <code>optional bool allow_office_activation = 19;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowOfficeActivation() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      allowOfficeActivation_ = false;
       onChanged();
       return this;
     }

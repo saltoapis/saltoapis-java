@@ -499,4 +499,37 @@ public interface UserOrBuilder extends
    * @return The allowDoNotDisturbOverride.
    */
   boolean getAllowDoNotDisturbOverride();
+
+  /**
+   * <pre>
+   * Indicates whether the user has permission to enable office mode on a
+   * device.
+   *
+   * When omitted on creation, the server defaults to true to preserve
+   * backward compatibility.
+   *
+   * Example: a user with this field set to true can enable office mode on a
+   * device, allowing it to remain unlocked without requiring a credential.
+   * </pre>
+   *
+   * <code>optional bool allow_office_activation = 19;</code>
+   * @return Whether the allowOfficeActivation field is set.
+   */
+  boolean hasAllowOfficeActivation();
+  /**
+   * <pre>
+   * Indicates whether the user has permission to enable office mode on a
+   * device.
+   *
+   * When omitted on creation, the server defaults to true to preserve
+   * backward compatibility.
+   *
+   * Example: a user with this field set to true can enable office mode on a
+   * device, allowing it to remain unlocked without requiring a credential.
+   * </pre>
+   *
+   * <code>optional bool allow_office_activation = 19;</code>
+   * @return The allowOfficeActivation.
+   */
+  boolean getAllowOfficeActivation();
 }
