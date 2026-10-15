@@ -175,32 +175,30 @@ public interface BookingOrBuilder extends
 
   /**
    * <pre>
-   * The unit resource reference assigned to the booking.
+   * The unit asset assigned to the booking.
    * </pre>
    *
-   * <code>string unit = 7;</code>
-   * @return Whether the unit field is set.
+   * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+   * @return Whether the unitAsset field is set.
    */
-  boolean hasUnit();
+  boolean hasUnitAsset();
   /**
    * <pre>
-   * The unit resource reference assigned to the booking.
+   * The unit asset assigned to the booking.
    * </pre>
    *
-   * <code>string unit = 7;</code>
-   * @return The unit.
+   * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+   * @return The unitAsset.
    */
-  java.lang.String getUnit();
+  com.saltoapis.nebula.booking.v1.Booking.UnitAsset getUnitAsset();
   /**
    * <pre>
-   * The unit resource reference assigned to the booking.
+   * The unit asset assigned to the booking.
    * </pre>
    *
-   * <code>string unit = 7;</code>
-   * @return The bytes for unit.
+   * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getUnitBytes();
+  com.saltoapis.nebula.booking.v1.Booking.UnitAssetOrBuilder getUnitAssetOrBuilder();
 
   /**
    * <pre>

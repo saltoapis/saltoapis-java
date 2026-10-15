@@ -226,6 +226,564 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:salto.nebula.booking.v1.Booking.State)
   }
 
+  public interface UnitAssetOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:salto.nebula.booking.v1.Booking.UnitAsset)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The unit resource associated with the booking.
+     * </pre>
+     *
+     * <code>string unit = 1;</code>
+     * @return The unit.
+     */
+    java.lang.String getUnit();
+    /**
+     * <pre>
+     * The unit resource associated with the booking.
+     * </pre>
+     *
+     * <code>string unit = 1;</code>
+     * @return The bytes for unit.
+     */
+    com.google.protobuf.ByteString
+        getUnitBytes();
+  }
+  /**
+   * <pre>
+   * A unit used as the asset of a booking.
+   * Contains the Unit resource reference together with properties specific to
+   * the relationship between the booking and that unit.
+   * </pre>
+   *
+   * Protobuf type {@code salto.nebula.booking.v1.Booking.UnitAsset}
+   */
+  public static final class UnitAsset extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:salto.nebula.booking.v1.Booking.UnitAsset)
+      UnitAssetOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 33,
+        /* patch= */ 6,
+        /* suffix= */ "",
+        "UnitAsset");
+    }
+    // Use UnitAsset.newBuilder() to construct.
+    private UnitAsset(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UnitAsset() {
+      unit_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.saltoapis.nebula.booking.v1.BookingProto.internal_static_salto_nebula_booking_v1_Booking_UnitAsset_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.saltoapis.nebula.booking.v1.BookingProto.internal_static_salto_nebula_booking_v1_Booking_UnitAsset_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.saltoapis.nebula.booking.v1.Booking.UnitAsset.class, com.saltoapis.nebula.booking.v1.Booking.UnitAsset.Builder.class);
+    }
+
+    public static final int UNIT_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object unit_ = "";
+    /**
+     * <pre>
+     * The unit resource associated with the booking.
+     * </pre>
+     *
+     * <code>string unit = 1;</code>
+     * @return The unit.
+     */
+    @java.lang.Override
+    public java.lang.String getUnit() {
+      java.lang.Object ref = unit_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        unit_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The unit resource associated with the booking.
+     * </pre>
+     *
+     * <code>string unit = 1;</code>
+     * @return The bytes for unit.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUnitBytes() {
+      java.lang.Object ref = unit_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        unit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(unit_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, unit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(unit_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, unit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.saltoapis.nebula.booking.v1.Booking.UnitAsset)) {
+        return super.equals(obj);
+      }
+      com.saltoapis.nebula.booking.v1.Booking.UnitAsset other = (com.saltoapis.nebula.booking.v1.Booking.UnitAsset) obj;
+
+      if (!getUnit()
+          .equals(other.getUnit())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UNIT_FIELD_NUMBER;
+      hash = (53 * hash) + getUnit().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.saltoapis.nebula.booking.v1.Booking.UnitAsset prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * A unit used as the asset of a booking.
+     * Contains the Unit resource reference together with properties specific to
+     * the relationship between the booking and that unit.
+     * </pre>
+     *
+     * Protobuf type {@code salto.nebula.booking.v1.Booking.UnitAsset}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:salto.nebula.booking.v1.Booking.UnitAsset)
+        com.saltoapis.nebula.booking.v1.Booking.UnitAssetOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.saltoapis.nebula.booking.v1.BookingProto.internal_static_salto_nebula_booking_v1_Booking_UnitAsset_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.saltoapis.nebula.booking.v1.BookingProto.internal_static_salto_nebula_booking_v1_Booking_UnitAsset_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.saltoapis.nebula.booking.v1.Booking.UnitAsset.class, com.saltoapis.nebula.booking.v1.Booking.UnitAsset.Builder.class);
+      }
+
+      // Construct using com.saltoapis.nebula.booking.v1.Booking.UnitAsset.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        unit_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.saltoapis.nebula.booking.v1.BookingProto.internal_static_salto_nebula_booking_v1_Booking_UnitAsset_descriptor;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.booking.v1.Booking.UnitAsset getDefaultInstanceForType() {
+        return com.saltoapis.nebula.booking.v1.Booking.UnitAsset.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.booking.v1.Booking.UnitAsset build() {
+        com.saltoapis.nebula.booking.v1.Booking.UnitAsset result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.saltoapis.nebula.booking.v1.Booking.UnitAsset buildPartial() {
+        com.saltoapis.nebula.booking.v1.Booking.UnitAsset result = new com.saltoapis.nebula.booking.v1.Booking.UnitAsset(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.saltoapis.nebula.booking.v1.Booking.UnitAsset result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unit_ = unit_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.saltoapis.nebula.booking.v1.Booking.UnitAsset) {
+          return mergeFrom((com.saltoapis.nebula.booking.v1.Booking.UnitAsset)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.saltoapis.nebula.booking.v1.Booking.UnitAsset other) {
+        if (other == com.saltoapis.nebula.booking.v1.Booking.UnitAsset.getDefaultInstance()) return this;
+        if (!other.getUnit().isEmpty()) {
+          unit_ = other.unit_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                unit_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object unit_ = "";
+      /**
+       * <pre>
+       * The unit resource associated with the booking.
+       * </pre>
+       *
+       * <code>string unit = 1;</code>
+       * @return The unit.
+       */
+      public java.lang.String getUnit() {
+        java.lang.Object ref = unit_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          unit_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The unit resource associated with the booking.
+       * </pre>
+       *
+       * <code>string unit = 1;</code>
+       * @return The bytes for unit.
+       */
+      public com.google.protobuf.ByteString
+          getUnitBytes() {
+        java.lang.Object ref = unit_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          unit_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The unit resource associated with the booking.
+       * </pre>
+       *
+       * <code>string unit = 1;</code>
+       * @param value The unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnit(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        unit_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The unit resource associated with the booking.
+       * </pre>
+       *
+       * <code>string unit = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUnit() {
+        unit_ = getDefaultInstance().getUnit();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The unit resource associated with the booking.
+       * </pre>
+       *
+       * <code>string unit = 1;</code>
+       * @param value The bytes for unit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUnitBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        unit_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:salto.nebula.booking.v1.Booking.UnitAsset)
+    }
+
+    // @@protoc_insertion_point(class_scope:salto.nebula.booking.v1.Booking.UnitAsset)
+    private static final com.saltoapis.nebula.booking.v1.Booking.UnitAsset DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.saltoapis.nebula.booking.v1.Booking.UnitAsset();
+    }
+
+    public static com.saltoapis.nebula.booking.v1.Booking.UnitAsset getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UnitAsset>
+        PARSER = new com.google.protobuf.AbstractParser<UnitAsset>() {
+      @java.lang.Override
+      public UnitAsset parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UnitAsset> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UnitAsset> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.saltoapis.nebula.booking.v1.Booking.UnitAsset getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private int bitField0_;
   private int assetCase_ = 0;
   @SuppressWarnings("serial")
@@ -233,7 +791,7 @@ private static final long serialVersionUID = 0L;
   public enum AssetCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    UNIT(7),
+    UNIT_ASSET(7),
     ASSET_NOT_SET(0);
     private final int value;
     private AssetCase(int value) {
@@ -251,7 +809,7 @@ private static final long serialVersionUID = 0L;
 
     public static AssetCase forNumber(int value) {
       switch (value) {
-        case 7: return UNIT;
+        case 7: return UNIT_ASSET;
         case 0: return ASSET_NOT_SET;
         default: return null;
       }
@@ -508,68 +1066,47 @@ private static final long serialVersionUID = 0L;
     return checkOutTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : checkOutTime_;
   }
 
-  public static final int UNIT_FIELD_NUMBER = 7;
+  public static final int UNIT_ASSET_FIELD_NUMBER = 7;
   /**
    * <pre>
-   * The unit resource reference assigned to the booking.
+   * The unit asset assigned to the booking.
    * </pre>
    *
-   * <code>string unit = 7;</code>
-   * @return Whether the unit field is set.
+   * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+   * @return Whether the unitAsset field is set.
    */
-  public boolean hasUnit() {
+  @java.lang.Override
+  public boolean hasUnitAsset() {
     return assetCase_ == 7;
   }
   /**
    * <pre>
-   * The unit resource reference assigned to the booking.
+   * The unit asset assigned to the booking.
    * </pre>
    *
-   * <code>string unit = 7;</code>
-   * @return The unit.
+   * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+   * @return The unitAsset.
    */
-  public java.lang.String getUnit() {
-    java.lang.Object ref = "";
+  @java.lang.Override
+  public com.saltoapis.nebula.booking.v1.Booking.UnitAsset getUnitAsset() {
     if (assetCase_ == 7) {
-      ref = asset_;
+       return (com.saltoapis.nebula.booking.v1.Booking.UnitAsset) asset_;
     }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (assetCase_ == 7) {
-        asset_ = s;
-      }
-      return s;
-    }
+    return com.saltoapis.nebula.booking.v1.Booking.UnitAsset.getDefaultInstance();
   }
   /**
    * <pre>
-   * The unit resource reference assigned to the booking.
+   * The unit asset assigned to the booking.
    * </pre>
    *
-   * <code>string unit = 7;</code>
-   * @return The bytes for unit.
+   * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getUnitBytes() {
-    java.lang.Object ref = "";
+  @java.lang.Override
+  public com.saltoapis.nebula.booking.v1.Booking.UnitAssetOrBuilder getUnitAssetOrBuilder() {
     if (assetCase_ == 7) {
-      ref = asset_;
+       return (com.saltoapis.nebula.booking.v1.Booking.UnitAsset) asset_;
     }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      if (assetCase_ == 7) {
-        asset_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+    return com.saltoapis.nebula.booking.v1.Booking.UnitAsset.getDefaultInstance();
   }
 
   public static final int ACCESS_RIGHTS_FIELD_NUMBER = 8;
@@ -678,7 +1215,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(6, getCheckOutTime());
     }
     if (assetCase_ == 7) {
-      com.google.protobuf.GeneratedMessage.writeString(output, 7, asset_);
+      output.writeMessage(7, (com.saltoapis.nebula.booking.v1.Booking.UnitAsset) asset_);
     }
     for (int i = 0; i < accessRights_.size(); i++) {
       com.google.protobuf.GeneratedMessage.writeString(output, 8, accessRights_.getRaw(i));
@@ -716,7 +1253,8 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(6, getCheckOutTime());
     }
     if (assetCase_ == 7) {
-      size += com.google.protobuf.GeneratedMessage.computeStringSize(7, asset_);
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.saltoapis.nebula.booking.v1.Booking.UnitAsset) asset_);
     }
     {
       int dataSize = 0;
@@ -769,8 +1307,8 @@ private static final long serialVersionUID = 0L;
     if (!getAssetCase().equals(other.getAssetCase())) return false;
     switch (assetCase_) {
       case 7:
-        if (!getUnit()
-            .equals(other.getUnit())) return false;
+        if (!getUnitAsset()
+            .equals(other.getUnitAsset())) return false;
         break;
       case 0:
       default:
@@ -812,8 +1350,8 @@ private static final long serialVersionUID = 0L;
     }
     switch (assetCase_) {
       case 7:
-        hash = (37 * hash) + UNIT_FIELD_NUMBER;
-        hash = (53 * hash) + getUnit().hashCode();
+        hash = (37 * hash) + UNIT_ASSET_FIELD_NUMBER;
+        hash = (53 * hash) + getUnitAsset().hashCode();
         break;
       case 0:
       default:
@@ -986,6 +1524,9 @@ private static final long serialVersionUID = 0L;
         checkOutTimeBuilder_.dispose();
         checkOutTimeBuilder_ = null;
       }
+      if (unitAssetBuilder_ != null) {
+        unitAssetBuilder_.clear();
+      }
       accessRights_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       assetCase_ = 0;
@@ -1065,6 +1606,10 @@ private static final long serialVersionUID = 0L;
     private void buildPartialOneofs(com.saltoapis.nebula.booking.v1.Booking result) {
       result.assetCase_ = assetCase_;
       result.asset_ = this.asset_;
+      if (assetCase_ == 7 &&
+          unitAssetBuilder_ != null) {
+        result.asset_ = unitAssetBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1110,10 +1655,8 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getAssetCase()) {
-        case UNIT: {
-          assetCase_ = 7;
-          asset_ = other.asset_;
-          onChanged();
+        case UNIT_ASSET: {
+          mergeUnitAsset(other.getUnitAsset());
           break;
         }
         case ASSET_NOT_SET: {
@@ -1185,9 +1728,10 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 50
             case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
+              input.readMessage(
+                  internalGetUnitAssetFieldBuilder().getBuilder(),
+                  extensionRegistry);
               assetCase_ = 7;
-              asset_ = s;
               break;
             } // case 58
             case 66: {
@@ -2065,121 +2609,182 @@ private static final long serialVersionUID = 0L;
       return checkOutTimeBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.booking.v1.Booking.UnitAsset, com.saltoapis.nebula.booking.v1.Booking.UnitAsset.Builder, com.saltoapis.nebula.booking.v1.Booking.UnitAssetOrBuilder> unitAssetBuilder_;
     /**
      * <pre>
-     * The unit resource reference assigned to the booking.
+     * The unit asset assigned to the booking.
      * </pre>
      *
-     * <code>string unit = 7;</code>
-     * @return Whether the unit field is set.
+     * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+     * @return Whether the unitAsset field is set.
      */
     @java.lang.Override
-    public boolean hasUnit() {
+    public boolean hasUnitAsset() {
       return assetCase_ == 7;
     }
     /**
      * <pre>
-     * The unit resource reference assigned to the booking.
+     * The unit asset assigned to the booking.
      * </pre>
      *
-     * <code>string unit = 7;</code>
-     * @return The unit.
+     * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+     * @return The unitAsset.
      */
     @java.lang.Override
-    public java.lang.String getUnit() {
-      java.lang.Object ref = "";
-      if (assetCase_ == 7) {
-        ref = asset_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
+    public com.saltoapis.nebula.booking.v1.Booking.UnitAsset getUnitAsset() {
+      if (unitAssetBuilder_ == null) {
         if (assetCase_ == 7) {
-          asset_ = s;
+          return (com.saltoapis.nebula.booking.v1.Booking.UnitAsset) asset_;
         }
-        return s;
+        return com.saltoapis.nebula.booking.v1.Booking.UnitAsset.getDefaultInstance();
       } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <pre>
-     * The unit resource reference assigned to the booking.
-     * </pre>
-     *
-     * <code>string unit = 7;</code>
-     * @return The bytes for unit.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUnitBytes() {
-      java.lang.Object ref = "";
-      if (assetCase_ == 7) {
-        ref = asset_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
         if (assetCase_ == 7) {
-          asset_ = b;
+          return unitAssetBuilder_.getMessage();
         }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+        return com.saltoapis.nebula.booking.v1.Booking.UnitAsset.getDefaultInstance();
       }
     }
     /**
      * <pre>
-     * The unit resource reference assigned to the booking.
+     * The unit asset assigned to the booking.
      * </pre>
      *
-     * <code>string unit = 7;</code>
-     * @param value The unit to set.
-     * @return This builder for chaining.
+     * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
      */
-    public Builder setUnit(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      assetCase_ = 7;
-      asset_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The unit resource reference assigned to the booking.
-     * </pre>
-     *
-     * <code>string unit = 7;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUnit() {
-      if (assetCase_ == 7) {
-        assetCase_ = 0;
-        asset_ = null;
+    public Builder setUnitAsset(com.saltoapis.nebula.booking.v1.Booking.UnitAsset value) {
+      if (unitAssetBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        asset_ = value;
         onChanged();
+      } else {
+        unitAssetBuilder_.setMessage(value);
+      }
+      assetCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * The unit asset assigned to the booking.
+     * </pre>
+     *
+     * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+     */
+    public Builder setUnitAsset(
+        com.saltoapis.nebula.booking.v1.Booking.UnitAsset.Builder builderForValue) {
+      if (unitAssetBuilder_ == null) {
+        asset_ = builderForValue.build();
+        onChanged();
+      } else {
+        unitAssetBuilder_.setMessage(builderForValue.build());
+      }
+      assetCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * The unit asset assigned to the booking.
+     * </pre>
+     *
+     * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+     */
+    public Builder mergeUnitAsset(com.saltoapis.nebula.booking.v1.Booking.UnitAsset value) {
+      if (unitAssetBuilder_ == null) {
+        if (assetCase_ == 7 &&
+            asset_ != com.saltoapis.nebula.booking.v1.Booking.UnitAsset.getDefaultInstance()) {
+          asset_ = com.saltoapis.nebula.booking.v1.Booking.UnitAsset.newBuilder((com.saltoapis.nebula.booking.v1.Booking.UnitAsset) asset_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          asset_ = value;
+        }
+        onChanged();
+      } else {
+        if (assetCase_ == 7) {
+          unitAssetBuilder_.mergeFrom(value);
+        } else {
+          unitAssetBuilder_.setMessage(value);
+        }
+      }
+      assetCase_ = 7;
+      return this;
+    }
+    /**
+     * <pre>
+     * The unit asset assigned to the booking.
+     * </pre>
+     *
+     * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+     */
+    public Builder clearUnitAsset() {
+      if (unitAssetBuilder_ == null) {
+        if (assetCase_ == 7) {
+          assetCase_ = 0;
+          asset_ = null;
+          onChanged();
+        }
+      } else {
+        if (assetCase_ == 7) {
+          assetCase_ = 0;
+          asset_ = null;
+        }
+        unitAssetBuilder_.clear();
       }
       return this;
     }
     /**
      * <pre>
-     * The unit resource reference assigned to the booking.
+     * The unit asset assigned to the booking.
      * </pre>
      *
-     * <code>string unit = 7;</code>
-     * @param value The bytes for unit to set.
-     * @return This builder for chaining.
+     * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
      */
-    public Builder setUnitBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
+    public com.saltoapis.nebula.booking.v1.Booking.UnitAsset.Builder getUnitAssetBuilder() {
+      return internalGetUnitAssetFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The unit asset assigned to the booking.
+     * </pre>
+     *
+     * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+     */
+    @java.lang.Override
+    public com.saltoapis.nebula.booking.v1.Booking.UnitAssetOrBuilder getUnitAssetOrBuilder() {
+      if ((assetCase_ == 7) && (unitAssetBuilder_ != null)) {
+        return unitAssetBuilder_.getMessageOrBuilder();
+      } else {
+        if (assetCase_ == 7) {
+          return (com.saltoapis.nebula.booking.v1.Booking.UnitAsset) asset_;
+        }
+        return com.saltoapis.nebula.booking.v1.Booking.UnitAsset.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * The unit asset assigned to the booking.
+     * </pre>
+     *
+     * <code>.salto.nebula.booking.v1.Booking.UnitAsset unit_asset = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.booking.v1.Booking.UnitAsset, com.saltoapis.nebula.booking.v1.Booking.UnitAsset.Builder, com.saltoapis.nebula.booking.v1.Booking.UnitAssetOrBuilder> 
+        internalGetUnitAssetFieldBuilder() {
+      if (unitAssetBuilder_ == null) {
+        if (!(assetCase_ == 7)) {
+          asset_ = com.saltoapis.nebula.booking.v1.Booking.UnitAsset.getDefaultInstance();
+        }
+        unitAssetBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.booking.v1.Booking.UnitAsset, com.saltoapis.nebula.booking.v1.Booking.UnitAsset.Builder, com.saltoapis.nebula.booking.v1.Booking.UnitAssetOrBuilder>(
+                (com.saltoapis.nebula.booking.v1.Booking.UnitAsset) asset_,
+                getParentForChildren(),
+                isClean());
+        asset_ = null;
+      }
       assetCase_ = 7;
-      asset_ = value;
       onChanged();
-      return this;
+      return unitAssetBuilder_;
     }
 
     private com.google.protobuf.LazyStringArrayList accessRights_ =
