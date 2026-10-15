@@ -32,6 +32,11 @@ public final class BookingProto extends com.google.protobuf.GeneratedFile {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_salto_nebula_booking_v1_Booking_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_salto_nebula_booking_v1_Booking_UnitAsset_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_salto_nebula_booking_v1_Booking_UnitAsset_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_salto_nebula_booking_v1_CreateBookingRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -124,87 +129,89 @@ public final class BookingProto extends com.google.protobuf.GeneratedFile {
       "\027salto.nebula.booking.v1\032\033google/protobu" +
       "f/empty.proto\032 google/protobuf/field_mas" +
       "k.proto\032\037google/protobuf/timestamp.proto" +
-      "\"\223\003\n\007Booking\022\014\n\004name\030\001 \001(\t\022.\n\nstart_time" +
+      "\"\340\003\n\007Booking\022\014\n\004name\030\001 \001(\t\022.\n\nstart_time" +
       "\030\002 \001(\0132\032.google.protobuf.Timestamp\022,\n\010en" +
       "d_time\030\003 \001(\0132\032.google.protobuf.Timestamp" +
       "\0225\n\005state\030\004 \001(\0162&.salto.nebula.booking.v" +
       "1.Booking.State\0221\n\rcheck_in_time\030\005 \001(\0132\032" +
       ".google.protobuf.Timestamp\0222\n\016check_out_" +
-      "time\030\006 \001(\0132\032.google.protobuf.Timestamp\022\016" +
-      "\n\004unit\030\007 \001(\tH\000\022\025\n\raccess_rights\030\010 \003(\t\"N\n" +
-      "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tSCHEDUL" +
-      "ED\020\001\022\016\n\nCHECKED_IN\020\002\022\017\n\013CHECKED_OUT\020\003B\007\n" +
-      "\005asset\"\201\001\n\024CreateBookingRequest\022\016\n\006paren" +
-      "t\030\001 \001(\t\022\027\n\nbooking_id\030\002 \001(\tH\000\210\001\001\0221\n\007book" +
-      "ing\030\003 \001(\0132 .salto.nebula.booking.v1.Book" +
-      "ingB\r\n\013_booking_id\"!\n\021GetBookingRequest\022" +
-      "\014\n\004name\030\001 \001(\t\"n\n\023ListBookingsRequest\022\016\n\006" +
-      "parent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_" +
-      "token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030" +
-      "\005 \001(\t\"c\n\024ListBookingsResponse\0222\n\010booking" +
-      "s\030\001 \003(\0132 .salto.nebula.booking.v1.Bookin" +
-      "g\022\027\n\017next_page_token\030\002 \001(\t\"z\n\024UpdateBook" +
-      "ingRequest\0221\n\007booking\030\001 \001(\0132 .salto.nebu" +
-      "la.booking.v1.Booking\022/\n\013update_mask\030\002 \001" +
-      "(\0132\032.google.protobuf.FieldMask\"$\n\024Delete" +
-      "BookingRequest\022\014\n\004name\030\001 \001(\t\"%\n\025CheckInB" +
-      "ookingRequest\022\014\n\004name\030\001 \001(\t\"&\n\026CheckOutB" +
-      "ookingRequest\022\014\n\004name\030\001 \001(\t\")\n\013BookingUs" +
-      "er\022\014\n\004name\030\001 \001(\t\022\014\n\004user\030\002 \001(\t\"f\n\030Create" +
-      "BookingUserRequest\022\016\n\006parent\030\001 \001(\t\022:\n\014bo" +
-      "oking_user\030\002 \001(\0132$.salto.nebula.booking." +
-      "v1.BookingUser\"u\n\036BatchCreateBookingUser" +
-      "sRequest\022\016\n\006parent\030\001 \001(\t\022C\n\010requests\030\002 \003" +
-      "(\01321.salto.nebula.booking.v1.CreateBooki" +
-      "ngUserRequest\"^\n\037BatchCreateBookingUsers" +
-      "Response\022;\n\rbooking_users\030\001 \003(\0132$.salto." +
-      "nebula.booking.v1.BookingUser\"%\n\025GetBook" +
-      "ingUserRequest\022\014\n\004name\030\001 \001(\t\"r\n\027ListBook" +
-      "ingUsersRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_" +
-      "size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter" +
-      "\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"p\n\030ListBookingU" +
-      "sersResponse\022;\n\rbooking_users\030\001 \003(\0132$.sa" +
-      "lto.nebula.booking.v1.BookingUser\022\027\n\017nex" +
-      "t_page_token\030\002 \001(\t\"(\n\030DeleteBookingUserR" +
-      "equest\022\014\n\004name\030\001 \001(\t2\375\t\n\016BookingService\022" +
-      "`\n\rCreateBooking\022-.salto.nebula.booking." +
-      "v1.CreateBookingRequest\032 .salto.nebula.b" +
-      "ooking.v1.Booking\022Z\n\nGetBooking\022*.salto." +
-      "nebula.booking.v1.GetBookingRequest\032 .sa" +
-      "lto.nebula.booking.v1.Booking\022k\n\014ListBoo" +
-      "kings\022,.salto.nebula.booking.v1.ListBook" +
-      "ingsRequest\032-.salto.nebula.booking.v1.Li" +
-      "stBookingsResponse\022`\n\rUpdateBooking\022-.sa" +
-      "lto.nebula.booking.v1.UpdateBookingReque" +
-      "st\032 .salto.nebula.booking.v1.Booking\022V\n\r" +
-      "DeleteBooking\022-.salto.nebula.booking.v1." +
-      "DeleteBookingRequest\032\026.google.protobuf.E" +
-      "mpty\022b\n\016CheckInBooking\022..salto.nebula.bo" +
-      "oking.v1.CheckInBookingRequest\032 .salto.n" +
-      "ebula.booking.v1.Booking\022d\n\017CheckOutBook" +
-      "ing\022/.salto.nebula.booking.v1.CheckOutBo" +
-      "okingRequest\032 .salto.nebula.booking.v1.B" +
-      "ooking\022l\n\021CreateBookingUser\0221.salto.nebu" +
-      "la.booking.v1.CreateBookingUserRequest\032$" +
-      ".salto.nebula.booking.v1.BookingUser\022\214\001\n" +
-      "\027BatchCreateBookingUsers\0227.salto.nebula." +
-      "booking.v1.BatchCreateBookingUsersReques" +
-      "t\0328.salto.nebula.booking.v1.BatchCreateB" +
-      "ookingUsersResponse\022f\n\016GetBookingUser\022.." +
-      "salto.nebula.booking.v1.GetBookingUserRe" +
-      "quest\032$.salto.nebula.booking.v1.BookingU" +
-      "ser\022w\n\020ListBookingUsers\0220.salto.nebula.b" +
-      "ooking.v1.ListBookingUsersRequest\0321.salt" +
-      "o.nebula.booking.v1.ListBookingUsersResp" +
-      "onse\022^\n\021DeleteBookingUser\0221.salto.nebula" +
-      ".booking.v1.DeleteBookingUserRequest\032\026.g" +
-      "oogle.protobuf.EmptyB\335\001\n\037com.saltoapis.n" +
-      "ebula.booking.v1B\014BookingProtoP\001ZDgithub" +
-      ".com/saltoapis-internal/saltoapis-go/neb" +
-      "ula/booking/v1;booking\252\002\033Saltoapis.Nebul" +
-      "a.Booking.V1\312\002\033Saltoapis\\Nebula\\Booking\\" +
-      "V1\342\002\'GPBMetadata\\Saltoapis\\Nebula\\Bookin" +
-      "g\\V1b\006proto3"
+      "time\030\006 \001(\0132\032.google.protobuf.Timestamp\022@" +
+      "\n\nunit_asset\030\007 \001(\0132*.salto.nebula.bookin" +
+      "g.v1.Booking.UnitAssetH\000\022\025\n\raccess_right" +
+      "s\030\010 \003(\t\032\031\n\tUnitAsset\022\014\n\004unit\030\001 \001(\t\"N\n\005St" +
+      "ate\022\025\n\021STATE_UNSPECIFIED\020\000\022\r\n\tSCHEDULED\020" +
+      "\001\022\016\n\nCHECKED_IN\020\002\022\017\n\013CHECKED_OUT\020\003B\007\n\005as" +
+      "set\"\201\001\n\024CreateBookingRequest\022\016\n\006parent\030\001" +
+      " \001(\t\022\027\n\nbooking_id\030\002 \001(\tH\000\210\001\001\0221\n\007booking" +
+      "\030\003 \001(\0132 .salto.nebula.booking.v1.Booking" +
+      "B\r\n\013_booking_id\"!\n\021GetBookingRequest\022\014\n\004" +
+      "name\030\001 \001(\t\"n\n\023ListBookingsRequest\022\016\n\006par" +
+      "ent\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_tok" +
+      "en\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001" +
+      "(\t\"c\n\024ListBookingsResponse\0222\n\010bookings\030\001" +
+      " \003(\0132 .salto.nebula.booking.v1.Booking\022\027" +
+      "\n\017next_page_token\030\002 \001(\t\"z\n\024UpdateBooking" +
+      "Request\0221\n\007booking\030\001 \001(\0132 .salto.nebula." +
+      "booking.v1.Booking\022/\n\013update_mask\030\002 \001(\0132" +
+      "\032.google.protobuf.FieldMask\"$\n\024DeleteBoo" +
+      "kingRequest\022\014\n\004name\030\001 \001(\t\"%\n\025CheckInBook" +
+      "ingRequest\022\014\n\004name\030\001 \001(\t\"&\n\026CheckOutBook" +
+      "ingRequest\022\014\n\004name\030\001 \001(\t\")\n\013BookingUser\022" +
+      "\014\n\004name\030\001 \001(\t\022\014\n\004user\030\002 \001(\t\"f\n\030CreateBoo" +
+      "kingUserRequest\022\016\n\006parent\030\001 \001(\t\022:\n\014booki" +
+      "ng_user\030\002 \001(\0132$.salto.nebula.booking.v1." +
+      "BookingUser\"u\n\036BatchCreateBookingUsersRe" +
+      "quest\022\016\n\006parent\030\001 \001(\t\022C\n\010requests\030\002 \003(\0132" +
+      "1.salto.nebula.booking.v1.CreateBookingU" +
+      "serRequest\"^\n\037BatchCreateBookingUsersRes" +
+      "ponse\022;\n\rbooking_users\030\001 \003(\0132$.salto.neb" +
+      "ula.booking.v1.BookingUser\"%\n\025GetBooking" +
+      "UserRequest\022\014\n\004name\030\001 \001(\t\"r\n\027ListBooking" +
+      "UsersRequest\022\016\n\006parent\030\001 \001(\t\022\021\n\tpage_siz" +
+      "e\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 " +
+      "\001(\t\022\020\n\010order_by\030\005 \001(\t\"p\n\030ListBookingUser" +
+      "sResponse\022;\n\rbooking_users\030\001 \003(\0132$.salto" +
+      ".nebula.booking.v1.BookingUser\022\027\n\017next_p" +
+      "age_token\030\002 \001(\t\"(\n\030DeleteBookingUserRequ" +
+      "est\022\014\n\004name\030\001 \001(\t2\375\t\n\016BookingService\022`\n\r" +
+      "CreateBooking\022-.salto.nebula.booking.v1." +
+      "CreateBookingRequest\032 .salto.nebula.book" +
+      "ing.v1.Booking\022Z\n\nGetBooking\022*.salto.neb" +
+      "ula.booking.v1.GetBookingRequest\032 .salto" +
+      ".nebula.booking.v1.Booking\022k\n\014ListBookin" +
+      "gs\022,.salto.nebula.booking.v1.ListBooking" +
+      "sRequest\032-.salto.nebula.booking.v1.ListB" +
+      "ookingsResponse\022`\n\rUpdateBooking\022-.salto" +
+      ".nebula.booking.v1.UpdateBookingRequest\032" +
+      " .salto.nebula.booking.v1.Booking\022V\n\rDel" +
+      "eteBooking\022-.salto.nebula.booking.v1.Del" +
+      "eteBookingRequest\032\026.google.protobuf.Empt" +
+      "y\022b\n\016CheckInBooking\022..salto.nebula.booki" +
+      "ng.v1.CheckInBookingRequest\032 .salto.nebu" +
+      "la.booking.v1.Booking\022d\n\017CheckOutBooking" +
+      "\022/.salto.nebula.booking.v1.CheckOutBooki" +
+      "ngRequest\032 .salto.nebula.booking.v1.Book" +
+      "ing\022l\n\021CreateBookingUser\0221.salto.nebula." +
+      "booking.v1.CreateBookingUserRequest\032$.sa" +
+      "lto.nebula.booking.v1.BookingUser\022\214\001\n\027Ba" +
+      "tchCreateBookingUsers\0227.salto.nebula.boo" +
+      "king.v1.BatchCreateBookingUsersRequest\0328" +
+      ".salto.nebula.booking.v1.BatchCreateBook" +
+      "ingUsersResponse\022f\n\016GetBookingUser\022..sal" +
+      "to.nebula.booking.v1.GetBookingUserReque" +
+      "st\032$.salto.nebula.booking.v1.BookingUser" +
+      "\022w\n\020ListBookingUsers\0220.salto.nebula.book" +
+      "ing.v1.ListBookingUsersRequest\0321.salto.n" +
+      "ebula.booking.v1.ListBookingUsersRespons" +
+      "e\022^\n\021DeleteBookingUser\0221.salto.nebula.bo" +
+      "oking.v1.DeleteBookingUserRequest\032\026.goog" +
+      "le.protobuf.EmptyB\335\001\n\037com.saltoapis.nebu" +
+      "la.booking.v1B\014BookingProtoP\001ZDgithub.co" +
+      "m/saltoapis-internal/saltoapis-go/nebula" +
+      "/booking/v1;booking\252\002\033Saltoapis.Nebula.B" +
+      "ooking.V1\312\002\033Saltoapis\\Nebula\\Booking\\V1\342" +
+      "\002\'GPBMetadata\\Saltoapis\\Nebula\\Booking\\V" +
+      "1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -218,7 +225,13 @@ public final class BookingProto extends com.google.protobuf.GeneratedFile {
     internal_static_salto_nebula_booking_v1_Booking_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_salto_nebula_booking_v1_Booking_descriptor,
-        new java.lang.String[] { "Name", "StartTime", "EndTime", "State", "CheckInTime", "CheckOutTime", "Unit", "AccessRights", "Asset", });
+        new java.lang.String[] { "Name", "StartTime", "EndTime", "State", "CheckInTime", "CheckOutTime", "UnitAsset", "AccessRights", "Asset", });
+    internal_static_salto_nebula_booking_v1_Booking_UnitAsset_descriptor =
+      internal_static_salto_nebula_booking_v1_Booking_descriptor.getNestedType(0);
+    internal_static_salto_nebula_booking_v1_Booking_UnitAsset_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_salto_nebula_booking_v1_Booking_UnitAsset_descriptor,
+        new java.lang.String[] { "Unit", });
     internal_static_salto_nebula_booking_v1_CreateBookingRequest_descriptor =
       getDescriptor().getMessageType(1);
     internal_static_salto_nebula_booking_v1_CreateBookingRequest_fieldAccessorTable = new
