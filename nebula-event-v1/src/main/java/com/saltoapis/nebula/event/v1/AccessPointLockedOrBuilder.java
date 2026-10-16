@@ -66,6 +66,42 @@ public interface AccessPointLockedOrBuilder extends
 
   /**
    * <pre>
+   * The actor that locked the access point through the API, for example a
+   * user or service account sending a lock request. Unset when the access
+   * point was locked on site, in which case `user` and `credential` identify
+   * who locked it.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+   * @return Whether the actor field is set.
+   */
+  boolean hasActor();
+  /**
+   * <pre>
+   * The actor that locked the access point through the API, for example a
+   * user or service account sending a lock request. Unset when the access
+   * point was locked on site, in which case `user` and `credential` identify
+   * who locked it.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+   * @return The actor.
+   */
+  com.saltoapis.nebula.event.v1.Principal getActor();
+  /**
+   * <pre>
+   * The actor that locked the access point through the API, for example a
+   * user or service account sending a lock request. Unset when the access
+   * point was locked on site, in which case `user` and `credential` identify
+   * who locked it.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+   */
+  com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder();
+
+  /**
+   * <pre>
    * The emergency key used to lock the access point.
    * </pre>
    *

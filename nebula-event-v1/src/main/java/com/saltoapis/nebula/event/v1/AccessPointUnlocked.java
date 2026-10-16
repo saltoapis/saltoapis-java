@@ -329,6 +329,53 @@ private static final long serialVersionUID = 0L;
     return user_ == null ? com.saltoapis.nebula.user.v1.User.getDefaultInstance() : user_;
   }
 
+  public static final int ACTOR_FIELD_NUMBER = 10;
+  private com.saltoapis.nebula.event.v1.Principal actor_;
+  /**
+   * <pre>
+   * The actor that unlocked the access point through the API, for example a
+   * user or service account sending an unlock request. Unset when the access
+   * point was unlocked on site, in which case `user` and `credential` identify
+   * who unlocked it.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+   * @return Whether the actor field is set.
+   */
+  @java.lang.Override
+  public boolean hasActor() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <pre>
+   * The actor that unlocked the access point through the API, for example a
+   * user or service account sending an unlock request. Unset when the access
+   * point was unlocked on site, in which case `user` and `credential` identify
+   * who unlocked it.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+   * @return The actor.
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.event.v1.Principal getActor() {
+    return actor_ == null ? com.saltoapis.nebula.event.v1.Principal.getDefaultInstance() : actor_;
+  }
+  /**
+   * <pre>
+   * The actor that unlocked the access point through the API, for example a
+   * user or service account sending an unlock request. Unset when the access
+   * point was unlocked on site, in which case `user` and `credential` identify
+   * who unlocked it.
+   * </pre>
+   *
+   * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+   */
+  @java.lang.Override
+  public com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder() {
+    return actor_ == null ? com.saltoapis.nebula.event.v1.Principal.getDefaultInstance() : actor_;
+  }
+
   public static final int EMERGENCY_KEY_FIELD_NUMBER = 3;
   /**
    * <pre>
@@ -654,6 +701,9 @@ private static final long serialVersionUID = 0L;
     if (credentialCase_ == 9) {
       output.writeMessage(9, (com.saltoapis.nebula.user.v1.ElectronicKey) credential_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(10, getActor());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -699,6 +749,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, (com.saltoapis.nebula.user.v1.ElectronicKey) credential_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, getActor());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -723,6 +777,11 @@ private static final long serialVersionUID = 0L;
     if (hasUser()) {
       if (!getUser()
           .equals(other.getUser())) return false;
+    }
+    if (hasActor() != other.hasActor()) return false;
+    if (hasActor()) {
+      if (!getActor()
+          .equals(other.getActor())) return false;
     }
     if (direction_ != other.direction_) return false;
     if (!getCredentialCase().equals(other.getCredentialCase())) return false;
@@ -772,6 +831,10 @@ private static final long serialVersionUID = 0L;
     if (hasUser()) {
       hash = (37 * hash) + USER_FIELD_NUMBER;
       hash = (53 * hash) + getUser().hashCode();
+    }
+    if (hasActor()) {
+      hash = (37 * hash) + ACTOR_FIELD_NUMBER;
+      hash = (53 * hash) + getActor().hashCode();
     }
     hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
     hash = (53 * hash) + direction_;
@@ -939,6 +1002,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         internalGetAccessPointFieldBuilder();
         internalGetUserFieldBuilder();
+        internalGetActorFieldBuilder();
       }
     }
     @java.lang.Override
@@ -954,6 +1018,11 @@ private static final long serialVersionUID = 0L;
       if (userBuilder_ != null) {
         userBuilder_.dispose();
         userBuilder_ = null;
+      }
+      actor_ = null;
+      if (actorBuilder_ != null) {
+        actorBuilder_.dispose();
+        actorBuilder_ = null;
       }
       if (emergencyKeyBuilder_ != null) {
         emergencyKeyBuilder_.clear();
@@ -1023,7 +1092,13 @@ private static final long serialVersionUID = 0L;
             : userBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.actor_ = actorBuilder_ == null
+            ? actor_
+            : actorBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.direction_ = direction_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1075,6 +1150,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUser()) {
         mergeUser(other.getUser());
+      }
+      if (other.hasActor()) {
+        mergeActor(other.getActor());
       }
       if (other.direction_ != 0) {
         setDirectionValue(other.getDirectionValue());
@@ -1185,7 +1263,7 @@ private static final long serialVersionUID = 0L;
             } // case 58
             case 64: {
               direction_ = input.readEnum();
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               break;
             } // case 64
             case 74: {
@@ -1195,6 +1273,13 @@ private static final long serialVersionUID = 0L;
               credentialCase_ = 9;
               break;
             } // case 74
+            case 82: {
+              input.readMessage(
+                  internalGetActorFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1539,6 +1624,190 @@ private static final long serialVersionUID = 0L;
         user_ = null;
       }
       return userBuilder_;
+    }
+
+    private com.saltoapis.nebula.event.v1.Principal actor_;
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.event.v1.Principal, com.saltoapis.nebula.event.v1.Principal.Builder, com.saltoapis.nebula.event.v1.PrincipalOrBuilder> actorBuilder_;
+    /**
+     * <pre>
+     * The actor that unlocked the access point through the API, for example a
+     * user or service account sending an unlock request. Unset when the access
+     * point was unlocked on site, in which case `user` and `credential` identify
+     * who unlocked it.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+     * @return Whether the actor field is set.
+     */
+    public boolean hasActor() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * The actor that unlocked the access point through the API, for example a
+     * user or service account sending an unlock request. Unset when the access
+     * point was unlocked on site, in which case `user` and `credential` identify
+     * who unlocked it.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+     * @return The actor.
+     */
+    public com.saltoapis.nebula.event.v1.Principal getActor() {
+      if (actorBuilder_ == null) {
+        return actor_ == null ? com.saltoapis.nebula.event.v1.Principal.getDefaultInstance() : actor_;
+      } else {
+        return actorBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The actor that unlocked the access point through the API, for example a
+     * user or service account sending an unlock request. Unset when the access
+     * point was unlocked on site, in which case `user` and `credential` identify
+     * who unlocked it.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+     */
+    public Builder setActor(com.saltoapis.nebula.event.v1.Principal value) {
+      if (actorBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actor_ = value;
+      } else {
+        actorBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The actor that unlocked the access point through the API, for example a
+     * user or service account sending an unlock request. Unset when the access
+     * point was unlocked on site, in which case `user` and `credential` identify
+     * who unlocked it.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+     */
+    public Builder setActor(
+        com.saltoapis.nebula.event.v1.Principal.Builder builderForValue) {
+      if (actorBuilder_ == null) {
+        actor_ = builderForValue.build();
+      } else {
+        actorBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The actor that unlocked the access point through the API, for example a
+     * user or service account sending an unlock request. Unset when the access
+     * point was unlocked on site, in which case `user` and `credential` identify
+     * who unlocked it.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+     */
+    public Builder mergeActor(com.saltoapis.nebula.event.v1.Principal value) {
+      if (actorBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0) &&
+          actor_ != null &&
+          actor_ != com.saltoapis.nebula.event.v1.Principal.getDefaultInstance()) {
+          getActorBuilder().mergeFrom(value);
+        } else {
+          actor_ = value;
+        }
+      } else {
+        actorBuilder_.mergeFrom(value);
+      }
+      if (actor_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The actor that unlocked the access point through the API, for example a
+     * user or service account sending an unlock request. Unset when the access
+     * point was unlocked on site, in which case `user` and `credential` identify
+     * who unlocked it.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+     */
+    public Builder clearActor() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      actor_ = null;
+      if (actorBuilder_ != null) {
+        actorBuilder_.dispose();
+        actorBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The actor that unlocked the access point through the API, for example a
+     * user or service account sending an unlock request. Unset when the access
+     * point was unlocked on site, in which case `user` and `credential` identify
+     * who unlocked it.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+     */
+    public com.saltoapis.nebula.event.v1.Principal.Builder getActorBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return internalGetActorFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The actor that unlocked the access point through the API, for example a
+     * user or service account sending an unlock request. Unset when the access
+     * point was unlocked on site, in which case `user` and `credential` identify
+     * who unlocked it.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+     */
+    public com.saltoapis.nebula.event.v1.PrincipalOrBuilder getActorOrBuilder() {
+      if (actorBuilder_ != null) {
+        return actorBuilder_.getMessageOrBuilder();
+      } else {
+        return actor_ == null ?
+            com.saltoapis.nebula.event.v1.Principal.getDefaultInstance() : actor_;
+      }
+    }
+    /**
+     * <pre>
+     * The actor that unlocked the access point through the API, for example a
+     * user or service account sending an unlock request. Unset when the access
+     * point was unlocked on site, in which case `user` and `credential` identify
+     * who unlocked it.
+     * </pre>
+     *
+     * <code>.salto.nebula.event.v1.Principal actor = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilder<
+        com.saltoapis.nebula.event.v1.Principal, com.saltoapis.nebula.event.v1.Principal.Builder, com.saltoapis.nebula.event.v1.PrincipalOrBuilder> 
+        internalGetActorFieldBuilder() {
+      if (actorBuilder_ == null) {
+        actorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+            com.saltoapis.nebula.event.v1.Principal, com.saltoapis.nebula.event.v1.Principal.Builder, com.saltoapis.nebula.event.v1.PrincipalOrBuilder>(
+                getActor(),
+                getParentForChildren(),
+                isClean());
+        actor_ = null;
+      }
+      return actorBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilder<
@@ -2632,7 +2901,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDirectionValue(int value) {
       direction_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2660,7 +2929,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDirection(com.saltoapis.nebula.event.v1.AccessPointUnlocked.Direction value) {
       if (value == null) { throw new NullPointerException(); }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       direction_ = value.getNumber();
       onChanged();
       return this;
@@ -2674,7 +2943,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDirection() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       direction_ = 0;
       onChanged();
       return this;
