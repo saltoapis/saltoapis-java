@@ -88,5 +88,32 @@ public interface PaymentMethodOrBuilder extends
    */
   com.saltoapis.nebula.installation.v1.PaymentMethod.DirectDebitOrBuilder getDirectDebitOrBuilder();
 
+  /**
+   * <pre>
+   * Bank transfer details.
+   * </pre>
+   *
+   * <code>.salto.nebula.installation.v1.PaymentMethod.BankTransfer bank_transfer = 4;</code>
+   * @return Whether the bankTransfer field is set.
+   */
+  boolean hasBankTransfer();
+  /**
+   * <pre>
+   * Bank transfer details.
+   * </pre>
+   *
+   * <code>.salto.nebula.installation.v1.PaymentMethod.BankTransfer bank_transfer = 4;</code>
+   * @return The bankTransfer.
+   */
+  com.saltoapis.nebula.installation.v1.PaymentMethod.BankTransfer getBankTransfer();
+  /**
+   * <pre>
+   * Bank transfer details.
+   * </pre>
+   *
+   * <code>.salto.nebula.installation.v1.PaymentMethod.BankTransfer bank_transfer = 4;</code>
+   */
+  com.saltoapis.nebula.installation.v1.PaymentMethod.BankTransferOrBuilder getBankTransferOrBuilder();
+
   com.saltoapis.nebula.installation.v1.PaymentMethod.MethodCase getMethodCase();
 }
